@@ -1,0 +1,10 @@
+{
+    "__mem_gb": 1,
+    "__threads": 1,
+    "barcode_whitelist": "/fh/fast/bloom_j/software/cellranger/cellranger-cs/3.0.1/lib/python/cellranger/barcodes/737K-august-2016.txt",
+    "check_executables": true,
+    "interop_output_path": null,
+    "max_bcl2fastq_threads": 6,
+    "output_path": null,
+    "run_path": "/shared/ngs/illumina/bloom_lab/190830_M03100_0474_000000000-CL3WR"
+}

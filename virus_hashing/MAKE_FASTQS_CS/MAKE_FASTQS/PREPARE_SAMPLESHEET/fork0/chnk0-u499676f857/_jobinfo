@@ -1,0 +1,181 @@
+{
+    "name": "ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.PREPARE_SAMPLESHEET.fork0.chnk0",
+    "pid": 19426,
+    "host": "gizmof49",
+    "type": "local",
+    "cwd": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/PREPARE_SAMPLESHEET/fork0/chnk0-u499676f857/files",
+    "python": {
+        "binpath": "/fh/fast/bloom_j/software/cellranger/miniconda-cr-cs/4.3.21-miniconda-cr-cs-c10/bin/python",
+        "version": "2.7.14 |Anaconda, Inc.| (default, Mar 27 2018, 17:29:31) \n[GCC 7.2.0]"
+    },
+    "rusage": {
+        "self": {
+            "ru_maxrss": 17232,
+            "ru_ixrss": 0,
+            "ru_idrss": 0,
+            "ru_minflt": 756,
+            "ru_majflt": 0,
+            "ru_nswap": 0,
+            "ru_utime": 0,
+            "ru_stime": 0.005264,
+            "ru_inblock": 16,
+            "ru_oublock": 48,
+            "ru_msgsnd": 0,
+            "ru_msgrcv": 0,
+            "ru_nsignals": 0
+        },
+        "children": {
+            "ru_maxrss": 68712,
+            "ru_ixrss": 0,
+            "ru_idrss": 0,
+            "ru_minflt": 33277,
+            "ru_majflt": 59,
+            "ru_nswap": 0,
+            "ru_utime": 0.474677,
+            "ru_stime": 0.219755,
+            "ru_inblock": 62760,
+            "ru_oublock": 72,
+            "ru_msgsnd": 0,
+            "ru_msgrcv": 0,
+            "ru_nsignals": 0
+        }
+    },
+    "used_bytes": {
+        "rss": 33853440,
+        "shared": 10772480,
+        "vmem": 250060800,
+        "text": 24576,
+        "stack": 23523328,
+        "proc_count": 1
+    },
+    "io": {
+        "total": {
+            "read": {
+                "sysc": 848,
+                "bytes": 12288
+            },
+            "write": {
+                "sysc": 30,
+                "bytes": 0
+            }
+        },
+        "max": {
+            "read": {
+                "sysc": 178.53236930218034,
+                "bytes": 2457.502872113985
+            },
+            "write": {
+                "sysc": 5.999762871372035,
+                "bytes": 0
+            }
+        },
+        "dev": {
+            "read": {
+                "sysc": 0.8256776366346386,
+                "bytes": 200.1282392568236
+            },
+            "write": {
+                "sysc": 0.48859433412310044,
+                "bytes": 0
+            }
+        }
+    },
+    "wallclock": {
+        "start": "2019-09-09 18:11:51",
+        "end": "2019-09-09 18:11:58",
+        "duration_seconds": 7.707890756
+    },
+    "threads": 1,
+    "memGB": 1,
+    "profile_mode": "disable",
+    "stackvars_flag": "disable",
+    "monitor_flag": "disable",
+    "invocation": {
+        "call": "MAKE_FASTQS_CS",
+        "args": {
+            "all_mkfastq_args": "--id=virus_hashing --run=/shared/ngs/illumina/bloom_lab/190830_M03100_0474_000000000-CL3WR --csv=simple-samples.csv",
+            "barcode_whitelist": "/fh/fast/bloom_j/software/cellranger/cellranger-cs/3.0.1/lib/python/cellranger/barcodes/737K-august-2016.txt",
+            "bases_mask": null,
+            "bc_length": 16,
+            "bc_read_type": "R1",
+            "bc_start_index": 0,
+            "bcl2fastq1_args": " --mismatches=1",
+            "bcl2fastq2_args": " -p 6 -d 6 -r 6 -w 6",
+            "delete_undetermined": false,
+            "ignore_dual_index": false,
+            "interop_output_path": null,
+            "lanes": null,
+            "max_bcl2fastq_threads": 6,
+            "output_path": null,
+            "project": "CL3WR",
+            "run_path": "/shared/ngs/illumina/bloom_lab/190830_M03100_0474_000000000-CL3WR",
+            "run_qc": false,
+            "si_read_type": "I1",
+            "software_version": "cellranger 3.0.1",
+            "specs": [
+                {
+                    "csv": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/simple-samples.csv"
+                }
+            ],
+            "umi_length": 10,
+            "umi_read_type": "R1",
+            "umi_start_index": 16
+        },
+        "sweepargs": [],
+        "incpaths": [
+            "make_fastqs_cs.mro",
+            "make_fastqs.mro",
+            "_make_fastqs_stages.mro"
+        ]
+    },
+    "version": {
+        "martian": "'3.0.1-v3.1.0'",
+        "pipelines": "3.0.1"
+    },
+    "sge": {
+        "SLURM_CHECKPOINT_IMAGE_DIR": "/var/spool/slurm-llnl/checkpoint",
+        "SLURM_CLUSTER_NAME": "gizmo",
+        "SLURM_CPUS_ON_NODE": "1",
+        "SLURM_DISTRIBUTION": "cyclic",
+        "SLURM_GTIDS": "0",
+        "SLURM_JOBID": "39179974",
+        "SLURM_JOB_ACCOUNT": "bloom_j",
+        "SLURM_JOB_CPUS_PER_NODE": "1",
+        "SLURM_JOB_GID": "55051",
+        "SLURM_JOB_ID": "39179974",
+        "SLURM_JOB_NAME": "demux",
+        "SLURM_JOB_NODELIST": "gizmof49",
+        "SLURM_JOB_NUM_NODES": "1",
+        "SLURM_JOB_PARTITION": "campus",
+        "SLURM_JOB_QOS": "normal",
+        "SLURM_JOB_UID": "55051",
+        "SLURM_JOB_USER": "dbacsik",
+        "SLURM_LAUNCH_NODE_IPADDR": "140.107.218.27",
+        "SLURM_LOCALID": "0",
+        "SLURM_MEM_PER_CPU": "32000",
+        "SLURM_NNODES": "1",
+        "SLURM_NODEID": "0",
+        "SLURM_NODELIST": "gizmof49",
+        "SLURM_NPROCS": "1",
+        "SLURM_NTASKS": "1",
+        "SLURM_PRIO_PROCESS": "0",
+        "SLURM_PROCID": "0",
+        "SLURM_SRUN_COMM_HOST": "140.107.218.27",
+        "SLURM_SRUN_COMM_PORT": "35570",
+        "SLURM_STEPID": "1",
+        "SLURM_STEP_ID": "1",
+        "SLURM_STEP_LAUNCHER_PORT": "35570",
+        "SLURM_STEP_NODELIST": "gizmof49",
+        "SLURM_STEP_NUM_NODES": "1",
+        "SLURM_STEP_NUM_TASKS": "1",
+        "SLURM_STEP_TASKS_PER_NODE": "1",
+        "SLURM_SUBMIT_DIR": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing",
+        "SLURM_SUBMIT_HOST": "gizmof49",
+        "SLURM_TASKS_PER_NODE": "1",
+        "SLURM_TASK_PID": "18796",
+        "SLURM_TOPOLOGY_ADDR": "gizmof49",
+        "SLURM_TOPOLOGY_ADDR_PATTERN": "node",
+        "SLURM_UMASK": "0027",
+        "SLURM_WORKING_CLUSTER": "gizmo:gizmo-ctld:6817:8448"
+    }
+}

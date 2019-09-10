@@ -1,0 +1,17 @@
+[Header]
+EMFileVersion,4
+
+[Reads]
+50
+250
+
+[Data]
+Lane,Sample_ID,Sample_Name,index,Sample_Project,Original_Sample_ID
+1,HUNDREDuM_primer_1,HUNDREDuM_primer,GGTTTACT,CL3WR,HUNDREDuM_primer
+1,HUNDREDuM_primer_2,HUNDREDuM_primer,CTAAACGG,CL3WR,HUNDREDuM_primer
+1,HUNDREDuM_primer_3,HUNDREDuM_primer,TCGGCGTC,CL3WR,HUNDREDuM_primer
+1,HUNDREDuM_primer_4,HUNDREDuM_primer,AACCGTAA,CL3WR,HUNDREDuM_primer
+1,TENuM_primer_1,TENuM_primer,TTTCATGA,CL3WR,TENuM_primer
+1,TENuM_primer_2,TENuM_primer,ACGTCCCT,CL3WR,TENuM_primer
+1,TENuM_primer_3,TENuM_primer,CGCATGTG,CL3WR,TENuM_primer
+1,TENuM_primer_4,TENuM_primer,GAAGGAAC,CL3WR,TENuM_primer

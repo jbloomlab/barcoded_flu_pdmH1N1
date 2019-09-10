@@ -1,0 +1,5 @@
+2019-09-09 18:11:33 [time] __start__
+2019-09-09 18:11:40 [info] RTA Version: 1.18.54
+2019-09-09 18:11:40 [info] BCL Params: {'ApplicationName': 'MiSeq Control Software', 'ApplicationVersion': '2.5.0.5'}
+2019-09-09 18:11:40 [info] Running bcl2fastq mode: NEW.  Version: 2.20.0.422
+2019-09-09 18:11:40 [time] __end__

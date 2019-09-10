@@ -1,0 +1,71 @@
+Sample data written to simple-samples.csv. Process done.
+/fh/fast/bloom_j/software/conda/envs/BloomLab_v3/lib/python3.6/site-packages/pandas/core/indexing.py:376: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  self.obj[key] = _infer_fill_value(value)
+/fh/fast/bloom_j/software/conda/envs/BloomLab_v3/lib/python3.6/site-packages/pandas/core/indexing.py:494: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  self.obj[item] = s
+make_samplefile_forcellranger.py:23: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  samples_clean['index'] = 'SI-GA-' + samples_clean.loc[:, 'index'].astype(str)
+/fh/fast/bloom_j/software/cellranger/cellranger-cs/3.0.1/bin
+cellranger mkfastq (3.0.1)
+Copyright (c) 2018 10x Genomics, Inc.  All rights reserved.
+-------------------------------------------------------------------------------
+
+Martian Runtime - '3.0.1-v3.1.0'
+Serving UI at http://gizmof49:49947?auth=vixm68NiWqT2c71Q5u6MjXXwx6sQzHs5CloBbODPvKA
+
+Running preflight checks (please wait)...
+Checking run folder...
+Checking RunInfo.xml...
+Checking system environment...
+Checking barcode whitelist...
+Emitting run information...
+Checking read specification...
+Checking samplesheet specs...
+Checking for dual index flowcell...
+2019-09-09 18:11:51 [runtime] (ready)           ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.PREPARE_SAMPLESHEET
+2019-09-09 18:11:51 [runtime] (run:local)       ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.PREPARE_SAMPLESHEET.fork0.chnk0.main
+2019-09-09 18:12:00 [runtime] (chunks_complete) ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.PREPARE_SAMPLESHEET
+2019-09-09 18:12:00 [runtime] (ready)           ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.BCL2FASTQ_WITH_SAMPLESHEET
+2019-09-09 18:12:00 [runtime] (run:local)       ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.BCL2FASTQ_WITH_SAMPLESHEET.fork0.split
+2019-09-09 18:12:03 [runtime] (split_complete)  ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.BCL2FASTQ_WITH_SAMPLESHEET
+2019-09-09 18:12:03 [runtime] (run:local)       ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.BCL2FASTQ_WITH_SAMPLESHEET.fork0.chnk0.main
+2019-09-09 18:14:21 [runtime] (chunks_complete) ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.BCL2FASTQ_WITH_SAMPLESHEET
+2019-09-09 18:14:21 [runtime] (run:local)       ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.BCL2FASTQ_WITH_SAMPLESHEET.fork0.join
+2019-09-09 18:14:25 [runtime] (join_complete)   ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.BCL2FASTQ_WITH_SAMPLESHEET
+2019-09-09 18:14:25 [runtime] (ready)           ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.MAKE_QC_SUMMARY
+2019-09-09 18:14:25 [runtime] (run:local)       ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.MAKE_QC_SUMMARY.fork0.split
+2019-09-09 18:14:28 [runtime] (split_complete)  ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.MAKE_QC_SUMMARY
+2019-09-09 18:14:28 [runtime] (run:local)       ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.MAKE_QC_SUMMARY.fork0.join
+2019-09-09 18:14:31 [runtime] (join_complete)   ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.MAKE_QC_SUMMARY
+2019-09-09 18:14:31 [runtime] (ready)           ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.MERGE_FASTQS_BY_LANE_SAMPLE
+2019-09-09 18:14:31 [runtime] (run:local)       ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.MERGE_FASTQS_BY_LANE_SAMPLE.fork0.split
+2019-09-09 18:14:34 [runtime] (split_complete)  ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.MERGE_FASTQS_BY_LANE_SAMPLE
+2019-09-09 18:14:34 [runtime] (run:local)       ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.MERGE_FASTQS_BY_LANE_SAMPLE.fork0.chnk0.main
+2019-09-09 18:14:34 [runtime] (run:local)       ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.MERGE_FASTQS_BY_LANE_SAMPLE.fork0.chnk1.main
+2019-09-09 18:14:40 [runtime] (chunks_complete) ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.MERGE_FASTQS_BY_LANE_SAMPLE
+2019-09-09 18:14:40 [runtime] (run:local)       ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.MERGE_FASTQS_BY_LANE_SAMPLE.fork0.join
+2019-09-09 18:14:43 [runtime] (join_complete)   ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.MERGE_FASTQS_BY_LANE_SAMPLE
+
+Outputs:
+- Run QC metrics:        null
+- FASTQ output folder:   /fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/outs/fastq_path
+- Interop output folder: /fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/outs/interop_path
+- Input samplesheet:     /fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/outs/input_samplesheet.csv
+
+Waiting 6 seconds for UI to do final refresh.
+Pipestance completed successfully!
+
+2019-09-09 18:14:50 Shutting down.
+Saving pipestance info to virus_hashing/virus_hashing.mri.tgz
