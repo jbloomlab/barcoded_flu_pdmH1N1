@@ -1,0 +1,25 @@
+{
+    "__mem_gb": 1,
+    "__threads": 1,
+    "barcode_whitelist": "/fh/fast/bloom_j/software/cellranger/cellranger-cs/3.0.1/lib/python/cellranger/barcodes/737K-august-2016.txt",
+    "bc_length": 16,
+    "bc_read_type": "R1",
+    "bc_start_index": 0,
+    "bcl2fastq_args": "bcl2fastq --minimum-trimmed-read-length 8 --mask-short-adapter-reads 8 --create-fastq-for-index-reads --ignore-missing-positions --ignore-missing-filter --ignore-missing-bcls --use-bases-mask=Y50,I8,Y250 -R /shared/ngs/illumina/bloom_lab/190830_M03100_0474_000000000-CL3WR --output-dir=/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/chnk0-u499676f863/files/fastq_path --interop-dir=/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/chnk0-u499676f863/files/interop_path --sample-sheet=/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/PREPARE_SAMPLESHEET/fork0/chnk0-u499676f857/files/samplesheet.csv -p 6 -r 6 -w 6",
+    "bcl2fastq_version": "2.20.0.422",
+    "fastq_path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path",
+    "file_read_types_map": {
+        "I1": "I1",
+        "R1": "R1",
+        "R2": "R2"
+    },
+    "interop_path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/interop_path",
+    "rc_i2_read": false,
+    "run_path": "/shared/ngs/illumina/bloom_lab/190830_M03100_0474_000000000-CL3WR",
+    "run_qc": false,
+    "si_read_type": "I1",
+    "software_version": "cellranger 3.0.1",
+    "umi_length": 10,
+    "umi_read_type": "R1",
+    "umi_start_index": 16
+}

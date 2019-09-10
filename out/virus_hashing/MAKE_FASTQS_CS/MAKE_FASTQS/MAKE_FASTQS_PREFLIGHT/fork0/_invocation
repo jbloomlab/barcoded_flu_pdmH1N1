@@ -1,0 +1,10 @@
+@include "_make_fastqs_stages.mro"
+
+call MAKE_FASTQS_PREFLIGHT(
+    run_path = "/shared/ngs/illumina/bloom_lab/190830_M03100_0474_000000000-CL3WR",
+    output_path = null,
+    interop_output_path = null,
+    barcode_whitelist = "/fh/fast/bloom_j/software/cellranger/cellranger-cs/3.0.1/lib/python/cellranger/barcodes/737K-august-2016.txt",
+    check_executables = true,
+    max_bcl2fastq_threads = 6,
+)

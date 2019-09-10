@@ -1,0 +1,27 @@
+{
+    "__mem_gb": 1,
+    "__threads": 1,
+    "bcl2fastq_version": "2.20.0.422",
+    "fastq_path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path",
+    "input_files": [
+        "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/TENuM_primer_1/TENuM_primer_S5_L001_I1_001.fastq.gz",
+        "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/TENuM_primer_1/TENuM_primer_S5_L001_R1_001.fastq.gz",
+        "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/TENuM_primer_1/TENuM_primer_S5_L001_R2_001.fastq.gz",
+        "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/TENuM_primer_2/TENuM_primer_S6_L001_I1_001.fastq.gz",
+        "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/TENuM_primer_2/TENuM_primer_S6_L001_R1_001.fastq.gz",
+        "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/TENuM_primer_2/TENuM_primer_S6_L001_R2_001.fastq.gz",
+        "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/TENuM_primer_3/TENuM_primer_S7_L001_I1_001.fastq.gz",
+        "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/TENuM_primer_3/TENuM_primer_S7_L001_R1_001.fastq.gz",
+        "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/TENuM_primer_3/TENuM_primer_S7_L001_R2_001.fastq.gz",
+        "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/TENuM_primer_4/TENuM_primer_S8_L001_I1_001.fastq.gz",
+        "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/TENuM_primer_4/TENuM_primer_S8_L001_R1_001.fastq.gz",
+        "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/TENuM_primer_4/TENuM_primer_S8_L001_R2_001.fastq.gz"
+    ],
+    "lane": 1,
+    "output_snum": "2",
+    "project": "CL3WR",
+    "remove_split_fastqs": true,
+    "remove_undetermined_fastqs": false,
+    "sample_id": "TENuM_primer",
+    "samplesheet_path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/PREPARE_SAMPLESHEET/fork0/chnk0-u499676f857/files/samplesheet.csv"
+}

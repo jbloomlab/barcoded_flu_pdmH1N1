@@ -1,0 +1,17 @@
+{
+    "count": 0,
+    "size": 0,
+    "timestamp": "2019-09-09 18:14:31",
+    "paths": null,
+    "errors": null,
+    "events": [
+        {
+            "Timestamp": "2019-09-09T18:14:25-07:00",
+            "DeltaBytes": 7927
+        },
+        {
+            "Timestamp": "2019-09-09T18:14:28-07:00",
+            "DeltaBytes": 7996
+        }
+    ]
+}

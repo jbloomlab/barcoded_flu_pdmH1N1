@@ -30,5 +30,5 @@ samples_clean.columns = ['Sample','Index','Lane']
 samples_clean = samples_clean[['Lane', 'Sample', 'Index']]
 
 #Write to file
-samples_clean.to_csv('simple-samples.csv',index=False)
-print('Sample data written to simple-samples.csv. Process done.')
+samples_clean.to_csv('out/simple-samples.csv',index=False)
+print('Sample data written to out/simple-samples.csv. Process done.')

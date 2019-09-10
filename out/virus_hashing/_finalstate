@@ -1,0 +1,2188 @@
+[
+    {
+        "name": "MAKE_FASTQS_CS",
+        "fqname": "ID.virus_hashing.MAKE_FASTQS_CS",
+        "type": "pipeline",
+        "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS",
+        "state": "complete",
+        "metadata": {
+            "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS",
+            "names": []
+        },
+        "sweepbindings": [],
+        "forks": [
+            {
+                "index": 0,
+                "argPermute": {},
+                "joinDef": null,
+                "state": "complete",
+                "metadata": {
+                    "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/fork0",
+                    "names": [
+                        "complete",
+                        "invocation",
+                        "outs",
+                        "vdrkill"
+                    ]
+                },
+                "split_metadata": {
+                    "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/fork0/split",
+                    "names": []
+                },
+                "join_metadata": {
+                    "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/fork0/join",
+                    "names": []
+                },
+                "chunks": [],
+                "bindings": {
+                    "Argument": [
+                        {
+                            "id": "bases_mask",
+                            "type": "string",
+                            "valexp": "",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "bases_mask",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": null,
+                            "waiting": false
+                        },
+                        {
+                            "id": "barcode_whitelist",
+                            "type": "string",
+                            "valexp": "",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "barcode_whitelist",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "/fh/fast/bloom_j/software/cellranger/cellranger-cs/3.0.1/lib/python/cellranger/barcodes/737K-august-2016.txt",
+                            "waiting": false
+                        },
+                        {
+                            "id": "umi_read_type",
+                            "type": "string",
+                            "valexp": "",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "umi_read_type",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "R1",
+                            "waiting": false
+                        },
+                        {
+                            "id": "umi_length",
+                            "type": "int",
+                            "valexp": "",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "umi_length",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": 10,
+                            "waiting": false
+                        },
+                        {
+                            "id": "ignore_dual_index",
+                            "type": "bool",
+                            "valexp": "",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "ignore_dual_index",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": false,
+                            "waiting": false
+                        },
+                        {
+                            "id": "run_path",
+                            "type": "path",
+                            "valexp": "",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "run_path",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "/shared/ngs/illumina/bloom_lab/190830_M03100_0474_000000000-CL3WR",
+                            "waiting": false
+                        },
+                        {
+                            "id": "lanes",
+                            "type": "int",
+                            "valexp": "",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "lanes",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": null,
+                            "waiting": false
+                        },
+                        {
+                            "id": "project",
+                            "type": "string",
+                            "valexp": "",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "project",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "CL3WR",
+                            "waiting": false
+                        },
+                        {
+                            "id": "software_version",
+                            "type": "string",
+                            "valexp": "",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "software_version",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "cellranger 3.0.1",
+                            "waiting": false
+                        },
+                        {
+                            "id": "output_path",
+                            "type": "path",
+                            "valexp": "",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "output_path",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": null,
+                            "waiting": false
+                        },
+                        {
+                            "id": "delete_undetermined",
+                            "type": "bool",
+                            "valexp": "",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "delete_undetermined",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": false,
+                            "waiting": false
+                        },
+                        {
+                            "id": "run_qc",
+                            "type": "bool",
+                            "valexp": "",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "run_qc",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": false,
+                            "waiting": false
+                        },
+                        {
+                            "id": "max_bcl2fastq_threads",
+                            "type": "int",
+                            "valexp": "",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "max_bcl2fastq_threads",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": 6,
+                            "waiting": false
+                        },
+                        {
+                            "id": "bcl2fastq1_args",
+                            "type": "string",
+                            "valexp": "",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "bcl2fastq1_args",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": " --mismatches=1",
+                            "waiting": false
+                        },
+                        {
+                            "id": "bc_read_type",
+                            "type": "string",
+                            "valexp": "",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "bc_read_type",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "R1",
+                            "waiting": false
+                        },
+                        {
+                            "id": "umi_start_index",
+                            "type": "int",
+                            "valexp": "",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "umi_start_index",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": 16,
+                            "waiting": false
+                        },
+                        {
+                            "id": "all_mkfastq_args",
+                            "type": "string",
+                            "valexp": "",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "all_mkfastq_args",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "--id=virus_hashing --run=/shared/ngs/illumina/bloom_lab/190830_M03100_0474_000000000-CL3WR --csv=simple-samples.csv",
+                            "waiting": false
+                        },
+                        {
+                            "id": "specs",
+                            "type": "map",
+                            "valexp": "",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "specs",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": [
+                                {
+                                    "csv": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/simple-samples.csv"
+                                }
+                            ],
+                            "waiting": false
+                        },
+                        {
+                            "id": "bcl2fastq2_args",
+                            "type": "string",
+                            "valexp": "",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "bcl2fastq2_args",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": " -p 6 -d 6 -r 6 -w 6",
+                            "waiting": false
+                        },
+                        {
+                            "id": "si_read_type",
+                            "type": "string",
+                            "valexp": "",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "si_read_type",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "I1",
+                            "waiting": false
+                        },
+                        {
+                            "id": "bc_start_index",
+                            "type": "int",
+                            "valexp": "",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "bc_start_index",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": 0,
+                            "waiting": false
+                        },
+                        {
+                            "id": "bc_length",
+                            "type": "int",
+                            "valexp": "",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "bc_length",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": 16,
+                            "waiting": false
+                        },
+                        {
+                            "id": "interop_output_path",
+                            "type": "path",
+                            "valexp": "",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "interop_output_path",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": null,
+                            "waiting": false
+                        }
+                    ],
+                    "Return": [
+                        {
+                            "id": "fastq_path",
+                            "type": "path",
+                            "valexp": "MAKE_FASTQS.fastq_path",
+                            "mode": "reference",
+                            "output": "fastq_path",
+                            "sweep": false,
+                            "sweepRootId": "fastq_path",
+                            "node": "BCL2FASTQ_WITH_SAMPLESHEET",
+                            "matchedFork": 0,
+                            "value": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path",
+                            "waiting": false
+                        },
+                        {
+                            "id": "interop_path",
+                            "type": "path",
+                            "valexp": "MAKE_FASTQS.interop_path",
+                            "mode": "reference",
+                            "output": "interop_path",
+                            "sweep": false,
+                            "sweepRootId": "interop_path",
+                            "node": "BCL2FASTQ_WITH_SAMPLESHEET",
+                            "matchedFork": 0,
+                            "value": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/interop_path",
+                            "waiting": false
+                        },
+                        {
+                            "id": "qc_summary",
+                            "type": "json",
+                            "valexp": "MAKE_FASTQS.qc_summary",
+                            "mode": "reference",
+                            "output": "qc_summary",
+                            "sweep": false,
+                            "sweepRootId": "qc_summary",
+                            "node": "MAKE_QC_SUMMARY",
+                            "matchedFork": 0,
+                            "value": null,
+                            "waiting": false
+                        },
+                        {
+                            "id": "input_samplesheet",
+                            "type": "csv",
+                            "valexp": "MAKE_FASTQS.input_samplesheet",
+                            "mode": "reference",
+                            "output": "input_samplesheet",
+                            "sweep": false,
+                            "sweepRootId": "input_samplesheet",
+                            "node": "PREPARE_SAMPLESHEET",
+                            "matchedFork": 0,
+                            "value": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/PREPARE_SAMPLESHEET/fork0/chnk0-u499676f857/files/input_samplesheet.csv",
+                            "waiting": false
+                        }
+                    ]
+                }
+            }
+        ],
+        "edges": [
+            {
+                "from": "ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS",
+                "to": "ID.virus_hashing.MAKE_FASTQS_CS"
+            }
+        ],
+        "stagecodeLang": "",
+        "stagecodeCmd": ""
+    },
+    {
+        "name": "MAKE_FASTQS",
+        "fqname": "ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS",
+        "type": "pipeline",
+        "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS",
+        "state": "complete",
+        "metadata": {
+            "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS",
+            "names": []
+        },
+        "sweepbindings": [],
+        "forks": [
+            {
+                "index": 0,
+                "argPermute": {},
+                "joinDef": null,
+                "state": "complete",
+                "metadata": {
+                    "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/fork0",
+                    "names": [
+                        "complete",
+                        "invocation",
+                        "outs",
+                        "vdrkill"
+                    ]
+                },
+                "split_metadata": {
+                    "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/fork0/split",
+                    "names": []
+                },
+                "join_metadata": {
+                    "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/fork0/join",
+                    "names": []
+                },
+                "chunks": [],
+                "bindings": {
+                    "Argument": [
+                        {
+                            "id": "ignore_dual_index",
+                            "type": "bool",
+                            "valexp": "self.ignore_dual_index",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "ignore_dual_index",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": false,
+                            "waiting": false
+                        },
+                        {
+                            "id": "run_qc",
+                            "type": "bool",
+                            "valexp": "self.run_qc",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "run_qc",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": false,
+                            "waiting": false
+                        },
+                        {
+                            "id": "software_version",
+                            "type": "string",
+                            "valexp": "self.software_version",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "software_version",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "cellranger 3.0.1",
+                            "waiting": false
+                        },
+                        {
+                            "id": "project",
+                            "type": "string",
+                            "valexp": "self.project",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "project",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "CL3WR",
+                            "waiting": false
+                        },
+                        {
+                            "id": "bcl2fastq1_args",
+                            "type": "string",
+                            "valexp": "self.bcl2fastq1_args",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "bcl2fastq1_args",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": " --mismatches=1",
+                            "waiting": false
+                        },
+                        {
+                            "id": "bcl2fastq2_args",
+                            "type": "string",
+                            "valexp": "self.bcl2fastq2_args",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "bcl2fastq2_args",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": " -p 6 -d 6 -r 6 -w 6",
+                            "waiting": false
+                        },
+                        {
+                            "id": "umi_start_index",
+                            "type": "int",
+                            "valexp": "self.umi_start_index",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "umi_start_index",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": 16,
+                            "waiting": false
+                        },
+                        {
+                            "id": "umi_length",
+                            "type": "int",
+                            "valexp": "self.umi_length",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "umi_length",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": 10,
+                            "waiting": false
+                        },
+                        {
+                            "id": "specs",
+                            "type": "map",
+                            "valexp": "self.specs",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "specs",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": [
+                                {
+                                    "csv": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/simple-samples.csv"
+                                }
+                            ],
+                            "waiting": false
+                        },
+                        {
+                            "id": "bc_start_index",
+                            "type": "int",
+                            "valexp": "self.bc_start_index",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "bc_start_index",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": 0,
+                            "waiting": false
+                        },
+                        {
+                            "id": "delete_undetermined",
+                            "type": "bool",
+                            "valexp": "self.delete_undetermined",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "delete_undetermined",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": false,
+                            "waiting": false
+                        },
+                        {
+                            "id": "umi_read_type",
+                            "type": "string",
+                            "valexp": "self.umi_read_type",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "umi_read_type",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "R1",
+                            "waiting": false
+                        },
+                        {
+                            "id": "output_path",
+                            "type": "path",
+                            "valexp": "self.output_path",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "output_path",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": null,
+                            "waiting": false
+                        },
+                        {
+                            "id": "interop_output_path",
+                            "type": "path",
+                            "valexp": "self.interop_output_path",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "interop_output_path",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": null,
+                            "waiting": false
+                        },
+                        {
+                            "id": "run_path",
+                            "type": "path",
+                            "valexp": "self.run_path",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "run_path",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "/shared/ngs/illumina/bloom_lab/190830_M03100_0474_000000000-CL3WR",
+                            "waiting": false
+                        },
+                        {
+                            "id": "bases_mask",
+                            "type": "string",
+                            "valexp": "self.bases_mask",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "bases_mask",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": null,
+                            "waiting": false
+                        },
+                        {
+                            "id": "barcode_whitelist",
+                            "type": "string",
+                            "valexp": "self.barcode_whitelist",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "barcode_whitelist",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "/fh/fast/bloom_j/software/cellranger/cellranger-cs/3.0.1/lib/python/cellranger/barcodes/737K-august-2016.txt",
+                            "waiting": false
+                        },
+                        {
+                            "id": "bc_read_type",
+                            "type": "string",
+                            "valexp": "self.bc_read_type",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "bc_read_type",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "R1",
+                            "waiting": false
+                        },
+                        {
+                            "id": "si_read_type",
+                            "type": "string",
+                            "valexp": "self.si_read_type",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "si_read_type",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "I1",
+                            "waiting": false
+                        },
+                        {
+                            "id": "lanes",
+                            "type": "int",
+                            "valexp": "self.lanes",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "lanes",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": null,
+                            "waiting": false
+                        },
+                        {
+                            "id": "bc_length",
+                            "type": "int",
+                            "valexp": "self.bc_length",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "bc_length",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": 16,
+                            "waiting": false
+                        },
+                        {
+                            "id": "max_bcl2fastq_threads",
+                            "type": "int",
+                            "valexp": "self.max_bcl2fastq_threads",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "max_bcl2fastq_threads",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": 6,
+                            "waiting": false
+                        },
+                        {
+                            "id": "all_mkfastq_args",
+                            "type": "string",
+                            "valexp": "self.all_mkfastq_args",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "all_mkfastq_args",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "--id=virus_hashing --run=/shared/ngs/illumina/bloom_lab/190830_M03100_0474_000000000-CL3WR --csv=simple-samples.csv",
+                            "waiting": false
+                        }
+                    ],
+                    "Return": [
+                        {
+                            "id": "fastq_path",
+                            "type": "path",
+                            "valexp": "BCL2FASTQ_WITH_SAMPLESHEET.fastq_path",
+                            "mode": "reference",
+                            "output": "fastq_path",
+                            "sweep": false,
+                            "sweepRootId": "fastq_path",
+                            "node": "BCL2FASTQ_WITH_SAMPLESHEET",
+                            "matchedFork": 0,
+                            "value": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path",
+                            "waiting": false
+                        },
+                        {
+                            "id": "interop_path",
+                            "type": "path",
+                            "valexp": "BCL2FASTQ_WITH_SAMPLESHEET.interop_path",
+                            "mode": "reference",
+                            "output": "interop_path",
+                            "sweep": false,
+                            "sweepRootId": "interop_path",
+                            "node": "BCL2FASTQ_WITH_SAMPLESHEET",
+                            "matchedFork": 0,
+                            "value": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/interop_path",
+                            "waiting": false
+                        },
+                        {
+                            "id": "qc_summary",
+                            "type": "json",
+                            "valexp": "MAKE_QC_SUMMARY.qc_summary",
+                            "mode": "reference",
+                            "output": "qc_summary",
+                            "sweep": false,
+                            "sweepRootId": "qc_summary",
+                            "node": "MAKE_QC_SUMMARY",
+                            "matchedFork": 0,
+                            "value": null,
+                            "waiting": false
+                        },
+                        {
+                            "id": "input_samplesheet",
+                            "type": "csv",
+                            "valexp": "PREPARE_SAMPLESHEET.input_samplesheet",
+                            "mode": "reference",
+                            "output": "input_samplesheet",
+                            "sweep": false,
+                            "sweepRootId": "input_samplesheet",
+                            "node": "PREPARE_SAMPLESHEET",
+                            "matchedFork": 0,
+                            "value": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/PREPARE_SAMPLESHEET/fork0/chnk0-u499676f857/files/input_samplesheet.csv",
+                            "waiting": false
+                        }
+                    ]
+                }
+            }
+        ],
+        "edges": [
+            {
+                "from": "ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.BCL2FASTQ_WITH_SAMPLESHEET",
+                "to": "ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS"
+            },
+            {
+                "from": "ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.MAKE_QC_SUMMARY",
+                "to": "ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS"
+            },
+            {
+                "from": "ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.PREPARE_SAMPLESHEET",
+                "to": "ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS"
+            }
+        ],
+        "stagecodeLang": "",
+        "stagecodeCmd": ""
+    },
+    {
+        "name": "BCL2FASTQ_WITH_SAMPLESHEET",
+        "fqname": "ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.BCL2FASTQ_WITH_SAMPLESHEET",
+        "type": "stage",
+        "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET",
+        "state": "complete",
+        "metadata": {
+            "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET",
+            "names": []
+        },
+        "sweepbindings": [],
+        "forks": [
+            {
+                "index": 0,
+                "argPermute": {},
+                "joinDef": {
+                    "__threads": 1,
+                    "__mem_gb": 1
+                },
+                "state": "complete",
+                "metadata": {
+                    "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0",
+                    "names": [
+                        "complete",
+                        "invocation",
+                        "outs",
+                        "vdrkill"
+                    ]
+                },
+                "split_metadata": {
+                    "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/split",
+                    "names": [
+                        "args",
+                        "complete",
+                        "jobinfo",
+                        "log",
+                        "stage_defs",
+                        "stderr",
+                        "stdout"
+                    ]
+                },
+                "join_metadata": {
+                    "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join",
+                    "names": [
+                        "args",
+                        "chunk_defs",
+                        "chunk_outs",
+                        "complete",
+                        "jobinfo",
+                        "log",
+                        "outs",
+                        "stderr",
+                        "stdout"
+                    ]
+                },
+                "chunks": [
+                    {
+                        "index": 0,
+                        "chunkDef": {
+                            "__mem_gb": 28,
+                            "__threads": 4
+                        },
+                        "state": "complete",
+                        "metadata": {
+                            "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/chnk0",
+                            "names": [
+                                "args",
+                                "complete",
+                                "jobinfo",
+                                "log",
+                                "outs",
+                                "stderr",
+                                "stdout"
+                            ]
+                        }
+                    }
+                ],
+                "bindings": {
+                    "Argument": [
+                        {
+                            "id": "max_bcl2fastq_threads",
+                            "type": "int",
+                            "valexp": "self.max_bcl2fastq_threads",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "max_bcl2fastq_threads",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": 6,
+                            "waiting": false
+                        },
+                        {
+                            "id": "dual_indexed_samplesheet",
+                            "type": "bool",
+                            "valexp": "PREPARE_SAMPLESHEET.dual_indexed_samplesheet",
+                            "mode": "reference",
+                            "output": "dual_indexed_samplesheet",
+                            "sweep": false,
+                            "sweepRootId": "dual_indexed_samplesheet",
+                            "node": "PREPARE_SAMPLESHEET",
+                            "matchedFork": 0,
+                            "value": false,
+                            "waiting": false
+                        },
+                        {
+                            "id": "interop_output_path",
+                            "type": "path",
+                            "valexp": "self.interop_output_path",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "interop_output_path",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": null,
+                            "waiting": false
+                        },
+                        {
+                            "id": "samplesheet_path",
+                            "type": "csv",
+                            "valexp": "PREPARE_SAMPLESHEET.samplesheet",
+                            "mode": "reference",
+                            "output": "samplesheet",
+                            "sweep": false,
+                            "sweepRootId": "samplesheet_path",
+                            "node": "PREPARE_SAMPLESHEET",
+                            "matchedFork": 0,
+                            "value": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/PREPARE_SAMPLESHEET/fork0/chnk0-u499676f857/files/samplesheet.csv",
+                            "waiting": false
+                        },
+                        {
+                            "id": "bases_mask",
+                            "type": "string",
+                            "valexp": "self.bases_mask",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "bases_mask",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": null,
+                            "waiting": false
+                        },
+                        {
+                            "id": "si_read_type",
+                            "type": "string",
+                            "valexp": "self.si_read_type",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "si_read_type",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "I1",
+                            "waiting": false
+                        },
+                        {
+                            "id": "bcl2fastq1_args",
+                            "type": "string",
+                            "valexp": "self.bcl2fastq1_args",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "bcl2fastq1_args",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": " --mismatches=1",
+                            "waiting": false
+                        },
+                        {
+                            "id": "bcl2fastq2_args",
+                            "type": "string",
+                            "valexp": "self.bcl2fastq2_args",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "bcl2fastq2_args",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": " -p 6 -d 6 -r 6 -w 6",
+                            "waiting": false
+                        },
+                        {
+                            "id": "run_path",
+                            "type": "path",
+                            "valexp": "self.run_path",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "run_path",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "/shared/ngs/illumina/bloom_lab/190830_M03100_0474_000000000-CL3WR",
+                            "waiting": false
+                        },
+                        {
+                            "id": "output_path",
+                            "type": "path",
+                            "valexp": "self.output_path",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "output_path",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": null,
+                            "waiting": false
+                        },
+                        {
+                            "id": "ignore_dual_index",
+                            "type": "bool",
+                            "valexp": "self.ignore_dual_index",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "ignore_dual_index",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": false,
+                            "waiting": false
+                        }
+                    ],
+                    "Return": []
+                }
+            }
+        ],
+        "edges": [
+            {
+                "from": "ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.PREPARE_SAMPLESHEET",
+                "to": "ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.BCL2FASTQ_WITH_SAMPLESHEET"
+            }
+        ],
+        "stagecodeLang": "Python",
+        "stagecodeCmd": "/fh/fast/bloom_j/software/cellranger/cellranger-cs/3.0.1/tenkit/mro/stages/make_fastqs/bcl2fastq_with_samplesheet"
+    },
+    {
+        "name": "MAKE_FASTQS_PREFLIGHT",
+        "fqname": "ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.MAKE_FASTQS_PREFLIGHT",
+        "type": "stage",
+        "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MAKE_FASTQS_PREFLIGHT",
+        "state": "complete",
+        "metadata": {
+            "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MAKE_FASTQS_PREFLIGHT",
+            "names": []
+        },
+        "sweepbindings": [],
+        "forks": [
+            {
+                "index": 0,
+                "argPermute": {},
+                "joinDef": {
+                    "__threads": 1,
+                    "__mem_gb": 1
+                },
+                "state": "complete",
+                "metadata": {
+                    "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MAKE_FASTQS_PREFLIGHT/fork0",
+                    "names": [
+                        "complete",
+                        "invocation",
+                        "outs",
+                        "vdrkill"
+                    ]
+                },
+                "split_metadata": {
+                    "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MAKE_FASTQS_PREFLIGHT/fork0/split",
+                    "names": [
+                        "args",
+                        "complete",
+                        "stage_defs"
+                    ]
+                },
+                "join_metadata": {
+                    "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MAKE_FASTQS_PREFLIGHT/fork0/join",
+                    "names": [
+                        "args",
+                        "chunk_defs",
+                        "complete",
+                        "outs"
+                    ]
+                },
+                "chunks": [
+                    {
+                        "index": 0,
+                        "chunkDef": {
+                            "__mem_gb": 1,
+                            "__threads": 1
+                        },
+                        "state": "complete",
+                        "metadata": {
+                            "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MAKE_FASTQS_PREFLIGHT/fork0/chnk0",
+                            "names": [
+                                "args",
+                                "complete",
+                                "jobinfo",
+                                "log",
+                                "outs",
+                                "stderr",
+                                "stdout"
+                            ]
+                        }
+                    }
+                ],
+                "bindings": {
+                    "Argument": [
+                        {
+                            "id": "run_path",
+                            "type": "path",
+                            "valexp": "self.run_path",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "run_path",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "/shared/ngs/illumina/bloom_lab/190830_M03100_0474_000000000-CL3WR",
+                            "waiting": false
+                        },
+                        {
+                            "id": "output_path",
+                            "type": "path",
+                            "valexp": "self.output_path",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "output_path",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": null,
+                            "waiting": false
+                        },
+                        {
+                            "id": "interop_output_path",
+                            "type": "path",
+                            "valexp": "self.interop_output_path",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "interop_output_path",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": null,
+                            "waiting": false
+                        },
+                        {
+                            "id": "barcode_whitelist",
+                            "type": "string",
+                            "valexp": "self.barcode_whitelist",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "barcode_whitelist",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "/fh/fast/bloom_j/software/cellranger/cellranger-cs/3.0.1/lib/python/cellranger/barcodes/737K-august-2016.txt",
+                            "waiting": false
+                        },
+                        {
+                            "id": "check_executables",
+                            "type": "bool",
+                            "valexp": "",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "check_executables",
+                            "node": "MAKE_FASTQS_PREFLIGHT",
+                            "matchedFork": 0,
+                            "value": true,
+                            "waiting": false
+                        },
+                        {
+                            "id": "max_bcl2fastq_threads",
+                            "type": "int",
+                            "valexp": "self.max_bcl2fastq_threads",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "max_bcl2fastq_threads",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": 6,
+                            "waiting": false
+                        }
+                    ],
+                    "Return": []
+                }
+            }
+        ],
+        "edges": [],
+        "stagecodeLang": "Python",
+        "stagecodeCmd": "/fh/fast/bloom_j/software/cellranger/cellranger-cs/3.0.1/tenkit/mro/stages/make_fastqs/make_fastqs_preflight"
+    },
+    {
+        "name": "MAKE_FASTQS_PREFLIGHT_LOCAL",
+        "fqname": "ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.MAKE_FASTQS_PREFLIGHT_LOCAL",
+        "type": "stage",
+        "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MAKE_FASTQS_PREFLIGHT_LOCAL",
+        "state": "complete",
+        "metadata": {
+            "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MAKE_FASTQS_PREFLIGHT_LOCAL",
+            "names": []
+        },
+        "sweepbindings": [],
+        "forks": [
+            {
+                "index": 0,
+                "argPermute": {},
+                "joinDef": {
+                    "__threads": 1,
+                    "__mem_gb": 1
+                },
+                "state": "complete",
+                "metadata": {
+                    "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MAKE_FASTQS_PREFLIGHT_LOCAL/fork0",
+                    "names": [
+                        "complete",
+                        "invocation",
+                        "outs",
+                        "vdrkill"
+                    ]
+                },
+                "split_metadata": {
+                    "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MAKE_FASTQS_PREFLIGHT_LOCAL/fork0/split",
+                    "names": [
+                        "args",
+                        "complete",
+                        "stage_defs"
+                    ]
+                },
+                "join_metadata": {
+                    "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MAKE_FASTQS_PREFLIGHT_LOCAL/fork0/join",
+                    "names": [
+                        "args",
+                        "chunk_defs",
+                        "complete",
+                        "outs"
+                    ]
+                },
+                "chunks": [
+                    {
+                        "index": 0,
+                        "chunkDef": {
+                            "__mem_gb": 1,
+                            "__threads": 1
+                        },
+                        "state": "complete",
+                        "metadata": {
+                            "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MAKE_FASTQS_PREFLIGHT_LOCAL/fork0/chnk0",
+                            "names": [
+                                "args",
+                                "complete",
+                                "jobinfo",
+                                "log",
+                                "outs",
+                                "stderr",
+                                "stdout"
+                            ]
+                        }
+                    }
+                ],
+                "bindings": {
+                    "Argument": [
+                        {
+                            "id": "bc_length",
+                            "type": "int",
+                            "valexp": "self.bc_length",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "bc_length",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": 16,
+                            "waiting": false
+                        },
+                        {
+                            "id": "bcl2fastq2_args",
+                            "type": "string",
+                            "valexp": "self.bcl2fastq2_args",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "bcl2fastq2_args",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": " -p 6 -d 6 -r 6 -w 6",
+                            "waiting": false
+                        },
+                        {
+                            "id": "all_mkfastq_args",
+                            "type": "string",
+                            "valexp": "self.all_mkfastq_args",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "all_mkfastq_args",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "--id=virus_hashing --run=/shared/ngs/illumina/bloom_lab/190830_M03100_0474_000000000-CL3WR --csv=simple-samples.csv",
+                            "waiting": false
+                        },
+                        {
+                            "id": "specs",
+                            "type": "map",
+                            "valexp": "self.specs",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "specs",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": [
+                                {
+                                    "csv": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/simple-samples.csv"
+                                }
+                            ],
+                            "waiting": false
+                        },
+                        {
+                            "id": "barcode_whitelist",
+                            "type": "string",
+                            "valexp": "self.barcode_whitelist",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "barcode_whitelist",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "/fh/fast/bloom_j/software/cellranger/cellranger-cs/3.0.1/lib/python/cellranger/barcodes/737K-august-2016.txt",
+                            "waiting": false
+                        },
+                        {
+                            "id": "si_read_type",
+                            "type": "string",
+                            "valexp": "self.si_read_type",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "si_read_type",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "I1",
+                            "waiting": false
+                        },
+                        {
+                            "id": "umi_read_type",
+                            "type": "string",
+                            "valexp": "self.umi_read_type",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "umi_read_type",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "R1",
+                            "waiting": false
+                        },
+                        {
+                            "id": "umi_length",
+                            "type": "int",
+                            "valexp": "self.umi_length",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "umi_length",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": 10,
+                            "waiting": false
+                        },
+                        {
+                            "id": "run_path",
+                            "type": "path",
+                            "valexp": "self.run_path",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "run_path",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "/shared/ngs/illumina/bloom_lab/190830_M03100_0474_000000000-CL3WR",
+                            "waiting": false
+                        },
+                        {
+                            "id": "check_executables",
+                            "type": "bool",
+                            "valexp": "",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "check_executables",
+                            "node": "MAKE_FASTQS_PREFLIGHT_LOCAL",
+                            "matchedFork": 0,
+                            "value": false,
+                            "waiting": false
+                        },
+                        {
+                            "id": "bases_mask",
+                            "type": "string",
+                            "valexp": "self.bases_mask",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "bases_mask",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": null,
+                            "waiting": false
+                        },
+                        {
+                            "id": "ignore_dual_index",
+                            "type": "bool",
+                            "valexp": "self.ignore_dual_index",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "ignore_dual_index",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": false,
+                            "waiting": false
+                        },
+                        {
+                            "id": "bc_start_index",
+                            "type": "int",
+                            "valexp": "self.bc_start_index",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "bc_start_index",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": 0,
+                            "waiting": false
+                        },
+                        {
+                            "id": "umi_start_index",
+                            "type": "int",
+                            "valexp": "self.umi_start_index",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "umi_start_index",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": 16,
+                            "waiting": false
+                        },
+                        {
+                            "id": "lanes",
+                            "type": "int",
+                            "valexp": "self.lanes",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "lanes",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": null,
+                            "waiting": false
+                        },
+                        {
+                            "id": "bc_read_type",
+                            "type": "string",
+                            "valexp": "self.bc_read_type",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "bc_read_type",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "R1",
+                            "waiting": false
+                        }
+                    ],
+                    "Return": []
+                }
+            }
+        ],
+        "edges": [],
+        "stagecodeLang": "Python",
+        "stagecodeCmd": "/fh/fast/bloom_j/software/cellranger/cellranger-cs/3.0.1/tenkit/mro/stages/make_fastqs/make_fastqs_preflight_local"
+    },
+    {
+        "name": "MAKE_QC_SUMMARY",
+        "fqname": "ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.MAKE_QC_SUMMARY",
+        "type": "stage",
+        "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MAKE_QC_SUMMARY",
+        "state": "complete",
+        "metadata": {
+            "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MAKE_QC_SUMMARY",
+            "names": []
+        },
+        "sweepbindings": [],
+        "forks": [
+            {
+                "index": 0,
+                "argPermute": {},
+                "joinDef": {
+                    "__threads": 1,
+                    "__mem_gb": 1
+                },
+                "state": "complete",
+                "metadata": {
+                    "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MAKE_QC_SUMMARY/fork0",
+                    "names": [
+                        "complete",
+                        "invocation",
+                        "outs",
+                        "vdrkill"
+                    ]
+                },
+                "split_metadata": {
+                    "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MAKE_QC_SUMMARY/fork0/split",
+                    "names": [
+                        "args",
+                        "complete",
+                        "jobinfo",
+                        "log",
+                        "stage_defs",
+                        "stderr",
+                        "stdout"
+                    ]
+                },
+                "join_metadata": {
+                    "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MAKE_QC_SUMMARY/fork0/join",
+                    "names": [
+                        "args",
+                        "chunk_defs",
+                        "chunk_outs",
+                        "complete",
+                        "jobinfo",
+                        "log",
+                        "outs",
+                        "stderr",
+                        "stdout"
+                    ]
+                },
+                "chunks": [],
+                "bindings": {
+                    "Argument": [
+                        {
+                            "id": "bc_length",
+                            "type": "int",
+                            "valexp": "self.bc_length",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "bc_length",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": 16,
+                            "waiting": false
+                        },
+                        {
+                            "id": "fastq_path",
+                            "type": "path",
+                            "valexp": "BCL2FASTQ_WITH_SAMPLESHEET.fastq_path",
+                            "mode": "reference",
+                            "output": "fastq_path",
+                            "sweep": false,
+                            "sweepRootId": "fastq_path",
+                            "node": "BCL2FASTQ_WITH_SAMPLESHEET",
+                            "matchedFork": 0,
+                            "value": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path",
+                            "waiting": false
+                        },
+                        {
+                            "id": "interop_path",
+                            "type": "path",
+                            "valexp": "BCL2FASTQ_WITH_SAMPLESHEET.interop_path",
+                            "mode": "reference",
+                            "output": "interop_path",
+                            "sweep": false,
+                            "sweepRootId": "interop_path",
+                            "node": "BCL2FASTQ_WITH_SAMPLESHEET",
+                            "matchedFork": 0,
+                            "value": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/interop_path",
+                            "waiting": false
+                        },
+                        {
+                            "id": "bc_read_type",
+                            "type": "string",
+                            "valexp": "self.bc_read_type",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "bc_read_type",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "R1",
+                            "waiting": false
+                        },
+                        {
+                            "id": "bc_start_index",
+                            "type": "int",
+                            "valexp": "self.bc_start_index",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "bc_start_index",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": 0,
+                            "waiting": false
+                        },
+                        {
+                            "id": "rc_i2_read",
+                            "type": "bool",
+                            "valexp": "BCL2FASTQ_WITH_SAMPLESHEET.rc_i2_read",
+                            "mode": "reference",
+                            "output": "rc_i2_read",
+                            "sweep": false,
+                            "sweepRootId": "rc_i2_read",
+                            "node": "BCL2FASTQ_WITH_SAMPLESHEET",
+                            "matchedFork": 0,
+                            "value": false,
+                            "waiting": false
+                        },
+                        {
+                            "id": "file_read_types_map",
+                            "type": "map",
+                            "valexp": "BCL2FASTQ_WITH_SAMPLESHEET.file_read_types_map",
+                            "mode": "reference",
+                            "output": "file_read_types_map",
+                            "sweep": false,
+                            "sweepRootId": "file_read_types_map",
+                            "node": "BCL2FASTQ_WITH_SAMPLESHEET",
+                            "matchedFork": 0,
+                            "value": {
+                                "I1": "I1",
+                                "R1": "R1",
+                                "R2": "R2"
+                            },
+                            "waiting": false
+                        },
+                        {
+                            "id": "run_path",
+                            "type": "path",
+                            "valexp": "self.run_path",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "run_path",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "/shared/ngs/illumina/bloom_lab/190830_M03100_0474_000000000-CL3WR",
+                            "waiting": false
+                        },
+                        {
+                            "id": "bcl2fastq_args",
+                            "type": "string",
+                            "valexp": "BCL2FASTQ_WITH_SAMPLESHEET.bcl2fastq_args",
+                            "mode": "reference",
+                            "output": "bcl2fastq_args",
+                            "sweep": false,
+                            "sweepRootId": "bcl2fastq_args",
+                            "node": "BCL2FASTQ_WITH_SAMPLESHEET",
+                            "matchedFork": 0,
+                            "value": "bcl2fastq --minimum-trimmed-read-length 8 --mask-short-adapter-reads 8 --create-fastq-for-index-reads --ignore-missing-positions --ignore-missing-filter --ignore-missing-bcls --use-bases-mask=Y50,I8,Y250 -R /shared/ngs/illumina/bloom_lab/190830_M03100_0474_000000000-CL3WR --output-dir=/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/chnk0-u499676f863/files/fastq_path --interop-dir=/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/chnk0-u499676f863/files/interop_path --sample-sheet=/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/PREPARE_SAMPLESHEET/fork0/chnk0-u499676f857/files/samplesheet.csv -p 6 -r 6 -w 6",
+                            "waiting": false
+                        },
+                        {
+                            "id": "si_read_type",
+                            "type": "string",
+                            "valexp": "self.si_read_type",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "si_read_type",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "I1",
+                            "waiting": false
+                        },
+                        {
+                            "id": "umi_read_type",
+                            "type": "string",
+                            "valexp": "self.umi_read_type",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "umi_read_type",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "R1",
+                            "waiting": false
+                        },
+                        {
+                            "id": "umi_start_index",
+                            "type": "int",
+                            "valexp": "self.umi_start_index",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "umi_start_index",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": 16,
+                            "waiting": false
+                        },
+                        {
+                            "id": "umi_length",
+                            "type": "int",
+                            "valexp": "self.umi_length",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "umi_length",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": 10,
+                            "waiting": false
+                        },
+                        {
+                            "id": "software_version",
+                            "type": "string",
+                            "valexp": "self.software_version",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "software_version",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "cellranger 3.0.1",
+                            "waiting": false
+                        },
+                        {
+                            "id": "bcl2fastq_version",
+                            "type": "string",
+                            "valexp": "BCL2FASTQ_WITH_SAMPLESHEET.bcl2fastq_version",
+                            "mode": "reference",
+                            "output": "bcl2fastq_version",
+                            "sweep": false,
+                            "sweepRootId": "bcl2fastq_version",
+                            "node": "BCL2FASTQ_WITH_SAMPLESHEET",
+                            "matchedFork": 0,
+                            "value": "2.20.0.422",
+                            "waiting": false
+                        },
+                        {
+                            "id": "run_qc",
+                            "type": "bool",
+                            "valexp": "self.run_qc",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "run_qc",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": false,
+                            "waiting": false
+                        },
+                        {
+                            "id": "barcode_whitelist",
+                            "type": "string",
+                            "valexp": "self.barcode_whitelist",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "barcode_whitelist",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "/fh/fast/bloom_j/software/cellranger/cellranger-cs/3.0.1/lib/python/cellranger/barcodes/737K-august-2016.txt",
+                            "waiting": false
+                        }
+                    ],
+                    "Return": []
+                }
+            }
+        ],
+        "edges": [
+            {
+                "from": "ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.BCL2FASTQ_WITH_SAMPLESHEET",
+                "to": "ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.MAKE_QC_SUMMARY"
+            }
+        ],
+        "stagecodeLang": "Python",
+        "stagecodeCmd": "/fh/fast/bloom_j/software/cellranger/cellranger-cs/3.0.1/tenkit/mro/stages/make_fastqs/make_qc_summary"
+    },
+    {
+        "name": "MERGE_FASTQS_BY_LANE_SAMPLE",
+        "fqname": "ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.MERGE_FASTQS_BY_LANE_SAMPLE",
+        "type": "stage",
+        "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MERGE_FASTQS_BY_LANE_SAMPLE",
+        "state": "complete",
+        "metadata": {
+            "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MERGE_FASTQS_BY_LANE_SAMPLE",
+            "names": []
+        },
+        "sweepbindings": [],
+        "forks": [
+            {
+                "index": 0,
+                "argPermute": {},
+                "joinDef": {
+                    "__threads": 1,
+                    "__mem_gb": 1
+                },
+                "state": "complete",
+                "metadata": {
+                    "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MERGE_FASTQS_BY_LANE_SAMPLE/fork0",
+                    "names": [
+                        "complete",
+                        "invocation",
+                        "outs",
+                        "vdrkill"
+                    ]
+                },
+                "split_metadata": {
+                    "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MERGE_FASTQS_BY_LANE_SAMPLE/fork0/split",
+                    "names": [
+                        "args",
+                        "complete",
+                        "jobinfo",
+                        "log",
+                        "stage_defs",
+                        "stderr",
+                        "stdout"
+                    ]
+                },
+                "join_metadata": {
+                    "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MERGE_FASTQS_BY_LANE_SAMPLE/fork0/join",
+                    "names": [
+                        "args",
+                        "chunk_defs",
+                        "chunk_outs",
+                        "complete",
+                        "jobinfo",
+                        "log",
+                        "outs",
+                        "stderr",
+                        "stdout"
+                    ]
+                },
+                "chunks": [
+                    {
+                        "index": 0,
+                        "chunkDef": {
+                            "__mem_gb": 1,
+                            "__threads": 1,
+                            "input_files": [
+                                "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/HUNDREDuM_primer_1/HUNDREDuM_primer_S1_L001_I1_001.fastq.gz",
+                                "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/HUNDREDuM_primer_1/HUNDREDuM_primer_S1_L001_R1_001.fastq.gz",
+                                "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/HUNDREDuM_primer_1/HUNDREDuM_primer_S1_L001_R2_001.fastq.gz",
+                                "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/HUNDREDuM_primer_2/HUNDREDuM_primer_S2_L001_I1_001.fastq.gz",
+                                "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/HUNDREDuM_primer_2/HUNDREDuM_primer_S2_L001_R1_001.fastq.gz",
+                                "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/HUNDREDuM_primer_2/HUNDREDuM_primer_S2_L001_R2_001.fastq.gz",
+                                "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/HUNDREDuM_primer_3/HUNDREDuM_primer_S3_L001_I1_001.fastq.gz",
+                                "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/HUNDREDuM_primer_3/HUNDREDuM_primer_S3_L001_R1_001.fastq.gz",
+                                "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/HUNDREDuM_primer_3/HUNDREDuM_primer_S3_L001_R2_001.fastq.gz",
+                                "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/HUNDREDuM_primer_4/HUNDREDuM_primer_S4_L001_I1_001.fastq.gz",
+                                "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/HUNDREDuM_primer_4/HUNDREDuM_primer_S4_L001_R1_001.fastq.gz",
+                                "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/HUNDREDuM_primer_4/HUNDREDuM_primer_S4_L001_R2_001.fastq.gz"
+                            ],
+                            "lane": 1,
+                            "output_snum": "1",
+                            "project": "CL3WR",
+                            "sample_id": "HUNDREDuM_primer"
+                        },
+                        "state": "complete",
+                        "metadata": {
+                            "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MERGE_FASTQS_BY_LANE_SAMPLE/fork0/chnk0",
+                            "names": [
+                                "args",
+                                "complete",
+                                "jobinfo",
+                                "log",
+                                "outs",
+                                "stderr",
+                                "stdout"
+                            ]
+                        }
+                    },
+                    {
+                        "index": 1,
+                        "chunkDef": {
+                            "__mem_gb": 1,
+                            "__threads": 1,
+                            "input_files": [
+                                "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/TENuM_primer_1/TENuM_primer_S5_L001_I1_001.fastq.gz",
+                                "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/TENuM_primer_1/TENuM_primer_S5_L001_R1_001.fastq.gz",
+                                "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/TENuM_primer_1/TENuM_primer_S5_L001_R2_001.fastq.gz",
+                                "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/TENuM_primer_2/TENuM_primer_S6_L001_I1_001.fastq.gz",
+                                "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/TENuM_primer_2/TENuM_primer_S6_L001_R1_001.fastq.gz",
+                                "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/TENuM_primer_2/TENuM_primer_S6_L001_R2_001.fastq.gz",
+                                "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/TENuM_primer_3/TENuM_primer_S7_L001_I1_001.fastq.gz",
+                                "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/TENuM_primer_3/TENuM_primer_S7_L001_R1_001.fastq.gz",
+                                "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/TENuM_primer_3/TENuM_primer_S7_L001_R2_001.fastq.gz",
+                                "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/TENuM_primer_4/TENuM_primer_S8_L001_I1_001.fastq.gz",
+                                "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/TENuM_primer_4/TENuM_primer_S8_L001_R1_001.fastq.gz",
+                                "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/TENuM_primer_4/TENuM_primer_S8_L001_R2_001.fastq.gz"
+                            ],
+                            "lane": 1,
+                            "output_snum": "2",
+                            "project": "CL3WR",
+                            "sample_id": "TENuM_primer"
+                        },
+                        "state": "complete",
+                        "metadata": {
+                            "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MERGE_FASTQS_BY_LANE_SAMPLE/fork0/chnk1",
+                            "names": [
+                                "args",
+                                "complete",
+                                "jobinfo",
+                                "log",
+                                "outs",
+                                "stderr",
+                                "stdout"
+                            ]
+                        }
+                    }
+                ],
+                "bindings": {
+                    "Argument": [
+                        {
+                            "id": "fastq_path",
+                            "type": "path",
+                            "valexp": "BCL2FASTQ_WITH_SAMPLESHEET.fastq_path",
+                            "mode": "reference",
+                            "output": "fastq_path",
+                            "sweep": false,
+                            "sweepRootId": "fastq_path",
+                            "node": "BCL2FASTQ_WITH_SAMPLESHEET",
+                            "matchedFork": 0,
+                            "value": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path",
+                            "waiting": false
+                        },
+                        {
+                            "id": "samplesheet_path",
+                            "type": "csv",
+                            "valexp": "PREPARE_SAMPLESHEET.samplesheet",
+                            "mode": "reference",
+                            "output": "samplesheet",
+                            "sweep": false,
+                            "sweepRootId": "samplesheet_path",
+                            "node": "PREPARE_SAMPLESHEET",
+                            "matchedFork": 0,
+                            "value": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/PREPARE_SAMPLESHEET/fork0/chnk0-u499676f857/files/samplesheet.csv",
+                            "waiting": false
+                        },
+                        {
+                            "id": "remove_undetermined_fastqs",
+                            "type": "bool",
+                            "valexp": "self.delete_undetermined",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "delete_undetermined",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": false,
+                            "waiting": false
+                        },
+                        {
+                            "id": "remove_split_fastqs",
+                            "type": "bool",
+                            "valexp": "MAKE_QC_SUMMARY.completed",
+                            "mode": "reference",
+                            "output": "completed",
+                            "sweep": false,
+                            "sweepRootId": "remove_split_fastqs",
+                            "node": "MAKE_QC_SUMMARY",
+                            "matchedFork": 0,
+                            "value": true,
+                            "waiting": false
+                        },
+                        {
+                            "id": "bcl2fastq_version",
+                            "type": "string",
+                            "valexp": "BCL2FASTQ_WITH_SAMPLESHEET.bcl2fastq_version",
+                            "mode": "reference",
+                            "output": "bcl2fastq_version",
+                            "sweep": false,
+                            "sweepRootId": "bcl2fastq_version",
+                            "node": "BCL2FASTQ_WITH_SAMPLESHEET",
+                            "matchedFork": 0,
+                            "value": "2.20.0.422",
+                            "waiting": false
+                        }
+                    ],
+                    "Return": []
+                }
+            }
+        ],
+        "edges": [
+            {
+                "from": "ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.BCL2FASTQ_WITH_SAMPLESHEET",
+                "to": "ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.MERGE_FASTQS_BY_LANE_SAMPLE"
+            },
+            {
+                "from": "ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.PREPARE_SAMPLESHEET",
+                "to": "ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.MERGE_FASTQS_BY_LANE_SAMPLE"
+            },
+            {
+                "from": "ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.MAKE_QC_SUMMARY",
+                "to": "ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.MERGE_FASTQS_BY_LANE_SAMPLE"
+            }
+        ],
+        "stagecodeLang": "Python",
+        "stagecodeCmd": "/fh/fast/bloom_j/software/cellranger/cellranger-cs/3.0.1/tenkit/mro/stages/make_fastqs/merge_fastqs_by_lane_sample"
+    },
+    {
+        "name": "PREPARE_SAMPLESHEET",
+        "fqname": "ID.virus_hashing.MAKE_FASTQS_CS.MAKE_FASTQS.PREPARE_SAMPLESHEET",
+        "type": "stage",
+        "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/PREPARE_SAMPLESHEET",
+        "state": "complete",
+        "metadata": {
+            "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/PREPARE_SAMPLESHEET",
+            "names": []
+        },
+        "sweepbindings": [],
+        "forks": [
+            {
+                "index": 0,
+                "argPermute": {},
+                "joinDef": {
+                    "__threads": 1,
+                    "__mem_gb": 1
+                },
+                "state": "complete",
+                "metadata": {
+                    "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/PREPARE_SAMPLESHEET/fork0",
+                    "names": [
+                        "complete",
+                        "invocation",
+                        "outs",
+                        "vdrkill"
+                    ]
+                },
+                "split_metadata": {
+                    "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/PREPARE_SAMPLESHEET/fork0/split",
+                    "names": [
+                        "args",
+                        "complete",
+                        "stage_defs"
+                    ]
+                },
+                "join_metadata": {
+                    "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/PREPARE_SAMPLESHEET/fork0/join",
+                    "names": [
+                        "args",
+                        "chunk_defs",
+                        "complete",
+                        "outs"
+                    ]
+                },
+                "chunks": [
+                    {
+                        "index": 0,
+                        "chunkDef": {
+                            "__mem_gb": 1,
+                            "__threads": 1
+                        },
+                        "state": "complete",
+                        "metadata": {
+                            "path": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/PREPARE_SAMPLESHEET/fork0/chnk0",
+                            "names": [
+                                "args",
+                                "complete",
+                                "jobinfo",
+                                "log",
+                                "outs",
+                                "stderr",
+                                "stdout"
+                            ]
+                        }
+                    }
+                ],
+                "bindings": {
+                    "Argument": [
+                        {
+                            "id": "si_read_type",
+                            "type": "string",
+                            "valexp": "self.si_read_type",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "si_read_type",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "I1",
+                            "waiting": false
+                        },
+                        {
+                            "id": "run_path",
+                            "type": "path",
+                            "valexp": "self.run_path",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "run_path",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "/shared/ngs/illumina/bloom_lab/190830_M03100_0474_000000000-CL3WR",
+                            "waiting": false
+                        },
+                        {
+                            "id": "specs",
+                            "type": "map",
+                            "valexp": "self.specs",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "specs",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": [
+                                {
+                                    "csv": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/simple-samples.csv"
+                                }
+                            ],
+                            "waiting": false
+                        },
+                        {
+                            "id": "project",
+                            "type": "string",
+                            "valexp": "self.project",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "project",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "CL3WR",
+                            "waiting": false
+                        },
+                        {
+                            "id": "bc_read_type",
+                            "type": "string",
+                            "valexp": "self.bc_read_type",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "bc_read_type",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": "R1",
+                            "waiting": false
+                        },
+                        {
+                            "id": "bc_length",
+                            "type": "int",
+                            "valexp": "self.bc_length",
+                            "mode": "value",
+                            "output": "",
+                            "sweep": false,
+                            "sweepRootId": "bc_length",
+                            "node": "MAKE_FASTQS_CS",
+                            "matchedFork": 0,
+                            "value": 16,
+                            "waiting": false
+                        }
+                    ],
+                    "Return": []
+                }
+            }
+        ],
+        "edges": [],
+        "stagecodeLang": "Python",
+        "stagecodeCmd": "/fh/fast/bloom_j/software/cellranger/cellranger-cs/3.0.1/tenkit/mro/stages/make_fastqs/prepare_samplesheet"
+    }
+]

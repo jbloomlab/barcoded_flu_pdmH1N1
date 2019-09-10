@@ -1,0 +1,34 @@
+8400965797    3 drwxr-x---   2 dbacsik  bloom_j_grp        0 Sep  9 18:11 virus_hashing/MAKE_FASTQS_CS/fork0/files
+8400965799    3 drwxr-x---   2 dbacsik  bloom_j_grp        0 Sep  9 18:11 virus_hashing/MAKE_FASTQS_CS/fork0/join/files
+8400965798    3 drwxr-x---   2 dbacsik  bloom_j_grp        0 Sep  9 18:11 virus_hashing/MAKE_FASTQS_CS/fork0/split/files
+8400965945    0 lrwxrwxrwx   1 dbacsik  bloom_j_grp       22 Sep  9 18:14 virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MERGE_FASTQS_BY_LANE_SAMPLE/fork0/files -> join-u499676f8f7/files
+8415812550    3 drwxr-x---   2 dbacsik  bloom_j_grp        0 Sep  9 18:14 virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MERGE_FASTQS_BY_LANE_SAMPLE/fork0/split-u499676f8f7/files
+8411904775    3 drwxr-x---   2 dbacsik  bloom_j_grp        0 Sep  9 18:14 virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MERGE_FASTQS_BY_LANE_SAMPLE/fork0/join-u499676f8f7/files
+8415480507    3 drwxr-x---   2 dbacsik  bloom_j_grp        0 Sep  9 18:14 virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MERGE_FASTQS_BY_LANE_SAMPLE/fork0/chnk1-u499676f8fa/files
+8400965955    3 drwxr-x---   2 dbacsik  bloom_j_grp        0 Sep  9 18:14 virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MERGE_FASTQS_BY_LANE_SAMPLE/fork0/chnk0-u499676f8fa/files
+8415812477    0 lrwxrwxrwx   1 dbacsik  bloom_j_grp       22 Sep  9 18:12 virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/files -> join-u499676f860/files
+8411904710    3 drwxr-x---   2 dbacsik  bloom_j_grp        0 Sep  9 18:12 virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/split-u499676f860/files
+8411904712    3 drwxr-x---   2 dbacsik  bloom_j_grp       58 Sep  9 18:14 virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files
+8411904804    0 lrwxrwxrwx   1 dbacsik  bloom_j_grp       33 Sep  9 18:14 virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path -> ../../../../../../outs/fastq_path
+8415812580    0 lrwxrwxrwx   1 dbacsik  bloom_j_grp       35 Sep  9 18:14 virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/interop_path -> ../../../../../../outs/interop_path
+8400965862    3 drwxr-x---   2 dbacsik  bloom_j_grp        0 Sep  9 18:14 virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/chnk0-u499676f863/files
+8415812461    3 drwxr-x---   2 dbacsik  bloom_j_grp       72 Sep  9 18:14 virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/PREPARE_SAMPLESHEET/fork0/chnk0-u499676f857/files
+8415812470   34 -rw-r-----   1 dbacsik  bloom_j_grp      645 Sep  9 18:11 virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/PREPARE_SAMPLESHEET/fork0/chnk0-u499676f857/files/samplesheet.csv
+8400965979    0 lrwxrwxrwx   1 dbacsik  bloom_j_grp       44 Sep  9 18:14 virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/PREPARE_SAMPLESHEET/fork0/chnk0-u499676f857/files/input_samplesheet.csv -> ../../../../../../outs/input_samplesheet.csv
+8411904701    0 lrwxrwxrwx   1 dbacsik  bloom_j_grp       23 Sep  9 18:11 virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/PREPARE_SAMPLESHEET/fork0/files -> chnk0-u499676f857/files
+8411904698    3 drwxr-x---   2 dbacsik  bloom_j_grp        0 Sep  9 18:11 virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/PREPARE_SAMPLESHEET/fork0/join/files
+8411904697    3 drwxr-x---   2 dbacsik  bloom_j_grp        0 Sep  9 18:11 virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/PREPARE_SAMPLESHEET/fork0/split/files
+8415480497    3 drwxr-x---   2 dbacsik  bloom_j_grp        0 Sep  9 18:14 virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/fork0/files
+8411904777    3 drwxr-x---   2 dbacsik  bloom_j_grp        0 Sep  9 18:14 virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/fork0/join/files
+8415480498    3 drwxr-x---   2 dbacsik  bloom_j_grp        0 Sep  9 18:14 virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/fork0/split/files
+8400965820    0 lrwxrwxrwx   1 dbacsik  bloom_j_grp       23 Sep  9 18:11 virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MAKE_FASTQS_PREFLIGHT/fork0/files -> chnk0-u499676f844/files
+8400965806    3 drwxr-x---   2 dbacsik  bloom_j_grp        0 Sep  9 18:11 virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MAKE_FASTQS_PREFLIGHT/fork0/join/files
+8415812443    3 drwxr-x---   2 dbacsik  bloom_j_grp        0 Sep  9 18:11 virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MAKE_FASTQS_PREFLIGHT/fork0/chnk0-u499676f844/files
+8415812433    3 drwxr-x---   2 dbacsik  bloom_j_grp        0 Sep  9 18:11 virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MAKE_FASTQS_PREFLIGHT/fork0/split/files
+8415480482    0 lrwxrwxrwx   1 dbacsik  bloom_j_grp       22 Sep  9 18:14 virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MAKE_QC_SUMMARY/fork0/files -> join-u499676f8f1/files
+8411904770    3 drwxr-x---   2 dbacsik  bloom_j_grp        0 Sep  9 18:14 virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MAKE_QC_SUMMARY/fork0/join-u499676f8f1/files
+8415812536    3 drwxr-x---   2 dbacsik  bloom_j_grp        0 Sep  9 18:14 virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MAKE_QC_SUMMARY/fork0/split-u499676f8f1/files
+8411904677    0 lrwxrwxrwx   1 dbacsik  bloom_j_grp       23 Sep  9 18:11 virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MAKE_FASTQS_PREFLIGHT_LOCAL/fork0/files -> chnk0-u499676f844/files
+8400965810    3 drwxr-x---   2 dbacsik  bloom_j_grp        0 Sep  9 18:11 virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MAKE_FASTQS_PREFLIGHT_LOCAL/fork0/join/files
+8415812437    3 drwxr-x---   2 dbacsik  bloom_j_grp        0 Sep  9 18:11 virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MAKE_FASTQS_PREFLIGHT_LOCAL/fork0/chnk0-u499676f844/files
+8400965809    3 drwxr-x---   2 dbacsik  bloom_j_grp        0 Sep  9 18:11 virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/MAKE_FASTQS_PREFLIGHT_LOCAL/fork0/split/files

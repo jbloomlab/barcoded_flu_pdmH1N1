@@ -23,3 +23,6 @@ However, it is possible that the primer bound further into the molecule, at the 
 ## Demultiplexing Strategy
 
 To demultiplex these samples, I will use the 10X cellranger mkfastq software, as the indexes are unaffected by the weirdness at the Read 1 end.
+
+The demuxed FASTQ files are stored in a relatively deep path: out/virus_hashing/outs/fastq_path/`NAME OF THE ILLUMINA RUN`/`SAMPLE`  
+Each sample gets its own folder.

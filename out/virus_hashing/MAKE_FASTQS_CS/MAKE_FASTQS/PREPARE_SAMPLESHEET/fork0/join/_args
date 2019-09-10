@@ -1,0 +1,14 @@
+{
+    "__mem_gb": 1,
+    "__threads": 1,
+    "bc_length": 16,
+    "bc_read_type": "R1",
+    "project": "CL3WR",
+    "run_path": "/shared/ngs/illumina/bloom_lab/190830_M03100_0474_000000000-CL3WR",
+    "si_read_type": "I1",
+    "specs": [
+        {
+            "csv": "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/simple-samples.csv"
+        }
+    ]
+}
