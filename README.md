@@ -26,3 +26,11 @@ To demultiplex these samples, I will use the 10X cellranger mkfastq software, as
 
 The demuxed FASTQ files are stored in a relatively deep path: out/virus_hashing/outs/fastq_path/`NAME OF THE ILLUMINA RUN`/`SAMPLE`  
 Each sample gets its own folder.
+
+## Mapping Strategy
+
+Before mapping, I will quality filter R2 reads and trim them to 100 bp using cutadapt. This is approximately the minimum length that 10X recommends for Read 2 sequencing.
+
+I will then align the reads locally using botwie2. Local alignment will allow for any large deletions to map successfully.
+
+At this point in time, all of these steps are done on the command line manually, as I really want to know what these flu reads look like quickly. Once I have an answer, I will convert this notebook to a snakemake file or some kind of notebook-based bash sequence that does each of these steps automatically (for reproducibility).
