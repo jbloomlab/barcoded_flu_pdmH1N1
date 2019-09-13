@@ -13017,45 +13017,6 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
-    </style>
 
 
 <style type="text/css">
@@ -13136,6 +13097,7 @@ div#notebook {
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
 
 <span class="kn">from</span> <span class="nn">Bio</span> <span class="k">import</span> <span class="n">SeqIO</span>
+<span class="kn">import</span> <span class="nn">pysam</span>
 </pre></div>
 
     </div>
@@ -13223,7 +13185,7 @@ div#notebook {
 <h2 id="Handle-Read-1-Data">Handle Read 1 Data<a class="anchor-link" href="#Handle-Read-1-Data">&#182;</a></h2><h3 id="Split-features-based-on-position-in-Read-1">Split features based on position in Read 1<a class="anchor-link" href="#Split-features-based-on-position-in-Read-1">&#182;</a></h3><p>Now, I must parse out the features I expect to be present in each of these reads. For this, I will simply split out the sequence based on position, since each feature should be some exact length. The lengths I anticipate are designated in a cell below.</p>
 <p>The order of the features looks like this, depending on whether the adapter was appended in a way that retained the Cell Barcode and UMI or not:<br>
 With Cell Barcode/UMI = <code>TruSeq Read 1 - Cell Barcode - UMI - PolyA</code><br>
-Without Cell Barcode/UMI = <code>TruSeq Read 1 - Viral Barcode - CDS</code>; an important note: if the molecule looks like this, the CDS will be <code>GCGGCCGCCT</code>.</p>
+Without Cell Barcode/UMI = <code>TruSeq Read 1 - Viral Barcode - CDS</code>; an important note: if the molecule looks like this, the CDS will start with the 10 bp sequence <code>GCGGCCGCCT</code>.</p>
 <p>I will parse the <code>TruSeq Read 1</code> feature as the first <code>22 bp</code>.<br>
 I will parse the <code>Cell Barcode</code> OR <code>Viral Barcode</code> as the next <code>16 bp</code>.<br>
 Finally, I will parse the <code>UMI</code> OR <code>CDS</code> as the final <code>12 bp</code>.</p>
@@ -13276,8 +13238,8 @@ Finally, I will parse the <code>UMI</code> OR <code>CDS</code> as the final <cod
                 <span class="n">r1_dict</span><span class="p">[</span><span class="s1">&#39;primer&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tup</span><span class="o">.</span><span class="n">sample</span><span class="p">)</span>
                 <span class="n">r1_dict</span><span class="p">[</span><span class="s1">&#39;truseq&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">seq</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">22</span><span class="p">]))</span>
                 <span class="n">r1_dict</span><span class="p">[</span><span class="s1">&#39;bc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">seq</span><span class="p">[</span><span class="mi">22</span><span class="p">:</span><span class="mi">38</span><span class="p">]))</span>
-                <span class="n">r1_dict</span><span class="p">[</span><span class="s1">&#39;umi_or_cds&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">seq</span><span class="p">[</span><span class="mi">38</span><span class="p">:</span><span class="mi">48</span><span class="p">]))</span>
-                <span class="k">if</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">seq</span><span class="p">[</span><span class="mi">38</span><span class="p">:</span><span class="mi">48</span><span class="p">])</span> <span class="ow">in</span> <span class="n">virus_constant</span><span class="p">):</span>
+                <span class="n">r1_dict</span><span class="p">[</span><span class="s1">&#39;umi_or_cds&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">seq</span><span class="p">[</span><span class="mi">38</span><span class="p">:</span><span class="mi">50</span><span class="p">]))</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">virus_constant</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">seq</span><span class="p">[</span><span class="mi">38</span><span class="p">:</span><span class="mi">50</span><span class="p">])):</span>
                     <span class="n">r1_dict</span><span class="p">[</span><span class="s1">&#39;has_cell_bc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">r1_dict</span><span class="p">[</span><span class="s1">&#39;has_cell_bc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
@@ -13325,6 +13287,9 @@ Done loading FASTQ files.
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Converting to dataframe.&#39;</span><span class="p">)</span>
 <span class="n">r1_reads</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">r1_dict</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;There are {len(r1_reads[&#39;record_id&#39;])} reads in this data set.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+      
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dataframe head:&#39;</span><span class="p">)</span>
 <span class="n">r1_reads</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
@@ -13344,6 +13309,8 @@ Done loading FASTQ files.
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Converting to dataframe.
+There are 537641 reads in this data set.
+
 Dataframe head:
 </pre>
 </div>
@@ -13389,7 +13356,7 @@ Dataframe head:
       <td>HUNDREDuM_primer</td>
       <td>CTACACGACGCTCTTCNGATCT</td>
       <td>ACGACCGCGTCCTCTT</td>
-      <td>CCTCTTCCCC</td>
+      <td>CCTCTTCCCCGG</td>
       <td>True</td>
     </tr>
     <tr>
@@ -13398,7 +13365,7 @@ Dataframe head:
       <td>HUNDREDuM_primer</td>
       <td>CTACACGACGCTCTTCNGATCT</td>
       <td>CTCTCCTTCCTCCCTC</td>
-      <td>CCCTCTCCCC</td>
+      <td>CCCTCTCCCCCT</td>
       <td>True</td>
     </tr>
     <tr>
@@ -13407,7 +13374,7 @@ Dataframe head:
       <td>HUNDREDuM_primer</td>
       <td>CTACACGACGCTCTTCNGATCT</td>
       <td>CTCTGCCTCCCGTGTA</td>
-      <td>CAAACATTTC</td>
+      <td>CAAACATTTCTC</td>
       <td>True</td>
     </tr>
     <tr>
@@ -13416,7 +13383,7 @@ Dataframe head:
       <td>HUNDREDuM_primer</td>
       <td>CTACACGACGCTCTTCNGATCT</td>
       <td>TCAACGATCGCCATTA</td>
-      <td>TTCCAACCTG</td>
+      <td>TTCCAACCTGTT</td>
       <td>True</td>
     </tr>
     <tr>
@@ -13425,7 +13392,7 @@ Dataframe head:
       <td>HUNDREDuM_primer</td>
       <td>CTACACGACGCTCTTCNGATCT</td>
       <td>AACCGCCTCCCGTTTC</td>
-      <td>CCCCTCCCTC</td>
+      <td>CCCCTCCCTCTT</td>
       <td>True</td>
     </tr>
   </tbody>
@@ -13498,12 +13465,21 @@ Dataframe head:
   </thead>
   <tbody>
     <tr>
+      <td>1886</td>
+      <td>M03100:474:000000000-CL3WR:1:2116:21363:5878</td>
+      <td>HUNDREDuM_primer</td>
+      <td>CTACACGACGCTCTTCNGATCT</td>
+      <td>GGATTGCGGGCCTTCC</td>
+      <td>CGCGGCCGCCTA</td>
+      <td>False</td>
+    </tr>
+    <tr>
       <td>4676</td>
       <td>M03100:474:000000000-CL3WR:1:2116:8072:7817</td>
       <td>HUNDREDuM_primer</td>
       <td>CTACACGACGCTCTTCNGATCT</td>
       <td>TAAGGCCCTGATATTC</td>
-      <td>GCGGCCGCCT</td>
+      <td>GCGGCCGCCTGT</td>
       <td>False</td>
     </tr>
     <tr>
@@ -13512,7 +13488,7 @@ Dataframe head:
       <td>HUNDREDuM_primer</td>
       <td>CTACACGACGCTCTTCNGATCT</td>
       <td>GATGGTGGTACCTGCC</td>
-      <td>GCGGCCGCCT</td>
+      <td>GCGGCCGCCTAT</td>
       <td>False</td>
     </tr>
     <tr>
@@ -13521,7 +13497,7 @@ Dataframe head:
       <td>HUNDREDuM_primer</td>
       <td>CTACACGACGCTCTTCNGATCT</td>
       <td>GATGGTGGTACCTGCC</td>
-      <td>GCGGCCGCCT</td>
+      <td>GCGGCCGCCTAT</td>
       <td>False</td>
     </tr>
     <tr>
@@ -13530,16 +13506,7 @@ Dataframe head:
       <td>HUNDREDuM_primer</td>
       <td>CTACACGACGCTCTTCNGATCT</td>
       <td>GAAATTTGCGGTTCCG</td>
-      <td>GCGGCCGCCT</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <td>9510</td>
-      <td>M03100:474:000000000-CL3WR:1:2116:24188:10470</td>
-      <td>HUNDREDuM_primer</td>
-      <td>CTACACGACGCTCTTCNGATCT</td>
-      <td>GATGGCTGTACCTGCC</td>
-      <td>GCGGCCGCCT</td>
+      <td>GCGGCCGCCTTG</td>
       <td>False</td>
     </tr>
   </tbody>
@@ -13621,32 +13588,32 @@ Dataframe head:
     <tr>
       <td rowspan="2" valign="top">HUNDREDuM_primer</td>
       <td>False</td>
-      <td>274</td>
-      <td>274</td>
-      <td>274</td>
-      <td>274</td>
+      <td>276</td>
+      <td>276</td>
+      <td>276</td>
+      <td>276</td>
     </tr>
     <tr>
       <td>True</td>
-      <td>300039</td>
-      <td>300039</td>
-      <td>300039</td>
-      <td>300039</td>
+      <td>300037</td>
+      <td>300037</td>
+      <td>300037</td>
+      <td>300037</td>
     </tr>
     <tr>
       <td rowspan="2" valign="top">TENuM_primer</td>
       <td>False</td>
-      <td>265</td>
-      <td>265</td>
-      <td>265</td>
-      <td>265</td>
+      <td>266</td>
+      <td>266</td>
+      <td>266</td>
+      <td>266</td>
     </tr>
     <tr>
       <td>True</td>
-      <td>237063</td>
-      <td>237063</td>
-      <td>237063</td>
-      <td>237063</td>
+      <td>237062</td>
+      <td>237062</td>
+      <td>237062</td>
+      <td>237062</td>
     </tr>
   </tbody>
 </table>
@@ -13670,7 +13637,7 @@ Dataframe head:
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Handle-Read-2-Data">Handle Read 2 Data<a class="anchor-link" href="#Handle-Read-2-Data">&#182;</a></h2><h3 id="Call-a-read-as-viral/not-viral">Call a read as viral/not viral<a class="anchor-link" href="#Call-a-read-as-viral/not-viral">&#182;</a></h3><p>The fastest way to figure out how many of our viral reads retain their cell barcode is just to search for a snippet of read 2 in the viral genome.</p>
+<h2 id="Handle-Read-2-Data">Handle Read 2 Data<a class="anchor-link" href="#Handle-Read-2-Data">&#182;</a></h2><h3 id="Use-Python-to-Call-a-read-as-viral/not-viral">Use Python to Call a read as viral/not viral<a class="anchor-link" href="#Use-Python-to-Call-a-read-as-viral/not-viral">&#182;</a></h3><p>The fastest way to figure out how many of our viral reads retain their cell barcode is just to search for a snippet of read 2 in the viral genome.</p>
 <p>First, I will define the viral genome.  I have directly copied a script which automatically generates FASTA files for this from another project (see <a href="https://github.com/jbloomlab/pdmH1N1_flu_single_cell/tree/master/data/flu_sequences">here</a>). 
 Then, I will trim Read 2 back to ~50 bp.
 Finally, I will check to see if each read is in the viral genome. These will be called viral molecules, and all others will be assumed to be host.</p>
@@ -13780,7 +13747,7 @@ There were 16 sequences loaded from 2 files.
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">r2_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;record_id&#39;</span><span class="p">:</span> <span class="p">[],</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">r2_simple_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;record_id&#39;</span><span class="p">:</span> <span class="p">[],</span>
                <span class="s1">&#39;primer&#39;</span><span class="p">:</span> <span class="p">[],</span>
                <span class="s1">&#39;cds&#39;</span><span class="p">:</span> <span class="p">[],</span>
                <span class="s1">&#39;host_or_virus&#39;</span><span class="p">:</span> <span class="p">[]</span>
@@ -13791,22 +13758,25 @@ There were 16 sequences loaded from 2 files.
     <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Processing reads for sample &quot;</span><span class="si">{tup.sample}</span><span class="s1">&quot;&#39;</span><span class="p">)</span>
     <span class="n">r1files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tup</span><span class="o">.</span><span class="n">data_file</span><span class="p">,</span> <span class="s1">&#39;*R2*.fastq.gz&#39;</span><span class="p">))</span>
     <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">r1files</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Parsing file </span><span class="si">{file}</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="k">with</span> <span class="n">gzip</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;rt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">gunzip_file</span><span class="p">:</span>
-            <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-            <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">SeqIO</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">gunzip_file</span><span class="p">,</span> <span class="s2">&quot;fastq&quot;</span><span class="p">):</span>
-                <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-                <span class="k">if</span> <span class="n">count</span> <span class="o">%</span> <span class="mi">50000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;</span><span class="si">{count}</span><span class="s2"> sequences processed.&quot;</span><span class="p">)</span>
-                <span class="c1"># Start parsing features</span>
-                <span class="n">r2_dict</span><span class="p">[</span><span class="s1">&#39;record_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
-                <span class="n">r2_dict</span><span class="p">[</span><span class="s1">&#39;primer&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tup</span><span class="o">.</span><span class="n">sample</span><span class="p">)</span>
-                <span class="n">r2_dict</span><span class="p">[</span><span class="s1">&#39;cds&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">seq</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">100</span><span class="p">]))</span>
-                <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">seq</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">100</span><span class="p">])</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">seqs</span><span class="p">):</span>
-                    <span class="n">r2_dict</span><span class="p">[</span><span class="s1">&#39;host_or_virus&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Virus&#39;</span><span class="p">)</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="n">r2_dict</span><span class="p">[</span><span class="s1">&#39;host_or_virus&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Host&#39;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Done.</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="s1">&#39;qualfiltered&#39;</span> <span class="ow">in</span> <span class="n">file</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="s1">&#39;trimmed&#39;</span> <span class="ow">in</span> <span class="n">file</span><span class="p">):</span>
+            <span class="k">pass</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Parsing file </span><span class="si">{file}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="k">with</span> <span class="n">gzip</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;rt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">gunzip_file</span><span class="p">:</span>
+                <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">SeqIO</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">gunzip_file</span><span class="p">,</span> <span class="s2">&quot;fastq&quot;</span><span class="p">):</span>
+                    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="k">if</span> <span class="n">count</span> <span class="o">%</span> <span class="mi">50000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;</span><span class="si">{count}</span><span class="s2"> sequences processed.&quot;</span><span class="p">)</span>
+                    <span class="c1"># Start parsing features</span>
+                    <span class="n">r2_simple_dict</span><span class="p">[</span><span class="s1">&#39;record_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+                    <span class="n">r2_simple_dict</span><span class="p">[</span><span class="s1">&#39;primer&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tup</span><span class="o">.</span><span class="n">sample</span><span class="p">)</span>
+                    <span class="n">r2_simple_dict</span><span class="p">[</span><span class="s1">&#39;cds&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">seq</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">100</span><span class="p">]))</span>
+                    <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">seq</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">100</span><span class="p">])</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">seqs</span><span class="p">):</span>
+                        <span class="n">r2_simple_dict</span><span class="p">[</span><span class="s1">&#39;host_or_virus&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Virus&#39;</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">r2_simple_dict</span><span class="p">[</span><span class="s1">&#39;host_or_virus&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Host&#39;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Done.</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Done loading FASTQ files.</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
@@ -13859,9 +13829,12 @@ Done loading FASTQ files.
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Converting to dataframe.&#39;</span><span class="p">)</span>
-<span class="n">r2_reads</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">r2_dict</span><span class="p">)</span>
+<span class="n">r2_simple_reads</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">r2_simple_dict</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;There are {len(r2_simple_reads[&#39;record_id&#39;])} reads in this data set.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dataframe head:&#39;</span><span class="p">)</span>
-<span class="n">r2_reads</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">r2_simple_reads</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13879,6 +13852,8 @@ Done loading FASTQ files.
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Converting to dataframe.
+There are 537641 reads in this data set.
+
 Dataframe head:
 </pre>
 </div>
@@ -13967,7 +13942,7 @@ Dataframe head:
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">r2_reads</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;primer&#39;</span><span class="p">,</span><span class="s1">&#39;host_or_virus&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">r2_simple_reads</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;primer&#39;</span><span class="p">,</span><span class="s1">&#39;host_or_virus&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -14053,9 +14028,11 @@ Dataframe head:
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">merged_reads</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">r1_reads</span><span class="p">,</span> <span class="n">r2_reads</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;record_id&quot;</span><span class="p">,</span><span class="s2">&quot;primer&quot;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">merged_simple_reads</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">r1_reads</span><span class="p">,</span> <span class="n">r2_simple_reads</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;record_id&quot;</span><span class="p">,</span><span class="s2">&quot;primer&quot;</span><span class="p">])</span>
 
-<span class="n">merged_reads</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;There are {len(merged_simple_reads[&#39;record_id&#39;])} reads in this data set.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">merged_simple_reads</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -14065,6 +14042,18 @@ Dataframe head:
 <div class="output_wrapper">
 <div class="output">
 
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>There are 537641 reads in this data set.
+
+</pre>
+</div>
+</div>
 
 <div class="output_area">
 
@@ -14108,7 +14097,7 @@ Dataframe head:
       <td>HUNDREDuM_primer</td>
       <td>CTACACGACGCTCTTCNGATCT</td>
       <td>ACGACCGCGTCCTCTT</td>
-      <td>CCTCTTCCCC</td>
+      <td>CCTCTTCCCCGG</td>
       <td>True</td>
       <td>ACGCAGTCGTATCAACCCCCCGTACATCCCCCCCCTCCTCCCCCTC...</td>
       <td>Host</td>
@@ -14119,7 +14108,7 @@ Dataframe head:
       <td>HUNDREDuM_primer</td>
       <td>CTACACGACGCTCTTCNGATCT</td>
       <td>CTCTCCTTCCTCCCTC</td>
-      <td>CCCTCTCCCC</td>
+      <td>CCCTCTCCCCCT</td>
       <td>True</td>
       <td>CTCCCGCCGTCTCTCCCCCCCCTCCCTCCCCCCCCCCCCCCCCCCC...</td>
       <td>Host</td>
@@ -14130,7 +14119,7 @@ Dataframe head:
       <td>HUNDREDuM_primer</td>
       <td>CTACACGACGCTCTTCNGATCT</td>
       <td>CTCTGCCTCCCGTGTA</td>
-      <td>CAAACATTTC</td>
+      <td>CAAACATTTCTC</td>
       <td>True</td>
       <td>ACCCAGTCCTATCAACCCCCCCTACCTCCCCCCCCCCCCCCCTCCC...</td>
       <td>Host</td>
@@ -14141,7 +14130,7 @@ Dataframe head:
       <td>HUNDREDuM_primer</td>
       <td>CTACACGACGCTCTTCNGATCT</td>
       <td>TCAACGATCGCCATTA</td>
-      <td>TTCCAACCTG</td>
+      <td>TTCCAACCTGTT</td>
       <td>True</td>
       <td>ATTCCTTACACTCACCCACTCGTCTCTCCTTTCCCCCCCTCTTCCC...</td>
       <td>Host</td>
@@ -14152,7 +14141,7 @@ Dataframe head:
       <td>HUNDREDuM_primer</td>
       <td>CTACACGACGCTCTTCNGATCT</td>
       <td>AACCGCCTCCCGTTTC</td>
-      <td>CCCCTCCCTC</td>
+      <td>CCCCTCCCTCTT</td>
       <td>True</td>
       <td>CTTGACATCTCCATCCCACACCACCCCAACCTCCCCCCTCCCACTT...</td>
       <td>Host</td>
@@ -14181,7 +14170,7 @@ Dataframe head:
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">merged_reads</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;host_or_virus&#39;</span><span class="p">,</span><span class="s1">&#39;has_cell_bc&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">merged_simple_reads</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;host_or_virus&#39;</span><span class="p">,</span><span class="s1">&#39;has_cell_bc&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -14240,21 +14229,21 @@ Dataframe head:
     <tr>
       <td rowspan="2" valign="top">Host</td>
       <td>False</td>
-      <td>530</td>
-      <td>530</td>
-      <td>530</td>
-      <td>530</td>
-      <td>530</td>
-      <td>530</td>
+      <td>533</td>
+      <td>533</td>
+      <td>533</td>
+      <td>533</td>
+      <td>533</td>
+      <td>533</td>
     </tr>
     <tr>
       <td>True</td>
-      <td>536847</td>
-      <td>536847</td>
-      <td>536847</td>
-      <td>536847</td>
-      <td>536847</td>
-      <td>536847</td>
+      <td>536844</td>
+      <td>536844</td>
+      <td>536844</td>
+      <td>536844</td>
+      <td>536844</td>
+      <td>536844</td>
     </tr>
     <tr>
       <td rowspan="2" valign="top">Virus</td>
@@ -14300,7 +14289,7 @@ Dataframe head:
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">merged_reads</span><span class="p">[(</span><span class="n">merged_reads</span><span class="p">[</span><span class="s1">&#39;host_or_virus&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Host&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">merged_reads</span><span class="p">[</span><span class="s1">&#39;has_cell_bc&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">False</span><span class="p">)]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">][</span><span class="s1">&#39;cds&#39;</span><span class="p">]:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">merged_simple_reads</span><span class="p">[(</span><span class="n">merged_simple_reads</span><span class="p">[</span><span class="s1">&#39;host_or_virus&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Host&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">merged_simple_reads</span><span class="p">[</span><span class="s1">&#39;has_cell_bc&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">False</span><span class="p">)]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">][</span><span class="s1">&#39;cds&#39;</span><span class="p">]:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 </pre></div>
 
@@ -14318,7 +14307,8 @@ Dataframe head:
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CTGTCCTCCACTCTTCCGCACTGTACAACATACCAAAAACTCCAACACTTATAGCCACGAAAGCTAAGTAGGGTTGGTAGAAGTGTGCACTGGGCGAGCC
+<pre>GTTGTATAGAAGAGAGGAGCACCAGGAAGTGGGCGAACGGCGCGTTGCAATGCCGGACTAGCATAAAATGATGCACCATAGGCGGGCGCGAGGAGGCGAA
+CTGTCCTCCACTCTTCCGCACTGTACAACATACCAAAAACTCCAACACTTATAGCCACGAAAGCTAAGTAGGGTTGGTAGAAGTGTGCACTGGGCGAGCC
 AAGCAGTGGTATCAACGCAGAGTACATGGGGACCCCCGAGCCGCAAAAGCAGGGGAAAACAAAAGCAACCAAATTGAAAGCAATACTAGTAGTTCTGCTA
 AAGCAGTGGTATCAACGCAGAGTACACGGGGGCCGGCCGCGCAGCAAAAGCAGGGGAAAACAAAAGCAACCAAATTGAAAGCAATACTAGTAGTTCTGCT
 AGCAGTGGTATCAACGCAGAGTACATGGGGGCAGTAAGATCGCGAAAGCAGGAGTTTAAACCGAATCCAAACCAGAAAATAATAACCATTGGGTCAATCT
@@ -14327,7 +14317,6 @@ AAGCAGTGGTATCAACGCAGAGTACATGGGGGGTAGAGGCTGCAAAAGCAGGGGAAAACAAAAGCAACCAAATTGAAAGC
 AAATGAGTGGACCGGCTCTAGCGGGAGTTTTGTTCAGCATCCAGAACTAACAGGGCTGGATTGTATAAGACCTTGCTTCTGGGTTGAACTAATCCGAGGG
 AAGCAGTGGTATCAACGCAGAGTACATGGGAGGCTTGAGCAGCAAAAGCAGGGGAAAACAAAAGCAACCAAATTGAAAGCAATACTAGTAGTTCTGCTAT
 CAGTGGTATCAACGCAGAGTACATGGGAAAACAAAAGCAACCAAATTGAAAGCAATACTAGTAGTTCTGCTATATACATTTGCAACCGCAATTGCAGACA
-AAGCAGTGGTATCAACGCAGAGTACATGGGGAGCCCCGCCGCAGCAAAAGCAGGGGAAAACAAAAGCAACCAAATTGAAAGCAATACTAGTAGTTCTGCT
 </pre>
 </div>
 </div>
@@ -14355,12 +14344,51 @@ AAGCAGTGGTATCAACGCAGAGTACATGGGGAGCCCCGCCGCAGCAAAAGCAGGGGAAAACAAAAGCAACCAAATTGAAA
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Use-Bowtie2-to-call-a-read-as-viral/not-viral">Use Bowtie2 to call a read as viral/not viral<a class="anchor-link" href="#Use-Bowtie2-to-call-a-read-as-viral/not-viral">&#182;</a></h3><p>Since the simple search strategy I used above was not very successful -- it broke on mutations -- I have used bowtie2 to <em>locally</em> align trimmed R2 reads to the influenza reference genome.</p>
+<p>The following actions took place manually in the command line. This is not ideal, and I will eventually go back and automate these.</p>
+<p>First, I concatenated the flu-CA09 and flu-CA09-doublesyn fasta files into one flu_genome.fasta.<br>
+Then, I used <code>bowtie2-build</code> to make a flu reference genome out of this.</p>
+<p>I trimmed my R2 reads for quality (q score = 10+33), then trimmed them down to 100 bp using <code>cutadapt</code>.</p>
+<p>Finally, I used <code>bowtie2 -local</code> to align the reads from each sample to the reference genome. This allows for deletions.</p>
+<p>I converted the SAM files to BAM files and sorted them. They are stored in the <code>out</code> folder.</p>
+<p>Next, I will load these BAM files of all reads that mapped to a flu transcript. I will extract the record ID and merge this on the R1 dataframe.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Load BAM Files</span>
+<span class="n">r2_bowtie_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;record_id&#39;</span><span class="p">:</span> <span class="p">[],</span>
+               <span class="s1">&#39;primer&#39;</span><span class="p">:</span> <span class="p">[],</span>
+               <span class="s1">&#39;cds&#39;</span><span class="p">:</span> <span class="p">[],</span>
+               <span class="s1">&#39;host_or_virus&#39;</span><span class="p">:</span> <span class="p">[]</span>
+              <span class="p">}</span>
+
+<span class="k">for</span> <span class="n">tup</span> <span class="ow">in</span> <span class="n">samples</span><span class="o">.</span><span class="n">itertuples</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Processing reads for sample &quot;</span><span class="si">{tup.sample}</span><span class="s1">&quot;&#39;</span><span class="p">)</span>
+    <span class="n">sample_prefix</span> <span class="o">=</span> <span class="n">tup</span><span class="o">.</span><span class="n">sample</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)</span>
+    <span class="n">bamfile</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;out&#39;</span><span class="p">,</span> <span class="n">sample_prefix</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;_aligned.sam&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Reading in BAM file: </span><span class="si">{bamfile}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">bam_object</span> <span class="o">=</span> <span class="n">pysam</span><span class="o">.</span><span class="n">AlignmentFile</span><span class="p">(</span><span class="n">bamfile</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">bam_object</span><span class="p">:</span>
+            <span class="c1"># Start parsing features</span>
+            <span class="n">r2_bowtie_dict</span><span class="p">[</span><span class="s1">&#39;record_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">query_name</span><span class="p">)</span>
+            <span class="n">r2_bowtie_dict</span><span class="p">[</span><span class="s1">&#39;primer&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tup</span><span class="o">.</span><span class="n">sample</span><span class="p">)</span>
+            <span class="n">r2_bowtie_dict</span><span class="p">[</span><span class="s1">&#39;cds&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">query_sequence</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">record</span><span class="o">.</span><span class="n">is_unmapped</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+                <span class="n">r2_bowtie_dict</span><span class="p">[</span><span class="s1">&#39;host_or_virus&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Host&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">r2_bowtie_dict</span><span class="p">[</span><span class="s1">&#39;host_or_virus&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Virus&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Done.</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        
+<span class="n">bam_object</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -14373,15 +14401,578 @@ AAGCAGTGGTATCAACGCAGAGTACATGGGGAGCCCCGCCGCAGCAAAAGCAGGGGAAAACAAAAGCAACCAAATTGAAA
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[23]:</div>
+    <div class="prompt"></div>
 
 
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Processing reads for sample &#34;HUNDREDuM_primer&#34;
+Reading in BAM file: out/HUNDREDuM_aligned.sam
+Done.
 
+Processing reads for sample &#34;TENuM_primer&#34;
+Reading in BAM file: out/TENuM_aligned.sam
+Done.
 
-<div class="output_text output_subarea output_execute_result">
-<pre>181452</pre>
+</pre>
+</div>
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Converting to dataframe.&#39;</span><span class="p">)</span>
+<span class="n">r2_bowtie_reads</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">r2_bowtie_dict</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;There are {len(r2_bowtie_reads[&#39;record_id&#39;])} reads in this data set.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dataframe head:&#39;</span><span class="p">)</span>
+<span class="n">r2_bowtie_reads</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Converting to dataframe.
+There are 537641 reads in this data set.
+
+Dataframe head:
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[19]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>record_id</th>
+      <th>primer</th>
+      <th>cds</th>
+      <th>host_or_virus</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>M03100:474:000000000-CL3WR:1:2116:16081:1664</td>
+      <td>HUNDREDuM_primer</td>
+      <td>ACGCAGTCGTATCAACCCCCCGTACATCCCCCCCCTCCTCCCCCTC...</td>
+      <td>Host</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>M03100:474:000000000-CL3WR:1:2116:21218:1667</td>
+      <td>HUNDREDuM_primer</td>
+      <td>CTCCCGCCGTCTCTCCCCCCCCTCCCTCCCCCCCCCCCCCCCCCCC...</td>
+      <td>Host</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>M03100:474:000000000-CL3WR:1:2116:17297:1672</td>
+      <td>HUNDREDuM_primer</td>
+      <td>ACCCAGTCCTATCAACCCCCCCTACCTCCCCCCCCCCCCCCCTCCC...</td>
+      <td>Host</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>M03100:474:000000000-CL3WR:1:2116:21080:1736</td>
+      <td>HUNDREDuM_primer</td>
+      <td>ATTCCTTACACTCACCCACTCGTCTCTCCTTTCCCCCCCTCTTCCC...</td>
+      <td>Host</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>M03100:474:000000000-CL3WR:1:2116:15840:1750</td>
+      <td>HUNDREDuM_primer</td>
+      <td>CTTGACATCTCCATCCCACACCACCCCAACCTCCCCCCTCCCACTT...</td>
+      <td>Host</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">r2_bowtie_reads</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;primer&#39;</span><span class="p">,</span><span class="s1">&#39;host_or_virus&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[20]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>record_id</th>
+      <th>cds</th>
+    </tr>
+    <tr>
+      <th>primer</th>
+      <th>host_or_virus</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2" valign="top">HUNDREDuM_primer</td>
+      <td>Host</td>
+      <td>299598</td>
+      <td>299598</td>
+    </tr>
+    <tr>
+      <td>Virus</td>
+      <td>715</td>
+      <td>715</td>
+    </tr>
+    <tr>
+      <td rowspan="2" valign="top">TENuM_primer</td>
+      <td>Host</td>
+      <td>236807</td>
+      <td>236807</td>
+    </tr>
+    <tr>
+      <td>Virus</td>
+      <td>521</td>
+      <td>521</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">merged_bowtie_reads</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">r1_reads</span><span class="p">,</span> <span class="n">r2_bowtie_reads</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;record_id&quot;</span><span class="p">,</span><span class="s2">&quot;primer&quot;</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;There are {len(merged_bowtie_reads[&#39;record_id&#39;])} reads in this data set.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">merged_bowtie_reads</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>There are 537641 reads in this data set.
+
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[21]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>record_id</th>
+      <th>primer</th>
+      <th>truseq</th>
+      <th>bc</th>
+      <th>umi_or_cds</th>
+      <th>has_cell_bc</th>
+      <th>cds</th>
+      <th>host_or_virus</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>M03100:474:000000000-CL3WR:1:2116:16081:1664</td>
+      <td>HUNDREDuM_primer</td>
+      <td>CTACACGACGCTCTTCNGATCT</td>
+      <td>ACGACCGCGTCCTCTT</td>
+      <td>CCTCTTCCCCGG</td>
+      <td>True</td>
+      <td>ACGCAGTCGTATCAACCCCCCGTACATCCCCCCCCTCCTCCCCCTC...</td>
+      <td>Host</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>M03100:474:000000000-CL3WR:1:2116:21218:1667</td>
+      <td>HUNDREDuM_primer</td>
+      <td>CTACACGACGCTCTTCNGATCT</td>
+      <td>CTCTCCTTCCTCCCTC</td>
+      <td>CCCTCTCCCCCT</td>
+      <td>True</td>
+      <td>CTCCCGCCGTCTCTCCCCCCCCTCCCTCCCCCCCCCCCCCCCCCCC...</td>
+      <td>Host</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>M03100:474:000000000-CL3WR:1:2116:17297:1672</td>
+      <td>HUNDREDuM_primer</td>
+      <td>CTACACGACGCTCTTCNGATCT</td>
+      <td>CTCTGCCTCCCGTGTA</td>
+      <td>CAAACATTTCTC</td>
+      <td>True</td>
+      <td>ACCCAGTCCTATCAACCCCCCCTACCTCCCCCCCCCCCCCCCTCCC...</td>
+      <td>Host</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>M03100:474:000000000-CL3WR:1:2116:21080:1736</td>
+      <td>HUNDREDuM_primer</td>
+      <td>CTACACGACGCTCTTCNGATCT</td>
+      <td>TCAACGATCGCCATTA</td>
+      <td>TTCCAACCTGTT</td>
+      <td>True</td>
+      <td>ATTCCTTACACTCACCCACTCGTCTCTCCTTTCCCCCCCTCTTCCC...</td>
+      <td>Host</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>M03100:474:000000000-CL3WR:1:2116:15840:1750</td>
+      <td>HUNDREDuM_primer</td>
+      <td>CTACACGACGCTCTTCNGATCT</td>
+      <td>AACCGCCTCCCGTTTC</td>
+      <td>CCCCTCCCTCTT</td>
+      <td>True</td>
+      <td>CTTGACATCTCCATCCCACACCACCCCAACCTCCCCCCTCCCACTT...</td>
+      <td>Host</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="How-many-viral-reads-are-missing-cell-barcodes?">How many viral reads are missing cell barcodes?<a class="anchor-link" href="#How-many-viral-reads-are-missing-cell-barcodes?">&#182;</a></h3><p>Next, I want to ask how many viral reads, across both samples, are missing their cell_barcodes in Read 1. These reads may have to be thrown out, or they could possibly be parsed fully from read 2 if the molecule is short enough.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">merged_bowtie_reads</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;host_or_virus&#39;</span><span class="p">,</span><span class="s1">&#39;has_cell_bc&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[22]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>record_id</th>
+      <th>primer</th>
+      <th>truseq</th>
+      <th>bc</th>
+      <th>umi_or_cds</th>
+      <th>cds</th>
+    </tr>
+    <tr>
+      <th>host_or_virus</th>
+      <th>has_cell_bc</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2" valign="top">Host</td>
+      <td>False</td>
+      <td>222</td>
+      <td>222</td>
+      <td>222</td>
+      <td>222</td>
+      <td>222</td>
+      <td>222</td>
+    </tr>
+    <tr>
+      <td>True</td>
+      <td>536183</td>
+      <td>536183</td>
+      <td>536183</td>
+      <td>536183</td>
+      <td>536183</td>
+      <td>536183</td>
+    </tr>
+    <tr>
+      <td rowspan="2" valign="top">Virus</td>
+      <td>False</td>
+      <td>320</td>
+      <td>320</td>
+      <td>320</td>
+      <td>320</td>
+      <td>320</td>
+      <td>320</td>
+    </tr>
+    <tr>
+      <td>True</td>
+      <td>916</td>
+      <td>916</td>
+      <td>916</td>
+      <td>916</td>
+      <td>916</td>
+      <td>916</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Based on these results, it looks like there are approximately <code>1200 virus reads</code> in this dataset. About <code>3/4 (~900)</code> of these have a cell barcode! This is promising and suggests that we can use this data to study multiple infection!</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are also some reads that fail to map to the virus genome (which are called "Host" by default), but have a virus constant sequence at the expected position in read 1. These are a small minority of "Host" reads, so could totally be thrown out there. However, if they are actually "Virus" reads that failed to map, it would be nice to figure out how to map them succesfully, so we can include them in our analysis. As I did before, I will BLast them.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">merged_bowtie_reads</span><span class="p">[(</span><span class="n">merged_bowtie_reads</span><span class="p">[</span><span class="s1">&#39;host_or_virus&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Host&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">merged_bowtie_reads</span><span class="p">[</span><span class="s1">&#39;has_cell_bc&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">False</span><span class="p">)]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">][</span><span class="s1">&#39;cds&#39;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>GTTGTATAGAAGAGAGGAGCACCAGGAAGTGGGCGAACGGCGCGTTGCAATGCCGGACTAGCATAAAATGATGCACCATAGGCGGGCGCGAGGAGGCGAA
+CTGTCCTCCACTCTTCCGCACTGTACAACATACCAAAAACTCCAACACTTATAGCCACGAAAGCTAAGTAGGGTTGGTAGAAGTGTGCACTGGGCGAGCC
+AGCAGTGGTATCAACGCAGAGTACATGGGGGCAGTAAGATCGCGAAAGCAGGAGTTTAAACCGAATCCAAACCAGAAAATAATAACCATTGGGTCAATCT
+CAGCAGTCGCATCAACGCAGAGTACACGGGAGATTACTCGCAGCAAAAGCAGGGGAAAACAAAAGCAACCAAATTGAAAGCAAGACAAGTAGTTCTGCTA
+AGTGGTATCAACGCAGAGTACATGGGTAGTGTGAAACGCGAAAGCAGGAGTTTAAACCGAATCCAAACCAGAAAATAATAACCATTGGGTCAATCTGTAT
+AAGCAGTGGTATCAACGCAGAGTACATGGGGACACTCACGGCGCGAAAGCAGGAGTTTAAACCGAATCCAAACCAGAAAATAATAACCATTGGGTCAATC
+AAGCAGTGGTATCAACGCAGAGTACATGGGGGCCTCCTGACGGGCGAACGCATGAGTATAGACCGAATCCAAACCAGAAAATAATAACCACTGGGTCTAT
+AAGCAGTGGTATCAACGCAGAGTACATGGGGACGCGAGGACGCGAAAGCAGGAGTTTAAACCGAATCCAAACCAGAAAATAATAACCATTGGGTCAATCT
+AAGCAGTGGTATCAACGCAGAGTACATGGGCTTCCATTCAGTAGCAAAAGCAGGGGAAACCAAAAGCAACCAAATTGAAAGCAATACTAGTAGTTGTGCT
+AAGCAGTGGTATCAACGCACAGTACATGGGGGCCTAGGTGCCCGGCAAAAGCAGGGGAAAACAAAAGCAACCAAATTGAAAGCAATACTAATAGTTCTGC
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>BLAST results:</p>
+<p>Read 1 mapped to a random smattering of bacterial sequences.<br>
+Read 2 maps to WSN and avian influenza sequences.<br>
+Read 3 maps to modern pdmH1N1 sequences.<br>
+Read 4 maps to WSN and other historic H1N1 (not pdm) sequences.<br>
+Read 5 maps to WSN and avian influenza sequences. 
+Read 6 maps to modern pdmH1N1 seuqences.</p>
+<p>Based on these results, I think these are mostly viral reads that did not map by the bowtie alignment. I may have to modify those settings a bit to make them less conservative.</p>
+<p><strong>That being said, I think these data give me enough information to order more sequencing! I definitely think at least half the virus reads in my data (maybe more) will have cell barcodes. Based on sequencing length compared to molecule length, it is also incredibly likely that the R2 sequences will contain the virus barcodes. Therefore, with this sequencing scheme, we should be able to study multiple infection in individual cells.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Save to HTML for easy viewing on GitHub</span>
+<span class="o">!</span>jupyter nbconvert parse_barcodes.ipynb --to html --output parse_barcodes.html
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[NbConvertApp] Converting notebook parse_barcodes.ipynb to html
+[NbConvertApp] Writing 348838 bytes to parse_barcodes.html
+</pre>
+</div>
 </div>
 
 </div>
