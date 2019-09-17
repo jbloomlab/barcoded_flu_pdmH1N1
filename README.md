@@ -1,36 +1,45 @@
-# virus_hashing
-Barcoded pdmH1N1 virus hashing experiment
+# Barcoded influenza virus single-cell sequencing
+Single-cell sequencing of barcoded influenza virus; David Bacsik and Jesse Bloom.
 
-## Experimental Outline
-In this experiment, cells were infected at moderate MOI (~1) and collected at 10 hpi. I expect some cells to be uninfected, some to be infected a single virion, and some to be infected by multiple virions.
+## Organization of repository
+This repository is organized as follows:
 
-## Molecule Design
-Each molecule is tagged with a 10X sample index near the Read 2 end. These indexes have four different sequences per sample.
+ - [Snakefile](Snakefile) is the [Snakemake](https://snakemake.readthedocs.io) file that runs the analysis.
 
-Because the virus already had a TruSeq Read 1 primer embedded in its genome, we attempted to append a Nextera Read 1 sequence onto the end of the molecule. This should have worked every time for non-viral (host) transcripts. Those will look like this:
+ - [./scripts/](scripts) contains custom scripts used in the analysis.
 
-`P5 Adapter - Nextera Read 1 - TruSeq Read 1 - Cell Barcode - UMI - PolyA - CDS - Read 2 - 10X Sample Indices - P7`
+ - [config.yaml](config.yaml) contains the configuration for the analysis in [Snakefile](Snakefile), as described [here](https://snakemake.readthedocs.io/en/stable/snakefiles/configuration.html).
 
-For viral transcripts, the primer may have bound at the end of of the molecule, retaining the Cell Barcode and UMI. (For the record, this is what we want). Those molecules will look like this:
+ - [cluster.yaml](cluster.yaml) contains the cluster configuration for running [Snakefile](Snakefile) on the Fred Hutch cluster, as described [here](https://snakemake.readthedocs.io/en/stable/snakefiles/configuration.html).
 
-`P5 Adapter - Nextera Read 1 - TruSeq Read 1 - Cell Barcode - UMI - PolyA - TruSeq Read 1 - CDS - Read 2 - 10X Sample Indices - P7`
+ - [./data/](data) contains the input data, specifically:
 
-However, it is possible that the primer bound further into the molecule, at the second TruSeq Read 1 site, losing the Cell Barcode and UMi. Those molecules will look like this:
+   * [./data/10x_illumina_runs.csv](data/10x_illumina_runs.csv) specifies the Illumina sequencing runs of the 10X transcriptome libraries.
 
-`P5 Adapter - Nextera Read 1 - TruSeq Read 1 - CDS - Read 2 - 10X Sample Indices - P7`
+ - [./results/](results) is a created directory with all results, most of which are not tracked in this repository.
+
+## Running the analysis
+To run the analysis, simple run [Snakefile](Snakefile) with the command:
+
+    snakemake
+
+To do this on the Hutch cluster using [sbatch](sbatch) and the cluster configuration in [cluster.yaml](cluster.yaml)
 
 
-## Demultiplexing Strategy
+## Samples analyzed
+Here are brief descriptions of the samples analyzed here.
 
-To demultiplex these samples, I will use the 10X cellranger mkfastq software, as the indexes are unaffected by the weirdness at the Read 1 end.
+### pdmH1N1_dual_truseq_pilot
+MDCK cells were infected with pdmH1N1 flu at MOI of about 1 and collected 10 hpi.
+The virus contains a barcode followed by a TruSeq read 1 primer embedded in its genome in HA and NA segments.
+The cell transcriptomes were analyzed using the 10X Chromium workflow (v2 reagents).
+But since the virus already has a TruSeq read 1 primer site, the standard 10X SI primer was replaced with a custom primer that appended the Nextera read 1 primer downstream of the TruSeq binding site, and the libraries were sequenced using the Nextera primer.
+Therefore, the desired sequence reading in reverse from the 3' end of the tagged cDNA molecules is:
 
-The demuxed FASTQ files are stored in a relatively deep path: out/virus_hashing/outs/fastq_path/`NAME OF THE ILLUMINA RUN`/`SAMPLE`  
-Each sample gets its own folder.
+    P5 Adapter - Nextera Read 1 - TruSeq Read 1 - Cell Barcode - UMI - PolyA - CDS -  Read 2 - 10X Sample Indices - P7
 
-## Mapping Strategy
+However, since the viral HA and NA genes also have a TruSeq primer binding site, the custom primer could also bind there, yielding molecules that look like this: 
 
-Before mapping, I will quality filter R2 reads and trim them to 100 bp using cutadapt. This is approximately the minimum length that 10X recommends for Read 2 sequencing.
+    P5 Adapter - Nextera Read 1 - TruSeq Read 1 - Viral Barcode - Viral CDS - Read 2 - 10X Sample Indices - P7
 
-I will then align the reads locally using botwie2. Local alignment will allow for any large deletions to map successfully.
-
-At this point in time, all of these steps are done on the command line manually, as I really want to know what these flu reads look like quickly. Once I have an answer, I will convert this notebook to a snakemake file or some kind of notebook-based bash sequence that does each of these steps automatically (for reproducibility).
+The custom primer was added at 100 uM and 10 uM, corresponding to *pdmH1N1_dual_truseq_pilot_100uM* and *pdmH1N1_dual_truseq_pilot_10uM*.

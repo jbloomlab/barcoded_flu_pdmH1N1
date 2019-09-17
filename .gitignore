@@ -1,2 +1,6 @@
-# Don't copy huge fastq files
-*.fastq.gz
+.*
+!.gitignore
+_*
+*.out
+
+results

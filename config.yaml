@@ -1,0 +1,4 @@
+# YAML configuration file for the analysis
+
+# file specifying 10X illumina runs
+10x_illumina_runs: data/10x_illumina_runs.csv

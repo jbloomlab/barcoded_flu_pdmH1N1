@@ -1,8 +1,0 @@
-{
-    "merged_file_paths": [
-        "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/TENuM_primer/TENuM_primer_S02_L001_I1_001.fastq.gz", 
-        "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/TENuM_primer/TENuM_primer_S02_L001_R1_001.fastq.gz", 
-        "/fh/fast/bloom_j/computational_notebooks/dbacsik/2019/virus_hashing/virus_hashing/MAKE_FASTQS_CS/MAKE_FASTQS/BCL2FASTQ_WITH_SAMPLESHEET/fork0/join-u499676f860/files/fastq_path/CL3WR/TENuM_primer/TENuM_primer_S02_L001_R2_001.fastq.gz"
-    ], 
-    "files_merged": true
-}

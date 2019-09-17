@@ -1,0 +1,8 @@
+# cluster configuration for running Snakefile on Hutch cluster
+
+__default__:
+  cpus: 1
+  partition: campus
+  time: 0-4
+  mem: 32000
+  name: "{rule}"
