@@ -1,9 +1,0 @@
-# Specify:
-#  1. Name of sample used throughout analysis
-#  2. Name of the this specific sequencing run
-#  3. The 10X index name
-#  4. The location of the BCL folder on the Hutch server
-#  5. Lanes on the sequencing run, use * for all in flowcell
-sample,run,10x_index,bcl_folder,lanes
-pdmH1N1_dual_truseq_pilot_100uM,190830,SI-GA-A1,/shared/ngs/illumina/bloom_lab/190830_M03100_0474_000000000-CL3WR,*
-pdmH1N1_dual_truseq_pilot_10uM,190830,SI-GA-A2/shared/ngs/illumina/bloom_lab/190830_M03100_0474_000000000-CL3WR,*

@@ -14,7 +14,7 @@ This repository is organized as follows:
 
  - [./data/](data) contains the input data, specifically:
 
-   * [./data/10x_illumina_runs.csv](data/10x_illumina_runs.csv) specifies the Illumina sequencing runs of the 10X transcriptome libraries.
+   * [./data/illumina_runs_10x.csv](data/illumina_runs_10x.csv) specifies the Illumina sequencing runs of the 10X transcriptome libraries.
 
  - [./results/](results) is a created directory with all results, most of which are not tracked in this repository.
 
@@ -23,8 +23,10 @@ To run the analysis, simple run [Snakefile](Snakefile) with the command:
 
     snakemake
 
-To do this on the Hutch cluster using [sbatch](sbatch) and the cluster configuration in [cluster.yaml](cluster.yaml)
+To do this on the Hutch cluster using [sbatch](sbatch) and the cluster configuration in [cluster.yaml](cluster.yaml), run the bash script [run_Huch_cluster.bash](run_Hutch_cluster.bash).
+You probably want to submit the script itself via [sbatch](sbatch), using:
 
+    sbatch run_Hutch_cluster.sbatch
 
 ## Samples analyzed
 Here are brief descriptions of the samples analyzed here.

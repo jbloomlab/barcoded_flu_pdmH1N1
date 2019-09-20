@@ -1,4 +1,12 @@
 # YAML configuration file for the analysis
 
-# file specifying 10X illumina runs
-10x_illumina_runs: data/10x_illumina_runs.csv
+# max CPUs used by any rules
+max_cpus: 16
+
+# file specifying 10X Illumina runs
+illumina_runs_10x: data/illumina_runs_10x.csv
+
+# output directories
+fastq10x_dir: results/fastq10x  # FASTQ files for 10X Illumina runs
+mkfastq10x_dir: results/mkfastq10x_output  # output of 10X `cellranger mkfastq`
+
