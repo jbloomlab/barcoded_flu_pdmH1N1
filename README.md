@@ -1,5 +1,5 @@
-# Barcoded influenza virus single-cell sequencing
-Single-cell sequencing of barcoded influenza virus; David Bacsik and Jesse Bloom.
+# Barcoded pdmH1N1 influenza virus single-cell sequencing
+Single-cell sequencing of barcoded pdmH1N1 influenza virus; David Bacsik and Jesse Bloom.
 
 ## Organization of repository
 This repository is organized as follows:
@@ -13,6 +13,8 @@ This repository is organized as follows:
  - [cluster.yaml](cluster.yaml) contains the cluster configuration for running [Snakefile](Snakefile) on the Fred Hutch cluster, as described [here](https://snakemake.readthedocs.io/en/stable/snakefiles/configuration.html).
 
  - [./data/](data) contains the input data, specifically:
+
+   * [./data/flu_sequences/](data/flu_sequences) gives the flu sequences used in the experiment. See the [README in that subdirectory](data/flu_sequences/README.md) for details.
 
    * [./data/illumina_runs_10x.csv](data/illumina_runs_10x.csv) specifies the Illumina sequencing runs of the 10X transcriptome libraries.
 
@@ -31,7 +33,7 @@ You probably want to submit the script itself via [sbatch](sbatch), using:
 ## Samples analyzed
 Here are brief descriptions of the samples analyzed here.
 
-### pdmH1N1_dual_truseq_pilot
+### dual_truseq_pilot
 MDCK cells were infected with pdmH1N1 flu at MOI of about 1 and collected 10 hpi.
 The virus contains a barcode followed by a TruSeq read 1 primer embedded in its genome in HA and NA segments.
 The cell transcriptomes were analyzed using the 10X Chromium workflow (v2 reagents).

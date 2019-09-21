@@ -207,7 +207,7 @@ def plot_fastq_termini_stats(statsfiles, plotfile, run_names, aggregate,
          geom_bar(stat='identity') +
          geom_text(va='bottom', size=7) +
          theme(axis_text_x=element_text(angle=90),
-               figure_size=(3.5 * ncol, 3 * nrow),
+               figure_size=(3 * ncol, 3 * nrow),
                legend_position='none',
                )
          )
