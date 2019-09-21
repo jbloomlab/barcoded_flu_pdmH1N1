@@ -6,7 +6,7 @@ This repository is organized as follows:
 
  - [Snakefile](Snakefile) is the [Snakemake](https://snakemake.readthedocs.io) file that runs the analysis.
 
- - [./scripts/](scripts) contains custom scripts used in the analysis.
+ - [./pymodules/](pymodules) contains custom Python modules used in analysis.
 
  - [config.yaml](config.yaml) contains the configuration for the analysis in [Snakefile](Snakefile), as described [here](https://snakemake.readthedocs.io/en/stable/snakefiles/configuration.html).
 

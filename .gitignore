@@ -1,6 +1,7 @@
 .*
 !.gitignore
-_*
 *.out
+__pycache__
+*.pyc
 
 results

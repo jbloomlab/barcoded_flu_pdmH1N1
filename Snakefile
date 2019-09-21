@@ -9,11 +9,15 @@ import subprocess
 
 import pandas as pd
 
+from pymodules.parse_fastq_termini import (parse_fastq_termini,
+                                           plot_fastq_termini_stats)
+
 # Configuration  --------------------------------------------------------------
 configfile: 'config.yaml'
 
 # run "quick" rules locally:
-localrules: all
+localrules: all,
+            plot_fastq10x_termini_stats
 
 # Global variables extracted from config --------------------------------------
 illumina_runs_10x = (
@@ -26,19 +30,55 @@ illumina_runs_10x = (
 assert len(illumina_runs_10x) == illumina_runs_10x.index.nunique()
 
 # Rules -----------------------------------------------------------------------
-rule:
+rule all:
     input:
-        expand(os.path.join(config['fastq10x_dir'], "{run10x}_{r}.fastq.gz"),
-               run10x=illumina_runs_10x.index, r=['R1', 'R2'])
+        os.path.join(config['fastq10x_dir'], 'termini_stats.svg')
 
-rule mkfastq:
-    """10X FASTQ files from BCL runs using `cellranger mkfastq`."""
+rule plot_fastq10x_termini_stats:
+    input:
+        expand(os.path.join(config['fastq10x_dir'], "{run10x}_stats.csv"),
+               run10x=illumina_runs_10x.index)
     output:
-        fastqR1=os.path.join(config['fastq10x_dir'], "{run10x}_R1.fastq.gz"),
-        fastqR2=os.path.join(config['fastq10x_dir'], "{run10x}_R2.fastq.gz"),
+        plot_by_run=os.path.join(config['fastq10x_dir'], 'termini_stats.svg')
+    run:
+        plot_fastq_termini_stats(
+                statsfiles=input,
+                plotfile=output.plot_by_run,
+                run_names=illumina_runs_10x.index,
+                aggregate=False,
+                )
+
+rule parse_fastq10x_termini:
+    """Parse 10X read termini for early viral priming vs proper cell barcode."""
+    input:
+        fastqR1=os.path.join(config['fastq10x_dir'], "{run10x}_all_R1.fastq.gz"),
+        fastqR2=os.path.join(config['fastq10x_dir'], "{run10x}_all_R1.fastq.gz")
+    output:
+        [os.path.join(config['fastq10x_dir'], "{run10x}" + f"_{term}_{r}.fastq")
+         for term in [tup[0] for tup in config['fastq10x_patterns']]
+         for r in ['R1', 'R2']],
+        stats=os.path.join(config['fastq10x_dir'], "{run10x}_stats.csv")
+    params:
+        run10x="{run10x}"
+    run:
+        parse_fastq_termini(
+                fastq=input.fastqR1,
+                fastqmate=input.fastqR2,
+                multi_pattern=config['fastq10x_multi_pattern'],
+                outprefix=os.path.join(config['fastq10x_dir'], params.run10x),
+                fastq_trim5=config['fastq10x_trim5'],
+                patterns=config['fastq10x_patterns'],
+                statsfile=output.stats,
+                )
+
+rule make_fastq10x:
+    """Make 10X FASTQ files from BCL runs using `cellranger mkfastq`."""
+    output:
+        fastqR1=os.path.join(config['fastq10x_dir'], "{run10x}_all_R1.fastq.gz"),
+        fastqR2=os.path.join(config['fastq10x_dir'], "{run10x}_all_R2.fastq.gz"),
         mkfastq10x_dir=directory(os.path.join(config['mkfastq10x_dir'],
                                               "{run10x}")),
-        csv=temp("{run10x}.csv"),  # used as input by cellranger mkfastq
+        csv=temp("_mkfastq_{run10x}.csv"),  # input for cellranger mkfastq
         mro=temp("__{run10x}.mro"),  # created by cellranger mkfastq
     params:
         run10x="{run10x}"
