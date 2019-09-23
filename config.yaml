@@ -1,0 +1,22 @@
+# YAML configuration file for the analysis
+
+# max CPUs used by any rules
+max_cpus: 16
+
+# file specifying 10X Illumina runs
+illumina_runs_10x: data/illumina_runs_10x.csv
+
+# output directories
+fastq10x_dir: results/fastq10x  # FASTQ files for 10X Illumina runs
+mkfastq10x_dir: results/mkfastq10x_output  # output of 10X `cellranger mkfastq`
+
+# params for parsing 10X FASTQ R1 termini in `parse_fastq10x_termini` rule
+fastq10x_trim5: 22  # trim this much off 5' end of R1 reads that match patterns
+fastq10x_multi_pattern: first  # when matching multi patterns, how to assign?
+fastq10x_patterns:  # names, regex, allowed substitution mismatches
+  - [early-viral-priming,
+     'CTACACGACGCTCTTCCGATCT[ACGT]{16}GCGGCCGCCTAT',
+     2]
+  - [proper-cell-barcode,
+     'CTACACGACGCTCTTCCGATCT[ACGT]{26}T{2}',
+     2]

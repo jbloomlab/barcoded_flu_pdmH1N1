@@ -1,4 +1,0 @@
-2019-09-09 18:11:51 [time] __start__
-2019-09-09 18:11:58 [info] Read Info: [{'read_length': 50, 'index_read': False, 'original_read_name': 'R1', 'read_name': 'R1'}, {'read_length': 8, 'index_read': True, 'original_read_name': 'R2', 'read_name': 'I1'}, {'read_length': 250, 'index_read': False, 'original_read_name': 'R3', 'read_name': 'R2'}]
-2019-09-09 18:11:58 [info] Flowcell ID: 000000000-CL3WR
-2019-09-09 18:11:58 [time] __end__

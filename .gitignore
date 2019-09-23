@@ -1,2 +1,7 @@
-# Don't copy huge fastq files
-*.fastq.gz
+.*
+!.gitignore
+*.out
+__pycache__
+*.pyc
+
+results
