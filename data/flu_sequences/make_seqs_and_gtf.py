@@ -45,13 +45,14 @@ def main():
         print("\nProcessing {0}{1}...".format(gene_short_name, syntype))
 
         # read plasmid
-        plasmidmatcher = re.compile(f'.*_pH.*{gene_short_name}(_G155E)'
-                                    f'{{0,1}}{syntype}\.gb')
+        plasmidmatcher = re.compile(f".*_?pH.*{gene_short_name}(_G155E)?"
+                                    f"{syntype}(_\w+)?\.gb")
         plasmidfile = [f for f in plasmidmaps if plasmidmatcher.search(f)]
 
         assert len(plasmidfile) == 1, \
                 f"{len(plasmidfile)} maps for {gene_short_name}{syntype}"
         plasmidfile = plasmidfile[0]
+        print(f"Reading sequence from {plasmidfile}")
         plasmid = str(Bio.SeqIO.read(plasmidfile, 'genbank').seq)
 
         # get vRNA flanked by U12 / U13
@@ -139,12 +140,18 @@ def main():
                     )
 
         # for each mRNA, get the CDS, which we heuristically identify as
+        # first ATG initiated sequence
         for mrna in filter(lambda gene: gene.type == 'mRNA', gene.features):
 
             # find start / end of first ATG initiated sequence
             mrna_seq = mrna.extract(gene).seq
             assert len(mrna_seq) == len(mrna)
             mrna_start = str(mrna_seq).index('ATG')
+            if re.match('fluNP', mrna.id):
+                # get main, not upstream, ORF for NP:
+                # https://www.biorxiv.org/content/biorxiv/early/2019/09/04/738427
+                assert mrna_seq[mrna_start + 18: mrna_start + 21] == 'ATG'
+                mrna_start = mrna_start + 18
             last_triplet = mrna_start + 3 * (len(mrna_seq[mrna_start : ]) // 3)
             protlen = len(mrna_seq[mrna_start : last_triplet].translate(
                     to_stop=True))
