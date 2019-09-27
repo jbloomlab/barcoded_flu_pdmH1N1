@@ -121,20 +121,20 @@ rule make_fastq10x:
             with open(outfq, 'wb') as f:
                 subprocess.call(['cat'] + fqlist, stdout=f)
 
-rule get_human_genome:
+rule get_spikein_genome:
     """Download human genome assembly in a FASTA file."""
     input:
     output: join(config['genome_dir'], 'human.fasta')
     params:
-        ftp = config['human_genome'][2]
+        ftp = config['spikein_genome'][2]
     shell:
         "wget -O - {params.ftp} | gunzip -c > {output}"
 
-rule get_canine_genome:
+rule get_cell_genome:
     """Download canine genome assembly in a FASTA file."""
     input:
     output: join(config['genome_dir'], 'canine.fasta')
     params:
-        ftp = config['canine_genome'][2]
+        ftp = config['cell_genome'][2]
     shell:
         "wget -O - {params.ftp} | gunzip -c > {output}"
