@@ -17,9 +17,7 @@ configfile: 'config.yaml'
 
 # run "quick" rules locally:
 localrules: all,
-            plot_fastq10x_termini_stats,
-            get_human_genome,
-            get_canine_genome
+            plot_fastq10x_termini_stats
 
 # Global variables extracted from config --------------------------------------
 illumina_runs_10x = (
@@ -102,7 +100,7 @@ rule make_fastq10x:
                 '--delete-undetermined',
                 ]
         print(f"\nRunning the following commands:\n{' '.join(cmds)}\n")
-        subprocess.check_call(cmds, shell=True)
+        subprocess.check_call(cmds)
         # move `cellranger mkfastq` output to desired location
         print(f"\nMoving `cellranger mkfastq` output from {params.run10x} "
               f"to {output.mkfastq10x_dir}\n")
