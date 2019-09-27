@@ -9,7 +9,7 @@ illumina_runs_10x: data/illumina_runs_10x.csv
 # output directories
 fastq10x_dir: results/fastq10x  # FASTQ files for 10X Illumina runs
 mkfastq10x_dir: results/mkfastq10x_output  # output of 10X `cellranger mkfastq`
-ref_genomes: results/ref_genomes # Automatically-downloaded reference genomes for canine and human
+genome_dir: results/ref_genomes # Automatically-downloaded reference genomes for canine and human
 
 # params for parsing 10X FASTQ R1 termini in `parse_fastq10x_termini` rule
 fastq10x_trim5: 22  # trim this much off 5' end of R1 reads that match patterns
@@ -23,10 +23,12 @@ fastq10x_patterns:  # names, regex, allowed substitution mismatches
      2]
 
 # params for downloading reference genomes
-genome_src: # species, genome name, ftp link
-    -[canine,
-    CanFam3.1,
-    ftp://ftp.ensembl.org/pub/release-98/fasta/canis_familiaris/dna/Canis_familiaris.CanFam3.1.dna.toplevel.fa.gz]
-    - [human,
-    GRCh38.p13,
-    ftp://ftp.ensembl.org/pub/release-98/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz]
+# species, genome name, ftp link
+human_genome:
+  [human,
+  GRCh38.p13,
+  ftp://ftp.ensembl.org/pub/release-98/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz]
+  
+canine_genome: [canine,
+  CanFam3.1,
+  ftp://ftp.ensembl.org/pub/release-98/fasta/canis_familiaris/dna/Canis_familiaris.CanFam3.1.dna.toplevel.fa.gz]
