@@ -102,7 +102,7 @@ rule make_fastq10x:
                 '--delete-undetermined',
                 ]
         print(f"\nRunning the following commands:\n{' '.join(cmds)}\n")
-        subprocess.check_call(cmds)
+        subprocess.check_call(cmds, shell=True)
         # move `cellranger mkfastq` output to desired location
         print(f"\nMoving `cellranger mkfastq` output from {params.run10x} "
               f"to {output.mkfastq10x_dir}\n")
