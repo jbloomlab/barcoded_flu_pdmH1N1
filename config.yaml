@@ -25,10 +25,9 @@ fastq10x_patterns:  # names, regex, allowed substitution mismatches
 # params for downloading reference genomes
 # species, genome name, ftp link
 spikein_genome:
-  [human,
-  GRCh38.p13,
-  ftp://ftp.ensembl.org/pub/release-98/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz]
+  species: human
+  fasta: ftp://ftp.ensembl.org/pub/release-98/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
   
-cell_genome: [canine,
-  CanFam3.1,
-  ftp://ftp.ensembl.org/pub/release-98/fasta/canis_familiaris/dna/Canis_familiaris.CanFam3.1.dna.toplevel.fa.gz]
+cell_genome:
+  species: canine
+  fasta: ftp://ftp.ensembl.org/pub/release-98/fasta/canis_familiaris/dna/Canis_familiaris.CanFam3.1.dna.toplevel.fa.gz

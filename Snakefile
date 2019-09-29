@@ -33,8 +33,9 @@ assert len(illumina_runs_10x) == illumina_runs_10x.index.nunique()
 rule all:
     input:
         join(config['fastq10x_dir'], 'termini_stats.svg'),
-        join(config['genome_dir'], 'human.fasta'),
-        join(config['genome_dir'], 'canine.fasta')
+        join(config['genome_dir'], config['spikein_genome']['species']+'.fasta'),
+        join(config['genome_dir'], config['cell_genome']['species']+'.fasta')
+        
 
 rule plot_fastq10x_termini_stats:
     input:
@@ -122,19 +123,19 @@ rule make_fastq10x:
                 subprocess.call(['cat'] + fqlist, stdout=f)
 
 rule get_spikein_genome:
-    """Download human genome assembly in a FASTA file."""
+    """Download spikein genome assembly in a FASTA file."""
     input:
-    output: join(config['genome_dir'], 'human.fasta')
+    output: join(config['genome_dir'], config['spikein_genome']['species']+'.fasta')
     params:
-        ftp = config['spikein_genome'][2]
+        ftp = config['spikein_genome']['fasta']
     shell:
         "wget -O - {params.ftp} | gunzip -c > {output}"
 
 rule get_cell_genome:
-    """Download canine genome assembly in a FASTA file."""
+    """Download main cell genome assembly in a FASTA file."""
     input:
-    output: join(config['genome_dir'], 'canine.fasta')
+    output: join(config['genome_dir'], config['cell_genome']['species']+'.fasta')
     params:
-        ftp = config['cell_genome'][2]
+        ftp = config['cell_genome']['fasta']
     shell:
         "wget -O - {params.ftp} | gunzip -c > {output}"
