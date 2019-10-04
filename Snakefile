@@ -29,12 +29,16 @@ illumina_runs_10x = (
     )
 assert len(illumina_runs_10x) == illumina_runs_10x.index.nunique()
 
+# Global variables defined statically ----------------------------------------
+genome=['cell_genome',
+        'spikein_genome']
+
 # Rules -----------------------------------------------------------------------
 rule all:
     input:
         join(config['fastq10x_dir'], 'termini_stats.svg'),
-        expand(join(config['genome_dir'], "{genome}.fasta"),
-               genome=['cell_genome', 'spikein_genome'])
+        expand(join(config['genome_dir'], "{genome}.fasta"), genome=genome),
+        expand(join(config['genome_dir'], "{genome}.gtf"), genome=genome)
 
 rule plot_fastq10x_termini_stats:
     input:
@@ -120,6 +124,16 @@ rule make_fastq10x:
         for outfq, fqlist in [(output.fastqR1, r1s), (output.fastqR2, r2s)]:
             with open(outfq, 'wb') as f:
                 subprocess.call(['cat'] + fqlist, stdout=f)
+
+rule get_gtf:
+    """Download gene sets in a GTF file."""
+    input:
+    output:
+        join(config['genome_dir'], "{genome}.gtf")
+    params:
+        ftp=lambda wildcards: config[wildcards.genome]['gtf']
+    shell:
+        "wget -O - {params.ftp} | gunzip -c > {output}"
 
 rule get_genome:
     """Download genome assembly in a FASTA file."""
