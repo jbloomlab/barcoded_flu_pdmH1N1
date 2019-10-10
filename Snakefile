@@ -34,49 +34,47 @@ genome=['cell_genome',
         'spikein_genome']
 
 # Rules -----------------------------------------------------------------------
+
+# Rule All (Master list of all necessary final products)
 rule all:
     input:
         join(config['fastq10x_dir'], 'termini_stats.svg'),
         expand(join(config['genome_dir'], "{genome}.fasta"), genome=genome),
-        expand(join(config['genome_dir'], "{genome}.gtf"), genome=genome)
-
-rule plot_fastq10x_termini_stats:
+        expand(join(config['genome_dir'], "{genome}_filtered.gtf"), genome=genome)
+        
+# Download necessary files from external servers and build reference genomes
+rule get_genome:
+    """Download genome assembly in a FASTA file."""
     input:
-        expand(join(config['fastq10x_dir'], "{run10x}_stats.csv"),
-               run10x=illumina_runs_10x.index)
     output:
-        plot_by_run=join(config['fastq10x_dir'], 'termini_stats.svg')
-    run:
-        plot_fastq_termini_stats(
-                statsfiles=input,
-                plotfile=output.plot_by_run,
-                run_names=illumina_runs_10x.index,
-                aggregate=False,
-                )
-
-rule parse_fastq10x_termini:
-    """Parse 10X read termini for early viral priming vs proper cell barcode."""
-    input:
-        fastqR1=join(config['fastq10x_dir'], "{run10x}_all_R1.fastq.gz"),
-        fastqR2=join(config['fastq10x_dir'], "{run10x}_all_R1.fastq.gz")
-    output:
-        [join(config['fastq10x_dir'], "{run10x}" + f"_{term}_{r}.fastq")
-         for term in [tup[0] for tup in config['fastq10x_patterns']]
-         for r in ['R1', 'R2']],
-        stats=join(config['fastq10x_dir'], "{run10x}_stats.csv")
+        join(config['genome_dir'], "{genome}.fasta")
     params:
-        run10x="{run10x}"
-    run:
-        parse_fastq_termini(
-                fastq=input.fastqR1,
-                fastqmate=input.fastqR2,
-                multi_pattern=config['fastq10x_multi_pattern'],
-                outprefix=join(config['fastq10x_dir'], params.run10x),
-                fastq_trim5=config['fastq10x_trim5'],
-                patterns=config['fastq10x_patterns'],
-                statsfile=output.stats,
-                )
+        ftp=lambda wildcards: config[wildcards.genome]['fasta']
+    shell:
+        "wget -O - {params.ftp} | gunzip -c > {output}"
+        
+rule get_gtf:
+    """Download gene sets in a GTF file."""
+    input:
+    output:
+        join(config['genome_dir'], "{genome}.gtf")
+    params:
+        ftp=lambda wildcards: config[wildcards.genome]['gtf']
+    shell:
+        "wget -O - {params.ftp} | gunzip -c > {output}"
 
+rule filter_gtf:
+    """Filter GTF files to only features of interest (e.g. protein-coding genes)."""
+    input:
+        join(config['genome_dir'], "{genome}.gtf")
+    output:
+        join(config['genome_dir'], "{genome}_filtered.gtf")
+    shell:
+        """
+        cellranger mkgtf {input} {output} --attribute=gene_biotype:protein_coding > {log}
+        """
+
+# Load data files, demultiplex, and parse
 rule make_fastq10x:
     """Make 10X FASTQ files from BCL runs using `cellranger mkfastq`."""
     output:
@@ -125,22 +123,39 @@ rule make_fastq10x:
             with open(outfq, 'wb') as f:
                 subprocess.call(['cat'] + fqlist, stdout=f)
 
-rule get_gtf:
-    """Download gene sets in a GTF file."""
+rule parse_fastq10x_termini:
+    """Parse 10X read termini for early viral priming vs proper cell barcode."""
     input:
+        fastqR1=join(config['fastq10x_dir'], "{run10x}_all_R1.fastq.gz"),
+        fastqR2=join(config['fastq10x_dir'], "{run10x}_all_R1.fastq.gz")
     output:
-        join(config['genome_dir'], "{genome}.gtf")
+        [join(config['fastq10x_dir'], "{run10x}" + f"_{term}_{r}.fastq")
+         for term in [tup[0] for tup in config['fastq10x_patterns']]
+         for r in ['R1', 'R2']],
+        stats=join(config['fastq10x_dir'], "{run10x}_stats.csv")
     params:
-        ftp=lambda wildcards: config[wildcards.genome]['gtf']
-    shell:
-        "wget -O - {params.ftp} | gunzip -c > {output}"
+        run10x="{run10x}"
+    run:
+        parse_fastq_termini(
+                fastq=input.fastqR1,
+                fastqmate=input.fastqR2,
+                multi_pattern=config['fastq10x_multi_pattern'],
+                outprefix=join(config['fastq10x_dir'], params.run10x),
+                fastq_trim5=config['fastq10x_trim5'],
+                patterns=config['fastq10x_patterns'],
+                statsfile=output.stats,
+                )
 
-rule get_genome:
-    """Download genome assembly in a FASTA file."""
+rule plot_fastq10x_termini_stats:
     input:
+        expand(join(config['fastq10x_dir'], "{run10x}_stats.csv"),
+               run10x=illumina_runs_10x.index)
     output:
-        join(config['genome_dir'], "{genome}.fasta")
-    params:
-        ftp=lambda wildcards: config[wildcards.genome]['fasta']
-    shell:
-        "wget -O - {params.ftp} | gunzip -c > {output}"
+        plot_by_run=join(config['fastq10x_dir'], 'termini_stats.svg')
+    run:
+        plot_fastq_termini_stats(
+                statsfiles=input,
+                plotfile=output.plot_by_run,
+                run_names=illumina_runs_10x.index,
+                aggregate=False,
+                )
