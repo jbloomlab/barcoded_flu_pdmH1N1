@@ -71,7 +71,7 @@ rule filter_gtf:
         join(config['genome_dir'], "{genome}.gtf")
     output:
         join(config['genome_dir'], "{genome}_filtered.gtf")
-    log: join(config['log_dir'], 'filter)_{genome}_gtf.log')
+    log: join(config['log_dir'], 'filter_{genome}_gtf.log')
     shell:
         """
         cellranger mkgtf {input} {output} --attribute=gene_biotype:protein_coding &> {log}
