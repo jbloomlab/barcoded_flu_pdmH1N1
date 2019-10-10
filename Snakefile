@@ -41,6 +41,8 @@ rule all:
         join(config['fastq10x_dir'], 'termini_stats.svg'),
         expand(join(config['genome_dir'], "{genome}.fasta"), genome=genome),
         expand(join(config['genome_dir'], "{genome}_filtered.gtf"), genome=genome)
+
+ruleorder: filter_gtf > get_gtf
         
 # Download necessary files from external servers and build reference genomes
 rule get_genome:
