@@ -71,11 +71,15 @@ rule filter_gtf:
         join(config['genome_dir'], "{genome}.gtf")
     output:
         join(config['genome_dir'], "{genome}_filtered.gtf")
-    log: join(config['log_dir'], 'filter_{genome}_gtf.log')
+    log:
+        join(config['log_dir'], 'filter_{genome}_gtf.log')
     shell:
         """
-        cellranger mkgtf {input} {output} --attribute=gene_biotype:protein_coding &> {log}
+        cellranger mkgtf {input} {output} \
+            --attribute=gene_biotype:protein_coding \
+            &> {log}
         """
+
 
 # Load data files, demultiplex, and parse
 rule make_fastq10x:
@@ -89,6 +93,8 @@ rule make_fastq10x:
         mro=temp("__{run10x}.mro"),  # created by cellranger mkfastq
     params:
         run10x="{run10x}"
+    log:
+        join(config['log_dir'], 'demux.log')
     run:
         # write CSV file for `cellranger mkfastq`
         with open(output.csv, 'w') as f:
