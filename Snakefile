@@ -94,7 +94,7 @@ rule make_fastq10x:
     params:
         run10x="{run10x}"
     log:
-        join(config['log_dir'], 'demux.log')
+        join(config['log_dir'], '{run10x}_demux.log')
     run:
         # write CSV file for `cellranger mkfastq`
         with open(output.csv, 'w') as f:
@@ -109,6 +109,7 @@ rule make_fastq10x:
                 '--id', params.run10x,  # output directory name
                 '--csv', output.csv,
                 '--delete-undetermined',
+                '&> {log}'
                 ]
         print(f"\nRunning the following commands:\n{' '.join(cmds)}\n")
         subprocess.check_call(cmds)
