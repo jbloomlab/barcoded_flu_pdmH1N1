@@ -1,6 +1,48 @@
 """``snakemake`` rules related to generating 10X FASTQ files."""
 
 
+rule fastq10x_qc_stats:
+    """Aggregates and plots the QC stats for the 10X FASTQ files."""
+    input:
+        qc_stats=expand(join(config['fastq10x_dir'], "{run10x}_qc_stats.csv"),
+                        run10x=illumina_runs_10x.index)
+    output:
+        qc_stats=report(join(config['fastq10x_dir'], 'fastq10x_qc_stats.csv'),
+                        caption='../report/fastq10x_qc_stats.rst',
+                        category='10X FASTQ files',
+                        ),
+        qc_plot=report(join(config['fastq10x_dir'], 'fastq10x_qc_stats.svg'),
+                       caption='../report/fastq10x_qc_plot.rst',
+                       category='10X FASTQ files',
+                       )
+    run:
+        # read and aggregate the stats
+        print('Reading 10X FASTQ QC stats from:\n\t' +
+              '\n\t'.join(input.qc_stats))
+        stats = pd.concat([(pd.read_csv(statfile,
+                                        names=['statistic', 'value'])
+                            .assign(run10x=run10x)
+                            )
+                           for statfile, run10x in zip(input.qc_stats,
+                                                       illumina_runs_10x.index)
+                           ],
+                          ignore_index=True)
+        print(f"Writing the aggregated stats to {output.qc_stats}")
+        stats.to_csv(output.qc_stats, index=False)
+
+        # plot the stats
+        _ = (ggplot(stats, aes('run10x', 'value')) +
+             geom_point(size=2) +
+             facet_wrap('~ statistic', ncol=4, scales='free_y') +
+             theme(axis_text_x=element_text(angle=90),
+                   figure_size=(12, 4), panel_spacing_x=0.6) +
+                   expand_limits(y=(0, 1)) +
+             scale_y_continuous(
+                labels=mizani.formatters.custom_format('{:.2g}'),
+                )
+             ).save(output.qc_plot, verbose=False, bbox_inches='tight')
+                           
+
 rule make_fastq10x:
     """Make 10X FASTQ files from BCL runs using `cellranger mkfastq`."""
     output:

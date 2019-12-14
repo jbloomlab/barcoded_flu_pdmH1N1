@@ -9,7 +9,15 @@ import re
 import shutil
 import subprocess
 
+# see here: https://stackoverflow.com/a/29172195
+import matplotlib
+matplotlib.use('Agg')
+
+import mizani
+
 import pandas as pd
+
+from plotnine import *
 
 
 # Configuration  --------------------------------------------------------------
@@ -17,7 +25,8 @@ import pandas as pd
 configfile: 'config.yaml'
 
 # run "quick" rules locally:
-localrules: all
+localrules: all,
+            fastq10x_qc_stats,
 
 # extract Illumina 10X runs from config
 illumina_runs_10x = (
@@ -33,7 +42,14 @@ assert len(illumina_runs_10x) == illumina_runs_10x.index.nunique()
 rule all:
     input:
         expand(join(config['fastq10x_dir'], "{run10x}_all_{read}.fastq.gz"),
-               run10x=illumina_runs_10x.index, read=['R1', 'R2'])
+               run10x=illumina_runs_10x.index, read=['R1', 'R2']),
+        join(config['fastq10x_dir'], 'fastq10x_qc_stats.svg'),
+        join(config['fastq10x_dir'], 'fastq10x_qc_stats.csv')
+
+
+# Set up report  -------------------------------------------------------------
+
+report: 'report/workflow.rst'
 
 
 # Load rules -----------------------------------------------------------------
