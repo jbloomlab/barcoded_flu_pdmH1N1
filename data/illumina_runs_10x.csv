@@ -5,7 +5,4 @@
 #  4. The location of the BCL folder on the Hutch server
 #  5. Lane(s) on the sequencing run, use * for all in flowcell
 sample,seqrun,index,bcl_folder,lane
-dual_truseq_pilot_100uM,190830,SI-GA-A1,/shared/ngs/illumina/bloom_lab/190830_M03100_0474_000000000-CL3WR,*
-dual_truseq_pilot_10uM,190830,SI-GA-A2,/shared/ngs/illumina/bloom_lab/190830_M03100_0474_000000000-CL3WR,*
-dual_truseq_pilot2_100um,190916,SI-GA-A1,/shared/ngs/illumina/bloom_lab/190916_M03100_0479_000000000-CL3YB,*
-dual_truseq_pilot2_10um,190916,SI-GA-A2,/shared/ngs/illumina/bloom_lab/190916_M03100_0479_000000000-CL3YB,*
+wt_virus_pilot,2019-12-03,SI-GA-A1,/shared/ngs/illumina/bloom_lab/191203_M03100_0504_000000000-CNCN9/,*
