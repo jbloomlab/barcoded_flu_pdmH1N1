@@ -45,7 +45,8 @@ rule all:
                run10x=illumina_runs_10x.index, read=['R1', 'R2']),
         join(config['fastq10x_dir'], 'fastq10x_qc_stats.svg'),
         join(config['fastq10x_dir'], 'fastq10x_qc_stats.csv'),
-        config['refgenome']
+        config['refgenome'],
+        config['cb_whitelist_10x']
 
 
 # Set up report  -------------------------------------------------------------
@@ -55,5 +56,6 @@ report: 'report/workflow.rst'
 
 # Load rules -----------------------------------------------------------------
 
+include: 'rules/align_fastq10x.smk'
 include: 'rules/star_refgenome.smk'
 include: 'rules/fastq10x.smk'

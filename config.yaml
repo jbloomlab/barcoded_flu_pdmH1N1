@@ -11,6 +11,7 @@ fastq10x_dir: results/fastq10x  # FASTQ files & QC stats for 10X Illumina runs
 mkfastq10x_dir: results/fastq10x/mkfastq_output  # `cellranger mkfastq` output
 genome_dir: results/genomes  # location of downloaded genomes and annotations
 refgenome: results/genomes/refgenome  # STAR reference genome directory
+aligned_fastq10x_dir: results/aligned_fastq10x  # aligned 10X FASTQ Illumina reads
 
 # cellular genome and GTF ftp sites
 cell_genome_ftp: ftp://ftp.ensembl.org/pub/release-98/fasta/canis_familiaris/dna/Canis_familiaris.CanFam3.1.dna.toplevel.fa.gz
@@ -19,6 +20,10 @@ cell_gtf_ftp: ftp://ftp.ensembl.org/pub/release-98/gtf/canis_familiaris/Canis_fa
 # viral genome and GTF file locations
 viral_genome: data/flu_sequences/flu-CA09.fasta
 viral_gtf: data/flu_sequences/flu-CA09.gtf
+
+# FTP location of 10X barcode whitelist: **this is for the v3 kit**
+cb_whitelist_10x_ftp: https://github.com/10XGenomics/cellranger/raw/master/lib/python/cellranger/barcodes/3M-february-2018.txt.gz
+cb_whitelist_10x: results/aligned_fastq10x/cb_whitelist_10x.txt
 
 # params for parsing 10X FASTQ R1 termini in `parse_fastq10x_termini` rule
 fastq10x_trim5: 22  # trim this much off 5' end of R1 reads that match patterns
