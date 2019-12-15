@@ -4,6 +4,7 @@
 
 import glob
 import json
+import os
 from os.path import join, basename
 import re
 import shutil
@@ -16,6 +17,8 @@ matplotlib.use('Agg')
 import mizani
 
 import pandas as pd
+
+import papermill
 
 from plotnine import *
 
@@ -36,17 +39,21 @@ illumina_runs_10x = (
     )
 assert len(illumina_runs_10x) == illumina_runs_10x.index.nunique()
 
+# list of all 10X samples
+samples_10x = illumina_runs_10x['sample'].unique().tolist()
+
 
 # Target rules ---------------------------------------------------------------
 
 rule all:
     input:
-        expand(join(config['fastq10x_dir'], "{run10x}_all_{read}.fastq.gz"),
-               run10x=illumina_runs_10x.index, read=['R1', 'R2']),
         join(config['fastq10x_dir'], 'fastq10x_qc_stats.svg'),
         join(config['fastq10x_dir'], 'fastq10x_qc_stats.csv'),
-        config['refgenome'],
-        config['cb_whitelist_10x']
+        join(config['aligned_fastq10x_dir'], 'summary_stats.csv'),
+        join(config['aligned_fastq10x_dir'], 'cells_plot.svg'),
+        join(config['aligned_fastq10x_dir'], 'knee_plot.svg'),
+        join(config['aligned_fastq10x_dir'], 'per_cell_plot.svg'),
+        join(config['aligned_fastq10x_dir'], 'mapping_rate_plot.svg')
 
 
 # Set up report  -------------------------------------------------------------

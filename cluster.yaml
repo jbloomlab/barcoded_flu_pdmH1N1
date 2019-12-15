@@ -18,3 +18,9 @@ make_refgenome:
   partition: largenode
   time: 0-2
   mem: 100000
+
+align_fastq10x:
+  cpus: 16
+  partition: largenode
+  time: 0-4
+  mem: 100000
