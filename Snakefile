@@ -44,7 +44,8 @@ rule all:
         expand(join(config['fastq10x_dir'], "{run10x}_all_{read}.fastq.gz"),
                run10x=illumina_runs_10x.index, read=['R1', 'R2']),
         join(config['fastq10x_dir'], 'fastq10x_qc_stats.svg'),
-        join(config['fastq10x_dir'], 'fastq10x_qc_stats.csv')
+        join(config['fastq10x_dir'], 'fastq10x_qc_stats.csv'),
+        config['refgenome']
 
 
 # Set up report  -------------------------------------------------------------
@@ -54,4 +55,5 @@ report: 'report/workflow.rst'
 
 # Load rules -----------------------------------------------------------------
 
+include: 'rules/star_refgenome.smk'
 include: 'rules/fastq10x.smk'

@@ -8,8 +8,17 @@ illumina_runs_10x: data/illumina_runs_10x.csv
 
 # output directories
 fastq10x_dir: results/fastq10x  # FASTQ files & QC stats for 10X Illumina runs
-mkfastq10x_dir: results/mkfastq10x_output  # output of 10X `cellranger mkfastq`
-genome_dir: results/ref_genomes # Automatically-downloaded reference genomes for canine and human
+mkfastq10x_dir: results/fastq10x/mkfastq_output  # `cellranger mkfastq` output
+genome_dir: results/genomes  # location of downloaded genomes and annotations
+refgenome: results/genomes/refgenome  # STAR reference genome directory
+
+# cellular genome and GTF ftp sites
+cell_genome_ftp: ftp://ftp.ensembl.org/pub/release-98/fasta/canis_familiaris/dna/Canis_familiaris.CanFam3.1.dna.toplevel.fa.gz
+cell_gtf_ftp: ftp://ftp.ensembl.org/pub/release-98/gtf/canis_familiaris/Canis_familiaris.CanFam3.1.98.gtf.gz
+
+# viral genome and GTF file locations
+viral_genome: data/flu_sequences/flu-CA09.fasta
+viral_gtf: data/flu_sequences/flu-CA09.gtf
 
 # params for parsing 10X FASTQ R1 termini in `parse_fastq10x_termini` rule
 fastq10x_trim5: 22  # trim this much off 5' end of R1 reads that match patterns
@@ -21,15 +30,3 @@ fastq10x_patterns:  # names, regex, allowed substitution mismatches
   - [proper-cell-barcode,
      'CTACACGACGCTCTTCCGATCT[ACGT]{26}T{2}',
      2]
-
-# params for downloading reference genomes
-# species, genome name, ftp link
-spikein_genome:
-  species: human
-  fasta: ftp://ftp.ensembl.org/pub/release-98/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
-  gtf: ftp://ftp.ensembl.org/pub/release-98/gtf/homo_sapiens/Homo_sapiens.GRCh38.98.gtf.gz
-
-cell_genome:
-  species: canine
-  fasta: ftp://ftp.ensembl.org/pub/release-98/fasta/canis_familiaris/dna/Canis_familiaris.CanFam3.1.dna.toplevel.fa.gz
-  gtf: ftp://ftp.ensembl.org/pub/release-98/gtf/canis_familiaris/Canis_familiaris.CanFam3.1.98.gtf.gz

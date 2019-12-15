@@ -10,5 +10,11 @@ __default__:
 make_fastq10x:
   cpus: 16
   partition: largenode
-  time: 0-8
+  time: 0-4
+  mem: 100000
+
+make_refgenome:
+  cpus: 16
+  partition: largenode
+  time: 0-4
   mem: 100000
