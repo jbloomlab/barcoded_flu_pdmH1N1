@@ -76,7 +76,13 @@ rule align_fastq10x:
         summary=join(config['aligned_fastq10x_dir'], "{sample10x}",
                      'Solo.out/Gene/Summary.csv'),
         umi_per_cell=join(config['aligned_fastq10x_dir'], "{sample10x}",
-                          'Solo.out/Gene/UMIperCellSorted.txt')
+                          'Solo.out/Gene/UMIperCellSorted.txt'),
+        matrix=join(config['aligned_fastq10x_dir'], "{sample10x}",
+                    'Solo.out/Gene/filtered/matrix.mtx.gz'),
+        features=join(config['aligned_fastq10x_dir'], "{sample10x}",
+                      'Solo.out/Gene/filtered/features.tsv.gz'),
+        barcodes=join(config['aligned_fastq10x_dir'], "{sample10x}",
+                      'Solo.out/Gene/filtered/barcodes.tsv.gz'),
     params:
         outdir=join(config['aligned_fastq10x_dir'], "{sample10x}") + '/'
     threads: config['max_cpus']
@@ -100,8 +106,15 @@ rule align_fastq10x:
             '--outFileNamePrefix', params.outdir,
             ]
         print(f"Running STARsolo with following command:\n{' '.join(cmds)}")
-        os.makedirs(output.aligndir, exist_ok=True)
+        os.makedirs(params.outdir, exist_ok=True)
         subprocess.check_call(cmds)
+
+        # gzip filtered cell-gene matrix
+        for fgz in [output.matrix, output.features, output.barcodes]:
+            f = os.path.splitext(fgz)[0]
+            print(f"gzipping {f}")
+            assert os.path.isfile(f), f"Cannot find {f}"
+            subprocess.check_call(['gzip', f])
 
 rule get_cb_whitelist_10x:
     """Get whitelisted 10X cellbarcodes."""
