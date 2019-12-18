@@ -1,56 +1,38 @@
 """``snakemake`` rules related aligned the 10X Illumina FASTQ reads."""
 
 
-rule align_fastq10x_stats:
-    """Aggregate 10X alignment stats and make summary plots."""
+rule align_fastq10x_summary:
+    """Summarize 10X FASTQ alignments."""
     input:
         summary=expand(join(config['aligned_fastq10x_dir'], "{sample10x}",
                             'Solo.out/Gene/Summary.csv'),
                        sample10x=samples_10x),
         umi_per_cell=expand(join(config['aligned_fastq10x_dir'], "{sample10x}",
                                  'Solo.out/Gene/UMIperCellSorted.txt'),
-                            sample10x=samples_10x)
+                            sample10x=samples_10x),
+        nb='notebooks/align_fastq10x_summary.ipynb'
     output:
-        stats=report(join(config['aligned_fastq10x_dir'], 'summary_stats.csv'),
-                     caption='../report/align_fastq10x_stats.rst',
-                     category='Aligning 10X FASTQs',
-                     ),
-        cells_plot=report(
-                join(config['aligned_fastq10x_dir'], 'cells_plot.svg'),
-                caption='../report/align_fastq10x_cells_plot.rst',
-                category='Aligning 10X FASTQs',
-                ),
-        knee_plot=report(join(config['aligned_fastq10x_dir'], 'knee_plot.svg'),
-                         caption='../report/align_fastq10x_knee_plot.rst',
-                         category='Aligning 10X FASTQs',
-                         ),
-        per_cell_plot=report(
-                join(config['aligned_fastq10x_dir'], 'per_cell_plot.svg'),
-                caption='../report/align_fastq10x_per_cell_plot.rst',
-                category='Aligning 10X FASTQs',
-                ),
-        mapping_rate_plot=report(
-                join(config['aligned_fastq10x_dir'], 'mapping_rate_plot.svg'),
-                caption='../report/align_fastq10x_mapping_rate_plot.rst',
-                category='Aligning 10X FASTQs',
-                )
+        nb=join(config['aligned_fastq10x_dir'],
+                'align_fastq10x_summary.ipynb'),
+        nb_html=report(join(config['aligned_fastq10x_dir'],
+                            'align_fastq10x_summary.html'),
+                       caption='../report/align_fastq10x_summary.rst',
+                       category='Aligning 10X FASTQs')
     run:
         papermill.execute_notebook(
-            input_path='notebooks/align_fastq10x_stats.ipynb',
-            output_path=join(config['aligned_fastq10x_dir'],
-                             'align_fastq10x_stats.ipynb'),
+            input_path=input.nb,
+            output_path=output.nb,
             cwd=os.getcwd(),
             parameters={
                 'samples_10x': samples_10x,
                 'input_summary': input.summary,
                 'input_umi_per_cell': input.umi_per_cell,
-                'output_stats': output.stats,
-                'output_cells_plot': output.cells_plot,
-                'output_knee_plot': output.knee_plot,
-                'output_per_cell_plot': output.per_cell_plot,
-                'output_mapping_rate_plot': output.mapping_rate_plot,
                 },
             )
+
+        # https://github.com/ipython-contrib/jupyter_contrib_nbextensions/issues/901
+        subprocess.check_call(['jupyter', 'nbconvert', output.nb,
+                               '--to', 'html_embed', '--template', 'toc2'])
 
 
 rule align_fastq10x:

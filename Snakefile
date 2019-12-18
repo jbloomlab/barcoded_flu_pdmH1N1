@@ -10,17 +10,9 @@ import re
 import shutil
 import subprocess
 
-# see here: https://stackoverflow.com/a/29172195
-import matplotlib
-matplotlib.use('Agg')
-
-import mizani
-
 import pandas as pd
 
 import papermill
-
-from plotnine import *
 
 
 # Configuration  --------------------------------------------------------------
@@ -47,13 +39,8 @@ samples_10x = illumina_runs_10x['sample'].unique().tolist()
 
 rule all:
     input:
-        join(config['fastq10x_dir'], 'fastq10x_qc_stats.svg'),
-        join(config['fastq10x_dir'], 'fastq10x_qc_stats.csv'),
-        join(config['aligned_fastq10x_dir'], 'summary_stats.csv'),
-        join(config['aligned_fastq10x_dir'], 'cells_plot.svg'),
-        join(config['aligned_fastq10x_dir'], 'knee_plot.svg'),
-        join(config['aligned_fastq10x_dir'], 'per_cell_plot.svg'),
-        join(config['aligned_fastq10x_dir'], 'mapping_rate_plot.svg'),
+        join(config['fastq10x_dir'], 'fastq10x_qc_analysis.html'),
+        join(config['aligned_fastq10x_dir'], 'align_fastq10x_summary.html'),
         expand(join(config['analysis_dir'], 
                     "{sample10x}_analyze_cell_gene_matrix.html"),
                sample10x=samples_10x)

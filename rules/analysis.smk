@@ -13,8 +13,8 @@ rule analyze_cell_gene_matrix:
         viral_gtf=config['viral_gtf'],
         nb='notebooks/analyze_cell_gene_matrix.ipynb'
     output:
-        nb=temp(join(config['analysis_dir'],
-                     "{sample10x}_analyze_cell_gene_matrix.ipynb")),
+        nb=join(config['analysis_dir'],
+                "{sample10x}_analyze_cell_gene_matrix.ipynb"),
         nb_html=report(join(config['analysis_dir'],
                             "{sample10x}_analyze_cell_gene_matrix.html"),
                        caption='../report/analyze_cell_gene_matrix.rst',
@@ -31,5 +31,7 @@ rule analyze_cell_gene_matrix:
                 'input_viral_gtf': input.viral_gtf,
                 },
             )
+
+        # https://github.com/ipython-contrib/jupyter_contrib_nbextensions/issues/901
         subprocess.check_call(['jupyter', 'nbconvert', output.nb,
-                               '--to', 'html'])
+                               '--to', 'html_embed', '--template', 'toc2'])

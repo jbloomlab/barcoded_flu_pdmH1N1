@@ -11,4 +11,7 @@ The basic steps in the analysis are as follows:
    STARsolo_ also identifies the cells and creates the cell-gene matrix.
    See the summary results in `Aligning 10X FASTQs`_.
 
+ - The cell-gene matrix is analyzed using `scanpy <https://scanpy.readthedocs.io/>`_ and `AnnData <https://anndata.readthedocs.io/>`_.
+   See the summary results in `Analysis`_.
+
 .. _STARsolo: https://github.com/alexdobin/STAR/blob/master/docs/STARsolo.md
