@@ -78,11 +78,11 @@ rule align_fastq10x:
         umi_per_cell=join(config['aligned_fastq10x_dir'], "{sample10x}",
                           'Solo.out/Gene/UMIperCellSorted.txt'),
         matrix=join(config['aligned_fastq10x_dir'], "{sample10x}",
-                    'Solo.out/Gene/filtered/matrix.mtx.gz'),
+                    'Solo.out/Gene/filtered/matrix.mtx'),
         features=join(config['aligned_fastq10x_dir'], "{sample10x}",
-                      'Solo.out/Gene/filtered/features.tsv.gz'),
+                      'Solo.out/Gene/filtered/features.tsv'),
         barcodes=join(config['aligned_fastq10x_dir'], "{sample10x}",
-                      'Solo.out/Gene/filtered/barcodes.tsv.gz'),
+                      'Solo.out/Gene/filtered/barcodes.tsv'),
     params:
         outdir=join(config['aligned_fastq10x_dir'], "{sample10x}") + '/'
     threads: config['max_cpus']
@@ -109,12 +109,6 @@ rule align_fastq10x:
         os.makedirs(params.outdir, exist_ok=True)
         subprocess.check_call(cmds)
 
-        # gzip filtered cell-gene matrix
-        for fgz in [output.matrix, output.features, output.barcodes]:
-            f = os.path.splitext(fgz)[0]
-            print(f"gzipping {f}")
-            assert os.path.isfile(f), f"Cannot find {f}"
-            subprocess.check_call(['gzip', f])
 
 rule get_cb_whitelist_10x:
     """Get whitelisted 10X cellbarcodes."""
