@@ -12,6 +12,7 @@ mkfastq10x_dir: results/fastq10x/mkfastq_output  # `cellranger mkfastq` output
 genome_dir: results/genomes  # location of downloaded genomes and annotations
 refgenome: results/genomes/refgenome  # STAR reference genome directory
 aligned_fastq10x_dir: results/aligned_fastq10x  # aligned 10X Illumina reads
+analysis_dir: results/analysis  # fine-grained analyses
 
 # cellular genome and GTF ftp sites
 cell_genome_ftp: ftp://ftp.ensembl.org/pub/release-98/fasta/canis_familiaris/dna/Canis_familiaris.CanFam3.1.dna.toplevel.fa.gz
@@ -29,14 +30,3 @@ cb_len_10x: 16  # length of 10X cell barcode
 umi_len_10x: 12  # length of 10X UMI: **this is for the v3 kit**
 
 expect_ncells: 10000  # expected cells per 10X run, used for "knee" cell calling
-
-# params for parsing 10X FASTQ R1 termini in `parse_fastq10x_termini` rule
-fastq10x_trim5: 22  # trim this much off 5' end of R1 reads that match patterns
-fastq10x_multi_pattern: first  # when matching multi patterns, how to assign?
-fastq10x_patterns:  # names, regex, allowed substitution mismatches
-  - [early-viral-priming,
-     'CTACACGACGCTCTTCCGATCT[ACGT]{16}GCGGCCGCCTAT',
-     2]
-  - [proper-cell-barcode,
-     'CTACACGACGCTCTTCCGATCT[ACGT]{26}T{2}',
-     2]

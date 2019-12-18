@@ -53,7 +53,10 @@ rule all:
         join(config['aligned_fastq10x_dir'], 'cells_plot.svg'),
         join(config['aligned_fastq10x_dir'], 'knee_plot.svg'),
         join(config['aligned_fastq10x_dir'], 'per_cell_plot.svg'),
-        join(config['aligned_fastq10x_dir'], 'mapping_rate_plot.svg')
+        join(config['aligned_fastq10x_dir'], 'mapping_rate_plot.svg'),
+        expand(join(config['analysis_dir'], 
+                    "{sample10x}_analyze_cell_gene_matrix.html"),
+               sample10x=samples_10x)
 
 
 # Set up report  -------------------------------------------------------------
@@ -63,6 +66,7 @@ report: 'report/workflow.rst'
 
 # Load rules -----------------------------------------------------------------
 
+include: 'rules/analysis.smk'
 include: 'rules/align_fastq10x.smk'
 include: 'rules/star_refgenome.smk'
 include: 'rules/fastq10x.smk'
