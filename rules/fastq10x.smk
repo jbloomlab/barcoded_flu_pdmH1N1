@@ -14,19 +14,14 @@ rule fastq10x_qc_analysis:
                        caption='../report/fastq10x_qc_analysis.rst',
                        category='10X FASTQ files')
     run:
-        papermill.execute_notebook(
-            input_path=input.nb,
-            output_path=output.nb,
-            cwd=os.getcwd(),
-            parameters={
-                'illumina_runs_10x': illumina_runs_10x.index.tolist(),
-                'input_qc_stats': input.qc_stats,
-                },
-            )
-
-        # https://github.com/ipython-contrib/jupyter_contrib_nbextensions/issues/901
-        subprocess.check_call(['jupyter', 'nbconvert', output.nb,
-                               '--to', 'html_embed', '--template', 'toc2'])
+        run_nb_to_html(
+                input_nb=input.nb,
+                output_nb=output.nb,
+                parameters={
+                    'illumina_runs_10x': illumina_runs_10x.index.tolist(),
+                    'input_qc_stats': input.qc_stats,
+                    },
+                )
 
 
 rule make_fastq10x:

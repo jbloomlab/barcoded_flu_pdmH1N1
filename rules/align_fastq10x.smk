@@ -19,20 +19,14 @@ rule align_fastq10x_summary:
                        caption='../report/align_fastq10x_summary.rst',
                        category='Aligning 10X FASTQs')
     run:
-        papermill.execute_notebook(
-            input_path=input.nb,
-            output_path=output.nb,
-            cwd=os.getcwd(),
-            parameters={
-                'samples_10x': samples_10x,
-                'input_summary': input.summary,
-                'input_umi_per_cell': input.umi_per_cell,
-                },
-            )
-
-        # https://github.com/ipython-contrib/jupyter_contrib_nbextensions/issues/901
-        subprocess.check_call(['jupyter', 'nbconvert', output.nb,
-                               '--to', 'html_embed', '--template', 'toc2'])
+        run_nb_to_html(input_nb=input.nb,
+                       output_nb=output.nb,
+                       parameters={
+                            'samples_10x': samples_10x,
+                            'input_summary': input.summary,
+                            'input_umi_per_cell': input.umi_per_cell,
+                            },
+                       )
 
 
 rule align_fastq10x:

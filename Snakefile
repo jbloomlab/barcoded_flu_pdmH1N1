@@ -12,7 +12,7 @@ import subprocess
 
 import pandas as pd
 
-import papermill
+from pymodules.jupnb import run_nb_to_html
 
 
 # Configuration  --------------------------------------------------------------
@@ -20,8 +20,7 @@ import papermill
 configfile: 'config.yaml'
 
 # run "quick" rules locally:
-localrules: all,
-            fastq10x_qc_stats,
+localrules: all
 
 # extract Illumina 10X runs from config
 illumina_runs_10x = (

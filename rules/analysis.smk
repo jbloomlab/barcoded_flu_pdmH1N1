@@ -20,18 +20,13 @@ rule analyze_cell_gene_matrix:
                        caption='../report/analyze_cell_gene_matrix.rst',
                        category='Analysis')
     run:
-        papermill.execute_notebook(
-            input_path=input.nb,
-            output_path=output.nb,
-            cwd=os.getcwd(),
-            parameters={
-                'input_matrix': input.matrix,
-                'input_features': input.features,
-                'input_barcodes': input.barcodes,
-                'input_viral_gtf': input.viral_gtf,
-                },
-            )
-
-        # https://github.com/ipython-contrib/jupyter_contrib_nbextensions/issues/901
-        subprocess.check_call(['jupyter', 'nbconvert', output.nb,
-                               '--to', 'html_embed', '--template', 'toc2'])
+        run_nb_to_html(
+                input_nb=input.nb,
+                output_nb=output.nb,
+                parameters={
+                    'input_matrix': input.matrix,
+                    'input_features': input.features,
+                    'input_barcodes': input.barcodes,
+                    'input_viral_gtf': input.viral_gtf,
+                    },
+                )

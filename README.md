@@ -17,6 +17,8 @@ This repository is organized as followed (based loosely on [this example snakema
 
  - [./notebooks/](notebooks) contains [Jupyter notebooks](https://jupyter.org/) that are run by [Snakefile] using [papermill parameterization](https://papermill.readthedocs.io/).
 
+ - [./pymodules/](pymodules) contains Python modules with some functions used by [Snakefile].
+
  - [./report/](report) contains workflow description and captions used to create the [snakemake report].
 
  - [./data/](data) contains the input data, specifically:
