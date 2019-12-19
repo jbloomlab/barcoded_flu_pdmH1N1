@@ -7,7 +7,7 @@ SOURCE      .
   ORGANISM  .
             .
 FEATURES             Location/Qualifiers
-     exon            1..2341
+     vRNA_rc         1..2341
                      /source="JesseBloom"
                      /gene_id="fluPB2"
                      /gene_name="fluPB2"
@@ -87,7 +87,7 @@ SOURCE      .
   ORGANISM  .
             .
 FEATURES             Location/Qualifiers
-     exon            1..2341
+     vRNA_rc         1..2341
                      /source="JesseBloom"
                      /gene_id="fluPB1"
                      /gene_name="fluPB1"
@@ -167,7 +167,7 @@ SOURCE      .
   ORGANISM  .
             .
 FEATURES             Location/Qualifiers
-     exon            1..2233
+     vRNA_rc         1..2233
                      /source="JesseBloom"
                      /gene_id="fluPA"
                      /gene_name="fluPA"
@@ -244,7 +244,7 @@ SOURCE      .
   ORGANISM  .
             .
 FEATURES             Location/Qualifiers
-     exon            1..2035
+     vRNA_rc         1..2035
                      /source="JesseBloom"
                      /gene_id="fluHA"
                      /gene_name="fluHA"
@@ -269,6 +269,7 @@ FEATURES             Location/Qualifiers
                      IEKMNTQFTAVGKEFNHLEKRIENLNKKVDDGFLDIWTYNAELLVLLENERTLDYHDSN
                      VKNLYEKVRSQLKNNAKEIGNGCFEFYHKCDNTCMESVKNGTYDYPKYSEEAKLNREEI
                      DGVKLESTRIYQILAIYSTVASSLVLVVSLGAISFWMCSNGSLQCRICI*"
+     viral_barcode   1828..1843
 ORIGIN
         1 agcaaaagca ggggaaaaca aaagcaacca aattgaaagc aatactagta gttctgctat
        61 atacatttgc aaccgcaatt gcagacacat tttgtatagg gatccatgaa ggcgattttg
@@ -314,7 +315,7 @@ SOURCE      .
   ORGANISM  .
             .
 FEATURES             Location/Qualifiers
-     exon            1..1565
+     vRNA_rc         1..1565
                      /source="JesseBloom"
                      /gene_id="fluNP"
                      /gene_name="fluNP"
@@ -376,7 +377,7 @@ SOURCE      .
   ORGANISM  .
             .
 FEATURES             Location/Qualifiers
-     exon            1..1735
+     vRNA_rc         1..1735
                      /source="JesseBloom"
                      /gene_id="fluNA"
                      /gene_name="fluNA"
@@ -400,6 +401,7 @@ FEATURES             Location/Qualifiers
                      FGDNPRPNDKTGSCGPVSSNGANGVKGFSFKYGNGVWIGRTKSISSRNGFEMIWDPNGW
                      TGTDNNFSIKQDIVGINEWSGYSGSFVQHPELTGLDCIRPCFWVELIRGRPKENTIWTS
                      GSSISFCGVNSDTVGWSWPDGAELPFTIDK*"
+     viral_barcode   1551..1566
 ORIGIN
         1 agcgaaagca ggagtttaaa ccgaatccaa accagaaaat aataaccatt gggtcaatct
        61 gtatggtagt cggaataatt agcctaatat tgcaaatagg aaatataatc tcaggatcca
@@ -440,7 +442,7 @@ SOURCE      .
   ORGANISM  .
             .
 FEATURES             Location/Qualifiers
-     exon            1..1027
+     vRNA_rc         1..1027
                      /source="JesseBloom"
                      /gene_id="fluM"
                      /gene_name="fluM"
@@ -499,7 +501,7 @@ SOURCE      .
   ORGANISM  .
             .
 FEATURES             Location/Qualifiers
-     exon            1..890
+     vRNA_rc         1..890
                      /source="JesseBloom"
                      /gene_id="fluNS"
                      /gene_name="fluNS"

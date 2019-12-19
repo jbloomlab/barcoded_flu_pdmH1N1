@@ -22,8 +22,8 @@ def main():
     # flu genes
     gene_names = ['PB2', 'PB1', 'PA', 'HA', 'NP', 'NA', 'M', 'NS']
 
-    # plus / minus synonymous viral barcodes
-    viral_barcodes = ['', '-dblSyn']
+    # plus / minus synonymous viral tags
+    viral_tags = ['', '-dblSyn']
 
     # information used to identify features
     polyA = re.compile('A{5}') # run of at least 5 A nucleotides
@@ -35,12 +35,13 @@ def main():
             'M':re.compile('AAC(?P<intron>GTA[CT]GTTC[ACGT]+GAAAATTT[AG]CAG)[GA]C'),
             'NS':re.compile('CAG(?P<intron>GTAGA[CT]TG[ACGT]+C[CT]TC[TC][TCA]T[TG]CCAG)GA'),
             }
+    viralbclen = 16  # length of viral barcode
 
     genes = collections.defaultdict(list)
 
     plasmidmaps = glob.glob('plasmid_maps/*.gb')
 
-    for syntype, gene_short_name in itertools.product(viral_barcodes, gene_names):
+    for syntype, gene_short_name in itertools.product(viral_tags, gene_names):
 
         print("\nProcessing {0}{1}...".format(gene_short_name, syntype))
 
@@ -197,18 +198,41 @@ def main():
                         )
                     )
 
+        # annotate viral barcodes in segments that contain them
+        if 'N' in geneseq:
+            print(f"Annotating viral barcode...")
+            m = re.fullmatch(f"[ACGT]+(?P<viralbc>N{{{viralbclen}}})[ACGT]+",
+                             geneseq)
+            if not m:
+                raise ValueError('could not match viral barcode')
+            gene.features.append(
+                    Bio.SeqFeature.SeqFeature(
+                        Bio.SeqFeature.FeatureLocation(m.start('viralbc'),
+                                                       m.end('viralbc')),
+                        id='viral_barcode',
+                        type='viral_barcode',
+                        strand=1
+                        )
+                    )
+
         genes[syntype].append(gene)
 
-
-    # now write output
-    for syntype in viral_barcodes:
+    # now write output for wt viral tag variant
+    for syntype in viral_tags[:1]:
 
         genefile = 'flu-CA09{0}.fasta'.format(syntype)
-        genbankfile = os.path.splitext(genefile)[0] + '.gb'
-        print("\nWriting {0} genes to {1} and {2}".format(
-                len(genes[syntype]), genefile, genbankfile))
+        print(f"\nWriting {len(genes[syntype])} genes to {genefile}")
         Bio.SeqIO.write(genes[syntype], genefile, 'fasta')
-        Bio.SeqIO.write(genes[syntype], genbankfile, 'genbank')
+
+        genbankfile = os.path.splitext(genefile)[0] + '.gb'
+        print(f"\nWriting {len(genes[syntype])} genes to {genbankfile}")
+        genbank_genes = []  # copy of genes where 'exon' -> vRNA
+        for gene in genes[syntype]:
+            gene = copy.deepcopy(gene)
+            assert gene.features[0].type == 'exon'
+            gene.features[0].type = 'vRNA_rc'
+            genbank_genes.append(gene)
+        Bio.SeqIO.write(genbank_genes, genbankfile, 'genbank')
 
         mrnas = [Bio.SeqRecord.SeqRecord(mrna.extract(gene).seq,
                     id=mrna.id, description='')
