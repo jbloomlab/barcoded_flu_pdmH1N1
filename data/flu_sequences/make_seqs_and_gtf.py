@@ -9,10 +9,12 @@ import collections
 import copy
 
 import Bio.Alphabet
-import Bio.SeqIO
+import Bio.Data.IUPACData
 import Bio.Seq
-import Bio.SeqRecord
 import Bio.SeqFeature
+import Bio.SeqIO
+import Bio.SeqRecord
+
 import BCBio.GFF
 
 
@@ -24,6 +26,11 @@ def main():
 
     # plus / minus synonymous viral tags
     viral_tags = ['', '-dblSyn']
+    tag_names = {'': 'wt', '-dblSyn': 'syn'}
+
+    # map nucleotide sets to their ambiguous characters
+    nts_to_ambig_char = {frozenset(vals): char for char, vals in
+                         Bio.Data.IUPACData.ambiguous_dna_values.items()}
 
     # information used to identify features
     polyA = re.compile('A{5}') # run of at least 5 A nucleotides
@@ -80,7 +87,7 @@ def main():
                     type='exon',
                     strand=1,
                     qualifiers={
-                        "source":"JesseBloom",
+                        "source": "JesseBloom",
                         "gene_id":gene_name,
                         "gene_name":gene_name,
                         "gene_biotype":"vRNA",
@@ -217,22 +224,12 @@ def main():
 
         genes[syntype].append(gene)
 
-    # now write output for wt viral tag variant
+    # now write FASTA / GTF for wt viral tag variant
     for syntype in viral_tags[:1]:
 
         genefile = 'flu-CA09{0}.fasta'.format(syntype)
         print(f"\nWriting {len(genes[syntype])} genes to {genefile}")
         Bio.SeqIO.write(genes[syntype], genefile, 'fasta')
-
-        genbankfile = os.path.splitext(genefile)[0] + '.gb'
-        print(f"\nWriting {len(genes[syntype])} genes to {genbankfile}")
-        genbank_genes = []  # copy of genes where 'exon' -> vRNA
-        for gene in genes[syntype]:
-            gene = copy.deepcopy(gene)
-            assert gene.features[0].type == 'exon'
-            gene.features[0].type = 'vRNA_rc'
-            genbank_genes.append(gene)
-        Bio.SeqIO.write(genbank_genes, genbankfile, 'genbank')
 
         mrnas = [Bio.SeqRecord.SeqRecord(mrna.extract(gene).seq,
                     id=mrna.id, description='')
@@ -271,6 +268,46 @@ def main():
                 newlines.append('\t'.join(entries) + '\n')
         with open(gtffile, 'w') as f:
             f.write(''.join(newlines))
+
+    # write Genbank annotating the tags
+    genbankfile = 'flu-CA09.gb'
+    print(f"\nWriting tag-annotated genes to {genbankfile}")
+    if len(viral_tags) != 2:
+        raise RuntimeError('code for tagged Genbank only works for 2 tags')
+    genbank_genes = []
+    tags = collections.defaultdict(dict)
+    for igene, gene_name in enumerate(gene_names):
+        gene = copy.deepcopy(genes[viral_tags[0]][igene])
+        gene2 = genes[viral_tags[1]][igene]
+        assert gene.features[0].type == 'exon'
+        gene.features[0].type = 'vRNA_rc'  # type from exon -> vRNA_rc
+        geneseq = str(gene.seq)
+        gene2seq = str(gene2.seq)
+        assert len(geneseq) == len(gene2seq)
+        itag = 0
+        for i, (nt, nt2) in enumerate(zip(geneseq, gene2seq)):
+            if nt == nt2:
+                continue  # not a tag if both variants the same
+            itag += 1
+            tagname = f"tag_{itag}"
+            tags[gene_name][tagname] = {tag_names[viral_tags[0]]: nt,
+                                        tag_names[viral_tags[1]]: nt2}
+            gene.features.append(
+                    Bio.SeqFeature.SeqFeature(
+                        Bio.SeqFeature.FeatureLocation(i, i + 1),
+                        id=tagname,
+                        type=tagname,
+                        strand=1,
+                        qualifiers=tags[gene_name][tagname],
+                        )
+                    )
+            gene.seq = (gene.seq[:i] +
+                        Bio.Seq.Seq(nts_to_ambig_char[frozenset([nt, nt2])],
+                                    alphabet=gene.seq.alphabet) +
+                        gene.seq[i + 1:])
+        print(f"Annotated {len(tags[gene_name])} nucleotide tags for {gene_name}")
+        genbank_genes.append(gene)
+    Bio.SeqIO.write(genbank_genes, genbankfile, 'genbank')
 
 
 # run the script

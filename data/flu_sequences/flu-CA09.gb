@@ -36,11 +36,17 @@ FEATURES             Location/Qualifiers
                      LTVNVRGSGLRILVRGNSPVFNYNKATKRLTVLGKDAGALTEDPDEGTSGVESAVLRGF
                      LILGKEDKRYGPALSINELSNLAKGEKANVLIGQGDVVLVMKRKRDSSILTDSQTATKR
                      IRMAIN*"
+     tag_1           201
+                     /wt="A"
+                     /syn="G"
+     tag_2           2190
+                     /wt="G"
+                     /syn="A"
 ORIGIN
         1 agcgaaagca ggtcaattat attcaatatg gagagaataa aagaactgag agatctaatg
        61 tcgcagtccc gcactcgcga gatactcact aagaccactg tggaccatat ggccataatc
       121 aaaaagtaca catcaggaag gcaagagaag aaccccgcac tcagaatgaa gtggatgatg
-      181 gcaatgagat acccaattac agcagacaag agaataatgg acatgattcc agagaggaat
+      181 gcaatgagat acccaattac rgcagacaag agaataatgg acatgattcc agagaggaat
       241 gaacaaggac aaaccctctg gagcaaaaca aacgatgctg gatcagaccg agtgatggta
       301 tcacctctgg ccgtaacatg gtggaatagg aatggcccaa caacaagtac agttcattac
       361 cctaaggtat ataaaactta tttcgaaaag gtcgaaaggt tgaaacatgg taccttcggc
@@ -73,7 +79,7 @@ ORIGIN
      1981 aattctccag tattcaatta caacaaggca accaaacgac ttacagttct tggaaaggat
      2041 gcaggtgcat tgactgaaga tccagatgaa ggcacatctg gggtggagtc tgctgtcctg
      2101 agaggatttc tcattttggg caaagaagac aagagatatg gcccagcatt aagcatcaat
-     2161 gaactgagca atcttgcaaa aggagagaag gctaatgtgc taattgggca aggggacgta
+     2161 gaactgagca atcttgcaaa aggagagaar gctaatgtgc taattgggca aggggacgta
      2221 gtgttggtaa tgaaacgaaa acgggactct agcatactta ctgacagcca gacagcgacc
      2281 aaaagaattc ggatggccat caattagtgt cgaatagttt aaaaacgacc ttgtttctac
      2341 t
@@ -116,11 +122,17 @@ FEATURES             Location/Qualifiers
                      EIDSVNNAVVMPAHGPAKSMEYDAVATTHSWIPKRNRSILNTSQRGILEDEQMYQKCCN
                      LFEKFFPSSSYRRPVGISSMVEAMVSRARIDARVDFESGRIKKEEFSEIMKICSTIEEL
                      RRQK*"
+     tag_1           192
+                     /wt="G"
+                     /syn="A"
+     tag_2           2205
+                     /wt="G"
+                     /syn="A"
 ORIGIN
         1 agcgaaagca ggcaaaccat ttgaatggat gtcaatccga ctctactttt cctaaaaatt
        61 ccagcgcaaa atgccataag caccacattc ccttatactg gagatcctcc atacagccat
       121 ggaacaggaa caggatacac catggacaca gtaaacagaa cacaccaata ctcagaaaag
-      181 ggaaagtgga cgacaaacac agagactggt gcaccccagc tcaacccgat tgatggacca
+      181 ggaaagtgga cracaaacac agagactggt gcaccccagc tcaacccgat tgatggacca
       241 ctacctgagg ataatgaacc aagtgggtat gcacaaacag actgtgttct agaggctatg
       301 gctttccttg aagaatccca cccaggaata tttgagaatt catgccttga aacaatggaa
       361 gttgttcaac aaacaagggt agataaacta actcaaggtc gccagactta tgattggaca
@@ -153,7 +165,7 @@ ORIGIN
      1981 aaaagcatgg aatatgatgc cgttgcaact acacattcct ggattcccaa gaggaatcgt
      2041 tctattctca acacaagcca aaggggaatt cttgaggatg aacagatgta ccagaagtgc
      2101 tgcaatctat tcgagaaatt tttccctagc agttcatata ggagaccggt tggaatttct
-     2161 agcatggtgg aggccatggt gtctagggcc cggattgatg ccagggtcga cttcgagtct
+     2161 agcatggtgg aggccatggt gtctagggcc cggattgatg ccagrgtcga cttcgagtct
      2221 ggacggatca agaaagaaga gttctctgag atcatgaaga tctgttccac cattgaagaa
      2281 ctcagacggc aaaaataatg aatttagctt gtccttcatg aaaaaatgcc ttgtttctac
      2341 t
@@ -195,10 +207,16 @@ FEATURES             Location/Qualifiers
                      WGMEMRRCLLQSLQQIESMIEAESSVKEKDMTKEFFENKSETWPIGESPRGVEEGSIGK
                      VCRTLLAKSVFNSLYASPQLEGFSAESRKLLLIVQALRDNLEPGTFDLGGLYEAIEECL
                      INDPWVLLNASWFNSFLTHALK*"
+     tag_1           123
+                     /wt="C"
+                     /syn="T"
+     tag_2           2104
+                     /wt="C"
+                     /syn="T"
 ORIGIN
         1 agcgaaagca ggtactgatc caaaatggaa gactttgtgc gacaatgctt caatccaatg
        61 atcgtcgagc ttgcggaaaa ggcaatgaaa gaatatgggg aagatccgaa aatcgaaact
-      121 aacaagtttg ctgcaatatg cacacatttg gaagtttgtt tcatgtattc ggatttccat
+      121 aayaagtttg ctgcaatatg cacacatttg gaagtttgtt tcatgtattc ggatttccat
       181 ttcatcgacg aacggggtga atcaataatt gtagaatctg gtgacccgaa tgcactattg
       241 aagcaccgat ttgagataat tgaaggaaga gaccgaatca tggcctggac agtggtgaac
       301 agtatatgta acacaacagg ggtagagaag cctaaatttc ttcctgattt gtatgattac
@@ -231,7 +249,7 @@ ORIGIN
      1921 attgggaaag tgtgcaggac cttactggca aaatctgtat tcaacagtct atatgcatct
      1981 ccacaacttg aggggttttc ggctgaatct agaaaattgc ttctcattgt tcaggcactt
      2041 agggacaacc tggaacctgg aaccttcgat cttggggggc tatatgaagc aatcgaggag
-     2101 tgcctgatta atgatccctg ggttttgctt aatgcatctt ggttcaactc cttcctcaca
+     2101 tgcytgatta atgatccctg ggttttgctt aatgcatctt ggttcaactc cttcctcaca
      2161 catgcactga agtagttgtg gcaatgctac tatttgctat ccatactgtc caaaaaagta
      2221 ccttgtttct act
 //
@@ -270,12 +288,18 @@ FEATURES             Location/Qualifiers
                      VKNLYEKVRSQLKNNAKEIGNGCFEFYHKCDNTCMESVKNGTYDYPKYSEEAKLNREEI
                      DGVKLESTRIYQILAIYSTVASSLVLVVSLGAISFWMCSNGSLQCRICI*"
      viral_barcode   1828..1843
+     tag_1           249
+                     /wt="C"
+                     /syn="T"
+     tag_2           1686
+                     /wt="T"
+                     /syn="C"
 ORIGIN
         1 agcaaaagca ggggaaaaca aaagcaacca aattgaaagc aatactagta gttctgctat
        61 atacatttgc aaccgcaatt gcagacacat tttgtatagg gatccatgaa ggcgattttg
       121 gttgtattat tgtacacgtt cgcgacggcg aacgctgata ctctttgcat tggttatcat
       181 gcgaacaatt caacagacac tgtagacaca gtactagaaa agaatgtaac agtaacacac
-      241 tctgttaacc ttctagaaga caagcataac gggaaactat gcaaactaag aggggtagcc
+      241 tctgttaayc ttctagaaga caagcataac gggaaactat gcaaactaag aggggtagcc
       301 ccattgcatt tgggtaaatg taacattgct ggctggatcc tgggaaatcc agagtgtgaa
       361 tcactctcca cagcaagctc atggtcctac attgtggaaa cacctagttc agacaatgga
       421 acgtgttacc caggagattt catcgattat gaggagctaa gagagcaatt gagctcagtg
@@ -299,7 +323,7 @@ ORIGIN
      1501 gtaagaagcc agctaaaaaa caatgccaag gaaattggaa acggctgctt tgaattttac
      1561 cacaaatgcg ataacacgtg catggaaagt gtcaaaaatg ggacttatga ctacccaaaa
      1621 tactcagagg aagcaaaatt aaacagagaa gaaatagatg gggtaaagct ggaatcaaca
-     1681 aggatttacc agattttggc gatatactct acagtggcta gctccctagt tttagttgtt
+     1681 aggatytacc agattttggc gatatactct acagtggcta gctccctagt tttagttgtt
      1741 tctttaggag cgattagctt ttggatgtgt tccaacggct ccttgcaatg ccggatttgc
      1801 atataatgat gcaccatagg cggccgcnnn nnnnnnnnnn nnngtactct gcgttgatac
      1861 cactgcttcc gcggacaggc aagcttatct attcaactgt cgccagttca ttggtactgg
@@ -339,10 +363,16 @@ FEATURES             Location/Qualifiers
                      LRVSSFIRGKKVIPRGKLSTRGVQIASNENVETMDSNTLELRSRYWAIRTRSGGNTNQQ
                      KASAGQISVQPTFSVQRNLPFERATVMAAFSGNNEGRTSDMRTEVIRMMESAKPEDLSF
                      QGRGVFELSDEKATNPIVPSFDMSNEGSYFFGDNAEEYDS*"
+     tag_1           132
+                     /wt="C"
+                     /syn="T"
+     tag_2           1407
+                     /wt="A"
+                     /syn="G"
 ORIGIN
         1 agcaaaagca gggtagataa tcactcaatg agtgacatcg aagccatggc gtcccaaggc
        61 accaaacgat catatgaaca aatggagact ggtggggagc gccaggatgc cacagaaatc
-      121 agagcatctg tcggaagaat gattggtgga atcgggagat tctacatcca aatgtgcact
+      121 agagcatctg tyggaagaat gattggtgga atcgggagat tctacatcca aatgtgcact
       181 gaactcaaac tcagtgatta tgatggacga ctaatccaga atagcataac aatagagagg
       241 atggtgcttt ctgcttttga tgagagaaga aataaatacc tagaagagca tcccagtgct
       301 gggaaggacc ctaagaaaac aggaggaccc atatatagaa gagtagacgg aaagtggatg
@@ -363,7 +393,7 @@ ORIGIN
      1201 tgggccataa ggaccaggag tggaggaaat accaatcaac aaaaggcatc cgcaggccag
      1261 atcagtgtgc agcctacatt ctcagtgcag cggaatctcc cttttgaaag agcaaccgtt
      1321 atggcagcat tcagcgggaa caatgaagga cggacatccg acatgcgaac agaagttata
-     1381 agaatgatgg aaagtgcaaa gccagaagat ttgtccttcc aggggcgggg agtcttcgag
+     1381 agaatgatgg aaagtgcaaa gccagargat ttgtccttcc aggggcgggg agtcttcgag
      1441 ctctcggacg aaaaggcaac gaacccgatc gtgccttcct ttgacatgag taatgaaggg
      1501 tcttatttct tcggagacaa tgcagaggag tatgacagtt gaggaaaaat acccttgttt
      1561 ctact
@@ -402,12 +432,36 @@ FEATURES             Location/Qualifiers
                      TGTDNNFSIKQDIVGINEWSGYSGSFVQHPELTGLDCIRPCFWVELIRGRPKENTIWTS
                      GSSISFCGVNSDTVGWSWPDGAELPFTIDK*"
      viral_barcode   1551..1566
+     tag_1           242
+                     /wt="G"
+                     /syn="A"
+     tag_2           818
+                     /wt="C"
+                     /syn="T"
+     tag_3           827
+                     /wt="C"
+                     /syn="T"
+     tag_4           828
+                     /wt="A"
+                     /syn="T"
+     tag_5           829
+                     /wt="G"
+                     /syn="C"
+     tag_6           830
+                     /wt="C"
+                     /syn="T"
+     tag_7           1247
+                     /wt="C"
+                     /syn="T"
+     tag_8           1400
+                     /wt="C"
+                     /syn="A"
 ORIGIN
         1 agcgaaagca ggagtttaaa ccgaatccaa accagaaaat aataaccatt gggtcaatct
        61 gtatggtagt cggaataatt agcctaatat tgcaaatagg aaatataatc tcaggatcca
       121 tgaaccctaa tcagaaaatt attacgatag gatcggtgtg catgactata ggtatggcaa
       181 atcttattct tcagataggt aatattattt ctatatggat tagccactca attcaacttg
-      241 ggaatcaaaa tcagattgaa acatgcaatc aaagcgtcat tacttatgaa aacaacactt
+      241 graatcaaaa tcagattgaa acatgcaatc aaagcgtcat tacttatgaa aacaacactt
       301 gggtaaatca gacatatgtt aacatcagca acaccaactt tgctgctgga cagtcagtgg
       361 tttccgtgaa attagcgggc aattcctctc tctgccctgt tagtggatgg gctatataca
       421 gtaaagacaa cagtgtaaga atcggttcca agggggatgt gtttgtcata agggaaccat
@@ -416,17 +470,17 @@ ORIGIN
       601 gtcctattgg tgaagttccc tctccataca actcaagatt tgagtcagtc gcttggtcag
       661 caagtgcttg tcatgatggc atcaattggc taacaattgg aatttctggc ccagacaatg
       721 gggcagtggc tgtgttaaag tacaacggca taataacaga cactatcaag agttggagaa
-      781 acaatatatt gagaacacaa gagtctgaat gtgcatgcgt aaatggcagc tgctttactg
+      781 acaatatatt gagaacacaa gagtctgaat gtgcatgygt aaatggywsy tgctttactg
       841 taatgaccga tggaccaagt aatggacagg cctcatacaa gatcttcaga atagaaaagg
       901 gaaagatagt caaatcagtc gaaatgaatg cccctaatta tcactatgag gaatgctcct
       961 gttatcctga ttctagtgaa atcacatgtg tgtgcaggga taactggcat ggctcgaatc
      1021 gaccgtgggt gtctttcaac cagaatctgg aatatcagat aggatacata tgcagtggga
      1081 ttttcggaga caatccacgc cctaatgata agacaggcag ttgtggtcca gtatcgtcta
      1141 atggagcaaa tggagtaaaa gggttttcat tcaaatacgg caatggtgtt tggataggga
-     1201 gaactaaaag cattagttca agaaacggtt ttgagatgat ttgggacccg aacggatgga
+     1201 gaactaaaag cattagttca agaaacggtt ttgagatgat ttgggayccg aacggatgga
      1261 ctgggacaga caataacttc tcaataaagc aagatatcgt aggaataaat gagtggtcag
      1321 gatatagcgg gagttttgtt cagcatccag aactaacagg gctggattgt ataagacctt
-     1381 gcttctgggt tgaactaatc agagggcgac ccaaagagaa cacaatctgg acaagtggca
+     1381 gcttctgggt tgaactaatm agagggcgac ccaaagagaa cacaatctgg acaagtggca
      1441 gtagtatttc gttctgcgga gttaatagcg atacagtcgg atggtcatgg cctgatggag
      1501 cagaactccc tttcacgata gataaataat agtgcaccat aggcggccgc nnnnnnnnnn
      1561 nnnnnngtac tctgcgttga taccactgct tccgcggaca ggcaagcttc tagtgggagc
@@ -472,9 +526,15 @@ FEATURES             Location/Qualifiers
                      /gene_biotype="CDS"
                      /translation="MSLLTEVETPTRSEWECRCSDSSDPLVIAANIIGILHLILWITDR
                      LFFKCIYRRFKYGLKRGPSTEGVPESMREEYQQEQQSAVDVDDGHFVNIELE*"
+     tag_1           100
+                     /wt="G"
+                     /syn="A"
+     tag_2           950
+                     /wt="A"
+                     /syn="G"
 ORIGIN
         1 agcaaaagca ggtagatatt taaagatgag tcttctaacc gaggtcgaaa cgtacgttct
-       61 ttctatcatc ccgtcaggcc ccctcaaagc cgagatcgcg cagagactgg aaagtgtctt
+       61 ttctatcatc ccgtcaggcc ccctcaaagc cgagatcgcr cagagactgg aaagtgtctt
       121 tgcaggaaag aacacagatc ttgaggctct catggaatgg ctaaagacaa gaccaatctt
       181 gtcacctctg actaagggaa ttttaggatt tgtgttcacg ctcaccgtgc ccagtgagcg
       241 aggactgcag cgtagacgct ttgtccaaaa tgccctaaat gggaatgggg acccgaacaa
@@ -488,7 +548,7 @@ ORIGIN
       721 ccttcttgaa aatttgcagg cctaccagaa gcgaatggga gtgcagatgc agcgattcaa
       781 gtgatcctct cgtcattgca gcaaatatca ttgggatctt gcacctgata ttgtggatta
       841 ctgatcgtct ttttttcaaa tgtatttatc gtcgctttaa atacggtttg aaaagagggc
-      901 cttctacgga aggagtgcct gagtccatga gggaagaata tcaacaggaa cagcagagtg
+      901 cttctacgga aggagtgcct gagtccatga gggaagaata tcaacaggar cagcagagtg
       961 ctgtggatgt tgacgatggt cattttgtca acatagagct agagtaaaaa actaccttgt
      1021 ttctact
 //
@@ -531,9 +591,15 @@ FEATURES             Location/Qualifiers
                      /translation="MDSNTMSSFQDILMRMSKMQLGSSSEDLNGMVTRFESLKIYRDSL
                      GETVMRMGDLHYLQSRNEKWREQLGQKFEEIRWLIEEMRHRLKATENSFEQITFMQALQ
                      LLLEVEQEIRAFSFQLI*"
+     tag_1           80
+                     /wt="C"
+                     /syn="T"
+     tag_2           804
+                     /wt="C"
+                     /syn="A"
 ORIGIN
         1 agcaaaagca gggtgacaaa gacataatgg actccaacac catgtcaagc tttcaggtag
-       61 actgtttcct ttggcatatc cgcaagcgat ttgcagacaa tggattgggt gatgccccat
+       61 actgtttcct ttggcataty cgcaagcgat ttgcagacaa tggattgggt gatgccccat
       121 tccttgatcg gctccgccga gatcaaaagt ccttaaaagg aagaggcaac acccttggcc
       181 tcgatatcga aacagccact cttgttggga aacaaatcgt ggaatggatc ttgaaagagg
       241 aatccagcga gacacttaga atgacaattg catctgtacc tacttcgcgc tacctttctg
@@ -545,6 +611,6 @@ ORIGIN
       601 ttcgagtctc tgaaaatata cagagattcg cttggagaaa ctgtgatgag aatgggagac
       661 cttcactacc tccagagcag aaatgaaaag tggcgagagc aattgggaca gaaatttgag
       721 gaaataaggt ggttaattga agaaatgcgg cacagattga aagcgacaga gaatagtttc
-      781 gaacaaataa catttatgca agccttacaa ctactgcttg aagtagaaca agagataaga
+      781 gaacaaataa catttatgca agcmttacaa ctactgcttg aagtagaaca agagataaga
       841 gctttctcgt ttcagcttat ttaatgataa aaaacaccct tgtttctact
 //
