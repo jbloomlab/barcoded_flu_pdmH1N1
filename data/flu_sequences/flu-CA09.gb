@@ -1,5 +1,7 @@
 LOCUS       fluPB2                  2341 bp    DNA              UNK 01-JAN-1980
-DEFINITION  PB2 vRNA from plasmid plasmid_maps/364_pHWCA09tc_PB2.gb.
+DEFINITION  influenza PB2 vRNA from plasmid 364_pHWCA09tc_PB2.gb with ambiguous
+            nucleotides at sites of viral tags relative to
+            2299_pHWCA09tc_PB2-dblSyn.gb.
 ACCESSION   fluPB2
 VERSION     fluPB2
 KEYWORDS    .
@@ -7,7 +9,7 @@ SOURCE      .
   ORGANISM  .
             .
 FEATURES             Location/Qualifiers
-     vRNA_rc         1..2341
+     exon            1..2341
                      /source="JesseBloom"
                      /gene_id="fluPB2"
                      /gene_name="fluPB2"
@@ -85,7 +87,9 @@ ORIGIN
      2341 t
 //
 LOCUS       fluPB1                  2341 bp    DNA              UNK 01-JAN-1980
-DEFINITION  PB1 vRNA from plasmid plasmid_maps/365_pHWCA09tc_PB1.gb.
+DEFINITION  influenza PB1 vRNA from plasmid 365_pHWCA09tc_PB1.gb with ambiguous
+            nucleotides at sites of viral tags relative to
+            2300_pHWCA09tc_PB1-dblSyn.gb.
 ACCESSION   fluPB1
 VERSION     fluPB1
 KEYWORDS    .
@@ -93,7 +97,7 @@ SOURCE      .
   ORGANISM  .
             .
 FEATURES             Location/Qualifiers
-     vRNA_rc         1..2341
+     exon            1..2341
                      /source="JesseBloom"
                      /gene_id="fluPB1"
                      /gene_name="fluPB1"
@@ -171,7 +175,9 @@ ORIGIN
      2341 t
 //
 LOCUS       fluPA                   2233 bp    DNA              UNK 01-JAN-1980
-DEFINITION  PA vRNA from plasmid plasmid_maps/366_pHWCA09tc_PA.gb.
+DEFINITION  influenza PA vRNA from plasmid 366_pHWCA09tc_PA.gb with ambiguous
+            nucleotides at sites of viral tags relative to
+            2301_pHWCA09tc_PA-dblSyn.gb.
 ACCESSION   fluPA
 VERSION     fluPA
 KEYWORDS    .
@@ -179,7 +185,7 @@ SOURCE      .
   ORGANISM  .
             .
 FEATURES             Location/Qualifiers
-     vRNA_rc         1..2233
+     exon            1..2233
                      /source="JesseBloom"
                      /gene_id="fluPA"
                      /gene_name="fluPA"
@@ -254,7 +260,9 @@ ORIGIN
      2221 ccttgtttct act
 //
 LOCUS       fluHA                   2035 bp    DNA              UNK 01-JAN-1980
-DEFINITION  HA vRNA from plasmid plasmid_maps/pHH_bcHA_G155E_DropSeqR1.gb.
+DEFINITION  influenza HA vRNA from plasmid pHH_bcHA_G155E_DropSeqR1.gb with
+            ambiguous nucleotides at sites of viral tags relative to
+            pHH_bcHA_G155E-dblSyn_DropSeqR1.gb.
 ACCESSION   fluHA
 VERSION     fluHA
 KEYWORDS    .
@@ -262,7 +270,7 @@ SOURCE      .
   ORGANISM  .
             .
 FEATURES             Location/Qualifiers
-     vRNA_rc         1..2035
+     exon            1..2035
                      /source="JesseBloom"
                      /gene_id="fluHA"
                      /gene_name="fluHA"
@@ -331,7 +339,9 @@ ORIGIN
      1981 tatgtattta acattaggat ttcagaagca tgagaaaaac acccttgttt ctact
 //
 LOCUS       fluNP                   1565 bp    DNA              UNK 01-JAN-1980
-DEFINITION  NP vRNA from plasmid plasmid_maps/368_pHWCA09tc_NP.gb.
+DEFINITION  influenza NP vRNA from plasmid 368_pHWCA09tc_NP.gb with ambiguous
+            nucleotides at sites of viral tags relative to
+            2303_pHWCA09tc_NP-dblSyn.gb.
 ACCESSION   fluNP
 VERSION     fluNP
 KEYWORDS    .
@@ -339,7 +349,7 @@ SOURCE      .
   ORGANISM  .
             .
 FEATURES             Location/Qualifiers
-     vRNA_rc         1..1565
+     exon            1..1565
                      /source="JesseBloom"
                      /gene_id="fluNP"
                      /gene_name="fluNP"
@@ -399,7 +409,9 @@ ORIGIN
      1561 ctact
 //
 LOCUS       fluNA                   1735 bp    DNA              UNK 01-JAN-1980
-DEFINITION  NA vRNA from plasmid plasmid_maps/pHH_bcNA_DropSeqR1.gb.
+DEFINITION  influenza NA vRNA from plasmid pHH_bcNA_DropSeqR1.gb with ambiguous
+            nucleotides at sites of viral tags relative to
+            pHH_bcNA-dblSyn_DropSeqR1.gb.
 ACCESSION   fluNA
 VERSION     fluNA
 KEYWORDS    .
@@ -407,7 +419,7 @@ SOURCE      .
   ORGANISM  .
             .
 FEATURES             Location/Qualifiers
-     vRNA_rc         1..1735
+     exon            1..1735
                      /source="JesseBloom"
                      /gene_id="fluNA"
                      /gene_name="fluNA"
@@ -488,7 +500,9 @@ ORIGIN
      1681 gagttgccgt tcaccattga caagtagttt gttcaaaaaa ctccttgttt ctact
 //
 LOCUS       fluM                    1027 bp    DNA              UNK 01-JAN-1980
-DEFINITION  M vRNA from plasmid plasmid_maps/370_pHWCA09tc_M.gb.
+DEFINITION  influenza M vRNA from plasmid 370_pHWCA09tc_M.gb with ambiguous
+            nucleotides at sites of viral tags relative to
+            2305_pHWCA09tc_M-dblSyn.gb.
 ACCESSION   fluM
 VERSION     fluM
 KEYWORDS    .
@@ -496,7 +510,7 @@ SOURCE      .
   ORGANISM  .
             .
 FEATURES             Location/Qualifiers
-     vRNA_rc         1..1027
+     exon            1..1027
                      /source="JesseBloom"
                      /gene_id="fluM"
                      /gene_name="fluM"
@@ -553,7 +567,9 @@ ORIGIN
      1021 ttctact
 //
 LOCUS       fluNS                    890 bp    DNA              UNK 01-JAN-1980
-DEFINITION  NS vRNA from plasmid plasmid_maps/371_pHWCA09tc_NS.gb.
+DEFINITION  influenza NS vRNA from plasmid 371_pHWCA09tc_NS.gb with ambiguous
+            nucleotides at sites of viral tags relative to
+            2306_pHWCA09tc_NS-dblSyn.gb.
 ACCESSION   fluNS
 VERSION     fluNS
 KEYWORDS    .
@@ -561,7 +577,7 @@ SOURCE      .
   ORGANISM  .
             .
 FEATURES             Location/Qualifiers
-     vRNA_rc         1..890
+     exon            1..890
                      /source="JesseBloom"
                      /gene_id="fluNS"
                      /gene_name="fluNS"
