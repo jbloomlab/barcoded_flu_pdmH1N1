@@ -12,16 +12,17 @@ mkfastq10x_dir: results/fastq10x/mkfastq_output  # `cellranger mkfastq` output
 genome_dir: results/genomes  # location of downloaded genomes and annotations
 refgenome: results/genomes/refgenome  # STAR reference genome directory
 aligned_fastq10x_dir: results/aligned_fastq10x  # aligned 10X Illumina reads
-viralbc_fastq10x_dir: results/viralbc_fastq10x  # viral barcodes in 10X reads
+viral_fastq10x_dir: results/viral_fastq10x  # viral tags / barcodes in 10X reads
 analysis_dir: results/analysis  # fine-grained analyses
 
 # cellular genome and GTF ftp sites
 cell_genome_ftp: ftp://ftp.ensembl.org/pub/release-98/fasta/canis_familiaris/dna/Canis_familiaris.CanFam3.1.dna.toplevel.fa.gz
 cell_gtf_ftp: ftp://ftp.ensembl.org/pub/release-98/gtf/canis_familiaris/Canis_familiaris.CanFam3.1.98.gtf.gz
 
-# viral genome and GTF file locations
+# viral genome (FASTA), GTF, and Genbank file locations
 viral_genome: data/flu_sequences/flu-CA09.fasta
 viral_gtf: data/flu_sequences/flu-CA09.gtf
+viral_genbank: data/flu_sequences/flu-CA09.gb
 
 # file giving nucleotide identities at viral tag sites
 viral_tags: data/flu_sequences/flu-CA09_viral_tags.yaml

@@ -65,7 +65,7 @@ report: 'report/workflow.rst'
 # Load rules -----------------------------------------------------------------
 
 include: 'rules/analysis.smk'
-include: 'rules/call_viralbc_fastq10x.smk'
+include: 'rules/viral_fastq10x.smk'
 include: 'rules/align_fastq10x.smk'
 include: 'rules/star_refgenome.smk'
 include: 'rules/fastq10x.smk'
