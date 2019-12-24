@@ -91,5 +91,13 @@ rule align_fastq10x:
 rule get_cb_whitelist_10x:
     """Get whitelisted 10X cellbarcodes."""
     output: config['cb_whitelist_10x']
-    params: ftp=config['cb_whitelist_10x_ftp']
-    shell: "wget -O - {params.ftp} | gunzip -c > {output}"
+    params: url=config['cb_whitelist_10x_url']
+    shell:
+        """
+        if [[ {params.url} == *.gz ]]
+        then
+            wget -O - {params.url} | gunzip -c > {output}
+        else
+            wget -O - {params.url} > {output}
+        fi
+        """

@@ -27,8 +27,8 @@ viral_genbank: data/flu_sequences/flu-CA09.gb
 # file giving nucleotide identities at viral tag sites
 viral_tags: data/flu_sequences/flu-CA09_viral_tags.yaml
 
-# FTP location of 10X barcode whitelist: **this is for the v3 kit**
-cb_whitelist_10x_ftp: https://github.com/10XGenomics/cellranger/raw/master/lib/python/cellranger/barcodes/3M-february-2018.txt.gz
+# URL location of 10X barcode whitelist: **this is for the v3 kit**
+cb_whitelist_10x_url: https://github.com/10XGenomics/cellranger/raw/master/lib/python/cellranger/barcodes/3M-february-2018.txt.gz
 cb_whitelist_10x: results/aligned_fastq10x/cb_whitelist_10x.txt
 
 cb_len_10x: 16  # length of 10X cell barcode
