@@ -20,7 +20,7 @@ rule viral_fastq10x_coverage:
         nb=join(config['viral_fastq10x_dir'], 'viral_fastq10x_coverage.ipynb'),
         nb_html=report(join(config['viral_fastq10x_dir'],
                             'viral_fastq10x_coverage.html'),
-                       caption='../viral_fastq10x_coverage.rst',
+                       caption='../report/viral_fastq10x_coverage.rst',
                        category='Viral tags and barcodes in 10X data')
     run:
         run_nb_to_html(input_nb=input.nb,

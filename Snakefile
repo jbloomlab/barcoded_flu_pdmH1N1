@@ -36,15 +36,6 @@ illumina_runs_10x = (
 assert len(illumina_runs_10x) == illumina_runs_10x.index.nunique()
 samples_10x = illumina_runs_10x['sample'].unique().tolist()  # list 10X samples
 
-# list of barcoded viral genes, extracted from viral genome Genbank file
-bc_viral_genes = []
-for seqrecord in Bio.SeqIO.parse(config['viral_genome'], 'genbank'):
-    nbcs = len([f for f in seqrecord.features if f.type == 'viral_barcode'])
-    if nbcs == 1:
-        bc_viral_genes.append(seqrecord.id)
-    elif nbcs > 0:
-        raise ValueError(f"multiple viral barcodes for {seqrecord.id}")
-
 
 # Target rules ---------------------------------------------------------------
 
@@ -52,6 +43,7 @@ rule all:
     input:
         join(config['fastq10x_dir'], 'fastq10x_qc_analysis.html'),
         join(config['aligned_fastq10x_dir'], 'align_fastq10x_summary.html'),
+        join(config['viral_fastq10x_dir'], 'viral_fastq10x_coverage.html'),
         expand(join(config['analysis_dir'], 
                     "{sample10x}_analyze_cell_gene_matrix.html"),
                sample10x=samples_10x)
