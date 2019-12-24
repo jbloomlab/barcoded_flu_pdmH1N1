@@ -59,6 +59,8 @@ rule align_fastq10x:
                       'Solo.out/Gene/filtered/features.tsv'),
         barcodes=join(config['aligned_fastq10x_dir'], "{sample10x}",
                       'Solo.out/Gene/filtered/barcodes.tsv'),
+        bam_alignments=join(config['aligned_fastq10x_dir'], "{sample10x}",
+                            'Aligned.sortedByCoord.out.bam')
     params:
         outdir=join(config['aligned_fastq10x_dir'], "{sample10x}") + '/'
     threads: config['max_cpus']

@@ -12,15 +12,20 @@ mkfastq10x_dir: results/fastq10x/mkfastq_output  # `cellranger mkfastq` output
 genome_dir: results/genomes  # location of downloaded genomes and annotations
 refgenome: results/genomes/refgenome  # STAR reference genome directory
 aligned_fastq10x_dir: results/aligned_fastq10x  # aligned 10X Illumina reads
+viral_fastq10x_dir: results/viral_fastq10x  # viral tags / barcodes in 10X reads
 analysis_dir: results/analysis  # fine-grained analyses
 
 # cellular genome and GTF ftp sites
 cell_genome_ftp: ftp://ftp.ensembl.org/pub/release-98/fasta/canis_familiaris/dna/Canis_familiaris.CanFam3.1.dna.toplevel.fa.gz
 cell_gtf_ftp: ftp://ftp.ensembl.org/pub/release-98/gtf/canis_familiaris/Canis_familiaris.CanFam3.1.98.gtf.gz
 
-# viral genome and GTF file locations
+# viral genome (FASTA), GTF, and Genbank file locations
 viral_genome: data/flu_sequences/flu-CA09.fasta
 viral_gtf: data/flu_sequences/flu-CA09.gtf
+viral_genbank: data/flu_sequences/flu-CA09.gb
+
+# file giving nucleotide identities at viral tag sites
+viral_tags: data/flu_sequences/flu-CA09_viral_tags.yaml
 
 # FTP location of 10X barcode whitelist: **this is for the v3 kit**
 cb_whitelist_10x_ftp: https://github.com/10XGenomics/cellranger/raw/master/lib/python/cellranger/barcodes/3M-february-2018.txt.gz
@@ -29,4 +34,4 @@ cb_whitelist_10x: results/aligned_fastq10x/cb_whitelist_10x.txt
 cb_len_10x: 16  # length of 10X cell barcode
 umi_len_10x: 12  # length of 10X UMI: **this is for the v3 kit**
 
-expect_ncells: 10000  # expected cells per 10X run, used for "knee" cell calling
+expect_ncells: 6000  # expected cells per 10X run, used for "knee" cell calling

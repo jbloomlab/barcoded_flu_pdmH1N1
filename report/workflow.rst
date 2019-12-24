@@ -11,6 +11,9 @@ The basic steps in the analysis are as follows:
    STARsolo_ also identifies the cells and creates the cell-gene matrix.
    See the summary results in `Aligning 10X FASTQs`_.
 
+ - The viral tags and barcodes are analyzed in the aligned 10X FASTQ files.
+   See the summary results in `Viral tags and barcodes in 10X data`_.
+
  - The cell-gene matrix is analyzed using `scanpy <https://scanpy.readthedocs.io/>`_ and `AnnData <https://anndata.readthedocs.io/>`_.
    See the summary results in `Analysis`_.
 

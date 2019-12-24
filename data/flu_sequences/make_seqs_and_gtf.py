@@ -4,16 +4,19 @@
 import re
 import os
 import glob
-import itertools
 import collections
 import copy
 
 import Bio.Alphabet
-import Bio.SeqIO
+import Bio.Data.IUPACData
 import Bio.Seq
-import Bio.SeqRecord
 import Bio.SeqFeature
+import Bio.SeqIO
+import Bio.SeqRecord
+
 import BCBio.GFF
+
+import yaml
 
 
 def main():
@@ -22,64 +25,82 @@ def main():
     # flu genes
     gene_names = ['PB2', 'PB1', 'PA', 'HA', 'NP', 'NA', 'M', 'NS']
 
-    # plus / minus synonymous viral barcodes
-    viral_barcodes = ['', '-dblSyn']
+    # viral tag variants
+    viral_tags = ['wt', 'syn']
+    assert 1 <= len(viral_tags) <= 2, 'script only works for 1 or 2 viral tags'
+    tag_file_suffixes = {'wt': '', 'syn': '-dblSyn'}  # suffixes of genbank files
+
+    # map nucleotide sets to their ambiguous characters
+    nts_to_ambig_char = {frozenset(vals): char for char, vals in
+                         Bio.Data.IUPACData.ambiguous_dna_values.items()}
 
     # information used to identify features
-    polyA = re.compile('A{5}') # run of at least 5 A nucleotides
-    u12 = re.compile('AGC[GA]AAAGCAGG') # U12 with position 4 polymorphism
-    u13 = re.compile('CCTTGTTTCTACT') # reverse of U13
+    polyA = re.compile('A{5}')  # run of at least 5 A nucleotides
+    u12 = re.compile('AGC[GA]AAAGCAGG')  # U12 with position 4 polymorphism
+    u13 = re.compile('CCTTGTTTCTACT')  # reverse of U13
     # Define introns removed to create NS2 and M2 as in Fig 3 of
     # http://mbio.asm.org/content/5/3/e00070-14.abstract
     mRNA_splice = {
             'M':re.compile('AAC(?P<intron>GTA[CT]GTTC[ACGT]+GAAAATTT[AG]CAG)[GA]C'),
             'NS':re.compile('CAG(?P<intron>GTAGA[CT]TG[ACGT]+C[CT]TC[TC][TCA]T[TG]CCAG)GA'),
             }
+    viralbclen = 16  # length of viral barcode
 
-    genes = collections.defaultdict(list)
+    genes = []
+    tags = collections.defaultdict(dict)
 
     plasmidmaps = glob.glob('plasmid_maps/*.gb')
 
-    for syntype, gene_short_name in itertools.product(viral_barcodes, gene_names):
+    for gene_short_name in gene_names:
+        print(f"\nProcessing maps for {gene_short_name}")
 
-        print("\nProcessing {0}{1}...".format(gene_short_name, syntype))
+        genes_by_tag = {}
+        plasmids_by_tag = {}
+        for viral_tag in viral_tags:
+            suffix = tag_file_suffixes[viral_tag]
+            plasmidmatcher = re.compile(f".*_?pH.*{gene_short_name}(_G155E)?"
+                                        f"{suffix}(_\w+)?\.gb")
+            plasmidfile = [f for f in plasmidmaps if plasmidmatcher.search(f)]
+            if len(plasmidfile) == 1:
+                print(f"Reading map for tag {viral_tag} from {plasmidfile[0]}")
+                plasmidseq = str(Bio.SeqIO.read(plasmidfile[0], 'genbank').seq)
+                plasmids_by_tag[viral_tag] = os.path.basename(plasmidfile[0])
+            else:
+                raise ValueError(f"not 1 map for {gene_short_name}{viral_tag}")
 
-        # read plasmid
-        plasmidmatcher = re.compile(f".*_?pH.*{gene_short_name}(_G155E)?"
-                                    f"{syntype}(_\w+)?\.gb")
-        plasmidfile = [f for f in plasmidmaps if plasmidmatcher.search(f)]
+            # get vRNA flanked by U12 / U13
+            u12match = list(u12.finditer(plasmidseq))
+            assert len(u12match) == 1, f"Not 1 U12 for {gene_short_name}"
+            u13match = list(u13.finditer(plasmidseq))
+            assert len(u13match) == 1, f"Not 1 U13 for {gene_short_name}"
+            geneseq = plasmidseq[u12match[0].start(0): u13match[0].end(0)]
+            print(f"vRNA length is {len(geneseq)}")
+            genes_by_tag[viral_tag] = geneseq
+        if 1 != len(set(len(geneseq) for geneseq in genes_by_tag.values())):
+            raise ValueError('all tag variants not the same length')
 
-        assert len(plasmidfile) == 1, \
-                f"{len(plasmidfile)} maps for {gene_short_name}{syntype}"
-        plasmidfile = plasmidfile[0]
-        print(f"Reading sequence from {plasmidfile}")
-        plasmid = str(Bio.SeqIO.read(plasmidfile, 'genbank').seq)
-
-        # get vRNA flanked by U12 / U13
-        u12matches = list(u12.finditer(plasmid))
-        assert len(u12matches) == 1, "Not exactly one U12 for {0}{1}".format(
-                gene_short_name, syntype)
-        u13matches = list(u13.finditer(plasmid))
-        assert len(u13matches) == 1, "Not exactly one U13 for {0}{1}".format(
-                gene_short_name, syntype)
-        geneseq = plasmid[u12matches[0].start(0) : u13matches[0].end(0)]
-        print("Gene length is {0}".format(len(geneseq)))
-
+        geneseq = genes_by_tag[viral_tags[0]]  # annotate this tag version
+        plasmid_name = plasmids_by_tag[viral_tags[0]]
+        description = (f"influenza {gene_short_name} vRNA from "
+                       f"plasmid {plasmid_name}")
+        if len(viral_tags) > 1:
+            other_plasmids = [plasmids_by_tag[tag] for tag in viral_tags[1:]]
+            description += (' with ambiguous nucleotides at sites of viral '
+                            f"tags relative to {', '.join(other_plasmids)}")
         gene_name = "flu" + gene_short_name
 
         gene = Bio.SeqRecord.SeqRecord(
                 Bio.Seq.Seq(geneseq, Bio.Alphabet.generic_dna),
                 id=gene_name,
+                description=description,
                 name=gene_name,
-                description='{0} vRNA from plasmid {1}'.format(
-                        gene_short_name, plasmidfile),
                 features=[Bio.SeqFeature.SeqFeature(
                     Bio.SeqFeature.FeatureLocation(0, len(geneseq)),
                     id=gene_name,
                     type='exon',
                     strand=1,
                     qualifiers={
-                        "source":"JesseBloom",
+                        "source": "JesseBloom",
                         "gene_id":gene_name,
                         "gene_name":gene_name,
                         "gene_biotype":"vRNA",
@@ -94,10 +115,10 @@ def main():
         # polyA described: https://www.ncbi.nlm.nih.gov/pubmed/7241649
         mrna_start = 1
         polyAmatches = list(polyA.finditer(geneseq))
-        assert len(polyAmatches) >= 1, "Not more than one polyA for {0}{1}".format(
-                gene_short_name, syntype)
+        assert len(polyAmatches) >= 1, f"no polyA for {gene_short_name}"
         mrna_end = polyAmatches[-1].start(0)
-        mrna_name = gene_name + {False:"", True:"1"}[gene_short_name in mRNA_splice]
+        mrna_name = gene_name + {False: '', True: '1'}[gene_short_name in
+                                                       mRNA_splice]
         gene.features.append(
                 Bio.SeqFeature.SeqFeature(
                     Bio.SeqFeature.FeatureLocation(mrna_start, mrna_end),
@@ -115,8 +136,7 @@ def main():
         # is there second splice form?
         if gene_short_name in mRNA_splice:
             intron = list(mRNA_splice[gene_short_name].finditer(geneseq))
-            assert len(intron) == 1, "not exactly one intron for {0}{1}".format(
-                    gene_short_name, syntype)
+            assert len(intron) == 1, f"not 1 intron for {gene_short_name}"
             intron_start = intron[0].start('intron')
             intron_end = intron[0].end('intron')
             mrna_name = gene_name + '2'
@@ -197,56 +217,94 @@ def main():
                         )
                     )
 
-        genes[syntype].append(gene)
+        # annotate viral barcodes in segments that contain them
+        if 'N' in geneseq:
+            print(f"Annotating viral barcode...")
+            m = re.fullmatch(f"[ACGT]+(?P<viralbc>N{{{viralbclen}}})[ACGT]+",
+                             geneseq)
+            if not m:
+                raise ValueError('could not match viral barcode')
+            gene.features.append(
+                    Bio.SeqFeature.SeqFeature(
+                        Bio.SeqFeature.FeatureLocation(m.start('viralbc'),
+                                                       m.end('viralbc')),
+                        id='viral_barcode',
+                        type='viral_barcode',
+                        strand=1
+                        )
+                    )
 
+        # annotate viral tags
+        itag = 0
+        for i in range(len(geneseq)):
+            nts = {tag: seq[i] for tag, seq in genes_by_tag.items()}
+            if len(set(nts.values())) == 1:
+                continue  # not a tag if all variants the same
+            itag += 1
+            tagname = f"tag_{itag}"
+            tags[gene_name][tagname] = nts
+            gene.features.append(
+                    Bio.SeqFeature.SeqFeature(
+                        Bio.SeqFeature.FeatureLocation(i, i + 1),
+                        id=tagname,
+                        type=tagname,
+                        strand=1,
+                        qualifiers=tags[gene_name][tagname],
+                        )
+                    )
+            gene.seq = (gene.seq[:i] +
+                        Bio.Seq.Seq(nts_to_ambig_char[frozenset(nts.values())],
+                                    alphabet=gene.seq.alphabet) +
+                        gene.seq[i + 1:])
+        print(f"Annotated {len(tags[gene_name])} nucleotide tags for {gene_name}")
 
-    # now write output
-    for syntype in viral_barcodes:
+        genes.append(gene)
 
-        genefile = 'flu-CA09{0}.fasta'.format(syntype)
-        genbankfile = os.path.splitext(genefile)[0] + '.gb'
-        print("\nWriting {0} genes to {1} and {2}".format(
-                len(genes[syntype]), genefile, genbankfile))
-        Bio.SeqIO.write(genes[syntype], genefile, 'fasta')
-        Bio.SeqIO.write(genes[syntype], genbankfile, 'genbank')
+    # now write output files
+    genefile = 'flu-CA09.fasta'
+    print(f"\nWriting {len(genes)} genes to {genefile}")
+    Bio.SeqIO.write(genes, genefile, 'fasta')
 
-        mrnas = [Bio.SeqRecord.SeqRecord(mrna.extract(gene).seq,
-                    id=mrna.id, description='')
-                for gene in genes[syntype]
-                for mrna in gene.features if mrna.type == 'mRNA']
-        mrnafile = 'flu-CA09{0}-mRNA.fasta'.format(syntype)
-        print("Writing the {0} mRNAs to {1}".format(len(mrnas), mrnafile))
-        Bio.SeqIO.write(mrnas, mrnafile, 'fasta')
+    gtffile = os.path.splitext(genefile)[0] + '.gtf'
+    print(f"Writing gene annotations to {gtffile}")
+    just_genes = []
+    for gene in genes:
+        just_gene = copy.deepcopy(gene)
+        just_gene.features = just_gene.features[ : 1]
+        just_genes.append(just_gene)
+    with open(gtffile, 'w') as f:
+        BCBio.GFF.write(just_genes, f)
+    # Hacky conversion of GFF3 file to GTF, changing 9th column to
+    # delimit qualifiers with spaces / quotes rather than equals sign.
+    # Conversion is probably not robust to all qualifiers, but works here.
+    with open(gtffile) as f:
+        lines = f.readlines()
+    newlines = []
+    for line in lines:
+        if line[0] == '#':
+            newlines.append(line)
+        else:
+            entries = line.strip().split('\t')
+            assert len(entries) == 9, str(len(entries)) + '\n' + line
+            newqualifiers = []
+            for qualifier in entries[-1].split(';'):
+                (key, value) = qualifier.split('=')
+                newqualifiers.append('{0} "{1}"'.format(key, value))
+            entries[-1] = '; '.join(newqualifiers)
+            newlines.append('\t'.join(entries) + '\n')
+    with open(gtffile, 'w') as f:
+        f.write(''.join(newlines))
 
-        gtffile = os.path.splitext(genefile)[0] + '.gtf'
-        print("Writing gene annotations to {0}".format(gtffile))
-        just_genes = []
-        for gene in genes[syntype]:
-            just_gene = copy.deepcopy(gene)
-            just_gene.features = just_gene.features[ : 1]
-            just_genes.append(just_gene)
-        with open(gtffile, 'w') as f:
-            BCBio.GFF.write(just_genes, f)
-        # Hacky conversion of GFF3 file to GTF, changing 9th column to
-        # delimit qualifiers with spaces / quotes rather than equals sign.
-        # Conversion is probably not robust to all qualifiers, but works here.
-        with open(gtffile) as f:
-            lines = f.readlines()
-        newlines = []
-        for line in lines:
-            if line[0] == '#':
-                newlines.append(line)
-            else:
-                entries = line.strip().split('\t')
-                assert len(entries) == 9, str(len(entries)) + '\n' + line
-                newqualifiers = []
-                for qualifier in entries[-1].split(';'):
-                    (key, value) = qualifier.split('=')
-                    newqualifiers.append('{0} "{1}"'.format(key, value))
-                entries[-1] = '; '.join(newqualifiers)
-                newlines.append('\t'.join(entries) + '\n')
-        with open(gtffile, 'w') as f:
-            f.write(''.join(newlines))
+    # write Genbank file
+    genbankfile = os.path.splitext(genefile)[0] + '.gb'
+    print(f"\nWriting annotated genes to {genbankfile}")
+    Bio.SeqIO.write(genes, genbankfile, 'genbank')
+
+    # write YAML file with viral tag identities
+    tagfile = os.path.splitext(genefile)[0] + '_viral_tags.yaml'
+    print(f"\nWriting viral tag identities to {tagfile}")
+    with open(tagfile, 'w') as f:
+        f.write(yaml.safe_dump(dict(tags)))
 
 
 # run the script

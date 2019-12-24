@@ -1,0 +1,74 @@
+fluHA:
+  tag_1:
+    syn: T
+    wt: C
+  tag_2:
+    syn: C
+    wt: T
+fluM:
+  tag_1:
+    syn: A
+    wt: G
+  tag_2:
+    syn: G
+    wt: A
+fluNA:
+  tag_1:
+    syn: A
+    wt: G
+  tag_2:
+    syn: T
+    wt: C
+  tag_3:
+    syn: T
+    wt: C
+  tag_4:
+    syn: T
+    wt: A
+  tag_5:
+    syn: C
+    wt: G
+  tag_6:
+    syn: T
+    wt: C
+  tag_7:
+    syn: T
+    wt: C
+  tag_8:
+    syn: A
+    wt: C
+fluNP:
+  tag_1:
+    syn: T
+    wt: C
+  tag_2:
+    syn: G
+    wt: A
+fluNS:
+  tag_1:
+    syn: T
+    wt: C
+  tag_2:
+    syn: A
+    wt: C
+fluPA:
+  tag_1:
+    syn: T
+    wt: C
+  tag_2:
+    syn: T
+    wt: C
+fluPB1:
+  tag_1:
+    syn: A
+    wt: G
+  tag_2:
+    syn: A
+    wt: G
+fluPB2:
+  tag_1:
+    syn: G
+    wt: A
+  tag_2:
+    syn: A
+    wt: G
