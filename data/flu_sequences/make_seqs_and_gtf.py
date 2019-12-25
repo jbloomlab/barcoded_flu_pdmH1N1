@@ -241,7 +241,7 @@ def main():
             if len(set(nts.values())) == 1:
                 continue  # not a tag if all variants the same
             itag += 1
-            tagname = f"tag_{itag}"
+            tagname = f"viral_tag_{itag}"
             tags[gene_name][tagname] = nts
             gene.features.append(
                     Bio.SeqFeature.SeqFeature(

@@ -38,10 +38,10 @@ FEATURES             Location/Qualifiers
                      LTVNVRGSGLRILVRGNSPVFNYNKATKRLTVLGKDAGALTEDPDEGTSGVESAVLRGF
                      LILGKEDKRYGPALSINELSNLAKGEKANVLIGQGDVVLVMKRKRDSSILTDSQTATKR
                      IRMAIN*"
-     tag_1           201
+     viral_tag_1     201
                      /wt="A"
                      /syn="G"
-     tag_2           2190
+     viral_tag_2     2190
                      /wt="G"
                      /syn="A"
 ORIGIN
@@ -126,10 +126,10 @@ FEATURES             Location/Qualifiers
                      EIDSVNNAVVMPAHGPAKSMEYDAVATTHSWIPKRNRSILNTSQRGILEDEQMYQKCCN
                      LFEKFFPSSSYRRPVGISSMVEAMVSRARIDARVDFESGRIKKEEFSEIMKICSTIEEL
                      RRQK*"
-     tag_1           192
+     viral_tag_1     192
                      /wt="G"
                      /syn="A"
-     tag_2           2205
+     viral_tag_2     2205
                      /wt="G"
                      /syn="A"
 ORIGIN
@@ -213,10 +213,10 @@ FEATURES             Location/Qualifiers
                      WGMEMRRCLLQSLQQIESMIEAESSVKEKDMTKEFFENKSETWPIGESPRGVEEGSIGK
                      VCRTLLAKSVFNSLYASPQLEGFSAESRKLLLIVQALRDNLEPGTFDLGGLYEAIEECL
                      INDPWVLLNASWFNSFLTHALK*"
-     tag_1           123
+     viral_tag_1     123
                      /wt="C"
                      /syn="T"
-     tag_2           2104
+     viral_tag_2     2104
                      /wt="C"
                      /syn="T"
 ORIGIN
@@ -296,10 +296,10 @@ FEATURES             Location/Qualifiers
                      VKNLYEKVRSQLKNNAKEIGNGCFEFYHKCDNTCMESVKNGTYDYPKYSEEAKLNREEI
                      DGVKLESTRIYQILAIYSTVASSLVLVVSLGAISFWMCSNGSLQCRICI*"
      viral_barcode   1828..1843
-     tag_1           249
+     viral_tag_1     249
                      /wt="C"
                      /syn="T"
-     tag_2           1686
+     viral_tag_2     1686
                      /wt="T"
                      /syn="C"
 ORIGIN
@@ -373,10 +373,10 @@ FEATURES             Location/Qualifiers
                      LRVSSFIRGKKVIPRGKLSTRGVQIASNENVETMDSNTLELRSRYWAIRTRSGGNTNQQ
                      KASAGQISVQPTFSVQRNLPFERATVMAAFSGNNEGRTSDMRTEVIRMMESAKPEDLSF
                      QGRGVFELSDEKATNPIVPSFDMSNEGSYFFGDNAEEYDS*"
-     tag_1           132
+     viral_tag_1     132
                      /wt="C"
                      /syn="T"
-     tag_2           1407
+     viral_tag_2     1407
                      /wt="A"
                      /syn="G"
 ORIGIN
@@ -444,28 +444,28 @@ FEATURES             Location/Qualifiers
                      TGTDNNFSIKQDIVGINEWSGYSGSFVQHPELTGLDCIRPCFWVELIRGRPKENTIWTS
                      GSSISFCGVNSDTVGWSWPDGAELPFTIDK*"
      viral_barcode   1551..1566
-     tag_1           242
+     viral_tag_1     242
                      /wt="G"
                      /syn="A"
-     tag_2           818
+     viral_tag_2     818
                      /wt="C"
                      /syn="T"
-     tag_3           827
+     viral_tag_3     827
                      /wt="C"
                      /syn="T"
-     tag_4           828
+     viral_tag_4     828
                      /wt="A"
                      /syn="T"
-     tag_5           829
+     viral_tag_5     829
                      /wt="G"
                      /syn="C"
-     tag_6           830
+     viral_tag_6     830
                      /wt="C"
                      /syn="T"
-     tag_7           1247
+     viral_tag_7     1247
                      /wt="C"
                      /syn="T"
-     tag_8           1400
+     viral_tag_8     1400
                      /wt="C"
                      /syn="A"
 ORIGIN
@@ -540,10 +540,10 @@ FEATURES             Location/Qualifiers
                      /gene_biotype="CDS"
                      /translation="MSLLTEVETPTRSEWECRCSDSSDPLVIAANIIGILHLILWITDR
                      LFFKCIYRRFKYGLKRGPSTEGVPESMREEYQQEQQSAVDVDDGHFVNIELE*"
-     tag_1           100
+     viral_tag_1     100
                      /wt="G"
                      /syn="A"
-     tag_2           950
+     viral_tag_2     950
                      /wt="A"
                      /syn="G"
 ORIGIN
@@ -607,10 +607,10 @@ FEATURES             Location/Qualifiers
                      /translation="MDSNTMSSFQDILMRMSKMQLGSSSEDLNGMVTRFESLKIYRDSL
                      GETVMRMGDLHYLQSRNEKWREQLGQKFEEIRWLIEEMRHRLKATENSFEQITFMQALQ
                      LLLEVEQEIRAFSFQLI*"
-     tag_1           80
+     viral_tag_1     80
                      /wt="C"
                      /syn="T"
-     tag_2           804
+     viral_tag_2     804
                      /wt="C"
                      /syn="A"
 ORIGIN
