@@ -27,6 +27,14 @@ viral_genbank: data/flu_sequences/flu-CA09.gb
 # file giving nucleotide identities at viral tag sites
 viral_tags: data/flu_sequences/flu-CA09_viral_tags.yaml
 
+# STAR alignment parameters. These settings reduce the penalty for
+# non-canonical splice sites, which is probably bad for mapping cellular
+# reads but is good for mapping viral reads which will have deletions
+# not corresponding to splice sites.
+scoreGapNoncan: -4
+scoreGapGCAG: -4
+scoreGapATAC: -4
+
 # URL location of 10X barcode whitelist: **this is for the v3 kit**
 cb_whitelist_10x_url: https://github.com/10XGenomics/cellranger/raw/master/lib/python/cellranger/barcodes/3M-february-2018.txt.gz
 cb_whitelist_10x: results/aligned_fastq10x/cb_whitelist_10x.txt
@@ -34,4 +42,4 @@ cb_whitelist_10x: results/aligned_fastq10x/cb_whitelist_10x.txt
 cb_len_10x: 16  # length of 10X cell barcode
 umi_len_10x: 12  # length of 10X UMI: **this is for the v3 kit**
 
-expect_ncells: 6000  # expected cells per 10X run, used for "knee" cell calling
+expect_ncells: 6000  # expected cells per 10X run, for "knee" cell calling

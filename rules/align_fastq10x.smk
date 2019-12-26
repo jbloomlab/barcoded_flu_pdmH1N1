@@ -82,6 +82,9 @@ rule align_fastq10x:
             '--outSAMtype', 'BAM', 'SortedByCoordinate',
             '--runThreadN', str(threads),
             '--outFileNamePrefix', params.outdir,
+            '--scoreGapNoncan', str(config['scoreGapNoncan']),
+            '--scoreGapGCAG', str(config['scoreGapGCAG']),
+            '--scoreGapATAC', str(config['scoreGapATAC']),
             ]
         print(f"Running STARsolo with following command:\n{' '.join(cmds)}")
         os.makedirs(params.outdir, exist_ok=True)
