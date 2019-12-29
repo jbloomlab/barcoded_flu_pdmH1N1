@@ -1,8 +1,42 @@
 """``snakemake`` rules calling viral tags / barcodes in 10X Illumina reads."""
 
 
+rule count_viralbc_fastq10x:
+    """Count viral barcodes for each gene / cell from the 10X Illumina data."""
+    input:
+        nb='notebooks/count_viralbc_fastq10x.ipynb',
+        fastq10x_bam=join(config['aligned_fastq10x_dir'],
+                          "{sample10x}/Aligned.sortedByCoord.out.bam"),
+        fastq10x_bai=join(config['aligned_fastq10x_dir'],
+                          "{sample10x}/Aligned.sortedByCoord.out.bam.bai"),
+        viralbc_locs=join(config['viral_fastq10x_dir'], 'viralbc_locs.csv'),
+        cellbarcodes=join(config['aligned_fastq10x_dir'], "{sample10x}"
+                          'Solo.out/Gene/filtered/barcodes.tsv')
+    output:
+        nb=join(config['viral_fastq10x_dir'],
+                "count_viralbc_fastq10x-{sample10x}.ipynb"),
+        nb_html=report(join(config['viral_fastq10x_dir'],
+                            "count_viralbc_fastq10x-{sample10x}.html"),
+                       caption='../report/count_viralbc_fastq10x.rst',
+                       category='Viral tags and barcodes in 10X data'),
+        viralbc_counts=join(config['viral_fastq10x_dir'],
+                            "viralbc_counts_{sample10x}.csv")
+    run:
+        run_nb_to_html(
+                input_nb=input.nb,
+                output_nb=output.nb,
+                parameters={
+                    'input_fastq10x_bam': input.fastq10x_bam,
+                    'input_fastq10x_bai': input.fastq10x_bai,
+                    'input_viralbc_locs': input.viraltag_locs,
+                    'input_cellbarcodes': input.cellbarcodes,
+                    'output_viralbc_counts': output.viraltag_counts,
+                    },
+                )
+
+
 rule count_viraltags_fastq10x:
-    """Count viral tags for each gene from the 10X Illumina data."""
+    """Count viral tags for each gene and cell from the 10X Illumina data."""
     input:
         nb='notebooks/count_viraltags_fastq10x.ipynb',
         fastq10x_bam=join(config['aligned_fastq10x_dir'],
@@ -21,7 +55,7 @@ rule count_viraltags_fastq10x:
                        caption='../report/count_viraltags_fastq10x.rst',
                        category='Viral tags and barcodes in 10X data'),
         viraltag_counts=join(config['viral_fastq10x_dir'],
-                             "{sample10x}_viraltag_counts.csv")
+                             "viraltag_counts_{sample10x}.csv")
     run:
         run_nb_to_html(
                 input_nb=input.nb,

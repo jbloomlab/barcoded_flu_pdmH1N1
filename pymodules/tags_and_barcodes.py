@@ -33,8 +33,10 @@ def extract_tags(readiterator,
         The SAM tag for the UMI.
     min_frac : float
         Only call tag if >= this frac of reads for that cell barcode and UMI
-        agree on sequence. A value of 0.5 means that more than half the reads
-        for the cell barcode / UMI must agree on the tag sequence.
+        agree on sequence at each site. A value of 0.5 means that more than
+        half the reads for the cell barcode / UMI must agree on the tag
+        sequence at each site, and so essentially involves getting the
+        majority consensus if it exists.
         
     Returns
     -------
@@ -66,16 +68,35 @@ def extract_tags(readiterator,
             continue  # tag positions not fully covered
         counts[cellbc][umi][tagseq] += 1
         
-    # now collapse to consensus tag sequences
+    # now collapse to consensus tag sequences for each UMI
     records = []
     for cellbc, umi_counts in counts.items():
         for umi, tag_counts in umi_counts.items():
             tot_counts = sum(tag_counts.values())
             assert tot_counts >= 1
+            # first just see if there a sequence that meets `min_frac`
             top_count, top_tag = sorted((count, tag) for tag, count in
                                         tag_counts.items())[-1]
             if top_count / tot_counts > min_frac:
                 records.append((cellbc, umi, top_tag))
+            elif nsites > 1:
+                # There is no sequence that meets `min_frac`. But can
+                # we get a consensus by going site-by-site if the tag
+                # length is greater than one?
+                assert all(len(tag) == nsites for tag in tag_counts.keys())
+                consensus = []
+                for isite in range(nsites):
+                    top_count, top_site = sorted((count, tag[isite]) for
+                                                 tag, count in
+                                                 tag_counts.items())[-1]
+                    if top_count / tot_counts > min_frac:
+                        consensus.append(top_site)
+                    else:
+                        records.append((cellbc, umi, 'ambiguous'))
+                        break
+                else:
+                    assert len(consensus) == nsites
+                    return records.append((cellbc, umi, ''.join(consensus)))
             else:
                 records.append((cellbc, umi, 'ambiguous'))
     return pd.DataFrame.from_records(records,
