@@ -78,7 +78,7 @@ rule align_fastq10x:
             '--soloCBmatchWLtype', '1MM_multi_pseudocounts',
             '--soloCellFilter', 'CellRanger2.2',
                                 str(config['expect_ncells']), '0.99', '10',
-            '--outSAMattributes', 'NH', 'HI', 'nM', 'AS', 'CB', 'UB',
+            '--outSAMattributes', 'NH', 'HI', 'nM', 'AS', 'MD', 'CB', 'UB',
             '--outSAMtype', 'BAM', 'SortedByCoordinate',
             '--runThreadN', str(threads),
             '--outFileNamePrefix', params.outdir,
