@@ -25,7 +25,7 @@ viral_gtf: data/flu_sequences/flu-CA09.gtf
 viral_genbank: data/flu_sequences/flu-CA09.gb
 
 # file giving nucleotide identities at viral tag sites
-viral_tags: data/flu_sequences/flu-CA09_viral_tags.yaml
+viraltag_identities: data/flu_sequences/flu-CA09_viral_tags.yaml
 
 # STAR alignment parameters. These settings reduce the penalty for
 # non-canonical splice sites, which is probably bad for mapping cellular
