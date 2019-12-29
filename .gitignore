@@ -4,5 +4,6 @@
 __pycache__
 *.pyc
 *.fai
+_*
 
 results
