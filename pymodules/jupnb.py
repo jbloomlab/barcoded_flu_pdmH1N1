@@ -7,14 +7,12 @@ import subprocess
 import papermill
 
 
-def run_nb_to_html(input_nb, output_nb, parameters):
+def run_nb_to_html(input_nb, output_nb, parameters, make_html=True):
     """Runs parameterized Jupyter notebook and generates HTML output.
 
     `input_nb` is parameterized with `parameters` using
     `papermill <https://papermill.readthedocs.io/>_, and then
-    run in the current directory to create `output_nb`. That output
-    notebook is then converted to HTML to create a file in the same
-    location as `output_nb` but with extension ``.html``.
+    run in the current directory to create `output_nb`.
 
     Parameters
     ----------
@@ -24,6 +22,9 @@ def run_nb_to_html(input_nb, output_nb, parameters):
         Name of output Jupyter notebook.
     parameters : dict
         Parameters for Jupyter notebook.
+    make_html : bool
+        If `True`, create a HTML rendering of `output_nb` with extension
+        ``.html``.
 
     """
     if os.path.splitext(input_nb)[1] != '.ipynb':
@@ -38,9 +39,10 @@ def run_nb_to_html(input_nb, output_nb, parameters):
             parameters=parameters,
             )
 
-    # https://github.com/ipython-contrib/jupyter_contrib_nbextensions/issues/901
-    subprocess.check_call(['jupyter', 'nbconvert', output_nb,
-                           '--to', 'html_embed', '--template', 'toc2'])
+    if make_html:
+        # https://github.com/ipython-contrib/jupyter_contrib_nbextensions/issues/901
+        subprocess.check_call(['jupyter', 'nbconvert', output_nb,
+                               '--to', 'html_embed', '--template', 'toc2'])
 
-    output_html = os.path.splitext(output_nb)[0] + '.html'
-    assert os.path.isfile(output_html), f"failed to generate {output_html}"
+        output_html = os.path.splitext(output_nb)[0] + '.html'
+        assert os.path.isfile(output_html), f"failed to generate {output_html}"

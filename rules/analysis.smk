@@ -1,4 +1,4 @@
-"""``snakemake`` rules related analysis of results."""
+"""``snakemake`` rules related to analysis of results."""
 
 
 rule analyze_cell_gene_matrix:
@@ -11,6 +11,10 @@ rule analyze_cell_gene_matrix:
         barcodes=join(config['aligned_fastq10x_dir'], "{sample10x}",
                       'Solo.out/Gene/filtered/barcodes.tsv'),
         viral_gtf=config['viral_gtf'],
+        viraltag_counts=join(config['viral_fastq10x_dir'],
+                             "viraltag_counts_{sample10x}.csv"),
+        viralbc_counts=join(config['viral_fastq10x_dir'],
+                            "viralbc_counts_{sample10x}.csv"),
         nb='notebooks/analyze_cell_gene_matrix.ipynb'
     output:
         nb=join(config['analysis_dir'],
@@ -28,5 +32,6 @@ rule analyze_cell_gene_matrix:
                     'input_features': input.features,
                     'input_barcodes': input.barcodes,
                     'input_viral_gtf': input.viral_gtf,
+                    'input_viraltag_counts': input.viraltag_counts,
                     },
                 )

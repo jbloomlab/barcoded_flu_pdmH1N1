@@ -44,9 +44,15 @@ rule all:
         join(config['fastq10x_dir'], 'fastq10x_qc_analysis.html'),
         join(config['aligned_fastq10x_dir'], 'align_fastq10x_summary.html'),
         join(config['viral_fastq10x_dir'], 'viral_fastq10x_coverage.html'),
+        expand(join(config['viral_fastq10x_dir'],
+                    "count_viraltags_fastq10x-{sample10x}.html"),
+               sample10x=samples_10x),
+        expand(join(config['viral_fastq10x_dir'],
+                    "count_viralbc_fastq10x-{sample10x}.html"),
+               sample10x=samples_10x),
         expand(join(config['analysis_dir'], 
                     "{sample10x}_analyze_cell_gene_matrix.html"),
-               sample10x=samples_10x)
+               sample10x=samples_10x),
 
 
 # Set up report  -------------------------------------------------------------
