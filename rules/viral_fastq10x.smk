@@ -10,7 +10,7 @@ rule count_viralbc_fastq10x:
         fastq10x_bai=join(config['aligned_fastq10x_dir'],
                           "{sample10x}/Aligned.sortedByCoord.out.bam.bai"),
         viralbc_locs=join(config['viral_fastq10x_dir'], 'viralbc_locs.csv'),
-        cellbarcodes=join(config['aligned_fastq10x_dir'], "{sample10x}"
+        cellbarcodes=join(config['aligned_fastq10x_dir'], "{sample10x}",
                           'Solo.out/Gene/filtered/barcodes.tsv')
     output:
         nb=join(config['viral_fastq10x_dir'],
@@ -28,9 +28,9 @@ rule count_viralbc_fastq10x:
                 parameters={
                     'input_fastq10x_bam': input.fastq10x_bam,
                     'input_fastq10x_bai': input.fastq10x_bai,
-                    'input_viralbc_locs': input.viraltag_locs,
+                    'input_viralbc_locs': input.viralbc_locs,
                     'input_cellbarcodes': input.cellbarcodes,
-                    'output_viralbc_counts': output.viraltag_counts,
+                    'output_viralbc_counts': output.viralbc_counts,
                     },
                 )
 
