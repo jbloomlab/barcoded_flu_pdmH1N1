@@ -1,6 +1,39 @@
 """``snakemake`` rules related aligned the 10X Illumina FASTQ reads."""
 
 
+rule fastq10x_transcript_coverage:
+    """Summarize transcript coverage for a few selected genes."""
+    input:
+        fastq10x_bams=expand(join(config['aligned_fastq10x_dir'],
+                                  "{sample10x}/Aligned.sortedByCoord.out.bam"),
+                              sample10x=samples_10x),
+        fastq10x_bais=expand(join(config['aligned_fastq10x_dir'],
+                                  "{sample10x}",
+                                  'Aligned.sortedByCoord.out.bam.bai'),
+                             sample10x=samples_10x),
+        viral_gtf=config['viral_gtf'],
+        gtf=join(config['genome_dir'], 'cell_and_virus_gtf.gtf'),
+        nb='notebooks/fastq10x_transcript_coverage.ipynb'
+    output:
+        nb=join(config['aligned_fastq10x_dir'],
+                'fastq10x_transcript_coverage.ipynb'),
+        nb_html=report(join(config['aligned_fastq10x_dir'],
+                            'fastq10x_transcript_coverage.html'),
+                       caption='../report/fastq10x_transcript_coverage.rst',
+                       category='Aligning 10X FASTQs')
+    run:
+        run_nb_to_html(input_nb=input.nb,
+                       output_nb=output.nb,
+                       parameters={
+                            'samples_10x': samples_10x,
+                            'input_fastq10x_bams': input.fastq10x_bams,
+                            'input_fastq10x_bais': input.fastq10x_bais,
+                            'input_viral_gtf': input.viral_gtf,
+                            'input_gtf': input.gtf,
+                            },
+                       )
+
+
 rule align_fastq10x_summary:
     """Summarize 10X FASTQ alignments."""
     input:
