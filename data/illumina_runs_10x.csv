@@ -7,4 +7,4 @@
 sample,seqrun,index,bcl_folder,lane
 wt_virus_pilot,2019-12-03,SI-GA-A3,/shared/ngs/illumina/bloom_lab/191203_M03100_0504_000000000-CNCN9/,*
 pilot_20200116,2020-01-16,SI-GA-A4,/shared/ngs/illumina/bloom_lab/200128_M03100_0528_000000000-CRC4G/,*
-pilot_20200116,2020-02-18,SI-GA-A4,/shared/ngs/illumina/bloom_lab/200218_D00300_0910_AHCHHJBCX3/,*
+pilot_20200116,2020-02-18,SI-GA-A4,/shared/ngs/illumina/bloom_lab/200218_D00300_0910_AHCHHJBCX3/Raw/,2

@@ -68,7 +68,7 @@ rule align_fastq10x:
         cb_whitelist_10x=config['cb_whitelist_10x'],
         refgenome=config['refgenome'],
         fastqR1=lambda wc: [join(config['fastq10x_dir'],
-                                 f"{r}_all_R1.fastq.gz")
+                                 f"{r}_all_trimmed_R1.fastq.gz")
                             for r in (illumina_runs_10x
                                       .query(f"sample == '{wc.sample10x}'")
                                       .index
@@ -121,6 +121,25 @@ rule align_fastq10x:
             ]
         print(f"Running STARsolo with following command:\n{' '.join(cmds)}")
         os.makedirs(params.outdir, exist_ok=True)
+        subprocess.check_call(cmds)
+
+rule trim_barcode_reads:
+    """If R1 is longer than barcode length, trim R1 back to barcode length."""
+    input:
+        fastqR1=join(config['fastq10x_dir'], "{run10x}_all_R1.fastq.gz"),
+    output:
+        fastqR1=join(config['fastq10x_dir'], "{run10x}_all_trimmed_R1.fastq.gz"),
+    params:
+        barcode_total_length=str(config['barcode_total_length']),
+    threads: config['max_cpus'],
+    run:
+        cmds = [
+            'cutadapt',
+            '-l', params.barcode_total_length,
+            '-o', output.fastqR1,
+            input.fastqR1,
+            ]
+        print(f"Trimming R1 reads down to {params.barcode_total_length} using cutadapt with following command:\n{' '.join(cmds)}")
         subprocess.check_call(cmds)
 
 
