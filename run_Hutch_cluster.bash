@@ -7,7 +7,8 @@ snakemake \
     -j 999 \
     --cluster-config cluster.yaml \
     --cluster "sbatch -p {cluster.partition} -c {cluster.cpus} --mem={cluster.mem} -t {cluster.time} -J {cluster.name}" \
-    --latency-wait 30
+    --latency-wait 30 \
+    -R `snakemake --list-input-changes`  # https://snakemake.readthedocs.io/en/stable/project_info/faq.html#snakemake-does-not-trigger-re-runs-if-i-add-additional-input-files-what-can-i-do
 echo "Run of snakemake complete."
 
 echo "Generating report..."

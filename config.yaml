@@ -31,6 +31,8 @@ viraltag_identities: data/flu_sequences/flu-CA09_viral_tags.yaml
 # non-canonical splice sites, which is probably bad for mapping cellular
 # reads but is good for mapping viral reads which will have deletions
 # not corresponding to splice sites.
+barcode_total_length: 28 #length of UMI + CB
+
 scoreGapNoncan: -4
 scoreGapGCAG: -4
 scoreGapATAC: -4

@@ -107,6 +107,7 @@ rule align_fastq10x:
             '--readFilesCommand', 'zcat',
             '--soloCBlen', str(config['cb_len_10x']),
             '--soloUMIlen', str(config['umi_len_10x']),
+            '--soloBarcodeReadLength', '0',
             '--soloUMIfiltering', 'MultiGeneUMI',
             '--soloCBmatchWLtype', '1MM_multi_pseudocounts',
             '--soloCellFilter', 'CellRanger2.2',
