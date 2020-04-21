@@ -46,6 +46,7 @@ rule all:
         join(config['aligned_fastq10x_dir'],
              'fastq10x_transcript_coverage.html'),
         join(config['viral_fastq10x_dir'], 'viral_fastq10x_coverage.html'),
+        join(config['viral_fastq10x_dir'], 'gap_analysis.html'),
         expand(join(config['viral_fastq10x_dir'],
                     "count_viraltags_fastq10x-{sample10x}.html"),
                sample10x=samples_10x),
@@ -69,3 +70,4 @@ include: 'rules/viral_fastq10x.smk'
 include: 'rules/align_fastq10x.smk'
 include: 'rules/star_refgenome.smk'
 include: 'rules/fastq10x.smk'
+include: 'rules/gap_analysis.smk'
