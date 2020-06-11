@@ -50,3 +50,12 @@ You probably want to submit the script itself via [sbatch](sbatch), using:
 [Snakefile]: Snakefile
 [snakemake]: https://snakemake.readthedocs.io
 [snakemake report]: https://snakemake.readthedocs.io/en/stable/snakefiles/reporting.html
+
+
+## Experimental Details
+Generation of the virus libraries used in the experiments here are described [here](https://benchling.com/s/etr-tP5BHW8xCbkT3AKxWkc2). Expansion of these virus libraries is described [here](https://benchling.com/s/etr-ywy1Wbt7qcLXYnj5jhhs).
+
+The following experiments are analyzed in this repository:
+* [wt_rapidpilot](https://benchling.com/s/etr-Q28fCd1kprRNxAd0v5Hg): This experiment was performed using a small-scale rescue of the WT virus.
+* [hashing_trial1](https://benchling.com/s/etr-i9I0yHiFb0P8wHCxosim): This experiment was performed using the standard WT and dblSyn virus libraries. Infection volume was chosen based on HA expression measured by flow cytometry.
+* [hashing_trial2](https://benchling.com/s/etr-W8urOmOAQ7L6U4HAXMNy): This is experiment also used the standard WT and dblSyn virus libraries. Infection volume was chosen based on the results of `hashing_trial1` and flow cytometery. The innoculum volume for WT was about 12-fold higher, and the innoculum volume for dblSyn was about 24-fold higher.
