@@ -33,5 +33,6 @@ rule analyze_cell_gene_matrix:
                     'input_barcodes': input.barcodes,
                     'input_viral_gtf': input.viral_gtf,
                     'input_viraltag_counts': input.viraltag_counts,
+                    'input_viralbc_counts': input.viralbc_counts,
                     },
                 )
