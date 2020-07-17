@@ -11,13 +11,16 @@ make_fastq10x:
   cpus: 16
   partition: campus-new
   time: 0-2
+  mem: 100000
 
 make_refgenome:
   cpus: 16
   partition: campus-new
   time: 0-2
+  mem: 100000
 
 align_fastq10x:
   cpus: 16
   partition: campus-new
   time: 0-4
+  mem: 100000
