@@ -1,18 +1,18 @@
 # cluster configuration for running Snakefile on Hutch cluster
 
 __default__:
-  cpus: 4
+  cpus: 1
   time: 0-2
   name: "{rule}"
 
 make_fastq10x:
-  cpus: 24
+  cpus: 16
   time: 0-2
 
 make_refgenome:
-  cpus: 24
+  cpus: 16
   time: 0-2
 
 align_fastq10x:
-  cpus: 24
+  cpus: 16
   time: 0-4
