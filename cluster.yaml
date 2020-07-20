@@ -2,25 +2,17 @@
 
 __default__:
   cpus: 1
-  partition: campus
   time: 0-2
-  mem: 32000
   name: "{rule}"
 
 make_fastq10x:
   cpus: 16
-  partition: largenode
   time: 0-2
-  mem: 100000
 
 make_refgenome:
   cpus: 16
-  partition: largenode
   time: 0-2
-  mem: 100000
 
 align_fastq10x:
   cpus: 16
-  partition: largenode
   time: 0-4
-  mem: 100000
