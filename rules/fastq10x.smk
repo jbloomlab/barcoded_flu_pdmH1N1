@@ -45,7 +45,7 @@ rule make_fastq10x:
                              [illumina_runs_10x.at[params.run10x, 'lane'],
                               params.run10x,
                               illumina_runs_10x.at[params.run10x, 'index']])))
-
+        
         # run `cellranger mkfastq`
         cmds = ['cellranger', 'mkfastq',
                 '--run', illumina_runs_10x.at[params.run10x, 'bcl_folder'],
