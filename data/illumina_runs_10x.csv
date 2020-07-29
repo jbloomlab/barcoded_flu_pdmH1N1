@@ -10,5 +10,5 @@ hashing_trial1,2020-01-16,SI-GA-A4,/shared/ngs/illumina/bloom_lab/200128_M03100_
 hashing_trial1,2020-02-18,SI-GA-A4,/shared/ngs/illumina/bloom_lab/200218_D00300_0910_AHCHHJBCX3/Raw/,2
 hashing_trial2,2020-06-02,SI-GA-B3,/home/solexa/ngs/illumina/bloom_lab/200602_M03100_0578_000000000-J3464/,*
 hashing_trial2,2020-07-01,SI-GA-B3,/shared/ngs/illumina/agreaney/200701_D00300_0988_BHGFGMBCX3/raw/200701_D00300_0988_BHGFGMBCX3/,2
-hashing_trial3_withNH4Cl,2020-07-24,SI-GA-B4,/shared/ngs/illumina/bloom_lab/200724_M03100_0593_000000000-J33YK/,*
-hashing_trial3_noNH4Cl,2020-07-24,SI-GA-B5,/shared/ngs/illumina/bloom_lab/200724_M03100_0593_000000000-J33YK/,*
+hashing_trial3_withNH4Cl,2020-07-24,SI-GA-B5,/shared/ngs/illumina/bloom_lab/200724_M03100_0593_000000000-J33YK/,*
+hashing_trial3_noNH4Cl,2020-07-24,SI-GA-B4,/shared/ngs/illumina/bloom_lab/200724_M03100_0593_000000000-J33YK/,*
