@@ -21,7 +21,8 @@ rule analyze_gaps:
                             'gap_analysis.html'),
                        caption='../report/gap_analysis.rst',
                        category='Viral tags and barcodes in 10X data'),
-        gapped_reads=join(config['viral_fastq10x_dir'], 'gapped_reads.csv')
+        gapped_reads=join(config['viral_fastq10x_dir'], 'gapped_reads.csv'),
+        gapped_reads_summary=join(config['viral_fastq10x_dir'], 'gapped_reads_summary.csv')
     run:
         run_nb_to_html(input_nb=input.nb,
                    output_nb=output.nb,
@@ -33,5 +34,6 @@ rule analyze_gaps:
                         'input_viraltag_locs': input.viraltag_locs,
                         'input_viralbc_locs': input.viralbc_locs,
                         'output_gapped_reads': output.gapped_reads,
+                        'output_gapped_reads_summmary': output.gapped_reads_summary,
                         },
                    )
