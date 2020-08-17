@@ -37,6 +37,6 @@ rule analyze_cell_gene_matrix:
                     'input_viraltag_counts': input.viraltag_counts,
                     'input_viralbc_counts': input.viralbc_counts,
                     'input_gapped_reads': input.gapped_reads,
-                    'output_gapped_reads_summmary': input.gapped_reads_summary,
+                    'input_gapped_reads_summmary': input.gapped_reads_summary,
                     },
                 )
