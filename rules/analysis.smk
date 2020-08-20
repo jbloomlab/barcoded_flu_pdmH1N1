@@ -4,7 +4,7 @@
 rule analyze_cell_gene_matrix:
     """Analyze the cell-gene matrix."""
     input:
-        sample=sample10x,
+        sample="{sample10x}",
         matrix=join(config['aligned_fastq10x_dir'], "{sample10x}",
                     'Solo.out/Gene/filtered/matrix.mtx'),
         features=join(config['aligned_fastq10x_dir'], "{sample10x}",
