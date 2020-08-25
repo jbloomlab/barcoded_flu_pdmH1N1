@@ -119,6 +119,7 @@ rule align_fastq10x:
             '--scoreGapNoncan', str(config['scoreGapNoncan']),
             '--scoreGapGCAG', str(config['scoreGapGCAG']),
             '--scoreGapATAC', str(config['scoreGapATAC']),
+            '--soloFeatures GeneFull'
             ]
         print(f"Running STARsolo with following command:\n{' '.join(cmds)}")
         os.makedirs(params.outdir, exist_ok=True)
