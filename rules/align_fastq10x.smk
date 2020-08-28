@@ -38,10 +38,10 @@ rule align_fastq10x_summary:
     """Summarize 10X FASTQ alignments."""
     input:
         summary=expand(join(config['aligned_fastq10x_dir'], "{sample10x}",
-                            'Solo.out/Gene/Summary.csv'),
+                            'Solo.out/GeneFull/Summary.csv'),
                        sample10x=samples_10x),
         umi_per_cell=expand(join(config['aligned_fastq10x_dir'], "{sample10x}",
-                                 'Solo.out/Gene/UMIperCellSorted.txt'),
+                                 'Solo.out/GeneFull/UMIperCellSorted.txt'),
                             sample10x=samples_10x),
         nb='notebooks/align_fastq10x_summary.ipynb'
     output:
@@ -83,15 +83,15 @@ rule align_fastq10x:
                             ]
     output:
         summary=join(config['aligned_fastq10x_dir'], "{sample10x}",
-                     'Solo.out/Gene/Summary.csv'),
+                     'Solo.out/GeneFull/Summary.csv'),
         umi_per_cell=join(config['aligned_fastq10x_dir'], "{sample10x}",
-                          'Solo.out/Gene/UMIperCellSorted.txt'),
+                          'Solo.out/GeneFull/UMIperCellSorted.txt'),
         matrix=join(config['aligned_fastq10x_dir'], "{sample10x}",
-                    'Solo.out/Gene/filtered/matrix.mtx'),
+                    'Solo.out/GeneFull/raw/matrix.mtx'),
         features=join(config['aligned_fastq10x_dir'], "{sample10x}",
-                      'Solo.out/Gene/filtered/features.tsv'),
+                      'Solo.out/GeneFull/raw/features.tsv'),
         barcodes=join(config['aligned_fastq10x_dir'], "{sample10x}",
-                      'Solo.out/Gene/filtered/barcodes.tsv'),
+                      'Solo.out/GeneFull/raw/barcodes.tsv'),
         bam_alignments=join(config['aligned_fastq10x_dir'], "{sample10x}",
                             'Aligned.sortedByCoord.out.bam')
     params:
@@ -119,7 +119,7 @@ rule align_fastq10x:
             '--scoreGapNoncan', str(config['scoreGapNoncan']),
             '--scoreGapGCAG', str(config['scoreGapGCAG']),
             '--scoreGapATAC', str(config['scoreGapATAC']),
-            '--soloFeatures GeneFull'
+            '--soloFeatures', 'GeneFull',
             ]
         print(f"Running STARsolo with following command:\n{' '.join(cmds)}")
         os.makedirs(params.outdir, exist_ok=True)

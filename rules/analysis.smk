@@ -5,11 +5,11 @@ rule analyze_cell_gene_matrix:
     """Analyze the cell-gene matrix."""
     input:
         matrix=join(config['aligned_fastq10x_dir'], "{sample10x}",
-                    'Solo.out/Gene/filtered/matrix.mtx'),
+                    'Solo.out/GeneFull/raw/matrix.mtx'),
         features=join(config['aligned_fastq10x_dir'], "{sample10x}",
-                      'Solo.out/Gene/filtered/features.tsv'),
+                      'Solo.out/GeneFull/raw/features.tsv'),
         barcodes=join(config['aligned_fastq10x_dir'], "{sample10x}",
-                      'Solo.out/Gene/filtered/barcodes.tsv'),
+                      'Solo.out/GeneFull/raw/barcodes.tsv'),
         viral_gtf=config['viral_gtf'],
         viraltag_counts=join(config['viral_fastq10x_dir'],
                              "viraltag_counts_{sample10x}.csv"),

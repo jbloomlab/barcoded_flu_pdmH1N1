@@ -1,0 +1,33 @@
+#  Information Illumina sequencing of 10X transcriptome libraries:
+#  1. Name of sample used throughout analysis
+#  2. Name of this specific sequencing run
+#  3. Sample source type; either cell, supernatant, or passage
+#  4. Segment; either HA or NA
+#  5. Sample index name
+#  6. Sample index sequence
+#  6. Path to FASTQ file with sample reads on Hutch server.
+sample,seqrun,source_type,segment,index_name,index_sequence,FASTQ
+WT_0d15,2020-08-24,cell,fluHA,NextFlex_65,TGGAACAA,/shared/ngs/illumina/bloom_lab/200824_M04866_0401_000000000-J84HR_complete/Data/Intensities/BaseCalls/HA-cells-WT-015_S1_L001_R1_001.fastq.gz
+WT_0d5,2020-08-25,cell,fluHA,NextFlex_66,TGGCTTCA,/shared/ngs/illumina/bloom_lab/200824_M04866_0401_000000000-J84HR_complete/Data/Intensities/BaseCalls/HA-cells-WT-05_S2_L001_R1_001.fastq.gz
+dblSyn_0d15,2020-08-26,cell,fluHA,NextFlex_67,TGGTGGTA,/shared/ngs/illumina/bloom_lab/200824_M04866_0401_000000000-J84HR_complete/Data/Intensities/BaseCalls/HA-cells-dblSyn-015_S3_L001_R1_001.fastq.gz
+dblSyn_0d5,2020-08-27,cell,fluHA,NextFlex_68,TTCACGCA,/shared/ngs/illumina/bloom_lab/200824_M04866_0401_000000000-J84HR_complete/Data/Intensities/BaseCalls/HA-cells-dblSyn-05_S4_L001_R1_001.fastq.gz
+WT_0d15,2020-08-28,supernatant,fluHA,NextFlex_70,AAGAGATC,/shared/ngs/illumina/bloom_lab/200824_M04866_0401_000000000-J84HR_complete/Data/Intensities/BaseCalls/HA-supernatant-WT-015_S5_L001_R1_001.fastq.gz
+WT_0d5,2020-08-29,supernatant,fluHA,NextFlex_71,AAGGACAC,/shared/ngs/illumina/bloom_lab/200824_M04866_0401_000000000-J84HR_complete/Data/Intensities/BaseCalls/HA-supernatant-WT-05_S6_L001_R1_001.fastq.gz
+dblSyn_0d15,2020-08-30,supernatant,fluHA,NextFlex_72,AATCCGTC,/shared/ngs/illumina/bloom_lab/200824_M04866_0401_000000000-J84HR_complete/Data/Intensities/BaseCalls/HA-supernatant-dblSyn-015_S7_L001_R1_001.fastq.gz
+dblSyn_0d5,2020-08-31,supernatant,fluHA,NextFlex_73,AATGTTGC,/shared/ngs/illumina/bloom_lab/200824_M04866_0401_000000000-J84HR_complete/Data/Intensities/BaseCalls/HA-supernatant-dblSyn-05_S8_L001_R1_001.fastq.gz
+WT_0d15,2020-09-01,passage,fluHA,NextFlex_75,ACAGATTC,/shared/ngs/illumina/bloom_lab/200824_M04866_0401_000000000-J84HR_complete/Data/Intensities/BaseCalls/HA-passage-WT-015_S9_L001_R1_001.fastq.gz
+WT_0d5,2020-09-02,passage,fluHA,NextFlex_76,AGATGTAC,/shared/ngs/illumina/bloom_lab/200824_M04866_0401_000000000-J84HR_complete/Data/Intensities/BaseCalls/HA-passage-WT-05_S10_L001_R1_001.fastq.gz
+dblSyn_0d15,2020-09-03,passage,fluHA,NextFlex_77,AGCACCTC,/shared/ngs/illumina/bloom_lab/200824_M04866_0401_000000000-J84HR_complete/Data/Intensities/BaseCalls/HA-passage-dblSyn-015_S11_L001_R1_001.fastq.gz
+dblSyn_0d5,2020-09-04,passage,fluHA,NextFlex_78,AGCCATGC,/shared/ngs/illumina/bloom_lab/200824_M04866_0401_000000000-J84HR_complete/Data/Intensities/BaseCalls/HA-passage-dblSyn-05_S12_L001_R1_001.fastq.gz
+WT_0d15,2020-09-05,cell,fluNA,NextFlex_80,ATAGCGAC,/shared/ngs/illumina/bloom_lab/200824_M04866_0401_000000000-J84HR_complete/Data/Intensities/BaseCalls/NA-cells-WT-015_S13_L001_R1_001.fastq.gz
+WT_0d5,2020-09-06,cell,fluNA,NextFlex_81,ATCATTCC,/shared/ngs/illumina/bloom_lab/200824_M04866_0401_000000000-J84HR_complete/Data/Intensities/BaseCalls/NA-cells-WT-05_S14_L001_R1_001.fastq.gz
+dblSyn_0d15,2020-09-07,cell,fluNA,NextFlex_82,ATTGGCTC,/shared/ngs/illumina/bloom_lab/200824_M04866_0401_000000000-J84HR_complete/Data/Intensities/BaseCalls/NA-cells-dblSyn-015_S15_L001_R1_001.fastq.gz
+dblSyn_0d5,2020-09-08,cell,fluNA,NextFlex_83,CAAGGAGC,/shared/ngs/illumina/bloom_lab/200824_M04866_0401_000000000-J84HR_complete/Data/Intensities/BaseCalls/NA-cells-dblSyn-05_S16_L001_R1_001.fastq.gz
+WT_0d15,2020-09-09,supernatant,fluNA,NextFlex_85,CCATCCTC,/shared/ngs/illumina/bloom_lab/200824_M04866_0401_000000000-J84HR_complete/Data/Intensities/BaseCalls/NA-supernatant-WT-015_S17_L001_R1_001.fastq.gz
+WT_0d5,2020-09-10,supernatant,fluNA,NextFlex_86,CCGACAAC,/shared/ngs/illumina/bloom_lab/200824_M04866_0401_000000000-J84HR_complete/Data/Intensities/BaseCalls/NA-supernatant-WT-05_S18_L001_R1_001.fastq.gz
+dblSyn_0d15,2020-09-11,supernatant,fluNA,NextFlex_87,CCTAATCC,/shared/ngs/illumina/bloom_lab/200824_M04866_0401_000000000-J84HR_complete/Data/Intensities/BaseCalls/NA-supernatant-dblSyn-015_S19_L001_R1_001.fastq.gz
+dblSyn_0d5,2020-09-12,supernatant,fluNA,NextFlex_88,CCTCTATC,/shared/ngs/illumina/bloom_lab/200824_M04866_0401_000000000-J84HR_complete/Data/Intensities/BaseCalls/NA-supernatant-dblSyn-05_S20_L001_R1_001.fastq.gz
+WT_0d15,2020-09-13,passage,fluNA,NextFlex_90,CGGATTGC,/shared/ngs/illumina/bloom_lab/200824_M04866_0401_000000000-J84HR_complete/Data/Intensities/BaseCalls/NA-passage-WT-015_S21_L001_R1_001.fastq.gz
+WT_0d5,2020-09-14,passage,fluNA,NextFlex_91,CTAAGGTC,/shared/ngs/illumina/bloom_lab/200824_M04866_0401_000000000-J84HR_complete/Data/Intensities/BaseCalls/NA-passage-WT-05_S22_L001_R1_001.fastq.gz
+dblSyn_0d15,2020-09-15,passage,fluNA,NextFlex_92,GAACAGGC,/shared/ngs/illumina/bloom_lab/200824_M04866_0401_000000000-J84HR_complete/Data/Intensities/BaseCalls/NA-passage-dblSyn-015_S23_L001_R1_001.fastq.gz
+dblSyn_0d5,2020-09-16,passage,fluNA,NextFlex_93,GACAGTGC,/shared/ngs/illumina/bloom_lab/200824_M04866_0401_000000000-J84HR_complete/Data/Intensities/BaseCalls/NA-passage-dblSyn-05_S24_L001_R1_001.fastq.gz
