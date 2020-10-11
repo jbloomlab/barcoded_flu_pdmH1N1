@@ -32,7 +32,7 @@ rule make_fastq10x:
         mkfastq10x_dir=directory(join(config['mkfastq10x_dir'], "{run10x}")),
         qc_stats=join(config['fastq10x_dir'], "{run10x}_qc_stats.csv"),
         csv=temp("_mkfastq_{run10x}.csv"),  # input for cellranger mkfastq
-        mro=temp("__{run10x}.mro"),  # created by cellranger mkfastq
+        mro_file=temp("__{run10x}.mro"),  # created by cellranger mkfastq
     params:
         run10x="{run10x}"
     threads:
