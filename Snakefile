@@ -14,48 +14,41 @@ import Bio.SeqIO
 
 import pandas as pd
 
-from pymodules.jupnb import run_nb_to_html
+import pymodules.experiments
 
 
 # Configuration  --------------------------------------------------------------
 
 configfile: 'config.yaml'
 
-# run "quick" rules locally:
+expts = pymodules.experiments.Experiments(config['experiments'])
+
 localrules: all
-
-
-# Global variables used in analysis---------------------------------------------
-
-# Get Illumina 10X runs and samples
-illumina_runs_10x = (
-    pd.read_csv(config['illumina_runs_10x'], comment='#')
-    .assign(run10x=lambda x: x['sample'] + '-' + x['seqrun'].astype(str))
-    .set_index('run10x')
-    )
-assert len(illumina_runs_10x) == illumina_runs_10x.index.nunique()
-samples_10x = illumina_runs_10x['sample'].unique().tolist()  # list 10X samples
 
 
 # Target rules ---------------------------------------------------------------
 
 rule all:
     input:
-        join(config['fastq10x_dir'], 'fastq10x_qc_analysis.html'),
-        join(config['aligned_fastq10x_dir'], 'align_fastq10x_summary.html'),
-        join(config['aligned_fastq10x_dir'],
-             'fastq10x_transcript_coverage.html'),
-        join(config['viral_fastq10x_dir'], 'viral_fastq10x_coverage.html'),
-        join(config['viral_fastq10x_dir'], 'gap_analysis.html'),
-        expand(join(config['viral_fastq10x_dir'],
-                    "count_viraltags_fastq10x-{sample10x}.html"),
-               sample10x=samples_10x),
-        expand(join(config['viral_fastq10x_dir'],
-                    "count_viralbc_fastq10x-{sample10x}.html"),
-               sample10x=samples_10x),
-        expand(join(config['analysis_dir'], 
-                    "{sample10x}_analyze_cell_gene_matrix.html"),
-               sample10x=samples_10x),
+#        expand(join(config['mkfastq10x_dir'],
+#                    "{transcriptomic_run}_qc_stats.csv",
+#               transcriptomic_run=experiments_config.transcriptomic_runs)
+        expand(join(config['fastq10x_dir'], "{expt}_fastq10x_qc.svg"),
+               expt=expts.experiments),
+#        join(config['aligned_fastq10x_dir'], 'align_fastq10x_summary.html'),
+#        join(config['aligned_fastq10x_dir'],
+#             'fastq10x_transcript_coverage.html'),
+#        join(config['viral_fastq10x_dir'], 'viral_fastq10x_coverage.html'),
+#        join(config['viral_fastq10x_dir'], 'gap_analysis.html'),
+#        expand(join(config['viral_fastq10x_dir'],
+#                    "count_viraltags_fastq10x-{sample10x}.html"),
+#               sample10x=experiments_config.experiments),
+#        expand(join(config['viral_fastq10x_dir'],
+#                    "count_viralbc_fastq10x-{sample10x}.html"),
+#               sample10x=experiments_config.experiments),
+#        expand(join(config['analysis_dir'], 
+#                    "{sample10x}_analyze_cell_gene_matrix.html"),
+#               sample10x=experiments_config.experiments),
 
 
 # Set up report  -------------------------------------------------------------
@@ -65,9 +58,9 @@ report: 'report/workflow.rst'
 
 # Load rules -----------------------------------------------------------------
 
-include: 'rules/analysis.smk'
-include: 'rules/viral_fastq10x.smk'
-include: 'rules/align_fastq10x.smk'
-include: 'rules/star_refgenome.smk'
+#include: 'rules/analysis.smk'
+#include: 'rules/viral_fastq10x.smk'
+#include: 'rules/align_fastq10x.smk'
+#include: 'rules/star_refgenome.smk'
 include: 'rules/fastq10x.smk'
-include: 'rules/gap_analysis.smk'
+#include: 'rules/gap_analysis.smk'

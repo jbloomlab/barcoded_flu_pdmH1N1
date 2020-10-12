@@ -1,0 +1,52 @@
+hashing_wt_rapidpilot:
+  description: Single-cell transcriptomics using a small-scale pilot rescue
+               of the wildtype viral tag variant. Lab notes are at
+               https://benchling.com/s/etr-Q28fCd1kprRNxAd0v5Hg
+  transcriptomics:
+    2019-12-03:
+      index: SI-GA-A3
+      bcl_folder: /shared/ngs/illumina/bloom_lab/191203_M03100_0504_000000000-CNCN9/
+      lane: '*'
+
+hashing_trial1:
+  description: Single-cell transcriptomics using the wildtype and dblSyn viral
+               tag variants. Infection volume was chosen based on HA expression
+               measured by flow cytometry. Lab notes are at
+               https://benchling.com/s/etr-i9I0yHiFb0P8wHCxosim
+  transcriptomics:
+    2020-01-16:
+      index: SI-GA-A4
+      bcl_folder: /shared/ngs/illumina/bloom_lab/200128_M03100_0528_000000000-CRC4G/
+      lane: '*'
+    2020-02-18:
+      index: SI-GA-A4
+      bcl_folder: /shared/ngs/illumina/bloom_lab/200218_D00300_0910_AHCHHJBCX3/Raw/
+      lane: 2
+
+hashing_trial2:
+  description: Single-cell transcriptomics using the wildtype and dblySyn viral
+               tag variants. Infection volume was chosen based on the results
+               of `hashing_trial1` and flow cytometry. The incolum volume for
+               the wildtype tag variant was about 12-fold higher, and for the
+               dblSyn tag variant was about 24-fold higher.
+  transcriptomics:
+    2020-06-02:
+      index: SI-GA-B3
+      bcl_folder: /home/solexa/ngs/illumina/bloom_lab/200602_M03100_0578_000000000-J3464/
+      lane: '*'
+    2020-07-01:
+      index: SI-GA-B3
+      bcl_folder: /shared/ngs/illumina/agreaney/200701_D00300_0988_BHGFGMBCX3/raw/200701_D00300_0988_BHGFGMBCX3/
+      lane: 2
+
+hashing_trial3_withNH4Cl:
+  description: None provided.
+  transcriptomics:
+    2020-07-24:
+      index: SI-GA-B5
+      bcl_folder: /shared/ngs/illumina/bloom_lab/200724_M03100_0593_000000000-J33YK/
+      lane: '*'
+    2020-07-24_b:
+      index: SI-GA-B4
+      bcl_folder: /shared/ngs/illumina/bloom_lab/200724_M03100_0593_000000000-J33YK/
+      lane: '*'
