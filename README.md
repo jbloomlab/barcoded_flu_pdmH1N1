@@ -33,7 +33,7 @@ This repository is organized as followed (based loosely on [this example snakema
 
 
 ## Running the analysis
-The [conda] environment for this repo is specified in [environment.yml](environment.yml); note also that an **unpinned** version of this environment is  ecified[environment_unpinned.yml](environment_unpinned.yml).
+The [conda] environment for this repo is specified in [environment.yml](environment.yml); note also that an **unpinned** version of this environment is specified[environment_unpinned.yml](environment_unpinned.yml).
 If you are on the Hutch cluster and set up to use the *BloomLab* [conda] installation, then this environment is already built and you can activate it simply with:
 
     conda activate barcoded_flu_pdmH1N1
