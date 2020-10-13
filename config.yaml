@@ -8,7 +8,7 @@ fastq10x_dir: results/fastq10x  # FASTQs & QC 10x transcriptomic runs
 mkfastq10x_dir: results/fastq10x/mkfastq_output  # `cellranger mkfastq` output
 genome_dir: results/genomes  # location of downloaded genomes and annotations
 refgenome: results/genomes/refgenome  # STAR reference genome directory
-#aligned_fastq10x_dir: results/aligned_fastq10x  # aligned 10X Illumina reads
+aligned_fastq10x_dir: results/aligned_fastq10x  # aligned 10x transcriptomic reads
 #viral_fastq10x_dir: results/viral_fastq10x  # viral tags / barcodes in 10X reads
 #analysis_dir: results/analysis  # fine-grained analyses
 
@@ -17,30 +17,28 @@ cell_genome_ftp: ftp://ftp.ensembl.org/pub/release-98/fasta/canis_familiaris/dna
 cell_gtf_ftp: ftp://ftp.ensembl.org/pub/release-98/gtf/canis_familiaris/Canis_familiaris.CanFam3.1.98.gtf.gz
 
 # viral genome (FASTA), GTF, and Genbank file locations
-#viral_genome: data/flu_sequences/flu-CA09.fasta
-#viral_gtf: data/flu_sequences/flu-CA09.gtf
-#viral_genbank: data/flu_sequences/flu-CA09.gb
+viral_genome: data/flu_sequences/flu-CA09.fasta
+viral_gtf: data/flu_sequences/flu-CA09.gtf
+viral_genbank: data/flu_sequences/flu-CA09.gb
 
 # file giving nucleotide identities at viral tag sites
 #viraltag_identities: data/flu_sequences/flu-CA09_viral_tags.yaml
 
-# STAR alignment parameters. These settings reduce the penalty for
+# STAR alignment parameters for transcriptomics. Reduce the penalty for
 # non-canonical splice sites, which is probably bad for mapping cellular
 # reads but is good for mapping viral reads which will have deletions
 # not corresponding to splice sites.
-#barcode_total_length: 28 #length of UMI + CB
-#scoreGapNoncan: -4
-#scoreGapGCAG: -4
-#scoreGapATAC: -4
+scoreGapNoncan: -4
+scoreGapGCAG: -4
+scoreGapATAC: -4
 
 # URL location of 10X barcode whitelist: **this is for the v3 kit**
-#cb_whitelist_10x_url: https://github.com/10XGenomics/cellranger/raw/master/lib/python/cellranger/barcodes/3M-february-2018.txt.gz
-#cb_whitelist_10x: results/aligned_fastq10x/cb_whitelist_10x.txt
+cb_whitelist_10x_url: https://github.com/10XGenomics/cellranger/raw/master/lib/python/cellranger/barcodes/3M-february-2018.txt.gz
+cb_whitelist_10x: results/aligned_fastq10x/cb_whitelist_10x.txt
 
-#cb_len_10x: 16  # length of 10X cell barcode
-#umi_len_10x: 12  # length of 10X UMI: **this is for the v3 kit**
+cb_len_10x: 16  # length of 10X cell barcode
+umi_len_10x: 12  # length of 10X UMI: **this is for the v3 kit**
 
-#expect_ncells: 6000  # expected cells per 10X run, for "knee" cell calling
 
 #----------------------------------------------------------------------------
 #                    configuration of experiments
@@ -51,6 +49,7 @@ experiments:
     description: Single-cell transcriptomics using a small-scale pilot rescue
                  of the wildtype viral tag variant. Lab notes are at
                  https://benchling.com/s/etr-Q28fCd1kprRNxAd0v5Hg
+    expect_ncells: 2000
     transcriptomics:
       2019-12-03:
         index: SI-GA-A3
@@ -62,6 +61,7 @@ experiments:
                  tag variants. Infection volume was chosen based on HA expression
                  measured by flow cytometry. Lab notes are at
                  https://benchling.com/s/etr-i9I0yHiFb0P8wHCxosim
+    expect_ncells: 2000
     transcriptomics:
       2020-01-16:
         index: SI-GA-A4
@@ -78,6 +78,7 @@ experiments:
                  of `hashing_trial1` and flow cytometry. The incolum volume for
                  the wildtype tag variant was about 12-fold higher, and for the
                  dblSyn tag variant was about 24-fold higher.
+    expect_ncells: 2000
     transcriptomics:
       2020-06-02:
         index: SI-GA-B3
@@ -94,6 +95,7 @@ experiments:
 
   hashing_trial3_withNH4Cl:
     description: None provided.
+    expect_ncells: 2000
     transcriptomics:
       2020-07-24:
         index: SI-GA-B5
@@ -106,6 +108,7 @@ experiments:
 
   hashing_trial3_noNH4Cl:
     description: None provided
+    expect_ncells: 2000
     transcriptomics:
       2020-07-24:
         index: SI-GA-B4
@@ -114,6 +117,7 @@ experiments:
 
   scProgenyProduction_trial1:
     description: None provided.
+    expect_ncells: 2000
     transcriptomics:
       2020-09-25:
         index: SI-GA-B8
@@ -122,6 +126,7 @@ experiments:
 
   scProgenyProduction_trial2:
     description: None provided.
+    expect_ncells: 2000
     transcriptomics:
       2020-09-25:
         index: SI-GA-B9

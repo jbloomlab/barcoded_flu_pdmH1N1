@@ -9,6 +9,7 @@ The basic steps in the analysis are as follows:
 
  - Transcriptome quantification is performed by aligning the 10x FASTQ files with STARsolo_.
    STARsolo_ also identifies the cells and creates the cell-gene matrix.
+   See `Aligning 10x transcriptomics reads`_.
 
  - The viral tags and barcodes are analyzed in the aligned 10x FASTQ files.
 

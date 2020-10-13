@@ -11,11 +11,11 @@ rule qc_fastq10x:
     params:
         expt="{expt}"
     output:
-        qc_plot=report(join(config['fastq10x_dir'], "{expt}_fastq10x_qc.svg"),
+        qc_plot=report(join(config['fastq10x_dir'], "{expt}_qc_fastq10x.svg"),
                        caption='../report/qc_fastq10x.rst',
                        category='10x transcriptomics FASTQ files')
     log:
-        notebook=join(config['fastq10x_dir'], "{expt}_fastq10x_qc.ipynb")
+        notebook=join(config['fastq10x_dir'], "{expt}_qc_fastq10x.ipynb")
     notebook:
         '../notebooks/qc_fastq10x.py.ipynb'
 

@@ -44,23 +44,36 @@ class Experiments:
             assert isinstance(self.config_dict, dict)
 
         self.experiments = list(self.config_dict)
+        self._expect_ncells = {}
 
-        # now build data frames for each data type
-        valid_keys = {'description', 'transcriptomics'}
+        # now get data for each experiment
+        valid_keys = {'description',
+                      'expect_ncells',
+                      'transcriptomics'}
         transcriptomics_records = []
-        for experiment, experiment_d in self.config_dict.items():
-            if not set(experiment_d).issubset(valid_keys):
-                raise ValueError(f"invalid entries for {experiment}")
-            if 'transcriptomics' in experiment_d:
-                for run, run_d in experiment_d['transcriptomics'].items():
+        for expt, expt_d in self.config_dict.items():
+
+            if not set(expt_d).issubset(valid_keys):
+                raise ValueError(f"invalid entries for {expt}")
+
+            if 'transcriptomics' in expt_d:
+                for run, run_d in expt_d['transcriptomics'].items():
                     transcriptomics_records.append((
-                            experiment,
+                            expt,
                             run,
-                            f"{experiment}_{run}",
+                            f"{expt}_{run}",
                             run_d['index'],
                             run_d['bcl_folder'],
                             run_d['lane'],
                             ))
+
+            if 'expect_ncells' in expt_d:
+                self._expect_ncells[expt] = expt_d['expect_ncells']
+                if not isinstance(self._expect_ncells[expt], int):
+                    raise ValueError(f"`expect_ncells` not int for {expt}")
+            else:
+                raise KeyError(f"`expect_ncells` missing for {expt}")
+
         self.transcriptomics_df = pd.DataFrame(transcriptomics_records,
                                                columns=['experiment',
                                                         'run_name',
@@ -111,3 +124,7 @@ class Experiments:
                 ['transcriptomic_run']
                 .tolist()
                 )
+
+    def expect_ncells(self, expt):
+        """int: Expected number of cells for experiment `expt`."""
+        return self._expect_ncells[expt]

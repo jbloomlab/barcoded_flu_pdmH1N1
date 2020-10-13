@@ -30,10 +30,13 @@ localrules: all
 
 rule all:
     input:
-#        expand(join(config['mkfastq10x_dir'],
-#                    "{transcriptomic_run}_qc_stats.csv",
-#               transcriptomic_run=experiments_config.transcriptomic_runs)
-        expand(join(config['fastq10x_dir'], "{expt}_fastq10x_qc.svg"),
+        expand(join(config['fastq10x_dir'], "{expt}_qc_fastq10x.svg"),
+               expt=expts.experiments),
+        expand(join(config['aligned_fastq10x_dir'], "{expt}",
+                    'Solo.out/GeneFull/Summary.csv'),
+               expt=expts.experiments),
+        expand(join(config['aligned_fastq10x_dir'],
+                    "{expt}_qc_transcript_alignments.svg"),
                expt=expts.experiments),
 #        join(config['aligned_fastq10x_dir'], 'align_fastq10x_summary.html'),
 #        join(config['aligned_fastq10x_dir'],
@@ -59,8 +62,8 @@ report: 'report/workflow.rst'
 # Load rules -----------------------------------------------------------------
 
 #include: 'rules/analysis.smk'
-#include: 'rules/viral_fastq10x.smk'
-#include: 'rules/align_fastq10x.smk'
-#include: 'rules/star_refgenome.smk'
-include: 'rules/fastq10x.smk'
 #include: 'rules/gap_analysis.smk'
+#include: 'rules/viral_fastq10x.smk'
+include: 'rules/align_fastq10x.smk'
+include: 'rules/star_refgenome.smk'
+include: 'rules/fastq10x.smk'

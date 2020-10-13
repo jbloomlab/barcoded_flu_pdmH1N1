@@ -1,1 +1,1 @@
-Statistics from the `STARsolo <https://github.com/alexdobin/STAR/blob/master/docs/STARsolo.md>`_ alignments of the 10X Illumina FASTQ files in the form of an HTML rendering of a `Jupyter notebook <https://jupyter.org/>`_.
+Summary statistics of the `STARsolo <https://github.com/alexdobin/STAR/blob/master/docs/STARsolo.md>`_ alignments of the 10x transcriptomics Illumina FASTQ reads.
