@@ -99,3 +99,19 @@ experiments:
         index: SI-GA-B4
         bcl_folder: /shared/ngs/illumina/bloom_lab/200724_M03100_0593_000000000-J33YK/
         lane: '*'
+
+  scProgenyProduction_trial1:
+    description: None provided.
+    transcriptomics:
+      2020-09-25:
+        index: SI-GA-B8
+        bcl_folder: /shared/ngs/illumina/bloom_lab/200925_D00300_1065_AHHL7NBCX3/raw/200925_D00300_1065_AHHL7NBCX3/
+        lane: 2
+
+  scProgenyProduction_trial2:
+    description: None provided.
+    transcriptomics:
+      2020-09-25:
+        index: SI-GA-B9
+        bcl_folder: /shared/ngs/illumina/bloom_lab/200925_D00300_1065_AHHL7NBCX3/raw/200925_D00300_1065_AHHL7NBCX3/
+        lane: '*'
