@@ -87,6 +87,10 @@ experiments:
         index: SI-GA-B3
         bcl_folder: /shared/ngs/illumina/agreaney/200701_D00300_0988_BHGFGMBCX3/raw/200701_D00300_0988_BHGFGMBCX3/
         lane: 2
+      2020-08-26:
+        index: SI-GA-B3
+        bcl_folder: /shared/ngs/illumina/bloom_lab/bloom_lab/200826_D00300_1040_BHHGLWBCX3/raw/200826_D00300_1040_BHHGLWBCX3/
+        lane: '*'
 
   hashing_trial3_withNH4Cl:
     description: None provided.
@@ -95,7 +99,15 @@ experiments:
         index: SI-GA-B5
         bcl_folder: /shared/ngs/illumina/bloom_lab/200724_M03100_0593_000000000-J33YK/
         lane: '*'
-      2020-07-24_b:
+      2020-08-26:
+        index: SI-GA-B5
+        bcl_folder: /shared/ngs/illumina/bloom_lab/bloom_lab/200826_D00300_1040_BHHGLWBCX3/raw/200826_D00300_1040_BHHGLWBCX3/
+        lane: '*'
+
+  hashing_trial3_noNH4Cl:
+    description: None provided
+    transcriptomics:
+      2020-07-24:
         index: SI-GA-B4
         bcl_folder: /shared/ngs/illumina/bloom_lab/200724_M03100_0593_000000000-J33YK/
         lane: '*'
