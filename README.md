@@ -33,7 +33,14 @@ This repository is organized as followed (based loosely on [this example snakema
 
 
 ## Running the analysis
-Simply run [Snakefile] with the command:
+The [conda] environment for this repo is specified in [environment.yml](environment.yml); note also that an **unpinned** version of this environment is specified[environment_unpinned.yml](environment_unpinned.yml).
+If you are on the Hutch cluster and set up to use the *BloomLab* [conda] installation, then this environment is already built and you can activate it simply with:
+
+    conda activate barcoded_flu_pdmH1N1
+
+Otherwise you need to first build the [conda] environment from [environment.yml](environment.yml) and then activate it as above.
+
+Once the *barcoded_flu_pdmH1N1* [conda] environment has been activated, simply run [Snakefile] with the command:
 
     snakemake
 
@@ -50,6 +57,7 @@ You probably want to submit the script itself via [sbatch](sbatch), using:
 [Snakefile]: Snakefile
 [snakemake]: https://snakemake.readthedocs.io
 [snakemake report]: https://snakemake.readthedocs.io/en/stable/snakefiles/reporting.html
+[conda]: https://docs.conda.io/projects/conda/en/latest/index.html
 
 
 ## Experimental Details

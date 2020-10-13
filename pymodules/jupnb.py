@@ -42,7 +42,7 @@ def run_nb_to_html(input_nb, output_nb, parameters, make_html=True):
     if make_html:
         # https://github.com/ipython-contrib/jupyter_contrib_nbextensions/issues/901
         subprocess.check_call(['jupyter', 'nbconvert', output_nb,
-                               '--to', 'html_embed', '--template', 'toc2'])
+                               '--to', 'html_embed'])
 
         output_html = os.path.splitext(output_nb)[0] + '.html'
         assert os.path.isfile(output_html), f"failed to generate {output_html}"

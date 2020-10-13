@@ -1,0 +1,29 @@
+name: barcoded_flu_pdmH1N1
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - altair
+  - bcbiogff
+  - bcbio-nextgen
+  - conda-forge::anndata
+  - git-lfs
+  - jupyterlab
+  - jupyter_contrib_nbextensions
+  - minimap2
+  - multiqc
+  - nodejs
+  - papermill
+  - pbccs>=4.0.0
+  - pip
+  - plotnine
+  - pysam
+  - python=3.8
+  - samtools
+  - scanpy
+  - snakemake
+  - sra-tools
+  - star
+  - pip:
+    - alignparse
