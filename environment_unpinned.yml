@@ -7,6 +7,7 @@ dependencies:
   - altair
   - bcbiogff
   - bcbio-nextgen
+  - biopython
   - conda-forge::anndata
   - git-lfs
   - jupyterlab
@@ -14,15 +15,16 @@ dependencies:
   - minimap2
   - multiqc
   - nodejs
-  - papermill
+  - pandas
   - pbccs>=4.0.0
   - pip
   - plotnine
   - pysam
   - python=3.8
+  - ruamel.yaml>=0.16
   - samtools
   - scanpy
-  - snakemake
+  - snakemake=5.25
   - sra-tools
   - star
   - pip:

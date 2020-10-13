@@ -6,11 +6,11 @@ rule fastq10x_transcript_coverage:
     input:
         fastq10x_bams=expand(join(config['aligned_fastq10x_dir'],
                                   "{sample10x}/Aligned.sortedByCoord.out.bam"),
-                              sample10x=samples_10x),
+                              sample10x=experiments_config.experiments),
         fastq10x_bais=expand(join(config['aligned_fastq10x_dir'],
                                   "{sample10x}",
                                   'Aligned.sortedByCoord.out.bam.bai'),
-                             sample10x=samples_10x),
+                             sample10x=experiments_config.experiments),
         viral_gtf=config['viral_gtf'],
         gtf=join(config['genome_dir'], 'cell_and_virus_gtf.gtf'),
         nb='notebooks/fastq10x_transcript_coverage.ipynb'
@@ -25,7 +25,7 @@ rule fastq10x_transcript_coverage:
         run_nb_to_html(input_nb=input.nb,
                        output_nb=output.nb,
                        parameters={
-                            'samples_10x': samples_10x,
+                            'samples_10x': experiments_config.experiments,
                             'input_fastq10x_bams': input.fastq10x_bams,
                             'input_fastq10x_bais': input.fastq10x_bais,
                             'input_viral_gtf': input.viral_gtf,
@@ -39,10 +39,10 @@ rule align_fastq10x_summary:
     input:
         summary=expand(join(config['aligned_fastq10x_dir'], "{sample10x}",
                             'Solo.out/Gene/Summary.csv'),
-                       sample10x=samples_10x),
+                       sample10x=experiments_config.experiments),
         umi_per_cell=expand(join(config['aligned_fastq10x_dir'], "{sample10x}",
                                  'Solo.out/Gene/UMIperCellSorted.txt'),
-                            sample10x=samples_10x),
+                            sample10x=experiments_config.experiments),
         nb='notebooks/align_fastq10x_summary.ipynb'
     output:
         nb=join(config['aligned_fastq10x_dir'],
@@ -55,7 +55,7 @@ rule align_fastq10x_summary:
         run_nb_to_html(input_nb=input.nb,
                        output_nb=output.nb,
                        parameters={
-                            'samples_10x': samples_10x,
+                            'samples_10x': experiment_config.experiments,
                             'input_summary': input.summary,
                             'input_umi_per_cell': input.umi_per_cell,
                             },
