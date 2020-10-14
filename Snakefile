@@ -35,12 +35,9 @@ rule all:
         expand(join(config['aligned_fastq10x_dir'], "{expt}",
                     'Solo.out/GeneFull/Summary.csv'),
                expt=expts.experiments),
-        expand(join(config['aligned_fastq10x_dir'],
-                    "{expt}_qc_transcript_alignments.svg"),
+        expand(join(config['aligned_fastq10x_dir'], "{expt}",
+                    'qc_transcript_alignments.svg'),
                expt=expts.experiments),
-#        join(config['aligned_fastq10x_dir'], 'align_fastq10x_summary.html'),
-#        join(config['aligned_fastq10x_dir'],
-#             'fastq10x_transcript_coverage.html'),
 #        join(config['viral_fastq10x_dir'], 'viral_fastq10x_coverage.html'),
 #        join(config['viral_fastq10x_dir'], 'gap_analysis.html'),
 #        expand(join(config['viral_fastq10x_dir'],
@@ -67,3 +64,4 @@ report: 'report/workflow.rst'
 include: 'rules/align_fastq10x.smk'
 include: 'rules/star_refgenome.smk'
 include: 'rules/fastq10x.smk'
+include: 'rules/utils.smk'

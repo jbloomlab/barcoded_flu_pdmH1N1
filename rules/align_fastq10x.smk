@@ -1,6 +1,21 @@
 """Rules related aligned the 10X Illumina transcriptomics FASTQ reads."""
 
 
+rule viral_bc_tag_in_transcripts:
+    """Extract viral barcodes and tags from 10x transcriptomic alignments."""
+    input:
+        bam=join(config['aligned_fastq10x_dir'], "{expt}",
+                 'Aligned.sortedByCoord.out.bam'),
+        bai=join(config['aligned_fastq10x_dir'], "{expt}",
+                 'Aligned.sortedByCoord.out.bai'),
+    output:
+    log:
+        notebook=join(config['aligned_fastq10x_dir'], "{expt}",
+                      'viral_bc_tag_in_transcripts.ipynb')
+    notebook:
+        '../notebooks/viral_bc_tag_in_transcripts.ipynb'
+
+
 rule qc_transcript_alignments:
     """Quality control summary of 10x transcriptomics alignments."""
     input:
@@ -8,16 +23,14 @@ rule qc_transcript_alignments:
                      'Solo.out/GeneFull/Summary.csv'),
         umi_per_cell=join(config['aligned_fastq10x_dir'], "{expt}",
                           'Solo.out/GeneFull/UMIperCellSorted.txt'),
-    params:
-        expt="{expt}"
     output:
-        qc_plot=report(join(config['aligned_fastq10x_dir'],
-                            '{expt}_qc_transcript_alignments.svg'),
+        qc_plot=report(join(config['aligned_fastq10x_dir'], "{expt}",
+                            'qc_transcript_alignments.svg'),
                        caption='../report/qc_transcript_alignments.rst',
                        category='Aligning 10x transcriptomics reads')
     log:
-        notebook=join(config['aligned_fastq10x_dir'],
-                      "{expt}_qc_transcript_alignments.ipynb")
+        notebook=join(config['aligned_fastq10x_dir'], "{expt}",
+                      'qc_transcript_alignments.ipynb')
     notebook:
         '../notebooks/qc_transcript_alignments.py.ipynb'
 

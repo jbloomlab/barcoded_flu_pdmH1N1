@@ -8,8 +8,6 @@ rule qc_fastq10x:
                                   f"{expt_run10x}_qc_stats.csv")
                              for expt_run10x
                              in expts.expt_transcriptomic_runs(wc.expt)]
-    params:
-        expt="{expt}"
     output:
         qc_plot=report(join(config['fastq10x_dir'], "{expt}_qc_fastq10x.svg"),
                        caption='../report/qc_fastq10x.rst',
@@ -30,7 +28,6 @@ rule mkfastq10x:
         csv=temp("_mkfastq_{run10x}.csv"),
         mro_file=temp("__{run10x}.mro"),
     params:
-        run10x="{run10x}",
         index=lambda wc: expts.transcriptomic_index(wc.run10x),
         lane=lambda wc: expts.transcriptomic_lane(wc.run10x),
         bcl_folder=lambda wc: expts.transcriptomic_bcl_folder(wc.run10x),
@@ -40,12 +37,12 @@ rule mkfastq10x:
         # write CSV file for `cellranger mkfastq`
         with open(output.csv, 'w') as f:
             f.write('Lane,Sample,Index\n'
-                    f"{params.lane},{params.run10x},{params.index}")
+                    f"{params.lane},{wildcards.run10x},{params.index}")
 
         # run `cellranger mkfastq`
         cmds = ['cellranger', 'mkfastq',
                 '--run', params.bcl_folder,
-                '--id', params.run10x,  # output directory name
+                '--id', wildcards.run10x,  # output directory name
                 '--csv', output.csv,
                 '--delete-undetermined',
                 '--qc',
@@ -55,9 +52,9 @@ rule mkfastq10x:
         subprocess.check_call(cmds)
 
         # move `cellranger mkfastq` output to desired location
-        print(f"\nMoving `cellranger mkfastq` output from {params.run10x} "
+        print(f"\nMoving `cellranger mkfastq` output from {wildcards.run10x} "
               f"to {output.mkfastq10x_dir}\n")
-        shutil.move(params.run10x, output.mkfastq10x_dir)
+        shutil.move(wildcards.run10x, output.mkfastq10x_dir)
 
         # get names of R1 and R2 FASTQ files from `cellranger mkfastq` output
         fastq_glob = f"{output.mkfastq10x_dir}/outs/fastq_path/*/*/*.fastq.gz"
@@ -77,10 +74,10 @@ rule mkfastq10x:
                 subprocess.call(['cat'] + fqlist, stdout=f)
 
         # extract sample QC stats from `cellranger mkfastq` JSON into CSV
-        qc_json = join(config['mkfastq10x_dir'], params.run10x,
+        qc_json = join(config['mkfastq10x_dir'], wildcards.run10x,
                        'outs/qc_summary.json')
         print(f"\nExtracting QC stats from {qc_json} to {output.qc_stats}\n")
         with open(qc_json) as f:
-            (pd.Series(json.load(f)['sample_qc'][params.run10x]['all'])
+            (pd.Series(json.load(f)['sample_qc'][wildcards.run10x]['all'])
              .to_csv(output.qc_stats, header=False)
              )
