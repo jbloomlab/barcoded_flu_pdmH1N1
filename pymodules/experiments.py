@@ -48,6 +48,7 @@ class Experiments:
 
         # now get data for each experiment
         valid_keys = {'description',
+                      'lab_notes',
                       'expect_ncells',
                       'transcriptomics'}
         transcriptomics_records = []
