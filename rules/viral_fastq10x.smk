@@ -1,6 +1,27 @@
 """Rules related viral reads in aligned 10x Illumina transcriptomics."""
 
 
+rule viral_transcript_coverage:
+    """Coverage over viral transcripts in 10x transcriptomics."""
+    input:
+        bam=join(config['aligned_fastq10x_dir'], "{expt}",
+                 'Aligned.sortedByCoord.out.bam'),
+        bai=join(config['aligned_fastq10x_dir'], "{expt}",
+                 'Aligned.sortedByCoord.out.bam.bai'),
+        viral_genbank=config['viral_genbank'],
+        notebook='notebooks/viral_transcript_coverage.py.ipynb'
+    output:
+        plot=report(join(config['viral_fastq10x_dir'],
+                    "{expt}_viral_transcript_coverage.svg"),
+                    caption='../report/viral_transcript_coverage.rst',
+                    category='Viral reads in 10x transcriptomics')
+    log:
+        notebook=join(config['viral_fastq10x_dir'],
+                      "{expt}_viral_transcript_coverage.py.ipynb")
+    notebook:
+        '../notebooks/viral_transcript_coverage.py.ipynb'
+
+
 rule viral_barcodes_by_cell:
     """Aggregate viral barcodes in transcriptomics by cell."""
     input:

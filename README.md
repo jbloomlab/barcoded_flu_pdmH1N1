@@ -2,7 +2,7 @@
 Single-cell sequencing of barcoded pdmH1N1 influenza virus; David Bacsik and Jesse Bloom.
 
 ## Summary of workflow and results
-For a summary, see [report.html].
+For a summary, see the `report.html` file that is placed in the `./results/` subdirectory.
 
 ## Organization of repository
 This repository is organized as followed (based loosely on [this example snakemake repository](https://github.com/koesterlab/single-cell-rna-seq)):
@@ -25,10 +25,6 @@ This repository is organized as followed (based loosely on [this example snakema
 
    * [./data/flu_sequences/](data/flu_sequences) gives the flu sequences used in the experiment. See the [README in that subdirectory](data/flu_sequences/README.md) for details.
 
-   * [./data/experiments.yml](data/experiments.yml) specifies the experiments we are analyzing.
-
- - [report.html] is the report created by running [Snakefile].
-
  - [./results/](results) is a created directory with all results, most of which are not tracked in this repository.
 
 
@@ -49,16 +45,15 @@ Once the *barcoded_flu_pdmH1N1* [conda] environment and other software have been
 
     snakemake
 
-And then generate the [snakemake report], [report.html], with:
+And then generate the [snakemake report], at `./results/report.html` with:
 
-    snakemake --report report.html
+    snakemake --report results/report.html
 
 To run on the Hutch cluster using [sbatch](sbatch) and the cluster configuration in [cluster.yaml](cluster.yaml), run the bash script [run_Hutch_cluster.bash](run_Hutch_cluster.bash).
 You probably want to submit the script itself via [sbatch](sbatch), using:
 
     sbatch run_Hutch_cluster.sbatch
 
-[report.html]: report.html
 [Snakefile]: Snakefile
 [snakemake]: https://snakemake.readthedocs.io
 [snakemake report]: https://snakemake.readthedocs.io/en/stable/snakefiles/reporting.html

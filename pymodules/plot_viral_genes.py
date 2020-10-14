@@ -31,6 +31,7 @@ def plot_genes_and_coverage(genes,
                                              'T': '#D55E00',
                                              },
                             figwidth=17,
+                            figtitle='',
                             ):
     """Plot gene structure and coverage for one or more samples.
     
@@ -91,7 +92,7 @@ def plot_genes_and_coverage(genes,
                                                    [1] * len(samples))
                                  },
                     figsize=(figwidth,
-                             1.5 * (len(samples) + genes_relheight) + 1.5),
+                             1.5 * (len(samples) + genes_relheight) + 2),
                     squeeze=False,
                     )
 
@@ -136,7 +137,8 @@ def plot_genes_and_coverage(genes,
               .query('(sample == @sample) & (gene == @gene)')
               .melt(id_vars=['sample', 'gene', 'site'],
                     var_name='nucleotide',
-                    value_name='coverage')
+                    value_name='nt_coverage')
+              .rename(columns={'nt_coverage': 'coverage'})
               .merge(pd.DataFrame.from_records(
                       enumerate(str(seqrecord.seq), start=1),
                       columns=['site', 'wildtype']),
@@ -257,6 +259,9 @@ def plot_genes_and_coverage(genes,
                title_fontsize=14,
                ncol=2,
                )
+
+    if figtitle:
+        fig.suptitle(figtitle, size=18)
     
     fig.tight_layout(w_pad=0)
     return fig, axes

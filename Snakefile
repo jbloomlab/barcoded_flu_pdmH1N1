@@ -41,6 +41,10 @@ rule all:
         expand(join(config['viral_fastq10x_dir'],
                     "{expt}_viral_bc_by_cell.svg"),
                expt=expts.experiments),
+        expand(join(config['viral_fastq10x_dir'],
+                    "{expt}_viral_transcript_coverage.svg"),
+               expt=expts.experiments),
+#        join(config['viral_fastq10x_dir'], 'viral_fastq10x_coverage.html'),
 #        join(config['viral_fastq10x_dir'], 'viral_fastq10x_coverage.html'),
 #        join(config['viral_fastq10x_dir'], 'gap_analysis.html'),
 #        expand(join(config['viral_fastq10x_dir'],
@@ -58,8 +62,6 @@ report: 'report/workflow.rst'
 
 # Load rules -----------------------------------------------------------------
 
-#include: 'rules/analysis.smk'
-#include: 'rules/gap_analysis.smk'
 include: 'rules/viral_fastq10x.smk'
 include: 'rules/align_fastq10x.smk'
 include: 'rules/star_refgenome.smk'
