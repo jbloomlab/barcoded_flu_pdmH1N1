@@ -1,7 +1,7 @@
 hashing_wt_rapidpilot:
   description: Single-cell transcriptomics using a small-scale pilot rescue
-               of the wildtype viral tag variant. Lab notes are at
-               https://benchling.com/s/etr-Q28fCd1kprRNxAd0v5Hg
+               of the wildtype viral tag variant.
+  lab_notes:   https://benchling.com/s/etr-Q28fCd1kprRNxAd0v5Hg
   transcriptomics:
     2019-12-03:
       index: SI-GA-A3
@@ -11,8 +11,8 @@ hashing_wt_rapidpilot:
 hashing_trial1:
   description: Single-cell transcriptomics using the wildtype and dblSyn viral
                tag variants. Infection volume was chosen based on HA expression
-               measured by flow cytometry. Lab notes are at
-               https://benchling.com/s/etr-i9I0yHiFb0P8wHCxosim
+               measured by flow cytometry.
+  lab_notes:   https://benchling.com/s/etr-i9I0yHiFb0P8wHCxosim
   transcriptomics:
     2020-01-16:
       index: SI-GA-A4
@@ -28,8 +28,8 @@ hashing_trial2:
                tag variants at a low MOI. Infection volume was chosen based on the results
                of `hashing_trial1` and flow cytometry. The incolum volume for
                the wildtype tag variant was about 12-fold higher, and for the
-               dblSyn tag variant was about 24-fold higher. Lab notes are at
-               https://benchling.com/s/etr-W8urOmOAQ7L6U4HAXMNy
+               dblSyn tag variant was about 24-fold higher.
+  lab_notes:   https://benchling.com/s/etr-W8urOmOAQ7L6U4HAXMNy
   transcriptomics:
     2020-06-02:
       index: SI-GA-B3
@@ -47,8 +47,8 @@ hashing_trial2:
 hashing_trial3_withNH4Cl:
   description: Single-cell transcriptomics using the wildtype and dblSyn viral
                tag variants at a high MOI. Infection volume was based on the results of
-               `hashing_trial2`. Lab notes are at
-               https://benchling.com/s/etr-ToK66qT0Mfmf6FsexKo4
+               `hashing_trial2`.
+  lab_notes:   https://benchling.com/s/etr-ToK66qT0Mfmf6FsexKo4
   transcriptomics:
     2020-07-24:
       index: SI-GA-B5
