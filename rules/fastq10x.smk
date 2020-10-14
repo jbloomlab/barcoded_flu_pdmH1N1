@@ -7,7 +7,8 @@ rule qc_fastq10x:
         qc_stats=lambda wc: [join(config['fastq10x_dir'],
                                   f"{expt_run10x}_qc_stats.csv")
                              for expt_run10x
-                             in expts.expt_transcriptomic_runs(wc.expt)]
+                             in expts.expt_transcriptomic_runs(wc.expt)],
+        notebook='notebooks/qc_fastq10x.py.ipynb'
     output:
         qc_plot=report(join(config['fastq10x_dir'], "{expt}_qc_fastq10x.svg"),
                        caption='../report/qc_fastq10x.rst',

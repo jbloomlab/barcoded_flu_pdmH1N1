@@ -1,105 +1,83 @@
-"""Rules calling viral tags / barcodes in 10X Illumina reads."""
+"""Rules related viral reads in aligned 10x Illumina transcriptomics."""
 
 
-rule count_viralbc_fastq10x:
-    """Count viral barcodes for each gene / cell from the 10x Illumina data."""
+rule viral_barcodes_in_transcripts:
+    """Extract viral barcodes from 10x transcriptomic alignments."""
     input:
-        fastq10x_bam=join(config['aligned_fastq10x_dir'],
-                          "{sample10x}/Aligned.sortedByCoord.out.bam"),
-        fastq10x_bai=join(config['aligned_fastq10x_dir'],
-                          "{sample10x}/Aligned.sortedByCoord.out.bam.bai"),
-        viralbc_locs=join(config['viral_fastq10x_dir'], 'viralbc_locs.csv'),
-        cellbarcodes=join(config['aligned_fastq10x_dir'], "{sample10x}",
-                          'Solo.out/Gene/filtered/barcodes.tsv')
+        bam=join(config['aligned_fastq10x_dir'], "{expt}",
+                 'Aligned.sortedByCoord.out.bam'),
+        bai=join(config['aligned_fastq10x_dir'], "{expt}",
+                 'Aligned.sortedByCoord.out.bam.bai'),
+        cell_barcodes=join(config['aligned_fastq10x_dir'], "{expt}",
+                           'Solo.out/GeneFull/filtered/barcodes.tsv'),
+        viral_bc_locs=join(config['viral_fastq10x_dir'], 'viral_bc_locs.csv'),
+        notebook='notebooks/viral_barcodes_in_transcripts.py.ipynb'
     output:
-        nb=join(config['viral_fastq10x_dir'],
-                "count_viralbc_fastq10x-{sample10x}.ipynb"),
-        nb_html=report(join(config['viral_fastq10x_dir'],
-                            "count_viralbc_fastq10x-{sample10x}.html"),
-                       caption='../report/count_viralbc_fastq10x.rst',
-                       category='Viral tags and barcodes in 10X data'),
-        viralbc_counts=join(config['viral_fastq10x_dir'],
-                            "viralbc_counts_{sample10x}.csv")
+        viral_bc_by_cell_umi_csv=join(config['viral_fastq10x_dir'],
+                                      "{expt}_viral_bc_by_cell_umi.csv.gz"),
+    log:
+        notebook=join(config['viral_fastq10x_dir'],
+                      "{expt}_viral_barcodes_in_transcripts.ipynb")
     notebook:
-        nb='notebooks/count_viralbc_fastq10x.py.ipynb',
-        run_nb_to_html(
-                input_nb=input.nb,
-                output_nb=output.nb,
-                parameters={
-                    'input_fastq10x_bam': input.fastq10x_bam,
-                    'input_fastq10x_bai': input.fastq10x_bai,
-                    'input_viralbc_locs': input.viralbc_locs,
-                    'input_cellbarcodes': input.cellbarcodes,
-                    'output_viralbc_counts': output.viralbc_counts,
-                    },
-                )
+        '../notebooks/viral_barcodes_in_transcripts.py.ipynb'
 
 
-#rule count_viraltags_fastq10x:
-#    """Count viral tags for each gene and cell from the 10X Illumina data."""
-#    input:
-#        nb='notebooks/count_viraltags_fastq10x.ipynb',
-#        fastq10x_bam=join(config['aligned_fastq10x_dir'],
-#                          "{sample10x}/Aligned.sortedByCoord.out.bam"),
-#        fastq10x_bai=join(config['aligned_fastq10x_dir'],
-#                          "{sample10x}/Aligned.sortedByCoord.out.bam.bai"),
-#        viraltag_locs=join(config['viral_fastq10x_dir'], 'viraltag_locs.csv'),
-#        viraltag_identities=config['viraltag_identities'],
-#        cellbarcodes=join(config['aligned_fastq10x_dir'], "{sample10x}",
-#                          'Solo.out/Gene/filtered/barcodes.tsv')
-#    output:
-#        nb=join(config['viral_fastq10x_dir'],
-#                "count_viraltags_fastq10x-{sample10x}.ipynb"),
-#        nb_html=report(join(config['viral_fastq10x_dir'],
-#                            "count_viraltags_fastq10x-{sample10x}.html"),
-#                       caption='../report/count_viraltags_fastq10x.rst',
-#                       category='Viral tags and barcodes in 10X data'),
-#        viraltag_counts=join(config['viral_fastq10x_dir'],
-#                             "viraltag_counts_{sample10x}.csv")
-#    run:
-#        run_nb_to_html(
-#                input_nb=input.nb,
-#                output_nb=output.nb,
-#                parameters={
-#                    'input_fastq10x_bam': input.fastq10x_bam,
-#                    'input_fastq10x_bai': input.fastq10x_bai,
-#                    'input_viraltag_locs': input.viraltag_locs,
-#                    'input_viraltag_identities': input.viraltag_identities,
-#                    'input_cellbarcodes': input.cellbarcodes,
-#                    'output_viraltag_counts': output.viraltag_counts,
-#                    },
-#                )
+rule viral_tags_in_transcripts:
+    """Extract viral tags from 10x transcriptomic alignments."""
+    input:
+        bam=join(config['aligned_fastq10x_dir'], "{expt}",
+                 'Aligned.sortedByCoord.out.bam'),
+        bai=join(config['aligned_fastq10x_dir'], "{expt}",
+                 'Aligned.sortedByCoord.out.bam.bai'),
+        cell_barcodes=join(config['aligned_fastq10x_dir'], "{expt}",
+                           'Solo.out/GeneFull/filtered/barcodes.tsv'),
+        viral_tag_locs=join(config['viral_fastq10x_dir'], 'viral_tag_locs.csv'),
+        viral_tag_identities=config['viral_tag_identities'],
+        notebook='notebooks/viral_tags_in_transcripts.py.ipynb'
+    output:
+        viral_tag_by_cell_umi_csv=join(config['viral_fastq10x_dir'],
+                                       "{expt}_viral_tag_by_cell_umi.csv.gz"),
+    log:
+        notebook=join(config['viral_fastq10x_dir'],
+                      "{expt}_viral_tags_in_transcripts.ipynb")
+    notebook:
+        '../notebooks/viral_tags_in_transcripts.py.ipynb'
 
 
-#rule viral_fastq10x_coverage:
-#    """Coverage of 10X Illumina reads on viral tags and barcodes."""
-#    input:
-#        nb='notebooks/viral_fastq10x_coverage.ipynb',
-#        fastq10x_bams=expand(join(config['aligned_fastq10x_dir'],
-#                                  "{sample10x}/Aligned.sortedByCoord.out.bam"),
-#                             sample10x=samples_10x),
-#        fastq10x_bais=expand(join(config['aligned_fastq10x_dir'],
-#                                  "{sample10x}",
-#                                  'Aligned.sortedByCoord.out.bam.bai'),
-#                             sample10x=samples_10x),
-#        viral_genbank=config['viral_genbank']
-#    output:
-#        viraltag_locs=join(config['viral_fastq10x_dir'], 'viraltag_locs.csv'),
-#        viralbc_locs=join(config['viral_fastq10x_dir'], 'viralbc_locs.csv'),
-#        nb=join(config['viral_fastq10x_dir'], 'viral_fastq10x_coverage.ipynb'),
-#        nb_html=report(join(config['viral_fastq10x_dir'],
-#                            'viral_fastq10x_coverage.html'),
-#                       caption='../report/viral_fastq10x_coverage.rst',
-#                       category='Viral tags and barcodes in 10X data')
-#    run:
-#        run_nb_to_html(input_nb=input.nb,
-#                       output_nb=output.nb,
-#                       parameters={
-#                            'samples_10x': samples_10x,
-#                            'input_fastq10x_bams': input.fastq10x_bams,
-#                            'input_fastq10x_bais': input.fastq10x_bais,
-#                            'input_viral_genbank': input.viral_genbank,
-#                            'output_viraltag_locs': output.viraltag_locs,
-#                            'output_viralbc_locs': output.viralbc_locs,
-#                            },
-#                       )
+rule viral_bc_locs:
+    """Locations of viral barcodes in 1-based indexing."""
+    input:
+        viral_genbank=config['viral_genbank']
+    output:
+        viral_bc_locs=join(config['viral_fastq10x_dir'], 'viral_bc_locs.csv'),
+    run:
+        viral_bc_tups = []
+        for s in Bio.SeqIO.parse(input.viral_genbank, 'genbank'):
+            for f in s.features:
+                if f.type == 'viral_barcode':
+                    viral_bc_tups.append((s.id,
+                                          int(f.location.start) + 1,
+                                          int(f.location.end)))
+        pd.DataFrame.from_records(viral_bc_tups,
+                                  columns=['gene', 'start', 'end']
+                                  ).to_csv(output.viral_bc_locs, index=False)
+
+
+rule viral_tag_locs:
+    """Locations of viral tags in 1-based indexing."""
+    input:
+        viral_genbank=config['viral_genbank']
+    output:
+        viral_tag_locs=join(config['viral_fastq10x_dir'], 'viral_tag_locs.csv'),
+    run:
+        viral_tag_tups = []
+        for s in Bio.SeqIO.parse(input.viral_genbank, 'genbank'):
+            for f in s.features:
+                if 'tag' in f.type:
+                    viral_tag_tups.append((s.id,
+                                           f.type,
+                                           int(f.location.start) + 1,
+                                           int(f.location.end)))
+        pd.DataFrame.from_records(viral_tag_tups,
+                                  columns=['gene', 'tag_name', 'start', 'end']
+                                  ).to_csv(output.viral_tag_locs, index=False)

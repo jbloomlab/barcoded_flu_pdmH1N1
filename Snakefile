@@ -33,13 +33,14 @@ rule all:
         expand(join(config['fastq10x_dir'], "{expt}_qc_fastq10x.svg"),
                expt=expts.experiments),
         expand(join(config['aligned_fastq10x_dir'], "{expt}",
-                    'Solo.out/GeneFull/Summary.csv'),
-               expt=expts.experiments),
-        expand(join(config['aligned_fastq10x_dir'], "{expt}",
                     'qc_transcript_alignments.svg'),
                expt=expts.experiments),
-        join(config['genome_dir'], 'viral_bc_locs.csv'),
-        join(config['genome_dir'], 'viral_tag_locs.csv'),
+        expand(join(config['viral_fastq10x_dir'],
+                    "{expt}_viral_tag_by_cell_umi.csv.gz"),
+               expt=expts.experiments),
+        expand(join(config['viral_fastq10x_dir'],
+                    "{expt}_viral_bc_by_cell_umi.csv.gz"),
+               expt=expts.experiments),
 #        join(config['viral_fastq10x_dir'], 'viral_fastq10x_coverage.html'),
 #        join(config['viral_fastq10x_dir'], 'gap_analysis.html'),
 #        expand(join(config['viral_fastq10x_dir'],
@@ -47,9 +48,6 @@ rule all:
 #               sample10x=experiments_config.experiments),
 #        expand(join(config['viral_fastq10x_dir'],
 #                    "count_viralbc_fastq10x-{sample10x}.html"),
-#               sample10x=experiments_config.experiments),
-#        expand(join(config['analysis_dir'], 
-#                    "{sample10x}_analyze_cell_gene_matrix.html"),
 #               sample10x=experiments_config.experiments),
 
 
@@ -62,7 +60,7 @@ report: 'report/workflow.rst'
 
 #include: 'rules/analysis.smk'
 #include: 'rules/gap_analysis.smk'
-#include: 'rules/viral_fastq10x.smk'
+include: 'rules/viral_fastq10x.smk'
 include: 'rules/align_fastq10x.smk'
 include: 'rules/star_refgenome.smk'
 include: 'rules/fastq10x.smk'

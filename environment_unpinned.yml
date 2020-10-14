@@ -21,6 +21,7 @@ dependencies:
   - plotnine
   - pysam
   - python=3.8
+  - pyyaml
   - ruamel.yaml>=0.16
   - samtools
   - scanpy

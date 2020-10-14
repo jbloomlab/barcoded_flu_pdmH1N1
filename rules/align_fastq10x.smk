@@ -1,60 +1,6 @@
 """Rules related aligned the 10X Illumina transcriptomics FASTQ reads."""
 
 
-rule viral_bc_tag_in_transcripts:
-    """Extract viral barcodes and tags from 10x transcriptomic alignments."""
-    input:
-        bam=join(config['aligned_fastq10x_dir'], "{expt}",
-                 'Aligned.sortedByCoord.out.bam'),
-        bai=join(config['aligned_fastq10x_dir'], "{expt}",
-                 'Aligned.sortedByCoord.out.bai'),
-    output:
-    log:
-        notebook=join(config['aligned_fastq10x_dir'], "{expt}",
-                      'viral_bc_tag_in_transcripts.ipynb')
-    notebook:
-        '../notebooks/viral_bc_tag_in_transcripts.ipynb'
-
-
-rule get_viral_bc_locs:
-    """Locations of viral barcodes in 1-based indexing."""
-    input:
-        viral_genbank=config['viral_genbank']
-    output:
-        viral_bc_locs=join(config['genome_dir'], 'viral_bc_locs.csv'),
-    run:
-        viral_bc_tups = []
-        for s in Bio.SeqIO.parse(input.viral_genbank, 'genbank'):
-            for f in s.features:
-                if f.type == 'viral_barcode':
-                    viral_bc_tups.append((s.id,
-                                          int(f.location.start) + 1,
-                                          int(f.location.end)))
-        pd.DataFrame.from_records(viral_bc_tups,
-                                  columns=['gene', 'start', 'end']
-                                  ).to_csv(output.viral_bc_locs, index=False)
-
-
-rule get_viral_tag_locs:
-    """Locations of viral tags in 1-based indexing."""
-    input:
-        viral_genbank=config['viral_genbank']
-    output:
-        viral_tag_locs=join(config['genome_dir'], 'viral_tag_locs.csv'),
-    run:
-        viral_tag_tups = []
-        for s in Bio.SeqIO.parse(input.viral_genbank, 'genbank'):
-            for f in s.features:
-                if 'tag' in f.type:
-                    viral_tag_tups.append((s.id,
-                                           f.type,
-                                           int(f.location.start) + 1,
-                                           int(f.location.end)))
-        pd.DataFrame.from_records(viral_tag_tups,
-                                  columns=['gene', 'tag_name', 'start', 'end']
-                                  ).to_csv(output.viral_tag_locs, index=False)
-
-
 rule qc_transcript_alignments:
     """Quality control summary of 10x transcriptomics alignments."""
     input:
@@ -62,6 +8,7 @@ rule qc_transcript_alignments:
                      'Solo.out/GeneFull/Summary.csv'),
         umi_per_cell=join(config['aligned_fastq10x_dir'], "{expt}",
                           'Solo.out/GeneFull/UMIperCellSorted.txt'),
+        notebook='notebooks/qc_transcript_alignments.py.ipynb'
     output:
         qc_plot=report(join(config['aligned_fastq10x_dir'], "{expt}",
                             'qc_transcript_alignments.svg'),
@@ -88,10 +35,8 @@ rule align_fastq10x:
                             for expt_run10x in 
                             expts.expt_transcriptomic_runs(wc.expt)],
     output:
-        summary=report(join(config['aligned_fastq10x_dir'], "{expt}",
-                            'Solo.out/GeneFull/Summary.csv'),
-                       caption='../report/align_fastq10x_summary.rst',
-                       category='Aligning 10x transcriptomics reads'),
+        summary=join(config['aligned_fastq10x_dir'], "{expt}",
+                     'Solo.out/GeneFull/Summary.csv'),
         umi_per_cell=join(config['aligned_fastq10x_dir'], "{expt}",
                           'Solo.out/GeneFull/UMIperCellSorted.txt'),
         matrix=join(config['aligned_fastq10x_dir'], "{expt}",
