@@ -1,6 +1,26 @@
 """Rules related viral reads in aligned 10x Illumina transcriptomics."""
 
 
+rule viral_barcodes_by_cell:
+    """Count viral barcodes by cell."""
+    input:
+        viral_bc_by_cell_umi_csv=join(config['viral_fastq10x_dir'],
+                                      "{expt}_viral_bc_by_cell_umi.csv.gz"),
+        notebook='notebooks/viral_barcodes_by_cell.py.ipynb'
+    output:
+        viral_bc_by_cell_csv=join(config['viral_fastq10x_dir'],
+                                  "{expt}_viral_bc_by_cell.csv.gz"),
+        plot=report(join(config['viral_fastq10x_dir'],
+                         "{expt}_viral_bc_by_cell.svg"),
+                    caption='../report/viral_barcodes_by_cell.rst',
+                    category='Viral reads in 10x transcriptomics')
+    log:
+        notebook=join(config['viral_fastq10x_dir'],
+                      "{expt}_viral_barcodes_by_cell.ipynb")
+    notebook:
+        '../notebooks/viral_barcodes_by_cell.py.ipynb'
+
+
 rule viral_barcodes_in_transcripts:
     """Extract viral barcodes from 10x transcriptomic alignments."""
     input:

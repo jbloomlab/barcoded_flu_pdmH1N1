@@ -39,7 +39,7 @@ rule all:
                     "{expt}_viral_tag_by_cell_umi.csv.gz"),
                expt=expts.experiments),
         expand(join(config['viral_fastq10x_dir'],
-                    "{expt}_viral_bc_by_cell_umi.csv.gz"),
+                    "{expt}_viral_bc_by_cell.svg"),
                expt=expts.experiments),
 #        join(config['viral_fastq10x_dir'], 'viral_fastq10x_coverage.html'),
 #        join(config['viral_fastq10x_dir'], 'gap_analysis.html'),
