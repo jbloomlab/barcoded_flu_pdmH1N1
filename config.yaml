@@ -45,8 +45,8 @@ experiments:
 
   hashing_wt_rapidpilot:
     description: Single-cell transcriptomics using a small-scale pilot rescue
-                 of the wildtype viral tag variant. Lab notes are at
-                 https://benchling.com/s/etr-Q28fCd1kprRNxAd0v5Hg
+                 of the wildtype viral tag variant.
+    lab_notes: https://benchling.com/s/etr-Q28fCd1kprRNxAd0v5Hg
     expect_ncells: 2000
     transcriptomics:
       2019-12-03:
@@ -57,8 +57,8 @@ experiments:
   hashing_trial1:
     description: Single-cell transcriptomics using the wildtype and dblSyn viral
                  tag variants. Infection volume was chosen based on HA expression
-                 measured by flow cytometry. Lab notes are at
-                 https://benchling.com/s/etr-i9I0yHiFb0P8wHCxosim
+                 measured by flow cytometry.
+    lab_notes: https://benchling.com/s/etr-i9I0yHiFb0P8wHCxosim
     expect_ncells: 2000
     transcriptomics:
       2020-01-16:
@@ -76,7 +76,8 @@ experiments:
                  of `hashing_trial1` and flow cytometry. The incolum volume for
                  the wildtype tag variant was about 12-fold higher, and for the
                  dblSyn tag variant was about 24-fold higher.
-    expect_ncells: 2000
+    lab_notes: https://benchling.com/s/etr-W8urOmOAQ7L6U4HAXMNy
+    expect_ncells: 5000
     transcriptomics:
       2020-06-02:
         index: SI-GA-B3
@@ -92,8 +93,11 @@ experiments:
         lane: '*'
 
   hashing_trial3_withNH4Cl:
-    description: None provided.
-    expect_ncells: 2000
+    description: Single-cell transcriptomics using the wildtype and dblSyn viral
+                 tag variants at a high MOI. Infection volume was based on the results of
+                 `hashing_trial2`.
+    lab_notes: https://benchling.com/s/etr-ToK66qT0Mfmf6FsexKo4
+    expect_ncells: 5000
     transcriptomics:
       2020-07-24:
         index: SI-GA-B5
@@ -105,8 +109,12 @@ experiments:
         lane: '*'
 
   hashing_trial3_noNH4Cl:
-    description: None provided
-    expect_ncells: 2000
+    description: Single-cell transcriptomics performed *without* NH4Cl treatment. Used
+                 wildtype and dblSyn viral tag variants at high MOI. Infection volume was
+                 based on the results of `hashing_trial2`. Performed in conjunction with
+                 `hashing_trial3_withNH4Cl`.
+    lab_notes: https://benchling.com/s/etr-ToK66qT0Mfmf6FsexKo4
+    expect_ncells: 5000
     transcriptomics:
       2020-07-24:
         index: SI-GA-B4
@@ -114,8 +122,12 @@ experiments:
         lane: '*'
 
   scProgenyProduction_trial1:
-    description: None provided.
-    expect_ncells: 2000
+    description: Single-cell transcriptomics performed on low MOI-infected sample.
+                 Innoculum volumes based on `hashing_trial2` data. Loaded
+                 all collected cells from two 24-well wells, each infected with either
+                 wildtype or dblySn viral tag variants.
+    lab_notes: https://benchling.com/s/etr-20lOO7l1FdEJJIpxV6vD
+    expect_ncells: 10000
     transcriptomics:
       2020-09-25:
         index: SI-GA-B8
@@ -123,8 +135,12 @@ experiments:
         lane: 2
 
   scProgenyProduction_trial2:
-    description: None provided.
-    expect_ncells: 2000
+    description: Single-cell transcriptomics performed on low MOI-infected sample.
+                 Innoculum volumes based on `hashing_trial2` data. Loaded
+                 all collected cells from two 24-well wells, each infected with either
+                 wildtype or dblySn viral tag variants.
+    lab_notes: https://benchling.com/s/etr-73UD4Mx8uXn1xcxlV1ym
+    expect_ncells: 10000
     transcriptomics:
       2020-09-25:
         index: SI-GA-B9
