@@ -16,6 +16,45 @@ rule viral_bc_tag_in_transcripts:
         '../notebooks/viral_bc_tag_in_transcripts.ipynb'
 
 
+rule get_viral_bc_locs:
+    """Locations of viral barcodes in 1-based indexing."""
+    input:
+        viral_genbank=config['viral_genbank']
+    output:
+        viral_bc_locs=join(config['genome_dir'], 'viral_bc_locs.csv'),
+    run:
+        viral_bc_tups = []
+        for s in Bio.SeqIO.parse(input.viral_genbank, 'genbank'):
+            for f in s.features:
+                if f.type == 'viral_barcode':
+                    viral_bc_tups.append((s.id,
+                                          int(f.location.start) + 1,
+                                          int(f.location.end)))
+        pd.DataFrame.from_records(viral_bc_tups,
+                                  columns=['gene', 'start', 'end']
+                                  ).to_csv(output.viral_bc_locs, index=False)
+
+
+rule get_viral_tag_locs:
+    """Locations of viral tags in 1-based indexing."""
+    input:
+        viral_genbank=config['viral_genbank']
+    output:
+        viral_tag_locs=join(config['genome_dir'], 'viral_tag_locs.csv'),
+    run:
+        viral_tag_tups = []
+        for s in Bio.SeqIO.parse(input.viral_genbank, 'genbank'):
+            for f in s.features:
+                if 'tag' in f.type:
+                    viral_tag_tups.append((s.id,
+                                           f.type,
+                                           int(f.location.start) + 1,
+                                           int(f.location.end)))
+        pd.DataFrame.from_records(viral_tag_tups,
+                                  columns=['gene', 'tag_name', 'start', 'end']
+                                  ).to_csv(output.viral_tag_locs, index=False)
+
+
 rule qc_transcript_alignments:
     """Quality control summary of 10x transcriptomics alignments."""
     input:

@@ -38,6 +38,8 @@ rule all:
         expand(join(config['aligned_fastq10x_dir'], "{expt}",
                     'qc_transcript_alignments.svg'),
                expt=expts.experiments),
+        join(config['genome_dir'], 'viral_bc_locs.csv'),
+        join(config['genome_dir'], 'viral_tag_locs.csv'),
 #        join(config['viral_fastq10x_dir'], 'viral_fastq10x_coverage.html'),
 #        join(config['viral_fastq10x_dir'], 'gap_analysis.html'),
 #        expand(join(config['viral_fastq10x_dir'],
