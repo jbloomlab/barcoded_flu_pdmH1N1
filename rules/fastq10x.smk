@@ -1,55 +1,49 @@
-"""``snakemake`` rules related to generating 10X FASTQ files."""
+"""Rules for making and QC-ing 10X transcriptomics FASTQ files."""
 
 
-rule fastq10x_qc_analysis:
-    """Quality control analysis of the 10X FASTQ files."""
+rule qc_fastq10x:
+    """Quality control analysis of the 10x FASTQ files."""
     input:
-        qc_stats=expand(join(config['fastq10x_dir'], "{run10x}_qc_stats.csv"),
-                        run10x=illumina_runs_10x.index),
-        nb='notebooks/fastq10x_qc_analysis.ipynb'
+        qc_stats=lambda wc: [join(config['fastq10x_dir'],
+                                  f"{expt_run10x}_qc_stats.csv")
+                             for expt_run10x
+                             in expts.expt_transcriptomic_runs(wc.expt)],
+        notebook='notebooks/qc_fastq10x.py.ipynb'
     output:
-        nb=join(config['fastq10x_dir'], 'fastq10x_qc_analysis.ipynb'),
-        nb_html=report(join(config['fastq10x_dir'],
-                            'fastq10x_qc_analysis.html'),
-                       caption='../report/fastq10x_qc_analysis.rst',
-                       category='10X FASTQ files')
-    run:
-        run_nb_to_html(
-                input_nb=input.nb,
-                output_nb=output.nb,
-                parameters={
-                    'illumina_runs_10x': illumina_runs_10x.index.tolist(),
-                    'input_qc_stats': input.qc_stats,
-                    },
-                )
+        qc_plot=report(join(config['fastq10x_dir'], "{expt}_qc_fastq10x.svg"),
+                       caption='../report/qc_fastq10x.rst',
+                       category='10x transcriptomics FASTQ files')
+    log:
+        notebook=join(config['fastq10x_dir'], "{expt}_qc_fastq10x.ipynb")
+    notebook:
+        '../notebooks/qc_fastq10x.py.ipynb'
 
 
-rule make_fastq10x:
-    """Make 10X FASTQ files from BCL runs using `cellranger mkfastq`."""
+rule mkfastq10x:
+    """Make 10x FASTQ files from BCL runs using `cellranger mkfastq`."""
     output:
         fastqR1=join(config['fastq10x_dir'], "{run10x}_all_R1.fastq.gz"),
         fastqR2=join(config['fastq10x_dir'], "{run10x}_all_R2.fastq.gz"),
         mkfastq10x_dir=directory(join(config['mkfastq10x_dir'], "{run10x}")),
         qc_stats=join(config['fastq10x_dir'], "{run10x}_qc_stats.csv"),
-        csv=temp("_mkfastq_{run10x}.csv"),  # input for cellranger mkfastq
-        mro_file=temp("__{run10x}.mro"),  # created by cellranger mkfastq
+        csv=temp("_mkfastq_{run10x}.csv"),
+        mro_file=temp("__{run10x}.mro"),
     params:
-        run10x="{run10x}"
+        index=lambda wc: expts.transcriptomic_index(wc.run10x),
+        lane=lambda wc: expts.transcriptomic_lane(wc.run10x),
+        bcl_folder=lambda wc: expts.transcriptomic_bcl_folder(wc.run10x),
     threads:
         config['max_cpus']
     run:
         # write CSV file for `cellranger mkfastq`
         with open(output.csv, 'w') as f:
-            f.write('Lane,Sample,Index\n' +
-                    ','.join(map(str,
-                             [illumina_runs_10x.at[params.run10x, 'lane'],
-                              params.run10x,
-                              illumina_runs_10x.at[params.run10x, 'index']])))
-        
+            f.write('Lane,Sample,Index\n'
+                    f"{params.lane},{wildcards.run10x},{params.index}")
+
         # run `cellranger mkfastq`
         cmds = ['cellranger', 'mkfastq',
-                '--run', illumina_runs_10x.at[params.run10x, 'bcl_folder'],
-                '--id', params.run10x,  # output directory name
+                '--run', params.bcl_folder,
+                '--id', wildcards.run10x,  # output directory name
                 '--csv', output.csv,
                 '--delete-undetermined',
                 '--qc',
@@ -59,9 +53,9 @@ rule make_fastq10x:
         subprocess.check_call(cmds)
 
         # move `cellranger mkfastq` output to desired location
-        print(f"\nMoving `cellranger mkfastq` output from {params.run10x} "
+        print(f"\nMoving `cellranger mkfastq` output from {wildcards.run10x} "
               f"to {output.mkfastq10x_dir}\n")
-        shutil.move(params.run10x, output.mkfastq10x_dir)
+        shutil.move(wildcards.run10x, output.mkfastq10x_dir)
 
         # get names of R1 and R2 FASTQ files from `cellranger mkfastq` output
         fastq_glob = f"{output.mkfastq10x_dir}/outs/fastq_path/*/*/*.fastq.gz"
@@ -72,7 +66,7 @@ rule make_fastq10x:
         print(f"\nFASTQ files matching {fastq_glob}:\n"
               f"  R1 files: {','.join(map(basename, r1s))}\n"
               f"  R2 files: {','.join(map(basename, r2s))}\n")
-        assert len(r1s) == len(r2s)
+        assert len(r1s) == len(r2s) == len(fastqs) / 3 > 0
 
         # concatenate all R1 and R2 files into merged FASTQs for run
         print(f"\nCreating merged FASTQs {output.fastqR1}, {output.fastqR2}\n")
@@ -81,10 +75,10 @@ rule make_fastq10x:
                 subprocess.call(['cat'] + fqlist, stdout=f)
 
         # extract sample QC stats from `cellranger mkfastq` JSON into CSV
-        qc_json = join(config['mkfastq10x_dir'], params.run10x,
+        qc_json = join(config['mkfastq10x_dir'], wildcards.run10x,
                        'outs/qc_summary.json')
         print(f"\nExtracting QC stats from {qc_json} to {output.qc_stats}\n")
         with open(qc_json) as f:
-            (pd.Series(json.load(f)['sample_qc'][params.run10x]['all'])
+            (pd.Series(json.load(f)['sample_qc'][wildcards.run10x]['all'])
              .to_csv(output.qc_stats, header=False)
              )

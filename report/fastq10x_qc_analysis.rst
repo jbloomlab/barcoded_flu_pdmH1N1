@@ -1,1 +1,0 @@
-Analysis of quality-control statistics from the generation of the 10X FASTQ files using `cellranger mkfastq <https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/mkfastq>`_, in the form of an HTML rendering of a `Jupyter notebook <https://jupyter.org/>`_.

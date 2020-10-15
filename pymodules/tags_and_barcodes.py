@@ -14,6 +14,7 @@ def extract_tags(readiterator,
                  cellbc_tag='CB',
                  umi_tag='UB',
                  min_frac=0.5,
+                 primary_only=True,
                  ):
     """Get tag (or barcode) sequence for each cell barcode and UMI.
     
@@ -32,11 +33,14 @@ def extract_tags(readiterator,
     umi_tag : str
         The SAM tag for the UMI.
     min_frac : float
-        Only call tag if >= this frac of reads for that cell barcode and UMI
+        Only call tag if > this frac of reads for that cell barcode and UMI
         agree on sequence at each site. A value of 0.5 means that more than
         half the reads for the cell barcode / UMI must agree on the tag
         sequence at each site, and so essentially involves getting the
         majority consensus if it exists.
+    primary_only : bool
+        Only consider the primary alignments of reads that multi-map (ignore
+        secondary alignments).
         
     Returns
     -------
@@ -52,8 +56,10 @@ def extract_tags(readiterator,
     
     # count all tag sequences for each cell barcode / UMI
     for read in readiterator:
+        if primary_only and read.is_secondary:
+            continue  # not a primary alignment
         if not read.has_tag(cellbc_tag):
-                continue  # no cell barcode
+            continue  # no cell barcode
         cellbc = read.get_tag(cellbc_tag)
         if cellbc not in cellbarcodes:
             continue  # cell barcode not on whitelist

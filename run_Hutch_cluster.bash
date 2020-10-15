@@ -15,5 +15,5 @@ snakemake \
 echo "Run of snakemake complete."
 
 echo "Generating report..."
-snakemake --report report.html
+snakemake --report results/report.html
 echo "Report created."
