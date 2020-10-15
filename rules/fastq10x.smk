@@ -12,7 +12,7 @@ rule qc_fastq10x:
     output:
         qc_plot=report(join(config['fastq10x_dir'], "{expt}_qc_fastq10x.svg"),
                        caption='../report/qc_fastq10x.rst',
-                       category='10x transcriptomics FASTQ files')
+                       category="{expt}")
     log:
         notebook=join(config['fastq10x_dir'], "{expt}_qc_fastq10x.ipynb")
     notebook:
