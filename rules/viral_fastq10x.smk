@@ -14,7 +14,7 @@ rule viral_transcript_coverage:
         plot=report(join(config['viral_fastq10x_dir'],
                     "{expt}_viral_transcript_coverage.svg"),
                     caption='../report/viral_transcript_coverage.rst',
-                    category='Viral reads in 10x transcriptomics')
+                    category="{expt}")
     log:
         notebook=join(config['viral_fastq10x_dir'],
                       "{expt}_viral_transcript_coverage.py.ipynb")
@@ -34,7 +34,7 @@ rule viral_barcodes_by_cell:
         plot=report(join(config['viral_fastq10x_dir'],
                          "{expt}_viral_bc_by_cell.svg"),
                     caption='../report/viral_barcodes_by_cell.rst',
-                    category='Viral reads in 10x transcriptomics')
+                    category="{expt}")
     log:
         notebook=join(config['viral_fastq10x_dir'],
                       "{expt}_viral_barcodes_by_cell.ipynb")
@@ -54,7 +54,7 @@ rule viral_tags_by_cell:
         plot=report(join(config['viral_fastq10x_dir'],
                          "{expt}_viral_tag_by_cell.svg"),
                     caption='../report/viral_tags_by_cell.rst',
-                    category='Viral reads in 10x transcriptomics')
+                    category="{expt}")
     log:
         notebook=join(config['viral_fastq10x_dir'],
                       "{expt}_viral_tags_by_cell.ipynb")

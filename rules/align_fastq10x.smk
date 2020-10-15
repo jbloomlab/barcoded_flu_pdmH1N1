@@ -13,7 +13,7 @@ rule qc_transcript_alignments:
         qc_plot=report(join(config['aligned_fastq10x_dir'], "{expt}",
                             'qc_transcript_alignments.svg'),
                        caption='../report/qc_transcript_alignments.rst',
-                       category='Aligning 10x transcriptomics reads')
+                       category="{expt}")
     log:
         notebook=join(config['aligned_fastq10x_dir'], "{expt}",
                       'qc_transcript_alignments.ipynb')
