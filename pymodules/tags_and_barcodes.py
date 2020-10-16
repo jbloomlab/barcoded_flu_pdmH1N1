@@ -118,8 +118,8 @@ def parse_barcodes_supernatant(readiterator,
     
     Parameters
     -----------
-    readiterator : iterator over pysam.AlignedSegment
-        Read iterator of the type returned by `pysam.fetch`.
+    readiterator : iterator over fastq.gz file
+        Read iterator of the type returned by `pysam.FastxFile`.
     start : int
         Start of tag in read in Python 0-based indexing.
     end : int
@@ -139,7 +139,7 @@ def parse_barcodes_supernatant(readiterator,
     records = []
     for read in readiterator:
         read_id = read.name
-        read_seq = read.query_sequence
+        read_seq = read.sequence
         barcode_seq = read_seq[start:end]
         assert (len(barcode_seq) == nsites), "Parsed barcode is not expected length."
         records.append((read_id, barcode_seq))
