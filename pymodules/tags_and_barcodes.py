@@ -145,6 +145,6 @@ def parse_barcodes_supernatant(readiterator,
         records.append((read_id, barcode_seq))
     return pd.DataFrame.from_records(records,
                                      columns=['read_id', 'viral_barcode'])
-        
+
 
 
