@@ -128,7 +128,7 @@ def parse_barcodes_supernatant(readiterator,
     Returns
     -------
     pandas.DataFrame
-        Columns are 'read_id' and 'viral_bc'.
+        Columns are 'read_id' and 'viral_barcode'.
     
     """
     
@@ -146,3 +146,5 @@ def parse_barcodes_supernatant(readiterator,
     return pd.DataFrame.from_records(records,
                                      columns=['read_id', 'viral_barcode'])
         
+
+
