@@ -17,6 +17,7 @@ rule qc_transcript_alignments:
     log:
         notebook=join(config['aligned_fastq10x_dir'], "{expt}",
                       'qc_transcript_alignments.ipynb')
+    conda: '../environment.yml'
     notebook:
         '../notebooks/qc_transcript_alignments.py.ipynb'
 
@@ -104,6 +105,7 @@ rule get_cb_whitelist_10x:
     """Get whitelisted 10X cellbarcodes."""
     output: config['cb_whitelist_10x']
     params: url=config['cb_whitelist_10x_url']
+    conda: '../environment.yml'
     shell:
         """
         if [[ {params.url} == *.gz ]]

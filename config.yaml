@@ -43,34 +43,7 @@ umi_len_10x: 12  # length of 10X UMI: **this is for the v3 kit**
 #----------------------------------------------------------------------------
 experiments:
 
-  hashing_wt_rapidpilot:
-    description: Single-cell transcriptomics using a small-scale pilot rescue
-                 of the wildtype viral tag variant.
-    lab_notes: https://benchling.com/s/etr-Q28fCd1kprRNxAd0v5Hg
-    expect_ncells: 2000
-    transcriptomics:
-      2019-12-03:
-        index: SI-GA-A3
-        bcl_folder: /shared/ngs/illumina/bloom_lab/191203_M03100_0504_000000000-CNCN9/
-        lane: '*'
-
-  hashing_trial1:
-    description: Single-cell transcriptomics using the wildtype and dblSyn viral
-                 tag variants. Infection volume was chosen based on HA expression
-                 measured by flow cytometry.
-    lab_notes: https://benchling.com/s/etr-i9I0yHiFb0P8wHCxosim
-    expect_ncells: 2000
-    transcriptomics:
-      2020-01-16:
-        index: SI-GA-A4
-        bcl_folder: /shared/ngs/illumina/bloom_lab/200128_M03100_0528_000000000-CRC4G/
-        lane: '*'
-      2020-02-18:
-        index: SI-GA-A4
-        bcl_folder: /shared/ngs/illumina/bloom_lab/200218_D00300_0910_AHCHHJBCX3/Raw/
-        lane: 2
-
-  hashing_trial2:
+  hashing_lowMOI:
     description: Single-cell transcriptomics using the wildtype and dblySyn viral
                  tag variants. Infection volume was chosen based on the results
                  of `hashing_trial1` and flow cytometry. The incolum volume for
@@ -92,7 +65,7 @@ experiments:
         bcl_folder: /shared/ngs/illumina/bloom_lab/bloom_lab/200826_D00300_1040_BHHGLWBCX3/raw/200826_D00300_1040_BHHGLWBCX3/
         lane: '*'
 
-  hashing_trial3_withNH4Cl:
+  hashing_highMOI:
     description: Single-cell transcriptomics using the wildtype and dblSyn viral
                  tag variants at a high MOI. Infection volume was based on the results of
                  `hashing_trial2`.
@@ -106,19 +79,6 @@ experiments:
       2020-08-26:
         index: SI-GA-B5
         bcl_folder: /shared/ngs/illumina/bloom_lab/bloom_lab/200826_D00300_1040_BHHGLWBCX3/raw/200826_D00300_1040_BHHGLWBCX3/
-        lane: '*'
-
-  hashing_trial3_noNH4Cl:
-    description: Single-cell transcriptomics performed *without* NH4Cl treatment. Used
-                 wildtype and dblSyn viral tag variants at high MOI. Infection volume was
-                 based on the results of `hashing_trial2`. Performed in conjunction with
-                 `hashing_trial3_withNH4Cl`.
-    lab_notes: https://benchling.com/s/etr-ToK66qT0Mfmf6FsexKo4
-    expect_ncells: 5000
-    transcriptomics:
-      2020-07-24:
-        index: SI-GA-B4
-        bcl_folder: /shared/ngs/illumina/bloom_lab/200724_M03100_0593_000000000-J33YK/
         lane: '*'
 
   scProgenyProduction_trial1:
@@ -135,35 +95,51 @@ experiments:
         lane: 2
     viral_barcodes:
       supernatant:
-        wildtype:
+        wt:
           fluHA:
-            replicate_1: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-WT-Sup-fluHA-A_S1_L001_R1_001.fastq.gz
-            replicate_2: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-WT-Sup-fluHA-B_S2_L001_R1_001.fastq.gz
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-WT-Sup-fluHA-A_S1_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-WT-Sup-fluHA-B_S2_L001_R1_001.fastq.gz
           fluNA:
-            replicate_1: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-WT-Sup-fluNA-A_S17_L001_R1_001.fastq.gz
-            replicate_2: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-WT-Sup-fluNA-B_S18_L001_R1_001.fastq.gz
-        dblSyn:
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-WT-Sup-fluNA-A_S17_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-WT-Sup-fluNA-B_S18_L001_R1_001.fastq.gz
+        syn:
           fluHA:
-            replicate_1: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-dblSyn-Sup-fluHA-A_S3_L001_R1_001.fastq.gz
-            replicate_2: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-dblSyn-Sup-fluHA-B_S4_L001_R1_001.fastq.gz
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-dblSyn-Sup-fluHA-A_S3_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-dblSyn-Sup-fluHA-B_S4_L001_R1_001.fastq.gz
           fluNA:
-            replicate_1: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-dblSyn-Sup-fluNA-A_S19_L001_R1_001.fastq.gz
-            replicate_2: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-dblSyn-Sup-fluNA-B_S20_L001_R1_001.fastq.gz
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-dblSyn-Sup-fluNA-A_S19_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-dblSyn-Sup-fluNA-B_S20_L001_R1_001.fastq.gz
       second_infection:
-        wildtype:
+        wt:
           fluHA:
-            replicate_1: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-WT-SecondInf-fluHA-A_S5_L001_R1_001.fastq.gz
-            replicate_2: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-WT-SecondInf-fluHA-B_S6_L001_R1_001.fastq.gz
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-WT-SecondInf-fluHA-A_S5_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-WT-SecondInf-fluHA-B_S6_L001_R1_001.fastq.gz
           fluNA:
-            replicate_1: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-WT-SecondInf-fluNA-A_S21_L001_R1_001.fastq.gz
-            replicate_2: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-WT-SecondInf-fluNA-B_S22_L001_R1_001.fastq.gz
-        dblSyn:
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-WT-SecondInf-fluNA-A_S21_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-WT-SecondInf-fluNA-B_S22_L001_R1_001.fastq.gz
+        syn:
           fluHA:
-            replicate_1: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-dblSyn-SecondInf-fluHA-A_S7_L001_R1_001.fastq.gz
-            replicate_2: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-dblSyn-SecondInf-fluHA-B_S8_L001_R1_001.fastq.gz
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-dblSyn-SecondInf-fluHA-A_S7_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-dblSyn-SecondInf-fluHA-B_S8_L001_R1_001.fastq.gz
           fluNA:
-            replicate_1: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-dblSyn-SecondInf-fluNA-A_S23_L001_R1_001.fastq.gz
-            replicate_2: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-dblSyn-SecondInf-fluNA-B_S24_L001_R1_001.fastq.gz
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-dblSyn-SecondInf-fluNA-A_S23_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-dblSyn-SecondInf-fluNA-B_S24_L001_R1_001.fastq.gz
       
 
   scProgenyProduction_trial2:
@@ -180,32 +156,48 @@ experiments:
         lane: '*'
     viral_barcodes:
       supernatant:
-        wildtype:
+        wt:
           fluHA:
-            replicate_1: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-WT-Sup-fluHA-A_S9_L001_R1_001.fastq.gz
-            replicate_2: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-WT-Sup-fluHA-B_S10_L001_R1_001.fastq.gz
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-WT-Sup-fluHA-A_S9_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-WT-Sup-fluHA-B_S10_L001_R1_001.fastq.gz
           fluNA:
-            replicate_1: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-WT-Sup-fluNA-A_S25_L001_R1_001.fastq.gz
-            replicate_2: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-WT-Sup-fluNA-B_S26_L001_R1_001.fastq.gz
-        dblSyn:
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-WT-Sup-fluNA-A_S25_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-WT-Sup-fluNA-B_S26_L001_R1_001.fastq.gz
+        syn:
           fluHA:
-            replicate_1: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-dblSyn-Sup-fluHA-A_S11_L001_R1_001.fastq.gz 
-            replicate_2: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-dblSyn-Sup-fluHA-B_S12_L001_R1_001.fastq.gz
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-dblSyn-Sup-fluHA-A_S11_L001_R1_001.fastq.gz 
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-dblSyn-Sup-fluHA-B_S12_L001_R1_001.fastq.gz
           fluNA:
-            replicate_1: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-dblSyn-Sup-fluNA-A_S27_L001_R1_001.fastq.gz
-            replicate_2: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-dblSyn-Sup-fluNA-B_S28_L001_R1_001.fastq.gz
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-dblSyn-Sup-fluNA-A_S27_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-dblSyn-Sup-fluNA-B_S28_L001_R1_001.fastq.gz
       second_infection:
-        wildtype:
+        wt:
           fluHA:
-            replicate_1: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-WT-SecondInf-fluHA-A_S13_L001_R1_001.fastq.gz
-            replicate_2: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-WT-SecondInf-fluHA-B_S14_L001_R1_001.fastq.gz
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-WT-SecondInf-fluHA-A_S13_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-WT-SecondInf-fluHA-B_S14_L001_R1_001.fastq.gz
           fluNA:
-            replicate_1: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-WT-SecondInf-fluNA-A_S29_L001_R1_001.fastq.gz
-            replicate_2: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-WT-SecondInf-fluNA-B_S30_L001_R1_001.fastq.gz
-        dblSyn:
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-WT-SecondInf-fluNA-A_S29_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-WT-SecondInf-fluNA-B_S30_L001_R1_001.fastq.gz
+        syn:
           fluHA:
-            replicate_1: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-dblSyn-SecondInf-fluHA-A_S15_L001_R1_001.fastq.gz
-            replicate_2: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-dblSyn-SecondInf-fluHA-B_S16_L001_R1_001.fastq.gz
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-dblSyn-SecondInf-fluHA-A_S15_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-dblSyn-SecondInf-fluHA-B_S16_L001_R1_001.fastq.gz
           fluNA:
-            replicate_1: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-dblSyn-SecondInf-fluNA-A_S31_L001_R1_001.fastq.gz
-            replicate_2: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-dblSyn-SecondInf-fluNA-B_S32_L001_R1_001.fastq.gz
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-dblSyn-SecondInf-fluNA-A_S31_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-dblSyn-SecondInf-fluNA-B_S32_L001_R1_001.fastq.gz

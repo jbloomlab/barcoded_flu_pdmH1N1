@@ -18,6 +18,7 @@ rule viral_transcript_coverage:
     log:
         notebook=join(config['viral_fastq10x_dir'],
                       "{expt}_viral_transcript_coverage.py.ipynb")
+    conda: '../environment.yml'
     notebook:
         '../notebooks/viral_transcript_coverage.py.ipynb'
 
@@ -38,6 +39,7 @@ rule viral_barcodes_by_cell:
     log:
         notebook=join(config['viral_fastq10x_dir'],
                       "{expt}_viral_barcodes_by_cell.ipynb")
+    conda: '../environment.yml'
     notebook:
         '../notebooks/viral_barcodes_by_cell.py.ipynb'
 
@@ -58,6 +60,7 @@ rule viral_tags_by_cell:
     log:
         notebook=join(config['viral_fastq10x_dir'],
                       "{expt}_viral_tags_by_cell.ipynb")
+    conda: '../environment.yml'
     notebook:
         '../notebooks/viral_tags_by_cell.py.ipynb'
 
@@ -79,6 +82,7 @@ rule viral_barcodes_in_transcripts:
     log:
         notebook=join(config['viral_fastq10x_dir'],
                       "{expt}_viral_barcodes_in_transcripts.ipynb")
+    conda: '../environment.yml'
     notebook:
         '../notebooks/viral_barcodes_in_transcripts.py.ipynb'
 
@@ -101,6 +105,7 @@ rule viral_tags_in_transcripts:
     log:
         notebook=join(config['viral_fastq10x_dir'],
                       "{expt}_viral_tags_in_transcripts.ipynb")
+    conda: '../environment.yml'
     notebook:
         '../notebooks/viral_tags_in_transcripts.py.ipynb'
 

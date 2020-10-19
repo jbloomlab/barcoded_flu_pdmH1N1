@@ -5,6 +5,7 @@ rule get_cell_genome:
     """Get the FASTA file for the cellular genome."""
     output: join(config['genome_dir'], 'cell_genome.fasta')
     params: ftp=config['cell_genome_ftp']
+    conda: '../environment.yml'
     shell: "wget -O - {params.ftp} | gunzip -c > {output}"
 
 
@@ -12,6 +13,7 @@ rule get_cell_gtf:
     """Get the GTF file for the cellular genome."""
     output: join(config['genome_dir'], 'cell_gtf.gtf')
     params: ftp=config['cell_gtf_ftp']
+    conda: '../environment.yml'
     shell: "wget -O - {params.ftp} | gunzip -c > {output}"
 
 
@@ -26,6 +28,7 @@ rule make_refgenome:
         concat_gtf=join(config['genome_dir'], 'cell_and_virus_gtf.gtf'),
         genomeDir=directory(config['refgenome'])
     threads: config['max_cpus']
+    conda: '../environment.yml'
     shell:
         """
         cat {input.cell_gtf} {input.viral_gtf} > {output.concat_gtf}
