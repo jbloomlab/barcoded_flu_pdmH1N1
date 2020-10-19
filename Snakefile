@@ -16,12 +16,20 @@ import pandas as pd
 
 import pymodules.experiments
 
+import yaml
+
 
 # Configuration  --------------------------------------------------------------
 
 configfile: 'config.yaml'
 
 expts = pymodules.experiments.Experiments(config['experiments'])
+
+# get possible viral tag identities
+with open(config['viral_tag_identities']) as f:
+    viral_tags = sorted({tag_variant for gene_tags in yaml.safe_load(f).values()
+                         for tags in gene_tags.values()
+                         for tag_variant in tags})
 
 localrules: all
 
