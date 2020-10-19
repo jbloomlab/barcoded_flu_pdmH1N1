@@ -50,7 +50,8 @@ class Experiments:
         valid_keys = {'description',
                       'lab_notes',
                       'expect_ncells',
-                      'transcriptomics'}
+                      'transcriptomics',
+                      'viral_barcodes'}
         transcriptomics_records = []
         for expt, expt_d in self.config_dict.items():
 
