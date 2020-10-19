@@ -15,6 +15,7 @@ rule qc_fastq10x:
                        category="{expt}")
     log:
         notebook=join(config['fastq10x_dir'], "{expt}_qc_fastq10x.ipynb")
+    conda: '../environment.yml'
     notebook:
         '../notebooks/qc_fastq10x.py.ipynb'
 
