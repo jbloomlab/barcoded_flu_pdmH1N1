@@ -385,5 +385,3 @@ dependencies:
     - pox==0.2.8
     - ppft==1.6.6.2
     - regex==2020.10.11
-prefix: /fh/fast/bloom_j/software/miniconda3/envs/barcoded_flu_pdmH1N1
-
