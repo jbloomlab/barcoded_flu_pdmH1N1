@@ -84,14 +84,14 @@ class Experiments:
             if 'viral_barcodes' in expt_d:
                 for source, source_d in expt_d['viral_barcodes'].items():
                     for tag, tag_d in source_d.items():
-                        for segment, segment_d in tag_d.items():
-                            for replicate, replicate_d in segment_d.items():
+                        for gene, gene_d in tag_d.items():
+                            for replicate, replicate_d in gene_d.items():
                                 for run, fastq_path in replicate_d.items():
                                     viral_barcodes_records.append((
                                                                 expt,
                                                                 source,
                                                                 tag,
-                                                                segment,
+                                                                gene,
                                                                 replicate,
                                                                 run,
                                                                 fastq_path))
@@ -115,7 +115,7 @@ class Experiments:
                                              columns=['experiment',
                                                       'source',
                                                       'tag',
-                                                      'segment',
+                                                      'gene',
                                                       'replicate',
                                                       'run',
                                                       'fastq_path'])
