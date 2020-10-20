@@ -159,8 +159,3 @@ class Experiments:
     def expect_ncells(self, expt):
         """int: Expected number of cells for experiment `expt`."""
         return self._expect_ncells[expt]
-    
-    def viral_barcodes(self, expt):
-        """df: Paths to viral barcode FASTQs for experiment `expt`."""
-        return (self.viral_barcodes_df
-                .query('experiment == @expt'))
