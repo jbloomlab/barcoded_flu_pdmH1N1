@@ -16,6 +16,8 @@ import pandas as pd
 
 import pymodules.experiments
 
+import yaml
+
 
 # Configuration  --------------------------------------------------------------
 
@@ -23,10 +25,27 @@ configfile: 'config.yaml'
 
 expts = pymodules.experiments.Experiments(config['experiments'])
 
-localrules: all
+# get possible viral tag identities
+with open(config['viral_tag_identities']) as f:
+    viral_tags = sorted({tag_variant for gene_tags in yaml.safe_load(f).values()
+                         for tags in gene_tags.values()
+                         for tag_variant in tags})
+
+# get viral genes
+viral_genes = [s.id for s in Bio.SeqIO.parse(config['viral_genbank'],
+                                             'genbank')]
+assert viral_genes == [s.id for s in Bio.SeqIO.parse(config['viral_genome'],
+                                                     'fasta')]
+
+# get barcoded viral genes
+barcoded_viral_genes = [s.id for s in Bio.SeqIO.parse(config['viral_genbank'],
+                                                      'genbank')
+                        if any(f.type == 'viral_barcode' for f in s.features)]
 
 
 # Target rules ---------------------------------------------------------------
+
+localrules: all
 
 rule all:
     input:
