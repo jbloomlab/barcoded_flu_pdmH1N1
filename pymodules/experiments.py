@@ -29,6 +29,10 @@ class Experiments:
         All transcriptomic runs.
     transcriptomics_df : pandas.DataFrame
         Data frame of all transcriptomics runs.
+    viral_barcodes : dict
+        Paths to viral barcode sequencing FASTQ files in dict format
+    viral_barcodes_df : pandas.DataFrame
+        Data frame with all viral barcode sequencing paths
 
     """
 
@@ -53,6 +57,7 @@ class Experiments:
                       'transcriptomics',
                       'viral_barcodes'}
         transcriptomics_records = []
+        viral_barcodes_records = []
         for expt, expt_d in self.config_dict.items():
 
             if not set(expt_d).issubset(valid_keys):
@@ -75,6 +80,21 @@ class Experiments:
                     raise ValueError(f"`expect_ncells` not int for {expt}")
             else:
                 raise KeyError(f"`expect_ncells` missing for {expt}")
+                
+            if 'viral_barcodes' in expt_d:
+                for source, source_d in expt_d['viral_barcodes'].items():
+                    for tag, tag_d in source_d.items():
+                        for segment, segment_d in tag_d.items():
+                            for replicate, replicate_d in segment_d.items():
+                                for run, fastq_path in replicate_d.items():
+                                    viral_barcodes_records.append((
+                                                                expt,
+                                                                source,
+                                                                tag,
+                                                                segment,
+                                                                replicate,
+                                                                run,
+                                                                fastq_path))
 
         self.transcriptomics_df = pd.DataFrame(transcriptomics_records,
                                                columns=['experiment',
@@ -90,6 +110,15 @@ class Experiments:
                                     )
         assert (len(self.transcriptomic_runs) ==
                 len(set(self.transcriptomic_runs)))
+        
+        self.viral_barcodes_df = pd.DataFrame(viral_barcodes_records,
+                                             columns=['experiment',
+                                                      'source',
+                                                      'tag',
+                                                      'segment',
+                                                      'replicate',
+                                                      'run',
+                                                      'fastq_path'])
 
     def transcriptomic_index(self, transcriptomic_run):
         """str: Illumina index for `transcriptomic_run`."""
@@ -130,3 +159,8 @@ class Experiments:
     def expect_ncells(self, expt):
         """int: Expected number of cells for experiment `expt`."""
         return self._expect_ncells[expt]
+    
+    def viral_barcodes(self, expt):
+        """df: Paths to viral barcode FASTQs for experiment `expt`."""
+        return (self.viral_barcodes_df
+                .query('experiment == @expt'))
