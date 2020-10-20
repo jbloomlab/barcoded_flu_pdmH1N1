@@ -31,10 +31,21 @@ with open(config['viral_tag_identities']) as f:
                          for tags in gene_tags.values()
                          for tag_variant in tags})
 
-localrules: all
+# get viral genes
+viral_genes = [s.id for s in Bio.SeqIO.parse(config['viral_genbank'],
+                                             'genbank')]
+assert viral_genes == [s.id for s in Bio.SeqIO.parse(config['viral_genome'],
+                                                     'fasta')]
+
+# get barcoded viral genes
+barcoded_viral_genes = [s.id for s in Bio.SeqIO.parse(config['viral_genbank'],
+                                                      'genbank')
+                        if any(f.type == 'viral_barcode' for f in s.features)]
 
 
 # Target rules ---------------------------------------------------------------
+
+localrules: all
 
 rule all:
     input:
