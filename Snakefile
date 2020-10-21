@@ -63,15 +63,9 @@ rule all:
         expand(join(config['viral_fastq10x_dir'],
                     "{expt}_viral_transcript_coverage.svg"),
                expt=expts.experiments),
-#        join(config['viral_fastq10x_dir'], 'viral_fastq10x_coverage.html'),
-#        join(config['viral_fastq10x_dir'], 'viral_fastq10x_coverage.html'),
-#        join(config['viral_fastq10x_dir'], 'gap_analysis.html'),
-#        expand(join(config['viral_fastq10x_dir'],
-#                    "count_viraltags_fastq10x-{sample10x}.html"),
-#               sample10x=experiments_config.experiments),
-#        expand(join(config['viral_fastq10x_dir'],
-#                    "count_viralbc_fastq10x-{sample10x}.html"),
-#               sample10x=experiments_config.experiments),
+        expand(join(config['viral_tags_bcs_in_cells_dir'],
+                    "{expt}_assign_viral_tags_to_cells.svg"),
+               expt=expts.experiments),
 
 
 # Set up report  -------------------------------------------------------------
@@ -81,6 +75,7 @@ report: 'report/workflow.rst'
 
 # Load rules -----------------------------------------------------------------
 
+include: 'rules/viral_tags_bcs_in_cells.smk'
 include: 'rules/viral_fastq10x.smk'
 include: 'rules/align_fastq10x.smk'
 include: 'rules/star_refgenome.smk'
