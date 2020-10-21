@@ -169,3 +169,10 @@ class Experiments:
     def expect_ncells(self, expt):
         """int: Expected number of cells for experiment `expt`."""
         return self._expect_ncells[expt]
+    
+    def expt_viral_barcode_fastqs(self, expt):
+        """pandas.DataFrame: FASTQs of viral barcodes for
+        experiment `expt`. Annotated with source, tag,
+        gene, replicate, and run"""
+        return (self.viral_barcodes_df
+                .query('experiment == @expt')
