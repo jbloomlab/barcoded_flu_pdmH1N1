@@ -122,13 +122,13 @@ class Experiments:
                 len(set(self.transcriptomic_runs)))
         
         self.viral_barcodes_df = pd.DataFrame(viral_barcodes_records,
-                                             columns=['experiment',
-                                                      'source',
-                                                      'tag',
-                                                      'gene',
-                                                      'replicate',
-                                                      'run',
-                                                      'fastq_path'])
+                                              columns=['experiment',
+                                                       'source',
+                                                       'tag',
+                                                       'gene',
+                                                       'replicate',
+                                                       'run',
+                                                       'fastq_path'])
 
     def transcriptomic_index(self, transcriptomic_run):
         """str: Illumina index for `transcriptomic_run`."""
