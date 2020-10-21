@@ -169,3 +169,17 @@ class Experiments:
     def expect_ncells(self, expt):
         """int: Expected number of cells for experiment `expt`."""
         return self._expect_ncells[expt]
+    
+    def expt_viral_barcode_fastqs(self, expt):
+        """
+        pandas.DataFrame: FASTQs of viral barcodes
+        
+        This function takes an argument with the desired
+        experiment, `expt`. It returns a pandas
+        DataFrame with paths to the viral barcode FASTQ
+        files for that experiment. Each FASTQ path is
+        annotated with source, tag, gene, replicate, and run.
+        """
+        assert expt in self.experiments, f"invalid `expt` {expt}"
+        return (self.viral_barcodes_df
+                .query('experiment == @expt')
