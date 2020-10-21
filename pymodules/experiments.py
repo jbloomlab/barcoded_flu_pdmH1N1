@@ -18,11 +18,9 @@ class Experiments:
     experiments_config : str or dict
         Name of YAML file with experiment configuration, or dict
         read from such a file.
-    
     viral_tags : list
         Valid viral tags, parsed from yaml file specified in data
         directory.
-    
     barcoded_viral_genes : list
         Viral genes with barcode, parsed from viral genbank file.
     
