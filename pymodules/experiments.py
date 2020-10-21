@@ -180,5 +180,6 @@ class Experiments:
         files for that experiment. Each FASTQ path is
         annotated with source, tag, gene, replicate, and run.
         """
+        assert expt in self.experiments, f"invalid `expt` {expt}"
         return (self.viral_barcodes_df
                 .query('experiment == @expt')
