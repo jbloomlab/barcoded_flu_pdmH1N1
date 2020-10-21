@@ -23,8 +23,6 @@ import yaml
 
 configfile: 'config.yaml'
 
-expts = pymodules.experiments.Experiments(config['experiments'])
-
 # get possible viral tag identities
 with open(config['viral_tag_identities']) as f:
     viral_tags = sorted({tag_variant for gene_tags in yaml.safe_load(f).values()
@@ -41,6 +39,9 @@ assert viral_genes == [s.id for s in Bio.SeqIO.parse(config['viral_genome'],
 barcoded_viral_genes = [s.id for s in Bio.SeqIO.parse(config['viral_genbank'],
                                                       'genbank')
                         if any(f.type == 'viral_barcode' for f in s.features)]
+                        
+# parse experiment information
+expts = pymodules.experiments.Experiments(config['experiments'], viral_tags, barcoded_viral_genes)
 
 
 # Target rules ---------------------------------------------------------------

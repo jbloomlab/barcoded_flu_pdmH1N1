@@ -18,6 +18,14 @@ class Experiments:
     experiments_config : str or dict
         Name of YAML file with experiment configuration, or dict
         read from such a file.
+    
+    viral_tags : ordered list
+        Valid viral tags, parsed from yaml file specified in data
+        directory.
+    
+    barcoded_viral_genes : list
+        Viral genes with barcode, parsed from viral genbank file.
+    
 
     Attributes
     ----------
@@ -36,7 +44,7 @@ class Experiments:
 
     """
 
-    def __init__(self, experiments_config):
+    def __init__(self, experiments_config, viral_tags, barcoded_viral_genes):
         """See main class docstring."""
 
         if isinstance(experiments_config, dict):
@@ -84,7 +92,11 @@ class Experiments:
             if 'viral_barcodes' in expt_d:
                 for source, source_d in expt_d['viral_barcodes'].items():
                     for tag, tag_d in source_d.items():
+                        if not tag in viral_tags:
+                            raise ValueError(f"invalid tag entry for {tag}")
                         for gene, gene_d in tag_d.items():
+                            if not gene in barcoded_viral_genes:
+                                raise ValueError(f"invalid gene entry for {gene}")
                             for replicate, replicate_d in gene_d.items():
                                 for run, fastq_path in replicate_d.items():
                                     viral_barcodes_records.append((
