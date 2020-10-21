@@ -19,7 +19,7 @@ class Experiments:
         Name of YAML file with experiment configuration, or dict
         read from such a file.
     
-    viral_tags : ordered list
+    viral_tags : list
         Valid viral tags, parsed from yaml file specified in data
         directory.
     
