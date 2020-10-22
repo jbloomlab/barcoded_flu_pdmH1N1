@@ -141,6 +141,7 @@ dependencies:
   - jupyterlab_server=1.2.0=py_0
   - k8=0.2.5=he513fc3_0
   - kiwisolver=1.2.0=py38hbf85e49_1
+  - kneed=0.7.0=pyh9f0ad1d_0
   - krb5=1.17.1=hfafb76e_3
   - lcms2=2.11=hbd6801e_0
   - ld_impl_linux-64=2.35=h769bd43_9

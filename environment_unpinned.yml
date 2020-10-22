@@ -12,6 +12,7 @@ dependencies:
   - git-lfs
   - jupyterlab
   - jupyter_contrib_nbextensions
+  - kneed
   - minimap2
   - multiqc
   - nodejs
