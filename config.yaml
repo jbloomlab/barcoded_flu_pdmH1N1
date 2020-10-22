@@ -21,6 +21,7 @@ viral_genome: data/flu_sequences/flu-CA09.fasta
 viral_gtf: data/flu_sequences/flu-CA09.gtf
 viral_genbank: data/flu_sequences/flu-CA09.gb
 viral_tag_identities: data/flu_sequences/flu-CA09_viral_tags.yaml
+viral_barcode_upstream_length: 10
 
 # STAR alignment parameters for transcriptomics. Reduce the penalty for
 # non-canonical splice sites, which is probably bad for mapping cellular
