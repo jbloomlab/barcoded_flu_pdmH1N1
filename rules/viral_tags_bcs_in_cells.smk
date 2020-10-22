@@ -20,6 +20,9 @@ rule assign_viral_tags_to_cells:
                          "{expt}_assign_viral_tags_to_cells.svg"),
                     caption='../report/assign_viral_tags_to_cells.rst',
                     category="{expt}")
+    params:
+        viral_genes=viral_genes,
+        viral_tags=viral_tags,
     log:
         notebook=join(config['viral_tags_bcs_in_cells_dir'],
                       "{expt}_assign_viral_tags_to_cells.ipynb")
