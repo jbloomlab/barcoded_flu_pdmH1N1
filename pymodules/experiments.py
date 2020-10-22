@@ -18,6 +18,12 @@ class Experiments:
     experiments_config : str or dict
         Name of YAML file with experiment configuration, or dict
         read from such a file.
+    viral_tags : list
+        Valid viral tags, parsed from yaml file specified in data
+        directory.
+    barcoded_viral_genes : list
+        Viral genes with barcode, parsed from viral genbank file.
+    
 
     Attributes
     ----------
@@ -29,10 +35,14 @@ class Experiments:
         All transcriptomic runs.
     transcriptomics_df : pandas.DataFrame
         Data frame of all transcriptomics runs.
+    viral_barcodes : dict
+        Paths to viral barcode sequencing FASTQ files in dict format
+    viral_barcodes_df : pandas.DataFrame
+        Data frame with all viral barcode sequencing paths
 
     """
 
-    def __init__(self, experiments_config):
+    def __init__(self, experiments_config, viral_tags, barcoded_viral_genes):
         """See main class docstring."""
 
         if isinstance(experiments_config, dict):
@@ -53,6 +63,7 @@ class Experiments:
                       'transcriptomics',
                       'viral_barcodes'}
         transcriptomics_records = []
+        viral_barcodes_records = []
         for expt, expt_d in self.config_dict.items():
 
             if not set(expt_d).issubset(valid_keys):
@@ -75,6 +86,25 @@ class Experiments:
                     raise ValueError(f"`expect_ncells` not int for {expt}")
             else:
                 raise KeyError(f"`expect_ncells` missing for {expt}")
+                
+            if 'viral_barcodes' in expt_d:
+                for source, source_d in expt_d['viral_barcodes'].items():
+                    for tag, tag_d in source_d.items():
+                        if not tag in viral_tags:
+                            raise ValueError(f"invalid tag entry for {tag}")
+                        for gene, gene_d in tag_d.items():
+                            if not gene in barcoded_viral_genes:
+                                raise ValueError(f"invalid gene entry for {gene}")
+                            for replicate, replicate_d in gene_d.items():
+                                for run, fastq_path in replicate_d.items():
+                                    viral_barcodes_records.append((
+                                                                expt,
+                                                                source,
+                                                                tag,
+                                                                gene,
+                                                                replicate,
+                                                                run,
+                                                                fastq_path))
 
         self.transcriptomics_df = pd.DataFrame(transcriptomics_records,
                                                columns=['experiment',
@@ -90,6 +120,15 @@ class Experiments:
                                     )
         assert (len(self.transcriptomic_runs) ==
                 len(set(self.transcriptomic_runs)))
+        
+        self.viral_barcodes_df = pd.DataFrame(viral_barcodes_records,
+                                              columns=['experiment',
+                                                       'source',
+                                                       'tag',
+                                                       'gene',
+                                                       'replicate',
+                                                       'run',
+                                                       'fastq_path'])
 
     def transcriptomic_index(self, transcriptomic_run):
         """str: Illumina index for `transcriptomic_run`."""
@@ -130,3 +169,17 @@ class Experiments:
     def expect_ncells(self, expt):
         """int: Expected number of cells for experiment `expt`."""
         return self._expect_ncells[expt]
+    
+    def expt_viral_barcode_fastqs(self, expt):
+        """
+        pandas.DataFrame: FASTQs of viral barcodes
+        
+        This function takes an argument with the desired
+        experiment, `expt`. It returns a pandas
+        DataFrame with paths to the viral barcode FASTQ
+        files for that experiment. Each FASTQ path is
+        annotated with source, tag, gene, replicate, and run.
+        """
+        assert expt in self.experiments, f"invalid `expt` {expt}"
+        return (self.viral_barcodes_df
+                .query('experiment == @expt')

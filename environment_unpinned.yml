@@ -30,3 +30,4 @@ dependencies:
   - star
   - pip:
     - alignparse
+    - dms_variants
