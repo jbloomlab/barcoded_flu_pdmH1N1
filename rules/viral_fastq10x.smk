@@ -1,6 +1,5 @@
 """Rules related viral reads in aligned 10x Illumina transcriptomics."""
 
-
 rule viral_transcript_coverage:
     """Coverage over viral transcripts in 10x transcriptomics."""
     input:

@@ -10,6 +10,7 @@ genome_dir: results/genomes  # location of downloaded genomes and annotations
 refgenome: results/genomes/refgenome  # STAR reference genome directory
 aligned_fastq10x_dir: results/aligned_fastq10x  # aligned 10x transcriptomic reads
 viral_fastq10x_dir: results/viral_fastq10x  # viral tags / barcodes in 10x transcriptomics
+viral_progeny_dir: results/viral_progeny
 #analysis_dir: results/analysis  # fine-grained analyses
 
 # cellular genome and GTF ftp sites
@@ -37,6 +38,11 @@ cb_whitelist_10x: results/aligned_fastq10x/cb_whitelist_10x.txt
 cb_len_10x: 16  # length of 10X cell barcode
 umi_len_10x: 12  # length of 10X UMI: **this is for the v3 kit**
 
+# viral barcode parsing paremeters for supernatant and second
+# infection sequencing. Specify the length of sequence, upstream
+# of the viral barcode, that should be used to verify the
+# transcript's identity.
+viral_barcode_upstream_length: 10
 
 #----------------------------------------------------------------------------
 #                    configuration of experiments
