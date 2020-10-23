@@ -10,6 +10,7 @@ genome_dir: results/genomes  # location of downloaded genomes and annotations
 refgenome: results/genomes/refgenome  # STAR reference genome directory
 aligned_fastq10x_dir: results/aligned_fastq10x  # aligned 10x transcriptomic reads
 viral_fastq10x_dir: results/viral_fastq10x  # viral tags / barcodes in 10x transcriptomics
+viral_progeny_dir: results/viral_progeny
 #analysis_dir: results/analysis  # fine-grained analyses
 
 # cellular genome and GTF ftp sites
