@@ -80,6 +80,9 @@ experiments:
         index: SI-GA-B5
         bcl_folder: /shared/ngs/illumina/bloom_lab/bloom_lab/200826_D00300_1040_BHHGLWBCX3/raw/200826_D00300_1040_BHHGLWBCX3/
         lane: '*'
+    pacbio_viral_sequencing:
+      2020-10-20:
+        all_segment_run1: /fh/fast/bloom_j/SR/ngs/pacbio/201019_BernadetaDadonaite/r54228_20201020_192758
 
   scProgenyProduction_trial1:
     description: Single-cell transcriptomics performed on low MOI-infected sample.
