@@ -93,7 +93,7 @@ class Experiments:
                             run,
                             f"{expt}_{run}",
                             run_d['run_repeat'],
-                            run_d['pacbio_folder'],
+                            run_d['pacbio_bam'],
                             ))
 
             if 'expect_ncells' in expt_d:
@@ -142,7 +142,7 @@ class Experiments:
                                                         'run_name',
                                                         'pacbio_run',
                                                         'run_repeat',
-                                                        'pacbio_folder'
+                                                        'pacbio_bam'
                                                         ])
         self.pacbio_runs = (self.pacbio_df
                                     ['pacbio_run']
