@@ -64,6 +64,12 @@ rule all:
         expand(join(config['viral_fastq10x_dir'],
                     "{expt}_viral_transcript_coverage.svg"),
                expt=expts.experiments),
+        expand(join(config['viral_progeny_dir'],
+                    "{expt}_viral_bc_in_supernatant.csv.gz"),
+               expt=expts.experiments),
+        expand(join(config['viral_progeny_dir'],
+                    "{expt}_viral_bc_in_secondinfection.csv.gz"),
+               expt=expts.experiments),
 #        join(config['viral_fastq10x_dir'], 'viral_fastq10x_coverage.html'),
 #        join(config['viral_fastq10x_dir'], 'viral_fastq10x_coverage.html'),
 #        join(config['viral_fastq10x_dir'], 'gap_analysis.html'),
@@ -87,3 +93,4 @@ include: 'rules/align_fastq10x.smk'
 include: 'rules/star_refgenome.smk'
 include: 'rules/fastq10x.smk'
 include: 'rules/utils.smk'
+include: 'rules/viral_progeny.smk'
