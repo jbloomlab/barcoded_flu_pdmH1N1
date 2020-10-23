@@ -8,9 +8,9 @@ rule viral_barcodes_in_progeny:
         notebook='notebooks/viral_barcodes_in_progeny.py.ipynb'
     output:
         viral_bc_in_supernatant_csv=join(config['viral_progeny_dir'],
-                                      "{expt}_viral_bc_in_supernatant.csv.gz"),
+                                         "{expt}_viral_bc_in_supernatant.csv.gz"),
         viral_bc_in_secondinfection_csv=join(config['viral_progeny_dir'],
-                                      "{expt}_viral_bc_in_secondinfection.csv.gz"),
+                                             "{expt}_viral_bc_in_secondinfection.csv.gz"),
     params:
         fastq_df=lambda wc: expts.expt_viral_barcode_fastqs(wc.expt),
         viral_barcode_upstream_length=config['viral_barcode_upstream_length'],
