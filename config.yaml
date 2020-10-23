@@ -21,7 +21,6 @@ viral_genome: data/flu_sequences/flu-CA09.fasta
 viral_gtf: data/flu_sequences/flu-CA09.gtf
 viral_genbank: data/flu_sequences/flu-CA09.gb
 viral_tag_identities: data/flu_sequences/flu-CA09_viral_tags.yaml
-viral_barcode_upstream_length: 10
 
 # STAR alignment parameters for transcriptomics. Reduce the penalty for
 # non-canonical splice sites, which is probably bad for mapping cellular
@@ -38,6 +37,11 @@ cb_whitelist_10x: results/aligned_fastq10x/cb_whitelist_10x.txt
 cb_len_10x: 16  # length of 10X cell barcode
 umi_len_10x: 12  # length of 10X UMI: **this is for the v3 kit**
 
+# viral barcode parsing paremeters for supernatant and second
+# infection sequencing. Specify the length of sequence, upstream
+# of the viral barcode, that should be used to verify the
+# transcript's identity.
+viral_barcode_upstream_length: 10
 
 #----------------------------------------------------------------------------
 #                    configuration of experiments
