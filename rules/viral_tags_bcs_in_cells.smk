@@ -23,6 +23,7 @@ rule assign_viral_tags_to_cells:
     params:
         viral_genes=viral_genes,
         viral_tags=viral_tags,
+        fdr=config['infection_calling_by_viral_tag_fdr'],
     log:
         notebook=join(config['viral_tags_bcs_in_cells_dir'],
                       "{expt}_assign_viral_tags_to_cells.ipynb")
