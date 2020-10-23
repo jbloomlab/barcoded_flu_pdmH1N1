@@ -35,6 +35,10 @@ class Experiments:
         All transcriptomic runs.
     transcriptomics_df : pandas.DataFrame
         Data frame of all transcriptomics runs.
+    pacbio_runs : list
+        All pacbio runs.
+    pacbio_df : pandas.DataFrame
+        Data frame of all pacbio runs.    
     viral_barcodes : dict
         Paths to viral barcode sequencing FASTQ files in dict format
     viral_barcodes_df : pandas.DataFrame
@@ -61,9 +65,11 @@ class Experiments:
                       'lab_notes',
                       'expect_ncells',
                       'transcriptomics',
-                      'viral_barcodes'}
+                      'viral_barcodes',
+                      'pacbio_viral_sequencing'}
         transcriptomics_records = []
         viral_barcodes_records = []
+        pacbio_records = []
         for expt, expt_d in self.config_dict.items():
 
             if not set(expt_d).issubset(valid_keys):
@@ -78,6 +84,14 @@ class Experiments:
                             run_d['index'],
                             run_d['bcl_folder'],
                             run_d['lane'],
+                            ))
+
+            if 'pacbio_viral_sequencing' in expt_d:
+                for run, run_d in expt_d['pacbio_viral_sequencing'].items():
+                    pacbio_records.append((
+                            expt,
+                            run,
+                            f"{expt}_{run}",
                             ))
 
             if 'expect_ncells' in expt_d:
@@ -120,6 +134,18 @@ class Experiments:
                                     )
         assert (len(self.transcriptomic_runs) ==
                 len(set(self.transcriptomic_runs)))
+
+        self.pacbio_df = pd.DataFrame(pacbio_records,
+                                               columns=['experiment',
+                                                        'run_name',
+                                                        'pacbio_run'
+                                                        ])
+        self.pacbio_runs = (self.pacbio_df
+                                    ['pacbio_run']
+                                    .tolist()
+                                    )
+        assert (len(self.pacbio_runs) ==
+                len(set(self.pacbio_runs)))        
         
         self.viral_barcodes_df = pd.DataFrame(viral_barcodes_records,
                                               columns=['experiment',
@@ -183,4 +209,15 @@ class Experiments:
         assert expt in self.experiments, f"invalid `expt` {expt}"
         return (self.viral_barcodes_df
                 .query('experiment == @expt')
-               )
+                )
+
+    def pacbio_subreads(self, expt):
+        """
+        list: List of all PacBio bam subreads for `expt`.
+        """
+        assert expt in self.experiments, f"invalid `expt` {expt}"
+        return (self.transcriptomics_df
+                .query('experiment == @expt')
+                ['pacbio_run']
+                .tolist()
+                )

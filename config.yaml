@@ -10,7 +10,8 @@ genome_dir: results/genomes  # location of downloaded genomes and annotations
 refgenome: results/genomes/refgenome  # STAR reference genome directory
 aligned_fastq10x_dir: results/aligned_fastq10x  # aligned 10x transcriptomic reads
 viral_fastq10x_dir: results/viral_fastq10x  # viral tags / barcodes in 10x transcriptomics
-viral_tags_bcs_in_cells_dir: results/viral_tags_bcs_in_cells
+viral_tags_bcs_in_cells_dir: results/viral_tags_bcs_in_cells  # calling viral tags / barcodes by cell
+viral_progeny_dir: results/viral_progeny  # viral barcodes from progeny
 
 # cellular genome and GTF ftp sites
 cell_genome_ftp: ftp://ftp.ensembl.org/pub/release-98/fasta/canis_familiaris/dna/Canis_familiaris.CanFam3.1.dna.toplevel.fa.gz
@@ -41,6 +42,11 @@ umi_len_10x: 12  # length of 10X UMI: **this is for the v3 kit**
 # viral tag counts in uninfected cells.
 infection_calling_by_viral_tag_fdr: 0.0001
 
+# viral barcode parsing paremeters for supernatant and second
+# infection sequencing. Specify the length of sequence, upstream
+# of the viral barcode, that should be used to verify the
+# transcript's identity.
+viral_barcode_upstream_length: 10
 
 #----------------------------------------------------------------------------
 #                    configuration of experiments
@@ -84,6 +90,8 @@ experiments:
         index: SI-GA-B5
         bcl_folder: /shared/ngs/illumina/bloom_lab/bloom_lab/200826_D00300_1040_BHHGLWBCX3/raw/200826_D00300_1040_BHHGLWBCX3/
         lane: '*'
+    pacbio_viral_sequencing:
+      2020-10-20_all_segments_run1: /fh/fast/bloom_j/SR/ngs/pacbio/201019_BernadetaDadonaite/r54228_20201020_192758/m54228_201020_194205.subreads.bam
 
   scProgenyProduction_trial1:
     description: Single-cell transcriptomics performed on low MOI-infected sample.

@@ -67,6 +67,9 @@ rule all:
         expand(join(config['viral_tags_bcs_in_cells_dir'],
                     "{expt}_assign_viral_tags_to_cells.svg"),
                expt=expts.experiments),
+        expand(join(config['viral_progeny_dir'],
+                    "{expt}_viral_bc_in_progeny.csv.gz"),
+               expt=expts.experiments),
 
 
 # Set up report  -------------------------------------------------------------
@@ -82,3 +85,4 @@ include: 'rules/align_fastq10x.smk'
 include: 'rules/star_refgenome.smk'
 include: 'rules/fastq10x.smk'
 include: 'rules/utils.smk'
+include: 'rules/viral_progeny.smk'
