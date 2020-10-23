@@ -92,8 +92,6 @@ class Experiments:
                             expt,
                             run,
                             f"{expt}_{run}",
-                            run_d['run_repeat'],
-                            run_d['pacbio_bam'],
                             ))
 
             if 'expect_ncells' in expt_d:
@@ -140,9 +138,7 @@ class Experiments:
         self.pacbio_df = pd.DataFrame(pacbio_records,
                                                columns=['experiment',
                                                         'run_name',
-                                                        'pacbio_run',
-                                                        'run_repeat',
-                                                        'pacbio_bam'
+                                                        'pacbio_run'
                                                         ])
         self.pacbio_runs = (self.pacbio_df
                                     ['pacbio_run']
@@ -215,7 +211,7 @@ class Experiments:
                 .query('experiment == @expt')
                )
 
-    def pacbio_fastq(self, expt):
+    def pacbio_subreads(self, expt):
         """
         list: List of all PacBio bam subreads for `expt`.
         """
