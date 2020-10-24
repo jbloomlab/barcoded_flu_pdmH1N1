@@ -43,6 +43,8 @@ class Experiments:
         Paths to viral barcode sequencing FASTQ files in dict format
     viral_barcodes_df : pandas.DataFrame
         Data frame with all viral barcode sequencing paths
+    expts_with_progeny_barcodes: list
+        Experiments that have progeny viral barcode data
 
     """
 
@@ -155,6 +157,13 @@ class Experiments:
                                                        'replicate',
                                                        'run',
                                                        'fastq_path'])
+        self.expts_with_progeny_barcodes = (self.viral_barcodes_df
+                                            ['experiment']
+                                            .unique()
+                                            .tolist()
+                                            )
+        assert (len(self.expts_with_progeny_barcodes) ==
+                len(set(self.expts_with_progeny_barcodes)))
 
     def transcriptomic_index(self, transcriptomic_run):
         """str: Illumina index for `transcriptomic_run`."""
