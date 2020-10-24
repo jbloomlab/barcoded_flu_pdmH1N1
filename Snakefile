@@ -66,7 +66,7 @@ rule all:
                expt=expts.experiments),
         expand(join(config['viral_progeny_dir'],
                     "{expt}_viral_bc_in_progeny.csv.gz"),
-               expt=expts.experiments),
+               expt=expts.expts_with_progeny_barcodes),
 #        join(config['viral_fastq10x_dir'], 'viral_fastq10x_coverage.html'),
 #        join(config['viral_fastq10x_dir'], 'viral_fastq10x_coverage.html'),
 #        join(config['viral_fastq10x_dir'], 'gap_analysis.html'),
