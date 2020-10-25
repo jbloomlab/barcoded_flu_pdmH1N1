@@ -216,9 +216,9 @@ class Experiments:
         list: List of all PacBio bam subreads for `expt`.
         """
         assert expt in self.experiments, f"invalid `expt` {expt}"
-        return (self.transcriptomics_df
+        return (self.pacbio_df
                 .query('experiment == @expt')
-                ['pacbio_run']
+                ['run_name']
                 .tolist()
                 )
 
