@@ -218,7 +218,7 @@ class Experiments:
         assert expt in self.experiments, f"invalid `expt` {expt}"
         return (self.pacbio_df
                 .query('experiment == @expt')
-                ['run_name']
+                ['pacbio_run']
                 .tolist()
                 )
 
