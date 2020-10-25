@@ -2,17 +2,10 @@
 
 # Imports ---------------------------------------------------------------------
 
-import glob
-import json
 import os
-from os.path import join, basename
-import re
-import shutil
-import subprocess
+from os.path import join
 
 import Bio.SeqIO
-
-import pandas as pd
 
 import pymodules.experiments
 
@@ -67,9 +60,9 @@ rule all:
         expand(join(config['viral_tags_bcs_in_cells_dir'],
                     "{expt}_assign_viral_tags_to_cells.svg"),
                expt=expts.experiments),
-        expand(join(config['viral_progeny_dir'],
-                    "{expt}_viral_bc_in_progeny.csv.gz"),
-               expt=expts.experiments),
+#        expand(join(config['viral_progeny_dir'],
+#                    "{expt}_viral_bc_in_progeny.csv.gz"),
+#               expt=expts.experiments),
 
 
 # Set up report  -------------------------------------------------------------

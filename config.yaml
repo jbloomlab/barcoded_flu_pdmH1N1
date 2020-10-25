@@ -4,6 +4,7 @@
 max_cpus: 16
 
 # output directories
+log_dir: results/logs  # logs for snakemake rules
 fastq10x_dir: results/fastq10x  # FASTQs & QC 10x transcriptomic runs
 mkfastq10x_dir: results/fastq10x/mkfastq_output  # `cellranger mkfastq` output
 genome_dir: results/genomes  # location of downloaded genomes and annotations
