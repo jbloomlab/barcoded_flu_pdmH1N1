@@ -70,6 +70,13 @@ dependencies:
   - fadapa=0.3.1=pyh864c0ab_2
   - fftw=3.3.8=nompi_h7f3a6c3_1112
   - filechunkio=1.8=py_2
+  - flake8=3.8.3=py_1
+  - flake8-bugbear=20.1.4=py_0
+  - flake8-builtins=1.5.3=pyh9f0ad1d_0
+  - flake8-comprehensions=3.3.0=py_0
+  - flake8-docstrings=1.5.0=py_0
+  - flake8-import-order=0.18.1=py_0
+  - flake8-nb=0.2.5=py_0
   - font-ttf-dejavu-sans-mono=2.37=hab24e00_0
   - font-ttf-inconsolata=2.001=hab24e00_0
   - font-ttf-source-code-pro=2.030=hab24e00_0
@@ -188,6 +195,7 @@ dependencies:
   - markdown=3.3.1=pyh9f0ad1d_0
   - markupsafe=1.1.1=py38h8df0ef7_2
   - matplotlib-base=3.3.2=py38h91b0d89_0
+  - mccabe=0.6.1=py_1
   - minimap2=2.17=hed695b0_3
   - mirtop=0.4.23=pyh864c0ab_1
   - mistune=0.8.4=py38h1e0a361_1002
@@ -269,9 +277,12 @@ dependencies:
   - pyasn1=0.4.8=py_0
   - pyasn1-modules=0.2.7=py_0
   - pybedtools=0.8.1=py38h1c8e9b9_2
+  - pycodestyle=2.6.0=pyh9f0ad1d_0
   - pycparser=2.20=pyh9f0ad1d_2
   - pycrypto=2.6.1=py38h8df0ef7_1005
+  - pydocstyle=5.1.1=py_0
   - pyfaidx=0.5.9.1=pyh864c0ab_1
+  - pyflakes=2.2.0=pyh9f0ad1d_0
   - pygments=2.7.1=py_0
   - pygraphviz=1.6=py38h1e0a361_0
   - pynacl=1.4.0=py38h1e0a361_1
@@ -285,6 +296,7 @@ dependencies:
   - pytest=6.1.1=py38h32f6830_1
   - pytest-cov=2.10.1=pyh9f0ad1d_0
   - pytest-mock=3.3.1=py_0
+  - pytest-runner=5.2=py_0
   - python=3.8.6=h852b56e_0_cpython
   - python-dateutil=2.8.1=py_0
   - python-irodsclient=0.8.2=py_0
@@ -387,3 +399,5 @@ dependencies:
     - pox==0.2.8
     - ppft==1.6.6.2
     - regex==2020.10.11
+prefix: /fh/fast/bloom_j/software/miniconda3/envs/barcoded_flu_pdmH1N1
+
