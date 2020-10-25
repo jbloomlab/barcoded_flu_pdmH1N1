@@ -16,8 +16,8 @@ rule build_ccs:
     shell:
 	    """
 	     	ccs \
-	     		--report-file {output.ccs_report}
-	     		--num-threads {threads}
+	     		--report-file {output.ccs_report} \
+	     		--num-threads {threads} \
 	     		{input.subreads} \
 	     		{output.ccs_fastq}
 		"""
