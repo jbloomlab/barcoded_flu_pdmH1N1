@@ -92,6 +92,7 @@ class Experiments:
                             expt,
                             run,
                             f"{expt}_{run}",
+                            run_d['subread_bam'],
                             ))
 
             if 'expect_ncells' in expt_d:
@@ -138,7 +139,8 @@ class Experiments:
         self.pacbio_df = pd.DataFrame(pacbio_records,
                                                columns=['experiment',
                                                         'run_name',
-                                                        'pacbio_run'
+                                                        'pacbio_run',
+                                                        'subread_bam',
                                                         ])
         self.pacbio_runs = (self.pacbio_df
                                     ['pacbio_run']
@@ -218,7 +220,15 @@ class Experiments:
         assert expt in self.experiments, f"invalid `expt` {expt}"
         return (self.pacbio_df
                 .query('experiment == @expt')
-                ['pacbio_run']
+                ['subread_bam']
                 .tolist()
                 )
 
+    # def pacbio_subreads(self, pacbio_run):
+    #     """str: subread bam for `pacbio_run`."""
+    #     assert pacbio_run in self.pacbio_runs, (
+    #             f"invalid `pacbio_run` {pacbio_run}")
+    #     return str(self.pacbio_df
+    #                .set_index('pacbio_run')
+    #                .at[pacbio_run, 'subread_bam']
+    #                )

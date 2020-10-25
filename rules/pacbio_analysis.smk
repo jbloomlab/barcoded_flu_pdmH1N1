@@ -4,11 +4,12 @@ rule build_ccs:
     """Run PacBio ``ccs`` program to build CCSs from subreads."""
     
     input:
-     	subreads=lambda wc: expts.pacbio_subreads(wc.expt)
+     	subreads=lambda wc: expts.pacbio_subreads(wc.pacbio_run)
 
     output:
-     	ccs_fastq = join(config['pacbio_dir'], "{expt}_ccs.fastq.gz"),
-     	ccs_report = join(config['pacbio_dir'],"{expt}_report.txt"),
+     	ccs_fastq = join(config['pacbio_dir'], "{pacbio_run}_ccs.fastq.gz"),
+     	ccs_report = join(config['pacbio_dir'],"{pacbio_run}_report.txt"),
+
 
     threads: config['max_cpus']
 
@@ -17,7 +18,7 @@ rule build_ccs:
 	     	ccs \
 	     		--report-file {output.ccs_report}
 	     		--num-threads {threads}
-	     		{params.subreads} \
+	     		{input.subreads} \
 	     		{output.ccs_fastq}
 		"""
 
