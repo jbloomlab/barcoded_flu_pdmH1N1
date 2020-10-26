@@ -17,7 +17,7 @@ This repository is organized as followed (based loosely on [this example snakema
 
  - [./rules/](rules) contains [snakemake] rules.
 
- - [./notebooks/](notebooks) contains [Jupyter notebooks](https://jupyter.org/) that are run by [Snakefile] using [papermill parameterization](https://papermill.readthedocs.io/).
+ - [./notebooks/](notebooks) contains [Jupyter notebooks](https://jupyter.org/) that are run by [Snakefile] using the [snakemake notebook functionality](https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#jupyter-notebook-integration).
 
  - [./scripts/](scripts) contains scripts used by [Snakefile].
 
@@ -50,6 +50,23 @@ These commands with the configuration for the Fred Hutch cluster are in the shel
 You probably want to submit the script itself via [sbatch](sbatch), using:
 
     sbatch run_Hutch_cluster.sbatch
+
+## Linting the code
+Before you commit a new branch, you should run the linting in [lint.bash](lint.bash) with the command:
+
+    bash ./lint.bash
+
+This script runs:
+
+ - [snakemake linting](https://snakemake.readthedocs.io/en/stable/snakefiles/writing_snakefiles.html#best-practices)
+
+ - a [snakemake dry run](https://snakemake.readthedocs.io/en/stable/project_info/faq.html#my-workflow-is-very-large-how-do-i-stop-snakemake-from-printing-all-this-rule-job-information-in-a-dry-run)
+
+ - a [flake8](https://flake8.pycqa.org/) analysis of the Python code
+
+ - a [flake8_nb](https://flake8-nb.readthedocs.io/) analysis of the Jupyter notebooks.
+
+For the Jupyter notebook linting, it may be easiest to lint while you are still developing notebook with run cells rather then before you put the empty notebook in [./notebooks/](notebooks), as the linting results are labeled by cell run number.
 
 [Snakefile]: Snakefile
 [snakemake]: https://snakemake.readthedocs.io
