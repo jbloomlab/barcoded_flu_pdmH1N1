@@ -79,8 +79,8 @@ rule viral_barcodes_in_transcripts:
         viral_bc_by_cell_umi_csv=join(config['viral_fastq10x_dir'],
                                       "{expt}_viral_bc_by_cell_umi.csv.gz"),
     log:
-        notebook=join(config['viral_fastq10x_dir'],
-                      "{expt}_viral_barcodes_in_transcripts.ipynb")
+        notebook=join(config['log_dir'],
+                      "viral_barcodes_in_transcripts_{expt}.ipynb")
     conda: '../environment.yml'
     notebook:
         '../notebooks/viral_barcodes_in_transcripts.py.ipynb'
