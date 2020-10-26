@@ -16,3 +16,7 @@ make_refgenome:
 align_fastq10x:
   cpus: 16
   time: 0-4
+
+build_ccs:
+  cpus: 16
+  time: 0-8
