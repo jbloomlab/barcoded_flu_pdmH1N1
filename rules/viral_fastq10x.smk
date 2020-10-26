@@ -15,8 +15,8 @@ rule viral_transcript_coverage:
                     caption='../report/viral_transcript_coverage.rst',
                     category="{expt}")
     log:
-        notebook=join(config['viral_fastq10x_dir'],
-                      "{expt}_viral_transcript_coverage.py.ipynb")
+        notebook=join(config['log_dir'],
+                      "viral_transcript_coverage_{expt}.ipynb")
     conda: '../environment.yml'
     notebook:
         '../notebooks/viral_transcript_coverage.py.ipynb'
@@ -36,8 +36,8 @@ rule viral_barcodes_by_cell:
                     caption='../report/viral_barcodes_by_cell.rst',
                     category="{expt}")
     log:
-        notebook=join(config['viral_fastq10x_dir'],
-                      "{expt}_viral_barcodes_by_cell.ipynb")
+        notebook=join(config['log_dir'],
+                      "viral_barcodes_by_cell_{expt}.ipynb")
     conda: '../environment.yml'
     notebook:
         '../notebooks/viral_barcodes_by_cell.py.ipynb'
@@ -57,8 +57,8 @@ rule viral_tags_by_cell:
                     caption='../report/viral_tags_by_cell.rst',
                     category="{expt}")
     log:
-        notebook=join(config['viral_fastq10x_dir'],
-                      "{expt}_viral_tags_by_cell.ipynb")
+        notebook=join(config['log_dir'],
+                      "viral_tags_by_cell_{expt}.ipynb")
     conda: '../environment.yml'
     notebook:
         '../notebooks/viral_tags_by_cell.py.ipynb'
@@ -79,8 +79,8 @@ rule viral_barcodes_in_transcripts:
         viral_bc_by_cell_umi_csv=join(config['viral_fastq10x_dir'],
                                       "{expt}_viral_bc_by_cell_umi.csv.gz"),
     log:
-        notebook=join(config['viral_fastq10x_dir'],
-                      "{expt}_viral_barcodes_in_transcripts.ipynb")
+        notebook=join(config['log_dir'],
+                      "viral_barcodes_in_transcripts_{expt}.ipynb")
     conda: '../environment.yml'
     notebook:
         '../notebooks/viral_barcodes_in_transcripts.py.ipynb'
@@ -95,15 +95,16 @@ rule viral_tags_in_transcripts:
                  'Aligned.sortedByCoord.out.bam.bai'),
         cell_barcodes=join(config['aligned_fastq10x_dir'], "{expt}",
                            'Solo.out/GeneFull/filtered/barcodes.tsv'),
-        viral_tag_locs=join(config['viral_fastq10x_dir'], 'viral_tag_locs.csv'),
+        viral_tag_locs=join(config['viral_fastq10x_dir'],
+                            'viral_tag_locs.csv'),
         viral_tag_identities=config['viral_tag_identities'],
         notebook='notebooks/viral_tags_in_transcripts.py.ipynb'
     output:
         viral_tag_by_cell_umi_csv=join(config['viral_fastq10x_dir'],
                                        "{expt}_viral_tag_by_cell_umi.csv.gz"),
     log:
-        notebook=join(config['viral_fastq10x_dir'],
-                      "{expt}_viral_tags_in_transcripts.ipynb")
+        notebook=join(config['log_dir'],
+                      "viral_tags_in_transcripts_{expt}.ipynb")
     conda: '../environment.yml'
     notebook:
         '../notebooks/viral_tags_in_transcripts.py.ipynb'
@@ -115,17 +116,11 @@ rule viral_bc_locs:
         viral_genbank=config['viral_genbank']
     output:
         viral_bc_locs=join(config['viral_fastq10x_dir'], 'viral_bc_locs.csv'),
-    run:
-        viral_bc_tups = []
-        for s in Bio.SeqIO.parse(input.viral_genbank, 'genbank'):
-            for f in s.features:
-                if f.type == 'viral_barcode':
-                    viral_bc_tups.append((s.id,
-                                          int(f.location.start) + 1,
-                                          int(f.location.end)))
-        pd.DataFrame.from_records(viral_bc_tups,
-                                  columns=['gene', 'start', 'end']
-                                  ).to_csv(output.viral_bc_locs, index=False)
+    conda: '../environment.yml'
+    log:
+        log=join(config['log_dir'], 'viral_bc_locs.log')
+    script:
+        '../scripts/viral_bc_locs.py'
 
 
 rule viral_tag_locs:
@@ -133,16 +128,10 @@ rule viral_tag_locs:
     input:
         viral_genbank=config['viral_genbank']
     output:
-        viral_tag_locs=join(config['viral_fastq10x_dir'], 'viral_tag_locs.csv'),
-    run:
-        viral_tag_tups = []
-        for s in Bio.SeqIO.parse(input.viral_genbank, 'genbank'):
-            for f in s.features:
-                if 'tag' in f.type:
-                    viral_tag_tups.append((s.id,
-                                           f.type,
-                                           int(f.location.start) + 1,
-                                           int(f.location.end)))
-        pd.DataFrame.from_records(viral_tag_tups,
-                                  columns=['gene', 'tag_name', 'start', 'end']
-                                  ).to_csv(output.viral_tag_locs, index=False)
+        viral_tag_locs=join(config['viral_fastq10x_dir'],
+                            'viral_tag_locs.csv'),
+    conda: '../environment.yml'
+    log:
+        log=join(config['log_dir'], 'viral_tag_locs.log')
+    script:
+        '../scripts/viral_tag_locs.py'
