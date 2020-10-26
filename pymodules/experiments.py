@@ -1,9 +1,7 @@
 """Modules for parsing experiments configuration."""
 
 
-import collections
 import copy
-import textwrap
 
 import pandas as pd
 
@@ -23,7 +21,6 @@ class Experiments:
         directory.
     barcoded_viral_genes : list
         Viral genes with barcode, parsed from viral genbank file.
-    
 
     Attributes
     ----------
@@ -38,7 +35,7 @@ class Experiments:
     pacbio_runs : list
         All pacbio runs.
     pacbio_df : pandas.DataFrame
-        Data frame of all pacbio runs.    
+        Data frame of all pacbio runs.
     viral_barcodes : dict
         Paths to viral barcode sequencing FASTQ files in dict format
     viral_barcodes_df : pandas.DataFrame
@@ -48,12 +45,11 @@ class Experiments:
 
     def __init__(self, experiments_config, viral_tags, barcoded_viral_genes):
         """See main class docstring."""
-
         if isinstance(experiments_config, dict):
             self.config_dict = copy.deepcopy(experiments_config)
         else:
             yaml = ruamel.yaml.YAML(typ='safe')
-            with open(experiments_config_file) as f:
+            with open(experiments_config) as f:
                 self.config_dict = yaml.load(f)
             assert isinstance(self.config_dict, dict)
 
@@ -87,7 +83,7 @@ class Experiments:
                             ))
 
             if 'pacbio_viral_sequencing' in expt_d:
-                for run, run_d in expt_d['pacbio_viral_sequencing'].items():
+                for run in expt_d['pacbio_viral_sequencing'].keys():
                     pacbio_records.append((
                             expt,
                             run,
@@ -100,15 +96,15 @@ class Experiments:
                     raise ValueError(f"`expect_ncells` not int for {expt}")
             else:
                 raise KeyError(f"`expect_ncells` missing for {expt}")
-                
+
             if 'viral_barcodes' in expt_d:
                 for source, source_d in expt_d['viral_barcodes'].items():
                     for tag, tag_d in source_d.items():
-                        if not tag in viral_tags:
+                        if tag not in viral_tags:
                             raise ValueError(f"invalid tag entry for {tag}")
                         for gene, gene_d in tag_d.items():
-                            if not gene in barcoded_viral_genes:
-                                raise ValueError(f"invalid gene entry for {gene}")
+                            if gene not in barcoded_viral_genes:
+                                raise ValueError(f"gene {gene} not barcoded")
                             for replicate, replicate_d in gene_d.items():
                                 for run, fastq_path in replicate_d.items():
                                     viral_barcodes_records.append((
@@ -136,17 +132,17 @@ class Experiments:
                 len(set(self.transcriptomic_runs)))
 
         self.pacbio_df = pd.DataFrame(pacbio_records,
-                                               columns=['experiment',
-                                                        'run_name',
-                                                        'pacbio_run'
-                                                        ])
+                                      columns=['experiment',
+                                               'run_name',
+                                               'pacbio_run'
+                                               ])
         self.pacbio_runs = (self.pacbio_df
-                                    ['pacbio_run']
-                                    .tolist()
-                                    )
+                            ['pacbio_run']
+                            .tolist()
+                            )
         assert (len(self.pacbio_runs) ==
-                len(set(self.pacbio_runs)))        
-        
+                len(set(self.pacbio_runs)))
+
         self.viral_barcodes_df = pd.DataFrame(viral_barcodes_records,
                                               columns=['experiment',
                                                        'source',
@@ -195,11 +191,10 @@ class Experiments:
     def expect_ncells(self, expt):
         """int: Expected number of cells for experiment `expt`."""
         return self._expect_ncells[expt]
-    
+
     def expt_viral_barcode_fastqs(self, expt):
-        """
-        pandas.DataFrame: FASTQs of viral barcodes
-        
+        """pandas.DataFrame: FASTQs of viral barcodes
+
         This function takes an argument with the desired
         experiment, `expt`. It returns a pandas
         DataFrame with paths to the viral barcode FASTQ
@@ -212,9 +207,7 @@ class Experiments:
                 )
 
     def pacbio_subreads(self, expt):
-        """
-        list: List of all PacBio bam subreads for `expt`.
-        """
+        """list: List of all PacBio bam subreads for `expt`."""
         assert expt in self.experiments, f"invalid `expt` {expt}"
         return (self.transcriptomics_df
                 .query('experiment == @expt')
