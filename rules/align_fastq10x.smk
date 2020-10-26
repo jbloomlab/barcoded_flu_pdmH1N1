@@ -15,8 +15,8 @@ rule qc_transcript_alignments:
                        caption='../report/qc_transcript_alignments.rst',
                        category="{expt}")
     log:
-        notebook=join(config['aligned_fastq10x_dir'], "{expt}",
-                      'qc_transcript_alignments.ipynb')
+        notebook=join(config['log_dir'],
+                      "qc_transcript_alignments_{expt}.ipynb")
     conda: '../environment.yml'
     notebook:
         '../notebooks/qc_transcript_alignments.py.ipynb'
