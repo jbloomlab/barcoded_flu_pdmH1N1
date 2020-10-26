@@ -95,7 +95,8 @@ rule viral_tags_in_transcripts:
                  'Aligned.sortedByCoord.out.bam.bai'),
         cell_barcodes=join(config['aligned_fastq10x_dir'], "{expt}",
                            'Solo.out/GeneFull/filtered/barcodes.tsv'),
-        viral_tag_locs=join(config['viral_fastq10x_dir'], 'viral_tag_locs.csv'),
+        viral_tag_locs=join(config['viral_fastq10x_dir'],
+                            'viral_tag_locs.csv'),
         viral_tag_identities=config['viral_tag_identities'],
         notebook='notebooks/viral_tags_in_transcripts.py.ipynb'
     output:
@@ -127,7 +128,8 @@ rule viral_tag_locs:
     input:
         viral_genbank=config['viral_genbank']
     output:
-        viral_tag_locs=join(config['viral_fastq10x_dir'], 'viral_tag_locs.csv'),
+        viral_tag_locs=join(config['viral_fastq10x_dir'],
+                            'viral_tag_locs.csv'),
     conda: '../environment.yml'
     log:
         log=join(config['log_dir'], 'viral_tag_locs.log')

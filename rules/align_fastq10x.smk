@@ -29,11 +29,11 @@ rule align_fastq10x:
         refgenome=config['refgenome'],
         fastqR1=lambda wc: [join(config['fastq10x_dir'],
                                  f"{expt_run10x}_all_R1.fastq.gz")
-                            for expt_run10x in 
+                            for expt_run10x in
                             expts.expt_transcriptomic_runs(wc.expt)],
         fastqR2=lambda wc: [join(config['fastq10x_dir'],
                                  f"{expt_run10x}_all_R2.fastq.gz")
-                            for expt_run10x in 
+                            for expt_run10x in
                             expts.expt_transcriptomic_runs(wc.expt)],
     output:
         summary=join(config['aligned_fastq10x_dir'], "{expt}",
@@ -54,7 +54,9 @@ rule align_fastq10x:
                                        ','.join(input.fastqR1)
                                        ),
         expect_ncells=lambda wc: expts.expect_ncells(wc.expt),
-        outdir=lambda wc, output: output.summary[: output.summary.index('Solo')],
+        outdir=lambda wc, output: (output.summary
+                                   [: output.summary.index('Solo')]
+                                   ),
         soloCBlen=config['cb_len_10x'],
         soloUMIstart=config['cb_len_10x'] + 1,
         soloUMIlen=config['umi_len_10x'],

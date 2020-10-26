@@ -1,4 +1,4 @@
-"""Rules to annotate cells by viral tags / barcodes from transcriptomic data."""
+"""Rules annotating cells by viral tags / barcodes in transcriptomic data."""
 
 
 rule assign_viral_tags_to_cells:
