@@ -17,7 +17,7 @@ rule viral_barcodes_in_progeny:
         viral_barcode_upstream_length=config['viral_barcode_upstream_length'],
         barcoded_viral_genes=barcoded_viral_genes
     log:
-        notebook=join(config['viral_progeny_dir'],
+        notebook=join(config['log_dir'],
                       "{expt}_viral_barcodes_in_progeny.py.ipynb")
     conda: '../environment.yml'
     notebook:
