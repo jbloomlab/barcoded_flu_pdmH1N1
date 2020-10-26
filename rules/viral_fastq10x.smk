@@ -15,8 +15,8 @@ rule viral_transcript_coverage:
                     caption='../report/viral_transcript_coverage.rst',
                     category="{expt}")
     log:
-        notebook=join(config['viral_fastq10x_dir'],
-                      "{expt}_viral_transcript_coverage.py.ipynb")
+        notebook=join(config['log_dir'],
+                      "viral_transcript_coverage_{expt}.ipynb")
     conda: '../environment.yml'
     notebook:
         '../notebooks/viral_transcript_coverage.py.ipynb'
