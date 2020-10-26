@@ -67,9 +67,8 @@ rule all:
         expand(join(config['viral_progeny_dir'],
                     "{expt}_viral_bc_in_progeny.csv.gz"),
                expt=expts.expts_with_progeny_barcodes),
-        expand(join(config['pacbio_dir'],
-                    "{expt}_report.txt"),
-               expt=expts.experiments),
+        expand(join(config['pacbio_dir'], "{expt}_summary.svg"),
+               expt=expts.expts_with_pacbio),
 
 
 # Set up report  -------------------------------------------------------------
