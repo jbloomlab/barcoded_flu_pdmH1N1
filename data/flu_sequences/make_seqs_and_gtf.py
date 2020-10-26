@@ -1,34 +1,32 @@
 """Make sequence and GTF files from Genbank plasmid maps."""
 
 
-import re
-import os
-import glob
 import collections
 import copy
+import glob
+import os
+import re
 
-import Bio.Alphabet
+import BCBio.GFF
+
 import Bio.Data.IUPACData
 import Bio.Seq
 import Bio.SeqFeature
 import Bio.SeqIO
 import Bio.SeqRecord
 
-import BCBio.GFF
-
 import yaml
 
 
 def main():
     """Main body of script."""
-
     # flu genes
     gene_names = ['PB2', 'PB1', 'PA', 'HA', 'NP', 'NA', 'M', 'NS']
 
     # viral tag variants
     viral_tags = ['wt', 'syn']
     assert 1 <= len(viral_tags) <= 2, 'script only works for 1 or 2 viral tags'
-    tag_file_suffixes = {'wt': '', 'syn': '-dblSyn'}  # suffixes of genbank files
+    tag_file_suffixes = {'wt': '', 'syn': '-dblSyn'}  # suffixes of files
 
     # map nucleotide sets to their ambiguous characters
     nts_to_ambig_char = {frozenset(vals): char for char, vals in
@@ -41,8 +39,10 @@ def main():
     # Define introns removed to create NS2 and M2 as in Fig 3 of
     # http://mbio.asm.org/content/5/3/e00070-14.abstract
     mRNA_splice = {
-            'M':re.compile('AAC(?P<intron>GTA[CT]GTTC[ACGT]+GAAAATTT[AG]CAG)[GA]C'),
-            'NS':re.compile('CAG(?P<intron>GTAGA[CT]TG[ACGT]+C[CT]TC[TC][TCA]T[TG]CCAG)GA'),
+            'M': re.compile('AAC(?P<intron>GTA[CT]GTTC[ACGT]+'
+                            'GAAAATTT[AG]CAG)[GA]C'),
+            'NS': re.compile('CAG(?P<intron>GTAGA[CT]TG[ACGT]+'
+                             'C[CT]TC[TC][TCA]T[TG]CCAG)GA'),
             }
     viralbclen = 16  # length of viral barcode
 
@@ -59,7 +59,7 @@ def main():
         for viral_tag in viral_tags:
             suffix = tag_file_suffixes[viral_tag]
             plasmidmatcher = re.compile(f".*_?pH.*{gene_short_name}(_G155E)?"
-                                        f"{suffix}(_\w+)?\.gb")
+                                        rf"{suffix}(_\w+)?\.gb")
             plasmidfile = [f for f in plasmidmaps if plasmidmatcher.search(f)]
             if len(plasmidfile) == 1:
                 print(f"Reading map for tag {viral_tag} from {plasmidfile[0]}")
@@ -76,7 +76,7 @@ def main():
             geneseq = plasmidseq[u12match[0].start(0): u13match[0].end(0)]
             print(f"vRNA length is {len(geneseq)}")
             genes_by_tag[viral_tag] = geneseq
-        if 1 != len(set(len(geneseq) for geneseq in genes_by_tag.values())):
+        if 1 != len({len(geneseq) for geneseq in genes_by_tag.values()}):
             raise ValueError('all tag variants not the same length')
 
         geneseq = genes_by_tag[viral_tags[0]]  # annotate this tag version
@@ -90,10 +90,11 @@ def main():
         gene_name = "flu" + gene_short_name
 
         gene = Bio.SeqRecord.SeqRecord(
-                Bio.Seq.Seq(geneseq, Bio.Alphabet.generic_dna),
+                Bio.Seq.Seq(geneseq),
                 id=gene_name,
                 description=description,
                 name=gene_name,
+                annotations={'molecule_type': 'DNA'},
                 features=[Bio.SeqFeature.SeqFeature(
                     Bio.SeqFeature.FeatureLocation(0, len(geneseq)),
                     id=gene_name,
@@ -101,18 +102,18 @@ def main():
                     strand=1,
                     qualifiers={
                         "source": "JesseBloom",
-                        "gene_id":gene_name,
-                        "gene_name":gene_name,
-                        "gene_biotype":"vRNA",
-                        "transcript_id":gene_name,
-                        "label":gene_name,
+                        "gene_id": gene_name,
+                        "gene_name": gene_name,
+                        "gene_biotype": "vRNA",
+                        "transcript_id": gene_name,
+                        "label": gene_name,
                         },
                     )],
                 )
 
         # Get mRNA flanked by one nt into u12 and polyA, see:
-        # 5' end described: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4446424/
-        # polyA described: https://www.ncbi.nlm.nih.gov/pubmed/7241649
+        # 5' end: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4446424/
+        # polyA: https://www.ncbi.nlm.nih.gov/pubmed/7241649
         mrna_start = 1
         polyAmatches = list(polyA.finditer(geneseq))
         assert len(polyAmatches) >= 1, f"no polyA for {gene_short_name}"
@@ -126,9 +127,9 @@ def main():
                     type='mRNA',
                     strand=1,
                     qualifiers={
-                        "source":"JesseBloom",
-                        "label":mrna_name,
-                        "gene_biotype":"protein_coding",
+                        "source": "JesseBloom",
+                        "label": mrna_name,
+                        "gene_biotype": "protein_coding",
                         },
                     )
                 )
@@ -152,9 +153,9 @@ def main():
                         type="mRNA",
                         strand=1,
                         qualifiers={
-                            "source":"JesseBloom",
-                            "label":mrna_name,
-                            "gene_biotype":"protein_coding",
+                            "source": "JesseBloom",
+                            "label": mrna_name,
+                            "gene_biotype": "protein_coding",
                             },
                         )
                     )
@@ -172,24 +173,24 @@ def main():
                 # https://www.biorxiv.org/content/biorxiv/early/2019/09/04/738427
                 assert mrna_seq[mrna_start + 18: mrna_start + 21] == 'ATG'
                 mrna_start = mrna_start + 18
-            last_triplet = mrna_start + 3 * (len(mrna_seq[mrna_start : ]) // 3)
-            protlen = len(mrna_seq[mrna_start : last_triplet].translate(
+            last_triplet = mrna_start + 3 * (len(mrna_seq[mrna_start:]) // 3)
+            protlen = len(mrna_seq[mrna_start: last_triplet].translate(
                     to_stop=True))
-            mrna_end = mrna_start + 3 * protlen + 3 # include stop codon
+            mrna_end = mrna_start + 3 * protlen + 3  # include stop codon
             print("{0} mRNA is of length {1}, encodes protein of {2} residues"
-                    .format(mrna.id, len(mrna), protlen))
+                  .format(mrna.id, len(mrna), protlen))
 
             # construct CDS location
-            assert mrna_start < len(mrna.location.parts[0]),\
-                    "start not in first exon"
-            assert len(mrna) - mrna_end < len(mrna.location.parts[-1]),\
-                    "end not in last exon"
+            assert mrna_start < len(mrna.location.parts[0]), (
+                    "start not in first exon")
+            assert len(mrna) - mrna_end < len(mrna.location.parts[-1]), (
+                    "end not in last exon")
             cds_start = mrna.location.parts[0].start + mrna_start
             cds_end = mrna.location.parts[-1].end - (len(mrna) - mrna_end)
             assert cds_end <= len(gene)
             location_parts = [Bio.SeqFeature.FeatureLocation(
                     cds_start, min(cds_end, mrna.location.parts[0].end))]
-            for p in mrna.location.parts[1 : -1]:
+            for p in mrna.location.parts[1: -1]:
                 location_parts.append(p)
             if len(mrna.location.parts) > 1:
                 location_parts.append(Bio.SeqFeature.FeatureLocation(
@@ -209,17 +210,17 @@ def main():
                         type="CDS",
                         strand=1,
                         qualifiers={
-                            "source":"JesseBloom",
-                            "label":mrna.id,
-                            "gene_biotype":"CDS",
-                            "translation":prot
+                            "source": "JesseBloom",
+                            "label": mrna.id,
+                            "gene_biotype": "CDS",
+                            "translation": prot
                             },
                         )
                     )
 
         # annotate viral barcodes in segments that contain them
         if 'N' in geneseq:
-            print(f"Annotating viral barcode...")
+            print('Annotating viral barcode...')
             m = re.fullmatch(f"[ACGT]+(?P<viralbc>N{{{viralbclen}}})[ACGT]+",
                              geneseq)
             if not m:
@@ -252,11 +253,12 @@ def main():
                         qualifiers=tags[gene_name][tagname],
                         )
                     )
-            gene.seq = (gene.seq[:i] +
-                        Bio.Seq.Seq(nts_to_ambig_char[frozenset(nts.values())],
-                                    alphabet=gene.seq.alphabet) +
-                        gene.seq[i + 1:])
-        print(f"Annotated {len(tags[gene_name])} nucleotide tags for {gene_name}")
+            gene.seq = (
+                    gene.seq[:i] +
+                    Bio.Seq.Seq(nts_to_ambig_char[frozenset(nts.values())]) +
+                    gene.seq[i + 1:]
+                    )
+        print(f"Annotated {len(tags[gene_name])} tags for {gene_name}")
 
         genes.append(gene)
 
@@ -270,7 +272,7 @@ def main():
     just_genes = []
     for gene in genes:
         just_gene = copy.deepcopy(gene)
-        just_gene.features = just_gene.features[ : 1]
+        just_gene.features = just_gene.features[: 1]
         just_genes.append(just_gene)
     with open(gtffile, 'w') as f:
         BCBio.GFF.write(just_genes, f)
@@ -310,4 +312,3 @@ def main():
 # run the script
 if __name__ == '__main__':
     main()
-
