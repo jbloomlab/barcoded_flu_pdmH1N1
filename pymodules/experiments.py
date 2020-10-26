@@ -43,6 +43,8 @@ class Experiments:
         Paths to viral barcode sequencing FASTQ files in dict format
     viral_barcodes_df : pandas.DataFrame
         Data frame with all viral barcode sequencing paths
+    expts_with_progeny_barcodes: list
+        Experiments that have progeny viral barcode data
 
     """
 
@@ -157,6 +159,13 @@ class Experiments:
                                                        'replicate',
                                                        'run',
                                                        'fastq_path'])
+        self.expts_with_progeny_barcodes = (self.viral_barcodes_df
+                                            ['experiment']
+                                            .unique()
+                                            .tolist()
+                                            )
+        assert (len(self.expts_with_progeny_barcodes) ==
+                len(set(self.expts_with_progeny_barcodes)))
 
     def transcriptomic_index(self, transcriptomic_run):
         """str: Illumina index for `transcriptomic_run`."""
@@ -211,7 +220,7 @@ class Experiments:
         assert expt in self.experiments, f"invalid `expt` {expt}"
         return (self.viral_barcodes_df
                 .query('experiment == @expt')
-               )
+                )
 
     def pacbio_subreads(self, expt):
         """
@@ -223,12 +232,3 @@ class Experiments:
                 ['subread_bam']
                 .tolist()
                 )
-
-    # def pacbio_subreads(self, pacbio_run):
-    #     """str: subread bam for `pacbio_run`."""
-    #     assert pacbio_run in self.pacbio_runs, (
-    #             f"invalid `pacbio_run` {pacbio_run}")
-    #     return str(self.pacbio_df
-    #                .set_index('pacbio_run')
-    #                .at[pacbio_run, 'subread_bam']
-    #                )
