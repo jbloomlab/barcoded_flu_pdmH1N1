@@ -14,7 +14,7 @@ rule qc_fastq10x:
                        caption='../report/qc_fastq10x.rst',
                        category="{expt}")
     log:
-        notebook=join(config['fastq10x_dir'], "{expt}_qc_fastq10x.ipynb")
+        notebook=join(config['log_dir'], "qc_fastq10x_{expt}.ipynb")
     conda: '../environment.yml'
     notebook:
         '../notebooks/qc_fastq10x.py.ipynb'
