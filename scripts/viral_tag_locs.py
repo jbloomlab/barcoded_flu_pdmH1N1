@@ -12,7 +12,7 @@ print(f"Writing output and errors to {snakemake.log.log}")
 f = open(snakemake.log.log, 'w')
 sys.stdout = f
 sys.stderr = f
-   
+
 print(f"Parsing viral tags from {snakemake.input.viral_genbank}")
 viral_tag_tups = []
 for s in Bio.SeqIO.parse(snakemake.input.viral_genbank, 'genbank'):
