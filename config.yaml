@@ -10,8 +10,8 @@ genome_dir: results/genomes  # location of downloaded genomes and annotations
 refgenome: results/genomes/refgenome  # STAR reference genome directory
 aligned_fastq10x_dir: results/aligned_fastq10x  # aligned 10x transcriptomic reads
 viral_fastq10x_dir: results/viral_fastq10x  # viral tags / barcodes in 10x transcriptomics
-viral_progeny_dir: results/viral_progeny
-#analysis_dir: results/analysis  # fine-grained analyses
+viral_tags_bcs_in_cells_dir: results/viral_tags_bcs_in_cells  # calling viral tags / barcodes by cell
+viral_progeny_dir: results/viral_progeny  # viral barcodes from progeny
 
 # cellular genome and GTF ftp sites
 cell_genome_ftp: ftp://ftp.ensembl.org/pub/release-98/fasta/canis_familiaris/dna/Canis_familiaris.CanFam3.1.dna.toplevel.fa.gz
@@ -37,6 +37,10 @@ cb_whitelist_10x: results/aligned_fastq10x/cb_whitelist_10x.txt
 
 cb_len_10x: 16  # length of 10X cell barcode
 umi_len_10x: 12  # length of 10X UMI: **this is for the v3 kit**
+
+# False discovery rate for calling infected cells based on expected
+# viral tag counts in uninfected cells.
+infection_calling_by_viral_tag_fdr: 0.0001
 
 # viral barcode parsing paremeters for supernatant and second
 # infection sequencing. Specify the length of sequence, upstream
