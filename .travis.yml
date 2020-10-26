@@ -18,8 +18,9 @@ install:
   - conda activate barcoded_flu_pdmH1N1
 
 script: 
-  - bash test.bash
+  - bash ./lint.bash
 
 branches:
   only:
     - main
+    - snakemake_lint

@@ -15,4 +15,4 @@ printf "\nRunning flake8_nb...\n"
 flake8_nb notebooks/*.ipynb
 flake8_nb *.ipynb --ignore=E902
 
-printf "Linting complete"
+printf "Linting complete\n"
