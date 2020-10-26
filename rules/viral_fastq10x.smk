@@ -57,8 +57,8 @@ rule viral_tags_by_cell:
                     caption='../report/viral_tags_by_cell.rst',
                     category="{expt}")
     log:
-        notebook=join(config['viral_fastq10x_dir'],
-                      "{expt}_viral_tags_by_cell.ipynb")
+        notebook=join(config['log_dir'],
+                      "viral_tags_by_cell_{expt}.ipynb")
     conda: '../environment.yml'
     notebook:
         '../notebooks/viral_tags_by_cell.py.ipynb'
