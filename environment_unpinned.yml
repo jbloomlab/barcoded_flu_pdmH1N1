@@ -9,11 +9,21 @@ dependencies:
   - bcbio-nextgen
   - biopython
   - conda-forge::anndata
+  - flake8
+  - flake8-bugbear
+  - flake8-builtins
+  - flake8-comprehensions
+  - flake8-docstrings
+  - flake8-import-order
+  - flake8-nb
+  - flake8-rst-docstrings
   - git-lfs
   - jupyterlab
   - jupyter_contrib_nbextensions
+  - kneed
   - minimap2
   - multiqc
+  - nbdime
   - nodejs
   - pandas
   - pbccs>=4.0.0

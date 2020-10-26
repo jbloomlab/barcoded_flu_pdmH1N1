@@ -18,23 +18,16 @@ def plot_genes_and_coverage(genes,
                             coverage_df,
                             *,
                             genes_relheight=0.3,
-                            gene_features={'exon': '#999999', 
-                                           'viral_barcode': '#E69F00',
-                                           'viral_tag': '#56B4E9',
-                                           },
+                            gene_features=None,
                             full_gene_feature='exon',
                             site_tick_interval=250,
                             color_mutations=False,
-                            mutation_colors={'A': '#009E73',
-                                             'C': '#F0E442',
-                                             'G': '#0072B2',
-                                             'T': '#D55E00',
-                                             },
+                            mutation_colors=None,
                             figwidth=17,
                             figtitle='',
                             ):
     """Plot gene structure and coverage for one or more samples.
-    
+
     Parameters
     -----------
     genes : list
@@ -46,10 +39,11 @@ def plot_genes_and_coverage(genes,
         of the SeqRecords in `genes`. Sites should be in 1, ... numbering.
     genes_relheight : float
         Relative height of top row with genes relative to coverage plots.
-    gene_features : dict
+    gene_features : dict or None
         Which features in `genes` to plot. Keyed by regex strings that match
         `type` attributes of SeqRecords in `genes`; values are colors to plot.
-        Features with types not in `gene_features` are not plotted.
+        Features with types not in `gene_features` are not plotted. Specify
+        if you want non-default behavior.
     full_gene_feature : str
         Name of feature in each gene for full gene length. Must be in
         `gene_features` too.
@@ -62,24 +56,38 @@ def plot_genes_and_coverage(genes,
         each site for each nucleotide. Only colors **mutant** identities;
         nucleotide that match the wildtype identity in `genes` (which can
         be ambiguous) are not colored.
-    mutation_colors : dict
-        Colors for mutations if using `color_mutations`.
+    mutation_colors : dict or None
+        Colors for mutations if using `color_mutations` and you want non
+        default colors.
     figwidth : float
         Overall figure width in inches.
-    
+
     Returns
     --------
     matplotlib.figure.Figure, matplotlib.axes.Axes
         The figure and axes grid.
-    
+
     """
+    if gene_features is None:
+        gene_features = {'exon': '#999999',
+                         'viral_barcode': '#E69F00',
+                         'viral_tag': '#56B4E9',
+                         }
+
+    if mutation_colors is None:
+        mutation_colors = {'A': '#009E73',
+                           'C': '#F0E442',
+                           'G': '#0072B2',
+                           'T': '#D55E00',
+                           }
+
     # check validity of genes and coverage
     gene_names = {gene.id for gene in genes}
     if len(genes) != len(set(gene_names)):
         raise ValueError('genes in `genes` do not have unique IDs')
     if set(coverage_df['gene']) != set(gene_names):
         raise ValueError('`coverage_df` and `genes` have different genes')
-    
+
     # set up grid of subplots
     gene_lengths = [len(gene) for gene in genes]
     samples = list(coverage_df['sample'].unique())
@@ -98,7 +106,8 @@ def plot_genes_and_coverage(genes,
 
     # Convert genes to plottable graphic records
     class ViralGeneTranslator(dna_features_viewer.BiopythonTranslator):
-        """Translate BioPython SeqRecord into GraphicRecord.""" 
+        """Translate BioPython SeqRecord into GraphicRecord."""
+
         def compute_feature_color(self, feature):
             for regex, color in gene_features.items():
                 if re.search(regex, feature.type):
@@ -106,15 +115,15 @@ def plot_genes_and_coverage(genes,
 
         def compute_feature_label(self, feature):
             return None
-    
+
         def compute_filtered_features(self, features):
             return [f for f in features if
                     any(re.search(regex, f.type)
                         for regex in gene_features.keys())
                     ]
-    
+
     # plot the genes in the first row of the subplots
-    for ax, seqrecord in zip(axes[: 1,].ravel(), genes):
+    for ax, seqrecord in zip(axes[: 1, ].ravel(), genes):
         graphic_record = ViralGeneTranslator().translate_record(seqrecord)
         for f in graphic_record.features:
             f.linecolor = f.color
@@ -128,10 +137,10 @@ def plot_genes_and_coverage(genes,
         raise ValueError('no `full_gene_feature` in `gene_features`')
     else:
         full_gene_feature_regex = full_gene_feature_regex[0]
-    for ax, (sample, seqrecord) in zip(axes[1:,].ravel(),
-                                  itertools.product(samples, genes)):
-        gene = seqrecord.id
-        
+    for ax, (sample, seqrecord) in zip(axes[1:, ].ravel(),
+                                       itertools.product(samples, genes)):
+        gene = seqrecord.id  # noqa: F841
+
         # data frame of coverage for each site by nt, whether it is wildtype
         df = (coverage_df
               .query('(sample == @sample) & (gene == @gene)')
@@ -144,8 +153,8 @@ def plot_genes_and_coverage(genes,
                       columns=['site', 'wildtype']),
                      on='site')
               .assign(
-                  wildtype=lambda x: 
-                           (x['wildtype']
+                  wildtype=lambda x: (
+                            x['wildtype']
                             .map(Bio.Data.IUPACData.ambiguous_dna_values)
                             ),
                   is_wildtype=lambda x: x.apply(lambda r: (r['nucleotide']
@@ -153,7 +162,7 @@ def plot_genes_and_coverage(genes,
                                                 axis=1)
                   )
               )
-        
+
         # plot coverage over full gene
         (df
          .query('nucleotide == "coverage"')
@@ -165,7 +174,7 @@ def plot_genes_and_coverage(genes,
                color=gene_features[full_gene_feature_regex],
                )
          )
-        
+
         # optionally overlay a plot for mutations
         if color_mutations:
             (df
@@ -182,11 +191,10 @@ def plot_genes_and_coverage(genes,
                    kind='area',
                    stacked=False,
                    color=list(mutation_colors.values()),
-                   #lw=1,
                    legend=False,
                    )
              )
-            
+
         # set axes formatting
         ax.set_ylabel(None)
         ax.set_xlabel(None)
@@ -203,9 +211,10 @@ def plot_genes_and_coverage(genes,
         # plot rectangles for features of interest
         ymin, ymax = ax.get_ylim()
         for f in seqrecord.features:
-            for regex, color in gene_features.items():
+            for regex in gene_features.keys():
                 if re.search(regex, f.type) and (regex !=
                                                  full_gene_feature_regex):
+                    color = gene_features[regex]
                     break
             else:
                 continue
@@ -219,30 +228,30 @@ def plot_genes_and_coverage(genes,
                                 zorder=4,
                                 alpha=0.4)
             ax.add_patch(rect)
-        
+
     # shared x-, y-labels following here: https://stackoverflow.com/a/53172335
     fig.add_subplot(111, frameon=False)
     plt.tick_params(labelcolor='none', top=False, bottom=False, left=False,
                     right=False)
     plt.xlabel('\nsite', size=14)
     plt.ylabel('coverage          ', size=14)
-    
+
     # add legend for features
     feature_legend = plt.legend(
               handles=[matplotlib.patches.Patch(facecolor=color,
-                                                 edgecolor=color,
-                                                 label=regex)
-                        for regex, color in gene_features.items()
-                        if regex != full_gene_feature_regex],
-               bbox_to_anchor=(1.006, ((len(samples) + 0.6 * genes_relheight) /
-                                       (len(samples) + genes_relheight))),
-               bbox_transform=plt.gcf().transFigure,
-               fontsize=13,
-               handlelength=0.5,
-               title='features',
-               title_fontsize=14,
-               )
-    
+                                                edgecolor=color,
+                                                label=regex)
+                       for regex, color in gene_features.items()
+                       if regex != full_gene_feature_regex],
+              bbox_to_anchor=(1.006, ((len(samples) + 0.6 * genes_relheight) /
+                                      (len(samples) + genes_relheight))),
+              bbox_transform=plt.gcf().transFigure,
+              fontsize=13,
+              handlelength=0.5,
+              title='features',
+              title_fontsize=14,
+              )
+
     # add legend for mutation colors
     if color_mutations:
         plt.gca().add_artist(feature_legend)
@@ -250,18 +259,18 @@ def plot_genes_and_coverage(genes,
                                                      edgecolor=color,
                                                      label=nt)
                             for nt, color in mutation_colors.items()],
-               bbox_to_anchor=(1, ((len(samples) - 0.2) /
+                   bbox_to_anchor=(1, ((len(samples) - 0.2) /
                                        (len(samples) + genes_relheight))),
-               bbox_transform=plt.gcf().transFigure,
-               fontsize=13,
-               handlelength=0.5,
-               title='mutation',
-               title_fontsize=14,
-               ncol=2,
-               )
+                   bbox_transform=plt.gcf().transFigure,
+                   fontsize=13,
+                   handlelength=0.5,
+                   title='mutation',
+                   title_fontsize=14,
+                   ncol=2,
+                   )
 
     if figtitle:
         fig.suptitle(figtitle, size=18)
-    
+
     fig.tight_layout(w_pad=0)
     return fig, axes

@@ -17,7 +17,7 @@ def extract_tags(readiterator,
                  primary_only=True,
                  ):
     """Get tag (or barcode) sequence for each cell barcode and UMI.
-    
+
     Parameters
     -----------
     readiterator : iterator over pysam.AlignedSegment
@@ -41,19 +41,19 @@ def extract_tags(readiterator,
     primary_only : bool
         Only consider the primary alignments of reads that multi-map (ignore
         secondary alignments).
-        
+
     Returns
     -------
     pandas.DataFrame
         Columns are 'cell_barcode', 'UMI', and 'tag'. Entry in 'tag' is
         'ambiguous' if the tag does not meet the `min_frac` cutoff.
-        
+
     """
     counts = collections.defaultdict(lambda: collections.defaultdict(
                     lambda: collections.defaultdict(int)))
     sites = set(range(start, end))  # tag sites
     nsites = len(sites)  # number of sites in tag
-    
+
     # count all tag sequences for each cell barcode / UMI
     for read in readiterator:
         if primary_only and read.is_secondary:
@@ -73,7 +73,7 @@ def extract_tags(readiterator,
         if len(tagseq) != nsites:
             continue  # tag positions not fully covered
         counts[cellbc][umi][tagseq] += 1
-        
+
     # now collapse to consensus tag sequences for each UMI
     records = []
     for cellbc, umi_counts in counts.items():

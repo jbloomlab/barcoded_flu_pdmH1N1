@@ -1,9 +1,7 @@
 """Modules for parsing experiments configuration."""
 
 
-import collections
 import copy
-import textwrap
 
 import pandas as pd
 
@@ -23,7 +21,6 @@ class Experiments:
         directory.
     barcoded_viral_genes : list
         Viral genes with barcode, parsed from viral genbank file.
-    
 
     Attributes
     ----------
@@ -39,8 +36,6 @@ class Experiments:
         Data frame of all pacbio runs.    
     expts_with_pacbio : list
         Experiments that have PacBio viral sequencing.
-    viral_barcodes : dict
-        Paths to viral barcode sequencing FASTQ files in dict format
     viral_barcodes_df : pandas.DataFrame
         Data frame with all viral barcode sequencing paths
     expts_with_progeny_barcodes: list
@@ -50,12 +45,11 @@ class Experiments:
 
     def __init__(self, experiments_config, viral_tags, barcoded_viral_genes):
         """See main class docstring."""
-
         if isinstance(experiments_config, dict):
             self.config_dict = copy.deepcopy(experiments_config)
         else:
             yaml = ruamel.yaml.YAML(typ='safe')
-            with open(experiments_config_file) as f:
+            with open(experiments_config) as f:
                 self.config_dict = yaml.load(f)
             assert isinstance(self.config_dict, dict)
 
@@ -104,15 +98,15 @@ class Experiments:
                     raise ValueError(f"`expect_ncells` not int for {expt}")
             else:
                 raise KeyError(f"`expect_ncells` missing for {expt}")
-                
+
             if 'viral_barcodes' in expt_d:
                 for source, source_d in expt_d['viral_barcodes'].items():
                     for tag, tag_d in source_d.items():
-                        if not tag in viral_tags:
+                        if tag not in viral_tags:
                             raise ValueError(f"invalid tag entry for {tag}")
                         for gene, gene_d in tag_d.items():
-                            if not gene in barcoded_viral_genes:
-                                raise ValueError(f"invalid gene entry for {gene}")
+                            if gene not in barcoded_viral_genes:
+                                raise ValueError(f"gene {gene} not barcoded")
                             for replicate, replicate_d in gene_d.items():
                                 for run, fastq_path in replicate_d.items():
                                     viral_barcodes_records.append((
@@ -207,11 +201,10 @@ class Experiments:
     def expect_ncells(self, expt):
         """int: Expected number of cells for experiment `expt`."""
         return self._expect_ncells[expt]
-    
+
     def expt_viral_barcode_fastqs(self, expt):
-        """
-        pandas.DataFrame: FASTQs of viral barcodes
-        
+        """pandas.DataFrame: FASTQs of viral barcodes
+
         This function takes an argument with the desired
         experiment, `expt`. It returns a pandas
         DataFrame with paths to the viral barcode FASTQ

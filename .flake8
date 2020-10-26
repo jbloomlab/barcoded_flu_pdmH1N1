@@ -1,0 +1,6 @@
+[flake8]
+filename = *.py, *.smk, Snakefile
+exclude = results, .*
+builtins = snakemake
+ignore = E121,E123,E126,E226,E24,E704,W503,W504,D205,D400,D401,RST303,RST304,RST307
+per_file_ignores = Snakefile:E999,E225,E731 *.smk:E999,E225,E731

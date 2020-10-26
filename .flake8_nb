@@ -1,0 +1,5 @@
+[flake8_nb]
+filename = *.ipynb
+exclude = results, .*, *.py
+builtins = snakemake
+ignore = E121,E123,E126,E226,E24,E704,W503,W504,D100,D205,D400,D401,RST303,RST304,RST307
