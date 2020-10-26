@@ -36,8 +36,6 @@ class Experiments:
         All pacbio runs.
     pacbio_df : pandas.DataFrame
         Data frame of all pacbio runs.
-    viral_barcodes : dict
-        Paths to viral barcode sequencing FASTQ files in dict format
     viral_barcodes_df : pandas.DataFrame
         Data frame with all viral barcode sequencing paths
     expts_with_progeny_barcodes: list
