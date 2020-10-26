@@ -1,4 +1,4 @@
-"""Rules to annotate cells by viral tags / barcodes from transcriptomic data."""
+"""Rules annotating cells by viral tags / barcodes in transcriptomic data."""
 
 
 rule assign_viral_tags_to_cells:
@@ -25,8 +25,8 @@ rule assign_viral_tags_to_cells:
         viral_tags=viral_tags,
         fdr=config['infection_calling_by_viral_tag_fdr'],
     log:
-        notebook=join(config['viral_tags_bcs_in_cells_dir'],
-                      "{expt}_assign_viral_tags_to_cells.ipynb")
+        notebook=join(config['log_dir'],
+                      "assign_viral_tags_to_cells_{expt}.ipynb")
     conda: '../environment.yml'
     notebook:
         '../notebooks/assign_viral_tags_to_cells.py.ipynb'

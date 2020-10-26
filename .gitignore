@@ -1,5 +1,8 @@
 .*
 !.gitignore
+!.travis.yml
+!.flake8
+!.flake8_nb
 *.out
 __pycache__
 *.pyc

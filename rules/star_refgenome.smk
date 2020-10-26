@@ -5,16 +5,18 @@ rule get_cell_genome:
     """Get the FASTA file for the cellular genome."""
     output: join(config['genome_dir'], 'cell_genome.fasta')
     params: ftp=config['cell_genome_ftp']
+    log: join(config['log_dir'], 'get_cell_genome.log')
     conda: '../environment.yml'
-    shell: "wget -O - {params.ftp} | gunzip -c > {output}"
+    shell: "wget -O - {params.ftp} | gunzip -c > {output} 2> {log}"
 
 
 rule get_cell_gtf:
     """Get the GTF file for the cellular genome."""
     output: join(config['genome_dir'], 'cell_gtf.gtf')
     params: ftp=config['cell_gtf_ftp']
+    log: join(config['log_dir'], 'get_cell_gtf.log')
     conda: '../environment.yml'
-    shell: "wget -O - {params.ftp} | gunzip -c > {output}"
+    shell: "wget -O - {params.ftp} | gunzip -c > {output} 2> {log}"
 
 
 rule make_refgenome:
@@ -29,6 +31,7 @@ rule make_refgenome:
         genomeDir=directory(config['refgenome'])
     threads: config['max_cpus']
     conda: '../environment.yml'
+    log: join(config['log_dir'], 'make_refgenome.log')
     shell:
         """
         cat {input.cell_gtf} {input.viral_gtf} > {output.concat_gtf}
@@ -37,5 +40,5 @@ rule make_refgenome:
              --runMode genomeGenerate \
              --genomeDir {output.genomeDir} \
              --genomeFastaFiles {input.cell_genome} {input.viral_genome} \
-             --sjdbGTFfile {output.concat_gtf}
+             --sjdbGTFfile {output.concat_gtf} &> {log}
         """
