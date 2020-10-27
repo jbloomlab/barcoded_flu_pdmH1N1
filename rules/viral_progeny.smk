@@ -8,6 +8,7 @@ rule viral_barcodes_in_progeny:
                                .tolist()
                                ),
         viral_bc_locs=join(config['viral_fastq10x_dir'], 'viral_bc_locs.csv'),
+        viral_genbank=config['viral_genbank'],
         notebook='notebooks/viral_barcodes_in_progeny.py.ipynb'
     output:
         viral_bc_in_progeny_csv=join(config['viral_progeny_dir'],
