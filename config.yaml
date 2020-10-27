@@ -47,7 +47,7 @@ infection_calling_by_viral_tag_fdr: 0.0001
 # infection sequencing. Specify the length of sequence, upstream
 # of the viral barcode, that should be used to verify the
 # transcript's identity.
-viral_barcode_upstream_length: 10
+viral_barcode_upstream_length: 34
 
 #----------------------------------------------------------------------------
 #                    configuration of experiments
