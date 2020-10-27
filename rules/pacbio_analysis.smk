@@ -36,11 +36,13 @@ rule build_ccs:
         ccs_min_rq=config['ccs_min_rq'],
     threads: config['max_cpus'],
     conda: '../environment.yml'
-    log: join(config['log_dir'], "{pacbio_run}_build_ccs.log")
+    log: join(config['log_dir'], "build_ccs_{pacbio_run}.log")
     shell:
         """
         ccs \
             --report-file {output.ccs_report} \
+            --log-level INFO \
+            --log-file {log} \
             --num-threads {threads} \
             --min-length {params.ccs_min_length} \
             --max-length {params.ccs_max_length} \
