@@ -33,7 +33,7 @@ class Experiments:
     transcriptomics_df : pandas.DataFrame
         Data frame of all transcriptomics runs.
     pacbio_df : pandas.DataFrame
-        Data frame of all pacbio runs.    
+        Data frame of all pacbio runs.
     expts_with_pacbio : list
         Experiments that have PacBio viral sequencing.
     viral_barcodes_df : pandas.DataFrame
@@ -145,7 +145,7 @@ class Experiments:
                                   .tolist()
                                   )
         assert len(self.pacbio_df) == self.pacbio_df['pacbio_run'].nunique()
-        
+
         self.viral_barcodes_df = pd.DataFrame(viral_barcodes_records,
                                               columns=['experiment',
                                                        'source',
