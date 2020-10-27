@@ -48,7 +48,7 @@ infection_calling_by_viral_tag_fdr: 0.0001
 # of the viral barcode, that should be used to verify the
 # transcript's identity.
 viral_barcode_upstream_length: 34
-viral_barcode_len: 16
+viral_barcode_length: 16
 
 #----------------------------------------------------------------------------
 #                    configuration of experiments
