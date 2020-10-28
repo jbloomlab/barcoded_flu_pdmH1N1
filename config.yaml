@@ -45,7 +45,7 @@ infection_calling_by_viral_tag_fdr: 0.0001
 
 # viral barcode parsing paremeters for supernatant and second
 # infection sequencing. 
-viral_barcode_upstream_length: 34  # Specify the length of upstream seq used to check identity
+viral_barcode_upstream_length: 28  # Specify the length of upstream seq used to check identity
 viral_barcode_mismatch: 0  # Number of mismatches allowed in upstream seq
 
 #----------------------------------------------------------------------------
