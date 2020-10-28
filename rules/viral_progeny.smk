@@ -13,7 +13,7 @@ rule viral_barcodes_in_progeny:
         viral_bc_in_progeny_csv=join(config['viral_progeny_dir'],
                                      "{expt}_viral_bc_in_progeny.csv.gz"),
         viral_bc_fates_csv=join(config['viral_progeny_dir'],
-                                     "{expt}_viral_bc_fates.csv.gz"),
+                                "{expt}_viral_bc_fates.csv.gz"),
         plot=report(join(config['viral_progeny_dir'],
                          "{expt}_viral_bc_fates.svg"),
                     caption='../report/viral_bc_fates.rst',
