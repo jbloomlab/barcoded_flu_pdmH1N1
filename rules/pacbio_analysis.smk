@@ -1,6 +1,6 @@
 """Rules related to analysis viral pacbio data."""
 
-rule ccs_summarize:
+rule ccs_summaries:
     """Summarize and aggregate all PacBio runs for an experiment."""
     input:
         ccs_fastq=lambda wc: [join(config['pacbio_dir'],
@@ -12,18 +12,21 @@ rule ccs_summarize:
                                     f"{expt_pacbio_run}_report.txt")
                                for expt_pacbio_run in
                                expts.expt_pacbio_runs(wc.expt)],
-        notebook='notebooks/summarize_pacbio.py.ipynb'
+        notebook='notebooks/ccs_summaries.py.ipynb'
     params:
         runs=lambda wc: expts.expt_pacbio_runs(wc.expt)
 
     output:
-        summary=join(config['pacbio_dir'], "{expt}_ccs_summary.svg"),
+        summary=report(join(config['pacbio_dir'],
+                            "{expt}_ccs_summaries.svg"),
+                       caption='../report/ccs_summaries.rst',
+                       category="{expt}")
     conda: '../environment.yml'
     log:
         notebook=join(config['log_dir'],
-                      "{expt}_summarize_pacbio.ipynb")
+                      "ccs_summariee_{expt}.ipynb")
     notebook:
-        '../notebooks/summarize_pacbio.py.ipynb'
+        '../notebooks/ccs_summaries.py.ipynb'
 
 rule build_ccs:
     """Run PacBio ``ccs`` program to build CCSs from subreads."""
