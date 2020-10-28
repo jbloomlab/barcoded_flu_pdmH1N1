@@ -21,8 +21,7 @@ rule viral_barcodes_in_progeny:
     params:
         fastq_df=lambda wc: expts.expt_viral_barcode_fastqs(wc.expt),
         viral_barcode_upstream_length=config['viral_barcode_upstream_length'],
-        viral_barcode_mismatch_threshold=config['viral_barcode'
-                                                '_mismatch_threshold'],
+        viral_barcode_mismatch=config['viral_barcode_mismatch'],
         barcoded_viral_genes=barcoded_viral_genes
     log:
         notebook=join(config['log_dir'],
