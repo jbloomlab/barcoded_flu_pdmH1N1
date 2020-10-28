@@ -69,6 +69,8 @@ rule all:
         expand(join(config['viral_progeny_dir'],
                     "{expt}_viral_bc_fates.csv.gz"),
                expt=expts.expts_with_progeny_barcodes),
+        expand(join(config['pacbio_dir'], "{expt}_summary.svg"),
+               expt=expts.expts_with_pacbio),
 
 
 # Set up report  -------------------------------------------------------------
@@ -85,3 +87,4 @@ include: 'rules/star_refgenome.smk'
 include: 'rules/fastq10x.smk'
 include: 'rules/utils.smk'
 include: 'rules/viral_progeny.smk'
+include: 'rules/pacbio_analysis.smk'

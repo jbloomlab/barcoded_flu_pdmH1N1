@@ -1,0 +1,48 @@
+Starting the linting...
+Using 'snakemake --lint' to check Snakefile...
+
+Doing a snakemake dry run...
+Job counts:
+	count	jobs
+	4	align_fastq10x
+	1	all
+	4	assign_viral_tags_to_cells
+	4	index_bam
+	1	make_refgenome
+	4	qc_transcript_alignments
+	4	viral_barcodes_by_cell
+	2	viral_barcodes_in_progeny
+	4	viral_barcodes_in_transcripts
+	4	viral_tags_by_cell
+	4	viral_tags_in_transcripts
+	4	viral_transcript_coverage
+	40
+
+Running flake8...
+
+Running flake8_nb...
+viral_barcodes_in_progeny.py.ipynb#In[50]:143:1: D100 Missing docstring in public module
+viral_barcodes_in_progeny.py.ipynb#In[29]:2:1: E303 too many blank lines (3)
+viral_barcodes_in_progeny.py.ipynb#In[29]:2:1: E266 too many leading '#' for block comment
+viral_barcodes_in_progeny.py.ipynb#In[29]:2:80: E501 line too long (80 > 79 characters)
+viral_barcodes_in_progeny.py.ipynb#In[29]:3:11: E702 multiple statements on one line (semicolon)
+viral_barcodes_in_progeny.py.ipynb#In[29]:3:80: E501 line too long (22416 > 79 characters)
+viral_barcodes_in_progeny.py.ipynb#In[29]:3:219: E702 multiple statements on one line (semicolon)
+viral_barcodes_in_progeny.py.ipynb#In[29]:3:234: E702 multiple statements on one line (semicolon)
+viral_barcodes_in_progeny.py.ipynb#In[29]:3:22241: E702 multiple statements on one line (semicolon)
+viral_barcodes_in_progeny.py.ipynb#In[29]:3:22279: E702 multiple statements on one line (semicolon)
+viral_barcodes_in_progeny.py.ipynb#In[29]:3:22310: E702 multiple statements on one line (semicolon)
+viral_barcodes_in_progeny.py.ipynb#In[29]:3:22321: E702 multiple statements on one line (semicolon)
+viral_barcodes_in_progeny.py.ipynb#In[29]:3:22416: E703 statement ends with a semicolon
+viral_barcodes_in_progeny.py.ipynb#In[29]:4:1: E266 too many leading '#' for block comment
+viral_barcodes_in_progeny.py.ipynb#In[28]:9:31: W503 line break before binary operator
+viral_barcodes_in_progeny.py.ipynb#In[50]:3:75: W504 line break after binary operator
+viral_barcodes_in_progeny.py.ipynb#In[50]:4:65: W504 line break after binary operator
+viral_barcodes_in_progeny.py.ipynb#In[50]:5:64: W504 line break after binary operator
+viral_barcodes_in_progeny.py.ipynb#In[50]:6:41: W504 line break after binary operator
+viral_barcodes_in_progeny.py.ipynb#In[50]:9:48: W504 line break after binary operator
+viral_barcodes_in_progeny.py.ipynb#In[50]:10:33: E226 missing whitespace around arithmetic operator
+viral_barcodes_in_progeny.py.ipynb#In[50]:10:63: W504 line break after binary operator
+viral_barcodes_in_progeny.py.ipynb#In[50]:12:33: E226 missing whitespace around arithmetic operator
+
+Linting complete
