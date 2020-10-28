@@ -12,6 +12,8 @@ rule viral_barcodes_in_progeny:
     output:
         viral_bc_in_progeny_csv=join(config['viral_progeny_dir'],
                                      "{expt}_viral_bc_in_progeny.csv.gz"),
+        viral_bc_fates_csv=join(config['viral_progeny_dir'],
+                                     "{expt}_viral_bc_fates.csv.gz"),                             
     params:
         fastq_df=lambda wc: expts.expt_viral_barcode_fastqs(wc.expt),
         viral_barcode_upstream_length=config['viral_barcode_upstream_length'],
