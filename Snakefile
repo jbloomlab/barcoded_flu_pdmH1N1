@@ -64,7 +64,7 @@ rule all:
                     "{expt}_assign_viral_tags_to_cells.svg"),
                expt=expts.experiments),
         expand(join(config['viral_progeny_dir'],
-                    "{expt}_viral_bc_in_progeny.csv.gz"),
+                    "{expt}_viral_bc_fates.svg"),
                expt=expts.expts_with_progeny_barcodes),
         expand(join(config['pacbio_dir'], "{expt}_ccs_summaries.svg"),
                expt=expts.expts_with_pacbio),
