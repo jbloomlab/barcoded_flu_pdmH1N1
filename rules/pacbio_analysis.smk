@@ -17,7 +17,6 @@ rule align_pacbio:
         notebook='notebooks/align_pacbio.py.ipynb'
     params:
         runs=lambda wc: expts.expt_pacbio_runs(wc.expt)
-
     output:
         plot_amplicons=report(join(config['pacbio_dir'],
                               "{expt}_amplicons.svg"),
