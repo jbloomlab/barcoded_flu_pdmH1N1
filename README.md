@@ -29,7 +29,7 @@ This repository is organized as followed (based loosely on [this example snakema
 
    * [./data/flu_sequences/](data/flu_sequences) gives the flu sequences used in the experiment. See the [README in that subdirectory](data/flu_sequences/README.md) for details.
 
-   * [./data/flu_sequences/pacbio_amplions](data/flu_sequences/pacbio_amplions) gives the famplicon sequences generated for pacbio sequencing. See the [README in that subdirectory](data/flu_sequences/pacbio_amplions/README.md) for details.
+   * [./data/flu_sequences/pacbio_amplions](data/flu_sequences/pacbio_amplions) gives the famplicon sequences generated for pacbio sequencing. See the [README in that subdirectory](data/flu_sequences/pacbio_amplicons/README.md) for details.
 
  - [./results/](results) is a created directory with all results, most of which are not tracked in this repository.
 
