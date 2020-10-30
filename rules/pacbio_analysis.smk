@@ -1,5 +1,35 @@
 """Rules related to analysis viral pacbio data."""
 
+rule align_pacbio:
+    """Summarize and aggregate all PacBio runs for an experiment."""
+    input:
+        amplicons=config['viral_amplicons'],
+        features=config['amplicon_features'],
+        ccs_fastq=lambda wc: [join(config['pacbio_dir'],
+                                   f"{expt_pacbio_run}_ccs.fastq.gz")
+                              for expt_pacbio_run in
+                              expts.expt_pacbio_runs(wc.expt)],
+
+        ccs_report=lambda wc: [join(config['pacbio_dir'],
+                                    f"{expt_pacbio_run}_report.txt")
+                               for expt_pacbio_run in
+                               expts.expt_pacbio_runs(wc.expt)],
+        notebook='notebooks/align_pacbio.py.ipynb'
+    params:
+        runs=lambda wc: expts.expt_pacbio_runs(wc.expt)
+
+    output:
+        plot_amplicons=report(join(config['pacbio_dir'],
+                              "{expt}_amplicons.svg"),
+                              caption='../report/align_pacbio.rst',
+                              category="{expt}")
+    conda: '../environment.yml'
+    log:
+        notebook=join(config['log_dir'],
+                      "align_pacbio_{expt}.ipynb")
+    notebook:
+        '../notebooks/align_pacbio.py.ipynb'
+
 rule ccs_summaries:
     """Summarize and aggregate all PacBio runs for an experiment."""
     input:
