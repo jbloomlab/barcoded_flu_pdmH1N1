@@ -13,7 +13,7 @@ FEATURES             Location/Qualifiers
      final_mRNA_nts   1179..1182
      polyA            1183..1212
      UMI              1213..1224
-     cellbarcode      225..1240
+     cellbarcode      1225..1240
      Read1            1241..1262
      sequenced_mRNA_2 1264..2426
      variant_tag_1    1463
