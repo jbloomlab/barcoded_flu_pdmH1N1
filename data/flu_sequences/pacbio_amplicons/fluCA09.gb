@@ -1,22 +1,23 @@
-LOCUS       	fluPB2mid                2432 bp	DNA
-DEFINITION  	fluPB2mid.
-ACCESSION   	fluPB2mid
-VERSION     	fluPB2mid
+LOCUS       PB2mid                2426 bp DNA
+DEFINITION  PB2mid
+ACCESSION   .
+VERSION     .
 KEYWORDS    .
-SOURCE      	.
-  ORGANISM  	.
-		      	.
+SOURCE      synthetic DNA construct
+  ORGANISM  
+REFERENCE   1  (bases 1 to 2426)
 FEATURES             Location/Qualifiers
-     sequenced_mRNA_1	1..1182
-     termini5	1..26
-     viral_tag_2	1052
-     final_mRNA_nts	1179..1182
-     polyA	1183..1212
-     UMI 	1213..1224
-     cellbarcode	1225..1240
-     sequenced_mRNA_2	1264..2426
-     viral_tag_1	1463
-     termini3	2401..2426
+     sequenced_mRNA_1 1..1182
+     termini5         1..26
+     variant_tag_2    1052
+     final_mRNA_nts   1179..1182
+     polyA            1183..1212
+     UMI              1213..1224
+     cellbarcode      225..1240
+     Read1            1241..1262
+     sequenced_mRNA_2 1264..2426
+     variant_tag_1    1463
+     termini3         2401..2426
 ORIGIN
         1 cagctattct cagaaaggca accaggagat tgatccagtt gatagtaagc gggagagatg
        61 agcagtcaat tgctgaggca ataattgtgg ccatggtatt ctcacaggag gattgcatga
@@ -60,24 +61,26 @@ ORIGIN
      2341 cactgaaaat aagagtacat gaagggtatg aagaattcac aatggttggg agaagagcaa
      2401 cagctattct cagaaaggca accagg
 //
-LOCUS       	fluPB2termini                2432 bp	DNA
-DEFINITION  	fluPB2termini.
-ACCESSION   	fluPB2termini
-VERSION     	fluPB2mid
+LOCUS       PB2termini                2432 bp ds-DNA     linear   SYN 30-OCT-2020
+DEFINITION  PB2termini
+ACCESSION   .
+VERSION     .
 KEYWORDS    .
-SOURCE      	.
-  ORGANISM 	.
-			.
+SOURCE      synthetic DNA construct
+  ORGANISM  
+REFERENCE   1  (bases 1 to 2432)
 FEATURES             Location/Qualifiers
-     sequenced_mRNA_1	1..2288
-     termini5	1..32
-     viral_tag_1	169
-     viral_tag_2	2158
-     final_mRNA_nts	2285..2288
-     UM	2319..2330
-     cellbarcode	2331..2346
-     sequenced_mRNA_2	2370..2432
-     termini3	2401..2432
+     sequenced_mRNA_1 1..2288
+     termini5         1..32
+     variant_tag_1    169
+     variant_tag_2    2158
+     final_mRNA_nts   2285..2288
+     polyA            2289..2318
+     UMI              2319..2330
+     cellbarcode      2331..2346
+     Read1            2347..2368
+     sequenced_mRNA_2 2370..2432
+     termini3         2401..2432
 ORIGIN
         1 gagaataaaa gaactgagag atctaatgtc gcagtcccgc actcgcgaga tactcactaa
        61 gaccactgtg gaccatatgg ccataatcaa aaagtacaca tcaggaaggc aagagaagaa
@@ -121,3 +124,4 @@ ORIGIN
      2341 nnnnnnagat cggaagagcg tcgtgtagag cgaaagcagg tcaattatat tcaatatgga
      2401 gagaataaaa gaactgagag atctaatgtc gc
 //
+

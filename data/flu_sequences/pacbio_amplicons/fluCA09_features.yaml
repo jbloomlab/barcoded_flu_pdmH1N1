@@ -46,8 +46,7 @@ default_2tags: &default_2tags
     return: sequence
 
 # use defaults to define specs for actual genes
-fluPB2mid:
+PB2mid:
   <<: *default_2tags
-
-fluPB2termini:
+PB2termini:
   <<: *default_2tags
