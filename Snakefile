@@ -68,6 +68,8 @@ rule all:
                expt=expts.expts_with_progeny_barcodes),
         expand(join(config['pacbio_dir'], "{expt}_ccs_summaries.svg"),
                expt=expts.expts_with_pacbio),
+        expand(join(config['pacbio_dir'], "{expt}_amplicons.svg"),
+               expt=expts.expts_with_pacbio),
 
 
 # Set up report  -------------------------------------------------------------
