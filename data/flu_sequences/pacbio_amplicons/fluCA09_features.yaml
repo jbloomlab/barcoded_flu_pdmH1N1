@@ -50,3 +50,31 @@ PB2mid:
   <<: *default_2tags
 PB2termini:
   <<: *default_2tags
+PB1mid:
+  <<: *default_2tags
+PB1termini:
+  <<: *default_2tags
+PAmid:
+  <<: *default_2tags
+PAtermini:
+  <<: *default_2tags
+NPmid:
+  <<: *default_2tags
+NPtermini:
+  <<: *default_2tags
+HAmid:
+  <<: *default_2tags
+HAtermini:
+  <<: *default_2tags
+NAmid:
+  <<: *default_2tags
+NAtermini:
+  <<: *default_2tags
+M1mid:
+  <<: *default_2tags
+M1termini:
+  <<: *default_2tags
+NS1mid:
+  <<: *default_2tags
+NS1termini:
+  <<: *default_2tags
