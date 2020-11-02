@@ -7,7 +7,7 @@ SOURCE      HAmid
   ORGANISM  
 FEATURES             Location/Qualifiers
      sequenced_mRNA_1   1..1078
-     termini3           1..32
+     termini5           1..32
      variant_tag_2      750
      viral_barcode      892..907
      final_mRNA_nts     965..968
@@ -17,7 +17,7 @@ FEATURES             Location/Qualifiers
      Read1              1136..1157
      sequenced_mRNA_2   1157..2123
      variant_tag_1      1404
-     termini5           2092..2123
+     termini3           2092..2123
 ORIGIN
         1 gctggatctg gtattatcat ttcagataca ccagtccacg attgcaatac aacttgtcaa
        61 acacccaagg gtgctataaa caccagcctc ccatttcaga atatacatcc gatcacaatt
@@ -65,7 +65,7 @@ SOURCE      HAtermini
   ORGANISM  
 FEATURES             Location/Qualifiers
      sequenced_mRNA_1   1..1902
-     termini3           1..31
+     termini5           1..31
      variant_tag_1      137
      variant_tag_2      1574
      viral_barcode      1716..1731
@@ -76,7 +76,7 @@ FEATURES             Location/Qualifiers
      Read1              1960..1981
      primer_bind        1962..2004
      sequenced_mRNA_2   1981..2122
-     termini5           2092..2122
+     termini3           2092..2122
 ORIGIN
         1 cgattttggt tgtattattg tacacgttcg cgacggcgaa cgctgatact ctttgcattg
        61 gttatcatgc gaacaattca acagacactg tagacacagt actagaaaag aatgtaacag
@@ -124,7 +124,7 @@ SOURCE      M1mid
   ORGANISM  
 FEATURES             Location/Qualifiers
      sequenced_mRNA_1 1..628
-     termini3         1..23
+     termini5         1..23
      variant_tag_2    573
      final_mRNA_nts   625..628
      polyA            629..657
@@ -134,7 +134,7 @@ FEATURES             Location/Qualifiers
      primer_bind      688..737
      sequenced_mRNA_2 707..1105
      variant_tag_1    805
-     termini5         1083..1105
+     termini3         1083..1105
 ORIGIN
         1 gctattcaac tggtgcactt gccagttgca tgggcctcat atacaacagg atgggaacag
        61 tgaccacaga agctgctttt ggtctagtgt gtgccacttg tgaacagatt gctgattcac
@@ -165,7 +165,7 @@ SOURCE      M1termini
   ORGANISM  
 FEATURES             Location/Qualifiers
      sequenced_mRNA_1 1..971
-     termini3         1..22
+     termini5         1..22
      variant_tag_1    66
      variant_tag_2    916
      final_mRNA_nts   968..971
@@ -175,7 +175,7 @@ FEATURES             Location/Qualifiers
      cellbarcode      1013..1028
      Read1            1029..1050
      sequenced_mRNA_2 1050..1104
-     termini5         1083..1104
+     termini3         1083..1104
 ORIGIN
         1 ctaaccgagg tcgaaacgta cgttctttct atcatcccgt caggccccct caaagccgag
        61 atcgcrcaga gactggaaag tgtctttgca ggaaagaaca cagatcttga ggctctcatg
@@ -206,7 +206,7 @@ SOURCE      NAmid
   ORGANISM  
 FEATURES             Location/Qualifiers
      sequenced_mRNA_1   1..1120
-     termini3           1..25
+     termini5           1..25
      variant_tag_2      224
      variant_tag_3      233
      variant_tag_4      234
@@ -223,7 +223,7 @@ FEATURES             Location/Qualifiers
      Read1              1178..1199
      sequenced_mRNA_2   1199..1816
      variant_tag_1      1439
-     termini5           1792..1816
+     termini3           1792..1816
 ORIGIN
         1 tgagctgtcc tattggtgaa gttccctctc catacaactc aagatttgag tcagtcgctt
        61 ggtcagcaag tgcttgtcat gatggcatca attggctaac aattggaatt tctggcccag
@@ -266,7 +266,7 @@ SOURCE      NAtermini
   ORGANISM  
 FEATURES             Location/Qualifiers
      sequenced_mRNA_1   1..1650
-     termini3           1..36
+     termini5           1..36
      variant_tag_1      178
      variant_tag_2      754
      variant_tag_3      763
@@ -282,7 +282,7 @@ FEATURES             Location/Qualifiers
      cellbarcode        1692..1707
      Read1              1708..1729
      sequenced_mRNA_2   1729..1827
-     termini5           1792..1827
+     termini3           1792..1827
 ORIGIN
         1 ggtagtcgga ataattagcc taatattgca aataggaaat ataatctcag gatccatgaa
        61 ccctaatcag aaaattatta cgataggatc ggtgtgcatg actataggta tggcaaatct
@@ -325,7 +325,7 @@ SOURCE      NPmid
   ORGANISM  
 FEATURES             Location/Qualifiers
      sequenced_mRNA_1 1..772
-     termini3         1..24
+     termini5         1..24
      variant_tag_2    635
      final_mRNA_nts   769..772
      polyA            773..801
@@ -335,7 +335,7 @@ FEATURES             Location/Qualifiers
      primer_bind      832..879
      sequenced_mRNA_2 850..1645
      variant_tag_1    981
-     termini5         1622..1645
+     termini3         1622..1645
 ORIGIN
         1 gagaaagtcg aaacccagga aacgctgaga ttgaagacct cattttcctg gcacggtcag
        61 cactcattct gaggggatca gttgcacata aatcctgcct gcctgcttgt gtgtatgggc
@@ -375,7 +375,7 @@ SOURCE      NPtermini
   ORGANISM  
 FEATURES             Location/Qualifiers
      sequenced_mRNA_1 1..1509
-     termini3         1..19
+     termini5         1..19
      variant_tag_1    97
      variant_tag_2      1372
      final_mRNA_nts   1506..1509
@@ -385,7 +385,7 @@ FEATURES             Location/Qualifiers
      Read1            1567..1588
      primer_bind      1569..1616
      sequenced_mRNA_2 1587..1640
-     termini5         1622..1640
+     termini3         1622..1640
 ORIGIN
         1 catcgaagcc atggcgtccc aaggcaccaa acgatcatat gaacaaatgg agactggtgg
        61 ggagcgccag gatgccacag aaatcagagc atctgtygga agaatgattg gtggaatcgg
@@ -425,7 +425,7 @@ SOURCE      NS1mid
   ORGANISM  
 FEATURES             Location/Qualifiers
      sequenced_mRNA_1 1..384
-     termini3         1..27
+     termini5         1..27
      variant_tag_2    320
      final_mRNA_nts    381..384
      polyA            385..413
@@ -435,7 +435,7 @@ FEATURES             Location/Qualifiers
      primer_bind      444..484
      sequenced_mRNA_2 462..972
      variant_tag_1    541
-     termini5         946..972
+     termini3         946..972
 ORIGIN
         1 gggagcaata gttggagaaa tttcaccatt accttctctt ccaggacata cttatgagga
        61 tgtcaaaaat gcagttgggg tcctcatcgg aggacttgaa tggaatggta acacggttcg
@@ -464,7 +464,7 @@ SOURCE      NS1termini
   ORGANISM  
 FEATURES             Location/Qualifiers
      sequenced_mRNA_1 1..840
-     termini3         1..22
+     termini5         1..22
      variant_tag_1    52
      variant_tag_2    776
      final_mRNA_nts   837..840
@@ -475,7 +475,7 @@ FEATURES             Location/Qualifiers
      Read1            898..918
      primer_bind      900..940
      sequenced_mRNA_2 918..967
-     termini5         946..967
+     termini3         946..967
 ORIGIN
         1 ggactccaac accatgtcaa gctttcaggt agactgtttc ctttggcata tycgcaagcg
        61 atttgcagac aatggattgg gtgatgcccc attccttgat cggctccgcc gagatcaaaa
@@ -504,7 +504,7 @@ SOURCE      PAmid
   ORGANISM  
 FEATURES             Location/Qualifiers
      sequenced_mRNA_1   1..1156
-     termini3           1..32
+     termini5           1..32
      variant_tag_2      1049
      final_mRNA_nts     1153..1156
      polyA              1157..1186
@@ -513,7 +513,7 @@ FEATURES             Location/Qualifiers
      Read1              1215..1236
      sequenced_mRNA_2   1235..2321
      variant_tag_1      1357
-     termini5           2290..2321
+     termini3           2290..2321
 ORIGIN
         1 gctacaggac attgaaaatg aagagaagat cccaaggaca aagaacatga agagaacaag
        61 ccaattgaag tgggcactcg gtgaaaatat ggcaccagaa aaagtagact ttgatgactg
@@ -564,7 +564,7 @@ SOURCE      PAtermini
   ORGANISM  
 FEATURES             Location/Qualifiers
      sequenced_mRNA_1   1..2180
-     termini3           1..25
+     termini5           1..25
      variant_tag_1      92
      variant_tag_2      2073
      final_mRNA_nts     2177..2180
@@ -574,7 +574,7 @@ FEATURES             Location/Qualifiers
      Read1              2239..2260
      primer_bind        2241..2279
      sequenced_mRNA_2   2259..2314
-     termini5           2290..2314
+     termini3           2290..2314
 ORIGIN
         1 actttgtgcg acaatgcttc aatccaatga tcgtcgagct tgcggaaaag gcaatgaaag
        61 aatatgggga agatccgaaa atcgaaacta ayaagtttgc tgcaatatgc acacatttgg
@@ -625,7 +625,7 @@ SOURCE      PB1mid
   ORGANISM  
 FEATURES             Location/Qualifiers
      sequenced_mRNA_1   1..1167
-     termini3           1..25
+     termini5           1..25
      variant_tag_2      1074
      final_mRNA_nts     1186..1189
      polyA              1190..1218
@@ -635,7 +635,7 @@ FEATURES             Location/Qualifiers
      primer_bind        1249..1289
      sequenced_mRNA_2   1267..2422
      variant_tag_1      1458
-     termini5           2398..2422
+     termini3           2398..2422
 ORIGIN
         1 gcagaaatgc tagcaagcat tgacctgaag tacttcaatg aatcaacaaa gaagaaaatt
        61 gagaaaataa ggcctcttct aatagatggc acagcatcac tgagtcctgg gatgatgatg
@@ -688,7 +688,7 @@ SOURCE      PB1termini
   ORGANISM  
 FEATURES             Location/Qualifiers
      sequenced_mRNA_1   1..2272
-     termini3           1..26
+     termini5           1..26
      variant_tag_1      166
      variant_tag_2      2179
      final_mRNA_nts     2291..2294
@@ -698,7 +698,7 @@ FEATURES             Location/Qualifiers
      Read1              2352..2373
      PB1_CA9_5          2354..2394
      sequenced_mRNA_2   2372..2423
-     termini5           2398..2423
+     termini3           2398..2423
 ORIGIN
         1 ggatgtcaat ccgactctac ttttcctaaa aattccagcg caaaatgcca taagcaccac
        61 attcccttat actggagatc ctccatacag ccatggaaca ggaacaggat acaccatgga
@@ -751,7 +751,7 @@ SOURCE      PB2mid
   ORGANISM  
 FEATURES             Location/Qualifiers
      sequenced_mRNA_1 1..1182
-     termini3         1..26
+     termini5         1..26
      variant_tag_2    1052
      final_mRNA_nts   1179..1182
      polyA            1183..1212
@@ -760,7 +760,7 @@ FEATURES             Location/Qualifiers
      misc_feature     1241..1262
      sequenced_mRNA_2 1262..2424
      variant_tag_1    1461
-     termini5         2399..2424
+     termini3         2399..2424
 ORIGIN
         1 cagctattct cagaaaggca accaggagat tgatccagtt gatagtaagc gggagagatg
        61 agcagtcaat tgctgaggca ataattgtgg ccatggtatt ctcacaggag gattgcatga
@@ -812,7 +812,7 @@ KEYWORDS    .
 SOURCE      PB2termini
   ORGANISM  .
 FEATURES             Location/Qualifiers
-     termini3         1..32
+     termini5         1..32
      sequenced_mRNA_1 1..2288
      variant_tag_1    169
      variant_tag_2    2158
@@ -822,7 +822,7 @@ FEATURES             Location/Qualifiers
      cellbarcode      2331..2346
      Read1            2347..2368
      sequenced_mRNA_2 2368..2430
-     termini5         2399..2430
+     termini3         2399..2430
 ORIGIN
         1 gagaataaaa gaactgagag atctaatgtc gcagtcccgc actcgcgaga tactcactaa
        61 gaccactgtg gaccatatgg ccataatcaa aaagtacaca tcaggaaggc aagagaagaa
