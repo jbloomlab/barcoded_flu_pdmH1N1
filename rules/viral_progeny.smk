@@ -12,6 +12,7 @@ rule process_viral_barcode_replicates:
     log:
         notebook=join(config['log_dir'],
                       "process_viral_barcode_replicates_{expt}.ipynb")
+    conda: '../environment.yml'
     notebook:
         '../notebooks/process_viral_barcode_replicates.py.ipynb'
 
