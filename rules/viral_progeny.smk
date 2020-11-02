@@ -9,6 +9,11 @@ rule process_viral_barcode_replicates:
         viral_bc_in_progeny_freq_csv=join(config['viral_progeny_dir'],
                                           "{expt}_"
                                           "viral_bc_in_progeny_freq.csv.gz"),
+    log:
+        notebook=join(config['log_dir'],
+                      "process_viral_barcode_replicates_{expt}.ipynb")
+    notebook:
+        '../notebooks/process_viral_barcode_replicates.py.ipynb'
 
 rule viral_barcodes_in_progeny:
     """Parse and count viral barcodes from progeny sequencing data."""
