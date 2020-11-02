@@ -1,0 +1,52 @@
+# default for genes with two variant tags
+default_2tags: &default_2tags
+  query_clip5: 4
+  query_clip3: 4
+  termini5:
+    filter:
+      clip5: 4
+      mutation_nt_count: 1
+      mutation_op_count: null
+  sequenced_mRNA_1:
+    filter:
+      mutation_nt_count: null
+      mutation_op_count: 10
+    return: [mutations, accuracy]
+  sequenced_mRNA_2:
+    filter:
+      mutation_nt_count: null
+      mutation_op_count: 10
+    return: [mutations, accuracy]  
+  final_mRNA_nts:
+    filter:
+      mutation_nt_count: null
+      mutation_op_count: 2
+  polyA:
+    filter:
+      mutation_nt_count: 12
+      mutation_op_count: 4
+  UMI:
+    return: [sequence, accuracy]
+  cellbarcode:
+    return: [sequence, accuracy]
+  termini3:
+    filter:
+      clip5: 4
+      mutation_nt_count: 1
+      mutation_op_count: null
+  variant_tag_1:
+    filter:
+      mutation_nt_count: 1
+      mutation_op_count: null
+    return: sequence
+  variant_tag_2:
+    filter:
+      mutation_nt_count: 1
+      mutation_op_count: null
+    return: sequence
+
+# use defaults to define specs for actual genes
+PB2mid:
+  <<: *default_2tags
+PB2termini:
+  <<: *default_2tags
