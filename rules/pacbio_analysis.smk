@@ -21,7 +21,9 @@ rule align_pacbio:
         plot_amplicons=report(join(config['pacbio_dir'],
                               "{expt}_amplicons.svg"),
                               caption='../report/align_pacbio.rst',
-                              category="{expt}")
+                              category="{expt}"),
+        alignment_stats=join(config['align_and_parse_dir'],
+                              "{expt}")
     conda: '../environment.yml'
     log:
         notebook=join(config['log_dir'],
