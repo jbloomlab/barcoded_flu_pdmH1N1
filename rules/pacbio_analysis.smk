@@ -51,6 +51,7 @@ rule ccs_summaries:
                        caption='../report/ccs_summaries.rst',
                        category="{expt}")
     conda: '../environment.yml'
+    threads: config['max_cpus']
     log:
         notebook=join(config['log_dir'],
                       "ccs_summariee_{expt}.ipynb")
