@@ -9,6 +9,10 @@ rule process_viral_barcode_replicates:
         viral_bc_in_progeny_freq_csv=join(config['viral_progeny_dir'],
                                           "{expt}_"
                                           "viral_bc_in_progeny_freq.csv.gz"),
+        plot=report(join(config['viral_progeny_dir'],
+                         "{expt}_viral_bc_replicates.svg"),
+                    caption='../report/viral_bc_replicates.rst',
+                    category="{expt}")
     log:
         notebook=join(config['log_dir'],
                       "process_viral_barcode_replicates_{expt}.ipynb")
