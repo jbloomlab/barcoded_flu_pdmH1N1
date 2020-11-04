@@ -65,6 +65,7 @@ dependencies:
   - dnapi=1.1=pyh864c0ab_4
   - docutils=0.16=py38h32f6830_2
   - dropbox=10.4.1=pyh9f0ad1d_0
+  - editdistance=0.5.3=py38h950e882_2
   - entrypoints=0.3=py38h32f6830_1001
   - expat=2.2.9=he1b5a44_2
   - fadapa=0.3.1=pyh864c0ab_2
@@ -348,6 +349,7 @@ dependencies:
   - star=2.7.6a=0
   - statsmodels=0.12.0=py38h1e0a361_0
   - stdlib-list=0.7.0=py38h32f6830_1
+  - svgutils=0.3.1=py_1000
   - tabulate=0.8.7=pyh9f0ad1d_0
   - tbb=2020.2=hc9558a2_0
   - terminado=0.9.1=py38h32f6830_0
