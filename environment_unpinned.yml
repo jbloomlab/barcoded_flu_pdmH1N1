@@ -9,6 +9,7 @@ dependencies:
   - bcbio-nextgen
   - biopython
   - conda-forge::anndata
+  - editdistance
   - flake8
   - flake8-bugbear
   - flake8-builtins
@@ -38,6 +39,7 @@ dependencies:
   - snakemake=5.25
   - sra-tools
   - star
+  - svgutils
   - pip:
     - alignparse
     - dms_variants
