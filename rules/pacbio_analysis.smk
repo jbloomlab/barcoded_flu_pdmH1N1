@@ -23,7 +23,7 @@ rule align_pacbio:
                               caption='../report/align_pacbio.rst',
                               category="{expt}"),
         alignment_stats=join(config['align_and_parse_dir'],
-                              "{expt}")
+                             "{expt}")
     conda: '../environment.yml'
     log:
         notebook=join(config['log_dir'],
