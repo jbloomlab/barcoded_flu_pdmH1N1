@@ -28,6 +28,7 @@ rule align_pacbio:
                               "{expt}_pacbio_passing_alignments.svg"),
                               caption='../report/align_pacbio.rst',
                               category="{expt}"),
+    threads: config['max_cpus'],
     conda: '../environment.yml'
     log:
         notebook=join(config['log_dir'],
