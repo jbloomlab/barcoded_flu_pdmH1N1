@@ -10,7 +10,7 @@ rule process_viral_barcode_replicates:
                                           "{expt}_"
                                           "viral_bc_in_progeny_freq.csv.gz"),
         plot=report(join(config['viral_progeny_dir'],
-                         "{expt}_viral_bc_replicates.svg"),
+                         "{expt}_viral_bc_replicates.pdf"),
                     caption='../report/viral_bc_replicates.rst',
                     category="{expt}")
     log:
