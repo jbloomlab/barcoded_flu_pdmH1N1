@@ -1,44 +1,69 @@
 # default for genes with two variant tags
 default_2tags: &default_2tags
-  query_clip5: 4
-  query_clip3: 4
+  query_clip5: 5
+  query_clip3: 5
   termini5:
     filter:
-      clip5: 4
-      mutation_nt_count: 1
-      mutation_op_count: null
+      mutation_nt_count: 2
+      mutation_op_count: null 
   sequenced_mRNA_1:
     filter:
+      clip5: 5
       mutation_nt_count: null
       mutation_op_count: 10
     return: [mutations, accuracy]
   sequenced_mRNA_2:
     filter:
+      clip3: 5
       mutation_nt_count: null
       mutation_op_count: 10
     return: [mutations, accuracy]  
-  final_mRNA_nts:
-    filter:
-      mutation_nt_count: null
-      mutation_op_count: 2
   polyA:
     filter:
-      mutation_nt_count: 12
+      mutation_nt_count: null
       mutation_op_count: 4
   UMI:
     return: [sequence, accuracy]
   cellbarcode:
     return: [sequence, accuracy]
-  termini3:
-    filter:
-      clip5: 4
-      mutation_nt_count: 1
-      mutation_op_count: null
   variant_tag_1:
     filter:
       mutation_nt_count: 1
       mutation_op_count: null
     return: sequence
+  variant_tag_2:
+    filter:
+      mutation_nt_count: 1
+      mutation_op_count: null
+    return: sequence
+# default for genes with one variant tags
+default_1tag: &default_1tag
+  query_clip5: 5
+  query_clip3: 5
+  termini5:
+    filter:
+      mutation_nt_count: 2
+      mutation_op_count: null 
+  sequenced_mRNA_1:
+    filter:
+      clip5: 5
+      mutation_nt_count: null
+      mutation_op_count: 10
+    return: [mutations, accuracy]
+  sequenced_mRNA_2:
+    filter:
+      clip3: 5
+      mutation_nt_count: null
+      mutation_op_count: 10
+    return: [mutations, accuracy]  
+  polyA:
+    filter:
+      mutation_nt_count: null
+      mutation_op_count: 4
+  UMI:
+    return: [sequence, accuracy]
+  cellbarcode:
+    return: [sequence, accuracy]
   variant_tag_2:
     filter:
       mutation_nt_count: 1
@@ -50,3 +75,33 @@ PB2mid:
   <<: *default_2tags
 PB2termini:
   <<: *default_2tags
+PB1mid:
+  <<: *default_2tags
+PB1termini:
+  <<: *default_2tags
+PAmid:
+  <<: *default_2tags
+PAtermini:
+  <<: *default_2tags
+NPmid:
+  <<: *default_2tags
+NPtermini:
+  <<: *default_2tags
+HAmid:
+  <<: *default_2tags
+HAtermini:
+  <<: *default_2tags
+NAmid:
+  <<: *default_2tags
+NAtermini:
+  <<: *default_2tags
+M1mid:
+  <<: *default_2tags
+M1termini:
+  <<: *default_2tags
+NS1termini:
+  <<: *default_2tags
+NS1mid:
+  <<: *default_2tags
+NEPtermini:
+  <<: *default_1tag

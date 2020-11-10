@@ -16,12 +16,19 @@ rule align_pacbio:
                                expts.expt_pacbio_runs(wc.expt)],
         notebook='notebooks/align_pacbio.py.ipynb'
     params:
-        runs=lambda wc: expts.expt_pacbio_runs(wc.expt)
+        runs=lambda wc: expts.expt_pacbio_runs(wc.expt),
+        alignment_stats=join(config['align_and_parse_dir'],
+                             "{expt}")
     output:
         plot_amplicons=report(join(config['pacbio_dir'],
                               "{expt}_amplicons.svg"),
                               caption='../report/align_pacbio.rst',
-                              category="{expt}")
+                              category="{expt}"),
+        plot_alignment=report(join(config['pacbio_dir'],
+                              "{expt}_pacbio_passing_alignments.svg"),
+                              caption='../report/align_pacbio.rst',
+                              category="{expt}"),
+    threads: config['max_cpus'],
     conda: '../environment.yml'
     log:
         notebook=join(config['log_dir'],
