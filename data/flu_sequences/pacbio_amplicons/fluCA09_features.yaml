@@ -9,19 +9,19 @@ default_2tags: &default_2tags
   termini3:
     filter:
       mutation_nt_count: null
-      mutation_op_count: 10   
-  sequenced_mRNA_1:
+      mutation_op_count: 10
+  sequenced_ORF_1:
     filter:
       clip5: 5
       mutation_nt_count: null
       mutation_op_count: 10
     return: [mutations, accuracy]
-  sequenced_mRNA_2:
+  sequenced_ORF_2:
     filter:
       clip3: 5
       mutation_nt_count: null
       mutation_op_count: 10
-    return: [mutations, accuracy]  
+    return: [mutations, accuracy]
   polyA:
     filter:
       mutation_nt_count: null
@@ -52,18 +52,18 @@ default_1tag: &default_1tag
     filter:
       mutation_nt_count: null
       mutation_op_count: 10
-  sequenced_mRNA_1:
+  sequenced_ORF_1:
     filter:
       clip5: 5
       mutation_nt_count: null
       mutation_op_count: 10
     return: [mutations, accuracy]
-  sequenced_mRNA_2:
+  sequenced_ORF_2:
     filter:
       clip3: 5
       mutation_nt_count: null
       mutation_op_count: 10
-    return: [mutations, accuracy]  
+    rsequenced_ORF_1s, accuracy]
   polyA:
     filter:
       mutation_nt_count: null

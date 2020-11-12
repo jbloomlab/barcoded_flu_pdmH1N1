@@ -6,7 +6,7 @@ KEYWORDS    .
 SOURCE      HAmid
   ORGANISM  PCR product
 FEATURES             Location/Qualifiers
-     sequenced_mRNA_1 1..870
+     sequenced_ORF_1 1..870
      variant_tag_2    750
      viral_barcode    892..907
      polyA            1079..1107
@@ -15,7 +15,7 @@ FEATURES             Location/Qualifiers
      Read1            1136..1155
      termini5         1156..1180
      termini3         871..1078
-     sequenced_mRNA_2 1261..2123
+     sequenced_ORF_2 1261..2123
      variant_tag_1    1404
 ORIGIN
         1 gctggatctg gtattatcat ttcagataca ccagtccacg attgcaatac aacttgtcaa
@@ -73,7 +73,7 @@ FEATURES             Location/Qualifiers
      Read1            1960..1979
      termini5         1980..2004
      termini3         1695..1902
-     sequenced_mRNA_2 2085..2122
+     sequenced_ORF_2 2085..2122
 ORIGIN
         1 cgattttggt tgtattattg tacacgttcg cgacggcgaa cgctgatact ctttgcattg
        61 gttatcatgc gaacaattca acagacactg tagacacagt actagaaaag aatgtaacag
@@ -128,7 +128,7 @@ FEATURES             Location/Qualifiers
      Read1            686..706
      termini5         707..730
      termini3         408..628
-     sequenced_mRNA_2 731..1105
+     sequenced_ORF_2 731..1105
      variant_tag_1    805
 ORIGIN
         1 gctattcaac tggtgcactt gccagttgca tgggcctcat atacaacagg atgggaacag
@@ -168,7 +168,7 @@ FEATURES             Location/Qualifiers
      Read1            1029..1050
      termini5         1051..1074
      termini3         751..971
-     sequenced_mRNA_2 1075..1105
+     sequenced_ORF_2 1075..1105
 ORIGIN
         1 ctaaccgagg tcgaaacgta cgttctttct atcatcccgt caggccccct caaagccgag
        61 atcgcrcaga gactggaaag tgtctttgca ggaaagaaca cagatcttga ggctctcatg
@@ -213,7 +213,7 @@ FEATURES             Location/Qualifiers
      Read1            1178..1199
      termini5         1200..1259
      termini3         936..1120
-     sequenced_mRNA_2 1260..1816
+     sequenced_ORF_2 1260..1816
      variant_tag_1    1439
 ORIGIN
         1 tgagctgtcc tattggtgaa gttccctctc catacaactc aagatttgag tcagtcgctt
@@ -272,7 +272,7 @@ FEATURES             Location/Qualifiers
      Read1            1708..1729
      termini5         1730..1730
      termini3         1466..1650
-     sequenced_mRNA_2 1790..1827
+     sequenced_ORF_2 1790..1827
 ORIGIN
         1 ggtagtcgga ataattagcc taatattgca aataggaaat ataatctcag gatccatgaa
        61 ccctaatcag aaaattatta cgataggatc ggtgtgcatg actataggta tggcaaatct
@@ -322,7 +322,7 @@ FEATURES             Location/Qualifiers
      Read1            426..446
      termini5         447..471
      termini3         365..368
-     sequenced_mRNA_2 472..495
+     sequenced_ORF_2 472..495
 ORIGIN
         1 ggactccaac accatgtcaa gctttcagga catacttatg aggatgtcaa aaatgcagtt
        61 ggggtcctca tcggaggact tgaatggaat ggtaacacgg ttcgagtctc tgaaaatata
@@ -350,7 +350,7 @@ FEATURES             Location/Qualifiers
      Read1            830..849
      termini5         850..876
      termini3         771..772
-     sequenced_mRNA_2 877..1645
+     sequenced_ORF_2 877..1645
      variant_tag_1    981
 ORIGIN
         1 gagaaagtcg aaacccagga aacgctgaga ttgaagacct cattttcctg gcacggtcag
@@ -399,7 +399,7 @@ FEATURES             Location/Qualifiers
      Read1            1567..1586
      termini5         1587..1613
      termini3         1508..1509
-     sequenced_mRNA_2 1614..1640
+     sequenced_ORF_2 1614..1640
 ORIGIN
         1 catcgaagcc atggcgtccc aaggcaccaa acgatcatat gaacaaatgg agactggtgg
        61 ggagcgccag gatgccacag aaatcagagc atctgtygga agaatgattg gtggaatcgg
@@ -446,7 +446,7 @@ FEATURES             Location/Qualifiers
      termini5         463..487
      termini3         203..384
      cellbarcode      426..441
-     sequenced_mRNA_2 488..972
+     sequenced_ORF_2 488..972
      variant_tag_1    541
 ORIGIN
         1 gggagcaata gttggagaaa tttcaccatt accttctctt ccaggacata cttatgagga
@@ -484,7 +484,7 @@ FEATURES             Location/Qualifiers
      Read1            898..918
      termini5         919..943
      termini3         659..840
-     sequenced_mRNA_2 944..967
+     sequenced_ORF_2 944..967
 ORIGIN
         1 ggactccaac accatgtcaa gctttcaggt agactgtttc ctttggcata tycgcaagcg
        61 atttgcagac aatggattgg gtgatgcccc attccttgat cggctccgcc gagatcaaaa
@@ -520,7 +520,7 @@ FEATURES             Location/Qualifiers
      Read1            1215..1234
      termini5         1235..1258
      termini3         1121..1156
-     sequenced_mRNA_2 1259..2321
+     sequenced_ORF_2 1259..2321
      variant_tag_1    1357
 ORIGIN
         1 gctacaggac attgaaaatg aagagaagat cccaaggaca aagaacatga agagaacaag
@@ -580,7 +580,7 @@ FEATURES             Location/Qualifiers
      termini5         2259..2282
      termini3         2145..2180
      cellbarcode      2223..2238
-     sequenced_mRNA_2 2283..2314
+     sequenced_ORF_2 2283..2314
 ORIGIN
         1 actttgtgcg acaatgcttc aatccaatga tcgtcgagct tgcggaaaag gcaatgaaag
        61 aatatgggga agatccgaaa atcgaaacta ayaagtttgc tgcaatatgc acacatttgg
@@ -638,7 +638,7 @@ FEATURES             Location/Qualifiers
      Read1            1247..1268
      termini5         1269..1292
      termini3         1168..1189
-     sequenced_mRNA_2 1293..2424
+     sequenced_ORF_2 1293..2424
      variant_tag_1    1460
 ORIGIN
         1 gcagaaatgc tagcaagcat tgacctgaag tacttcaatg aatcaacaaa gaagaaaatt
@@ -700,7 +700,7 @@ FEATURES             Location/Qualifiers
      Read1            2352..2371
      termini5         2372..2395
      termini3         2273..2294
-     sequenced_mRNA_2 2396..2423
+     sequenced_ORF_2 2396..2423
 ORIGIN
         1 ggatgtcaat ccgactctac ttttcctaaa aattccagcg caaaatgcca taagcaccac
        61 attcccttat actggagatc ctccatacag ccatggaaca ggaacaggat acaccatgga
@@ -760,7 +760,7 @@ FEATURES             Location/Qualifiers
      Read1            1241..1260
      termini5    		  1261..1287
      termini3         1170..1182
-     sequenced_mRNA_2 1288..2424
+     sequenced_ORF_2 1288..2424
      variant_tag_1    1461
 ORIGIN
         1 cagctattct cagaaaggca accaggagat tgatccagtt gatagtaagc gggagagatg
@@ -822,7 +822,7 @@ FEATURES             Location/Qualifiers
      Read1              2347..2366
      termini5           2367..2393
      termini3           2276..2288
-     sequenced_mRNA_2   2394..2430
+     sequenced_ORF_2   2394..2430
 ORIGIN
         1 gagaataaaa gaactgagag atctaatgtc gcagtcccgc actcgcgaga tactcactaa
        61 gaccactgtg gaccatatgg ccataatcaa aaagtacaca tcaggaaggc aagagaagaa

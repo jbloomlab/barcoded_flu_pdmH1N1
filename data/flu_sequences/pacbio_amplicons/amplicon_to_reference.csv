@@ -1,4 +1,4 @@
-gene,amplicon,wt_nt,wt_position,sequenced_mRNA_1,sequenced_mRNA_2,termini5,termini3
+gene,amplicon,wt_nt,mrna_position,sequenced_ORF_1,sequenced_ORF_2,termini5,termini3
 fluPB2,termini,A,1,,,1,
 fluPB2,termini,G,2,,,2,
 fluPB2,termini,C,3,,,3,
