@@ -63,7 +63,7 @@ KEYWORDS    .
 SOURCE      HAtermini
   ORGANISM
 FEATURES             Location/Qualifiers
-     sequenced_mRNA_1 1..1694
+     sequenced_ORF_1  1..1694
      variant_tag_1    137
      variant_tag_2    1574
      viral_barcode    1716..1731
@@ -120,7 +120,7 @@ KEYWORDS    .
 SOURCE      M1mid
   ORGANISM
 FEATURES             Location/Qualifiers
-     sequenced_mRNA_1 1..407
+     sequenced_ORF_1 1..407
      variant_tag_2    573
      polyA            629..657
      UMI              658..669
@@ -159,7 +159,7 @@ KEYWORDS    .
 SOURCE      M1termini
   ORGANISM
 FEATURES             Location/Qualifiers
-     sequenced_mRNA_1 1..750
+     sequenced_ORF_1  1..750
      variant_tag_1    66
      variant_tag_2    916
      polyA            972..1000
@@ -198,7 +198,7 @@ KEYWORDS    .
 SOURCE      NAmid
   ORGANISM
 FEATURES             Location/Qualifiers
-     sequenced_mRNA_1 1..935
+     sequenced_ORF_1  1..935
      variant_tag_2    224
      variant_tag_3    233
      variant_tag_4    234
@@ -256,7 +256,7 @@ KEYWORDS    .
 SOURCE      NAtermini
   ORGANISM
 FEATURES             Location/Qualifiers
-     sequenced_mRNA_1 1..1465
+     sequenced_ORF_1  1..1465
      variant_tag_1    178
      variant_tag_2    754
      variant_tag_3    763
@@ -314,7 +314,7 @@ KEYWORDS    .
 SOURCE      NEPtermini
   ORGANISM
 FEATURES             Location/Qualifiers
-     sequenced_mRNA_1 1..364
+     sequenced_ORF_1  1..364
      variant_tag_2    304
      polyA            369..397
      UMI              398..409
@@ -342,7 +342,7 @@ KEYWORDS    .
 SOURCE      NPmid
   ORGANISM
 FEATURES             Location/Qualifiers
-     sequenced_mRNA_1 1..770
+     sequenced_ORF_1  1..770
      variant_tag_2    635
      polyA            773..801
      UMI              802..813
@@ -390,7 +390,7 @@ KEYWORDS    .
 SOURCE      NPtermini
   ORGANISM
 FEATURES             Location/Qualifiers
-     sequenced_mRNA_1 1..1507
+     sequenced_ORF_1  1..1507
      variant_tag_1    97
      variant_tag_2    1372
      polyA            1510..1538
@@ -438,7 +438,7 @@ KEYWORDS    .
 SOURCE      NS1mid
   ORGANISM
 FEATURES             Location/Qualifiers
-     sequenced_mRNA_1 1..202
+     sequenced_ORF_1  1..202
      variant_tag_2    320
      polyA            385..413
      UMI              414..425
@@ -475,7 +475,7 @@ KEYWORDS    .
 SOURCE      NS1termini
   ORGANISM
 FEATURES             Location/Qualifiers
-     sequenced_mRNA_1 1..658
+     sequenced_ORF_1  1..658
      variant_tag_1    52
      variant_tag_2    776
      polyA            841..869
@@ -512,7 +512,7 @@ KEYWORDS    .
 SOURCE      PAmid
   ORGANISM
 FEATURES             Location/Qualifiers
-     sequenced_mRNA_1 1..1120
+     sequenced_ORF_1 1..1120
      variant_tag_2    1049
      polyA            1157..1186
      UMI              1187..1198
@@ -571,7 +571,7 @@ KEYWORDS    .
 SOURCE      PAtermini
   ORGANISM
 FEATURES             Location/Qualifiers
-     sequenced_mRNA_1 1..2144
+     sequenced_ORF_1 1..2144
      variant_tag_1    92
      variant_tag_2    2073
      polyA            2181..2210
@@ -630,7 +630,7 @@ KEYWORDS    .
 SOURCE      PB1mid
   ORGANISM
 FEATURES             Location/Qualifiers
-     sequenced_mRNA_1 1..1167
+     sequenced_ORF_1  1..1167
      variant_tag_2    1074
      polyA            1190..1218
      UMI              1219..1230
@@ -691,7 +691,7 @@ KEYWORDS    .
 SOURCE      PB1termini
   ORGANISM
 FEATURES             Location/Qualifiers
-     sequenced_mRNA_1 1..2272
+     sequenced_ORF_1  1..2272
      variant_tag_1    166
      variant_tag_2    2179
      polyA            2295..2323
@@ -752,7 +752,7 @@ KEYWORDS    .
 SOURCE      PB2mid
   ORGANISM
 FEATURES             Location/Qualifiers
-     sequenced_mRNA_1	1..1169
+     sequenced_ORF_1 	1..1169
      variant_tag_2    1052
      polyA            1183..1212
      UMI             	1213..1224
@@ -813,7 +813,7 @@ KEYWORDS    .
 SOURCE      PB2termini
   ORGANISM
 FEATURES             Location/Qualifiers
-     sequenced_mRNA_1   1..2275
+     sequenced_ORF_1    1..2275
      variant_tag_1      169
      variant_tag_2      2158
      polyA              2289..2318

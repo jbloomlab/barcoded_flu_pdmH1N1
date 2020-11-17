@@ -9,11 +9,11 @@ rule align_pacbio:
                                    f"{expt_pacbio_run}_ccs_fixterm.fastq.gz")
                               for expt_pacbio_run in
                               expts.expt_pacbio_runs(wc.expt)],
-
         ccs_report=lambda wc: [join(config['pacbio_dir'],
                                     f"{expt_pacbio_run}_report.txt")
                                for expt_pacbio_run in
                                expts.expt_pacbio_runs(wc.expt)],
+        amplicon_to_reference_df=config['amplicon_to_reference'], 
         notebook='notebooks/align_pacbio.py.ipynb'
     params:
         runs=lambda wc: expts.expt_pacbio_runs(wc.expt),
