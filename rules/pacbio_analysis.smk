@@ -28,6 +28,8 @@ rule align_pacbio:
                               "{expt}_pacbio_passing_alignments.svg"),
                               caption='../report/align_pacbio.rst',
                               category="{expt}"),
+        mutation_df=join(config['pacbio_dir'],
+                         "{expt}_aligned_with_ref_annotation.csv"),
     threads: config['max_cpus'],
     conda: '../environment.yml'
     log:

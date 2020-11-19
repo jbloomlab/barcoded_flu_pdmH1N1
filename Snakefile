@@ -73,6 +73,9 @@ rule all:
                expt=expts.expts_with_pacbio),
         expand(join(config['pacbio_dir'], "{expt}_amplicons.svg"),
                expt=expts.expts_with_pacbio),
+        expand(join(config['pacbio_dir'],
+                             "{expt}_aligned_with_ref_annotation.csv"),
+               expt=expts.expts_with_pacbio),
 
 
 # Set up report  -------------------------------------------------------------
