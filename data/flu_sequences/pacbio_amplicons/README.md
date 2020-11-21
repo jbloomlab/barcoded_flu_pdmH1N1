@@ -16,3 +16,7 @@ To generate the GenBank amplicon sequences [flu-CA09.fasta](../flu-CA09.fasta) r
 - `wt_nt`: nucleotide in CA09 at a given sited numbered in `ORF_position`
 - `ORF_position`: nucleotide position in CA09
 - `sequenced_ORF_1`, `sequenced_ORF_2`, `termini5`, `termini3`: nucleotide position in named features
+
+In the [fluCA09_features.yaml](fluCA09_features.yaml) NEP is defined to have only one variant tag because after splicing NEP mRNA looses variant tag, all other segments have 2 tags.
+
+M segment primers probably don't capture M2 very well because part of the primers used to linearize M segment reads overlap the 5' splice site in the M2 and so don't align fully. M2 is, therefore, not included in [fluCA09.gb](fluCA09.gb). 
