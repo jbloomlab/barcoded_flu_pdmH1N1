@@ -9,8 +9,9 @@ rule correct_progeny_barcodes:
         notebook='notebooks/correct_progeny_barcodes.py.ipynb'
     output:
         viral_bc_in_progeny_corrected_csv=join(config['viral_progeny_dir'],
-                                          "{expt}_"
-                                          "viral_bc_in_progeny_corrected.csv.gz"),
+                                               "{expt}_"
+                                               "viral_bc_in_progeny_"
+                                               "corrected.csv.gz"),
         plot=report(join(config['viral_progeny_dir'],
                          "{expt}_",
                          "viral_bc_in_progeny_corrected.pdf"),
@@ -22,7 +23,7 @@ rule correct_progeny_barcodes:
     conda: '../environment.yml'
     notebook:
         '../notebooks/correct_progeny_barcodes.py.ipynb'
-    
+
 
 rule process_viral_barcode_replicates:
     """Plot correlation and average viral barcode replicates."""
