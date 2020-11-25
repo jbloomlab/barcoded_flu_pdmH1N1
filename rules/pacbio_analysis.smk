@@ -29,7 +29,7 @@ rule align_pacbio:
                               caption='../report/align_pacbio.rst',
                               category="{expt}"),
         mutation_df=join(config['pacbio_dir'],
-                         "{expt}_mutations_by_ccs.csv"),
+                         "{expt}_mutations_by_ccs.csv.gz"),
     threads: config['max_cpus'],
     conda: '../environment.yml'
     log:
