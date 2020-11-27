@@ -9,11 +9,11 @@ rule align_pacbio:
                                    f"{expt_pacbio_run}_ccs_fixterm.fastq.gz")
                               for expt_pacbio_run in
                               expts.expt_pacbio_runs(wc.expt)],
-
         ccs_report=lambda wc: [join(config['pacbio_dir'],
                                     f"{expt_pacbio_run}_report.txt")
                                for expt_pacbio_run in
                                expts.expt_pacbio_runs(wc.expt)],
+        amplicon_to_reference_df=config['amplicon_to_reference'],
         notebook='notebooks/align_pacbio.py.ipynb'
     params:
         runs=lambda wc: expts.expt_pacbio_runs(wc.expt),
@@ -28,6 +28,8 @@ rule align_pacbio:
                               "{expt}_pacbio_passing_alignments.svg"),
                               caption='../report/align_pacbio.rst',
                               category="{expt}"),
+        mutation_df=join(config['pacbio_dir'],
+                         "{expt}_mutations_by_ccs.csv.gz"),
     threads: config['max_cpus'],
     conda: '../environment.yml'
     log:
