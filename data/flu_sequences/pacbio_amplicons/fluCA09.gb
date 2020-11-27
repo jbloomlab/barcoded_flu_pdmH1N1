@@ -1,21 +1,20 @@
 LOCUS       HAmid                2123 bp ds-DNA     linear   SYN 05-NOV-2020
 DEFINITION  HAmid
-ACCESSION   HAmid
+ACCESSION   HAmid 
 VERSION     .
 KEYWORDS    .
-SOURCE      HAmid
+SOURCE      HAmid 
   ORGANISM  PCR product
 FEATURES             Location/Qualifiers
-     sequenced_ORF_1 1..870
+     sequenced_mRNA_1 1..870
      variant_tag_2    750
      viral_barcode    892..907
      polyA            1079..1107
      UMI              1108..1119
      cellbarcode      1120..1135
      Read1            1136..1155
-     termini5         1156..1260
-     termini3         871..1078
-     sequenced_ORF_2  1261..2123
+     termini5         1156..1180
+     sequenced_mRNA_2 1261..2123
      variant_tag_1    1404
 ORIGIN
         1 gctggatctg gtattatcat ttcagataca ccagtccacg attgcaatac aacttgtcaa
@@ -61,9 +60,9 @@ ACCESSION   .
 VERSION     .
 KEYWORDS    .
 SOURCE      HAtermini
-  ORGANISM
+  ORGANISM  
 FEATURES             Location/Qualifiers
-     sequenced_ORF_1  1..1694
+     sequenced_mRNA_1 1..1694
      variant_tag_1    137
      variant_tag_2    1574
      viral_barcode    1716..1731
@@ -72,8 +71,7 @@ FEATURES             Location/Qualifiers
      cellbarcode      1944..1959
      Read1            1960..1979
      termini5         1980..2004
-     termini3         1695..1902
-     sequenced_ORF_2 2085..2122
+     sequenced_mRNA_2 2085..2122
 ORIGIN
         1 cgattttggt tgtattattg tacacgttcg cgacggcgaa cgctgatact ctttgcattg
        61 gttatcatgc gaacaattca acagacactg tagacacagt actagaaaag aatgtaacag
@@ -118,17 +116,16 @@ ACCESSION   M1mid
 VERSION     .
 KEYWORDS    .
 SOURCE      M1mid
-  ORGANISM
+  ORGANISM  
 FEATURES             Location/Qualifiers
-     sequenced_ORF_1  1..407
+     sequenced_mRNA_1 1..407
      variant_tag_2    573
      polyA            629..657
      UMI              658..669
      cellbarcode      670..685
      Read1            686..706
      termini5         707..730
-     termini3         408..628
-     sequenced_ORF_2  731..1105
+     sequenced_mRNA_2 731..1105
      variant_tag_1    805
 ORIGIN
         1 gctattcaac tggtgcactt gccagttgca tgggcctcat atacaacagg atgggaacag
@@ -157,9 +154,9 @@ ACCESSION   M1termini
 VERSION     .
 KEYWORDS    .
 SOURCE      M1termini
-  ORGANISM
+  ORGANISM  
 FEATURES             Location/Qualifiers
-     sequenced_ORF_1  1..750
+     sequenced_mRNA_1 1..750
      variant_tag_1    66
      variant_tag_2    916
      polyA            972..1000
@@ -167,8 +164,7 @@ FEATURES             Location/Qualifiers
      cellbarcode      1013..1028
      Read1            1029..1050
      termini5         1051..1074
-     termini3         751..971
-     sequenced_ORF_2  1075..1105
+     sequenced_mRNA_2 1075..1105
 ORIGIN
         1 ctaaccgagg tcgaaacgta cgttctttct atcatcccgt caggccccct caaagccgag
        61 atcgcrcaga gactggaaag tgtctttgca ggaaagaaca cagatcttga ggctctcatg
@@ -196,9 +192,9 @@ ACCESSION   NAmid
 VERSION     .
 KEYWORDS    .
 SOURCE      NAmid
-  ORGANISM
+  ORGANISM  
 FEATURES             Location/Qualifiers
-     sequenced_ORF_1  1..935
+     sequenced_mRNA_1 1..935
      variant_tag_2    224
      variant_tag_3    233
      variant_tag_4    234
@@ -211,9 +207,8 @@ FEATURES             Location/Qualifiers
      UMI              1150..1161
      cellbarcode      1162..1177
      Read1            1178..1199
-     termini5         1200..1259
-     termini3         936..1120
-     sequenced_ORF_2  1260..1816
+     termini5         1200..1220
+     sequenced_mRNA_2 1260..1816
      variant_tag_1    1439
 ORIGIN
         1 tgagctgtcc tattggtgaa gttccctctc catacaactc aagatttgag tcagtcgctt
@@ -254,9 +249,9 @@ ACCESSION   NAtermini
 VERSION     .
 KEYWORDS    .
 SOURCE      NAtermini
-  ORGANISM
+  ORGANISM  
 FEATURES             Location/Qualifiers
-     sequenced_ORF_1  1..1465
+     sequenced_mRNA_1 1..1465
      variant_tag_1    178
      variant_tag_2    754
      variant_tag_3    763
@@ -270,9 +265,8 @@ FEATURES             Location/Qualifiers
      UMI              1680..1691
      cellbarcode      1692..1707
      Read1            1708..1729
-     termini5         1730..1730
-     termini3         1466..1650
-     sequenced_ORF_2  1790..1827
+     termini5         1730..1750
+     sequenced_mRNA_2 1790..1827
 ORIGIN
         1 ggtagtcgga ataattagcc taatattgca aataggaaat ataatctcag gatccatgaa
        61 ccctaatcag aaaattatta cgataggatc ggtgtgcatg actataggta tggcaaatct
@@ -312,17 +306,16 @@ ACCESSION   NEPtermini
 VERSION     .
 KEYWORDS    .
 SOURCE      NEPtermini
-  ORGANISM
+  ORGANISM  
 FEATURES             Location/Qualifiers
-     sequenced_ORF_1  1..364
+     sequenced_mRNA_1 1..364
      variant_tag_2    304
      polyA            369..397
      UMI              398..409
      cellbarcode      410..425
      Read1            426..446
      termini5         447..471
-     termini3         365..368
-     sequenced_ORF_2  472..495
+     sequenced_mRNA_2 472..495
 ORIGIN
         1 ggactccaac accatgtcaa gctttcagga catacttatg aggatgtcaa aaatgcagtt
        61 ggggtcctca tcggaggact tgaatggaat ggtaacacgg ttcgagtctc tgaaaatata
@@ -340,17 +333,16 @@ ACCESSION   NPmid
 VERSION     .
 KEYWORDS    .
 SOURCE      NPmid
-  ORGANISM
+  ORGANISM  
 FEATURES             Location/Qualifiers
-     sequenced_ORF_1  1..770
+     sequenced_mRNA_1 1..770
      variant_tag_2    635
      polyA            773..801
      UMI              802..813
      cellbarcode      814..829
      Read1            830..849
      termini5         850..876
-     termini3         771..772
-     sequenced_ORF_2  877..1645
+     sequenced_mRNA_2 877..1645
      variant_tag_1    981
 ORIGIN
         1 gagaaagtcg aaacccagga aacgctgaga ttgaagacct cattttcctg gcacggtcag
@@ -388,9 +380,9 @@ ACCESSION   NPtermini
 VERSION     .
 KEYWORDS    .
 SOURCE      NPtermini
-  ORGANISM
+  ORGANISM  
 FEATURES             Location/Qualifiers
-     sequenced_ORF_1  1..1507
+     sequenced_mRNA_1 1..1507
      variant_tag_1    97
      variant_tag_2    1372
      polyA            1510..1538
@@ -398,8 +390,7 @@ FEATURES             Location/Qualifiers
      cellbarcode      1551..1566
      Read1            1567..1586
      termini5         1587..1613
-     termini3         1508..1509
-     sequenced_ORF_2  1614..1640
+     sequenced_mRNA_2 1614..1640
 ORIGIN
         1 catcgaagcc atggcgtccc aaggcaccaa acgatcatat gaacaaatgg agactggtgg
        61 ggagcgccag gatgccacag aaatcagagc atctgtygga agaatgattg gtggaatcgg
@@ -436,17 +427,16 @@ ACCESSION   NS1mid
 VERSION     .
 KEYWORDS    .
 SOURCE      NS1mid
-  ORGANISM
+  ORGANISM  
 FEATURES             Location/Qualifiers
-     sequenced_ORF_1  1..202
+     sequenced_mRNA_1 1..202
      variant_tag_2    320
      polyA            385..413
      UMI              414..425
      Read1            442..462
      termini5         463..487
-     termini3         203..384
      cellbarcode      426..441
-     sequenced_ORF_2  488..972
+     sequenced_mRNA_2 488..972
      variant_tag_1    541
 ORIGIN
         1 gggagcaata gttggagaaa tttcaccatt accttctctt ccaggacata cttatgagga
@@ -473,9 +463,9 @@ ACCESSION   NS1termini
 VERSION     .
 KEYWORDS    .
 SOURCE      NS1termini
-  ORGANISM
+  ORGANISM  
 FEATURES             Location/Qualifiers
-     sequenced_ORF_1  1..658
+     sequenced_mRNA_1 1..658
      variant_tag_1    52
      variant_tag_2    776
      polyA            841..869
@@ -483,8 +473,7 @@ FEATURES             Location/Qualifiers
      cellbarcode      882..897
      Read1            898..918
      termini5         919..943
-     termini3         659..840
-     sequenced_ORF_2  944..967
+     sequenced_mRNA_2 944..967
 ORIGIN
         1 ggactccaac accatgtcaa gctttcaggt agactgtttc ctttggcata tycgcaagcg
        61 atttgcagac aatggattgg gtgatgcccc attccttgat cggctccgcc gagatcaaaa
@@ -510,17 +499,16 @@ ACCESSION   PAmid
 VERSION     .
 KEYWORDS    .
 SOURCE      PAmid
-  ORGANISM
+  ORGANISM  
 FEATURES             Location/Qualifiers
-     sequenced_ORF_1  1..1120
+     sequenced_mRNA_1 1..1120
      variant_tag_2    1049
      polyA            1157..1186
      UMI              1187..1198
      cellbarcode      1199..1214
      Read1            1215..1234
      termini5         1235..1258
-     termini3         1121..1156
-     sequenced_ORF_2  1259..2321
+     sequenced_mRNA_2 1259..2321
      variant_tag_1    1357
 ORIGIN
         1 gctacaggac attgaaaatg aagagaagat cccaaggaca aagaacatga agagaacaag
@@ -569,18 +557,17 @@ ACCESSION   PAtermini
 VERSION     .
 KEYWORDS    .
 SOURCE      PAtermini
-  ORGANISM
+  ORGANISM  
 FEATURES             Location/Qualifiers
-     sequenced_ORF_1  1..2144
+     sequenced_mRNA_1 1..2144
      variant_tag_1    92
      variant_tag_2    2073
      polyA            2181..2210
      UMI              2211..2222
      Read1            2239..2258
      termini5         2259..2282
-     termini3         2145..2180
      cellbarcode      2223..2238
-     sequenced_ORF_2  2283..2314
+     sequenced_mRNA_2 2283..2314
 ORIGIN
         1 actttgtgcg acaatgcttc aatccaatga tcgtcgagct tgcggaaaag gcaatgaaag
        61 aatatgggga agatccgaaa atcgaaacta ayaagtttgc tgcaatatgc acacatttgg
@@ -628,17 +615,16 @@ ACCESSION   PB1mid
 VERSION     .
 KEYWORDS    .
 SOURCE      PB1mid
-  ORGANISM
+  ORGANISM  
 FEATURES             Location/Qualifiers
-     sequenced_ORF_1  1..1167
+     sequenced_mRNA_1 1..1167
      variant_tag_2    1074
      polyA            1190..1218
      UMI              1219..1230
      cellbarcode      1231..1246
      Read1            1247..1268
      termini5         1269..1292
-     termini3         1168..1189
-     sequenced_ORF_2  1293..2424
+     sequenced_mRNA_2 1293..2424
      variant_tag_1    1460
 ORIGIN
         1 gcagaaatgc tagcaagcat tgacctgaag tacttcaatg aatcaacaaa gaagaaaatt
@@ -683,15 +669,15 @@ ORIGIN
      2341 gactagggaa agggtacatg ttcgagagta aaagaatgaa gattcgaaca caaataccag
      2401 cagaaatgct agcaagcatt gacc
 //
-LOCUS       PB1termini                2423 bp ds-DNA     linear   SYN
+LOCUS       PB1termini                2423 bp ds-DNA     linear   SYN 
 DEFINITION  PB1termini
 ACCESSION   PB1termini
 VERSION     .
 KEYWORDS    .
 SOURCE      PB1termini
-  ORGANISM
+  ORGANISM  
 FEATURES             Location/Qualifiers
-     sequenced_ORF_1  1..2272
+     sequenced_mRNA_1 1..2272
      variant_tag_1    166
      variant_tag_2    2179
      polyA            2295..2323
@@ -699,8 +685,7 @@ FEATURES             Location/Qualifiers
      cellbarcode      2336..2351
      Read1            2352..2371
      termini5         2372..2395
-     termini3         2273..2294
-     sequenced_ORF_2  2396..2423
+     sequenced_mRNA_2 2396..2423
 ORIGIN
         1 ggatgtcaat ccgactctac ttttcctaaa aattccagcg caaaatgcca taagcaccac
        61 attcccttat actggagatc ctccatacag ccatggaaca ggaacaggat acaccatgga
@@ -750,17 +735,16 @@ ACCESSION   PB2mid
 VERSION     .
 KEYWORDS    .
 SOURCE      PB2mid
-  ORGANISM
+  ORGANISM  
 FEATURES             Location/Qualifiers
-     sequenced_ORF_1 	1..1169
+     sequenced_mRNA_1	1..1169
      variant_tag_2    1052
      polyA            1183..1212
      UMI             	1213..1224
      cellbarcode      1225..1240
      Read1            1241..1260
      termini5    		  1261..1287
-     termini3         1170..1182
-     sequenced_ORF_2  1288..2424
+     sequenced_mRNA_2 1288..2424
      variant_tag_1    1461
 ORIGIN
         1 cagctattct cagaaaggca accaggagat tgatccagtt gatagtaagc gggagagatg
@@ -805,15 +789,15 @@ ORIGIN
      2341 ctgaaaataa gagtacatga agggtatgaa gaattcacaa tggttgggag aagagcaaca
      2401 gctattctca gaaaggcaac cagg
 //
-LOCUS       PB2termini                2430 bp ds-DNA     linear   SYN
+LOCUS       PB2termini                2430 bp ds-DNA     linear   SYN 
 DEFINITION  PB2termini
 ACCESSION   PB2termini
 VERSION     .
 KEYWORDS    .
 SOURCE      PB2termini
-  ORGANISM
+  ORGANISM  
 FEATURES             Location/Qualifiers
-     sequenced_ORF_1    1..2275
+     sequenced_mRNA_1   1..2275
      variant_tag_1      169
      variant_tag_2      2158
      polyA              2289..2318
@@ -821,8 +805,7 @@ FEATURES             Location/Qualifiers
      cellbarcode        2331..2346
      Read1              2347..2366
      termini5           2367..2393
-     termini3           2276..2288
-     sequenced_ORF_2    2394..2430
+     sequenced_mRNA_2   2394..2430
 ORIGIN
         1 gagaataaaa gaactgagag atctaatgtc gcagtcccgc actcgcgaga tactcactaa
        61 gaccactgtg gaccatatgg ccataatcaa aaagtacaca tcaggaaggc aagagaagaa
