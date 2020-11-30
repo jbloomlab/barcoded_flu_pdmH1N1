@@ -29,6 +29,7 @@ viral_tag_identities: data/flu_sequences/flu-CA09_viral_tags.yaml
 viral_amplicons: data/flu_sequences/pacbio_amplicons/fluCA09.gb
 amplicon_features: data/flu_sequences/pacbio_amplicons/fluCA09_features.yaml
 amplicon_linearization_primers: data/flu_sequences/pacbio_amplicons/linearization_primers.tsv
+amplicon_to_reference: data/flu_sequences/pacbio_amplicons/amplicon_to_reference.csv
 
 # STAR alignment parameters for transcriptomics. Reduce the penalty for
 # non-canonical splice sites, which is probably bad for mapping cellular

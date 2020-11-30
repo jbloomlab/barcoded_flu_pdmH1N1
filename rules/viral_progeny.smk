@@ -1,30 +1,5 @@
 """Rules related to viral progeny barcodes."""
 
-rule correct_progeny_barcodes:
-    """Correct viral barcodes."""
-    input:
-        viral_bc_in_progeny_freq_csv=join(config['viral_progeny_dir'],
-                                          "{expt}_"
-                                          "viral_bc_in_progeny_freq.csv.gz"),
-        notebook='notebooks/correct_progeny_barcodes.py.ipynb'
-    output:
-        viral_bc_in_progeny_corrected_csv=join(config['viral_progeny_dir'],
-                                               "{expt}_"
-                                               "viral_bc_in_progeny_"
-                                               "corrected.csv.gz"),
-        plot=report(join(config['viral_progeny_dir'],
-                         "{expt}_",
-                         "viral_bc_in_progeny_corrected.pdf"),
-                    caption='../report/viral_bc_in_progeny_corrected.rst',
-                    category="{expt}")
-    log:
-        notebook=join(config['log_dir'],
-                      "correct_progeny_barcodes_{expt}.ipynb")
-    conda: '../environment.yml'
-    notebook:
-        '../notebooks/correct_progeny_barcodes.py.ipynb'
-
-
 rule process_viral_barcode_replicates:
     """Plot correlation and average viral barcode replicates."""
     input:
