@@ -14,6 +14,8 @@ aligned_fastq10x_dir: results/aligned_fastq10x  # aligned 10x transcriptomic rea
 viral_fastq10x_dir: results/viral_fastq10x  # viral tags / barcodes in 10x transcriptomics
 viral_tags_bcs_in_cells_dir: results/viral_tags_bcs_in_cells  # calling viral tags / barcodes by cell
 viral_progeny_dir: results/viral_progeny  # viral barcodes from progeny
+align_and_parse_dir: results/pacbio/CA09_align_and_parse #pacbio alignment and parsing output
+
 
 # cellular genome and GTF ftp sites
 cell_genome_ftp: ftp://ftp.ensembl.org/pub/release-98/fasta/canis_familiaris/dna/Canis_familiaris.CanFam3.1.dna.toplevel.fa.gz
@@ -26,6 +28,8 @@ viral_genbank: data/flu_sequences/flu-CA09.gb
 viral_tag_identities: data/flu_sequences/flu-CA09_viral_tags.yaml
 viral_amplicons: data/flu_sequences/pacbio_amplicons/fluCA09.gb
 amplicon_features: data/flu_sequences/pacbio_amplicons/fluCA09_features.yaml
+amplicon_linearization_primers: data/flu_sequences/pacbio_amplicons/linearization_primers.tsv
+amplicon_to_reference: data/flu_sequences/pacbio_amplicons/amplicon_to_reference.csv
 
 # STAR alignment parameters for transcriptomics. Reduce the penalty for
 # non-canonical splice sites, which is probably bad for mapping cellular

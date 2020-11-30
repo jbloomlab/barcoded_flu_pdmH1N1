@@ -15,7 +15,7 @@ rule assign_viral_tags_to_cells:
         notebook='notebooks/assign_viral_tags_to_cells.py.ipynb'
     output:
         cell_annotations=join(config['viral_tags_bcs_in_cells_dir'],
-                              "{expt}_cell_barcodes_with_viral_tags.csv"),
+                              "{expt}_cell_barcodes_with_viral_tags.csv.gz"),
         plot=report(join(config['viral_tags_bcs_in_cells_dir'],
                          "{expt}_assign_viral_tags_to_cells.svg"),
                     caption='../report/assign_viral_tags_to_cells.rst',

@@ -24,3 +24,7 @@ build_ccs:
 ccs_summaries:
   cpus: 16
   time: 0-4
+
+align_pacbio:
+  cpus: 16
+  time: 0-4
