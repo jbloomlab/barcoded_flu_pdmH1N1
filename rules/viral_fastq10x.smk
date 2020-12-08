@@ -30,7 +30,7 @@ rule correct_viral_barcodes_in_transcripts:
     output:
         viral_bc_by_cell_corrected_csv=join(config['viral_fastq10x_dir'],
                                             "{expt}_viral_bc_by_cell",
-                                            "_corrected.csv.gz")
+                                            "_corrected.csv.gz"),
         plot=report(join(config['viral_fastq10x_dir'],
                          "{expt}_viral_bc_by_cell_corrected.pdf"),
                     caption='../report/viral_barcodes_by_cell_corrected.rst',
