@@ -56,6 +56,7 @@ rule all:
                expt=expts.experiments),
         expand(join(config['viral_fastq10x_dir'],
                     "{expt}_viral_bc_by_cell_corrected.pdf"),
+               expt=expts.experiments),
         expand(join(config['viral_fastq10x_dir'],
                     "{expt}_viral_bc_by_cell.svg"),
                expt=expts.experiments),
