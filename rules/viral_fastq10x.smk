@@ -22,7 +22,7 @@ rule viral_transcript_coverage:
         '../notebooks/viral_transcript_coverage.py.ipynb'
 
 
-rule correct_viral_barcodes_in_transcripts:
+rule correct_viral_barcodes_by_cell:
     """Correct viral barcodes within each cell."""
     input:
         viral_bc_by_cell_csv=join(config['viral_fastq10x_dir'],
