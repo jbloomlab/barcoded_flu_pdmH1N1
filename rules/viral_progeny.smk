@@ -5,6 +5,7 @@ rule process_viral_barcode_replicates:
     input:
         viral_bc_in_progeny_csv=join(config['viral_progeny_dir'],
                                      "{expt}_viral_bc_in_progeny.csv.gz"),
+        notebook='notebooks/process_viral_barcode_replicates.py.ipynb'
     output:
         viral_bc_in_progeny_freq_csv=join(config['viral_progeny_dir'],
                                           "{expt}_"
@@ -42,6 +43,7 @@ rule viral_barcodes_in_progeny:
         fastq_df=lambda wc: expts.expt_viral_barcode_fastqs(wc.expt),
         viral_barcode_upstream_length=config['viral_barcode_upstream_length'],
         viral_barcode_mismatch=config['viral_barcode_mismatch'],
+        viral_barcode_minq=config['viral_barcode_minq'],
         barcoded_viral_genes=barcoded_viral_genes
     log:
         notebook=join(config['log_dir'],
