@@ -55,6 +55,8 @@ rule all:
                     "{expt}_viral_tag_by_cell.svg"),
                expt=expts.experiments),
         expand(join(config['viral_fastq10x_dir'],
+                    "{expt}_viral_bc_by_cell_corrected.pdf"),
+        expand(join(config['viral_fastq10x_dir'],
                     "{expt}_viral_bc_by_cell.svg"),
                expt=expts.experiments),
         expand(join(config['viral_fastq10x_dir'],
