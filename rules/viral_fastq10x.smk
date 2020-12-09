@@ -29,8 +29,8 @@ rule correct_viral_barcodes_by_cell:
                                   "{expt}_viral_bc_by_cell.csv.gz")
     output:
         viral_bc_by_cell_corrected_csv=join(config['viral_fastq10x_dir'],
-                                            "{expt}_viral_bc_by_cell",
-                                            "_corrected.csv.gz"),
+                                            ("{expt}_viral_bc_by_cell_"
+                                             "corrected.csv.gz")),
         plot=report(join(config['viral_fastq10x_dir'],
                          "{expt}_viral_bc_by_cell_corrected.pdf"),
                     caption='../report/viral_barcodes_by_cell_corrected.rst',
