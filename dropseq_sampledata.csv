@@ -1,0 +1,11 @@
+sample,primer_insert,template,datatype,gene,datafile
+fluHA_DropSeqR1_plasmid,DropSeq,plasmid,viral_barcode_fastqs,fluHA,/shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/plasmid-bcHA-WT_S1_L001_R1_001.fastq.gz
+fluHA-dblSyn_DropSeqR1_plasmid,DropSeq,plasmid,viral_barcode_fastqs,fluHA,/shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/plasmid-bcHA-dblSyn_S2_L001_R1_001.fastq.gz
+fluNA_DropSeqR1_plasmid,DropSeq,plasmid,viral_barcode_fastqs,fluNA,/shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/plasmid-bcNA-WT_S3_L001_R1_001.fastq.gz
+fluNA-dblSyn_DropSeqR1_plasmid,DropSeq,plasmid,viral_barcode_fastqs,fluNA,/shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/plasmid-bcNA-dblSyn_S4_L001_R1_001.fastq.gz
+virus_DropSeqR1_rescue_fluHA,DropSeq,rescue,viral_barcode_fastqs,fluHA,/shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/rescue-bcHA-WT_S5_L001_R1_001.fastq.gz
+virus_DropSeqR1-dblSyn_rescue_fluHA,DropSeq,rescue,viral_barcode_fastqs,fluHA,/shared/ngs/illumina/bloom_lab/191223_M03100_0515_000000000-CTH55/Data/Intensities/BaseCalls/dblSyn-rescueTrial2-HA_S1_L001_R1_001.fastq.gz
+virus_DropSeqR1_rescue_fluNA,DropSeq,rescue,viral_barcode_fastqs,fluNA,/shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/rescue-bcNA-WT_S7_L001_R1_001.fastq.gz
+virus_DropSeqR1-dblSyn_rescue_fluNA,DropSeq,rescue,viral_barcode_fastqs,fluNA,/shared/ngs/illumina/bloom_lab/191223_M03100_0515_000000000-CTH55/Data/Intensities/BaseCalls/dblSyn-rescueTrial2-NA_S2_L001_R1_001.fastq.gz
+virus_DropSeqR1_expansion_fluHA,DropSeq,expansion,viral_barcode_fastqs,fluHA,/shared/ngs/illumina/bloom_lab/191223_M03100_0515_000000000-CTH55/Data/Intensities/BaseCalls/WT-expansion-HA_S3_L001_R1_001.fastq.gz
+virus_DropSeqR1_expansion_fluNA,DropSeq,expansion,viral_barcode_fastqs,fluNA,/shared/ngs/illumina/bloom_lab/191223_M03100_0515_000000000-CTH55/Data/Intensities/BaseCalls/WT-expansion-NA_S4_L001_R1_001.fastq.gz
