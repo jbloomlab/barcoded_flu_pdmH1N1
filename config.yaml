@@ -66,59 +66,44 @@ ccs_min_rq: 0.999
 #----------------------------------------------------------------------------
 experiments:
 
-  hashing_lowMOI:
-    description: Single-cell transcriptomics using the wildtype and dblySyn viral
-                 tag variants. Infection volume was chosen based on the results
-                 of `hashing_trial1` and flow cytometry. The incolum volume for
-                 the wildtype tag variant was about 12-fold higher, and for the
-                 dblSyn tag variant was about 24-fold higher.
-    lab_notes: https://benchling.com/s/etr-W8urOmOAQ7L6U4HAXMNy
-    expect_ncells: 5000
-    transcriptomics:
-      2020-06-02:
-        index: SI-GA-B3
-        bcl_folder: /home/solexa/ngs/illumina/bloom_lab/200602_M03100_0578_000000000-J3464/
-        lane: '*'
-      2020-07-01:
-        index: SI-GA-B3
-        bcl_folder: /shared/ngs/illumina/agreaney/200701_D00300_0988_BHGFGMBCX3/raw/200701_D00300_0988_BHGFGMBCX3/
-        lane: 2
-      2020-08-26:
-        index: SI-GA-B3
-        bcl_folder: /shared/ngs/illumina/bloom_lab/bloom_lab/200826_D00300_1040_BHHGLWBCX3/raw/200826_D00300_1040_BHHGLWBCX3/
-        lane: '*'
-
-  hashing_highMOI:
-    description: Single-cell transcriptomics using the wildtype and dblSyn viral
-                 tag variants at a high MOI. Infection volume was based on the results of
-                 `hashing_trial2`.
-    lab_notes: https://benchling.com/s/etr-ToK66qT0Mfmf6FsexKo4
-    expect_ncells: 5000
-    transcriptomics:
-      2020-07-24:
-        index: SI-GA-B5
-        bcl_folder: /shared/ngs/illumina/bloom_lab/200724_M03100_0593_000000000-J33YK/
-        lane: '*'
-      2020-08-26:
-        index: SI-GA-B5
-        bcl_folder: /shared/ngs/illumina/bloom_lab/bloom_lab/200826_D00300_1040_BHHGLWBCX3/raw/200826_D00300_1040_BHHGLWBCX3/
-        lane: '*'
-    pacbio_viral_sequencing:
-      2020-10-20_all_segments_run1: /fh/fast/bloom_j/SR/ngs/pacbio/201019_BernadetaDadonaite/r54228_20201020_192758/1_A01/m54228_201020_194205.subreads.bam
-
-  scProgenyProduction_trial1:
+  scProgenyProduction_trial1_bcTroubleShooting:
     description: Single-cell transcriptomics performed on low MOI-infected sample.
                  Innoculum volumes based on `hashing_trial2` data. Loaded
                  all collected cells from two 24-well wells, each infected with either
                  wildtype or dblySn viral tag variants.
     lab_notes: https://benchling.com/s/etr-20lOO7l1FdEJJIpxV6vD
     expect_ncells: 10000
-    transcriptomics:
-      2020-09-25:
-        index: SI-GA-B8
-        bcl_folder: /shared/ngs/illumina/bloom_lab/200925_D00300_1065_AHHL7NBCX3/raw/200925_D00300_1065_AHHL7NBCX3/
-        lane: 2
     viral_barcodes:
+      plasmid:
+        wt:
+          fluHA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/plasmid-bcHA-WT_S1_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2019-1216: /shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/plasmid-bcNA-WT_S3_L001_R1_001.fastq.gz
+        syn:
+          fluHA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/plasmid-bcHA-dblSyn_S2_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/plasmid-bcNA-dblSyn_S4_L001_R1_001.fastq.gz
+      rescue:
+        wt:
+          fluHA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/rescue-bcHA-WT_S5_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/rescue-bcNA-WT_S7_L001_R1_001.fastq.gz
+        syn:
+          fluHA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191223_M03100_0515_000000000-CTH55/Data/Intensities/BaseCalls/dblSyn-rescueTrial2-HA_S1_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191223_M03100_0515_000000000-CTH55/Data/Intensities/BaseCalls/dblSyn-rescueTrial2-NA_S2_L001_R1_001.fastq.gz
       supernatant:
         wt:
           fluHA:
@@ -167,19 +152,44 @@ experiments:
               2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-dblSyn-SecondInf-fluNA-B_S24_L001_R1_001.fastq.gz
       
 
-  scProgenyProduction_trial2:
+  scProgenyProduction_trial2_bcTroubleShooting:
     description: Single-cell transcriptomics performed on low MOI-infected sample.
                  Innoculum volumes based on `hashing_trial2` data. Loaded
                  all collected cells from two 24-well wells, each infected with either
                  wildtype or dblySn viral tag variants.
     lab_notes: https://benchling.com/s/etr-73UD4Mx8uXn1xcxlV1ym
     expect_ncells: 10000
-    transcriptomics:
-      2020-09-25:
-        index: SI-GA-B9
-        bcl_folder: /shared/ngs/illumina/bloom_lab/200925_D00300_1065_AHHL7NBCX3/raw/200925_D00300_1065_AHHL7NBCX3/
-        lane: '*'
     viral_barcodes:
+      plasmid:
+        wt:
+          fluHA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/plasmid-bcHA-WT_S1_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2019-1216: /shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/plasmid-bcNA-WT_S3_L001_R1_001.fastq.gz
+        syn:
+          fluHA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/plasmid-bcHA-dblSyn_S2_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/plasmid-bcNA-dblSyn_S4_L001_R1_001.fastq.gz
+      rescue:
+        wt:
+          fluHA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/rescue-bcHA-WT_S5_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/rescue-bcNA-WT_S7_L001_R1_001.fastq.gz
+        syn:
+          fluHA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191223_M03100_0515_000000000-CTH55/Data/Intensities/BaseCalls/dblSyn-rescueTrial2-HA_S1_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191223_M03100_0515_000000000-CTH55/Data/Intensities/BaseCalls/dblSyn-rescueTrial2-NA_S2_L001_R1_001.fastq.gz
       supernatant:
         wt:
           fluHA:
