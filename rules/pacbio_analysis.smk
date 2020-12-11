@@ -11,7 +11,9 @@ rule strand_exchange:
         plot_strand_exchange=report(join(config['pacbio_dir'],
                                     "{expt}_plot_strand_exchange.svg"),
                                     caption='../report/strand_exchange.rst',
-                                    category="{expt}")
+                                    category="{expt}"),
+        tag_identity_df=join(config['pacbio_dir'],
+                             "{expt}_mutations_by_ccs_exchange_marked.csv.gz")
     conda: '../environment.yml'
     log:
         notebook=join(config['log_dir'],
