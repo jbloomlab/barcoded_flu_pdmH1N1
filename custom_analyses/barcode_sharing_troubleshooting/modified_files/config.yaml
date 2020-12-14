@@ -1,0 +1,238 @@
+# YAML configuration file for the analysis
+
+# max CPUs used by any rules
+max_cpus: 16
+
+# output directories
+log_dir: results/logs  # logs for snakemake rules
+fastq10x_dir: results/fastq10x  # FASTQs & QC 10x transcriptomic runs
+pacbio_dir: results/pacbio # FASTQs for pacBio runs
+mkfastq10x_dir: results/fastq10x/mkfastq_output  # `cellranger mkfastq` output
+genome_dir: results/genomes  # location of downloaded genomes and annotations
+refgenome: results/genomes/refgenome  # STAR reference genome directory
+aligned_fastq10x_dir: results/aligned_fastq10x  # aligned 10x transcriptomic reads
+viral_fastq10x_dir: results/viral_fastq10x  # viral tags / barcodes in 10x transcriptomics
+viral_tags_bcs_in_cells_dir: results/viral_tags_bcs_in_cells  # calling viral tags / barcodes by cell
+viral_progeny_dir: results/viral_progeny  # viral barcodes from progeny
+align_and_parse_dir: results/pacbio/CA09_align_and_parse #pacbio alignment and parsing output
+
+
+# cellular genome and GTF ftp sites
+cell_genome_ftp: ftp://ftp.ensembl.org/pub/release-98/fasta/canis_familiaris/dna/Canis_familiaris.CanFam3.1.dna.toplevel.fa.gz
+cell_gtf_ftp: ftp://ftp.ensembl.org/pub/release-98/gtf/canis_familiaris/Canis_familiaris.CanFam3.1.98.gtf.gz
+
+# viral genome and transcript information
+viral_genome: data/flu_sequences/flu-CA09.fasta
+viral_gtf: data/flu_sequences/flu-CA09.gtf
+viral_genbank: data/flu_sequences/flu-CA09.gb
+viral_tag_identities: data/flu_sequences/flu-CA09_viral_tags.yaml
+viral_amplicons: data/flu_sequences/pacbio_amplicons/fluCA09.gb
+amplicon_features: data/flu_sequences/pacbio_amplicons/fluCA09_features.yaml
+amplicon_linearization_primers: data/flu_sequences/pacbio_amplicons/linearization_primers.tsv
+amplicon_to_reference: data/flu_sequences/pacbio_amplicons/amplicon_to_reference.csv
+
+# STAR alignment parameters for transcriptomics. Reduce the penalty for
+# non-canonical splice sites, which is probably bad for mapping cellular
+# reads but is good for mapping viral reads which will have deletions
+# not corresponding to splice sites.
+scoreGapNoncan: -4
+scoreGapGCAG: -4
+scoreGapATAC: -4
+
+# URL location of 10X barcode whitelist: **this is for the v3 kit**
+cb_whitelist_10x_url: https://github.com/10XGenomics/cellranger/raw/master/lib/python/cellranger/barcodes/3M-february-2018.txt.gz
+cb_whitelist_10x: results/aligned_fastq10x/cb_whitelist_10x.txt
+
+cb_len_10x: 16  # length of 10X cell barcode
+umi_len_10x: 12  # length of 10X UMI: **this is for the v3 kit**
+
+# False discovery rate for calling infected cells based on expected
+# viral tag counts in uninfected cells.
+infection_calling_by_viral_tag_fdr: 0.0001
+
+# viral barcode parsing paremeters for supernatant and second
+# infection sequencing. 
+viral_barcode_upstream_length: 28  # Specify the length of upstream seq used to check identity
+viral_barcode_mismatch: 0  # Number of mismatches allowed in upstream seq
+viral_barcode_minq: 30  # Minimum quality threshold for bases in viral barcode
+
+# Parameters for building PacBio CCSs
+ccs_min_length: 50
+ccs_max_length: 5000
+ccs_min_rq: 0.999
+
+#----------------------------------------------------------------------------
+#                    configuration of experiments
+#----------------------------------------------------------------------------
+experiments:
+
+  scProgenyProduction_trial1_bcTroubleShooting:
+    description: Single-cell transcriptomics performed on low MOI-infected sample.
+                 Innoculum volumes based on `hashing_trial2` data. Loaded
+                 all collected cells from two 24-well wells, each infected with either
+                 wildtype or dblySn viral tag variants.
+    lab_notes: https://benchling.com/s/etr-20lOO7l1FdEJJIpxV6vD
+    expect_ncells: 10000
+    viral_barcodes:
+      plasmid:
+        wt:
+          fluHA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/plasmid-bcHA-WT_S1_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2019-1216: /shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/plasmid-bcNA-WT_S3_L001_R1_001.fastq.gz
+        syn:
+          fluHA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/plasmid-bcHA-dblSyn_S2_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/plasmid-bcNA-dblSyn_S4_L001_R1_001.fastq.gz
+      rescue:
+        wt:
+          fluHA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/rescue-bcHA-WT_S5_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/rescue-bcNA-WT_S7_L001_R1_001.fastq.gz
+        syn:
+          fluHA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191223_M03100_0515_000000000-CTH55/Data/Intensities/BaseCalls/dblSyn-rescueTrial2-HA_S1_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191223_M03100_0515_000000000-CTH55/Data/Intensities/BaseCalls/dblSyn-rescueTrial2-NA_S2_L001_R1_001.fastq.gz
+      supernatant:
+        wt:
+          fluHA:
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-WT-Sup-fluHA-A_S1_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-WT-Sup-fluHA-B_S2_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-WT-Sup-fluNA-A_S17_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-WT-Sup-fluNA-B_S18_L001_R1_001.fastq.gz
+        syn:
+          fluHA:
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-dblSyn-Sup-fluHA-A_S3_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-dblSyn-Sup-fluHA-B_S4_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-dblSyn-Sup-fluNA-A_S19_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-dblSyn-Sup-fluNA-B_S20_L001_R1_001.fastq.gz
+      second_infection:
+        wt:
+          fluHA:
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-WT-SecondInf-fluHA-A_S5_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-WT-SecondInf-fluHA-B_S6_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-WT-SecondInf-fluNA-A_S21_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-WT-SecondInf-fluNA-B_S22_L001_R1_001.fastq.gz
+        syn:
+          fluHA:
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-dblSyn-SecondInf-fluHA-A_S7_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-dblSyn-SecondInf-fluHA-B_S8_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-dblSyn-SecondInf-fluNA-A_S23_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-dblSyn-SecondInf-fluNA-B_S24_L001_R1_001.fastq.gz
+      
+
+  scProgenyProduction_trial2_bcTroubleShooting:
+    description: Single-cell transcriptomics performed on low MOI-infected sample.
+                 Innoculum volumes based on `hashing_trial2` data. Loaded
+                 all collected cells from two 24-well wells, each infected with either
+                 wildtype or dblySn viral tag variants.
+    lab_notes: https://benchling.com/s/etr-73UD4Mx8uXn1xcxlV1ym
+    expect_ncells: 10000
+    viral_barcodes:
+      plasmid:
+        wt:
+          fluHA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/plasmid-bcHA-WT_S1_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2019-1216: /shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/plasmid-bcNA-WT_S3_L001_R1_001.fastq.gz
+        syn:
+          fluHA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/plasmid-bcHA-dblSyn_S2_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/plasmid-bcNA-dblSyn_S4_L001_R1_001.fastq.gz
+      rescue:
+        wt:
+          fluHA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/rescue-bcHA-WT_S5_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/rescue-bcNA-WT_S7_L001_R1_001.fastq.gz
+        syn:
+          fluHA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191223_M03100_0515_000000000-CTH55/Data/Intensities/BaseCalls/dblSyn-rescueTrial2-HA_S1_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191223_M03100_0515_000000000-CTH55/Data/Intensities/BaseCalls/dblSyn-rescueTrial2-NA_S2_L001_R1_001.fastq.gz
+      supernatant:
+        wt:
+          fluHA:
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-WT-Sup-fluHA-A_S9_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-WT-Sup-fluHA-B_S10_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-WT-Sup-fluNA-A_S25_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-WT-Sup-fluNA-B_S26_L001_R1_001.fastq.gz
+        syn:
+          fluHA:
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-dblSyn-Sup-fluHA-A_S11_L001_R1_001.fastq.gz 
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-dblSyn-Sup-fluHA-B_S12_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-dblSyn-Sup-fluNA-A_S27_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-dblSyn-Sup-fluNA-B_S28_L001_R1_001.fastq.gz
+      second_infection:
+        wt:
+          fluHA:
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-WT-SecondInf-fluHA-A_S13_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-WT-SecondInf-fluHA-B_S14_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-WT-SecondInf-fluNA-A_S29_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-WT-SecondInf-fluNA-B_S30_L001_R1_001.fastq.gz
+        syn:
+          fluHA:
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-dblSyn-SecondInf-fluHA-A_S15_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-dblSyn-SecondInf-fluHA-B_S16_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-dblSyn-SecondInf-fluNA-A_S31_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-dblSyn-SecondInf-fluNA-B_S32_L001_R1_001.fastq.gz
