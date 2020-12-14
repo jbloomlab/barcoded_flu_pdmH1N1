@@ -4,16 +4,17 @@ rule strand_exchange:
     """Quantify strand exchange."""
     input:
         viral_tags=config['viral_tag_identities'],
-        ccs_alignments=join(config['pacbio_dir'],
-                            "{expt}_mutations_by_ccs.csv.gz"),
+        mutation_df=join(config['pacbio_dir'],
+                         "{expt}_mutations_by_ccs.csv.gz"),
         notebook='notebooks/strand_exchange.py.ipynb'
     output:
         plot_strand_exchange=report(join(config['pacbio_dir'],
                                     "{expt}_plot_strand_exchange.svg"),
                                     caption='../report/strand_exchange.rst',
                                     category="{expt}"),
-        tag_identity_df=join(config['pacbio_dir'],
-                             "{expt}_mutations_by_ccs_exchange_marked.csv.gz")
+        mutation_and_tag_identity_df=join(config['pacbio_dir'],
+                                          "{expt}_\
+                                          mutations_by_ccs_str_ex.csv.gz")
     conda: '../environment.yml'
     log:
         notebook=join(config['log_dir'],
