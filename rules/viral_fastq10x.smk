@@ -33,7 +33,7 @@ rule filter_viral_barcodes_in_transcripts:
     output:
         viral_bc_by_cell_filtered_csv=join(config['viral_fastq10x_dir'],
                                            ("{expt}_viral_bc_by_cell_"
-                                            "filtered.csv.gz"))
+                                            "filtered.csv.gz")),
         plot=report(join(config['viral_fastq10x_dir'],
                          "{expt}_viral_bc_by_cell_filtered.pdf"),
                     caption='../report/viral_barcodes_by_cell_filtered.rst',
