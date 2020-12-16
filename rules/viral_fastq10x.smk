@@ -22,6 +22,30 @@ rule viral_transcript_coverage:
         '../notebooks/viral_transcript_coverage.py.ipynb'
 
 
+rule filter_viral_barcodes_in_transcripts:
+    """Filters low freq viral barcodes from 10 transcriptomics."""
+    input:
+        viral_tag_by_cell_csv=join(config['viral_fastq10x_dir'],
+                                   "{expt}_viral_tag_by_cell.csv.gz"),
+        viral_bc_by_cell_corrected_csv=join(config['viral_fastq10x_dir'],
+                                            ("{expt}_viral_bc_by_cell_"
+                                             "corrected.csv.gz")),
+    output:
+        viral_bc_by_cell_filtered_csv=join(config['viral_fastq10x_dir'],
+                                           ("{expt}_viral_bc_by_cell_"
+                                            "filtered.csv.gz"))
+        plot=report(join(config['viral_fastq10x_dir'],
+                         "{expt}_viral_bc_by_cell_filtered.pdf"),
+                    caption='../report/viral_barcodes_by_cell_filtered.rst',
+                    category="{expt}")
+    log:
+        notebook=join(config['log_dir'],
+                      "filter_viral_barcodes_by_cell_{expt}.ipynb")
+    conda: '../environment.yml'
+    notebook:
+        '../notebooks/filter_viral_barcodes_by_cell.py.ipynb'
+
+
 rule correct_viral_barcodes_by_cell:
     """Correct viral barcodes within each cell."""
     input:
