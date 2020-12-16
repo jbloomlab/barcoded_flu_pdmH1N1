@@ -13,8 +13,7 @@ rule strand_exchange:
                                     caption='../report/strand_exchange.rst',
                                     category="{expt}"),
         mutation_and_tag_identity_df=join(config['pacbio_dir'],
-                                          "{expt}_\
-                                          mutations_by_ccs_str_ex.csv.gz")
+                                          "{expt}_mutations_str_ex.csv.gz")
     conda: '../environment.yml'
     log:
         notebook=join(config['log_dir'],
