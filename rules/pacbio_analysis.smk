@@ -1,5 +1,26 @@
 """Rules related to analysis viral pacbio data."""
 
+rule strand_exchange:
+    """Quantify strand exchange."""
+    input:
+        viral_tags=config['viral_tag_identities'],
+        mutation_df=join(config['pacbio_dir'],
+                         "{expt}_mutations_by_ccs.csv.gz"),
+        notebook='notebooks/strand_exchange.py.ipynb'
+    output:
+        plot_strand_exchange=report(join(config['pacbio_dir'],
+                                    "{expt}_plot_strand_exchange.svg"),
+                                    caption='../report/strand_exchange.rst',
+                                    category="{expt}"),
+        mutation_and_tag_identity_df=join(config['pacbio_dir'],
+                                          "{expt}_mutations_str_ex.csv.gz")
+    conda: '../environment.yml'
+    log:
+        notebook=join(config['log_dir'],
+                      "strand_exchange_{expt}.ipynb")
+    notebook:
+        '../notebooks/strand_exchange.py.ipynb'
+
 rule align_pacbio:
     """Summarize and aggregate all PacBio runs for an experiment."""
     input:

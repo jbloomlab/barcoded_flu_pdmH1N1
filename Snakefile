@@ -55,6 +55,9 @@ rule all:
                     "{expt}_viral_tag_by_cell.svg"),
                expt=expts.experiments),
         expand(join(config['viral_fastq10x_dir'],
+                    "{expt}_viral_bc_by_cell_corrected.pdf"),
+               expt=expts.experiments),
+        expand(join(config['viral_fastq10x_dir'],
                     "{expt}_viral_bc_by_cell.svg"),
                expt=expts.experiments),
         expand(join(config['viral_fastq10x_dir'],
@@ -73,6 +76,9 @@ rule all:
                expt=expts.expts_with_pacbio),
         expand(join(config['pacbio_dir'], "{expt}_amplicons.svg"),
                expt=expts.expts_with_pacbio),
+        expand(join(config['pacbio_dir'],
+                    "{expt}_plot_strand_exchange.svg"),
+               expt=expts.expts_with_pacbio)
 
 
 # Set up report  -------------------------------------------------------------
