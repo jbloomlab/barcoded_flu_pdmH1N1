@@ -38,6 +38,8 @@ rule filter_viral_barcodes_in_transcripts:
                          "{expt}_viral_bc_by_cell_filtered.pdf"),
                     caption='../report/viral_barcodes_by_cell_filtered.rst',
                     category="{expt}")
+    params:
+        barcoded_viral_genes=barcoded_viral_genes
     log:
         notebook=join(config['log_dir'],
                       "filter_viral_barcodes_by_cell_{expt}.ipynb")
