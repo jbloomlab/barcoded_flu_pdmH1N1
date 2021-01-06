@@ -45,7 +45,7 @@ rule filter_viral_barcodes_in_transcripts:
                       "filter_viral_barcodes_by_cell_{expt}.ipynb")
     conda: '../environment.yml'
     notebook:
-        '../notebooks/filter_viral_barcodes_by_cell.py.ipynb'
+        '../notebooks/filter_viral_barcodes_in_transcripts.py.ipynb'
 
 
 rule correct_viral_barcodes_by_cell:
