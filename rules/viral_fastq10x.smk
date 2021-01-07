@@ -25,7 +25,7 @@ rule viral_transcript_coverage:
 rule filter_viral_barcodes_in_transcripts:
     """Filters low freq viral barcodes from 10 transcriptomics."""
     input:
-        viral_tag_by_cell_csv=join(config['viral_fastq10x_dir'],
+        viral_tag_by_cell_csv=join(config['viral_tags_bcs_in_cells_dir'],
                                    "{expt}_cell_barcodes_with_viral"
                                    "_tags.csv.gz"),
         viral_bc_by_cell_corrected_csv=join(config['viral_fastq10x_dir'],
