@@ -236,3 +236,67 @@ experiments:
               2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-dblSyn-SecondInf-fluNA-A_S31_L001_R1_001.fastq.gz
             replicate_2:
               2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-dblSyn-SecondInf-fluNA-B_S32_L001_R1_001.fastq.gz
+
+
+revised_progeny_sequencing_bcTroubleShooting:
+    description: New version of progeny sequencing library prep. Adjusted
+                 annealing/extension parameters and plate layout.
+    lab_notes: https://benchling.com/s/etr-D9bvVlLM3K5lSgeiCGhg
+    expect_ncells: 10000
+    viral_barcodes:
+      plasmid:
+        wt:
+          fluHA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/plasmid-bcHA-WT_S1_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2019-1216: /shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/plasmid-bcNA-WT_S3_L001_R1_001.fastq.gz
+        syn:
+          fluHA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/plasmid-bcHA-dblSyn_S2_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/plasmid-bcNA-dblSyn_S4_L001_R1_001.fastq.gz
+      rescue:
+        wt:
+          fluHA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/rescue-bcHA-WT_S5_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191206_M03100_0506_000000000-CNPGD/Data/Intensities/BaseCalls/rescue-bcNA-WT_S7_L001_R1_001.fastq.gz
+        syn:
+          fluHA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191223_M03100_0515_000000000-CTH55/Data/Intensities/BaseCalls/dblSyn-rescueTrial2-HA_S1_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2019-12-16: /shared/ngs/illumina/bloom_lab/191223_M03100_0515_000000000-CTH55/Data/Intensities/BaseCalls/dblSyn-rescueTrial2-NA_S2_L001_R1_001.fastq.gz
+      supernatant:
+        wt:
+          fluHA:
+            replicate_1:
+              2021-02-26: /shared/ngs/illumina/bloom_lab/210226_M03100_0664_000000000-JG4MH/Data/Intensities/BaseCalls/PP-Bottleneck-HA-WT-Sup-B1_S1_L001_R1_001.fastq.gz
+            replicate_2:
+              2021-02-26: /shared/ngs/illumina/bloom_lab/210226_M03100_0664_000000000-JG4MH/Data/Intensities/BaseCalls/PP-Bottleneck-HA-WT-Sup-B2_S2_L001_R1_001.fastq.gz
+        syn:
+          fluHA:
+            replicate_1:
+              2021-02-26: /shared/ngs/illumina/bloom_lab/210226_M03100_0664_000000000-JG4MH/Data/Intensities/BaseCalls/PP-Bottleneck-dblSyn-Sup-B1_S5_L001_R1_001.fastq.gz
+            replicate_2:
+              2021-02-26: /shared/ngs/illumina/bloom_lab/210226_M03100_0664_000000000-JG4MH/Data/Intensities/BaseCalls/PP-Bottleneck-dblSyn-Sup-B2_S6_L001_R1_001.fastq.gz
+      second_infection:
+        wt:
+          fluHA:
+            replicate_1:
+              2021-02-26: /shared/ngs/illumina/bloom_lab/210226_M03100_0664_000000000-JG4MH/Data/Intensities/BaseCalls/PP-Bottleneck-WT-SI-B1_S3_L001_R1_001.fastq.gz
+            replicate_2:
+              2021-02-26: /shared/ngs/illumina/bloom_lab/210226_M03100_0664_000000000-JG4MH/Data/Intensities/BaseCalls/PP-Bottleneck-WT-SI-B2_S4_L001_R1_001.fastq.gz
+        syn:
+          fluHA:
+            replicate_1:
+              2021-02-26: /shared/ngs/illumina/bloom_lab/210226_M03100_0664_000000000-JG4MH/Data/Intensities/BaseCalls/PP-Bottleneck-dblSyn-SI-B1_S7_L001_R1_001.fastq.gz
+            replicate_2:
+              2021-02-26: /shared/ngs/illumina/bloom_lab/210226_M03100_0664_000000000-JG4MH/Data/Intensities/BaseCalls/PP-Bottleneck-dblSyn-SI-B2_S8_L001_R1_001.fastq.gz
