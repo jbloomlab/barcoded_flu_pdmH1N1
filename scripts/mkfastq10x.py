@@ -33,6 +33,7 @@ cmds = ['cellranger', 'mkfastq',
         '--delete-undetermined',
         '--qc',
         f"--localcores={snakemake.threads}",
+        '--force-single-index',
         ]
 print(f"\nRunning the following commands:\n{' '.join(cmds)}\n")
 subprocess.check_call(cmds)
