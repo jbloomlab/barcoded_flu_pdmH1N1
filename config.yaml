@@ -241,7 +241,7 @@ experiments:
     lab_notes: https://benchling.com/s/etr-N4laiIAy3AUePJdig7wR
     expect_ncells: 10000
     transcriptomics:
-      2020-09-25:
+      2021-03-12:
         index: SI-TT-A3
         bcl_folder: /shared/ngs/illumina/bloom_lab/210312_D00300_1192_BHKHNYBCX3/raw/210312_D00300_1192_BHKHNYBCX3/
         lane: 1
