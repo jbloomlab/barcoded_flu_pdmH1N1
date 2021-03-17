@@ -243,5 +243,5 @@ experiments:
     transcriptomics:
       2020-09-25:
         index: SI-TT-A3
-        bcl_folder: /shared/ngs/illumina/dbacsik/210312_D00300_1192_BHKHNYBCX3/raw/210312_D00300_1192_BHKHNYBCX3/
+        bcl_folder: /shared/ngs/illumina/bloom_lab/210312_D00300_1192_BHKHNYBCX3/raw/210312_D00300_1192_BHKHNYBCX3/
         lane: 1
