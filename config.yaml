@@ -91,6 +91,10 @@ experiments:
         index: SI-GA-B3
         bcl_folder: /shared/ngs/illumina/bloom_lab/bloom_lab/200826_D00300_1040_BHHGLWBCX3/raw/200826_D00300_1040_BHHGLWBCX3/
         lane: '*'
+      2021-03-12:
+        index: SI-GA-B3
+        bcl_folder: /shared/ngs/illumina/bloom_lab/210312_D00300_1192_BHKHNYBCX3/raw/210312_D00300_1192_BHKHNYBCX3/
+        lane: 1
 
   hashing_highMOI:
     description: Single-cell transcriptomics using the wildtype and dblSyn viral
@@ -107,6 +111,10 @@ experiments:
         index: SI-GA-B5
         bcl_folder: /shared/ngs/illumina/bloom_lab/bloom_lab/200826_D00300_1040_BHHGLWBCX3/raw/200826_D00300_1040_BHHGLWBCX3/
         lane: '*'
+      2021-03-12:
+        index: SI-GA-B5
+        bcl_folder: /shared/ngs/illumina/bloom_lab/210312_D00300_1192_BHKHNYBCX3/raw/210312_D00300_1192_BHKHNYBCX3/
+        lane: 2
     pacbio_viral_sequencing:
       2020-10-20_all_segments_run1: /fh/fast/bloom_j/SR/ngs/pacbio/201019_BernadetaDadonaite/r54228_20201020_192758/1_A01/m54228_201020_194205.subreads.bam
 
