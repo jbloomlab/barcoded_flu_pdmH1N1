@@ -34,6 +34,8 @@ cmds = ['cellranger', 'mkfastq',
         '--qc',
         f"--localcores={snakemake.threads}",
         ]
+if 'GA' in snakemake.params.index:
+    cmds.extend(['--use-bases-mask', 'Y*,I8n*,Y*'])
 print(f"\nRunning the following commands:\n{' '.join(cmds)}\n")
 subprocess.check_call(cmds)
 
