@@ -30,6 +30,7 @@ cmds = ['cellranger', 'mkfastq',
         '--run', snakemake.params.bcl_folder,
         '--id', snakemake.wildcards.run10x,  # output directory name
         '--csv', snakemake.output.csv,
+        '--force-single-index',
         '--delete-undetermined',
         '--qc',
         f"--localcores={snakemake.threads}",
@@ -46,8 +47,8 @@ shutil.move(snakemake.wildcards.run10x, snakemake.output.mkfastq10x_dir)
 
 # get names of R1 and R2 FASTQ files from `cellranger mkfastq` output
 fastq_glob = os.path.join(snakemake.output.mkfastq10x_dir,
-                          'outs/fastq_path/*/*/*.fastq.gz')
-fastqs = sorted(glob.glob(fastq_glob))
+                          'outs/fastq_path/**/*.fastq.gz')
+fastqs = sorted(glob.glob(fastq_glob, recursive=True))
 fastqregex = re.compile(r'_(?P<read>R1|R2|I1)_\d{3}\.fastq\.gz')
 r1s = [f for f in fastqs if fastqregex.search(f).group('read') == 'R1']
 r2s = [f for f in fastqs if fastqregex.search(f).group('read') == 'R2']
