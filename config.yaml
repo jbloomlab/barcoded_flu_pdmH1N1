@@ -245,6 +245,10 @@ experiments:
         index: SI-TT-A3
         bcl_folder: /shared/ngs/illumina/bloom_lab/210312_D00300_1192_BHKHNYBCX3/raw/210312_D00300_1192_BHKHNYBCX3/
         lane: 1
+      2021-04-09:
+        index: SI-TT-A3
+        bcl_folder: /shared/ngs/illumina/bloom_lab/210409_D00300_1210_BHKC7KBCX3/raw/210409_D00300_1210_BHKC7KBCX3/
+        lane: '*'
     viral_barcodes:
       supernatant:
         wt:
