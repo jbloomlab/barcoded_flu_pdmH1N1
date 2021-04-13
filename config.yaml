@@ -230,3 +230,37 @@ experiments:
               2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-dblSyn-SecondInf-fluNA-A_S31_L001_R1_001.fastq.gz
             replicate_2:
               2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-dblSyn-SecondInf-fluNA-B_S32_L001_R1_001.fastq.gz
+
+
+  scProgenyProduction_trial3:
+    description: Single-cell transcriptomics performed on even lower MOI-infected
+                 sample. Innoculum volumes based on `scProgenyProduction_trial1` and
+                 `scProgenyProduction_trial2` data. Loaded all collected cells from
+                 two 24-well wells, each infected with either wildtype or dblySn
+                 viral tag variants.
+    lab_notes: https://benchling.com/s/etr-N4laiIAy3AUePJdig7wR
+    expect_ncells: 10000
+    transcriptomics:
+      2021-03-12:
+        index: SI-TT-A3
+        bcl_folder: /shared/ngs/illumina/bloom_lab/210312_D00300_1192_BHKHNYBCX3/raw/210312_D00300_1192_BHKHNYBCX3/
+        lane: 1
+    viral_barcodes:
+      supernatant:
+        wt:
+          fluHA:
+            replicate_1:
+              2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4/Data/Intensities/BaseCalls/WT-sup-fluHA-rep1_S8_L001_R1_001.fastq.gz
+            replicate_2:
+              2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4/Data/Intensities/BaseCalls/WT-sup-fluHA-rep2_S9_L001_R1_001.fastq.gz
+        syn:
+          fluHA:
+            replicate_1:
+              2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4/Data/Intensities/BaseCalls/dblSyn-sup-fluHA-rep1_S10_L001_R1_001.fastq.gz
+            replicate_2:
+              2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4/Data/Intensities/BaseCalls/dblSyn-sup-fluHA-rep2_S11_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4/Data/Intensities/BaseCalls/dblSyn-sup-fluNA-rep1_S2_L001_R1_001.fastq.gz
+            replicate_2:
+              2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4/Data/Intensities/BaseCalls/dblSyn-sup-fluNA-rep2_S3_L001_R1_001.fastq.gz
