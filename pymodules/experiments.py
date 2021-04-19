@@ -80,6 +80,7 @@ class Experiments:
                             run_d['index'],
                             run_d['bcl_folder'],
                             run_d['lane'],
+                            run_d['index_sequencing'],
                             ))
 
             if 'pacbio_viral_sequencing' in expt_d:
@@ -125,6 +126,7 @@ class Experiments:
                                                         'index',
                                                         'bcl_folder',
                                                         'lane',
+                                                        'index_sequencing',
                                                         ])
         self.transcriptomic_runs = (self.transcriptomics_df
                                     ['transcriptomic_run']
@@ -187,6 +189,15 @@ class Experiments:
         return str(self.transcriptomics_df
                    .set_index('transcriptomic_run')
                    .at[transcriptomic_run, 'lane']
+                   )
+    
+    def transcriptomic_index_sequencing(self, transcriptomic_run):
+        """str: Index seq strategy for `transcriptomic_run`."""
+        assert transcriptomic_run in self.transcriptomic_runs, (
+                f"invalid `transcriptomic_run` {transcriptomic_run}")
+        return str(self.transcriptomics_df
+                   .set_index('transcriptomic_run')
+                   .at[transcriptomic_run, 'index_sequencing']
                    )
 
     def expt_transcriptomic_runs(self, expt):
