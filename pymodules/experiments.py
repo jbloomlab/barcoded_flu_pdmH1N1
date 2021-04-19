@@ -190,7 +190,7 @@ class Experiments:
                    .set_index('transcriptomic_run')
                    .at[transcriptomic_run, 'lane']
                    )
-    
+
     def transcriptomic_index_sequencing(self, transcriptomic_run):
         """str: Index seq strategy for `transcriptomic_run`."""
         assert transcriptomic_run in self.transcriptomic_runs, (

@@ -32,7 +32,8 @@ rule mkfastq10x:
     params:
         index=lambda wc: expts.transcriptomic_index(wc.run10x),
         lane=lambda wc: expts.transcriptomic_lane(wc.run10x),
-        index_sequencing=lambda wc: expts.transcriptomic_index_sequencing(wc.run10x),
+        index_sequencing=(lambda wc:
+                          expts.transcriptomic_index_sequencing(wc.run10x)),
         bcl_folder=lambda wc: expts.transcriptomic_bcl_folder(wc.run10x),
     threads:
         config['max_cpus']
