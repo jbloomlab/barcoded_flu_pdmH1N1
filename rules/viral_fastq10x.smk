@@ -33,10 +33,10 @@ rule viral_bc_background_freq:
                                              "_corrected.csv.gz")),
     output:
         viral_bc_by_cell_filtered_csv=join(config['viral_fastq10x_dir'],
-                                           ("{expt}_viral_bc_by_cell"
-                                            "_filtered.csv.gz")),
+                                           ("{expt}_viral_bc"
+                                            "_background_freq.csv.gz")),
         plot=report(join(config['viral_fastq10x_dir'],
-                         "{expt}_viral_bc_by_cell_filtered.pdf"),
+                         "{expt}_viral_bc_background_freq.pdf"),
                     caption='../report/viral_bc_background_freq.rst',
                     category="{expt}")
     params:
