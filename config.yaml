@@ -83,14 +83,22 @@ experiments:
         index: SI-GA-B3
         bcl_folder: /home/solexa/ngs/illumina/bloom_lab/200602_M03100_0578_000000000-J3464/
         lane: '*'
+        index_sequencing: single
       2020-07-01:
         index: SI-GA-B3
         bcl_folder: /shared/ngs/illumina/agreaney/200701_D00300_0988_BHGFGMBCX3/raw/200701_D00300_0988_BHGFGMBCX3/
         lane: 2
+        index_sequencing: single
       2020-08-26:
         index: SI-GA-B3
         bcl_folder: /shared/ngs/illumina/bloom_lab/bloom_lab/200826_D00300_1040_BHHGLWBCX3/raw/200826_D00300_1040_BHHGLWBCX3/
         lane: '*'
+        index_sequencing: single
+      2021-03-12:
+        index: SI-GA-B3
+        bcl_folder: /shared/ngs/illumina/bloom_lab/210312_D00300_1192_BHKHNYBCX3/raw/210312_D00300_1192_BHKHNYBCX3/
+        lane: 1
+        index_sequencing: single
 
   hashing_highMOI:
     description: Single-cell transcriptomics using the wildtype and dblSyn viral
@@ -103,10 +111,17 @@ experiments:
         index: SI-GA-B5
         bcl_folder: /shared/ngs/illumina/bloom_lab/200724_M03100_0593_000000000-J33YK/
         lane: '*'
+        index_sequencing: single
       2020-08-26:
         index: SI-GA-B5
         bcl_folder: /shared/ngs/illumina/bloom_lab/bloom_lab/200826_D00300_1040_BHHGLWBCX3/raw/200826_D00300_1040_BHHGLWBCX3/
         lane: '*'
+        index_sequencing: single
+      2021-03-12:
+        index: SI-GA-B5
+        bcl_folder: /shared/ngs/illumina/bloom_lab/210312_D00300_1192_BHKHNYBCX3/raw/210312_D00300_1192_BHKHNYBCX3/
+        lane: 2
+        index_sequencing: single
     pacbio_viral_sequencing:
       2020-10-20_all_segments_run1: /fh/fast/bloom_j/SR/ngs/pacbio/201019_BernadetaDadonaite/r54228_20201020_192758/1_A01/m54228_201020_194205.subreads.bam
 
@@ -122,6 +137,7 @@ experiments:
         index: SI-GA-B8
         bcl_folder: /shared/ngs/illumina/bloom_lab/200925_D00300_1065_AHHL7NBCX3/raw/200925_D00300_1065_AHHL7NBCX3/
         lane: 2
+        index_sequencing: single
     viral_barcodes:
       supernatant:
         wt:
@@ -183,6 +199,7 @@ experiments:
         index: SI-GA-B9
         bcl_folder: /shared/ngs/illumina/bloom_lab/200925_D00300_1065_AHHL7NBCX3/raw/200925_D00300_1065_AHHL7NBCX3/
         lane: '*'
+        index_sequencing: single
     viral_barcodes:
       supernatant:
         wt:
@@ -245,27 +262,28 @@ experiments:
         index: SI-TT-A3
         bcl_folder: /shared/ngs/illumina/bloom_lab/210312_D00300_1192_BHKHNYBCX3/raw/210312_D00300_1192_BHKHNYBCX3/
         lane: 1
+        index_sequencing: single
     viral_barcodes:
       supernatant:
         wt:
           fluHA:
             replicate_1:
-              2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4/Data/Intensities/BaseCalls/WT-sup-fluHA-rep1_S8_L001_R1_001.fastq.gz
+              2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4_new-demux/Data/Intensities/BaseCalls/WT-sup-fluHA-rep1_S9_L001_R1_001.fastq.gz
             replicate_2:
-              2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4/Data/Intensities/BaseCalls/Uninf-sup-fluHA-rep1_S12_L001_R1_001.fastq.gz
+              2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4_new-demux/Data/Intensities/BaseCalls/WT-sup-fluHA-rep2_S13_L001_R1_001.fastq.gz
           fluNA:
             replicate_1:
-              2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4/Data/Intensities/BaseCalls/WT-sup-fluNA-rep1_S1_L001_R1_001.fastq.gz
+              2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4_new-demux/Data/Intensities/BaseCalls/WT-sup-fluNA-rep1_S1_L001_R1_001.fastq.gz
             replicate_2:
-              2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4/Data/Intensities/BaseCalls/Uninf-sup-fluNA-rep1_S4_L001_R1_001.fastq.gz
+              2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4_new-demux/Data/Intensities/BaseCalls/WT-sup-fluNA-rep1_S1_L001_R1_001.fastq.gz
         syn:
           fluHA:
             replicate_1:
-              2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4/Data/Intensities/BaseCalls/Uninf-sup-fluHA-rep1_S12_L001_R1_001.fastq.gz
+              2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4_new-demux/Data/Intensities/BaseCalls/dblSyn-sup-fluHA-rep1_S10_L001_R1_001.fastq.gz
             replicate_2:
-              2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4/Data/Intensities/BaseCalls/RTNTC-sup-fluHA-rep1_S13_L001_R1_001.fastq.gz
+              2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4_new-demux/Data/Intensities/BaseCalls/dblSyn-sup-fluHA-rep2_S14_L001_R1_001.fastq.gz
           fluNA:
             replicate_1:
-              2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4/Data/Intensities/BaseCalls/dblSyn-sup-fluNA-rep1_S2_L001_R1_001.fastq.gz
+              2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4_new-demux/Data/Intensities/BaseCalls/dblSyn-sup-fluNA-rep1_S2_L001_R1_001.fastq.gz
             replicate_2:
-              2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4/Data/Intensities/BaseCalls/RTNTC-sup-fluNA-rep1_S5_L001_R1_001.fastq.gz
+              2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4_new-demux/Data/Intensities/BaseCalls/dblSyn-sup-fluNA-rep2_S6_L001_R1_001.fastq.gz
