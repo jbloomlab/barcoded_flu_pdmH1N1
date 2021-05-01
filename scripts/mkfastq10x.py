@@ -30,12 +30,10 @@ cmds = ['cellranger', 'mkfastq',
         '--run', snakemake.params.bcl_folder,
         '--id', snakemake.wildcards.run10x,  # output directory name
         '--csv', snakemake.output.csv,
-        '--force-single-index',
         '--delete-undetermined',
         '--qc',
         f"--localcores={snakemake.threads}",
         ]
-
 if snakemake.params.index_sequencing == 'single':
     cmds.extend(['--force-single-index'])
 if 'GA' in snakemake.params.index:
