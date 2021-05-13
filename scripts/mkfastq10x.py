@@ -56,7 +56,7 @@ r2s = [f for f in fastqs if fastqregex.search(f).group('read') == 'R2']
 print(f"\nFASTQ files matching {fastq_glob}:\n"
       f"  R1 files: {','.join(map(os.path.basename, r1s))}\n"
       f"  R2 files: {','.join(map(os.path.basename, r2s))}\n")
-assert len(r1s) == len(r2s) == len(fastqs) / 3 > 0
+assert len(r1s) == len(r2s) > 0
 
 # concatenate all R1 and R2 files into merged FASTQs for run
 print(f"\nCreating merged FASTQs {snakemake.output.fastqR1}, "
