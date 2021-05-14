@@ -22,30 +22,6 @@ rule viral_transcript_coverage:
         '../notebooks/viral_transcript_coverage.py.ipynb'
 
 
-rule cells_per_viral_bc:
-    """Annotates viral barcodes found in more than one cell."""
-    input:
-        viral_bc_background_freq_csv=join(config['viral_fastq10x_dir'],
-                                           ("{expt}_viral_bc"
-                                            "_background_freq.csv.gz")),
-    output:
-        cells_per_viral_bc_csv=join(config['viral_fastq10x_dir'],
-                                           ("{expt}_cells_per"
-                                            "_viral_bc.csv.gz")),
-        plot=report(join(config['viral_fastq10x_dir'],
-                         "{expt}_cells_per_viral_bc.pdf"),
-                    caption='../report/cells_per_viral_bc.rst',
-                    category="{expt}")
-    params:
-        barcoded_viral_genes=barcoded_viral_genes,
-    log:
-        notebook=join(config['log_dir'],
-                      "cells_per_viral_bc_{expt}.ipynb")
-    conda: '../environment.yml'
-    notebook:
-        '../notebooks/cells_per_viral_bc.py.ipynb'
-
-
 rule viral_bc_background_freq:
     """Filters viral barcodes below background freq from transcriptomics."""
     input:
