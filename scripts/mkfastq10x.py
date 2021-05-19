@@ -50,13 +50,13 @@ shutil.move(snakemake.wildcards.run10x, snakemake.output.mkfastq10x_dir)
 fastq_glob = os.path.join(snakemake.output.mkfastq10x_dir,
                           'outs/fastq_path/**/*.fastq.gz')
 fastqs = sorted(glob.glob(fastq_glob, recursive=True))
-fastqregex = re.compile(r'_(?P<read>R1|R2|I1)_\d{3}\.fastq\.gz')
+fastqregex = re.compile(r'_(?P<read>R1|R2|I1|I2)_\d{3}\.fastq\.gz')
 r1s = [f for f in fastqs if fastqregex.search(f).group('read') == 'R1']
 r2s = [f for f in fastqs if fastqregex.search(f).group('read') == 'R2']
 print(f"\nFASTQ files matching {fastq_glob}:\n"
       f"  R1 files: {','.join(map(os.path.basename, r1s))}\n"
       f"  R2 files: {','.join(map(os.path.basename, r2s))}\n")
-assert len(r1s) == len(r2s) == len(fastqs) / 3 > 0
+assert len(r1s) == len(r2s) > 0
 
 # concatenate all R1 and R2 files into merged FASTQs for run
 print(f"\nCreating merged FASTQs {snakemake.output.fastqR1}, "
