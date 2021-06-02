@@ -56,6 +56,10 @@ viral_barcode_upstream_length: 28  # Specify the length of upstream seq used to 
 viral_barcode_mismatch: 0  # Number of mismatches allowed in upstream seq
 viral_barcode_minq: 30  # Minimum quality threshold for bases in viral barcode
 
+# False discovery rate for calling viral barcodes based on expected
+# viral tag counts in uninfected cells.
+viral_bc_fdr: 0.0001
+
 # Parameters for building PacBio CCSs
 ccs_min_length: 50
 ccs_max_length: 5000
@@ -79,14 +83,22 @@ experiments:
         index: SI-GA-B3
         bcl_folder: /home/solexa/ngs/illumina/bloom_lab/200602_M03100_0578_000000000-J3464/
         lane: '*'
+        index_sequencing: single
       2020-07-01:
         index: SI-GA-B3
         bcl_folder: /shared/ngs/illumina/agreaney/200701_D00300_0988_BHGFGMBCX3/raw/200701_D00300_0988_BHGFGMBCX3/
         lane: 2
+        index_sequencing: single
       2020-08-26:
         index: SI-GA-B3
         bcl_folder: /shared/ngs/illumina/bloom_lab/bloom_lab/200826_D00300_1040_BHHGLWBCX3/raw/200826_D00300_1040_BHHGLWBCX3/
         lane: '*'
+        index_sequencing: single
+      2021-03-12:
+        index: SI-GA-B3
+        bcl_folder: /shared/ngs/illumina/bloom_lab/210312_D00300_1192_BHKHNYBCX3/raw/210312_D00300_1192_BHKHNYBCX3/
+        lane: 1
+        index_sequencing: single
 
   hashing_highMOI:
     description: Single-cell transcriptomics using the wildtype and dblSyn viral
@@ -99,10 +111,17 @@ experiments:
         index: SI-GA-B5
         bcl_folder: /shared/ngs/illumina/bloom_lab/200724_M03100_0593_000000000-J33YK/
         lane: '*'
+        index_sequencing: single
       2020-08-26:
         index: SI-GA-B5
         bcl_folder: /shared/ngs/illumina/bloom_lab/bloom_lab/200826_D00300_1040_BHHGLWBCX3/raw/200826_D00300_1040_BHHGLWBCX3/
         lane: '*'
+        index_sequencing: single
+      2021-03-12:
+        index: SI-GA-B5
+        bcl_folder: /shared/ngs/illumina/bloom_lab/210312_D00300_1192_BHKHNYBCX3/raw/210312_D00300_1192_BHKHNYBCX3/
+        lane: 2
+        index_sequencing: single
     pacbio_viral_sequencing:
       2020-10-20_all_segments_run1: /fh/fast/bloom_j/SR/ngs/pacbio/201019_BernadetaDadonaite/r54228_20201020_192758/1_A01/m54228_201020_194205.subreads.bam
 
@@ -118,6 +137,7 @@ experiments:
         index: SI-GA-B8
         bcl_folder: /shared/ngs/illumina/bloom_lab/200925_D00300_1065_AHHL7NBCX3/raw/200925_D00300_1065_AHHL7NBCX3/
         lane: 2
+        index_sequencing: single
     viral_barcodes:
       supernatant:
         wt:
@@ -179,6 +199,7 @@ experiments:
         index: SI-GA-B9
         bcl_folder: /shared/ngs/illumina/bloom_lab/200925_D00300_1065_AHHL7NBCX3/raw/200925_D00300_1065_AHHL7NBCX3/
         lane: '*'
+        index_sequencing: single
     viral_barcodes:
       supernatant:
         wt:
@@ -226,3 +247,48 @@ experiments:
               2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-dblSyn-SecondInf-fluNA-A_S31_L001_R1_001.fastq.gz
             replicate_2:
               2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial2-dblSyn-SecondInf-fluNA-B_S32_L001_R1_001.fastq.gz
+
+
+  scProgenyProduction_trial3:
+    description: Single-cell transcriptomics performed on even lower MOI-infected
+                 sample. Innoculum volumes based on `scProgenyProduction_trial1` and
+                 `scProgenyProduction_trial2` data. Loaded all collected cells from
+                 two 24-well wells, each infected with either wildtype or dblySn
+                 viral tag variants.
+    lab_notes: https://benchling.com/s/etr-N4laiIAy3AUePJdig7wR
+    expect_ncells: 10000
+    transcriptomics:
+      2021-03-12:
+        index: SI-TT-A3
+        bcl_folder: /shared/ngs/illumina/bloom_lab/210312_D00300_1192_BHKHNYBCX3/raw/210312_D00300_1192_BHKHNYBCX3/
+        lane: 1
+        index_sequencing: single
+      2021-04-09:
+        index: SI-TT-A3
+        bcl_folder: /shared/ngs/illumina/bloom_lab/210409_D00300_1210_BHKC7KBCX3/raw/210409_D00300_1210_BHKC7KBCX3
+        lane: '*'
+        index_sequencing: single
+    viral_barcodes:
+      supernatant:
+        wt:
+          fluHA:
+            replicate_1:
+              2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4_new-demux/Data/Intensities/BaseCalls/WT-sup-fluHA-rep1_S9_L001_R1_001.fastq.gz
+            replicate_2:
+              2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4_new-demux/Data/Intensities/BaseCalls/WT-sup-fluHA-rep2_S13_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4_new-demux/Data/Intensities/BaseCalls/WT-sup-fluNA-rep1_S1_L001_R1_001.fastq.gz
+            replicate_2:
+              2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4_new-demux/Data/Intensities/BaseCalls/WT-sup-fluNA-rep1_S1_L001_R1_001.fastq.gz
+        syn:
+          fluHA:
+            replicate_1:
+              2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4_new-demux/Data/Intensities/BaseCalls/dblSyn-sup-fluHA-rep1_S10_L001_R1_001.fastq.gz
+            replicate_2:
+              2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4_new-demux/Data/Intensities/BaseCalls/dblSyn-sup-fluHA-rep2_S14_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4_new-demux/Data/Intensities/BaseCalls/dblSyn-sup-fluNA-rep1_S2_L001_R1_001.fastq.gz
+            replicate_2:
+              2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4_new-demux/Data/Intensities/BaseCalls/dblSyn-sup-fluNA-rep2_S6_L001_R1_001.fastq.gz
