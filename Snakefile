@@ -81,6 +81,9 @@ rule all:
                expt=expts.expts_with_pacbio),
         expand(join(config['pacbio_dir'],
                     "{expt}_plot_strand_exchange.svg"),
+               expt=expts.expts_with_pacbio),
+        expand(join(config['pacbio_dir'],
+                    "{expt}_consensus_UMI_mutations.csv.gz"),
                expt=expts.expts_with_pacbio)
 
 
