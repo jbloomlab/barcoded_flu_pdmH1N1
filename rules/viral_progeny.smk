@@ -3,8 +3,9 @@
 rule process_viral_barcode_replicates:
     """Plot correlation and average viral barcode replicates."""
     input:
-        viral_bc_in_progeny_csv=join(config['viral_progeny_dir'],
-                                     "{expt}_viral_bc_in_progeny.csv.gz"),
+        viral_bc_in_progeny_corrected_csv=join(config['viral_progeny_dir'],
+                                               ("{expt}_viral_bc_in_progeny_"
+                                                "corrected.csv.gz")),
         notebook='notebooks/process_viral_barcode_replicates.py.ipynb'
     output:
         viral_bc_in_progeny_freq_csv=join(config['viral_progeny_dir'],
@@ -20,6 +21,26 @@ rule process_viral_barcode_replicates:
     conda: '../environment.yml'
     notebook:
         '../notebooks/process_viral_barcode_replicates.py.ipynb'
+
+rule correct_viral_barcodes_in_progeny:
+    """Correct viral barcodes in progeny."""
+    input:
+        viral_bc_in_progeny_csv=join(config['viral_progeny_dir'],
+                                     "{expt}_viral_bc_in_progeny.csv.gz"),
+    output:
+        viral_bc_in_progeny_corrected_csv=join(config['viral_progeny_dir'],
+                                               ("{expt}_viral_bc_in_progeny_"
+                                                "corrected.csv.gz")),
+        plot=report(join(config['viral_progeny_dir'],
+                         "{expt}_viral_bc_in_progeny_corrected.pdf"),
+                    caption='../report/viral_barcodes_in_progeny_corrected.rst',
+                    category="{expt}")
+    log:
+        notebook=join(config['log_dir'],
+                      "correct_viral_barcodes_in_progeny_{expt}.ipynb")
+    conda: '../environment.yml'
+    notebook:
+        '../notebooks/correct_viral_barcodes_in_progeny.py.ipynb'
 
 rule viral_barcodes_in_progeny:
     """Parse and count viral barcodes from progeny sequencing data."""
