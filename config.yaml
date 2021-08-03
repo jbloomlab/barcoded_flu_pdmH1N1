@@ -292,7 +292,7 @@ experiments:
               2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4_new-demux/Data/Intensities/BaseCalls/dblSyn-sup-fluNA-rep1_S2_L001_R1_001.fastq.gz
             replicate_2:
               2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4_new-demux/Data/Intensities/BaseCalls/dblSyn-sup-fluNA-rep2_S6_L001_R1_001.fastq.gz
-    second_infection:
+      second_infection:
         wt:
           fluHA:
             replicate_1:
