@@ -292,3 +292,26 @@ experiments:
               2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4_new-demux/Data/Intensities/BaseCalls/dblSyn-sup-fluNA-rep1_S2_L001_R1_001.fastq.gz
             replicate_2:
               2021-04-08: /shared/ngs/illumina/bloom_lab/210408_M04866_0464_000000000-JL5M4_new-demux/Data/Intensities/BaseCalls/dblSyn-sup-fluNA-rep2_S6_L001_R1_001.fastq.gz
+      second_infection:
+        wt:
+          fluHA:
+            replicate_1:
+              2021-05-17: /shared/ngs/illumina/bloom_lab/210517_M03100_0681_000000000-JL4TM/Data/Intensities/BaseCalls/WT-SI-fluHA-rep1_S2_L001_R1_001.fastq.gz
+            replicate_2:
+              2021-05-17: /shared/ngs/illumina/bloom_lab/210517_M03100_0681_000000000-JL4TM/Data/Intensities/BaseCalls/WT-SI-fluHA-rep2_S3_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2021-05-17: /shared/ngs/illumina/bloom_lab/210517_M03100_0681_000000000-JL4TM/Data/Intensities/BaseCalls/WT-SI-fluNA-rep1_S11_L001_R1_001.fastq.gz
+            replicate_2:
+              2021-05-17: /shared/ngs/illumina/bloom_lab/210517_M03100_0681_000000000-JL4TM/Data/Intensities/BaseCalls/WT-SI-fluNA-rep2_S12_L001_R1_001.fastq.gz
+        syn:
+          fluHA:
+            replicate_1:
+              2021-05-17: /shared/ngs/illumina/bloom_lab/210517_M03100_0681_000000000-JL4TM/Data/Intensities/BaseCalls/dblSyn-SI-fluHA-rep1_S4_L001_R1_001.fastq.gz
+            replicate_2:
+              2021-05-17: /shared/ngs/illumina/bloom_lab/210517_M03100_0681_000000000-JL4TM/Data/Intensities/BaseCalls/dblSyn-SI-fluHA-rep2_S5_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2021-05-17: /shared/ngs/illumina/bloom_lab/210517_M03100_0681_000000000-JL4TM/Data/Intensities/BaseCalls/dblSyn-SI-fluNA-rep1_S13_L001_R1_001.fastq.gz
+            replicate_2:
+              2021-05-17: /shared/ngs/illumina/bloom_lab/210517_M03100_0681_000000000-JL4TM/Data/Intensities/BaseCalls/dblSyn-SI-fluNA-rep2_S14_L001_R1_001.fastq.gz
