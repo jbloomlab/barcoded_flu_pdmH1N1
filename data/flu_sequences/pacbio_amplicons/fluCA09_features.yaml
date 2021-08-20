@@ -81,54 +81,8 @@ default_1tag: &default_1tag
       mutation_nt_count: 1
       mutation_op_count: null
     return: sequence
-# default for genes with two variant tags and viral barcodes
-default_2tags_with_viral_barcode: &default_2tags_with_viral_barcode
-  query_clip5: 5
-  query_clip3: 5
-  termini5:
-    filter:
-      mutation_nt_count: 2
-      mutation_op_count: null
-    return: [mutations, accuracy]
-  termini3:
-    filter:
-      mutation_nt_count: null
-      mutation_op_count: 10
-    return: [mutations, accuracy]
-  sequenced_ORF_1:
-    filter:
-      clip5: 5
-      mutation_nt_count: null
-      mutation_op_count: 10
-    return: [mutations, accuracy]
-  sequenced_ORF_2:
-    filter:
-      clip3: 5
-      mutation_nt_count: null
-      mutation_op_count: 10
-    return: [mutations, accuracy]
-  polyA:
-    filter:
-      mutation_nt_count: null
-      mutation_op_count: 4
-  UMI:
-    return: [sequence, accuracy]
-  cellbarcode:
-    return: [sequence, accuracy]
-  variant_tag_1:
-    filter:
-      mutation_nt_count: 1
-      mutation_op_count: null
-    return: sequence
-  variant_tag_2:
-    filter:
-      mutation_nt_count: 1
-      mutation_op_count: null
-    return: sequence
-  viral_barcode:
-    return: [sequence, accuracy]
 # default for genes with eight variant tags and viral barcodes
-default_8tags_with_viral_barcode: &default_8tags_with_viral_barcode
+default_8tags: &default_8tags
   query_clip5: 5
   query_clip3: 5
   termini5:
@@ -200,9 +154,7 @@ default_8tags_with_viral_barcode: &default_8tags_with_viral_barcode
     filter:
       mutation_nt_count: 1
       mutation_op_count: null
-    return: sequence
-  viral_barcode:
-    return: [sequence, accuracy]  
+    return: sequence 
 
 # use defaults to define specs for actual genes
 PB2mid:
@@ -222,13 +174,13 @@ NPmid:
 NPtermini:
   <<: *default_2tags
 HAmid:
-  <<: *default_2tags_with_viral_barcode
+  <<: *default_2tags
 HAtermini:
-  <<: *default_2tags_with_viral_barcode
+  <<: *default_2tags
 NAmid:
-  <<: *default_8tags_with_viral_barcode
+  <<: *default_8tags
 NAtermini:
-  <<: *default_8tags_with_viral_barcode
+  <<: *default_8tags
 M1mid:
   <<: *default_2tags
 M1termini:
