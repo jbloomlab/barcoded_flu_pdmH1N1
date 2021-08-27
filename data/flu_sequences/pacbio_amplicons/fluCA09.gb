@@ -1,3 +1,4 @@
+        http://rhino01:11382/?token=22ff43c1d7d910686b65f6f68506ab0f344d482379c25152
 LOCUS       HAmid                2123 bp ds-DNA     linear   SYN 05-NOV-2020
 DEFINITION  HAmid
 ACCESSION   HAmid
@@ -112,12 +113,12 @@ ORIGIN
      2041 tacatttgca accgcaattg cagacacatt ttgtataggg atccatgaag gcgattttgg
      2101 ttgtattatt gtacacgttc gc
 //
-LOCUS       M1mid                1105 bp ds-DNA     linear   SYN 05-NOV-2020
-DEFINITION  M1mid
-ACCESSION   M1mid
+LOCUS       Mmid                1105 bp ds-DNA     linear   SYN 05-NOV-2020
+DEFINITION  Mmid
+ACCESSION   Mmid
 VERSION     .
 KEYWORDS    .
-SOURCE      M1mid
+SOURCE      Mmid
   ORGANISM
 FEATURES             Location/Qualifiers
      sequenced_ORF_1  1..407
@@ -151,12 +152,12 @@ ORIGIN
      1021 taaactatac aagaagctca aaagagaaat aacgttccat ggggccaagg aggtgtcact
      1081 aagctattca actggtgcac ttgcc
 //
-LOCUS       M1termini                1105 bp ds-DNA     linear   SYN 05-NOV-2020
-DEFINITION  M1termini
-ACCESSION   M1termini
+LOCUS       Mtermini                1105 bp ds-DNA     linear   SYN 05-NOV-2020
+DEFINITION  Mtermini
+ACCESSION   Mtermini
 VERSION     .
 KEYWORDS    .
-SOURCE      M1termini
+SOURCE      Mtermini
   ORGANISM
 FEATURES             Location/Qualifiers
      sequenced_ORF_1  1..750
@@ -306,82 +307,6 @@ ORIGIN
      1741 gtttaaaccg aatccaaacc agaaaataat aaccattggg tcaatctgta tggtagtcgg
      1801 aataattagc ctaatattgc aaatagg
 //
-LOCUS       NEPtermini                 495 bp ds-DNA     linear   SYN 05-NOV-2020
-DEFINITION  NEPtermini
-ACCESSION   NEPtermini
-VERSION     .
-KEYWORDS    .
-SOURCE      NEPtermini
-  ORGANISM
-FEATURES             Location/Qualifiers
-     sequenced_ORF_1  1..364
-     variant_tag_2    304
-     polyA            369..397
-     UMI              398..409
-     cellbarcode      410..425
-     Read1            426..446
-     termini5         447..471
-     termini3         365..368
-     sequenced_ORF_2  472..495
-ORIGIN
-        1 ggactccaac accatgtcaa gctttcagga catacttatg aggatgtcaa aaatgcagtt
-       61 ggggtcctca tcggaggact tgaatggaat ggtaacacgg ttcgagtctc tgaaaatata
-      121 cagagattcg cttggagaaa ctgtgatgag aatgggagac cttcactacc tccagagcag
-      181 aaatgaaaag tggcgagagc aattgggaca gaaatttgag gaaataaggt ggttaattga
-      241 agaaatgcgg cacagattga aagcgacaga gaatagtttc gaacaaataa catttatgca
-      301 agcmttacaa ctactgcttg aagtagaaca agagataaga gctttctcgt ttcagcttat
-      361 ttaatgataa aaaaaaaaaa aaaaaaaaaa aaaaaaannn nnnnnnnnnn nnnnnnnnnn
-      421 nnnnnagatc ggaagagcgt cgtgtagcaa aagcagggtg acaaagacat aatggactcc
-      481 aacaccatgt caagc
-//
-LOCUS       NPmid                1645 bp ds-DNA     linear   SYN 05-NOV-2020
-DEFINITION  NPmid
-ACCESSION   NPmid
-VERSION     .
-KEYWORDS    .
-SOURCE      NPmid
-  ORGANISM
-FEATURES             Location/Qualifiers
-     sequenced_ORF_1  1..770
-     variant_tag_2    635
-     polyA            773..801
-     UMI              802..813
-     cellbarcode      814..829
-     Read1            830..849
-     termini5         850..876
-     termini3         771..772
-     sequenced_ORF_2  877..1645
-     variant_tag_1    981
-ORIGIN
-        1 gagaaagtcg aaacccagga aacgctgaga ttgaagacct cattttcctg gcacggtcag
-       61 cactcattct gaggggatca gttgcacata aatcctgcct gcctgcttgt gtgtatgggc
-      121 ttgcagtagc aagtgggcat gactttgaaa gggaagggta ctcactggtc gggatagacc
-      181 cattcaaatt actccaaaac agccaagtgg tcagcctgat gagaccaaat gaaaacccag
-      241 ctcacaagag tcaattggtg tggatggcat gccactctgc tgcatttgaa gatttaagag
-      301 tatcaagttt cataagagga aagaaagtga ttccaagagg aaagctttcc acaagagggg
-      361 tccagattgc ttcaaatgag aatgtggaaa ccatggactc caataccctg gaactgagaa
-      421 gcagatactg ggccataagg accaggagtg gaggaaatac caatcaacaa aaggcatccg
-      481 caggccagat cagtgtgcag cctacattct cagtgcagcg gaatctccct tttgaaagag
-      541 caaccgttat ggcagcattc agcgggaaca atgaaggacg gacatccgac atgcgaacag
-      601 aagttataag aatgatggaa agtgcaaagc cagargattt gtccttccag gggcggggag
-      661 tcttcgagct ctcggacgaa aaggcaacga acccgatcgt gccttccttt gacatgagta
-      721 atgaagggtc ttatttcttc ggagacaatg cagaggagta tgacagttga ggaaaaaaaa
-      781 aaaaaaaaaa aaaaaaaaaa annnnnnnnn nnnnnnnnnn nnnnnnnnna gatcggaaga
-      841 gcgtcgtgta gcaaaagcag ggtagataat cactcaatga gtgacatcga agccatggcg
-      901 tcccaaggca ccaaacgatc atatgaacaa atggagactg gtggggagcg ccaggatgcc
-      961 acagaaatca gagcatctgt yggaagaatg attggtggaa tcgggagatt ctacatccaa
-     1021 atgtgcactg aactcaaact cagtgattat gatggacgac taatccagaa tagcataaca
-     1081 atagagagga tggtgctttc tgcttttgat gagagaagaa ataaatacct agaagagcat
-     1141 cccagtgctg ggaaggaccc taagaaaaca ggaggaccca tatatagaag agtagacgga
-     1201 aagtggatga gagaactcat cctttatgac aaagaagaaa taaggagagt ttggcgccaa
-     1261 gcaaacaatg gcgaagatgc aacagcaggt cttactcata tcatgatttg gcattccaac
-     1321 ctgaatgatg ccacatatca gagaacaaga gcgcttgttc gcaccggaat ggatcccaga
-     1381 atgtgctctc taatgcaagg ttcaacactt cccagaaggt ctggtgccgc aggtgctgcg
-     1441 gtgaaaggag ttggaacaat agcaatggag ttaatcagaa tgatcaaacg tggaatcaat
-     1501 gaccgaaatt tctggagggg tgaaaatgga cgaaggacaa gggttgctta tgaaagaatg
-     1561 tgcaatatcc tcaaaggaaa atttcaaaca gctgcccaga gggcaatgat ggatcaagta
-     1621 agagaaagtc gaaacccagg aaacg
-//
 LOCUS       NPtermini                1640 bp ds-DNA     linear   SYN 05-NOV-2020
 DEFINITION  NPtermini
 ACCESSION   NPtermini
@@ -430,12 +355,12 @@ ORIGIN
      1561 nnnnnnagat cggaagagcg tcgtgtagca aaagcagggt agataatcac tcaatgagtg
      1621 acatcgaagc catggcgtcc
 //
-LOCUS       NS1mid                 972 bp ds-DNA     linear   SYN 05-NOV-2020
-DEFINITION  NS1mid
-ACCESSION   NS1mid
+LOCUS       NSmid                 972 bp ds-DNA     linear   SYN 05-NOV-2020
+DEFINITION  NSmid
+ACCESSION   NSmid
 VERSION     .
 KEYWORDS    .
-SOURCE      NS1mid
+SOURCE      NSmid
   ORGANISM
 FEATURES             Location/Qualifiers
      sequenced_ORF_1  1..202
@@ -467,12 +392,12 @@ ORIGIN
       901 taaccgatta gagaccttga tactactaag ggctttcact gaggagggag caatagttgg
       961 agaaatttca cc
 //
-LOCUS       NS1termini                 967 bp ds-DNA     linear   SYN 05-NOV-2020
-DEFINITION  NS1termini
-ACCESSION   NS1termini
+LOCUS       NStermini                 967 bp ds-DNA     linear   SYN 05-NOV-2020
+DEFINITION  NStermini
+ACCESSION   NStermini
 VERSION     .
 KEYWORDS    .
-SOURCE      NS1termini
+SOURCE      NStermini
   ORGANISM
 FEATURES             Location/Qualifiers
      sequenced_ORF_1  1..658
