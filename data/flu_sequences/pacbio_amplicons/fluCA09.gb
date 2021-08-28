@@ -307,6 +307,54 @@ ORIGIN
      1741 gtttaaaccg aatccaaacc agaaaataat aaccattggg tcaatctgta tggtagtcgg
      1801 aataattagc ctaatattgc aaatagg
 //
+LOCUS       NPmid                1645 bp ds-DNA     linear   SYN 05-NOV-2020
+DEFINITION  NPmid
+ACCESSION   NPmid
+VERSION     .
+KEYWORDS    .
+SOURCE      NPmid
+  ORGANISM
+FEATURES             Location/Qualifiers
+     sequenced_ORF_1  1..770
+     variant_tag_2    635
+     polyA            773..801
+     UMI              802..813
+     cellbarcode      814..829
+     Read1            830..849
+     termini5         850..876
+     termini3         771..772
+     sequenced_ORF_2  877..1645
+     variant_tag_1    981
+ORIGIN
+        1 gagaaagtcg aaacccagga aacgctgaga ttgaagacct cattttcctg gcacggtcag
+       61 cactcattct gaggggatca gttgcacata aatcctgcct gcctgcttgt gtgtatgggc
+      121 ttgcagtagc aagtgggcat gactttgaaa gggaagggta ctcactggtc gggatagacc
+      181 cattcaaatt actccaaaac agccaagtgg tcagcctgat gagaccaaat gaaaacccag
+      241 ctcacaagag tcaattggtg tggatggcat gccactctgc tgcatttgaa gatttaagag
+      301 tatcaagttt cataagagga aagaaagtga ttccaagagg aaagctttcc acaagagggg
+      361 tccagattgc ttcaaatgag aatgtggaaa ccatggactc caataccctg gaactgagaa
+      421 gcagatactg ggccataagg accaggagtg gaggaaatac caatcaacaa aaggcatccg
+      481 caggccagat cagtgtgcag cctacattct cagtgcagcg gaatctccct tttgaaagag
+      541 caaccgttat ggcagcattc agcgggaaca atgaaggacg gacatccgac atgcgaacag
+      601 aagttataag aatgatggaa agtgcaaagc cagargattt gtccttccag gggcggggag
+      661 tcttcgagct ctcggacgaa aaggcaacga acccgatcgt gccttccttt gacatgagta
+      721 atgaagggtc ttatttcttc ggagacaatg cagaggagta tgacagttga ggaaaaaaaa
+      781 aaaaaaaaaa aaaaaaaaaa annnnnnnnn nnnnnnnnnn nnnnnnnnna gatcggaaga
+      841 gcgtcgtgta gcaaaagcag ggtagataat cactcaatga gtgacatcga agccatggcg
+      901 tcccaaggca ccaaacgatc atatgaacaa atggagactg gtggggagcg ccaggatgcc
+      961 acagaaatca gagcatctgt yggaagaatg attggtggaa tcgggagatt ctacatccaa
+     1021 atgtgcactg aactcaaact cagtgattat gatggacgac taatccagaa tagcataaca
+     1081 atagagagga tggtgctttc tgcttttgat gagagaagaa ataaatacct agaagagcat
+     1141 cccagtgctg ggaaggaccc taagaaaaca ggaggaccca tatatagaag agtagacgga
+     1201 aagtggatga gagaactcat cctttatgac aaagaagaaa taaggagagt ttggcgccaa
+     1261 gcaaacaatg gcgaagatgc aacagcaggt cttactcata tcatgatttg gcattccaac
+     1321 ctgaatgatg ccacatatca gagaacaaga gcgcttgttc gcaccggaat ggatcccaga
+     1381 atgtgctctc taatgcaagg ttcaacactt cccagaaggt ctggtgccgc aggtgctgcg
+     1441 gtgaaaggag ttggaacaat agcaatggag ttaatcagaa tgatcaaacg tggaatcaat
+     1501 gaccgaaatt tctggagggg tgaaaatgga cgaaggacaa gggttgctta tgaaagaatg
+     1561 tgcaatatcc tcaaaggaaa atttcaaaca gctgcccaga gggcaatgat ggatcaagta
+     1621 agagaaagtc gaaacccagg aaacg
+//
 LOCUS       NPtermini                1640 bp ds-DNA     linear   SYN 05-NOV-2020
 DEFINITION  NPtermini
 ACCESSION   NPtermini
