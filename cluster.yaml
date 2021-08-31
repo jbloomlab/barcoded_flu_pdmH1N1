@@ -28,3 +28,7 @@ ccs_summaries:
 align_pacbio:
   cpus: 16
   time: 0-4
+
+pacbio_fix_termini:
+  cpus: 16
+  time: 0-4

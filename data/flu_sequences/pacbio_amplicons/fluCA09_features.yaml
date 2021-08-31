@@ -42,47 +42,8 @@ default_2tags: &default_2tags
       mutation_nt_count: 1
       mutation_op_count: null
     return: sequence
-# default for genes with one variant 2 tag
-default_1tag: &default_1tag
-  query_clip5: 5
-  query_clip3: 5
-  termini5:
-    filter:
-      mutation_nt_count: 2
-      mutation_op_count: null
-    return: [mutations, accuracy]
-  termini3:
-    filter:
-      mutation_nt_count: null
-      mutation_op_count: 10
-    return: [mutations, accuracy]
-  sequenced_ORF_1:
-    filter:
-      clip5: 5
-      mutation_nt_count: null
-      mutation_op_count: 10
-    return: [mutations, accuracy]
-  sequenced_ORF_2:
-    filter:
-      clip3: 5
-      mutation_nt_count: null
-      mutation_op_count: 10
-    return: [mutations, accuracy]
-  polyA:
-    filter:
-      mutation_nt_count: null
-      mutation_op_count: 4
-  UMI:
-    return: [sequence, accuracy]
-  cellbarcode:
-    return: [sequence, accuracy]
-  variant_tag_2:
-    filter:
-      mutation_nt_count: 1
-      mutation_op_count: null
-    return: sequence
-# default for genes with eight variant tags
-default_1tag: &default_8tags
+# default for genes with eight variant tags and viral barcodes
+default_8tags: &default_8tags
   query_clip5: 5
   query_clip3: 5
   termini5:
@@ -154,7 +115,7 @@ default_1tag: &default_8tags
     filter:
       mutation_nt_count: 1
       mutation_op_count: null
-    return: sequence
+    return: sequence 
 
 # use defaults to define specs for actual genes
 PB2mid:
@@ -181,13 +142,11 @@ NAmid:
   <<: *default_8tags
 NAtermini:
   <<: *default_8tags
-M1mid:
+Mmid:
   <<: *default_2tags
-M1termini:
+Mtermini:
   <<: *default_2tags
-NS1termini:
+NStermini:
   <<: *default_2tags
-NS1mid:
+NSmid:
   <<: *default_2tags
-NEPtermini:
-  <<: *default_1tag
