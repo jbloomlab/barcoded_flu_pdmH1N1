@@ -268,6 +268,9 @@ experiments:
         bcl_folder: /shared/ngs/illumina/bloom_lab/210409_D00300_1210_BHKC7KBCX3/raw/210409_D00300_1210_BHKC7KBCX3
         lane: '*'
         index_sequencing: single
+    pacbio_viral_sequencing:
+      2021-08-05_all_segments_run1: /fh/fast/bloom_j/SR/ngs/pacbio/210730_SequelIIe/r64272e_20210730_182729/1_A01/m64272e_210730_193026.subreads.bam
+
     viral_barcodes:
       supernatant:
         wt:
