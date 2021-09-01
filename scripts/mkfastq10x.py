@@ -17,13 +17,40 @@ f = open(snakemake.log.log, 'w')
 sys.stdout = f
 sys.stderr = f
 
+# build samplesheet options
+data = ['[Data],,,,,,,,\n',]
+values = []
+
+if snakemake.params.lane != '*':
+    data.extend(['Lane,'])
+    values.extend([f'{snakemake.params.lane},'])
+
+data.extend(['Sample_ID,','Sample_Name,','Sample_Plate,','Sample_Well,'])
+values.extend([f'{snakemake.wildcards.run10x},',
+               f'{snakemake.wildcards.expt}_{snakemake.wildcards.run10x}',
+               ',,,'])
+
+data.extend(['I7_Index_ID,','index,'])
+if index_sequencing == None:
+    values.extend([',,'])
+elif index_sequencing == 'single':
+    values.extend([f'{index},',f'{index},'])
+if index_sequencing == 'dual':
+    data.extend(['I5_Index_ID,','index2,'])
+    values.extend([f'{index},',f'{index},'])
+
+data.extend(['Sample_Project,','Description\n'])
+values.extend(['project,,'])
+
+# convert samplesheet to string
+samplesheet_contents = []
+for part in [data, values]:
+    samplesheet_contents.append(''.join(part))
+samplesheet_contents = ''.join(samplesheet_contents)
+
 print(f"Writing samplesheet to {snakemake.output.samplesheet}")
 with open(snakemake.output.samplesheet, 'w') as f:
-    f.write('Lane,Sample,Index\n' + ','.join([snakemake.params.lane,
-                                              snakemake.wildcards.run10x,
-                                              snakemake.params.index,
-                                              ])
-            )
+    f.write(samplesheet_contents)
 
 # run `cellranger mkfastq`
 cmds = ['cellranger', 'mkfastq',
