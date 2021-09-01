@@ -65,6 +65,13 @@ if snakemake.params.index_sequencing == 'single':
     cmds.extend(['--force-single-index'])
 if 'GA' in snakemake.params.index:
     cmds.extend(['--use-bases-mask', 'Y*,I8n*,Y*'])
+if index_sequencing == None:  # must use --lanes flag if no sample index
+    cmds.extend(['--lanes'])
+    if lane == '*':
+        cmds.extend(['1,2'])
+    else:
+        cmds.extend([str(lane)])
+
 print(f"\nRunning the following commands:\n{' '.join(cmds)}\n")
 subprocess.check_call(cmds)
 
