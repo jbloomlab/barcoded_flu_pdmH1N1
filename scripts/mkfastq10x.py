@@ -17,8 +17,8 @@ f = open(snakemake.log.log, 'w')
 sys.stdout = f
 sys.stderr = f
 
-print(f"Writing CSV to {snakemake.output.csv}")
-with open(snakemake.output.csv, 'w') as f:
+print(f"Writing samplesheet to {snakemake.output.samplesheet}")
+with open(snakemake.output.samplesheet, 'w') as f:
     f.write('Lane,Sample,Index\n' + ','.join([snakemake.params.lane,
                                               snakemake.wildcards.run10x,
                                               snakemake.params.index,
@@ -29,7 +29,7 @@ with open(snakemake.output.csv, 'w') as f:
 cmds = ['cellranger', 'mkfastq',
         '--run', snakemake.params.bcl_folder,
         '--id', snakemake.wildcards.run10x,  # output directory name
-        '--csv', snakemake.output.csv,
+        '--samplesheet', snakemake.output.samplesheet,
         '--delete-undetermined',
         '--qc',
         f"--localcores={snakemake.threads}",
