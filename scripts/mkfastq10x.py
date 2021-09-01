@@ -17,7 +17,7 @@ f = open(snakemake.log.log, 'w')
 sys.stdout = f
 sys.stderr = f
 
-# build samplesheet options
+# build samplesheet from available options
 data = ['[Data],,,,,,,,\n',]
 values = []
 
@@ -27,7 +27,7 @@ if snakemake.params.lane != '*':
 
 data.extend(['Sample_ID,','Sample_Name,','Sample_Plate,','Sample_Well,'])
 values.extend([f'{snakemake.wildcards.run10x},',
-               f'{snakemake.wildcards.expt}_{snakemake.wildcards.run10x}',
+               f'{snakemake.wildcards.experiment}_{snakemake.wildcards.run10x}',
                ',,,'])
 
 data.extend(['I7_Index_ID,','index,'])
