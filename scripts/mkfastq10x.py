@@ -27,7 +27,7 @@ if snakemake.params.lane != '*':
 
 data.extend(['Sample_ID,','Sample_Name,','Sample_Plate,','Sample_Well,'])
 values.extend([f'{snakemake.wildcards.run10x},',
-               f'{snakemake.wildcards.experiment}_{snakemake.wildcards.run10x}',
+               f'{snakemake.wildcards.run10x}',
                ',,,'])
 
 data.extend(['I7_Index_ID,','index,'])
