@@ -63,7 +63,7 @@ cmds = ['cellranger', 'mkfastq',
         ]
 if snakemake.params.index_sequencing == 'none':  # must use --lanes flag if no sample index
     cmds.extend(['--lanes'])
-    if lane == '*':
+    if snakemake.params.lane == '*':
         cmds.extend(['1,2'])
     else:
         cmds.extend([str(snakemake.params.lane)])
