@@ -31,9 +31,9 @@ values.extend([f'{snakemake.wildcards.run10x},',
                ',,,'])
 
 data.extend(['I7_Index_ID,','index,'])
-if snakemake.params.index_sequencing == None:
+if snakemake.params.index_sequencing == 'none':
     values.extend([',,'])
-elif snakemake.params.index_sequencing == 'single':
+else:
     values.extend([f'{snakemake.params.index},',f'{snakemake.params.index},'])
 if snakemake.params.index_sequencing == 'dual':
     data.extend(['I5_Index_ID,','index2,'])
@@ -61,7 +61,7 @@ cmds = ['cellranger', 'mkfastq',
         '--qc',
         f"--localcores={snakemake.threads}",
         ]
-if snakemake.params.index_sequencing == None:  # must use --lanes flag if no sample index
+if snakemake.params.index_sequencing == 'none':  # must use --lanes flag if no sample index
     cmds.extend(['--lanes'])
     if lane == '*':
         cmds.extend(['1,2'])
