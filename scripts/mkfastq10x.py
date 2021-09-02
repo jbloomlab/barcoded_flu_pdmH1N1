@@ -31,13 +31,13 @@ values.extend([f'{snakemake.wildcards.run10x},',
                ',,,'])
 
 data.extend(['I7_Index_ID,','index,'])
-if index_sequencing == None:
+if snakemake.params.index_sequencing == None:
     values.extend([',,'])
-elif index_sequencing == 'single':
-    values.extend([f'{index},',f'{index},'])
-if index_sequencing == 'dual':
+elif snakemake.params.index_sequencing == 'single':
+    values.extend([f'{snakemake.params.index},',f'{snakemake.params.index},'])
+if snakemake.params.index_sequencing == 'dual':
     data.extend(['I5_Index_ID,','index2,'])
-    values.extend([f'{index},',f'{index},'])
+    values.extend([f'{snakemake.params.index},',f'{snakemake.params.index},'])
 
 data.extend(['Sample_Project,','Description\n'])
 values.extend(['project,,'])
@@ -61,16 +61,16 @@ cmds = ['cellranger', 'mkfastq',
         '--qc',
         f"--localcores={snakemake.threads}",
         ]
-if snakemake.params.index_sequencing == 'single':
-    cmds.extend(['--force-single-index'])
-if 'GA' in snakemake.params.index:
-    cmds.extend(['--use-bases-mask', 'Y*,I8n*,Y*'])
-if index_sequencing == None:  # must use --lanes flag if no sample index
+if snakemake.params.index_sequencing == None:  # must use --lanes flag if no sample index
     cmds.extend(['--lanes'])
     if lane == '*':
         cmds.extend(['1,2'])
     else:
-        cmds.extend([str(lane)])
+        cmds.extend([str(snakemake.params.lane)])
+if snakemake.params.index_sequencing == 'single':
+    cmds.extend(['--force-single-index'])
+if 'GA' in snakemake.params.index:
+    cmds.extend(['--use-bases-mask', 'Y*,I8n*,Y*'])
 
 print(f"\nRunning the following commands:\n{' '.join(cmds)}\n")
 subprocess.check_call(cmds)
