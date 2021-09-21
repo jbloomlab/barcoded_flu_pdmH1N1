@@ -21,9 +21,8 @@ sys.stderr = f
 data = ['[Data],,,,,,,,\n',]
 values = []
 
-if snakemake.params.lane != '*':
-    data.extend(['Lane,'])
-    values.extend([f'{snakemake.params.lane},'])
+data.extend(['Lane,'])
+values.extend([f'{snakemake.params.lane},'.strip("'")])
 
 data.extend(['Sample_ID,','Sample_Name,','Sample_Plate,','Sample_Well,'])
 values.extend([f'{snakemake.wildcards.run10x},',
