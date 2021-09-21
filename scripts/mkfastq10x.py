@@ -21,8 +21,9 @@ sys.stderr = f
 data = ['[Data],,,,,,,,\n',]
 values = []
 
-data.extend(['Lane,'])
-values.extend([f'{snakemake.params.lane},'.strip("'")])
+if snakemake.params.lane != '*':
+    data.extend(['Lane,'])
+    values.extend([f'{snakemake.params.lane},'])
 
 data.extend(['Sample_ID,','Sample_Name,','Sample_Plate,','Sample_Well,'])
 values.extend([f'{snakemake.wildcards.run10x},',
@@ -68,6 +69,7 @@ if snakemake.params.index_sequencing == 'none':  # must use --lanes flag if no s
         cmds.extend([str(snakemake.params.lane)])
 if snakemake.params.index_sequencing == 'single':
     cmds.extend(['--force-single-index'])
+    cmds.extend(['--use-bases-mask', 'Y*,I10n*,n*,Y*'])
 if 'GA' in snakemake.params.index:
     cmds.extend(['--use-bases-mask', 'Y*,I8n*,Y*'])
 
