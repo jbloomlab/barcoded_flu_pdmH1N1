@@ -7,7 +7,7 @@ echo "Running snakemake..."
 snakemake \
     -j 999 \
     --cluster-config cluster.yaml \
-    --cluster "sbatch -c {cluster.cpus} -t {cluster.time} -J {cluster.name}" \
+    --cluster "sbatch -c {cluster.cpus} -t {cluster.time} -J {cluster.name} -o {cluster.logout} -e {cluster.logerror}" \
     --latency-wait 60 \
     --use-conda \
     -R `snakemake --list-input-changes`  # https://snakemake.readthedocs.io/en/stable/project_info/faq.html#snakemake-does-not-trigger-re-runs-if-i-add-additional-input-files-what-can-i-do

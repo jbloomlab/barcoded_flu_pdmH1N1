@@ -51,7 +51,7 @@ Once the *barcoded_flu_pdmH1N1* [conda] environment and other software have been
 These commands with the configuration for the Fred Hutch cluster are in the shell script. [run_Hutch_cluster.bash](run_Hutch_cluster.bash).
 You probably want to submit the script itself via [sbatch](sbatch), using:
 
-    sbatch run_Hutch_cluster.sbatch
+    sbatch run_Hutch_cluster.bash
 
 ## Linting the code
 Before you commit a new branch, you should run the linting in [lint.bash](lint.bash) with the command:

@@ -4,7 +4,9 @@ __default__:
   cpus: 1
   time: 0-2
   name: "{rule}"
-
+  logout: "slurm_logs/slurm-logs-{rule}.out"
+  logerror: "slurm_logs/slurm-logs-{rule}.err"
+  
 mkfastq10x:
   cpus: 16
   time: 0-2

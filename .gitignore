@@ -9,5 +9,5 @@ __pycache__
 *.fai
 _*
 sinfo-requirements.txt
-
+slurm_logs
 results
