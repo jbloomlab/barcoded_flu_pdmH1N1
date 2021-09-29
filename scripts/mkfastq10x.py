@@ -17,27 +17,62 @@ f = open(snakemake.log.log, 'w')
 sys.stdout = f
 sys.stderr = f
 
-print(f"Writing CSV to {snakemake.output.csv}")
-with open(snakemake.output.csv, 'w') as f:
-    f.write('Lane,Sample,Index\n' + ','.join([snakemake.params.lane,
-                                              snakemake.wildcards.run10x,
-                                              snakemake.params.index,
-                                              ])
-            )
+# build samplesheet from available options
+data = ['[Data],,,,,,,,\n',]
+values = []
+
+if snakemake.params.lane != '*':
+    data.extend(['Lane,'])
+    values.extend([f'{snakemake.params.lane},'])
+
+data.extend(['Sample_ID,','Sample_Name,','Sample_Plate,','Sample_Well,'])
+values.extend([f'{snakemake.wildcards.run10x},',
+               f'{snakemake.wildcards.run10x}',
+               ',,,'])
+
+data.extend(['I7_Index_ID,','index,'])
+if snakemake.params.index_sequencing == 'none':
+    values.extend([',,'])
+else:
+    values.extend([f'{snakemake.params.index},',f'{snakemake.params.index},'])
+if snakemake.params.index_sequencing == 'dual':
+    data.extend(['I5_Index_ID,','index2,'])
+    values.extend([f'{snakemake.params.index},',f'{snakemake.params.index},'])
+
+data.extend(['Sample_Project,','Description\n'])
+values.extend(['project,,'])
+
+# convert samplesheet to string
+samplesheet_contents = []
+for part in [data, values]:
+    samplesheet_contents.append(''.join(part))
+samplesheet_contents = ''.join(samplesheet_contents)
+
+print(f"Writing samplesheet to {snakemake.output.samplesheet}")
+with open(snakemake.output.samplesheet, 'w') as f:
+    f.write(samplesheet_contents)
 
 # run `cellranger mkfastq`
 cmds = ['cellranger', 'mkfastq',
         '--run', snakemake.params.bcl_folder,
         '--id', snakemake.wildcards.run10x,  # output directory name
-        '--csv', snakemake.output.csv,
+        '--samplesheet', snakemake.output.samplesheet,
         '--delete-undetermined',
         '--qc',
         f"--localcores={snakemake.threads}",
         ]
+if snakemake.params.index_sequencing == 'none':  # must use --lanes flag if no sample index
+    cmds.extend(['--lanes'])
+    if snakemake.params.lane == '*':
+        cmds.extend(['1,2'])
+    else:
+        cmds.extend([str(snakemake.params.lane)])
 if snakemake.params.index_sequencing == 'single':
     cmds.extend(['--force-single-index'])
+    cmds.extend(['--use-bases-mask', 'Y*,I10n*,n*,Y*'])
 if 'GA' in snakemake.params.index:
     cmds.extend(['--use-bases-mask', 'Y*,I8n*,Y*'])
+
 print(f"\nRunning the following commands:\n{' '.join(cmds)}\n")
 subprocess.check_call(cmds)
 

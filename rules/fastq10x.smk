@@ -27,7 +27,7 @@ rule mkfastq10x:
         fastqR2=join(config['fastq10x_dir'], "{run10x}_all_R2.fastq.gz"),
         mkfastq10x_dir=directory(join(config['mkfastq10x_dir'], "{run10x}")),
         qc_stats=join(config['fastq10x_dir'], "{run10x}_qc_stats.csv"),
-        csv=temp("_mkfastq_{run10x}.csv"),
+        samplesheet=temp("_mkfastq_{run10x}.csv"),
         mro_file=temp("__{run10x}.mro"),
     params:
         index=lambda wc: expts.transcriptomic_index(wc.run10x),
