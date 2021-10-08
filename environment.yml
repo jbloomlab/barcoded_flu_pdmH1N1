@@ -21,6 +21,7 @@ dependencies:
   - arrow=0.17.0=py38h32f6830_1
   - async-timeout=3.0.1=py_1000
   - async_generator=1.10=py_0
+  - attmap=0.13.0=pyhd8ed1ab_0
   - attrs=20.2.0=pyh9f0ad1d_0
   - babel=2.8.0=py_0
   - backcall=0.2.0=pyh9f0ad1d_0
@@ -41,18 +42,21 @@ dependencies:
   - brotlipy=0.7.0=py38h8df0ef7_1001
   - bzip2=1.0.8=h516909a_3
   - c-ares=1.11.0=h470a237_1
-  - ca-certificates=2020.11.8=ha878542_0
+  - ca-certificates=2021.7.5=h06a4308_1
   - cachetools=4.1.1=py_0
   - cairo=1.16.0=h3fc0475_1005
-  - certifi=2020.11.8=py38h578d9bd_0
+  - certifi=2021.5.30=py38h578d9bd_0
   - cffi=1.14.3=py38h1bdcb99_1
   - chardet=3.0.4=py38h924ce5b_1008
   - click=7.1.2=pyh9f0ad1d_0
+  - cni=0.8.0=hc0beb16_0
+  - cni-plugins=0.9.1=ha8f183a_0
   - coincbc=2.10.5=hab63836_0
   - colorama=0.4.3=py_0
   - coloredlogs=14.0=py38h32f6830_1
   - colormath=3.0.0=py_2
   - configargparse=1.2.3=pyh9f0ad1d_0
+  - connection_pool=0.0.3=pyhd3deb0d_0
   - coverage=5.3=py38h1e0a361_1
   - cryptography=3.1.1=py38h766eaa4_0
   - curl=7.71.1=he644dc0_8
@@ -71,6 +75,7 @@ dependencies:
   - fadapa=0.3.1=pyh864c0ab_2
   - fftw=3.3.8=nompi_h7f3a6c3_1112
   - filechunkio=1.8=py_2
+  - filelock=3.0.12=pyhd3eb1b0_1
   - flake8=3.8.3=py_1
   - flake8-bugbear=20.1.4=py_0
   - flake8-builtins=1.5.3=pyh9f0ad1d_0
@@ -135,6 +140,7 @@ dependencies:
   - jmespath=0.10.0=pyh9f0ad1d_0
   - joblib=0.17.0=py_0
   - jpeg=9d=h516909a_0
+  - jq=1.6=h36c2ea0_1000
   - json5=0.9.5=pyh9f0ad1d_0
   - jsonschema=3.2.0=py_2
   - jupyter_client=6.1.7=py_0
@@ -154,6 +160,7 @@ dependencies:
   - lcms2=2.11=hbd6801e_0
   - ld_impl_linux-64=2.35=h769bd43_9
   - legacy-api-wrap=1.2=py_0
+  - libarchive=3.5.1=h899b81a_0
   - libblas=3.8.0=17_openblas
   - libcblas=3.8.0=17_openblas
   - libcrc32c=1.1.1=he1b5a44_2
@@ -164,10 +171,10 @@ dependencies:
   - libev=4.33=h516909a_1
   - libffi=3.2.1=he1b5a44_1007
   - libgcc=7.2.0=h69d50b8_2
-  - libgcc-ng=9.3.0=h5dbcf3e_17
+  - libgcc-ng=11.2.0=h1d223b6_9
   - libgfortran-ng=7.5.0=hae1eefd_17
   - libgfortran4=7.5.0=hae1eefd_17
-  - libgomp=9.3.0=h5dbcf3e_17
+  - libgomp=11.2.0=h1d223b6_9
   - libiconv=1.16=h516909a_0
   - liblapack=3.8.0=17_openblas
   - libllvm10=10.0.1=he513fc3_3
@@ -176,6 +183,7 @@ dependencies:
   - libpng=1.6.37=hed695b0_2
   - libprotobuf=3.13.0.1=h8b12597_0
   - librsvg=2.46.4=h33a7fed_0
+  - libseccomp=2.4.4=h36c2ea0_0
   - libsodium=1.0.18=h516909a_1
   - libssh2=1.9.0=hab1572f_5
   - libstdcxx-ng=9.3.0=h2ae2ef3_17
@@ -189,6 +197,7 @@ dependencies:
   - libxslt=1.1.33=h572872d_1
   - llvmlite=0.34.0=py38h4f45e52_2
   - logbook=1.5.3=py38h1e0a361_2
+  - logmuse=0.2.6=pyh8c360ce_0
   - lxml=4.5.2=py38hbb43d70_1
   - lz4-c=1.9.2=he1b5a44_3
   - lzo=2.10=h516909a_1000
@@ -223,8 +232,9 @@ dependencies:
   - numpy=1.19.2=py38hbc27379_1
   - oauth2client=4.1.3=py_0
   - olefile=0.46=py_0
+  - oniguruma=6.9.7.1=h7f98852_0
   - openjpeg=2.3.1=h981e76c_3
-  - openssl=1.1.1h=h516909a_0
+  - openssl=1.1.1l=h7f98852_0
   - ossuuid=1.6.2=hf484d3e_1000
   - packaging=20.4=pyh9f0ad1d_0
   - palettable=3.3.0=py_0
@@ -238,6 +248,7 @@ dependencies:
   - patsy=0.5.1=py_0
   - pbccs=5.0.0=0
   - pcre=8.44=he1b5a44_0
+  - peppy=0.31.1=pyhd8ed1ab_0
   - perl=5.26.2=h516909a_1006
   - perl-app-cpanminus=1.7044=pl526_1
   - perl-business-isbn=3.004=pl526_0
@@ -330,11 +341,13 @@ dependencies:
   - setuptools_scm=4.1.2=0
   - simplejson=3.17.2=py38h1e0a361_1
   - sinfo=0.3.1=py_0
+  - singularity=3.7.1=hca90b9e_0
   - six=1.15.0=pyh9f0ad1d_0
   - slacker=0.14.0=py_0
+  - smart_open=5.1.0=pyhd3eb1b0_0
   - smmap=3.0.4=pyh9f0ad1d_0
-  - snakemake=5.25.0=1
-  - snakemake-minimal=5.25.0=py_1
+  - snakemake=6.9.1=hdfd78af_0
+  - snakemake-minimal=6.9.1=pyhdfd78af_0
   - snowballstemmer=2.0.0=py_0
   - soupsieve=2.0.1=py_1
   - spectra=0.0.11=py_1
@@ -346,10 +359,12 @@ dependencies:
   - sphinxcontrib-qthelp=1.0.3=py_0
   - sphinxcontrib-serializinghtml=1.1.4=py_0
   - sqlite=3.33.0=h4cf870e_1
+  - squashfs-tools=4.3=h41c4fab_1004
   - sra-tools=2.10.8=pl526haddd2b5_0
   - star=2.7.6a=0
   - statsmodels=0.12.0=py38h1e0a361_0
   - stdlib-list=0.7.0=py38h32f6830_1
+  - stopit=1.1.2=py_0
   - svgutils=0.3.1=py_1000
   - tabulate=0.8.7=pyh9f0ad1d_0
   - tbb=2020.2=hc9558a2_0
@@ -363,10 +378,12 @@ dependencies:
   - tornado=6.0.4=py38h1e0a361_2
   - tqdm=4.50.2=pyh9f0ad1d_0
   - traitlets=5.0.4=py_1
+  - ubiquerg=0.6.1=pyh9f0ad1d_0
   - umap-learn=0.4.6=py38h32f6830_0
   - umi_tools=1.1.0=py38h0213d0e_0
   - uritemplate=3.0.1=py_0
   - urllib3=1.25.10=py_0
+  - veracitools=0.1.3=py_0
   - viennarna=2.4.15=py38h8162308_0
   - wcwidth=0.2.5=pyh9f0ad1d_2
   - webencodings=0.5.1=py_1
@@ -404,5 +421,3 @@ dependencies:
     - pox==0.2.8
     - ppft==1.6.6.2
     - regex==2020.10.11
-prefix: /fh/fast/bloom_j/software/miniconda3/envs/barcoded_flu_pdmH1N1
-
