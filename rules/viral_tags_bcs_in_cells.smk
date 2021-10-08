@@ -7,7 +7,7 @@ rule assign_viral_tags_to_cells:
         viral_tag_by_cell_csv=join(config['viral_fastq10x_dir'],
                                    "{expt}_viral_tag_by_cell.csv.gz"),
         matrix=join(config['aligned_fastq10x_dir'], "{expt}",
-                    'Solo.out/GeneFull/filtered/matrix.mtx'),
+                    'Solo.out/GeneFull/soupx_corrected/matrix.mtx'),
         features=join(config['aligned_fastq10x_dir'], "{expt}",
                       'Solo.out/GeneFull/filtered/features.tsv'),
         cell_barcodes=join(config['aligned_fastq10x_dir'], "{expt}",

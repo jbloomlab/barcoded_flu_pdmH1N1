@@ -40,6 +40,12 @@ rule align_fastq10x:
                      'Solo.out/GeneFull/Summary.csv'),
         umi_per_cell=join(config['aligned_fastq10x_dir'], "{expt}",
                           'Solo.out/GeneFull/UMIperCellSorted.txt'),
+        raw_matrix=join(config['aligned_fastq10x_dir'], "{expt}",
+                    'Solo.out/GeneFull/raw/matrix.mtx'),
+        raw_features=join(config['aligned_fastq10x_dir'], "{expt}",
+                      'Solo.out/GeneFull/raw/features.tsv'),
+        raw_barcodes=join(config['aligned_fastq10x_dir'], "{expt}",
+                      'Solo.out/GeneFull/raw/barcodes.tsv'),
         matrix=join(config['aligned_fastq10x_dir'], "{expt}",
                     'Solo.out/GeneFull/filtered/matrix.mtx'),
         features=join(config['aligned_fastq10x_dir'], "{expt}",
@@ -118,3 +124,34 @@ rule get_cb_whitelist_10x:
             wget -O - {params.url} > {output} 2> {log}
         fi
         """
+
+rule SoupX_correction:
+    """Remove background contamination with SoupX"""
+    input:
+        script = "scripts/run_soupx.R",
+        filtered_matrix = join(config['aligned_fastq10x_dir'], "{expt}",
+                                'Solo.out/GeneFull/filtered/matrix.mtx'),
+        filtered_barcodes = join(config['aligned_fastq10x_dir'], "{expt}",
+                                'Solo.out/GeneFull/filtered/barcodes.tsv'),
+        filtered_features = join(config['aligned_fastq10x_dir'], "{expt}",
+                                'Solo.out/GeneFull/filtered/features.tsv'),
+        raw_matrix = join(config['aligned_fastq10x_dir'], "{expt}",
+                                'Solo.out/GeneFull/raw/matrix.mtx'),
+        raw_barcodes = join(config['aligned_fastq10x_dir'], "{expt}",
+                                'Solo.out/GeneFull/raw/barcodes.tsv'), 
+        raw_features = join(config['aligned_fastq10x_dir'], "{expt}",
+                                'Solo.out/GeneFull/raw/features.tsv')
+    params:
+        outdir = join(config['aligned_fastq10x_dir'], "{expt}",
+                                'Solo.out/GeneFull/soupx_corrected/')
+    output:
+        corrected_matrix = join(config['aligned_fastq10x_dir'], "{expt}",
+                                'Solo.out/GeneFull/soupx_corrected/matrix.mtx')
+    log: join(config['log_dir'], "SoupX_correction_", "{expt}", ".log.Rout")
+    shell:
+        """
+        mkdir -p {params.outdir}    
+        Rscript {input.script} {input.filtered_matrix} {input.filtered_barcodes} {input.filtered_features} {input.raw_matrix} {input.raw_barcodes} {input.raw_features} {output.corrected_matrix} > {log} 2>&1
+        """
+
+
