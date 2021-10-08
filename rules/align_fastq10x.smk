@@ -147,6 +147,7 @@ rule SoupX_correction:
     output:
         corrected_matrix = join(config['aligned_fastq10x_dir'], "{expt}",
                                 'Solo.out/GeneFull/soupx_corrected/matrix.mtx')
+    container: "andrewwbutler/sc-flu:soupx_correction"
     log: join(config['log_dir'], "SoupX_correction_", "{expt}", ".log.Rout")
     shell:
         """
