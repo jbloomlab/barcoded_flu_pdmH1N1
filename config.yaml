@@ -46,9 +46,12 @@ cb_whitelist_10x: results/aligned_fastq10x/cb_whitelist_10x.txt
 cb_len_10x: 16  # length of 10X cell barcode
 umi_len_10x: 12  # length of 10X UMI: **this is for the v3 kit**
 
-# False discovery rate for calling infected cells based on expected
+# Fraction of viral UMIs required to call cell as infected
+infection_threshold: 0.01
+
+# False discovery rate for assigning viral tags based on expected
 # viral tag counts in uninfected cells.
-infection_calling_by_viral_tag_fdr: 0.0001
+viral_tag_fdr: 0.0001
 
 # viral barcode parsing paremeters for supernatant and second
 # infection sequencing. 
