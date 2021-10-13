@@ -6,12 +6,8 @@ rule assign_viral_tags_to_cells:
     input:
         viral_tag_by_cell_csv=join(config['viral_fastq10x_dir'],
                                    "{expt}_viral_tag_by_cell.csv.gz"),
-        matrix=join(config['aligned_fastq10x_dir'], "{expt}",
-                    'Solo.out/GeneFull/filtered/matrix.mtx'),
-        features=join(config['aligned_fastq10x_dir'], "{expt}",
-                      'Solo.out/GeneFull/filtered/features.tsv'),
-        cell_barcodes=join(config['aligned_fastq10x_dir'], "{expt}",
-                           'Solo.out/GeneFull/filtered/barcodes.tsv'),
+        infection_status_csv=join(config['viral_fastq10x_dir'],
+                                  "{expt}_infection_status_csv.gz"),
         notebook='notebooks/assign_viral_tags_to_cells.py.ipynb'
     output:
         cell_annotations=join(config['viral_tags_bcs_in_cells_dir'],
