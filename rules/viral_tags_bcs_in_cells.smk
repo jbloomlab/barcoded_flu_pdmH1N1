@@ -46,7 +46,7 @@ rule assign_infection_status:
                     category="{expt}")
     params:
         viral_genes=viral_genes,
-        infection_threshold=config['infection_treshold']
+        infection_threshold=config['infection_threshold'],
     log:
         notebook=join(config['log_dir'],
                       "assign_infection_status_{expt}.ipynb")
