@@ -6,7 +6,7 @@ rule assign_viral_tags_to_cells:
     input:
         viral_tag_by_cell_csv=join(config['viral_fastq10x_dir'],
                                    "{expt}_viral_tag_by_cell.csv.gz"),
-        infection_status_csv=join(config['viral_fastq10x_dir'],
+        infection_status_csv=join(config['viral_tags_bcs_in_cells_dir'],
                                   "{expt}_infection_status_csv.gz"),
         notebook='notebooks/assign_viral_tags_to_cells.py.ipynb'
     output:
@@ -38,7 +38,7 @@ rule assign_infection_status:
                            'Solo.out/GeneFull/filtered/barcodes.tsv'),
         notebook='notebooks/assign_infection_status.py.ipynb'
     output:
-        infection_status_csv=join(config['viral_fastq10x_dir'],
+        infection_status_csv=join(config['viral_tags_bcs_in_cells_dir'],
                                   "{expt}_infection_status_csv.gz"),
         plot=report(join(config['viral_tags_bcs_in_cells_dir'],
                          "{expt}_assign_infection_status.svg"),
