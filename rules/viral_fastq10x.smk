@@ -1,5 +1,33 @@
 """Rules related viral reads in aligned 10x Illumina transcriptomics."""
 
+rule viral_gene_presence:
+    """Call presence or absence of each viral gene in each cell."""
+    input:
+        matrix=join(config['aligned_fastq10x_dir'], "{expt}",
+                    'Solo.out/GeneFull/filtered', 'matrix.mtx'),
+        cell_barcodes=join(config['aligned_fastq10x_dir'], "{expt}",
+                    'Solo.out/GeneFull/filtered', 'barcodes.tsv'),
+        features=join(config['aligned_fastq10x_dir'], "{expt}",
+                    'Solo.out/GeneFull/filtered', 'features.tsv'),
+        cell_annotations=join(config['viral_tags_bcs_in_cells_dir'],
+                              "{expt}_cell_barcodes_with_viral_tags.csv.gz"),
+    output:
+        viral_genes_by_cell_csv=join(config['viral_fastq10x_dir'],
+                                   "{expt}_viral_genes_by_cell.csv.gz"),
+        plot=report(join(config['viral_fastq10x_dir'],
+                    "{expt}_viral_genes_by_cell.svg"),
+                    caption='../report/viral_genes_by_cell.rst',
+                    category="{expt}")
+    params:
+        viral_genes=viral_genes,
+        barcoded_viral_genes=barcoded_viral_genes
+    log:
+        notebook=join(config['log_dir'],
+                          "viral_gene_presence_{expt}.ipynb")
+    conda: '../environment.yml'
+    notebook:
+        '../notebooks/viral_gene_presence.py.ipynb'
+
 rule viral_transcript_coverage:
     """Coverage over viral transcripts in 10x transcriptomics."""
     input:
