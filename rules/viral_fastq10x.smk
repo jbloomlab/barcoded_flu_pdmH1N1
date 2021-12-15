@@ -64,10 +64,10 @@ rule valid_viral_barcodes_by_cell:
     output:
         valid_viral_barcodes_csv=join(config['viral_fastq10x_dir'],
                                           ("{expt}_valid_viral"
-                                           "_barcodes_by_cell.csv.gz")),
+                                           "_bc_by_cell.csv.gz")),
         plot=report(join(config['viral_fastq10x_dir'],
                          "{expt}_valid_viral_barcodes_by_cell.pdf"),
-                    caption='../report/valid_viral_barcodes_by_cell.rst',
+                    caption='../report/valid_viral_bc_by_cell.rst',
                     category="{expt}")
     params:
         barcoded_viral_genes=barcoded_viral_genes,
