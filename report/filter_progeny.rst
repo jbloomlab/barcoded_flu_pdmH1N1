@@ -1,0 +1,1 @@
+Filtered replicates of viral barcode frequencies in progeny.
