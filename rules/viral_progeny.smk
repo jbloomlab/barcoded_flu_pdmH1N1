@@ -1,26 +1,31 @@
 """Rules related to viral progeny barcodes."""
 
-rule process_viral_barcode_replicates:
-    """Plot correlation and average viral barcode replicates."""
+rule filter_progeny:
+    """Filter and average viral barcode replicates in progeny."""
     input:
+        cell_annotations=join(config['viral_tags_bcs_in_cells_dir'],
+                              "{expt}_cell_barcodes_with_viral_tags.csv.gz"),
         viral_bc_in_progeny_corrected_csv=join(config['viral_progeny_dir'],
                                                ("{expt}_viral_bc_in_progeny_"
                                                 "corrected.csv.gz")),
+        valid_viral_barcodes_csv=join(config['viral_fastq10x_dir'],
+                                          ("{expt}_valid_viral"
+                                           "_bc_by_cell.csv.gz")),
         notebook='notebooks/process_viral_barcode_replicates.py.ipynb'
     output:
-        viral_bc_in_progeny_freq_csv=join(config['viral_progeny_dir'],
+        filtered_progeny_viral_bc_csv=join(config['viral_progeny_dir'],
                                           "{expt}_"
-                                          "viral_bc_in_progeny_freq.csv.gz"),
+                                          "filtered_progeny_viral_bc.csv.gz"),
         plot=report(join(config['viral_progeny_dir'],
-                         "{expt}_viral_bc_replicates.pdf"),
-                    caption='../report/viral_bc_replicates.rst',
+                         "{expt}_filtered_progeny_viral_bc.pdf"),
+                    caption='../report/filter_progeny.rst',
                     category="{expt}")
     log:
         notebook=join(config['log_dir'],
-                      "process_viral_barcode_replicates_{expt}.ipynb")
+                      "filter_progeny_{expt}.ipynb")
     conda: '../environment.yml'
     notebook:
-        '../notebooks/process_viral_barcode_replicates.py.ipynb'
+        '../notebooks/filter_progeny.py.ipynb'
 
 rule correct_viral_barcodes_in_progeny:
     """Correct viral barcodes in progeny."""
