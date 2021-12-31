@@ -11,7 +11,6 @@ rule filter_progeny:
         valid_viral_barcodes_csv=join(config['viral_fastq10x_dir'],
                                           ("{expt}_valid_viral"
                                            "_bc_by_cell.csv.gz")),
-        notebook='notebooks/process_viral_barcode_replicates.py.ipynb'
     output:
         filtered_progeny_viral_bc_csv=join(config['viral_progeny_dir'],
                                           "{expt}_"
