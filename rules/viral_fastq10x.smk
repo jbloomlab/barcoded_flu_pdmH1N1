@@ -50,35 +50,6 @@ rule viral_transcript_coverage:
         '../notebooks/viral_transcript_coverage.py.ipynb'
 
 
-rule viral_barcodes_by_cell_valid:
-    """Calls valid viral barcodes in transcriptomic data."""
-    input:
-        viral_tag_by_cell_csv=join(config['viral_tags_bcs_in_cells_dir'],
-                                   "{expt}_cell_barcodes_with_viral"
-                                   "_tags.csv.gz"),
-        viral_bc_by_cell_corrected_csv=join(config['viral_fastq10x_dir'],
-                                            ("{expt}_viral_bc_by_cell"
-                                             "_corrected.csv.gz")),
-        viral_genes_by_cell_csv=join(config['viral_fastq10x_dir'],
-                                     "{expt}_viral_genes_by_cell.csv.gz"),
-    output:
-        viral_barcodes_valid_csv=join(config['viral_fastq10x_dir'],
-                                          ("{expt}_viral_bc_by"
-                                           "_cell_valid.csv.gz")),
-        plot=report(join(config['viral_fastq10x_dir'],
-                         "{expt}_viral_barcodes_by_cell_valid.pdf"),
-                    caption='../report/viral_bc_by_cell_valid.rst',
-                    category="{expt}")
-    params:
-        barcoded_viral_genes=barcoded_viral_genes,
-    log:
-        notebook=join(config['log_dir'],
-                      "viral_barcodes_by_cell_valid_{expt}.ipynb")
-    conda: '../environment.yml'
-    notebook:
-        '../notebooks/viral_barcodes_by_cell_valid.py.ipynb'
-
-
 rule correct_viral_barcodes_by_cell:
     """Correct viral barcodes within each cell."""
     input:
