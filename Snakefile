@@ -39,7 +39,6 @@ expts = pymodules.experiments.Experiments(config['experiments'],
                                           viral_tags,
                                           barcoded_viral_genes)
 
-
 # Target rules ---------------------------------------------------------------
 
 localrules: all
