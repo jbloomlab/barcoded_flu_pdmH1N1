@@ -9,8 +9,8 @@ rule filter_progeny:
                                                ("{expt}_viral_bc_in_progeny_"
                                                 "corrected.csv.gz")),
         valid_viral_barcodes_csv=join(config['viral_fastq10x_dir'],
-                                          ("{expt}_valid_viral"
-                                           "_bc_by_cell.csv.gz")),
+                                          ("{expt}_viral"
+                                           "_bc_by_cell_valid.csv.gz")),
     output:
         filtered_progeny_viral_bc_csv=join(config['viral_progeny_dir'],
                                           "{expt}_"
