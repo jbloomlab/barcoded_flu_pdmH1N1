@@ -69,7 +69,7 @@ if snakemake.params.index_sequencing == 'none':  # must use --lanes flag if no s
         cmds.extend([str(snakemake.params.lane)])
 if snakemake.params.index_sequencing == 'single':
     cmds.extend(['--force-single-index'])
-    cmds.extend(['--use-bases-mask', 'Y*,I10n*,n*,Y*'])
+    cmds.extend(['--use-bases-mask', 'Y*,I10n*,Y*'])
 if 'GA' in snakemake.params.index:
     cmds.extend(['--use-bases-mask', 'Y*,I8n*,Y*'])
 
