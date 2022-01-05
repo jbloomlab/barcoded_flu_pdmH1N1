@@ -22,8 +22,11 @@ rule transcription_progeny_correlation:
         viral_genes=viral_genes,
         barcoded_viral_genes=barcoded_viral_genes
     log:
-    conda:
+        notebook=join(config['log_dir'],
+                      "transcription_progeny_correlation_{expt}.ipynb")
+    conda: '../environment.yml'
     notebook:
+        '../notebooks/transcription_progeny_correlation.py.ipynb'
 
 rule filter_progeny:
     """Filter and average viral barcode replicates in progeny."""
