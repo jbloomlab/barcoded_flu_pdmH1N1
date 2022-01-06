@@ -39,7 +39,6 @@ expts = pymodules.experiments.Experiments(config['experiments'],
                                           viral_tags,
                                           barcoded_viral_genes)
 
-
 # Target rules ---------------------------------------------------------------
 
 localrules: all
@@ -54,8 +53,11 @@ rule all:
         expand(join(config['viral_fastq10x_dir'],
                     "{expt}_viral_tag_by_cell.svg"),
                expt=expts.experiments),
+        expand(join(config['viral_progeny_dir'],
+                    "{expt}_transcription_progeny_correlation.pdf"),
+               expt=expts.expts_with_progeny_barcodes),
         expand(join(config['viral_fastq10x_dir'],
-                    "{expt}_valid_viral_barcodes_by_cell.pdf"),
+                    "{expt}_viral_barcodes_by_cell_valid.pdf"),
                expt=expts.experiments),
         expand(join(config['viral_fastq10x_dir'],
                     "{expt}_viral_bc_by_cell_corrected.pdf"),
@@ -82,7 +84,7 @@ rule all:
                     "{expt}_viral_bc_in_progeny_corrected.pdf"),
                expt=expts.expts_with_progeny_barcodes),
         expand(join(config['viral_progeny_dir'],
-                    "{expt}_viral_bc_replicates.pdf"),
+                    "{expt}_filtered_progeny_viral_bc.pdf"),
                expt=expts.expts_with_progeny_barcodes),
         expand(join(config['pacbio_dir'], "{expt}_ccs_summaries.svg"),
                expt=expts.expts_with_pacbio),
