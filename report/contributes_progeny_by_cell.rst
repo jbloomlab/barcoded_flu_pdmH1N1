@@ -1,0 +1,1 @@
+Each infected cell is annotated by whether progeny are detected from viral barcodes associated that cell.
