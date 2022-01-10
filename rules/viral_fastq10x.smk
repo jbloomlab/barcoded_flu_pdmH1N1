@@ -1,5 +1,47 @@
 """Rules related viral reads in aligned 10x Illumina transcriptomics."""
 
+rule viral_gene_progeny_relationship:
+    """Plots a histogram of viral gene numbers binned by cells that contribute progeny."""
+    input:
+        viral_genes_by_cell_csv=join(config['viral_fastq10x_dir'],
+                                     "{expt}_viral_genes_by_cell.csv.gz"),
+        contributes_progeny_by_cell_csv=join(config['viral_fastq10x_dir'],
+                                             ("{expt}_contributes_progeny"
+                                              "_by_cell.csv.gz")),
+    output:
+        plot=report(join(config['viral_fastq10x_dir'],
+                         "{expt}_viral_gene_progeny_relationship.pdf"),
+                    caption='../report/viral_gene_progeny_relationship.rst',
+                    category="{expt}")
+    log:
+        notebook=join(config['log_dir'],
+                      "viral_gene_progeny_relationship_{expt}.ipynb")
+    conda: '../environment.yml'
+    notebook:
+        '../notebooks/viral_gene_progeny_relationship.py.ipynb'
+
+rule contributes_progeny_by_cell:
+    """Annotates each infected cell with whether it contributes progeny."""
+    input:
+        transcription_progeny_csv=join(config['viral_progeny_dir'],
+                                       "{expt}_transcription_progeny.csv.gz"),
+        viral_genes_by_cell_csv=join(config['viral_fastq10x_dir'],
+                                     "{expt}_viral_genes_by_cell.csv.gz"),
+    output:
+        contributes_progeny_by_cell_csv=join(config['viral_fastq10x_dir'],
+                                             ("{expt}_contributes_progeny"
+                                              "_by_cell.csv.gz")),
+        plot=report(join(config['viral_fastq10x_dir'],
+                         "{expt}_contributes_progeny_by_cell.pdf"),
+                    caption='../report/contributes_progeny_by_cell.rst',
+                    category="{expt}")
+    log:
+        notebook=join(config['log_dir'],
+                      "contributes_progeny_by_cell_{expt}.ipynb")
+    conda: '../environment.yml'
+    notebook:
+        '../notebooks/contributes_progeny_by_cell.py.ipynb'
+
 rule viral_gene_presence:
     """Call presence or absence of each viral gene in each cell."""
     input:
