@@ -63,6 +63,8 @@ rule contributes_progeny_by_cell:
                          "{expt}_contributes_progeny_by_cell.pdf"),
                     caption='../report/contributes_progeny_by_cell.rst',
                     category="{expt}")
+    params:
+        progeny_detection_limit=config['progeny_detection_limit']
     log:
         notebook=join(config['log_dir'],
                       "contributes_progeny_by_cell_{expt}.ipynb")
