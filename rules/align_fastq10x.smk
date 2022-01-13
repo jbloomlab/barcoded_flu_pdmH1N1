@@ -22,6 +22,32 @@ rule qc_transcript_alignments:
         '../notebooks/qc_transcript_alignments.py.ipynb'
 
 
+rule filter_total_umis:
+    """Filters cell barcodes based on total UMI counts."""
+    input:
+        matrix=join(config['aligned_fastq10x_dir'], "{expt}",
+                    'Solo.out/GeneFull/filtered/matrix.mtx'),
+        features=join(config['aligned_fastq10x_dir'], "{expt}",
+                      'Solo.out/GeneFull/filtered/features.tsv'),
+        cell_barcodes=join(config['aligned_fastq10x_dir'], "{expt}",
+                           'Solo.out/GeneFull/filtered/barcodes.tsv'),
+    output:
+        cell_barcodes_filtered=join(config['aligned_fastq10x_dir'], "{expt}",
+                                    'Solo.out/GenFull/filtered/barcodes_filtered.tsv'),
+        plot=report(join(config['aligned_fastq10x_dir'], "{expt}",
+                         'filter_total_umis.pdf'),
+                    caption='../report/filter_total_umis.rst',
+                    category="{expt}")
+    params:
+        total_UMI_deviations=config['total_UMI_deviations']
+    log:
+        notebook=join(config['log_dir'],
+                      "filter_total_umis_{expt}.ipynb")
+    conda: '../environment.yml'
+    notebook:
+        '../notebooks/filter_total_umis.py.ipynb'
+
+
 rule align_fastq10x:
     """Align 10x transcriptomics FASTQ reads with ``STARsolo``."""
     input:
