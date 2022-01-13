@@ -59,6 +59,9 @@ viral_barcode_upstream_length: 28  # Specify the length of upstream seq used to 
 viral_barcode_mismatch: 0  # Number of mismatches allowed in upstream seq
 viral_barcode_minq: 30  # Minimum quality threshold for bases in viral barcode
 
+# Detection limit for supernatant and second infection sequencing
+progeny_detection_limit: 1e-5
+
 # False discovery rate for calling viral barcodes based on expected
 # viral tag counts in uninfected cells.
 viral_bc_fdr: 0.0001
