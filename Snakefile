@@ -51,7 +51,7 @@ rule all:
         expand(join(config['fastq10x_dir'], "{expt}_qc_fastq10x.svg"),
                expt=expts.experiments),
         expand(join(config['aligned_fastq10x_dir'], "{expt}",
-                    'filtered_total_umis.pdf'),
+                    'filter_total_umis.pdf'),
                expt=expts.experiments),
         expand(join(config['aligned_fastq10x_dir'], "{expt}",
                     'qc_transcript_alignments.svg'),
