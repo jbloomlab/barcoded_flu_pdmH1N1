@@ -33,7 +33,7 @@ rule filter_total_umis:
                            'Solo.out/GeneFull/filtered/barcodes.tsv'),
     output:
         cell_barcodes_filtered=join(config['aligned_fastq10x_dir'], "{expt}",
-                                    'Solo.out/GenFull/filtered/barcodes_filtered.tsv'),
+                                    'Solo.out/GeneFull/filtered/barcodes_filtered.tsv'),
         plot=report(join(config['aligned_fastq10x_dir'], "{expt}",
                          'filter_total_umis.pdf'),
                     caption='../report/filter_total_umis.rst',

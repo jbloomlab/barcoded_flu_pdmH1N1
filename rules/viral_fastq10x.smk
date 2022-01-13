@@ -78,7 +78,7 @@ rule viral_gene_presence:
         matrix=join(config['aligned_fastq10x_dir'], "{expt}",
                     'Solo.out/GeneFull/filtered', 'matrix.mtx'),
         cell_barcodes_filtered=join(config['aligned_fastq10x_dir'], "{expt}",
-                                    'Solo.out/GenFull/filtered/barcodes_filtered.tsv'),
+                                    'Solo.out/GeneFull/filtered/barcodes_filtered.tsv'),
         features=join(config['aligned_fastq10x_dir'], "{expt}",
                     'Solo.out/GeneFull/filtered', 'features.tsv'),
         cell_annotations=join(config['viral_tags_bcs_in_cells_dir'],
@@ -222,7 +222,7 @@ rule viral_barcodes_in_transcripts:
         bai=join(config['aligned_fastq10x_dir'], "{expt}",
                  'Aligned.sortedByCoord.out.bam.bai'),
         cell_barcodes_filtered=join(config['aligned_fastq10x_dir'], "{expt}",
-                                    'Solo.out/GenFull/filtered/barcodes_filtered.tsv'),
+                                    'Solo.out/GeneFull/filtered/barcodes_filtered.tsv'),
         viral_bc_locs=join(config['viral_fastq10x_dir'], 'viral_bc_locs.csv'),
         notebook='notebooks/viral_barcodes_in_transcripts.py.ipynb'
     output:
@@ -244,7 +244,7 @@ rule viral_tags_in_transcripts:
         bai=join(config['aligned_fastq10x_dir'], "{expt}",
                  'Aligned.sortedByCoord.out.bam.bai'),
         cell_barcodes_filtered=join(config['aligned_fastq10x_dir'], "{expt}",
-                                    'Solo.out/GenFull/filtered/barcodes_filtered.tsv'),
+                                    'Solo.out/GeneFull/filtered/barcodes_filtered.tsv'),
         viral_tag_locs=join(config['viral_fastq10x_dir'],
                             'viral_tag_locs.csv'),
         viral_tag_identities=config['viral_tag_identities'],
