@@ -19,6 +19,34 @@ rule viral_gene_progeny_relationship:
     conda: '../environment.yml'
     notebook:
         '../notebooks/viral_gene_progeny_relationship.py.ipynb'
+        
+rule integrate_data:
+    """Integrates processed data into a single CSV."""
+    input:
+        cell_annotations=join(config['viral_tags_bcs_in_cells_dir'],
+                              "{expt}_cell_barcodes_with_viral_tags.csv.gz"),
+        viral_genes_by_cell_csv=join(config['viral_fastq10x_dir'],
+                                     "{expt}_viral_genes_by_cell.csv.gz"),
+        viral_barcodes_valid_csv=join(config['viral_fastq10x_dir'],
+                                          ("{expt}_viral_bc_by"
+                                           "_cell_valid.csv.gz")),
+        filtered_progeny_viral_bc_csv=join(config['viral_progeny_dir'],
+                                          "{expt}_"
+                                          "filtered_progeny_viral_bc.csv.gz"),
+        contributes_progeny_by_cell_csv=join(config['viral_fastq10x_dir'],
+                                             ("{expt}_contributes_progeny"
+                                              "_by_cell.csv.gz")),
+    output:
+        integrated_data_csv=join(config['viral_fastq10x_dir'],
+                                 "{expt}_integrate_data.csv.gz"),
+    params:
+        barcoded_viral_genes=barcoded_viral_genes
+    log:
+        notebook=join(config['log_dir'],
+                      "integrate_data_{expt}.ipynb")
+    conda: '../environment.yml'
+    notebook:
+        '../notebooks/integrate_data.py.ipynb'
 
 rule contributes_progeny_by_cell:
     """Annotates each infected cell with whether it contributes progeny."""
