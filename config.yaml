@@ -46,6 +46,9 @@ cb_whitelist_10x: results/aligned_fastq10x/cb_whitelist_10x.txt
 cb_len_10x: 16  # length of 10X cell barcode
 umi_len_10x: 12  # length of 10X UMI: **this is for the v3 kit**
 
+# Number of Median Absolute Deviations to use for filtering total UMIs per cell
+total_UMI_deviations: 2.5
+
 # Fraction of viral UMIs required to call cell as infected
 infection_threshold: 0.01
 
