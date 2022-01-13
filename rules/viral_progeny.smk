@@ -20,7 +20,8 @@ rule transcription_progeny_correlation:
                          category="{expt}")
     params:
         viral_genes=viral_genes,
-        barcoded_viral_genes=barcoded_viral_genes
+        barcoded_viral_genes=barcoded_viral_genes,
+        progeny_detection_limit=config['progeny_detection_limit']
     log:
         notebook=join(config['log_dir'],
                       "transcription_progeny_correlation_{expt}.ipynb")
