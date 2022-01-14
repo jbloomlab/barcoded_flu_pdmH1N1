@@ -77,6 +77,8 @@ rule viral_gene_presence:
     input:
         matrix=join(config['aligned_fastq10x_dir'], "{expt}",
                     'Solo.out/GeneFull/filtered', 'matrix.mtx'),
+        cell_barcodes=join(config['aligned_fastq10x_dir'], "{expt}",
+                           'Solo.out/GeneFull/filtered/barcodes.tsv'),
         cell_barcodes_filtered=join(config['aligned_fastq10x_dir'], "{expt}",
                                     'Solo.out/GeneFull/filtered/barcodes_filtered.tsv'),
         features=join(config['aligned_fastq10x_dir'], "{expt}",
