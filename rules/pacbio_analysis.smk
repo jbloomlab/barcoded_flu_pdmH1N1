@@ -18,8 +18,8 @@ rule pacbio_consensus_gene:
 rule pacbio_consensus_UMI:
     """Call consensus mutations for each UMI in PacBio data."""
     input:
-        UMI_mutations_csv=join(config['pacbio_dir'],
-                               "{expt}_UMI_mutations.csv.gz")
+        CCS_mutations_csv=join(config['pacbio_dir'],
+                               "{expt}_CCS_mutations.csv.gz")
     output:
         consensus_UMI_csv=join(config['pacbio_dir'],
                                "{expt}_consensus_UMI.csv.gz")
@@ -38,8 +38,8 @@ rule process_pacbio_mutations:
         cell_annotations=join(config['viral_tags_bcs_in_cells_dir'],
                               "{expt}_cell_barcodes_with_viral_tags.csv.gz"),
     output:
-        UMI_mutations_csv=join(config['pacbio_dir'],
-                               "{expt}_UMI_mutations.csv.gz")
+        CCS_mutations_csv=join(config['pacbio_dir'],
+                               "{expt}_CCS_mutations.csv.gz")
     conda: '../environment.yml'
     log:
         notebook=join(config['log_dir'],
