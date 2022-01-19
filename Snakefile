@@ -111,6 +111,9 @@ rule all:
         expand(join(config['pacbio_dir'],
                     "{expt}_consensus_UMI.csv.gz"),
                expt=expts.expts_with_pacbio),
+        expand(join(config['pacbio_dir'],
+                    "{expt}_consensus_gene.csv.gz"),
+               expt=expts.expts_with_pacbio),
 
 
 # Set up report  -------------------------------------------------------------

@@ -1,5 +1,20 @@
 """Rules related to analysis viral pacbio data."""
 
+rule pacbio_consensus_gene:
+    """Call consensus mutations for each gene in PacBio data."""
+    input:
+        consensus_UMI_csv=join(config['pacbio_dir'],
+                               "{expt}_consensus_UMI.csv.gz")
+    output:
+        consensus_gene_csv=join(config['pacbio_dir'],
+                               "{expt}_consensus_gene.csv.gz")
+    conda: '../environment.yml'
+    log:
+        notebook=join(config['log_dir'],
+                      "pacbio_consensus_gene_{expt}.ipynb")
+    notebook:
+        '../notebooks/pacbio_consensus_gene.py.ipynb'
+
 rule pacbio_consensus_UMI:
     """Call consensus mutations for each UMI in PacBio data."""
     input:
