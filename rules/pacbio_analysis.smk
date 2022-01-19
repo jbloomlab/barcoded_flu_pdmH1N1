@@ -1,22 +1,21 @@
 """Rules related to analysis viral pacbio data."""
 
-rule UMI_consensus:
-    """Call consensus mutations in UMIs."""
+rule process_pacbio_mutations:
+    """Process pacbio mutations from infected cells."""
     input:
         mutation_df=join(config['pacbio_dir'],
                          "{expt}_mutations_str_ex.csv.gz"),
-        cell_df=join(config['viral_tags_bcs_in_cells_dir'],
-                     "{expt}_cell_barcodes_with_viral_tags.csv.gz"),
-        notebook='notebooks/pacbio_consensus_sequences.py.ipynb'
+        cell_annotations=join(config['viral_tags_bcs_in_cells_dir'],
+                              "{expt}_cell_barcodes_with_viral_tags.csv.gz"),
     output:
-        consensus_UMI_mutations=join(config['pacbio_dir'],
-                                     "{expt}_consensus_UMI_mutations.csv.gz")
+        UMI_mutations_csv=join(config['pacbio_dir'],
+                               "{expt}_UMI_mutations.csv.gz")
     conda: '../environment.yml'
     log:
         notebook=join(config['log_dir'],
-                      "pacbio_consensus_sequences_{expt}.ipynb")
+                      "process_pacbio_mutations_{expt}.ipynb")
     notebook:
-        '../notebooks/pacbio_consensus_sequences.py.ipynb'
+        '../notebooks/process_pacbio_mutations.py.ipynb'
 
 rule strand_exchange:
     """Quantify strand exchange."""
