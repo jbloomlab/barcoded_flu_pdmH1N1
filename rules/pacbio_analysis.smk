@@ -1,22 +1,51 @@
 """Rules related to analysis viral pacbio data."""
 
-rule UMI_consensus:
-    """Call consensus mutations in UMIs."""
+rule pacbio_consensus_gene:
+    """Call consensus mutations for each gene in PacBio data."""
     input:
-        mutation_df=join(config['pacbio_dir'],
-                         "{expt}_mutations_str_ex.csv.gz"),
-        cell_df=join(config['viral_tags_bcs_in_cells_dir'],
-                     "{expt}_cell_barcodes_with_viral_tags.csv.gz"),
-        notebook='notebooks/pacbio_consensus_sequences.py.ipynb'
+        consensus_UMI_csv=join(config['pacbio_dir'],
+                               "{expt}_consensus_UMI.csv.gz")
     output:
-        consensus_UMI_mutations=join(config['pacbio_dir'],
-                                     "{expt}_consensus_UMI_mutations.csv.gz")
+        consensus_gene_csv=join(config['pacbio_dir'],
+                               "{expt}_consensus_gene.csv.gz")
     conda: '../environment.yml'
     log:
         notebook=join(config['log_dir'],
-                      "pacbio_consensus_sequences_{expt}.ipynb")
+                      "pacbio_consensus_gene_{expt}.ipynb")
     notebook:
-        '../notebooks/pacbio_consensus_sequences.py.ipynb'
+        '../notebooks/pacbio_consensus_gene.py.ipynb'
+
+rule pacbio_consensus_UMI:
+    """Call consensus mutations for each UMI in PacBio data."""
+    input:
+        CCS_mutations_csv=join(config['pacbio_dir'],
+                               "{expt}_CCS_mutations.csv.gz")
+    output:
+        consensus_UMI_csv=join(config['pacbio_dir'],
+                               "{expt}_consensus_UMI.csv.gz")
+    conda: '../environment.yml'
+    log:
+        notebook=join(config['log_dir'],
+                      "pacbio_consensus_UMI_{expt}.ipynb")
+    notebook:
+        '../notebooks/pacbio_consensus_UMI.py.ipynb'
+
+rule process_pacbio_mutations:
+    """Process pacbio mutations from infected cells."""
+    input:
+        mutation_df=join(config['pacbio_dir'],
+                         "{expt}_mutations_str_ex.csv.gz"),
+        cell_annotations=join(config['viral_tags_bcs_in_cells_dir'],
+                              "{expt}_cell_barcodes_with_viral_tags.csv.gz"),
+    output:
+        CCS_mutations_csv=join(config['pacbio_dir'],
+                               "{expt}_CCS_mutations.csv.gz")
+    conda: '../environment.yml'
+    log:
+        notebook=join(config['log_dir'],
+                      "process_pacbio_mutations_{expt}.ipynb")
+    notebook:
+        '../notebooks/process_pacbio_mutations.py.ipynb'
 
 rule strand_exchange:
     """Quantify strand exchange."""
