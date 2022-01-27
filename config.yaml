@@ -110,6 +110,7 @@ experiments:
         index_sequencing: none
     pacbio_viral_sequencing:
       2021-08-05_all_segments_run1: /fh/fast/bloom_j/SR/ngs/pacbio/210730_SequelIIe/r64272e_20210730_182729/1_A01/m64272e_210730_193026.subreads.bam
+      2021-09-17_all_segments_run2: /fh/fast/bloom_j/SR/ngs/pacbio/210917_SequelIIe/r64272e_20210917_174421/1_A01/m64272e_210917_175514.subreads.bam
 
     viral_barcodes:
       supernatant:
