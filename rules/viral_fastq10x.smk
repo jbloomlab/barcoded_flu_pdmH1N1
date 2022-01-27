@@ -27,6 +27,8 @@ rule integrate_data:
                               "{expt}_cell_barcodes_with_viral_tags.csv.gz"),
         viral_genes_by_cell_csv=join(config['viral_fastq10x_dir'],
                                      "{expt}_viral_genes_by_cell.csv.gz"),
+        pacbio_consensus_gene_csv=join(config['pacbio_dir'],
+                                       "{expt}_consensus_gene.csv.gz")
         viral_barcodes_valid_csv=join(config['viral_fastq10x_dir'],
                                           ("{expt}_viral_bc_by"
                                            "_cell_valid.csv.gz")),
