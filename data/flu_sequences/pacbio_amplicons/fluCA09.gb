@@ -13,7 +13,7 @@ REFERENCE   1  (bases 1 to 2123)
 FEATURES             Location/Qualifiers
       ORF_1                 1..870
       primer_binding_site_1 1..32
-      seqeunced_ORF_1       33..870
+      sequenced_ORF_1       33..870
       variant_tag_2         750..750
       termini3              871..1078
       sequenced_termini3    871..1074
