@@ -11,23 +11,23 @@ REFERENCE   1  (bases 1 to 2123)
   JOURNAL   Exported Apr 13, 2022 from SnapGene 6.0.2
             https://www.snapgene.com
 FEATURES             Location/Qualifiers
-      ORF_1                	1..870
-      primer_binding_site_1	1..32
-      seqeunced_ORF_1      	33..870
-      variant_tag_2        	750..750
-      termini3             	871..1078
-      sequenced_termini3   	871..1074
-      viral_barcode        	892..907
-      termini3_flex        	1075..1078
-      polyA                	1079..1107
-      UMI                  	1108..1119
-      cellbarcode          	1120..1135
-      Read1                	1136..1155
-      termini5             	1156..1260
-      ORF_2                	1261..2123
-      sequenced_ORF_2      	1261..2091
-      variant_tag_1        	1404..1404
-      primer_binding_site_2	2092..2123
+      ORF_1                 1..870
+      primer_binding_site_1 1..32
+      seqeunced_ORF_1       33..870
+      variant_tag_2         750..750
+      termini3              871..1078
+      sequenced_termini3    871..1074
+      viral_barcode         892..907
+      termini3_flex         1075..1078
+      polyA                 1079..1107
+      UMI                   1108..1119
+      cellbarcode           1120..1135
+      Read1                 1136..1155
+      termini5              1156..1260
+      ORF_2                 1261..2123
+      sequenced_ORF_2       1261..2091
+      variant_tag_1         1404..1404
+      primer_binding_site_2 2092..2123
 ORIGIN
         1 gctggatctg gtattatcat ttcagataca ccagtccacg attgcaatac aacttgtcaa
        61 acacccaagg gtgctataaa caccagcctc ccatttcaga atatacatcc gatcacaatt
@@ -79,23 +79,23 @@ REFERENCE   1  (bases 1 to 2122)
   JOURNAL   Exported Apr 13, 2022 from SnapGene 6.0.2
             https://www.snapgene.com
 FEATURES             Location/Qualifiers
-      ORF_1                	1..1694
-      primer_binding_site_1	1..31     
-      sequenced_ORF_1      	32..1694
-      variant_tag_1        	137..137
-      variant_tag_2        	1574..1574
-      termini3             	1695..1902
-      sequenced_termini3   	1695..1898
-      viral_barcode        	1716..1731
-      termini3_flex        	1899..1902
-      polyA                	1903..1931
-      UMI                  	1932..1943
-      cellbarcode          	1944..1959
-      Read1                	1960..1979
-      termini5             	1980..2084
-      ORF_2                	2085..2122
-      sequenced_ORF_2      	2085..2091
-      primer_binding_site_2	2092..2122
+      ORF_1                 1..1694
+      primer_binding_site_1 1..31     
+      sequenced_ORF_1       32..1694
+      variant_tag_1         137..137
+      variant_tag_2         1574..1574
+      termini3              1695..1902
+      sequenced_termini3    1695..1898
+      viral_barcode         1716..1731
+      termini3_flex         1899..1902
+      polyA                 1903..1931
+      UMI                   1932..1943
+      cellbarcode           1944..1959
+      Read1                 1960..1979
+      termini5              1980..2084
+      ORF_2                 2085..2122
+      sequenced_ORF_2       2085..2091
+      primer_binding_site_2 2092..2122
 ORIGIN
         1 cgattttggt tgtattattg tacacgttcg cgacggcgaa cgctgatact ctttgcattg
        61 gttatcatgc gaacaattca acagacactg tagacacagt actagaaaag aatgtaacag
@@ -147,22 +147,22 @@ REFERENCE   1  (bases 1 to 1105)
   JOURNAL   Exported Apr 13, 2022 from SnapGene 6.0.2
             https://www.snapgene.com
 FEATURES             Location/Qualifiers
-      ORF_1                	1..407    
-      primer_binding_site_1	1..23
-      sequenced_ORF_1      	24..407
-      termini3             	408..628
-      sequenced_termini3   	408..624
-      variant_tag_2        	573..573
-      termini3_flex        	625..628
-      polyA                	629..657
-      UMI                  	658..669
-      cellbarcode          	670..685
-      Read1                	686..706
-      termini5             	707..730
-      ORF_2                	731..1105
-      sequenced_ORF_2      	731..1082
-      Untitled             	805..805
-      primer_binding_site_2	1083..1105
+      ORF_1                 1..407    
+      primer_binding_site_1 1..23
+      sequenced_ORF_1       24..407
+      termini3              408..628
+      sequenced_termini3    408..624
+      variant_tag_2         573..573
+      termini3_flex         625..628
+      polyA                 629..657
+      UMI                   658..669
+      cellbarcode           670..685
+      Read1                 686..706
+      termini5              707..730
+      ORF_2                 731..1105
+      sequenced_ORF_2       731..1082
+      Untitled              805..805
+      primer_binding_site_2 1083..1105
 ORIGIN
         1 gctattcaac tggtgcactt gccagttgca tgggcctcat atacaacagg atgggaacag
        61 tgaccacaga agctgctttt ggtctagtgt gtgccacttg tgaacagatt gctgattcac
@@ -197,22 +197,22 @@ REFERENCE   1  (bases 1 to 1105)
   JOURNAL   Exported Apr 13, 2022 from SnapGene 6.0.2
             https://www.snapgene.com
 FEATURES             Location/Qualifiers
-      ORF_1                	1..750    
-      primer_binding_site_1	1..22
-      sequenced_ORF_1      	23..750
-      variant_tag_1        	66..66
-      termini3             	751..971
-      sequenced_termini3   	751..967
-      variant_tag_2        	916..916
-      termini3_flex        	968..971
-      polyA                	972..1000
-      UMI                  	1001..1012
-      cellbarcode          	1013..1028
-      Read1                	1029..1050
-      termini5             	1051..1074
-      ORF_2                	1075..1105
-      sequenced_ORF_2      	1075..1083
-      primer_binding_site_2	1084..1105
+      ORF_1                 1..750    
+      primer_binding_site_1 1..22
+      sequenced_ORF_1       23..750
+      variant_tag_1         66..66
+      termini3              751..971
+      sequenced_termini3    751..967
+      variant_tag_2         916..916
+      termini3_flex         968..971
+      polyA                 972..1000
+      UMI                   1001..1012
+      cellbarcode           1013..1028
+      Read1                 1029..1050
+      termini5              1051..1074
+      ORF_2                 1075..1105
+      sequenced_ORF_2       1075..1083
+      primer_binding_site_2 1084..1105
 ORIGIN
         1 ctaaccgagg tcgaaacgta cgttctttct atcatcccgt caggccccct caaagccgag
        61 atcgcrcaga gactggaaag tgtctttgca ggaaagaaca cagatcttga ggctctcatg
@@ -247,29 +247,29 @@ REFERENCE   1  (bases 1 to 1816)
   JOURNAL   Exported Apr 13, 2022 from SnapGene 6.0.2
             https://www.snapgene.com
 FEATURES             Location/Qualifiers
-      ORF_1                	1..935    
-      primer_binding_site_1	1..25
-      sequenced_ORF_1      	26..935
-      variant_tag_2        	224..224
-      variant_tag_3        	233..233
-      variant_tag_4        	234..234
-      variant_tag_5        	235..235
-      variant_tag_6        	236..236
-      variant_tag_7        	653..653
-      variant_tag_8        	806..806
-      termini3             	936..1120
-      sequenced_termini3   	936..1116
-      viral_barcode        	957..972
-      termini3_flex        	1117..1120
-      polyA                	1121..1149
-      UMI                  	1150..1161
-      cellbarcode          	1162..1177
-      Read1                	1178..1199
-      termini5             	1200..1259
-      ORF_2                	1260..1816
-      sequenced_ORF_2      	1260..1791
-      variant_tag_1        	1439..1439
-      primer_binding_site_2	1792..1816
+      ORF_1                 1..935    
+      primer_binding_site_1 1..25
+      sequenced_ORF_1       26..935
+      variant_tag_2         224..224
+      variant_tag_3         233..233
+      variant_tag_4         234..234
+      variant_tag_5         235..235
+      variant_tag_6         236..236
+      variant_tag_7         653..653
+      variant_tag_8         806..806
+      termini3              936..1120
+      sequenced_termini3    936..1116
+      viral_barcode         957..972
+      termini3_flex         1117..1120
+      polyA                 1121..1149
+      UMI                   1150..1161
+      cellbarcode           1162..1177
+      Read1                 1178..1199
+      termini5              1200..1259
+      ORF_2                 1260..1816
+      sequenced_ORF_2       1260..1791
+      variant_tag_1         1439..1439
+      primer_binding_site_2 1792..1816
 ORIGIN
         1 tgagctgtcc tattggtgaa gttccctctc catacaactc aagatttgag tcagtcgctt
        61 ggtcagcaag tgcttgtcat gatggcatca attggctaac aattggaatt tctggcccag
@@ -316,29 +316,29 @@ REFERENCE   1  (bases 1 to 1827)
   JOURNAL   Exported Apr 13, 2022 from SnapGene 6.0.2
             https://www.snapgene.com
 FEATURES             Location/Qualifiers
-      ORF_1                	1..1465   
-      primer_binding_site_1	1..36
-      sequenced_ORF_1      	37..1465
-      variant_tag_1        	178..178
-      variant_tag_2        	754..754
-      variant_tag_3        	763..763
-      variant_tag_4        	764..764
-      variant_tag_5        	765..765
-      variant_tag_6        	766..766
-      variant_tag_7        	1183..1183
-      variant_tag_8        	1336..1336
-      termini3             	1466..1650
-      sequenced_termini3   	1466..1646
-      viral_barcode        	1487..1502
-      termini3_flex        	1647..1650
-      polyA                	1651..1679
-      UMI                  	1680..1691
-      cellbarcode          	1692..1707
-      Read1                	1708..1729
-      termini5             	1730..1789
-      ORF_2                	1790..1827
-      sequenced_ORF_2      	1790..1791
-      primer_binding_site_2	1792..1827
+      ORF_1                 1..1465   
+      primer_binding_site_1 1..36
+      sequenced_ORF_1       37..1465
+      variant_tag_1         178..178
+      variant_tag_2         754..754
+      variant_tag_3         763..763
+      variant_tag_4         764..764
+      variant_tag_5         765..765
+      variant_tag_6         766..766
+      variant_tag_7         1183..1183
+      variant_tag_8         1336..1336
+      termini3              1466..1650
+      sequenced_termini3    1466..1646
+      viral_barcode         1487..1502
+      termini3_flex         1647..1650
+      polyA                 1651..1679
+      UMI                   1680..1691
+      cellbarcode           1692..1707
+      Read1                 1708..1729
+      termini5              1730..1789
+      ORF_2                 1790..1827
+      sequenced_ORF_2       1790..1791
+      primer_binding_site_2 1792..1827
 ORIGIN
         1 ggtagtcgga ataattagcc taatattgca aataggaaat ataatctcag gatccatgaa
        61 ccctaatcag aaaattatta cgataggatc ggtgtgcatg actataggta tggcaaatct
@@ -385,22 +385,22 @@ REFERENCE   1  (bases 1 to 1645)
   JOURNAL   Exported Apr 13, 2022 from SnapGene 6.0.2
             https://www.snapgene.com
 FEATURES             Location/Qualifiers
-      ORF1                 	1..770    
-      primer_binding_site_1	1..24
-      sequenced_ORF_1      	25..770
-      variant_tag_2        	635..635
-      termini3             	771..772
-      sequenced_termini3   	771..771
-      termini3_flex        	772..772
-      polyA                	773..801
-      UMI                  	802..813
-      cellbarcode          	814..829
-      Read1                	830..849
-      termini5             	850..876
-      ORF_2                	877..1645
-      sequenced_ORF_2      	877..1621
-      variant_tag_1        	981..981
-      primer_binding_site_2	1622..1645
+      ORF1                  1..770    
+      primer_binding_site_1 1..24
+      sequenced_ORF_1       25..770
+      variant_tag_2         635..635
+      termini3              771..772
+      sequenced_termini3    771..771
+      termini3_flex         772..772
+      polyA                 773..801
+      UMI                   802..813
+      cellbarcode           814..829
+      Read1                 830..849
+      termini5              850..876
+      ORF_2                 877..1645
+      sequenced_ORF_2       877..1621
+      variant_tag_1         981..981
+      primer_binding_site_2 1622..1645
 ORIGIN
         1 gagaaagtcg aaacccagga aacgctgaga ttgaagacct cattttcctg gcacggtcag
        61 cactcattct gaggggatca gttgcacata aatcctgcct gcctgcttgt gtgtatgggc
@@ -444,22 +444,22 @@ REFERENCE   1  (bases 1 to 1640)
   JOURNAL   Exported Apr 13, 2022 from SnapGene 6.0.2
             https://www.snapgene.com
 FEATURES             Location/Qualifiers
-      ORF_1                	1..1507   
-      primer_binding_site_1	1..19
-      sequenced_ORF_1      	20..1507
-      variant_tag_1        	97..97
-      variant_tag_2        	1372..1372
-      termini3             	1508..1509
-      sequenced_termini3   	1508..1508
-      termini3_flex        	1509..1509
-      polyA                	1510..1538
-      UMI                  	1539..1550
-      cellbarcode          	1551..1566
-      Read1                	1567..1586
-      termini5             	1587..1613
-      ORF_2                	1614..1640
-      sequenced_ORF_2      	1614..1621
-      primer_binding_site_2	1622..1640
+      ORF_1                 1..1507   
+      primer_binding_site_1 1..19
+      sequenced_ORF_1       20..1507
+      variant_tag_1         97..97
+      variant_tag_2         1372..1372
+      termini3              1508..1509
+      sequenced_termini3    1508..1508
+      termini3_flex         1509..1509
+      polyA                 1510..1538
+      UMI                   1539..1550
+      cellbarcode           1551..1566
+      Read1                 1567..1586
+      termini5              1587..1613
+      ORF_2                 1614..1640
+      sequenced_ORF_2       1614..1621
+      primer_binding_site_2 1622..1640
 ORIGIN
         1 catcgaagcc atggcgtccc aaggcaccaa acgatcatat gaacaaatgg agactggtgg
        61 ggagcgccag gatgccacag aaatcagagc atctgtygga agaatgattg gtggaatcgg
@@ -503,22 +503,22 @@ REFERENCE   1  (bases 1 to 972)
   JOURNAL   Exported Apr 13, 2022 from SnapGene 6.0.2
             https://www.snapgene.com
 FEATURES             Location/Qualifiers
-      ORF_1                	1..202
-      primer_binding_site_1	1..27
-      sequenced_ORF_1      	28..202
-      termini3             	203..384
-      sequenced_termini3   	203..380
-      variant_tag_2        	320..320
-      termini3_flex        	381..384
-      polyA                	385..413
-      UMI                  	414..425
-      cellbarcode          	426..441
-      Read1                	442..462
-      termini5             	463..487
-      ORF_2                	488..972
-      sequenced_ORF_2      	488..945
-      variant_tag_1        	541..541
-      primer_binding_site_2	946..972
+      ORF_1                 1..202
+      primer_binding_site_1 1..27
+      sequenced_ORF_1       28..202
+      termini3              203..384
+      sequenced_termini3    203..380
+      variant_tag_2         320..320
+      termini3_flex         381..384
+      polyA                 385..413
+      UMI                   414..425
+      cellbarcode           426..441
+      Read1                 442..462
+      termini5              463..487
+      ORF_2                 488..972
+      sequenced_ORF_2       488..945
+      variant_tag_1         541..541
+      primer_binding_site_2 946..972
 ORIGIN
         1 gggagcaata gttggagaaa tttcaccatt accttctctt ccaggacata cttatgagga
        61 tgtcaaaaat gcagttgggg tcctcatcgg aggacttgaa tggaatggta acacggttcg
@@ -551,22 +551,22 @@ REFERENCE   1  (bases 1 to 967)
   JOURNAL   Exported Apr 13, 2022 from SnapGene 6.0.2
             https://www.snapgene.com
 FEATURES             Location/Qualifiers
-      ORF_1                	1..658  
-      primer_binding_site_1	1..22
-      sequenced_ORF_1      	23..658
-      variant_tag_1        	52..52
-      termini3             	659..840
-      sequenced_termini3   	659..836
-      Untitled             	776..776
-      termini3_flex        	837..840
-      polyA                	841..869
-      UMI                  	870..881
-      cellbarcode          	882..897
-      Read1                	898..918
-      termini5             	919..943
-      ORF_2                	944..967
-      sequenced_ORF_2      	944..945
-      primer_binding_site_2	946..967
+      ORF_1                 1..658  
+      primer_binding_site_1 1..22
+      sequenced_ORF_1       23..658
+      variant_tag_1         52..52
+      termini3              659..840
+      sequenced_termini3    659..836
+      Untitled              776..776
+      termini3_flex         837..840
+      polyA                 841..869
+      UMI                   870..881
+      cellbarcode           882..897
+      Read1                 898..918
+      termini5              919..943
+      ORF_2                 944..967
+      sequenced_ORF_2       944..945
+      primer_binding_site_2 946..967
 ORIGIN
         1 ggactccaac accatgtcaa gctttcaggt agactgtttc ctttggcata tycgcaagcg
        61 atttgcagac aatggattgg gtgatgcccc attccttgat cggctccgcc gagatcaaaa
@@ -599,22 +599,22 @@ REFERENCE   1  (bases 1 to 2321)
   JOURNAL   Exported Apr 13, 2022 from SnapGene 6.0.2
             https://www.snapgene.com
 FEATURES             Location/Qualifiers
-      ORF_1                	1..1120   
-      primer_binding_site_1	1..32
-      sequenced_ORF_1      	33..1120
-      varaint_tag_2        	1049..1049
-      termini3             	1121..1156
-      sequenced_termini3   	1121..1152
-      termini3_flex        	1153..1156
-      polyA                	1157..1186
-      UMI                  	1187..1198
-      cellbarcode          	1199..1214
-      Read1                	1215..1234
-      termini5             	1235..1258
-      ORF_2                	1259..2321
-      sequenced_ORF_2      	1259..2289
-      variant_tag_1        	1357..1357
-      primer_binding_site_2	2290..2321
+      ORF_1                 1..1120   
+      primer_binding_site_1 1..32
+      sequenced_ORF_1       33..1120
+      varaint_tag_2         1049..1049
+      termini3              1121..1156
+      sequenced_termini3    1121..1152
+      termini3_flex         1153..1156
+      polyA                 1157..1186
+      UMI                   1187..1198
+      cellbarcode           1199..1214
+      Read1                 1215..1234
+      termini5              1235..1258
+      ORF_2                 1259..2321
+      sequenced_ORF_2       1259..2289
+      variant_tag_1         1357..1357
+      primer_binding_site_2 2290..2321
 ORIGIN
         1 gctacaggac attgaaaatg aagagaagat cccaaggaca aagaacatga agagaacaag
        61 ccaattgaag tgggcactcg gtgaaaatat ggcaccagaa aaagtagact ttgatgactg
@@ -669,22 +669,22 @@ REFERENCE   1  (bases 1 to 2314)
   JOURNAL   Exported Apr 13, 2022 from SnapGene 6.0.2
             https://www.snapgene.com
 FEATURES             Location/Qualifiers
-      ORF_1                	1..2144   
-      primer_binding_site_1	1..25
-      sequenced_ORF_1      	26..2144
-      variant_tag_1        	92..92
-      variant_tag_2        	2073..2073
-      termini3             	2145..2180
-      sequenced_termini3   	2145..2176
-      termini3_flex        	2177..2180
-      polyA                	2181..2210
-      UMI                  	2211..2222
-      cellbarcode          	2223..2238
-      Read1                	2239..2258
-      termini5             	2259..2282
-      ORF_2                	2283..2314
-      sequenced_ORF_2      	2283..2289
-      primer_binding_site_2	2290..2314
+      ORF_1                 1..2144   
+      primer_binding_site_1 1..25
+      sequenced_ORF_1       26..2144
+      variant_tag_1         92..92
+      variant_tag_2         2073..2073
+      termini3              2145..2180
+      sequenced_termini3    2145..2176
+      termini3_flex         2177..2180
+      polyA                 2181..2210
+      UMI                   2211..2222
+      cellbarcode           2223..2238
+      Read1                 2239..2258
+      termini5              2259..2282
+      ORF_2                 2283..2314
+      sequenced_ORF_2       2283..2289
+      primer_binding_site_2 2290..2314
 ORIGIN
         1 actttgtgcg acaatgcttc aatccaatga tcgtcgagct tgcggaaaag gcaatgaaag
        61 aatatgggga agatccgaaa atcgaaacta ayaagtttgc tgcaatatgc acacatttgg
@@ -739,22 +739,22 @@ REFERENCE   1  (bases 1 to 2424)
   JOURNAL   Exported Apr 13, 2022 from SnapGene 6.0.2
             https://www.snapgene.com
 FEATURES             Location/Qualifiers
-      ORF_1                	1..1167   
-      primer_binding_site_1	1..25
-      sequenced_ORF_1      	26..1167
-      variant_tag_2        	1074..1074
-      termini3             	1168..1189
-      sequenced_termini3   	1168..1185
-      termini3_flex        	1186..1189
-      polyA                	1190..1218
-      UMI                  	1219..1230
-      cellbarcode          	1231..1246
-      Read1                	1247..1268
-      termini5             	1269..1292
-      ORF_2                	1293..2424
-      sequenced_ORF2       	1293..2399
-      variant_tag_1        	1460..1460
-      primer_binding_site_2	2400..2424
+      ORF_1                 1..1167   
+      primer_binding_site_1 1..25
+      sequenced_ORF_1       26..1167
+      variant_tag_2         1074..1074
+      termini3              1168..1189
+      sequenced_termini3    1168..1185
+      termini3_flex         1186..1189
+      polyA                 1190..1218
+      UMI                   1219..1230
+      cellbarcode           1231..1246
+      Read1                 1247..1268
+      termini5              1269..1292
+      ORF_2                 1293..2424
+      sequenced_ORF2        1293..2399
+      variant_tag_1         1460..1460
+      primer_binding_site_2 2400..2424
 ORIGIN
         1 gcagaaatgc tagcaagcat tgacctgaag tacttcaatg aatcaacaaa gaagaaaatt
        61 gagaaaataa ggcctcttct aatagatggc acagcatcac tgagtcctgg gatgatgatg
@@ -811,21 +811,21 @@ REFERENCE   1  (bases 1 to 2423)
   JOURNAL   Exported Apr 13, 2022 from SnapGene 6.0.2
             https://www.snapgene.com
 FEATURES             Location/Qualifiers
-      primer_binding_site_1	1..26     
-      sequenced_ORF_1      	27..2272
-      variant_tag_1        	166..166
-      variant_tag_2        	2179..2179
-      termini3             	2273..2294
-      sequenced_termini3   	2273..2290
-      termini3_flex        	2291..2294
-      polyA                	2295..2323
-      UMI                  	2324..2335
-      cellbarcode          	2336..2351
-      Read1                	2352..2371
-      termini5             	2372..2395
-      ORF_2                	2396..2423
-      sequenced_ORF_2      	2396..2397
-      primer_binding_site_2	2398..2423
+      primer_binding_site_1 1..26     
+      sequenced_ORF_1       27..2272
+      variant_tag_1         166..166
+      variant_tag_2         2179..2179
+      termini3              2273..2294
+      sequenced_termini3    2273..2290
+      termini3_flex         2291..2294
+      polyA                 2295..2323
+      UMI                   2324..2335
+      cellbarcode           2336..2351
+      Read1                 2352..2371
+      termini5              2372..2395
+      ORF_2                 2396..2423
+      sequenced_ORF_2       2396..2397
+      primer_binding_site_2 2398..2423
 ORIGIN
         1 ggatgtcaat ccgactctac ttttcctaaa aattccagcg caaaatgcca taagcaccac
        61 attcccttat actggagatc ctccatacag ccatggaaca ggaacaggat acaccatgga
@@ -882,22 +882,22 @@ REFERENCE   1  (bases 1 to 2424)
   JOURNAL   Exported Apr 13, 2022 from SnapGene 6.0.2
             https://www.snapgene.com
 FEATURES             Location/Qualifiers
-      ORF_1                	1..1169   
-      primer_binding_site_1	1..26
-      sequenced_ORF_1      	27..1169
-      variant_tag_2        	1052..1052
-      termini3             	1170..1182
-      sequenced_termini3   	1170..1178
-      termini3_flex        	1179..1182
-      polyA                	1183..1212
-      UMI                  	1213..1224
-      cellbarcode          	1225..1240
-      Read1                	1241..1260
-      termini5             	1261..1287
-      ORF_2                	1288..2424
-      sequenced_ORF_2      	1288..2398
-      variant_tag_1        	1461..1461
-      primer_binding_site_2	2399..2424
+      ORF_1                 1..1169   
+      primer_binding_site_1 1..26
+      sequenced_ORF_1       27..1169
+      variant_tag_2         1052..1052
+      termini3              1170..1182
+      sequenced_termini3    1170..1178
+      termini3_flex         1179..1182
+      polyA                 1183..1212
+      UMI                   1213..1224
+      cellbarcode           1225..1240
+      Read1                 1241..1260
+      termini5              1261..1287
+      ORF_2                 1288..2424
+      sequenced_ORF_2       1288..2398
+      variant_tag_1         1461..1461
+      primer_binding_site_2 2399..2424
 ORIGIN
         1 cagctattct cagaaaggca accaggagat tgatccagtt gatagtaagc gggagagatg
        61 agcagtcaat tgctgaggca ataattgtgg ccatggtatt ctcacaggag gattgcatga
@@ -954,22 +954,22 @@ REFERENCE   1  (bases 1 to 2430)
   JOURNAL   Exported Apr 13, 2022 from SnapGene 6.0.2
             https://www.snapgene.com
 FEATURES             Location/Qualifiers
-      ORF_1                	1..2275
-      primer_binding_site_1	1..32
-      sequenced_ORF_1      	33..2275
-      variant_tag_1        	169..169
-      variant_tag_2        	2158..2158
-      termini3             	2276..2288
-      sequenced_termini3   	2276..2284
-      termini3_flex        	2285..2288
-      polyA                	2289..2318
-      UMI                  	2319..2330
-      cellbarcode          	2331..2346
-      Read1                	2347..2366
-      termini5             	2367..2393
-      ORF_2                	2394..2430
-      sequenced_ORF_2      	2394..2398
-      primer_binding_site_2	2399..2430
+      ORF_1                 1..2275
+      primer_binding_site_1 1..32
+      sequenced_ORF_1       33..2275
+      variant_tag_1         169..169
+      variant_tag_2         2158..2158
+      termini3              2276..2288
+      sequenced_termini3    2276..2284
+      termini3_flex         2285..2288
+      polyA                 2289..2318
+      UMI                   2319..2330
+      cellbarcode           2331..2346
+      Read1                 2347..2366
+      termini5              2367..2393
+      ORF_2                 2394..2430
+      sequenced_ORF_2       2394..2398
+      primer_binding_site_2 2399..2430
 ORIGIN
         1 gagaataaaa gaactgagag atctaatgtc gcagtcccgc actcgcgaga tactcactaa
        61 gaccactgtg gaccatatgg ccataatcaa aaagtacaca tcaggaaggc aagagaagaa
