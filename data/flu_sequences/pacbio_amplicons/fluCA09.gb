@@ -1,4 +1,4 @@
-LOCUS       Exported                2123 bp DNA     linear   UNA 13-APR-2022
+LOCUS       HAmid                2123 bp DNA     linear   UNA 13-APR-2022
 DEFINITION  HAmid.
 ACCESSION   HAmid
 VERSION     .
@@ -66,7 +66,7 @@ ORIGIN
      2041 gcaactggaa atctagtggt accgagatat gcattcgcaa tggaaagaaa tgctggatct
      2101 ggtattatca tttcagatac acc
 //
-LOCUS       Exported                2122 bp DNA     linear   UNA 13-APR-2022
+LOCUS       HAtermini                2122 bp DNA     linear   UNA 13-APR-2022
 DEFINITION  HAtermini.
 ACCESSION   .
 VERSION     .
@@ -134,7 +134,7 @@ ORIGIN
      2041 tacatttgca accgcaattg cagacacatt ttgtataggg atccatgaag gcgattttgg
      2101 ttgtattatt gtacacgttc gc
 //
-LOCUS       Exported                1105 bp DNA     linear   UNA 13-APR-2022
+LOCUS       Mmid                1105 bp DNA     linear   UNA 13-APR-2022
 DEFINITION  Mmid.
 ACCESSION   Mmid
 VERSION     .
@@ -184,7 +184,7 @@ ORIGIN
      1021 taaactatac aagaagctca aaagagaaat aacgttccat ggggccaagg aggtgtcact
      1081 aagctattca actggtgcac ttgcc
 //
-LOCUS       Exported                1105 bp DNA     linear   UNA 13-APR-2022
+LOCUS       Mtermini                1105 bp DNA     linear   UNA 13-APR-2022
 DEFINITION  Mtermini.
 ACCESSION   Mtermini
 VERSION     .
@@ -234,7 +234,7 @@ ORIGIN
      1021 nnnnnnnnag atcggaagag cgtcgtgtag gcaaaagcag gtagatattt aaagatgagt
      1081 cttctaaccg aggtcgaaac gtacg
 //
-LOCUS       Exported                1816 bp DNA     linear   UNA 13-APR-2022
+LOCUS       NAmid                1816 bp DNA     linear   UNA 13-APR-2022
 DEFINITION  NAmid.
 ACCESSION   NAmid
 VERSION     .
@@ -303,7 +303,7 @@ ORIGIN
      1741 acaaacattc caatggaacc attaaagaca ggagcccata tcgaacccta atgagctgtc
      1801 ctattggtga agttcc
 //
-LOCUS       Exported                1827 bp DNA     linear   UNA 13-APR-2022
+LOCUS       NAtermini                1827 bp DNA     linear   UNA 13-APR-2022
 DEFINITION  NAtermini.
 ACCESSION   NAtermini
 VERSION     .
@@ -372,7 +372,7 @@ ORIGIN
      1741 gtttaaaccg aatccaaacc agaaaataat aaccattggg tcaatctgta tggtagtcgg
      1801 aataattagc ctaatattgc aaatagg
 //
-LOCUS       Exported                1645 bp DNA     linear   UNA 13-APR-2022
+LOCUS       NPmid                1645 bp DNA     linear   UNA 13-APR-2022
 DEFINITION  NPmid.
 ACCESSION   NPmid
 VERSION     .
@@ -431,7 +431,7 @@ ORIGIN
      1561 tgcaatatcc tcaaaggaaa atttcaaaca gctgcccaga gggcaatgat ggatcaagta
      1621 agagaaagtc gaaacccagg aaacg
 //
-LOCUS       Exported                1640 bp DNA     linear   UNA 13-APR-2022
+LOCUS       NPtermini                1640 bp DNA     linear   UNA 13-APR-2022
 DEFINITION  NPtermini.
 ACCESSION   NPtermini
 VERSION     .
@@ -490,7 +490,7 @@ ORIGIN
      1561 nnnnnnagat cggaagagcg tcgtgtagca aaagcagggt agataatcac tcaatgagtg
      1621 acatcgaagc catggcgtcc
 //
-LOCUS       Exported                 972 bp DNA     linear   UNA 13-APR-2022
+LOCUS       NSmid                 972 bp DNA     linear   UNA 13-APR-2022
 DEFINITION  NSmid.
 ACCESSION   NSmid
 VERSION     .
@@ -538,7 +538,7 @@ ORIGIN
       901 taaccgatta gagaccttga tactactaag ggctttcact gaggagggag caatagttgg
       961 agaaatttca cc
 //
-LOCUS       Exported                 967 bp DNA     linear   UNA 13-APR-2022
+LOCUS       NStermini                 967 bp DNA     linear   UNA 13-APR-2022
 DEFINITION  NStermini.
 ACCESSION   NStermini
 VERSION     .
@@ -586,7 +586,7 @@ ORIGIN
       901 tcggaagagc gtcgtgtagc aaaagcaggg tgacaaagac ataatggact ccaacaccat
       961 gtcaagc
 //
-LOCUS       Exported                2321 bp DNA     linear   UNA 13-APR-2022
+LOCUS       PAmid                2321 bp DNA     linear   UNA 13-APR-2022
 DEFINITION  PAmid.
 ACCESSION   PAmid
 VERSION     .
@@ -656,7 +656,7 @@ ORIGIN
      2221 catagtcaaa ccacatgaga aaggcataaa tcccaattac ctcatggctt ggaagcaggt
      2281 gctagcagag ctacaggaca ttgaaaatga agagaagatc c
 //
-LOCUS       Exported                2314 bp DNA     linear   UNA 13-APR-2022
+LOCUS       PAtermini                2314 bp DNA     linear   UNA 13-APR-2022
 DEFINITION  PAtermini.
 ACCESSION   PAtermini
 VERSION     .
@@ -726,7 +726,7 @@ ORIGIN
      2221 nnnnnnnnnn nnnnnnnnag atcggaagag cgtcgtgtag cgaaagcagg tactgatcca
      2281 aaatggaaga ctttgtgcga caatgcttca atcc
 //
-LOCUS       Exported                2424 bp DNA     linear   UNA 13-APR-2022
+LOCUS       PB1mid                2424 bp DNA     linear   UNA 13-APR-2022
 DEFINITION  PB1mid.
 ACCESSION   PB1mid
 VERSION     .
@@ -798,7 +798,7 @@ ORIGIN
      2341 gactagggaa agggtacatg ttcgagagta aaagaatgaa gattcgaaca caaataccag
      2401 cagaaatgct agcaagcatt gacc
 //
-LOCUS       Exported                2423 bp DNA     linear   UNA 13-APR-2022
+LOCUS       PB1termini                2423 bp DNA     linear   UNA 13-APR-2022
 DEFINITION  PB1termini.
 ACCESSION   PB1termini
 VERSION     .
@@ -869,7 +869,7 @@ ORIGIN
      2341 nnnnnnnnnn nagatcggaa gagcgtcgtg tagcgaaagc aggcaaacca tttgaatgga
      2401 tgtcaatccg actctacttt tcc
 //
-LOCUS       Exported                2424 bp DNA     linear   UNA 13-APR-2022
+LOCUS       PB2mid                2424 bp DNA     linear   UNA 13-APR-2022
 DEFINITION  PB2mid.
 ACCESSION   PB2mid
 VERSION     .
@@ -941,7 +941,7 @@ ORIGIN
      2341 ctgaaaataa gagtacatga agggtatgaa gaattcacaa tggttgggag aagagcaaca
      2401 gctattctca gaaaggcaac cagg
 //
-LOCUS       Exported                2430 bp DNA     linear   UNA 13-APR-2022
+LOCUS       PB2termini                2430 bp DNA     linear   UNA 13-APR-2022
 DEFINITION  PB2termini.
 ACCESSION   PB2termini
 VERSION     .
