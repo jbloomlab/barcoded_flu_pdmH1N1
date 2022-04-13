@@ -602,7 +602,7 @@ FEATURES             Location/Qualifiers
       ORF_1                 1..1120   
       primer_binding_site_1 1..32
       sequenced_ORF_1       33..1120
-      varaint_tag_2         1049..1049
+      variant_tag_2         1049..1049
       termini3              1121..1156
       sequenced_termini3    1121..1152
       termini3_flex         1153..1156
