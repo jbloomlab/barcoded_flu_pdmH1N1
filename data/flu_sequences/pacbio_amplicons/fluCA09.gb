@@ -752,7 +752,7 @@ FEATURES             Location/Qualifiers
       Read1                 1247..1268
       termini5              1269..1292
       ORF_2                 1293..2424
-      sequenced_ORF2        1293..2399
+      sequenced_ORF_2       1293..2399
       variant_tag_1         1460..1460
       primer_binding_site_2 2400..2424
 ORIGIN
