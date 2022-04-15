@@ -2,13 +2,13 @@
 default_2tags: &default_2tags
   query_clip5: 4
   query_clip3: 4
-  primer_binding_site_1:
+  primer_site_1:
     filter:
       mutation_nt_count: 5
       mutation_op_count: 1
       clip5: 5
       clip3: 0
-  primer_binding_site_2:
+  primer_site_2:
     filter:
       mutation_nt_count: 5
       mutation_op_count: 1
@@ -27,17 +27,17 @@ default_2tags: &default_2tags
       mutation_nt_count: 3
       mutation_op_count: 1
     return: [mutations, accuracy]
-  sequenced_termini3:
+  parsed_termini3:
     filter:
       mutation_nt_count: 3
       mutation_op_count: 1
     return: [mutations, accuracy]
-  sequenced_ORF_1:
+  parsed_ORF_1:
     filter:
       mutation_nt_count: null
       mutation_op_count: 5
     return: [mutations, accuracy]
-  sequenced_ORF_2:
+  parsed_ORF_2:
     filter:
       mutation_nt_count: null
       mutation_op_count: 5
