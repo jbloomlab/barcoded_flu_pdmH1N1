@@ -9,11 +9,11 @@ FEATURES             Location/Qualifiers
      ORF_1                 1..770
                            /label="ORF_1"
      parsed_ORF_1          25..770
-                           /label="sequenced_ORF_1"
+                           /label="parsed_ORF_1"
      variant_tag_2         635..635
                            /label="variant_tag_2"
      parsed_termini3       771..771
-                           /label="sequenced_termini3"
+                           /label="parsed_termini3"
      termini3              771..772
                            /label="termini3"
      termini3_flex         772..772
@@ -31,7 +31,7 @@ FEATURES             Location/Qualifiers
      ORF_2                 895..1645
                            /label="ORF_2"
      parsed_ORF_2          895..1621
-                           /label="sequenced_ORF_2"
+                           /label="parsed_ORF_2"
      variant_tag_1         981..981
                            /label="variant_tag_1"
      primer_site_2         1622..1645
@@ -77,13 +77,13 @@ FEATURES             Location/Qualifiers
      ORF_1                 1..2144
                            /label="ORF_1"
      parsed_ORF_1          26..2144
-                           /label="sequenced_ORF_1"
+                           /label="parsed_ORF_1"
      variant_tag_1         92..92
                            /label="variant_tag_1"
      variant_tag_2         2073..2073
                            /label="variant_tag_2"
      parsed_termini3       2145..2176
-                           /label="sequenced_termini3"
+                           /label="parsed_termini3"
      termini3              2145..2180
                            /label="termini3"
      termini3_flex         2177..2180
@@ -101,7 +101,7 @@ FEATURES             Location/Qualifiers
      ORF_2                 2283..2314
                            /label="ORF_2"
      parsed_ORF_2          2283..2289
-                           /label="sequenced_ORF_2"
+                           /label="parsed_ORF_2"
      primer_site_2         2290..2314
                            /label="primer_site_2"
 ORIGIN
@@ -156,11 +156,11 @@ FEATURES             Location/Qualifiers
      ORF_1                 1..1120
                            /label="ORF_1"
      parsed_ORF_1          33..1120
-                           /label="sequenced_ORF_1"
+                           /label="parsed_ORF_1"
      variant_tag_2         1049..1049
                            /label="variant_tag_2"
      parsed_termini3       1121..1152
-                           /label="sequenced_termini3"
+                           /label="parsed_termini3"
      termini3              1121..1156
                            /label="termini3"
      termini3_flex         1153..1156
@@ -178,7 +178,7 @@ FEATURES             Location/Qualifiers
      ORF_2                 1259..2321
                            /label="ORF_2"
      parsed_ORF_2          1259..2289
-                           /label="sequenced_ORF_2"
+                           /label="parsed_ORF_2"
      variant_tag_1         1357..1357
                            /label="variant_tag_1"
      primer_site_2         2290..2321
@@ -234,13 +234,13 @@ FEATURES             Location/Qualifiers
      ORF_1                 1..1694
                            /label="ORF_1"
      parsed_ORF_1          32..1694
-                           /label="sequenced_ORF_1"
+                           /label="parsed_ORF_1"
      variant_tag_1         137..137
                            /label="variant_tag_1"
      variant_tag_2         1574..1574
                            /label="variant_tag_2"
      parsed_termini3       1695..1898
-                           /label="sequenced_termini3"
+                           /label="parsed_termini3"
      termini3              1695..1902
                            /label="termini3"
      viral_barcode         1716..1731
@@ -260,7 +260,7 @@ FEATURES             Location/Qualifiers
      ORF_2                 2085..2122
                            /label="ORF_2"
      parsed_ORF_2          2085..2091
-                           /label="sequenced_ORF_2"
+                           /label="parsed_ORF_2"
      primer_site_2         2092..2122
                            /label="primer_site_2"
 ORIGIN
@@ -312,7 +312,7 @@ FEATURES             Location/Qualifiers
      ORF_1                 1..935
                            /label="ORF_1"
      parsed_ORF_1          26..935
-                           /label="sequenced_ORF_1"
+                           /label="parsed_ORF_1"
      variant_tag_2         224..224
                            /label="variant_tag_2"
      variant_tag_3         233..233
@@ -328,7 +328,7 @@ FEATURES             Location/Qualifiers
      variant_tag_8         806..806
                            /label="variant_tag_8"
      parsed_termini3       936..1116
-                           /label="sequenced_termini3"
+                           /label="parsed_termini3"
      termini3              936..1120
                            /label="termini3"
      viral_barcode         957..972
@@ -348,7 +348,7 @@ FEATURES             Location/Qualifiers
      ORF_2                 1260..1816
                            /label="ORF_2"
      parsed_ORF_2          1260..1791
-                           /label="sequenced_ORF_2"
+                           /label="parsed_ORF_2"
      variant_tag_1         1439..1439
                            /label="variant_tag_1"
      primer_site_2         1792..1816
@@ -397,9 +397,9 @@ FEATURES             Location/Qualifiers
      ORF_1                 1..407
                            /label="ORF_1"
      parsed_ORF_1          24..407
-                           /label="sequenced_ORF_1"
+                           /label="parsed_ORF_1"
      parsed_termini3       408..624
-                           /label="sequenced_termini3"
+                           /label="parsed_termini3"
      termini3              408..628
                            /label="termini3"
      variant_tag_2         573..573
@@ -419,7 +419,7 @@ FEATURES             Location/Qualifiers
      ORF_2                 731..1105
                            /label="ORF_2"
      parsed_ORF_2          731..1082
-                           /label="sequenced_ORF_2"
+                           /label="parsed_ORF_2"
      variant_tag_1         805..805
                            /label="variant_tag_1"
      primer_site_2         1083..1105
@@ -456,13 +456,13 @@ FEATURES             Location/Qualifiers
      primer_site_1         1..26
                            /label="primer_site_1"
      parsed_ORF_1          27..2272
-                           /label="sequenced_ORF_1"
+                           /label="parsed_ORF_1"
      variant_tag_1         166..166
                            /label="variant_tag_1"
      variant_tag_2         2179..2179
                            /label="variant_tag_2"
      parsed_termini3       2273..2290
-                           /label="sequenced_termini3"
+                           /label="parsed_termini3"
      termini3              2273..2294
                            /label="termini3"
      termini3_flex         2291..2294
@@ -480,7 +480,7 @@ FEATURES             Location/Qualifiers
      ORF_2                 2396..2423
                            /label="ORF_2"
      parsed_ORF_2          2396..2397
-                           /label="sequenced_ORF_2"
+                           /label="parsed_ORF_2"
      primer_site_2         2398..2423
                            /label="primer_site_2"
 ORIGIN
@@ -537,13 +537,13 @@ FEATURES             Location/Qualifiers
      ORF_1                 1..1507
                            /label="ORF_1"
      parsed_ORF_1          20..1507
-                           /label="sequenced_ORF_1"
+                           /label="parsed_ORF_1"
      variant_tag_1         97..97
                            /label="variant_tag_1"
      variant_tag_2         1372..1372
                            /label="variant_tag_2"
      parsed_termini3       1508..1508
-                           /label="sequenced_termini3"
+                           /label="parsed_termini3"
      termini3              1508..1509
                            /label="termini3"
      termini3_flex         1509..1509
@@ -603,9 +603,9 @@ FEATURES             Location/Qualifiers
      ORF_1                 1..202
                            /label="ORF_1"
      parsed_ORF_1          28..202
-                           /label="sequenced_ORF_1"
+                           /label="parsed_ORF_1"
      parsed_termini3       203..380
-                           /label="sequenced_termini3"
+                           /label="parsed_termini3"
      termini3              203..384
                            /label="termini3"
      variant_tag_2         320..320
@@ -625,7 +625,7 @@ FEATURES             Location/Qualifiers
      ORF_2                 488..972
                            /label="ORF_2"
      parsed_ORF_2          488..945
-                           /label="sequenced_ORF_2"
+                           /label="parsed_ORF_2"
      variant_tag_1         541..541
                            /label="variant_tag_1"
      primer_site_2         946..972
@@ -660,13 +660,13 @@ FEATURES             Location/Qualifiers
      ORF_1                 1..2275
                            /label="ORF_1"
      parsed_ORF_1          33..2275
-                           /label="sequenced_ORF_1"
+                           /label="parsed_ORF_1"
      variant_tag_1         169..169
                            /label="variant_tag_1"
      variant_tag_2         2158..2158
                            /label="variant_tag_2"
      parsed_termini3       2276..2284
-                           /label="sequenced_termini3"
+                           /label="parsed_termini3"
      termini3              2276..2288
                            /label="termini3"
      termini3_flex         2285..2288
@@ -684,7 +684,7 @@ FEATURES             Location/Qualifiers
      ORF_2                 2394..2430
                            /label="ORF_2"
      parsed_ORF_2          2394..2398
-                           /label="sequenced_ORF_2"
+                           /label="parsed_ORF_2"
      primer_site_2         2399..2430
                            /label="primer_site_2"
 ORIGIN
@@ -741,11 +741,11 @@ FEATURES             Location/Qualifiers
      ORF_1                 1..750
                            /label="ORF_1"
      parsed_ORF_1          23..750
-                           /label="sequenced_ORF_1"
+                           /label="parsed_ORF_1"
      variant_tag_1         66..66
                            /label="variant_tag_1"
      parsed_termini3       751..967
-                           /label="sequenced_termini3"
+                           /label="parsed_termini3"
      termini3              751..971
                            /label="termini3"
      variant_tag_2         916..916
@@ -765,7 +765,7 @@ FEATURES             Location/Qualifiers
      ORF_2                 1075..1105
                            /label="ORF_2"
      parsed_ORF_2          1075..1083
-                           /label="sequenced_ORF_2"
+                           /label="parsed_ORF_2"
      primer_site_2         1084..1105
                            /label="primer_site_2"
 ORIGIN
@@ -800,11 +800,11 @@ FEATURES             Location/Qualifiers
      ORF_1                 1..1167
                            /label="ORF_1"
      parsed_ORF_1          26..1167
-                           /label="sequenced_ORF_1"
+                           /label="parsed_ORF_1"
      variant_tag_2         1074..1074
                            /label="variant_tag_2"
      parsed_termini3       1168..1185
-                           /label="sequenced_termini3"
+                           /label="parsed_termini3"
      termini3              1168..1189
                            /label="termini3"
      termini3_flex         1186..1189
@@ -822,7 +822,7 @@ FEATURES             Location/Qualifiers
      ORF_2                 1293..2424
                            /label="ORF_2"
      parsed_ORF_2          1293..2399
-                           /label="sequenced_ORF_2"
+                           /label="parsed_ORF_2"
      variant_tag_1         1460..1460
                            /label="variant_tag_1"
      primer_site_2         2400..2424
@@ -881,11 +881,11 @@ FEATURES             Location/Qualifiers
      ORF_1                 1..658
                            /label="ORF_1"
      parsed_ORF_1          23..658
-                           /label="sequenced_ORF_1"
+                           /label="parsed_ORF_1"
      variant_tag_1         52..52
                            /label="variant_tag_1"
      parsed_termini3       659..836
-                           /label="sequenced_termini3"
+                           /label="parsed_termini3"
      termini3              659..840
                            /label="termini3"
      variant_tag_2         776..776
@@ -905,7 +905,7 @@ FEATURES             Location/Qualifiers
      ORF_2                 944..967
                            /label="ORF_2"
      parsed_ORF_2          944..945
-                           /label="sequenced_ORF_2"
+                           /label="parsed_ORF_2"
      primer_site_2         946..967
                            /label="primer_site_2"
 ORIGIN
@@ -938,7 +938,7 @@ FEATURES             Location/Qualifiers
      ORF_1                 1..1465
                            /label="ORF_1"
      parsed_ORF_1          37..1465
-                           /label="sequenced_ORF_1"
+                           /label="parsed_ORF_1"
      variant_tag_1         178..178
                            /label="variant_tag_1"
      variant_tag_2         754..754
@@ -956,7 +956,7 @@ FEATURES             Location/Qualifiers
      variant_tag_8         1336..1336
                            /label="variant_tag_8"
      parsed_termini3       1466..1646
-                           /label="sequenced_termini3"
+                           /label="parsed_termini3"
      termini3              1466..1650
                            /label="termini3"
      viral_barcode         1487..1502
@@ -976,7 +976,7 @@ FEATURES             Location/Qualifiers
      ORF_2                 1790..1827
                            /label="ORF_2"
      parsed_ORF_2          1790..1791
-                           /label="sequenced_ORF_2"
+                           /label="parsed_ORF_2"
      primer_site_2         1792..1827
                            /label="primer_site_2"
 ORIGIN
@@ -1023,11 +1023,11 @@ FEATURES             Location/Qualifiers
      ORF_1                 1..1169
                            /label="ORF_1"
      parsed_ORF_1          27..1169
-                           /label="sequenced_ORF_1"
+                           /label="parsed_ORF_1"
      variant_tag_2         1052..1052
                            /label="variant_tag_2"
      parsed_termini3       1170..1178
-                           /label="sequenced_termini3"
+                           /label="parsed_termini3"
      termini3              1170..1182
                            /label="termini3"
      termini3_flex         1179..1182
@@ -1045,7 +1045,7 @@ FEATURES             Location/Qualifiers
      ORF_2                 1288..2424
                            /label="ORF_2"
      parsed_ORF_2          1288..2398
-                           /label="sequenced_ORF_2"
+                           /label="parsed_ORF_2"
      variant_tag_1         1461..1461
                            /label="variant_tag_1"
      primer_site_2         2399..2424
@@ -1104,11 +1104,11 @@ FEATURES             Location/Qualifiers
      ORF_1                 1..870
                            /label="ORF_1"
      parsed_ORF_1          33..870
-                           /label="sequenced_ORF_1"
+                           /label="parsed_ORF_1"
      variant_tag_2         750..750
                            /label="variant_tag_2"
      parsed_termini3       871..1074
-                           /label="sequenced_termini3"
+                           /label="parsed_termini3"
      termini3              871..1078
                            /label="termini3"
      viral_barcode         892..907
@@ -1128,7 +1128,7 @@ FEATURES             Location/Qualifiers
      ORF_2                 1261..2123
                            /label="ORF_2"
      parsed_ORF_2          1261..2091
-                           /label="sequenced_ORF_2"
+                           /label="parsed_ORF_2"
      variant_tag_1         1404..1404
                            /label="variant_tag_1"
      primer_site_2         2092..2123
