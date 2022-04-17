@@ -451,6 +451,8 @@ ACCESSION   PB1termini
 SOURCE      PB1termini
   ORGANISM  PB1termini
 FEATURES             Location/Qualifiers
+     ORF_1                 1..2272
+                           /label="ORF_1"
      primer_site_1         1..26
                            /label="primer_site_1"
      parsed_ORF_1          27..2272
