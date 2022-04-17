@@ -558,8 +558,6 @@ FEATURES             Location/Qualifiers
                            /label="termini5"
      ORF_2                 1632..1640
                            /label="ORF_2"
-     parsed_ORF_2          1632..1621
-                           /label="sequenced_ORF_2"
      primer_site_2         1622..1640
                            /label="primer_site_2"
 ORIGIN
