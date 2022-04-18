@@ -15,7 +15,9 @@ To generate the GenBank amplicon sequences [flu-CA09.fasta](../flu-CA09.fasta) r
 - `gene`: CA09 segment from which amplicon was generated
 - `wt_nt`: nucleotide in CA09 at a given sited numbered in `ORF_position`
 - `ORF_position`: nucleotide position in CA09
-- `sequenced_ORF_1`, `sequenced_ORF_2`, `termini5`, `termini3`: nucleotide position in named features
+- each feature for which we are parsing mutations we want to process
+
+[create_amplicon_to_reference.ipynb](create_amplicon_to_reference.ipynb) is the Jupyter notebook used to create [amplicon_to_reference.csv](amplicon_to_reference.csv) from the annotations in [fluCA09.gb](fluCA09.gb).
 
 In the [fluCA09_features.yaml](fluCA09_features.yaml) NEP is defined to have only one variant tag because after splicing NEP mRNA looses variant tag, all other segments have 2 tags.
 
