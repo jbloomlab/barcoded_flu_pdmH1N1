@@ -1,5 +1,5 @@
-# default for genes with two variant tags
-default_2tags: &default_2tags
+# default for genes with two variant tags and no parsed_ORF_2
+default_2tags_no_parsed_ORF_2: &default_2tags_no_parsed_ORF_2
   query_clip5: 4
   query_clip3: 4
   primer_site_1:
@@ -37,11 +37,6 @@ default_2tags: &default_2tags
       mutation_nt_count: null
       mutation_op_count: 5
     return: [mutations, accuracy]
-  parsed_ORF_2:
-    filter:
-      mutation_nt_count: null
-      mutation_op_count: 5
-    return: [mutations, accuracy]
   UMI:
     return: [sequence, accuracy]
   cellbarcode:
@@ -56,6 +51,15 @@ default_2tags: &default_2tags
       mutation_nt_count: 1
       mutation_op_count: null
     return: sequence
+    
+# default for genes with two variant tags
+default_2tags: &default_2tags
+  <<: *default_2tags_no_parsed_ORF_2
+  parsed_ORF_2:
+    filter:
+      mutation_nt_count: null
+      mutation_op_count: 5
+    return: [mutations, accuracy]
 
 # default for genes with eight variant tags and viral barcodes
 default_8tags: &default_8tags
@@ -107,7 +111,7 @@ PAtermini:
 NPmid:
   <<: *default_2tags
 NPtermini:
-  <<: *default_2tags
+  <<: *default_2tags_no_parsed_ORF_2
 HAmid:
   <<: *default_2tags
 HAtermini:
