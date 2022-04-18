@@ -6,8 +6,6 @@ SOURCE      NPmid
 FEATURES             Location/Qualifiers
      primer_site_1         1..24
                            /label="primer_site_1"
-     ORF_1                 1..770
-                           /label="ORF_1"
      parsed_ORF_1          25..770
                            /label="parsed_ORF_1"
      variant_tag_2         635..635
@@ -74,8 +72,6 @@ SOURCE      PAtermini
 FEATURES             Location/Qualifiers
      primer_site_1         1..25
                            /label="primer_site_1"
-     ORF_1                 1..2144
-                           /label="ORF_1"
      parsed_ORF_1          26..2144
                            /label="parsed_ORF_1"
      variant_tag_1         92..92
@@ -153,8 +149,6 @@ SOURCE      PAmid
 FEATURES             Location/Qualifiers
      primer_site_1         1..32
                            /label="primer_site_1"
-     ORF_1                 1..1120
-                           /label="ORF_1"
      parsed_ORF_1          33..1120
                            /label="parsed_ORF_1"
      variant_tag_2         1049..1049
@@ -231,8 +225,6 @@ SOURCE      HAtermini
 FEATURES             Location/Qualifiers
      primer_site_1         1..31
                            /label="primer_site_1"
-     ORF_1                 1..1694
-                           /label="ORF_1"
      parsed_ORF_1          32..1694
                            /label="parsed_ORF_1"
      variant_tag_1         137..137
@@ -309,8 +301,6 @@ SOURCE      NAmid
 FEATURES             Location/Qualifiers
      primer_site_1         1..25
                            /label="primer_site_1"
-     ORF_1                 1..935
-                           /label="ORF_1"
      parsed_ORF_1          26..935
                            /label="parsed_ORF_1"
      variant_tag_2         224..224
@@ -394,8 +384,6 @@ SOURCE      Mmid
 FEATURES             Location/Qualifiers
      primer_site_1         1..23
                            /label="primer_site_1"
-     ORF_1                 1..407
-                           /label="ORF_1"
      parsed_ORF_1          24..407
                            /label="parsed_ORF_1"
      parsed_termini3       408..624
@@ -451,8 +439,6 @@ ACCESSION   PB1termini
 SOURCE      PB1termini
   ORGANISM  PB1termini
 FEATURES             Location/Qualifiers
-     ORF_1                 1..2272
-                           /label="ORF_1"
      primer_site_1         1..26
                            /label="primer_site_1"
      parsed_ORF_1          27..2272
@@ -534,8 +520,6 @@ SOURCE      NPtermini
 FEATURES             Location/Qualifiers
      primer_site_1         1..19
                            /label="primer_site_1"
-     ORF_1                 1..1507
-                           /label="ORF_1"
      parsed_ORF_1          20..1507
                            /label="parsed_ORF_1"
      variant_tag_1         97..97
@@ -600,8 +584,6 @@ SOURCE      NSmid
 FEATURES             Location/Qualifiers
      primer_site_1         1..27
                            /label="primer_site_1"
-     ORF_1                 1..202
-                           /label="ORF_1"
      parsed_ORF_1          28..202
                            /label="parsed_ORF_1"
      parsed_termini3       203..380
@@ -657,8 +639,6 @@ SOURCE      PB2termini
 FEATURES             Location/Qualifiers
      primer_site_1         1..32
                            /label="primer_site_1"
-     ORF_1                 1..2275
-                           /label="ORF_1"
      parsed_ORF_1          33..2275
                            /label="parsed_ORF_1"
      variant_tag_1         169..169
@@ -738,8 +718,6 @@ SOURCE      Mtermini
 FEATURES             Location/Qualifiers
      primer_site_1         1..22
                            /label="primer_site_1"
-     ORF_1                 1..750
-                           /label="ORF_1"
      parsed_ORF_1          23..750
                            /label="parsed_ORF_1"
      variant_tag_1         66..66
@@ -797,8 +775,6 @@ SOURCE      PB1mid
 FEATURES             Location/Qualifiers
      primer_site_1         1..25
                            /label="primer_site_1"
-     ORF_1                 1..1167
-                           /label="ORF_1"
      parsed_ORF_1          26..1167
                            /label="parsed_ORF_1"
      variant_tag_2         1074..1074
@@ -878,8 +854,6 @@ SOURCE      NStermini
 FEATURES             Location/Qualifiers
      primer_site_1         1..22
                            /label="primer_site_1"
-     ORF_1                 1..658
-                           /label="ORF_1"
      parsed_ORF_1          23..658
                            /label="parsed_ORF_1"
      variant_tag_1         52..52
@@ -935,8 +909,6 @@ SOURCE      NAtermini
 FEATURES             Location/Qualifiers
      primer_site_1         1..36
                            /label="primer_site_1"
-     ORF_1                 1..1465
-                           /label="ORF_1"
      parsed_ORF_1          37..1465
                            /label="parsed_ORF_1"
      variant_tag_1         178..178
@@ -1020,8 +992,6 @@ SOURCE      PB2mid
 FEATURES             Location/Qualifiers
      primer_site_1         1..26
                            /label="primer_site_1"
-     ORF_1                 1..1169
-                           /label="ORF_1"
      parsed_ORF_1          27..1169
                            /label="parsed_ORF_1"
      variant_tag_2         1052..1052
@@ -1101,8 +1071,6 @@ SOURCE      HAmid
 FEATURES             Location/Qualifiers
      primer_site_1         1..32
                            /label="primer_site_1"
-     ORF_1                 1..870
-                           /label="ORF_1"
      parsed_ORF_1          33..870
                            /label="parsed_ORF_1"
      variant_tag_2         750..750
