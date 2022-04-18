@@ -10,6 +10,8 @@ To generate amplicon templates, cDNA from the first round of PCR amplification f
 
 To generate the GenBank amplicon sequences [flu-CA09.fasta](../flu-CA09.fasta) reference was used. [SnapGene](https://www.snapgene.com/) sequence viewer was used to stimulate the PCR procedures described above and the resulting PCR products were exported as GenBank files. Redundant sequence annotation from the GenBank file was removed manually.
 
+The resulting GenBank files exported by SnapGene cannot be loaded directly by BioPython because of some incompatibilities in how features are annotated. To clean up and simplify the GenBank annotations, the files were loaded into [Benchling](https://www.benchling.com/) https and exported as a single GenBank file containing all amplicon targets.
+
 [amplicon_to_reference.csv](amplicon_to_reference.csv) file contains the following columns:
 - `target`: amplicon name
 - `gene`: CA09 segment from which amplicon was generated
