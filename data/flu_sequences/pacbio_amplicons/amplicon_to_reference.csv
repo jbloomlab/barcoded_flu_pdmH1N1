@@ -44,7 +44,7 @@ NPmid,fluNP,fluNP,A,-4,,,42,
 NPmid,fluNP,fluNP,G,-3,,,43,
 NPmid,fluNP,fluNP,C,-2,,,44,
 NPmid,fluNP,fluNP,C,-1,,,45,
-NPmid,fluNP,fluNP,A,1,,1,,
+NPmid,fluNP,fluNP,A,1,,1,46,
 NPmid,fluNP,fluNP,T,2,,2,,
 NPmid,fluNP,fluNP,G,3,,3,,
 NPmid,fluNP,fluNP,G,4,,4,,
@@ -771,7 +771,7 @@ NPmid,fluNP,fluNP,G,724,,724,,
 NPmid,fluNP,fluNP,T,725,,725,,
 NPmid,fluNP,fluNP,A,726,,726,,
 NPmid,fluNP,fluNP,A,727,,727,,
-NPmid,fluNP,fluNP,G,728,,,,
+NPmid,fluNP,fluNP,G,728,,728,,
 NPmid,fluNP,fluNP,A,729,,,,
 NPmid,fluNP,fluNP,G,730,,,,
 NPmid,fluNP,fluNP,A,731,,,,
@@ -1541,8 +1541,8 @@ NPmid,fluNP,fluNP,T,1494,743,,,
 NPmid,fluNP,fluNP,T,1495,744,,,
 NPmid,fluNP,fluNP,G,1496,745,,,
 NPmid,fluNP,fluNP,A,1497,746,,,
-NPmid,fluNP,fluNP,G,1498,,,,1
-NPmid,fluNP,fluNP,G,1499,,,,
+NPmid,fluNP,fluNP,G,1498,747,,,1
+NPmid,fluNP,fluNP,G,1499,,,,2
 NPmid,fluNP,fluNP,A,1500,,,,
 NPmid,fluNP,fluNP,A,1501,,,,
 NPmid,fluNP,fluNP,A,1502,,,,
@@ -1644,14 +1644,14 @@ PAtermini,fluPA,fluPA,C,-4,,,21,
 PAtermini,fluPA,fluPA,A,-3,,,22,
 PAtermini,fluPA,fluPA,A,-2,,,23,
 PAtermini,fluPA,fluPA,A,-1,,,24,
-PAtermini,fluPA,fluPA,A,1,,1,,
+PAtermini,fluPA,fluPA,A,1,,1,25,
 PAtermini,fluPA,fluPA,T,2,,2,,
 PAtermini,fluPA,fluPA,G,3,,3,,
 PAtermini,fluPA,fluPA,G,4,,4,,
 PAtermini,fluPA,fluPA,A,5,,5,,
 PAtermini,fluPA,fluPA,A,6,,6,,
 PAtermini,fluPA,fluPA,G,7,,7,,
-PAtermini,fluPA,fluPA,A,8,,,,
+PAtermini,fluPA,fluPA,A,8,,8,,
 PAtermini,fluPA,fluPA,C,9,,,,
 PAtermini,fluPA,fluPA,T,10,,,,
 PAtermini,fluPA,fluPA,T,11,,,,
@@ -3795,7 +3795,7 @@ PAtermini,fluPA,fluPA,G,2148,2116,,,
 PAtermini,fluPA,fluPA,T,2149,2117,,,
 PAtermini,fluPA,fluPA,A,2150,2118,,,
 PAtermini,fluPA,fluPA,G,2151,2119,,,
-PAtermini,fluPA,fluPA,T,2152,,,,1
+PAtermini,fluPA,fluPA,T,2152,2120,,,1
 PAtermini,fluPA,fluPA,T,2153,,,,2
 PAtermini,fluPA,fluPA,G,2154,,,,3
 PAtermini,fluPA,fluPA,T,2155,,,,4
@@ -3827,7 +3827,7 @@ PAtermini,fluPA,fluPA,T,2180,,,,29
 PAtermini,fluPA,fluPA,A,2181,,,,30
 PAtermini,fluPA,fluPA,C,2182,,,,31
 PAtermini,fluPA,fluPA,T,2183,,,,32
-PAtermini,fluPA,fluPA,G,2184,,,,
+PAtermini,fluPA,fluPA,G,2184,,,,33
 PAtermini,fluPA,fluPA,T,2185,,,,
 PAtermini,fluPA,fluPA,C,2186,,,,
 PAtermini,fluPA,fluPA,C,2187,,,,
@@ -3933,7 +3933,7 @@ PAmid,fluPA,fluPA,C,-4,,,21,
 PAmid,fluPA,fluPA,A,-3,,,22,
 PAmid,fluPA,fluPA,A,-2,,,23,
 PAmid,fluPA,fluPA,A,-1,,,24,
-PAmid,fluPA,fluPA,A,1,,1,,
+PAmid,fluPA,fluPA,A,1,,1,25,
 PAmid,fluPA,fluPA,T,2,,2,,
 PAmid,fluPA,fluPA,G,3,,3,,
 PAmid,fluPA,fluPA,G,4,,4,,
@@ -4964,7 +4964,7 @@ PAmid,fluPA,fluPA,C,1028,,1028,,
 PAmid,fluPA,fluPA,A,1029,,1029,,
 PAmid,fluPA,fluPA,G,1030,,1030,,
 PAmid,fluPA,fluPA,A,1031,,1031,,
-PAmid,fluPA,fluPA,G,1032,,,,
+PAmid,fluPA,fluPA,G,1032,,1032,,
 PAmid,fluPA,fluPA,C,1033,,,,
 PAmid,fluPA,fluPA,T,1034,,,,
 PAmid,fluPA,fluPA,A,1035,,,,
@@ -6084,7 +6084,7 @@ PAmid,fluPA,fluPA,G,2148,1085,,,
 PAmid,fluPA,fluPA,T,2149,1086,,,
 PAmid,fluPA,fluPA,A,2150,1087,,,
 PAmid,fluPA,fluPA,G,2151,1088,,,
-PAmid,fluPA,fluPA,T,2152,,,,1
+PAmid,fluPA,fluPA,T,2152,1089,,,1
 PAmid,fluPA,fluPA,T,2153,,,,2
 PAmid,fluPA,fluPA,G,2154,,,,3
 PAmid,fluPA,fluPA,T,2155,,,,4
@@ -6116,7 +6116,7 @@ PAmid,fluPA,fluPA,T,2180,,,,29
 PAmid,fluPA,fluPA,A,2181,,,,30
 PAmid,fluPA,fluPA,C,2182,,,,31
 PAmid,fluPA,fluPA,T,2183,,,,32
-PAmid,fluPA,fluPA,G,2184,,,,
+PAmid,fluPA,fluPA,G,2184,,,,33
 PAmid,fluPA,fluPA,T,2185,,,,
 PAmid,fluPA,fluPA,C,2186,,,,
 PAmid,fluPA,fluPA,C,2187,,,,
@@ -6303,14 +6303,14 @@ HAtermini,fluHA,fluHA,A,-4,,,102,
 HAtermini,fluHA,fluHA,T,-3,,,103,
 HAtermini,fluHA,fluHA,C,-2,,,104,
 HAtermini,fluHA,fluHA,C,-1,,,105,
-HAtermini,fluHA,fluHA,A,1,,1,,
+HAtermini,fluHA,fluHA,A,1,,1,106,
 HAtermini,fluHA,fluHA,T,2,,2,,
 HAtermini,fluHA,fluHA,G,3,,3,,
 HAtermini,fluHA,fluHA,A,4,,4,,
 HAtermini,fluHA,fluHA,A,5,,5,,
 HAtermini,fluHA,fluHA,G,6,,6,,
 HAtermini,fluHA,fluHA,G,7,,7,,
-HAtermini,fluHA,fluHA,C,8,,,,
+HAtermini,fluHA,fluHA,C,8,,8,,
 HAtermini,fluHA,fluHA,G,9,,,,
 HAtermini,fluHA,fluHA,A,10,,,,
 HAtermini,fluHA,fluHA,T,11,,,,
@@ -8004,7 +8004,7 @@ HAtermini,fluHA,fluHA,A,1698,1660,,,
 HAtermini,fluHA,fluHA,T,1699,1661,,,
 HAtermini,fluHA,fluHA,A,1700,1662,,,
 HAtermini,fluHA,fluHA,A,1701,1663,,,
-HAtermini,fluHA,fluHA,T,1702,,,,1
+HAtermini,fluHA,fluHA,T,1702,1664,,,1
 HAtermini,fluHA,fluHA,G,1703,,,,2
 HAtermini,fluHA,fluHA,A,1704,,,,3
 HAtermini,fluHA,fluHA,T,1705,,,,4
@@ -8208,7 +8208,7 @@ HAtermini,fluHA,fluHA,A,1902,,,,201
 HAtermini,fluHA,fluHA,G,1903,,,,202
 HAtermini,fluHA,fluHA,C,1904,,,,203
 HAtermini,fluHA,fluHA,A,1905,,,,204
-HAtermini,fluHA,fluHA,T,1906,,,,
+HAtermini,fluHA,fluHA,T,1906,,,,205
 HAtermini,fluHA,fluHA,G,1907,,,,
 HAtermini,fluHA,fluHA,A,1908,,,,
 HAtermini,fluHA,fluHA,G,1909,,,,
@@ -8349,7 +8349,7 @@ NAmid,fluNA,fluNA,C,-4,,,57,
 NAmid,fluNA,fluNA,T,-3,,,58,
 NAmid,fluNA,fluNA,G,-2,,,59,
 NAmid,fluNA,fluNA,T,-1,,,60,
-NAmid,fluNA,fluNA,A,1,,1,,
+NAmid,fluNA,fluNA,A,1,,1,61,
 NAmid,fluNA,fluNA,T,2,,2,,
 NAmid,fluNA,fluNA,G,3,,3,,
 NAmid,fluNA,fluNA,G,4,,4,,
@@ -8881,7 +8881,7 @@ NAmid,fluNA,fluNA,C,529,,529,,
 NAmid,fluNA,fluNA,T,530,,530,,
 NAmid,fluNA,fluNA,A,531,,531,,
 NAmid,fluNA,fluNA,A,532,,532,,
-NAmid,fluNA,fluNA,T,533,,,,
+NAmid,fluNA,fluNA,T,533,,533,,
 NAmid,fluNA,fluNA,G,534,,,,
 NAmid,fluNA,fluNA,A,535,,,,
 NAmid,fluNA,fluNA,G,536,,,,
@@ -9816,7 +9816,7 @@ NAmid,fluNA,fluNA,A,1464,907,,,
 NAmid,fluNA,fluNA,T,1465,908,,,
 NAmid,fluNA,fluNA,A,1466,909,,,
 NAmid,fluNA,fluNA,A,1467,910,,,
-NAmid,fluNA,fluNA,T,1468,,,,1
+NAmid,fluNA,fluNA,T,1468,911,,,1
 NAmid,fluNA,fluNA,A,1469,,,,2
 NAmid,fluNA,fluNA,G,1470,,,,3
 NAmid,fluNA,fluNA,T,1471,,,,4
@@ -9997,7 +9997,7 @@ NAmid,fluNA,fluNA,G,1645,,,,178
 NAmid,fluNA,fluNA,T,1646,,,,179
 NAmid,fluNA,fluNA,T,1647,,,,180
 NAmid,fluNA,fluNA,T,1648,,,,181
-NAmid,fluNA,fluNA,G,1649,,,,
+NAmid,fluNA,fluNA,G,1649,,,,182
 NAmid,fluNA,fluNA,T,1650,,,,
 NAmid,fluNA,fluNA,T,1651,,,,
 NAmid,fluNA,fluNA,C,1652,,,,
@@ -10104,7 +10104,7 @@ Mmid,fluM,fluM,A,-4,,,21,
 Mmid,fluM,fluM,A,-3,,,22,
 Mmid,fluM,fluM,A,-2,,,23,
 Mmid,fluM,fluM,G,-1,,,24,
-Mmid,fluM,fluM,A,1,,1,,
+Mmid,fluM,fluM,A,1,,1,25,
 Mmid,fluM,fluM,T,2,,2,,
 Mmid,fluM,fluM,G,3,,3,,
 Mmid,fluM,fluM,A,4,,4,,
@@ -10456,7 +10456,7 @@ Mmid,fluM,fluM,C,349,,349,,
 Mmid,fluM,fluM,T,350,,350,,
 Mmid,fluM,fluM,A,351,,351,,
 Mmid,fluM,fluM,A,352,,352,,
-Mmid,fluM,fluM,G,353,,,,
+Mmid,fluM,fluM,G,353,,353,,
 Mmid,fluM,fluM,C,354,,,,
 Mmid,fluM,fluM,T,355,,,,
 Mmid,fluM,fluM,A,356,,,,
@@ -10863,7 +10863,7 @@ Mmid,fluM,fluM,G,756,381,,,
 Mmid,fluM,fluM,T,757,382,,,
 Mmid,fluM,fluM,G,758,383,,,
 Mmid,fluM,fluM,A,759,384,,,
-Mmid,fluM,fluM,T,760,,,,1
+Mmid,fluM,fluM,T,760,385,,,1
 Mmid,fluM,fluM,C,761,,,,2
 Mmid,fluM,fluM,C,762,,,,3
 Mmid,fluM,fluM,T,763,,,,4
@@ -11080,7 +11080,7 @@ Mmid,fluM,fluM,G,973,,,,214
 Mmid,fluM,fluM,C,974,,,,215
 Mmid,fluM,fluM,T,975,,,,216
 Mmid,fluM,fluM,A,976,,,,217
-Mmid,fluM,fluM,G,977,,,,
+Mmid,fluM,fluM,G,977,,,,218
 Mmid,fluM,fluM,A,978,,,,
 Mmid,fluM,fluM,G,979,,,,
 Mmid,fluM,fluM,T,980,,,,
@@ -11186,9 +11186,9 @@ PB1termini,fluPB1,fluPB1,T,-4,,,21,
 PB1termini,fluPB1,fluPB1,T,-3,,,22,
 PB1termini,fluPB1,fluPB1,G,-2,,,23,
 PB1termini,fluPB1,fluPB1,A,-1,,,24,
-PB1termini,fluPB1,fluPB1,A,1,,1,,
+PB1termini,fluPB1,fluPB1,A,1,,1,25,
 PB1termini,fluPB1,fluPB1,T,2,,2,,
-PB1termini,fluPB1,fluPB1,G,3,,,,
+PB1termini,fluPB1,fluPB1,G,3,,3,,
 PB1termini,fluPB1,fluPB1,G,4,,,,
 PB1termini,fluPB1,fluPB1,A,5,,,,
 PB1termini,fluPB1,fluPB1,T,6,,,,
@@ -13460,7 +13460,7 @@ PB1termini,fluPB1,fluPB1,A,2271,2243,,,
 PB1termini,fluPB1,fluPB1,T,2272,2244,,,
 PB1termini,fluPB1,fluPB1,A,2273,2245,,,
 PB1termini,fluPB1,fluPB1,A,2274,2246,,,
-PB1termini,fluPB1,fluPB1,T,2275,,,,1
+PB1termini,fluPB1,fluPB1,T,2275,2247,,,1
 PB1termini,fluPB1,fluPB1,G,2276,,,,2
 PB1termini,fluPB1,fluPB1,A,2277,,,,3
 PB1termini,fluPB1,fluPB1,A,2278,,,,4
@@ -13478,7 +13478,7 @@ PB1termini,fluPB1,fluPB1,C,2289,,,,15
 PB1termini,fluPB1,fluPB1,C,2290,,,,16
 PB1termini,fluPB1,fluPB1,T,2291,,,,17
 PB1termini,fluPB1,fluPB1,T,2292,,,,18
-PB1termini,fluPB1,fluPB1,C,2293,,,,
+PB1termini,fluPB1,fluPB1,C,2293,,,,19
 PB1termini,fluPB1,fluPB1,A,2294,,,,
 PB1termini,fluPB1,fluPB1,T,2295,,,,
 PB1termini,fluPB1,fluPB1,G,2296,,,,
@@ -13604,7 +13604,7 @@ NPtermini,fluNP,fluNP,A,-4,,,42,
 NPtermini,fluNP,fluNP,G,-3,,,43,
 NPtermini,fluNP,fluNP,C,-2,,,44,
 NPtermini,fluNP,fluNP,C,-1,,,45,
-NPtermini,fluNP,fluNP,A,1,,,,
+NPtermini,fluNP,fluNP,A,1,,,46,
 NPtermini,fluNP,fluNP,T,2,,,,
 NPtermini,fluNP,fluNP,G,3,,,,
 NPtermini,fluNP,fluNP,G,4,,,,
@@ -15101,8 +15101,8 @@ NPtermini,fluNP,fluNP,T,1494,1485,,,
 NPtermini,fluNP,fluNP,T,1495,1486,,,
 NPtermini,fluNP,fluNP,G,1496,1487,,,
 NPtermini,fluNP,fluNP,A,1497,1488,,,
-NPtermini,fluNP,fluNP,G,1498,,,,1
-NPtermini,fluNP,fluNP,G,1499,,,,
+NPtermini,fluNP,fluNP,G,1498,1489,,,1
+NPtermini,fluNP,fluNP,G,1499,,,,2
 NPtermini,fluNP,fluNP,A,1500,,,,
 NPtermini,fluNP,fluNP,A,1501,,,,
 NPtermini,fluNP,fluNP,A,1502,,,,
@@ -15205,7 +15205,7 @@ NSmid,fluNS,fluNS,C,-4,,,22,
 NSmid,fluNS,fluNS,A,-3,,,23,
 NSmid,fluNS,fluNS,T,-2,,,24,
 NSmid,fluNS,fluNS,A,-1,,,25,
-NSmid,fluNS,fluNS,A,1,,1,,
+NSmid,fluNS,fluNS,A,1,,1,26,
 NSmid,fluNS,fluNS,T,2,,2,,
 NSmid,fluNS,fluNS,G,3,,3,,
 NSmid,fluNS,fluNS,G,4,,4,,
@@ -15663,7 +15663,7 @@ NSmid,fluNS,fluNS,A,455,,455,,
 NSmid,fluNS,fluNS,G,456,,456,,
 NSmid,fluNS,fluNS,G,457,,457,,
 NSmid,fluNS,fluNS,A,458,,458,,
-NSmid,fluNS,fluNS,G,459,,,,
+NSmid,fluNS,fluNS,G,459,,459,,
 NSmid,fluNS,fluNS,G,460,,,,
 NSmid,fluNS,fluNS,G,461,,,,
 NSmid,fluNS,fluNS,A,462,,,,
@@ -15865,7 +15865,7 @@ NSmid,fluNS,fluNS,A,657,172,,,
 NSmid,fluNS,fluNS,T,658,173,,,
 NSmid,fluNS,fluNS,G,659,174,,,
 NSmid,fluNS,fluNS,A,660,175,,,
-NSmid,fluNS,fluNS,A,661,,,,1
+NSmid,fluNS,fluNS,A,661,176,,,1
 NSmid,fluNS,fluNS,A,662,,,,2
 NSmid,fluNS,fluNS,A,663,,,,3
 NSmid,fluNS,fluNS,G,664,,,,4
@@ -16043,7 +16043,7 @@ NSmid,fluNS,fluNS,T,835,,,,175
 NSmid,fluNS,fluNS,T,836,,,,176
 NSmid,fluNS,fluNS,A,837,,,,177
 NSmid,fluNS,fluNS,A,838,,,,178
-NSmid,fluNS,fluNS,T,839,,,,
+NSmid,fluNS,fluNS,T,839,,,,179
 NSmid,fluNS,fluNS,G,840,,,,
 NSmid,fluNS,fluNS,A,841,,,,
 NSmid,fluNS,fluNS,T,842,,,,
@@ -16152,12 +16152,12 @@ PB2termini,fluPB2,fluPB2,C,-4,,,24,
 PB2termini,fluPB2,fluPB2,A,-3,,,25,
 PB2termini,fluPB2,fluPB2,A,-2,,,26,
 PB2termini,fluPB2,fluPB2,T,-1,,,27,
-PB2termini,fluPB2,fluPB2,A,1,,1,,
+PB2termini,fluPB2,fluPB2,A,1,,1,28,
 PB2termini,fluPB2,fluPB2,T,2,,2,,
 PB2termini,fluPB2,fluPB2,G,3,,3,,
 PB2termini,fluPB2,fluPB2,G,4,,4,,
 PB2termini,fluPB2,fluPB2,A,5,,5,,
-PB2termini,fluPB2,fluPB2,G,6,,,,
+PB2termini,fluPB2,fluPB2,G,6,,6,,
 PB2termini,fluPB2,fluPB2,A,7,,,,
 PB2termini,fluPB2,fluPB2,G,8,,,,
 PB2termini,fluPB2,fluPB2,A,9,,,,
@@ -18432,7 +18432,7 @@ PB2termini,fluPB2,fluPB2,T,2277,2240,,,
 PB2termini,fluPB2,fluPB2,T,2278,2241,,,
 PB2termini,fluPB2,fluPB2,A,2279,2242,,,
 PB2termini,fluPB2,fluPB2,G,2280,2243,,,
-PB2termini,fluPB2,fluPB2,T,2281,,,,1
+PB2termini,fluPB2,fluPB2,T,2281,2244,,,1
 PB2termini,fluPB2,fluPB2,G,2282,,,,2
 PB2termini,fluPB2,fluPB2,T,2283,,,,3
 PB2termini,fluPB2,fluPB2,C,2284,,,,4
@@ -18441,7 +18441,7 @@ PB2termini,fluPB2,fluPB2,A,2286,,,,6
 PB2termini,fluPB2,fluPB2,A,2287,,,,7
 PB2termini,fluPB2,fluPB2,T,2288,,,,8
 PB2termini,fluPB2,fluPB2,A,2289,,,,9
-PB2termini,fluPB2,fluPB2,G,2290,,,,
+PB2termini,fluPB2,fluPB2,G,2290,,,,10
 PB2termini,fluPB2,fluPB2,T,2291,,,,
 PB2termini,fluPB2,fluPB2,T,2292,,,,
 PB2termini,fluPB2,fluPB2,T,2293,,,,
@@ -18547,7 +18547,7 @@ Mtermini,fluM,fluM,A,-4,,,21,
 Mtermini,fluM,fluM,A,-3,,,22,
 Mtermini,fluM,fluM,A,-2,,,23,
 Mtermini,fluM,fluM,G,-1,,,24,
-Mtermini,fluM,fluM,A,1,,1,,
+Mtermini,fluM,fluM,A,1,,1,25,
 Mtermini,fluM,fluM,T,2,,2,,
 Mtermini,fluM,fluM,G,3,,3,,
 Mtermini,fluM,fluM,A,4,,4,,
@@ -18556,7 +18556,7 @@ Mtermini,fluM,fluM,T,6,,6,,
 Mtermini,fluM,fluM,C,7,,7,,
 Mtermini,fluM,fluM,T,8,,8,,
 Mtermini,fluM,fluM,T,9,,9,,
-Mtermini,fluM,fluM,C,10,,,,
+Mtermini,fluM,fluM,C,10,,10,,
 Mtermini,fluM,fluM,T,11,,,,
 Mtermini,fluM,fluM,A,12,,,,
 Mtermini,fluM,fluM,A,13,,,,
@@ -19306,7 +19306,7 @@ Mtermini,fluM,fluM,G,756,725,,,
 Mtermini,fluM,fluM,T,757,726,,,
 Mtermini,fluM,fluM,G,758,727,,,
 Mtermini,fluM,fluM,A,759,728,,,
-Mtermini,fluM,fluM,T,760,,,,1
+Mtermini,fluM,fluM,T,760,729,,,1
 Mtermini,fluM,fluM,C,761,,,,2
 Mtermini,fluM,fluM,C,762,,,,3
 Mtermini,fluM,fluM,T,763,,,,4
@@ -19523,7 +19523,7 @@ Mtermini,fluM,fluM,G,973,,,,214
 Mtermini,fluM,fluM,C,974,,,,215
 Mtermini,fluM,fluM,T,975,,,,216
 Mtermini,fluM,fluM,A,976,,,,217
-Mtermini,fluM,fluM,G,977,,,,
+Mtermini,fluM,fluM,G,977,,,,218
 Mtermini,fluM,fluM,A,978,,,,
 Mtermini,fluM,fluM,G,979,,,,
 Mtermini,fluM,fluM,T,980,,,,
@@ -19630,7 +19630,7 @@ PB1mid,fluPB1,fluPB1,T,-4,,,21,
 PB1mid,fluPB1,fluPB1,T,-3,,,22,
 PB1mid,fluPB1,fluPB1,G,-2,,,23,
 PB1mid,fluPB1,fluPB1,A,-1,,,24,
-PB1mid,fluPB1,fluPB1,A,1,,1,,
+PB1mid,fluPB1,fluPB1,A,1,,1,25,
 PB1mid,fluPB1,fluPB1,T,2,,2,,
 PB1mid,fluPB1,fluPB1,G,3,,3,,
 PB1mid,fluPB1,fluPB1,G,4,,4,,
@@ -20737,7 +20737,7 @@ PB1mid,fluPB1,fluPB1,A,1104,,1104,,
 PB1mid,fluPB1,fluPB1,C,1105,,1105,,
 PB1mid,fluPB1,fluPB1,C,1106,,1106,,
 PB1mid,fluPB1,fluPB1,A,1107,,1107,,
-PB1mid,fluPB1,fluPB1,G,1108,,,,
+PB1mid,fluPB1,fluPB1,G,1108,,1108,,
 PB1mid,fluPB1,fluPB1,C,1109,,,,
 PB1mid,fluPB1,fluPB1,A,1110,,,,
 PB1mid,fluPB1,fluPB1,G,1111,,,,
@@ -21904,7 +21904,7 @@ PB1mid,fluPB1,fluPB1,A,2271,1139,,,
 PB1mid,fluPB1,fluPB1,T,2272,1140,,,
 PB1mid,fluPB1,fluPB1,A,2273,1141,,,
 PB1mid,fluPB1,fluPB1,A,2274,1142,,,
-PB1mid,fluPB1,fluPB1,T,2275,,,,1
+PB1mid,fluPB1,fluPB1,T,2275,1143,,,1
 PB1mid,fluPB1,fluPB1,G,2276,,,,2
 PB1mid,fluPB1,fluPB1,A,2277,,,,3
 PB1mid,fluPB1,fluPB1,A,2278,,,,4
@@ -21922,7 +21922,7 @@ PB1mid,fluPB1,fluPB1,C,2289,,,,15
 PB1mid,fluPB1,fluPB1,C,2290,,,,16
 PB1mid,fluPB1,fluPB1,T,2291,,,,17
 PB1mid,fluPB1,fluPB1,T,2292,,,,18
-PB1mid,fluPB1,fluPB1,C,2293,,,,
+PB1mid,fluPB1,fluPB1,C,2293,,,,19
 PB1mid,fluPB1,fluPB1,A,2294,,,,
 PB1mid,fluPB1,fluPB1,T,2295,,,,
 PB1mid,fluPB1,fluPB1,G,2296,,,,
@@ -22030,9 +22030,9 @@ NStermini,fluNS,fluNS,C,-4,,,22,
 NStermini,fluNS,fluNS,A,-3,,,23,
 NStermini,fluNS,fluNS,T,-2,,,24,
 NStermini,fluNS,fluNS,A,-1,,,25,
-NStermini,fluNS,fluNS,A,1,,1,,
+NStermini,fluNS,fluNS,A,1,,1,26,
 NStermini,fluNS,fluNS,T,2,,2,,
-NStermini,fluNS,fluNS,G,3,,,,
+NStermini,fluNS,fluNS,G,3,,3,,
 NStermini,fluNS,fluNS,G,4,,,,
 NStermini,fluNS,fluNS,A,5,,,,
 NStermini,fluNS,fluNS,C,6,,,,
@@ -22690,7 +22690,7 @@ NStermini,fluNS,fluNS,A,657,633,,,
 NStermini,fluNS,fluNS,T,658,634,,,
 NStermini,fluNS,fluNS,G,659,635,,,
 NStermini,fluNS,fluNS,A,660,636,,,
-NStermini,fluNS,fluNS,A,661,,,,1
+NStermini,fluNS,fluNS,A,661,637,,,1
 NStermini,fluNS,fluNS,A,662,,,,2
 NStermini,fluNS,fluNS,A,663,,,,3
 NStermini,fluNS,fluNS,G,664,,,,4
@@ -22868,7 +22868,7 @@ NStermini,fluNS,fluNS,T,835,,,,175
 NStermini,fluNS,fluNS,T,836,,,,176
 NStermini,fluNS,fluNS,A,837,,,,177
 NStermini,fluNS,fluNS,A,838,,,,178
-NStermini,fluNS,fluNS,T,839,,,,
+NStermini,fluNS,fluNS,T,839,,,,179
 NStermini,fluNS,fluNS,G,840,,,,
 NStermini,fluNS,fluNS,A,841,,,,
 NStermini,fluNS,fluNS,T,842,,,,
@@ -23010,9 +23010,9 @@ NAtermini,fluNA,fluNA,C,-4,,,57,
 NAtermini,fluNA,fluNA,T,-3,,,58,
 NAtermini,fluNA,fluNA,G,-2,,,59,
 NAtermini,fluNA,fluNA,T,-1,,,60,
-NAtermini,fluNA,fluNA,A,1,,1,,
+NAtermini,fluNA,fluNA,A,1,,1,61,
 NAtermini,fluNA,fluNA,T,2,,2,,
-NAtermini,fluNA,fluNA,G,3,,,,
+NAtermini,fluNA,fluNA,G,3,,3,,
 NAtermini,fluNA,fluNA,G,4,,,,
 NAtermini,fluNA,fluNA,T,5,,,,
 NAtermini,fluNA,fluNA,A,6,,,,
@@ -24477,7 +24477,7 @@ NAtermini,fluNA,fluNA,A,1464,1426,,,
 NAtermini,fluNA,fluNA,T,1465,1427,,,
 NAtermini,fluNA,fluNA,A,1466,1428,,,
 NAtermini,fluNA,fluNA,A,1467,1429,,,
-NAtermini,fluNA,fluNA,T,1468,,,,1
+NAtermini,fluNA,fluNA,T,1468,1430,,,1
 NAtermini,fluNA,fluNA,A,1469,,,,2
 NAtermini,fluNA,fluNA,G,1470,,,,3
 NAtermini,fluNA,fluNA,T,1471,,,,4
@@ -24658,7 +24658,7 @@ NAtermini,fluNA,fluNA,G,1645,,,,178
 NAtermini,fluNA,fluNA,T,1646,,,,179
 NAtermini,fluNA,fluNA,T,1647,,,,180
 NAtermini,fluNA,fluNA,T,1648,,,,181
-NAtermini,fluNA,fluNA,G,1649,,,,
+NAtermini,fluNA,fluNA,G,1649,,,,182
 NAtermini,fluNA,fluNA,T,1650,,,,
 NAtermini,fluNA,fluNA,T,1651,,,,
 NAtermini,fluNA,fluNA,C,1652,,,,
@@ -24768,7 +24768,7 @@ PB2mid,fluPB2,fluPB2,C,-4,,,24,
 PB2mid,fluPB2,fluPB2,A,-3,,,25,
 PB2mid,fluPB2,fluPB2,A,-2,,,26,
 PB2mid,fluPB2,fluPB2,T,-1,,,27,
-PB2mid,fluPB2,fluPB2,A,1,,1,,
+PB2mid,fluPB2,fluPB2,A,1,,1,28,
 PB2mid,fluPB2,fluPB2,T,2,,2,,
 PB2mid,fluPB2,fluPB2,G,3,,3,,
 PB2mid,fluPB2,fluPB2,G,4,,4,,
@@ -25879,7 +25879,7 @@ PB2mid,fluPB2,fluPB2,G,1108,,1108,,
 PB2mid,fluPB2,fluPB2,C,1109,,1109,,
 PB2mid,fluPB2,fluPB2,A,1110,,1110,,
 PB2mid,fluPB2,fluPB2,A,1111,,1111,,
-PB2mid,fluPB2,fluPB2,C,1112,,,,
+PB2mid,fluPB2,fluPB2,C,1112,,1112,,
 PB2mid,fluPB2,fluPB2,A,1113,,,,
 PB2mid,fluPB2,fluPB2,G,1114,,,,
 PB2mid,fluPB2,fluPB2,C,1115,,,,
@@ -27048,7 +27048,7 @@ PB2mid,fluPB2,fluPB2,T,2277,1140,,,
 PB2mid,fluPB2,fluPB2,T,2278,1141,,,
 PB2mid,fluPB2,fluPB2,A,2279,1142,,,
 PB2mid,fluPB2,fluPB2,G,2280,1143,,,
-PB2mid,fluPB2,fluPB2,T,2281,,,,1
+PB2mid,fluPB2,fluPB2,T,2281,1144,,,1
 PB2mid,fluPB2,fluPB2,G,2282,,,,2
 PB2mid,fluPB2,fluPB2,T,2283,,,,3
 PB2mid,fluPB2,fluPB2,C,2284,,,,4
@@ -27057,7 +27057,7 @@ PB2mid,fluPB2,fluPB2,A,2286,,,,6
 PB2mid,fluPB2,fluPB2,A,2287,,,,7
 PB2mid,fluPB2,fluPB2,T,2288,,,,8
 PB2mid,fluPB2,fluPB2,A,2289,,,,9
-PB2mid,fluPB2,fluPB2,G,2290,,,,
+PB2mid,fluPB2,fluPB2,G,2290,,,,10
 PB2mid,fluPB2,fluPB2,T,2291,,,,
 PB2mid,fluPB2,fluPB2,T,2292,,,,
 PB2mid,fluPB2,fluPB2,T,2293,,,,
@@ -27244,7 +27244,7 @@ HAmid,fluHA,fluHA,A,-4,,,102,
 HAmid,fluHA,fluHA,T,-3,,,103,
 HAmid,fluHA,fluHA,C,-2,,,104,
 HAmid,fluHA,fluHA,C,-1,,,105,
-HAmid,fluHA,fluHA,A,1,,1,,
+HAmid,fluHA,fluHA,A,1,,1,106,
 HAmid,fluHA,fluHA,T,2,,2,,
 HAmid,fluHA,fluHA,G,3,,3,,
 HAmid,fluHA,fluHA,A,4,,4,,
@@ -28075,7 +28075,7 @@ HAmid,fluHA,fluHA,A,828,,828,,
 HAmid,fluHA,fluHA,A,829,,829,,
 HAmid,fluHA,fluHA,A,830,,830,,
 HAmid,fluHA,fluHA,T,831,,831,,
-HAmid,fluHA,fluHA,G,832,,,,
+HAmid,fluHA,fluHA,G,832,,832,,
 HAmid,fluHA,fluHA,C,833,,,,
 HAmid,fluHA,fluHA,T,834,,,,
 HAmid,fluHA,fluHA,G,835,,,,
@@ -28945,7 +28945,7 @@ HAmid,fluHA,fluHA,A,1698,835,,,
 HAmid,fluHA,fluHA,T,1699,836,,,
 HAmid,fluHA,fluHA,A,1700,837,,,
 HAmid,fluHA,fluHA,A,1701,838,,,
-HAmid,fluHA,fluHA,T,1702,,,,1
+HAmid,fluHA,fluHA,T,1702,839,,,1
 HAmid,fluHA,fluHA,G,1703,,,,2
 HAmid,fluHA,fluHA,A,1704,,,,3
 HAmid,fluHA,fluHA,T,1705,,,,4
@@ -29149,7 +29149,7 @@ HAmid,fluHA,fluHA,A,1902,,,,201
 HAmid,fluHA,fluHA,G,1903,,,,202
 HAmid,fluHA,fluHA,C,1904,,,,203
 HAmid,fluHA,fluHA,A,1905,,,,204
-HAmid,fluHA,fluHA,T,1906,,,,
+HAmid,fluHA,fluHA,T,1906,,,,205
 HAmid,fluHA,fluHA,G,1907,,,,
 HAmid,fluHA,fluHA,A,1908,,,,
 HAmid,fluHA,fluHA,G,1909,,,,
