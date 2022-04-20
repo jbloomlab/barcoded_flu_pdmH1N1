@@ -46,7 +46,7 @@ localrules: all
 rule all:
     input:
         expand(join(config['viral_fastq10x_dir'],
-                    "{expt}_integrate_data.csv.gz"),
+                    "{expt}_integrate_data.csv"),
                expt=expts.expts_with_progeny_barcodes),
         expand(join(config['fastq10x_dir'], "{expt}_qc_fastq10x.svg"),
                expt=expts.experiments),

@@ -10,4 +10,8 @@ __pycache__
 _*
 sinfo-requirements.txt
 
-results
+results/*
+!results/viral_fastq10x
+results/viral_fastq10x/*
+!results/viral_fastq10x/scProgenyProduction_trial3_integrate_data.csv
+
