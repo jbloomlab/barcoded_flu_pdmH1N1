@@ -139,8 +139,8 @@ rule get_cb_whitelist_10x:
         """
         if [[ {params.url} == *.gz ]]
         then
-            wget -O - {params.url} | gunzip -c > {output} 2> {log}
+            curl {params.url} | gunzip -c > {output} 2> {log}
         else
-            wget -O - {params.url} > {output} 2> {log}
+            curl {params.url} > {output} 2> {log}
         fi
         """
