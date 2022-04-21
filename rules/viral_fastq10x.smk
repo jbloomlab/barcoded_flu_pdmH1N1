@@ -40,7 +40,7 @@ rule integrate_data:
                                               "_by_cell.csv.gz")),
     output:
         integrated_data_csv=join(config['viral_fastq10x_dir'],
-                                 "{expt}_integrate_data.csv.gz"),
+                                 "{expt}_integrate_data.csv"),
     params:
         barcoded_viral_genes=barcoded_viral_genes
     log:

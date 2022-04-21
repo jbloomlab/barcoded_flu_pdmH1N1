@@ -1,330 +1,39 @@
-        http://rhino01:11382/?token=22ff43c1d7d910686b65f6f68506ab0f344d482379c25152
-LOCUS       HAmid                2123 bp ds-DNA     linear   SYN 05-NOV-2020
-DEFINITION  HAmid
-ACCESSION   HAmid
-VERSION     .
-KEYWORDS    .
-SOURCE      HAmid
-  ORGANISM  PCR product
-FEATURES             Location/Qualifiers
-     sequenced_ORF_1 1..870
-     variant_tag_2    750
-     viral_barcode    892..907
-     polyA            1079..1107
-     UMI              1108..1119
-     cellbarcode      1120..1135
-     Read1            1136..1155
-     termini5         1156..1260
-     termini3         871..1078
-     sequenced_ORF_2  1261..2123
-     variant_tag_1    1404
-ORIGIN
-        1 gctggatctg gtattatcat ttcagataca ccagtccacg attgcaatac aacttgtcaa
-       61 acacccaagg gtgctataaa caccagcctc ccatttcaga atatacatcc gatcacaatt
-      121 ggaaaatgtc caaaatatgt aaaaagcaca aaattgagac tggccacagg attgaggaat
-      181 atcccgtcta ttcaatctag aggcctattt ggggccattg ccggtttcat tgaagggggg
-      241 tggacaggga tggtagatgg atggtacggt tatcaccatc aaaatgagca ggggtcagga
-      301 tatgcagccg acctgaagag cacacagaat gccattgacg agattactaa caaagtaaat
-      361 tctgttattg aaaagatgaa tacacagttc acagcagtag gtaaagagtt caaccacctg
-      421 gaaaaaagaa tagagaattt aaataaaaaa gttgatgatg gtttcctgga catttggact
-      481 tacaatgccg aactgttggt tctattggaa aatgaaagaa ctttggacta ccacgattca
-      541 aatgtgaaga acttatatga aaaggtaaga agccagctaa aaaacaatgc caaggaaatt
-      601 ggaaacggct gctttgaatt ttaccacaaa tgcgataaca cgtgcatgga aagtgtcaaa
-      661 aatgggactt atgactaccc aaaatactca gaggaagcaa aattaaacag agaagaaata
-      721 gatggggtaa agctggaatc aacaaggaty taccagattt tggcgatata ctctacagtg
-      781 gctagctccc tagttttagt tgtttcttta ggagcgatta gcttttggat gtgttccaac
-      841 ggctccttgc aatgccggat ttgcatataa tgatgcacca taggcggccg cnnnnnnnnn
-      901 nnnnnnngta ctctgcgttg ataccactgc ttccgcggac aggcaagctt atctattcaa
-      961 ctgtcgccag ttcattggta ctggtagtct ccctgggggc aatcagtttc tggatgtgct
-     1021 ctaatgggtc tctacagtgt agaatatgta tttaacatta ggatttcaga agcatgagaa
-     1081 aaaaaaaaaa aaaaaaaaaa aaaaaaannn nnnnnnnnnn nnnnnnnnnn nnnnnagatc
-     1141 ggaagagcgt cgtgtagcaa aagcagggga aaacaaaagc aaccaaattg aaagcaatac
-     1201 tagtagttct gctatataca tttgcaaccg caattgcaga cacattttgt atagggatcc
-     1261 atgaaggcga ttttggttgt attattgtac acgttcgcga cggcgaacgc tgatactctt
-     1321 tgcattggtt atcatgcgaa caattcaaca gacactgtag acacagtact agaaaagaat
-     1381 gtaacagtaa cacactctgt taaycttcta gaagacaagc ataacgggaa actatgcaaa
-     1441 ctaagagggg tagccccatt gcatttgggt aaatgtaaca ttgctggctg gatcctggga
-     1501 aatccagagt gtgaatcact ctccacagca agctcatggt cctacattgt ggaaacacct
-     1561 agttcagaca atggaacgtg ttacccagga gatttcatcg attatgagga gctaagagag
-     1621 caattgagct cagtgtcatc atttgaaagg tttgagatat tccccaagac aagttcatgg
-     1681 cccaatcatg actcgaacaa aggtgtaacg gcagcatgtc ctcatgctgg agcaaaaagc
-     1741 ttctacaaaa atttaatatg gctagttaaa aaagaaaatt catacccaaa gctcagcaaa
-     1801 tcctacatta atgataaagg gaaagaagtc ctcgtgctat ggggcattca ccatccatct
-     1861 actagtgctg accaacaaag tctctatcag aatgcagata catatgtttt tgtggggtca
-     1921 tcaagataca gcaagaagtt caagccggaa atagcaataa gacccaaagt gagggatcaa
-     1981 gaagggagaa tgaactatta ctggacacta gtagagccgg gagacaaaat aacattcgaa
-     2041 gcaactggaa atctagtggt accgagatat gcattcgcaa tggaaagaaa tgctggatct
-     2101 ggtattatca tttcagatac acc
-//
-LOCUS       HAtermini                2122 bp ds-DNA     linear   SYN 05-NOV-2020
-DEFINITION  HAtermini
-ACCESSION   .
-VERSION     .
-KEYWORDS    .
-SOURCE      HAtermini
-  ORGANISM
-FEATURES             Location/Qualifiers
-     sequenced_ORF_1  1..1694
-     variant_tag_1    137
-     variant_tag_2    1574
-     viral_barcode    1716..1731
-     polyA            1903..1931
-     UMI              1932..1943
-     cellbarcode      1944..1959
-     Read1            1960..1979
-     termini5         1980..2004
-     termini3         1695..1902
-     sequenced_ORF_2 2085..2122
-ORIGIN
-        1 cgattttggt tgtattattg tacacgttcg cgacggcgaa cgctgatact ctttgcattg
-       61 gttatcatgc gaacaattca acagacactg tagacacagt actagaaaag aatgtaacag
-      121 taacacactc tgttaayctt ctagaagaca agcataacgg gaaactatgc aaactaagag
-      181 gggtagcccc attgcatttg ggtaaatgta acattgctgg ctggatcctg ggaaatccag
-      241 agtgtgaatc actctccaca gcaagctcat ggtcctacat tgtggaaaca cctagttcag
-      301 acaatggaac gtgttaccca ggagatttca tcgattatga ggagctaaga gagcaattga
-      361 gctcagtgtc atcatttgaa aggtttgaga tattccccaa gacaagttca tggcccaatc
-      421 atgactcgaa caaaggtgta acggcagcat gtcctcatgc tggagcaaaa agcttctaca
-      481 aaaatttaat atggctagtt aaaaaagaaa attcataccc aaagctcagc aaatcctaca
-      541 ttaatgataa agggaaagaa gtcctcgtgc tatggggcat tcaccatcca tctactagtg
-      601 ctgaccaaca aagtctctat cagaatgcag atacatatgt ttttgtgggg tcatcaagat
-      661 acagcaagaa gttcaagccg gaaatagcaa taagacccaa agtgagggat caagaaggga
-      721 gaatgaacta ttactggaca ctagtagagc cgggagacaa aataacattc gaagcaactg
-      781 gaaatctagt ggtaccgaga tatgcattcg caatggaaag aaatgctgga tctggtatta
-      841 tcatttcaga tacaccagtc cacgattgca atacaacttg tcaaacaccc aagggtgcta
-      901 taaacaccag cctcccattt cagaatatac atccgatcac aattggaaaa tgtccaaaat
-      961 atgtaaaaag cacaaaattg agactggcca caggattgag gaatatcccg tctattcaat
-     1021 ctagaggcct atttggggcc attgccggtt tcattgaagg ggggtggaca gggatggtag
-     1081 atggatggta cggttatcac catcaaaatg agcaggggtc aggatatgca gccgacctga
-     1141 agagcacaca gaatgccatt gacgagatta ctaacaaagt aaattctgtt attgaaaaga
-     1201 tgaatacaca gttcacagca gtaggtaaag agttcaacca cctggaaaaa agaatagaga
-     1261 atttaaataa aaaagttgat gatggtttcc tggacatttg gacttacaat gccgaactgt
-     1321 tggttctatt ggaaaatgaa agaactttgg actaccacga ttcaaatgtg aagaacttat
-     1381 atgaaaaggt aagaagccag ctaaaaaaca atgccaagga aattggaaac ggctgctttg
-     1441 aattttacca caaatgcgat aacacgtgca tggaaagtgt caaaaatggg acttatgact
-     1501 acccaaaata ctcagaggaa gcaaaattaa acagagaaga aatagatggg gtaaagctgg
-     1561 aatcaacaag gatytaccag attttggcga tatactctac agtggctagc tccctagttt
-     1621 tagttgtttc tttaggagcg attagctttt ggatgtgttc caacggctcc ttgcaatgcc
-     1681 ggatttgcat ataatgatgc accataggcg gccgcnnnnn nnnnnnnnnn ngtactctgc
-     1741 gttgatacca ctgcttccgc ggacaggcaa gcttatctat tcaactgtcg ccagttcatt
-     1801 ggtactggta gtctccctgg gggcaatcag tttctggatg tgctctaatg ggtctctaca
-     1861 gtgtagaata tgtatttaac attaggattt cagaagcatg agaaaaaaaa aaaaaaaaaa
-     1921 aaaaaaaaaa annnnnnnnn nnnnnnnnnn nnnnnnnnna gatcggaaga gcgtcgtgta
-     1981 gcaaaagcag gggaaaacaa aagcaaccaa attgaaagca atactagtag ttctgctata
-     2041 tacatttgca accgcaattg cagacacatt ttgtataggg atccatgaag gcgattttgg
-     2101 ttgtattatt gtacacgttc gc
-//
-LOCUS       Mmid                1105 bp ds-DNA     linear   SYN 05-NOV-2020
-DEFINITION  Mmid
-ACCESSION   Mmid
-VERSION     .
-KEYWORDS    .
-SOURCE      Mmid
-  ORGANISM
-FEATURES             Location/Qualifiers
-     sequenced_ORF_1  1..407
-     variant_tag_2    573
-     polyA            629..657
-     UMI              658..669
-     cellbarcode      670..685
-     Read1            686..706
-     termini5         707..730
-     termini3         408..628
-     sequenced_ORF_2  731..1105
-     variant_tag_1    805
-ORIGIN
-        1 gctattcaac tggtgcactt gccagttgca tgggcctcat atacaacagg atgggaacag
-       61 tgaccacaga agctgctttt ggtctagtgt gtgccacttg tgaacagatt gctgattcac
-      121 agcatcggtc tcacagacag atggctacta ccaccaatcc actaatcagg catgaaaaca
-      181 gaatggtgct ggctagcact acggcaaagg ctatggaaca gatggctgga tcgagtgaac
-      241 aggcagcgga ggccatggag gttgctaatc agactaggca gatggtacat gcaatgagaa
-      301 ctattgggac tcatcctagc tccagtgctg gtctgaaaga tgaccttctt gaaaatttgc
-      361 aggcctacca gaagcgaatg ggagtgcaga tgcagcgatt caagtgatcc tctcgtcatt
-      421 gcagcaaata tcattgggat cttgcacctg atattgtgga ttactgatcg tctttttttc
-      481 aaatgtattt atcgtcgctt taaatacggt ttgaaaagag ggccttctac ggaaggagtg
-      541 cctgagtcca tgagggaaga atatcaacag garcagcaga gtgctgtgga tgttgacgat
-      601 ggtcattttg tcaacataga gctagagtaa aaaaaaaaaa aaaaaaaaaa aaaaaaannn
-      661 nnnnnnnnnn nnnnnnnnnn nnnnnagatc ggaagagcgt cgtgtagcaa aagcaggtag
-      721 atatttaaag atgagtcttc taaccgaggt cgaaacgtac gttctttcta tcatcccgtc
-      781 aggccccctc aaagccgaga tcgcrcagag actggaaagt gtctttgcag gaaagaacac
-      841 agatcttgag gctctcatgg aatggctaaa gacaagacca atcttgtcac ctctgactaa
-      901 gggaatttta ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag
-      961 acgctttgtc caaaatgccc taaatgggaa tggggacccg aacaacatgg atagagcagt
-     1021 taaactatac aagaagctca aaagagaaat aacgttccat ggggccaagg aggtgtcact
-     1081 aagctattca actggtgcac ttgcc
-//
-LOCUS       Mtermini                1105 bp ds-DNA     linear   SYN 05-NOV-2020
-DEFINITION  Mtermini
-ACCESSION   Mtermini
-VERSION     .
-KEYWORDS    .
-SOURCE      Mtermini
-  ORGANISM
-FEATURES             Location/Qualifiers
-     sequenced_ORF_1  1..750
-     variant_tag_1    66
-     variant_tag_2    916
-     polyA            972..1000
-     UMI              1001..1012
-     cellbarcode      1013..1028
-     Read1            1029..1050
-     termini5         1051..1074
-     termini3         751..971
-     sequenced_ORF_2  1075..1105
-ORIGIN
-        1 ctaaccgagg tcgaaacgta cgttctttct atcatcccgt caggccccct caaagccgag
-       61 atcgcrcaga gactggaaag tgtctttgca ggaaagaaca cagatcttga ggctctcatg
-      121 gaatggctaa agacaagacc aatcttgtca cctctgacta agggaatttt aggatttgtg
-      181 ttcacgctca ccgtgcccag tgagcgagga ctgcagcgta gacgctttgt ccaaaatgcc
-      241 ctaaatggga atggggaccc gaacaacatg gatagagcag ttaaactata caagaagctc
-      301 aaaagagaaa taacgttcca tggggccaag gaggtgtcac taagctattc aactggtgca
-      361 cttgccagtt gcatgggcct catatacaac aggatgggaa cagtgaccac agaagctgct
-      421 tttggtctag tgtgtgccac ttgtgaacag attgctgatt cacagcatcg gtctcacaga
-      481 cagatggcta ctaccaccaa tccactaatc aggcatgaaa acagaatggt gctggctagc
-      541 actacggcaa aggctatgga acagatggct ggatcgagtg aacaggcagc ggaggccatg
-      601 gaggttgcta atcagactag gcagatggta catgcaatga gaactattgg gactcatcct
-      661 agctccagtg ctggtctgaa agatgacctt cttgaaaatt tgcaggccta ccagaagcga
-      721 atgggagtgc agatgcagcg attcaagtga tcctctcgtc attgcagcaa atatcattgg
-      781 gatcttgcac ctgatattgt ggattactga tcgtcttttt ttcaaatgta tttatcgtcg
-      841 ctttaaatac ggtttgaaaa gagggccttc tacggaagga gtgcctgagt ccatgaggga
-      901 agaatatcaa caggarcagc agagtgctgt ggatgttgac gatggtcatt ttgtcaacat
-      961 agagctagag taaaaaaaaa aaaaaaaaaa aaaaaaaaaa nnnnnnnnnn nnnnnnnnnn
-     1021 nnnnnnnnag atcggaagag cgtcgtgtag gcaaaagcag gtagatattt aaagatgagt
-     1081 cttctaaccg aggtcgaaac gtacg
-//
-LOCUS       NAmid                1816 bp ds-DNA     linear   SYN 05-NOV-2020
-DEFINITION  NAmid
-ACCESSION   NAmid
-VERSION     .
-KEYWORDS    .
-SOURCE      NAmid
-  ORGANISM
-FEATURES             Location/Qualifiers
-     sequenced_ORF_1  1..935
-     variant_tag_2    224
-     variant_tag_3    233
-     variant_tag_4    234
-     variant_tag_5    235
-     variant_tag_6    236
-     variant_tag_7    653
-     variant_tag_8    806
-     viral_barcode    957..972
-     polyA            1121..1149
-     UMI              1150..1161
-     cellbarcode      1162..1177
-     Read1            1178..1199
-     termini5         1200..1259
-     termini3         936..1120
-     sequenced_ORF_2  1260..1816
-     variant_tag_1    1439
-ORIGIN
-        1 tgagctgtcc tattggtgaa gttccctctc catacaactc aagatttgag tcagtcgctt
-       61 ggtcagcaag tgcttgtcat gatggcatca attggctaac aattggaatt tctggcccag
-      121 acaatggggc agtggctgtg ttaaagtaca acggcataat aacagacact atcaagagtt
-      181 ggagaaacaa tatattgaga acacaagagt ctgaatgtgc atgygtaaat ggywsytgct
-      241 ttactgtaat gaccgatgga ccaagtaatg gacaggcctc atacaagatc ttcagaatag
-      301 aaaagggaaa gatagtcaaa tcagtcgaaa tgaatgcccc taattatcac tatgaggaat
-      361 gctcctgtta tcctgattct agtgaaatca catgtgtgtg cagggataac tggcatggct
-      421 cgaatcgacc gtgggtgtct ttcaaccaga atctggaata tcagatagga tacatatgca
-      481 gtgggatttt cggagacaat ccacgcccta atgataagac aggcagttgt ggtccagtat
-      541 cgtctaatgg agcaaatgga gtaaaagggt tttcattcaa atacggcaat ggtgtttgga
-      601 tagggagaac taaaagcatt agttcaagaa acggttttga gatgatttgg gayccgaacg
-      661 gatggactgg gacagacaat aacttctcaa taaagcaaga tatcgtagga ataaatgagt
-      721 ggtcaggata tagcgggagt tttgttcagc atccagaact aacagggctg gattgtataa
-      781 gaccttgctt ctgggttgaa ctaatmagag ggcgacccaa agagaacaca atctggacaa
-      841 gtggcagtag tatttcgttc tgcggagtta atagcgatac agtcggatgg tcatggcctg
-      901 atggagcaga actccctttc acgatagata aataatagtg caccataggc ggccgcnnnn
-      961 nnnnnnnnnn nngtactctg cgttgatacc actgcttccg cggacaggca agcttctagt
-     1021 gggagcatca tttctttttg tggtgtgaat agtgatactg tagattggtc ttggccagac
-     1081 ggtgctgagt tgccgttcac cattgacaag tagtttgttc aaaaaaaaaa aaaaaaaaaa
-     1141 aaaaaaaaan nnnnnnnnnn nnnnnnnnnn nnnnnnnaga tcggaagagc gtcgtgtagc
-     1201 gaaagcagga gtttaaaccg aatccaaacc agaaaataat aaccattggg tcaatctgta
-     1261 tggtagtcgg aataattagc ctaatattgc aaataggaaa tataatctca ggatccatga
-     1321 accctaatca gaaaattatt acgataggat cggtgtgcat gactataggt atggcaaatc
-     1381 ttattcttca gataggtaat attatttcta tatggattag ccactcaatt caacttggra
-     1441 atcaaaatca gattgaaaca tgcaatcaaa gcgtcattac ttatgaaaac aacacttggg
-     1501 taaatcagac atatgttaac atcagcaaca ccaactttgc tgctggacag tcagtggttt
-     1561 ccgtgaaatt agcgggcaat tcctctctct gccctgttag tggatgggct atatacagta
-     1621 aagacaacag tgtaagaatc ggttccaagg gggatgtgtt tgtcataagg gaaccattca
-     1681 tatcatgctc ccccttggaa tgcagaacct tcttcttgac tcaaggggcc ttgctaaatg
-     1741 acaaacattc caatggaacc attaaagaca ggagcccata tcgaacccta atgagctgtc
-     1801 ctattggtga agttcc
-//
-LOCUS       NAtermini                1827 bp ds-DNA     linear   SYN 05-NOV-2020
-DEFINITION  NAtermini
-ACCESSION   NAtermini
-VERSION     .
-KEYWORDS    .
-SOURCE      NAtermini
-  ORGANISM
-FEATURES             Location/Qualifiers
-     sequenced_ORF_1  1..1465
-     variant_tag_1    178
-     variant_tag_2    754
-     variant_tag_3    763
-     variant_tag_4    764
-     variant_tag_5    765
-     variant_tag_6    766
-     variant_tag_7    1183
-     variant_tag_8    1336
-     viral_barcode    1487..1502
-     polyA            1651..1679
-     UMI              1680..1691
-     cellbarcode      1692..1707
-     Read1            1708..1729
-     termini5         1730..1730
-     termini3         1466..1650
-     sequenced_ORF_2  1790..1827
-ORIGIN
-        1 ggtagtcgga ataattagcc taatattgca aataggaaat ataatctcag gatccatgaa
-       61 ccctaatcag aaaattatta cgataggatc ggtgtgcatg actataggta tggcaaatct
-      121 tattcttcag ataggtaata ttatttctat atggattagc cactcaattc aacttggraa
-      181 tcaaaatcag attgaaacat gcaatcaaag cgtcattact tatgaaaaca acacttgggt
-      241 aaatcagaca tatgttaaca tcagcaacac caactttgct gctggacagt cagtggtttc
-      301 cgtgaaatta gcgggcaatt cctctctctg ccctgttagt ggatgggcta tatacagtaa
-      361 agacaacagt gtaagaatcg gttccaaggg ggatgtgttt gtcataaggg aaccattcat
-      421 atcatgctcc cccttggaat gcagaacctt cttcttgact caaggggcct tgctaaatga
-      481 caaacattcc aatggaacca ttaaagacag gagcccatat cgaaccctaa tgagctgtcc
-      541 tattggtgaa gttccctctc catacaactc aagatttgag tcagtcgctt ggtcagcaag
-      601 tgcttgtcat gatggcatca attggctaac aattggaatt tctggcccag acaatggggc
-      661 agtggctgtg ttaaagtaca acggcataat aacagacact atcaagagtt ggagaaacaa
-      721 tatattgaga acacaagagt ctgaatgtgc atgygtaaat ggywsytgct ttactgtaat
-      781 gaccgatgga ccaagtaatg gacaggcctc atacaagatc ttcagaatag aaaagggaaa
-      841 gatagtcaaa tcagtcgaaa tgaatgcccc taattatcac tatgaggaat gctcctgtta
-      901 tcctgattct agtgaaatca catgtgtgtg cagggataac tggcatggct cgaatcgacc
-      961 gtgggtgtct ttcaaccaga atctggaata tcagatagga tacatatgca gtgggatttt
-     1021 cggagacaat ccacgcccta atgataagac aggcagttgt ggtccagtat cgtctaatgg
-     1081 agcaaatgga gtaaaagggt tttcattcaa atacggcaat ggtgtttgga tagggagaac
-     1141 taaaagcatt agttcaagaa acggttttga gatgatttgg gayccgaacg gatggactgg
-     1201 gacagacaat aacttctcaa taaagcaaga tatcgtagga ataaatgagt ggtcaggata
-     1261 tagcgggagt tttgttcagc atccagaact aacagggctg gattgtataa gaccttgctt
-     1321 ctgggttgaa ctaatmagag ggcgacccaa agagaacaca atctggacaa gtggcagtag
-     1381 tatttcgttc tgcggagtta atagcgatac agtcggatgg tcatggcctg atggagcaga
-     1441 actccctttc acgatagata aataatagtg caccataggc ggccgcnnnn nnnnnnnnnn
-     1501 nngtactctg cgttgatacc actgcttccg cggacaggca agcttctagt gggagcatca
-     1561 tttctttttg tggtgtgaat agtgatactg tagattggtc ttggccagac ggtgctgagt
-     1621 tgccgttcac cattgacaag tagtttgttc aaaaaaaaaa aaaaaaaaaa aaaaaaaaan
-     1681 nnnnnnnnnn nnnnnnnnnn nnnnnnnaga tcggaagagc gtcgtgtagc gaaagcagga
-     1741 gtttaaaccg aatccaaacc agaaaataat aaccattggg tcaatctgta tggtagtcgg
-     1801 aataattagc ctaatattgc aaatagg
-//
-LOCUS       NPmid                1645 bp ds-DNA     linear   SYN 05-NOV-2020
-DEFINITION  NPmid
+LOCUS       NPmid                   1645 bp ds-DNA     linear       15-APR-2022
+DEFINITION  .
 ACCESSION   NPmid
-VERSION     .
-KEYWORDS    .
 SOURCE      NPmid
-  ORGANISM
+  ORGANISM  NPmid
 FEATURES             Location/Qualifiers
-     sequenced_ORF_1  1..770
-     variant_tag_2    635
-     polyA            773..801
-     UMI              802..813
-     cellbarcode      814..829
-     Read1            830..849
-     termini5         850..876
-     termini3         771..772
-     sequenced_ORF_2  877..1645
-     variant_tag_1    981
+     primer_site_1         1..24
+                           /label="primer_site_1"
+     parsed_ORF_1          25..770
+                           /label="parsed_ORF_1"
+     variant_tag_2         635..635
+                           /label="variant_tag_2"
+     parsed_termini3       771..771
+                           /label="parsed_termini3"
+     termini3              771..772
+                           /label="termini3"
+     termini3_flex         772..772
+                           /label="termini3_flex"
+     polyA                 773..801
+                           /label="polyA"
+     UMI                   802..813
+                           /label="UMI"
+     cellbarcode           814..829
+                           /label="cellbarcode"
+     Read1                 830..849
+                           /label="Read1"
+     termini5              850..894
+                           /label="termini5"
+     ORF_2                 895..1645
+                           /label="ORF_2"
+     parsed_ORF_2          895..1621
+                           /label="parsed_ORF_2"
+     variant_tag_1         981..981
+                           /label="variant_tag_1"
+     primer_site_2         1622..1645
+                           /label="primer_site_2"
 ORIGIN
         1 gagaaagtcg aaacccagga aacgctgaga ttgaagacct cattttcctg gcacggtcag
        61 cactcattct gaggggatca gttgcacata aatcctgcct gcctgcttgt gtgtatgggc
@@ -355,205 +64,42 @@ ORIGIN
      1561 tgcaatatcc tcaaaggaaa atttcaaaca gctgcccaga gggcaatgat ggatcaagta
      1621 agagaaagtc gaaacccagg aaacg
 //
-LOCUS       NPtermini                1640 bp ds-DNA     linear   SYN 05-NOV-2020
-DEFINITION  NPtermini
-ACCESSION   NPtermini
-VERSION     .
-KEYWORDS    .
-SOURCE      NPtermini
-  ORGANISM
-FEATURES             Location/Qualifiers
-     sequenced_ORF_1  1..1507
-     variant_tag_1    97
-     variant_tag_2    1372
-     polyA            1510..1538
-     UMI              1539..1550
-     cellbarcode      1551..1566
-     Read1            1567..1586
-     termini5         1587..1613
-     termini3         1508..1509
-     sequenced_ORF_2  1614..1640
-ORIGIN
-        1 catcgaagcc atggcgtccc aaggcaccaa acgatcatat gaacaaatgg agactggtgg
-       61 ggagcgccag gatgccacag aaatcagagc atctgtygga agaatgattg gtggaatcgg
-      121 gagattctac atccaaatgt gcactgaact caaactcagt gattatgatg gacgactaat
-      181 ccagaatagc ataacaatag agaggatggt gctttctgct tttgatgaga gaagaaataa
-      241 atacctagaa gagcatccca gtgctgggaa ggaccctaag aaaacaggag gacccatata
-      301 tagaagagta gacggaaagt ggatgagaga actcatcctt tatgacaaag aagaaataag
-      361 gagagtttgg cgccaagcaa acaatggcga agatgcaaca gcaggtctta ctcatatcat
-      421 gatttggcat tccaacctga atgatgccac atatcagaga acaagagcgc ttgttcgcac
-      481 cggaatggat cccagaatgt gctctctaat gcaaggttca acacttccca gaaggtctgg
-      541 tgccgcaggt gctgcggtga aaggagttgg aacaatagca atggagttaa tcagaatgat
-      601 caaacgtgga atcaatgacc gaaatttctg gaggggtgaa aatggacgaa ggacaagggt
-      661 tgcttatgaa agaatgtgca atatcctcaa aggaaaattt caaacagctg cccagagggc
-      721 aatgatggat caagtaagag aaagtcgaaa cccaggaaac gctgagattg aagacctcat
-      781 tttcctggca cggtcagcac tcattctgag gggatcagtt gcacataaat cctgcctgcc
-      841 tgcttgtgtg tatgggcttg cagtagcaag tgggcatgac tttgaaaggg aagggtactc
-      901 actggtcggg atagacccat tcaaattact ccaaaacagc caagtggtca gcctgatgag
-      961 accaaatgaa aacccagctc acaagagtca attggtgtgg atggcatgcc actctgctgc
-     1021 atttgaagat ttaagagtat caagtttcat aagaggaaag aaagtgattc caagaggaaa
-     1081 gctttccaca agaggggtcc agattgcttc aaatgagaat gtggaaacca tggactccaa
-     1141 taccctggaa ctgagaagca gatactgggc cataaggacc aggagtggag gaaataccaa
-     1201 tcaacaaaag gcatccgcag gccagatcag tgtgcagcct acattctcag tgcagcggaa
-     1261 tctccctttt gaaagagcaa ccgttatggc agcattcagc gggaacaatg aaggacggac
-     1321 atccgacatg cgaacagaag ttataagaat gatggaaagt gcaaagccag argatttgtc
-     1381 cttccagggg cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc
-     1441 ttcctttgac atgagtaatg aagggtctta tttcttcgga gacaatgcag aggagtatga
-     1501 cagttgagga aaaaaaaaaa aaaaaaaaaa aaaaaaaann nnnnnnnnnn nnnnnnnnnn
-     1561 nnnnnnagat cggaagagcg tcgtgtagca aaagcagggt agataatcac tcaatgagtg
-     1621 acatcgaagc catggcgtcc
-//
-LOCUS       NSmid                 972 bp ds-DNA     linear   SYN 05-NOV-2020
-DEFINITION  NSmid
-ACCESSION   NSmid
-VERSION     .
-KEYWORDS    .
-SOURCE      NSmid
-  ORGANISM
-FEATURES             Location/Qualifiers
-     sequenced_ORF_1  1..202
-     variant_tag_2    320
-     polyA            385..413
-     UMI              414..425
-     Read1            442..462
-     termini5         463..487
-     termini3         203..384
-     cellbarcode      426..441
-     sequenced_ORF_2  488..972
-     variant_tag_1    541
-ORIGIN
-        1 gggagcaata gttggagaaa tttcaccatt accttctctt ccaggacata cttatgagga
-       61 tgtcaaaaat gcagttgggg tcctcatcgg aggacttgaa tggaatggta acacggttcg
-      121 agtctctgaa aatatacaga gattcgcttg gagaaactgt gatgagaatg ggagaccttc
-      181 actacctcca gagcagaaat gaaaagtggc gagagcaatt gggacagaaa tttgaggaaa
-      241 taaggtggtt aattgaagaa atgcggcaca gattgaaagc gacagagaat agtttcgaac
-      301 aaataacatt tatgcaagcm ttacaactac tgcttgaagt agaacaagag ataagagctt
-      361 tctcgtttca gcttatttaa tgataaaaaa aaaaaaaaaa aaaaaaaaaa aaannnnnnn
-      421 nnnnnnnnnn nnnnnnnnnn nagatcggaa gagcgtcgtg tagcaaaagc agggtgacaa
-      481 agacataatg gactccaaca ccatgtcaag ctttcaggta gactgtttcc tttggcatat
-      541 ycgcaagcga tttgcagaca atggattggg tgatgcccca ttccttgatc ggctccgccg
-      601 agatcaaaag tccttaaaag gaagaggcaa cacccttggc ctcgatatcg aaacagccac
-      661 tcttgttggg aaacaaatcg tggaatggat cttgaaagag gaatccagcg agacacttag
-      721 aatgacaatt gcatctgtac ctacttcgcg ctacctttct gacatgaccc tcgaggaaat
-      781 gtcacgagac tggttcatgc tcatgcctag gcaaaagata ataggccctc tttgcgtgcg
-      841 attggaccag gcgatcatgg aaaagaacat agtactgaaa gcgaacttca gtgtaatctt
-      901 taaccgatta gagaccttga tactactaag ggctttcact gaggagggag caatagttgg
-      961 agaaatttca cc
-//
-LOCUS       NStermini                 967 bp ds-DNA     linear   SYN 05-NOV-2020
-DEFINITION  NStermini
-ACCESSION   NStermini
-VERSION     .
-KEYWORDS    .
-SOURCE      NStermini
-  ORGANISM
-FEATURES             Location/Qualifiers
-     sequenced_ORF_1  1..658
-     variant_tag_1    52
-     variant_tag_2    776
-     polyA            841..869
-     UMI              870..881
-     cellbarcode      882..897
-     Read1            898..918
-     termini5         919..943
-     termini3         659..840
-     sequenced_ORF_2  944..967
-ORIGIN
-        1 ggactccaac accatgtcaa gctttcaggt agactgtttc ctttggcata tycgcaagcg
-       61 atttgcagac aatggattgg gtgatgcccc attccttgat cggctccgcc gagatcaaaa
-      121 gtccttaaaa ggaagaggca acacccttgg cctcgatatc gaaacagcca ctcttgttgg
-      181 gaaacaaatc gtggaatgga tcttgaaaga ggaatccagc gagacactta gaatgacaat
-      241 tgcatctgta cctacttcgc gctacctttc tgacatgacc ctcgaggaaa tgtcacgaga
-      301 ctggttcatg ctcatgccta ggcaaaagat aataggccct ctttgcgtgc gattggacca
-      361 ggcgatcatg gaaaagaaca tagtactgaa agcgaacttc agtgtaatct ttaaccgatt
-      421 agagaccttg atactactaa gggctttcac tgaggaggga gcaatagttg gagaaatttc
-      481 accattacct tctcttccag gacatactta tgaggatgtc aaaaatgcag ttggggtcct
-      541 catcggagga cttgaatgga atggtaacac ggttcgagtc tctgaaaata tacagagatt
-      601 cgcttggaga aactgtgatg agaatgggag accttcacta cctccagagc agaaatgaaa
-      661 agtggcgaga gcaattggga cagaaatttg aggaaataag gtggttaatt gaagaaatgc
-      721 ggcacagatt gaaagcgaca gagaatagtt tcgaacaaat aacatttatg caagcmttac
-      781 aactactgct tgaagtagaa caagagataa gagctttctc gtttcagctt atttaatgat
-      841 aaaaaaaaaa aaaaaaaaaa aaaaaaaaan nnnnnnnnnn nnnnnnnnnn nnnnnnnaga
-      901 tcggaagagc gtcgtgtagc aaaagcaggg tgacaaagac ataatggact ccaacaccat
-      961 gtcaagc
-//
-LOCUS       PAmid                2321 bp ds-DNA     linear   SYN 05-NOV-2020
-DEFINITION  PAmid
-ACCESSION   PAmid
-VERSION     .
-KEYWORDS    .
-SOURCE      PAmid
-  ORGANISM
-FEATURES             Location/Qualifiers
-     sequenced_ORF_1  1..1120
-     variant_tag_2    1049
-     polyA            1157..1186
-     UMI              1187..1198
-     cellbarcode      1199..1214
-     Read1            1215..1234
-     termini5         1235..1258
-     termini3         1121..1156
-     sequenced_ORF_2  1259..2321
-     variant_tag_1    1357
-ORIGIN
-        1 gctacaggac attgaaaatg aagagaagat cccaaggaca aagaacatga agagaacaag
-       61 ccaattgaag tgggcactcg gtgaaaatat ggcaccagaa aaagtagact ttgatgactg
-      121 caaagatgtt ggagacctta aacagtatga cagtgatgag ccagagccca gatctctagc
-      181 aagctgggtc caaaatgaat tcaataaggc atgtgaattg actgattcaa gctggataga
-      241 acttgatgaa ataggagaag atgttgcccc gattgaacat atcgcaagca tgaggaggaa
-      301 ctattttaca gcagaagtgt cccactgcag ggctactgaa tacataatga agggagtgta
-      361 cataaatacg gccttgctca atgcatcctg tgcagccatg gatgactttc agctgatccc
-      421 aatgataagc aaatgtagga ccaaagaagg aagacggaaa acaaacctgt atgggttcat
-      481 tataaaagga aggtctcatt tgagaaatga tactgatgtg gtgaactttg taagtatgga
-      541 gttctcactc actgacccga gactggagcc acacaaatgg gaaaaatact gtgttcttga
-      601 aataggagac atgctcttga ggactgcgat aggccaagtg tcgaggccca tgttcctata
-      661 tgtgagaacc aatggaacct ccaagatcaa gatgaaatgg ggcatggaaa tgaggcgctg
-      721 ccttcttcag tctcttcagc agattgagag catgattgag gccgagtctt ctgtcaaaga
-      781 gaaagacatg accaaggaat tctttgaaaa caaatcggaa acatggccaa tcggagagtc
-      841 acccagggga gtggaggaag gctctattgg gaaagtgtgc aggaccttac tggcaaaatc
-      901 tgtattcaac agtctatatg catctccaca acttgagggg ttttcggctg aatctagaaa
-      961 attgcttctc attgttcagg cacttaggga caacctggaa cctggaacct tcgatcttgg
-     1021 ggggctatat gaagcaatcg aggagtgcyt gattaatgat ccctgggttt tgcttaatgc
-     1081 atcttggttc aactccttcc tcacacatgc actgaagtag ttgtggcaat gctactattt
-     1141 gctatccata ctgtccaaaa aaaaaaaaaa aaaaaaaaaa aaaaaannnn nnnnnnnnnn
-     1201 nnnnnnnnnn nnnnagatcg gaagagcgtc gtgtagcgaa agcaggtact gatccaaaat
-     1261 ggaagacttt gtgcgacaat gcttcaatcc aatgatcgtc gagcttgcgg aaaaggcaat
-     1321 gaaagaatat ggggaagatc cgaaaatcga aactaayaag tttgctgcaa tatgcacaca
-     1381 tttggaagtt tgtttcatgt attcggattt ccatttcatc gacgaacggg gtgaatcaat
-     1441 aattgtagaa tctggtgacc cgaatgcact attgaagcac cgatttgaga taattgaagg
-     1501 aagagaccga atcatggcct ggacagtggt gaacagtata tgtaacacaa caggggtaga
-     1561 gaagcctaaa tttcttcctg atttgtatga ttacaaagag aaccggttca ttgaaattgg
-     1621 agtaacacgg agggaagtcc acatatatta cctagagaaa gccaacaaaa taaaatctga
-     1681 gaagacacac attcacatct tttcattcac tggagaggag atggccacca aagcggacta
-     1741 cacccttgac gaagagagca gggcaagaat caaaactagg cttttcacta taagacaaga
-     1801 aatggccagt aggagtctat gggattcctt tcgtcagtcc gaaagaggcg aagagacaat
-     1861 tgaagaaaaa tttgagatta caggaactat gcgcaagctt gccgaccaaa gtctcccacc
-     1921 gaacttcccc agccttgaaa actttagagc ctatgtagat ggattcgagc cgaacggctg
-     1981 cattgagggc aagctttccc aaatgtcaaa agaagtgaac gccaaaattg aaccattctt
-     2041 gaggacgaca ccacgccccc tcagattgcc tgatgggcct ctttgccatc agcggtcaaa
-     2101 gttcctgctg atggatgctc tgaaattaag tattgaagac ccgagtcacg agggggaggg
-     2161 aataccacta tatgatgcaa tcaaatgcat gaagacattc tttggctgga aagagcctaa
-     2221 catagtcaaa ccacatgaga aaggcataaa tcccaattac ctcatggctt ggaagcaggt
-     2281 gctagcagag ctacaggaca ttgaaaatga agagaagatc c
-//
-LOCUS       PAtermini                2314 bp ds-DNA     linear   SYN 05-NOV-2020
-DEFINITION  PAtermini
+LOCUS       PAtermini               2314 bp ds-DNA     linear       15-APR-2022
+DEFINITION  .
 ACCESSION   PAtermini
-VERSION     .
-KEYWORDS    .
 SOURCE      PAtermini
-  ORGANISM
+  ORGANISM  PAtermini
 FEATURES             Location/Qualifiers
-     sequenced_ORF_1  1..2144
-     variant_tag_1    92
-     variant_tag_2    2073
-     polyA            2181..2210
-     UMI              2211..2222
-     Read1            2239..2258
-     termini5         2259..2282
-     termini3         2145..2180
-     cellbarcode      2223..2238
-     sequenced_ORF_2  2283..2314
+     primer_site_1         1..25
+                           /label="primer_site_1"
+     parsed_ORF_1          26..2144
+                           /label="parsed_ORF_1"
+     variant_tag_1         92..92
+                           /label="variant_tag_1"
+     variant_tag_2         2073..2073
+                           /label="variant_tag_2"
+     parsed_termini3       2145..2176
+                           /label="parsed_termini3"
+     termini3              2145..2180
+                           /label="termini3"
+     termini3_flex         2177..2180
+                           /label="termini3_flex"
+     polyA                 2181..2210
+                           /label="polyA"
+     UMI                   2211..2222
+                           /label="UMI"
+     cellbarcode           2223..2238
+                           /label="cellbarcode"
+     Read1                 2239..2258
+                           /label="Read1"
+     termini5              2259..2282
+                           /label="termini5"
+     ORF_2                 2283..2314
+                           /label="ORF_2"
+     parsed_ORF_2          2283..2289
+                           /label="parsed_ORF_2"
+     primer_site_2         2290..2314
+                           /label="primer_site_2"
 ORIGIN
         1 actttgtgcg acaatgcttc aatccaatga tcgtcgagct tgcggaaaag gcaatgaaag
        61 aatatgggga agatccgaaa atcgaaacta ayaagtttgc tgcaatatgc acacatttgg
@@ -595,85 +141,334 @@ ORIGIN
      2221 nnnnnnnnnn nnnnnnnnag atcggaagag cgtcgtgtag cgaaagcagg tactgatcca
      2281 aaatggaaga ctttgtgcga caatgcttca atcc
 //
-LOCUS       PB1mid                2424 bp ds-DNA     linear   SYN 05-NOV-2020
-DEFINITION  PB1mid
-ACCESSION   PB1mid
-VERSION     .
-KEYWORDS    .
-SOURCE      PB1mid
-  ORGANISM
+LOCUS       PAmid                   2321 bp ds-DNA     linear       15-APR-2022
+DEFINITION  .
+ACCESSION   PAmid
+SOURCE      PAmid
+  ORGANISM  PAmid
 FEATURES             Location/Qualifiers
-     sequenced_ORF_1  1..1167
-     variant_tag_2    1074
-     polyA            1190..1218
-     UMI              1219..1230
-     cellbarcode      1231..1246
-     Read1            1247..1268
-     termini5         1269..1292
-     termini3         1168..1189
-     sequenced_ORF_2  1293..2424
-     variant_tag_1    1460
+     primer_site_1         1..32
+                           /label="primer_site_1"
+     parsed_ORF_1          33..1120
+                           /label="parsed_ORF_1"
+     variant_tag_2         1049..1049
+                           /label="variant_tag_2"
+     parsed_termini3       1121..1152
+                           /label="parsed_termini3"
+     termini3              1121..1156
+                           /label="termini3"
+     termini3_flex         1153..1156
+                           /label="termini3_flex"
+     polyA                 1157..1186
+                           /label="polyA"
+     UMI                   1187..1198
+                           /label="UMI"
+     cellbarcode           1199..1214
+                           /label="cellbarcode"
+     Read1                 1215..1234
+                           /label="Read1"
+     termini5              1235..1258
+                           /label="termini5"
+     ORF_2                 1259..2321
+                           /label="ORF_2"
+     parsed_ORF_2          1259..2289
+                           /label="parsed_ORF_2"
+     variant_tag_1         1357..1357
+                           /label="variant_tag_1"
+     primer_site_2         2290..2321
+                           /label="primer_site_2"
 ORIGIN
-        1 gcagaaatgc tagcaagcat tgacctgaag tacttcaatg aatcaacaaa gaagaaaatt
-       61 gagaaaataa ggcctcttct aatagatggc acagcatcac tgagtcctgg gatgatgatg
-      121 ggcatgttca acatgctaag tacggtcttg ggagtctcga tactgaatct tggacaaaag
-      181 aaatacacca agacaatata ctggtgggat gggctccaat catccgacga ttttgctctc
-      241 atagtgaatg caccaaacca tgagggaata caagcaggag tggacagatt ctacaggacc
-      301 tgcaagttag tgggaatcaa catgagcaaa aagaagtcct atataaataa gacagggaca
-      361 tttgaattca caagcttttt ttatcgctat ggatttgtgg ctaattttag catggagcta
-      421 cccagctttg gagtgtctgg agtaaatgaa tcagctgaca tgagtattgg agtaacagtg
-      481 ataaagaaca acatgataaa caatgacctt ggacctgcaa cggcccagat ggctcttcaa
-      541 ttgttcatca aagactacag atacacatat aggtgccata ggggagacac acaaattcag
-      601 acgagaagat catttgagtt aaagaagctg tgggatcaaa cccaatcaaa agtagggcta
-      661 ttagtatcag atggaggacc aaacttatac aatatacgga atcttcacat tcctgaagtc
-      721 tgcttaaaat gggagctaat ggatgatgat tatcggggaa gactttgtaa tcccctgaat
-      781 ccctttgtca gtcataaaga gattgattct gtaaacaatg ctgtggtaat gccagcccat
-      841 ggtccagcca aaagcatgga atatgatgcc gttgcaacta cacattcctg gattcccaag
-      901 aggaatcgtt ctattctcaa cacaagccaa aggggaattc ttgaggatga acagatgtac
-      961 cagaagtgct gcaatctatt cgagaaattt ttccctagca gttcatatag gagaccggtt
-     1021 ggaatttcta gcatggtgga ggccatggtg tctagggccc ggattgatgc cagrgtcgac
-     1081 ttcgagtctg gacggatcaa gaaagaagag ttctctgaga tcatgaagat ctgttccacc
-     1141 attgaagaac tcagacggca aaaataatga atttagcttg tccttcatga aaaaaaaaaa
-     1201 aaaaaaaaaa aaaaaaaann nnnnnnnnnn nnnnnnnnnn nnnnnnagat cggaagagcg
-     1261 tcgtgtagag cgaaagcagg caaaccattt gaatggatgt caatccgact ctacttttcc
-     1321 taaaaattcc agcgcaaaat gccataagca ccacattccc ttatactgga gatcctccat
-     1381 acagccatgg aacaggaaca ggatacacca tggacacagt aaacagaaca caccaatact
-     1441 cagaaaaggg aaagtggacr acaaacacag agactggtgc accccagctc aacccgattg
-     1501 atggaccact acctgaggat aatgaaccaa gtgggtatgc acaaacagac tgtgttctag
-     1561 aggctatggc tttccttgaa gaatcccacc caggaatatt tgagaattca tgccttgaaa
-     1621 caatggaagt tgttcaacaa acaagggtag ataaactaac tcaaggtcgc cagacttatg
-     1681 attggacatt aaacagaaat caaccggcag caactgcatt ggccaacacc atagaagtct
-     1741 ttagatcgaa tggcctaaca gctaatgagt caggaaggct aatagatttc ttaaaggatg
-     1801 taatggaatc aatgaacaaa gaggaaatag agataacaac ccactttcaa agaaaaagga
-     1861 gagtaagaga caacatgacc aagaagatgg tcacgcaaag aacaataggg aagaaaaaac
-     1921 aaagactgaa taagagaggc tatctaataa gagcactgac attaaatacg atgaccaaag
-     1981 atgcagagag aggcaagtta aaaagaaggg ctatcgcaac acctgggatg cagattagag
-     2041 gtttcgtata ctttgttgaa actttagcta ggagcatttg cgaaaagctt gaacagtctg
-     2101 ggctcccagt agggggcaat gaaaagaagg ccaaactggc aaatgttgtg agaaagatga
-     2161 tgactaattc acaagacaca gagatttctt tcacaatcac tggggacaac actaagtgga
-     2221 atgaaaatca aaatcctcga atgttcctgg cgatgattac atatatcacc agaaatcaac
-     2281 ccgagtggtt cagaaacatc ctgagcatgg cacccataat gttctcaaac aaaatggcaa
-     2341 gactagggaa agggtacatg ttcgagagta aaagaatgaa gattcgaaca caaataccag
-     2401 cagaaatgct agcaagcatt gacc
+        1 gctacaggac attgaaaatg aagagaagat cccaaggaca aagaacatga agagaacaag
+       61 ccaattgaag tgggcactcg gtgaaaatat ggcaccagaa aaagtagact ttgatgactg
+      121 caaagatgtt ggagacctta aacagtatga cagtgatgag ccagagccca gatctctagc
+      181 aagctgggtc caaaatgaat tcaataaggc atgtgaattg actgattcaa gctggataga
+      241 acttgatgaa ataggagaag atgttgcccc gattgaacat atcgcaagca tgaggaggaa
+      301 ctattttaca gcagaagtgt cccactgcag ggctactgaa tacataatga agggagtgta
+      361 cataaatacg gccttgctca atgcatcctg tgcagccatg gatgactttc agctgatccc
+      421 aatgataagc aaatgtagga ccaaagaagg aagacggaaa acaaacctgt atgggttcat
+      481 tataaaagga aggtctcatt tgagaaatga tactgatgtg gtgaactttg taagtatgga
+      541 gttctcactc actgacccga gactggagcc acacaaatgg gaaaaatact gtgttcttga
+      601 aataggagac atgctcttga ggactgcgat aggccaagtg tcgaggccca tgttcctata
+      661 tgtgagaacc aatggaacct ccaagatcaa gatgaaatgg ggcatggaaa tgaggcgctg
+      721 ccttcttcag tctcttcagc agattgagag catgattgag gccgagtctt ctgtcaaaga
+      781 gaaagacatg accaaggaat tctttgaaaa caaatcggaa acatggccaa tcggagagtc
+      841 acccagggga gtggaggaag gctctattgg gaaagtgtgc aggaccttac tggcaaaatc
+      901 tgtattcaac agtctatatg catctccaca acttgagggg ttttcggctg aatctagaaa
+      961 attgcttctc attgttcagg cacttaggga caacctggaa cctggaacct tcgatcttgg
+     1021 ggggctatat gaagcaatcg aggagtgcyt gattaatgat ccctgggttt tgcttaatgc
+     1081 atcttggttc aactccttcc tcacacatgc actgaagtag ttgtggcaat gctactattt
+     1141 gctatccata ctgtccaaaa aaaaaaaaaa aaaaaaaaaa aaaaaannnn nnnnnnnnnn
+     1201 nnnnnnnnnn nnnnagatcg gaagagcgtc gtgtagcgaa agcaggtact gatccaaaat
+     1261 ggaagacttt gtgcgacaat gcttcaatcc aatgatcgtc gagcttgcgg aaaaggcaat
+     1321 gaaagaatat ggggaagatc cgaaaatcga aactaayaag tttgctgcaa tatgcacaca
+     1381 tttggaagtt tgtttcatgt attcggattt ccatttcatc gacgaacggg gtgaatcaat
+     1441 aattgtagaa tctggtgacc cgaatgcact attgaagcac cgatttgaga taattgaagg
+     1501 aagagaccga atcatggcct ggacagtggt gaacagtata tgtaacacaa caggggtaga
+     1561 gaagcctaaa tttcttcctg atttgtatga ttacaaagag aaccggttca ttgaaattgg
+     1621 agtaacacgg agggaagtcc acatatatta cctagagaaa gccaacaaaa taaaatctga
+     1681 gaagacacac attcacatct tttcattcac tggagaggag atggccacca aagcggacta
+     1741 cacccttgac gaagagagca gggcaagaat caaaactagg cttttcacta taagacaaga
+     1801 aatggccagt aggagtctat gggattcctt tcgtcagtcc gaaagaggcg aagagacaat
+     1861 tgaagaaaaa tttgagatta caggaactat gcgcaagctt gccgaccaaa gtctcccacc
+     1921 gaacttcccc agccttgaaa actttagagc ctatgtagat ggattcgagc cgaacggctg
+     1981 cattgagggc aagctttccc aaatgtcaaa agaagtgaac gccaaaattg aaccattctt
+     2041 gaggacgaca ccacgccccc tcagattgcc tgatgggcct ctttgccatc agcggtcaaa
+     2101 gttcctgctg atggatgctc tgaaattaag tattgaagac ccgagtcacg agggggaggg
+     2161 aataccacta tatgatgcaa tcaaatgcat gaagacattc tttggctgga aagagcctaa
+     2221 catagtcaaa ccacatgaga aaggcataaa tcccaattac ctcatggctt ggaagcaggt
+     2281 gctagcagag ctacaggaca ttgaaaatga agagaagatc c
 //
-LOCUS       PB1termini                2423 bp ds-DNA     linear   SYN
-DEFINITION  PB1termini
-ACCESSION   PB1termini
-VERSION     .
-KEYWORDS    .
-SOURCE      PB1termini
-  ORGANISM
+LOCUS       HAtermini               2122 bp ds-DNA     linear       15-APR-2022
+DEFINITION  .
+SOURCE      HAtermini
+  ORGANISM  HAtermini
 FEATURES             Location/Qualifiers
-     sequenced_ORF_1  1..2272
-     variant_tag_1    166
-     variant_tag_2    2179
-     polyA            2295..2323
-     UMI              2324..2335
-     cellbarcode      2336..2351
-     Read1            2352..2371
-     termini5         2372..2395
-     termini3         2273..2294
-     sequenced_ORF_2  2396..2423
+     primer_site_1         1..31
+                           /label="primer_site_1"
+     parsed_ORF_1          32..1694
+                           /label="parsed_ORF_1"
+     variant_tag_1         137..137
+                           /label="variant_tag_1"
+     variant_tag_2         1574..1574
+                           /label="variant_tag_2"
+     parsed_termini3       1695..1898
+                           /label="parsed_termini3"
+     termini3              1695..1902
+                           /label="termini3"
+     viral_barcode         1716..1731
+                           /label="viral_barcode"
+     termini3_flex         1899..1902
+                           /label="termini3_flex"
+     polyA                 1903..1931
+                           /label="polyA"
+     UMI                   1932..1943
+                           /label="UMI"
+     cellbarcode           1944..1959
+                           /label="cellbarcode"
+     Read1                 1960..1979
+                           /label="Read1"
+     termini5              1980..2084
+                           /label="termini5"
+     ORF_2                 2085..2122
+                           /label="ORF_2"
+     parsed_ORF_2          2085..2091
+                           /label="parsed_ORF_2"
+     primer_site_2         2092..2122
+                           /label="primer_site_2"
+ORIGIN
+        1 cgattttggt tgtattattg tacacgttcg cgacggcgaa cgctgatact ctttgcattg
+       61 gttatcatgc gaacaattca acagacactg tagacacagt actagaaaag aatgtaacag
+      121 taacacactc tgttaayctt ctagaagaca agcataacgg gaaactatgc aaactaagag
+      181 gggtagcccc attgcatttg ggtaaatgta acattgctgg ctggatcctg ggaaatccag
+      241 agtgtgaatc actctccaca gcaagctcat ggtcctacat tgtggaaaca cctagttcag
+      301 acaatggaac gtgttaccca ggagatttca tcgattatga ggagctaaga gagcaattga
+      361 gctcagtgtc atcatttgaa aggtttgaga tattccccaa gacaagttca tggcccaatc
+      421 atgactcgaa caaaggtgta acggcagcat gtcctcatgc tggagcaaaa agcttctaca
+      481 aaaatttaat atggctagtt aaaaaagaaa attcataccc aaagctcagc aaatcctaca
+      541 ttaatgataa agggaaagaa gtcctcgtgc tatggggcat tcaccatcca tctactagtg
+      601 ctgaccaaca aagtctctat cagaatgcag atacatatgt ttttgtgggg tcatcaagat
+      661 acagcaagaa gttcaagccg gaaatagcaa taagacccaa agtgagggat caagaaggga
+      721 gaatgaacta ttactggaca ctagtagagc cgggagacaa aataacattc gaagcaactg
+      781 gaaatctagt ggtaccgaga tatgcattcg caatggaaag aaatgctgga tctggtatta
+      841 tcatttcaga tacaccagtc cacgattgca atacaacttg tcaaacaccc aagggtgcta
+      901 taaacaccag cctcccattt cagaatatac atccgatcac aattggaaaa tgtccaaaat
+      961 atgtaaaaag cacaaaattg agactggcca caggattgag gaatatcccg tctattcaat
+     1021 ctagaggcct atttggggcc attgccggtt tcattgaagg ggggtggaca gggatggtag
+     1081 atggatggta cggttatcac catcaaaatg agcaggggtc aggatatgca gccgacctga
+     1141 agagcacaca gaatgccatt gacgagatta ctaacaaagt aaattctgtt attgaaaaga
+     1201 tgaatacaca gttcacagca gtaggtaaag agttcaacca cctggaaaaa agaatagaga
+     1261 atttaaataa aaaagttgat gatggtttcc tggacatttg gacttacaat gccgaactgt
+     1321 tggttctatt ggaaaatgaa agaactttgg actaccacga ttcaaatgtg aagaacttat
+     1381 atgaaaaggt aagaagccag ctaaaaaaca atgccaagga aattggaaac ggctgctttg
+     1441 aattttacca caaatgcgat aacacgtgca tggaaagtgt caaaaatggg acttatgact
+     1501 acccaaaata ctcagaggaa gcaaaattaa acagagaaga aatagatggg gtaaagctgg
+     1561 aatcaacaag gatytaccag attttggcga tatactctac agtggctagc tccctagttt
+     1621 tagttgtttc tttaggagcg attagctttt ggatgtgttc caacggctcc ttgcaatgcc
+     1681 ggatttgcat ataatgatgc accataggcg gccgcnnnnn nnnnnnnnnn ngtactctgc
+     1741 gttgatacca ctgcttccgc ggacaggcaa gcttatctat tcaactgtcg ccagttcatt
+     1801 ggtactggta gtctccctgg gggcaatcag tttctggatg tgctctaatg ggtctctaca
+     1861 gtgtagaata tgtatttaac attaggattt cagaagcatg agaaaaaaaa aaaaaaaaaa
+     1921 aaaaaaaaaa annnnnnnnn nnnnnnnnnn nnnnnnnnna gatcggaaga gcgtcgtgta
+     1981 gcaaaagcag gggaaaacaa aagcaaccaa attgaaagca atactagtag ttctgctata
+     2041 tacatttgca accgcaattg cagacacatt ttgtataggg atccatgaag gcgattttgg
+     2101 ttgtattatt gtacacgttc gc
+//
+LOCUS       NAmid                   1816 bp ds-DNA     linear       15-APR-2022
+DEFINITION  .
+ACCESSION   NAmid
+SOURCE      NAmid
+  ORGANISM  NAmid
+FEATURES             Location/Qualifiers
+     primer_site_1         1..25
+                           /label="primer_site_1"
+     parsed_ORF_1          26..935
+                           /label="parsed_ORF_1"
+     variant_tag_2         224..224
+                           /label="variant_tag_2"
+     variant_tag_3         233..233
+                           /label="variant_tag_3"
+     variant_tag_4         234..234
+                           /label="variant_tag_4"
+     variant_tag_5         235..235
+                           /label="variant_tag_5"
+     variant_tag_6         236..236
+                           /label="variant_tag_6"
+     variant_tag_7         653..653
+                           /label="variant_tag_7"
+     variant_tag_8         806..806
+                           /label="variant_tag_8"
+     parsed_termini3       936..1116
+                           /label="parsed_termini3"
+     termini3              936..1120
+                           /label="termini3"
+     viral_barcode         957..972
+                           /label="viral_barcode"
+     termini3_flex         1117..1120
+                           /label="termini3_flex"
+     polyA                 1121..1149
+                           /label="polyA"
+     UMI                   1150..1161
+                           /label="UMI"
+     cellbarcode           1162..1177
+                           /label="cellbarcode"
+     Read1                 1178..1199
+                           /label="Read1"
+     termini5              1200..1259
+                           /label="termini5"
+     ORF_2                 1260..1816
+                           /label="ORF_2"
+     parsed_ORF_2          1260..1791
+                           /label="parsed_ORF_2"
+     variant_tag_1         1439..1439
+                           /label="variant_tag_1"
+     primer_site_2         1792..1816
+                           /label="primer_site_2"
+ORIGIN
+        1 tgagctgtcc tattggtgaa gttccctctc catacaactc aagatttgag tcagtcgctt
+       61 ggtcagcaag tgcttgtcat gatggcatca attggctaac aattggaatt tctggcccag
+      121 acaatggggc agtggctgtg ttaaagtaca acggcataat aacagacact atcaagagtt
+      181 ggagaaacaa tatattgaga acacaagagt ctgaatgtgc atgygtaaat ggywsytgct
+      241 ttactgtaat gaccgatgga ccaagtaatg gacaggcctc atacaagatc ttcagaatag
+      301 aaaagggaaa gatagtcaaa tcagtcgaaa tgaatgcccc taattatcac tatgaggaat
+      361 gctcctgtta tcctgattct agtgaaatca catgtgtgtg cagggataac tggcatggct
+      421 cgaatcgacc gtgggtgtct ttcaaccaga atctggaata tcagatagga tacatatgca
+      481 gtgggatttt cggagacaat ccacgcccta atgataagac aggcagttgt ggtccagtat
+      541 cgtctaatgg agcaaatgga gtaaaagggt tttcattcaa atacggcaat ggtgtttgga
+      601 tagggagaac taaaagcatt agttcaagaa acggttttga gatgatttgg gayccgaacg
+      661 gatggactgg gacagacaat aacttctcaa taaagcaaga tatcgtagga ataaatgagt
+      721 ggtcaggata tagcgggagt tttgttcagc atccagaact aacagggctg gattgtataa
+      781 gaccttgctt ctgggttgaa ctaatmagag ggcgacccaa agagaacaca atctggacaa
+      841 gtggcagtag tatttcgttc tgcggagtta atagcgatac agtcggatgg tcatggcctg
+      901 atggagcaga actccctttc acgatagata aataatagtg caccataggc ggccgcnnnn
+      961 nnnnnnnnnn nngtactctg cgttgatacc actgcttccg cggacaggca agcttctagt
+     1021 gggagcatca tttctttttg tggtgtgaat agtgatactg tagattggtc ttggccagac
+     1081 ggtgctgagt tgccgttcac cattgacaag tagtttgttc aaaaaaaaaa aaaaaaaaaa
+     1141 aaaaaaaaan nnnnnnnnnn nnnnnnnnnn nnnnnnnaga tcggaagagc gtcgtgtagc
+     1201 gaaagcagga gtttaaaccg aatccaaacc agaaaataat aaccattggg tcaatctgta
+     1261 tggtagtcgg aataattagc ctaatattgc aaataggaaa tataatctca ggatccatga
+     1321 accctaatca gaaaattatt acgataggat cggtgtgcat gactataggt atggcaaatc
+     1381 ttattcttca gataggtaat attatttcta tatggattag ccactcaatt caacttggra
+     1441 atcaaaatca gattgaaaca tgcaatcaaa gcgtcattac ttatgaaaac aacacttggg
+     1501 taaatcagac atatgttaac atcagcaaca ccaactttgc tgctggacag tcagtggttt
+     1561 ccgtgaaatt agcgggcaat tcctctctct gccctgttag tggatgggct atatacagta
+     1621 aagacaacag tgtaagaatc ggttccaagg gggatgtgtt tgtcataagg gaaccattca
+     1681 tatcatgctc ccccttggaa tgcagaacct tcttcttgac tcaaggggcc ttgctaaatg
+     1741 acaaacattc caatggaacc attaaagaca ggagcccata tcgaacccta atgagctgtc
+     1801 ctattggtga agttcc
+//
+LOCUS       Mmid                    1105 bp ds-DNA     linear       15-APR-2022
+DEFINITION  .
+ACCESSION   Mmid
+SOURCE      Mmid
+  ORGANISM  Mmid
+FEATURES             Location/Qualifiers
+     primer_site_1         1..23
+                           /label="primer_site_1"
+     parsed_ORF_1          24..407
+                           /label="parsed_ORF_1"
+     parsed_termini3       408..624
+                           /label="parsed_termini3"
+     termini3              408..628
+                           /label="termini3"
+     variant_tag_2         573..573
+                           /label="variant_tag_2"
+     termini3_flex         625..628
+                           /label="termini3_flex"
+     polyA                 629..657
+                           /label="polyA"
+     UMI                   658..669
+                           /label="UMI"
+     cellbarcode           670..685
+                           /label="cellbarcode"
+     Read1                 686..706
+                           /label="Read1"
+     termini5              707..730
+                           /label="termini5"
+     ORF_2                 731..1105
+                           /label="ORF_2"
+     parsed_ORF_2          731..1082
+                           /label="parsed_ORF_2"
+     variant_tag_1         805..805
+                           /label="variant_tag_1"
+     primer_site_2         1083..1105
+                           /label="primer_site_2"
+ORIGIN
+        1 gctattcaac tggtgcactt gccagttgca tgggcctcat atacaacagg atgggaacag
+       61 tgaccacaga agctgctttt ggtctagtgt gtgccacttg tgaacagatt gctgattcac
+      121 agcatcggtc tcacagacag atggctacta ccaccaatcc actaatcagg catgaaaaca
+      181 gaatggtgct ggctagcact acggcaaagg ctatggaaca gatggctgga tcgagtgaac
+      241 aggcagcgga ggccatggag gttgctaatc agactaggca gatggtacat gcaatgagaa
+      301 ctattgggac tcatcctagc tccagtgctg gtctgaaaga tgaccttctt gaaaatttgc
+      361 aggcctacca gaagcgaatg ggagtgcaga tgcagcgatt caagtgatcc tctcgtcatt
+      421 gcagcaaata tcattgggat cttgcacctg atattgtgga ttactgatcg tctttttttc
+      481 aaatgtattt atcgtcgctt taaatacggt ttgaaaagag ggccttctac ggaaggagtg
+      541 cctgagtcca tgagggaaga atatcaacag garcagcaga gtgctgtgga tgttgacgat
+      601 ggtcattttg tcaacataga gctagagtaa aaaaaaaaaa aaaaaaaaaa aaaaaaannn
+      661 nnnnnnnnnn nnnnnnnnnn nnnnnagatc ggaagagcgt cgtgtagcaa aagcaggtag
+      721 atatttaaag atgagtcttc taaccgaggt cgaaacgtac gttctttcta tcatcccgtc
+      781 aggccccctc aaagccgaga tcgcrcagag actggaaagt gtctttgcag gaaagaacac
+      841 agatcttgag gctctcatgg aatggctaaa gacaagacca atcttgtcac ctctgactaa
+      901 gggaatttta ggatttgtgt tcacgctcac cgtgcccagt gagcgaggac tgcagcgtag
+      961 acgctttgtc caaaatgccc taaatgggaa tggggacccg aacaacatgg atagagcagt
+     1021 taaactatac aagaagctca aaagagaaat aacgttccat ggggccaagg aggtgtcact
+     1081 aagctattca actggtgcac ttgcc
+//
+LOCUS       PB1termini              2423 bp ds-DNA     linear       15-APR-2022
+DEFINITION  .
+ACCESSION   PB1termini
+SOURCE      PB1termini
+  ORGANISM  PB1termini
+FEATURES             Location/Qualifiers
+     primer_site_1         1..26
+                           /label="primer_site_1"
+     parsed_ORF_1          27..2272
+                           /label="parsed_ORF_1"
+     variant_tag_1         166..166
+                           /label="variant_tag_1"
+     variant_tag_2         2179..2179
+                           /label="variant_tag_2"
+     parsed_termini3       2273..2290
+                           /label="parsed_termini3"
+     termini3              2273..2294
+                           /label="termini3"
+     termini3_flex         2291..2294
+                           /label="termini3_flex"
+     polyA                 2295..2323
+                           /label="polyA"
+     UMI                   2324..2335
+                           /label="UMI"
+     cellbarcode           2336..2351
+                           /label="cellbarcode"
+     Read1                 2352..2371
+                           /label="Read1"
+     termini5              2372..2395
+                           /label="termini5"
+     ORF_2                 2396..2423
+                           /label="ORF_2"
+     parsed_ORF_2          2396..2397
+                           /label="parsed_ORF_2"
+     primer_site_2         2398..2423
+                           /label="primer_site_2"
 ORIGIN
         1 ggatgtcaat ccgactctac ttttcctaaa aattccagcg caaaatgcca taagcaccac
        61 attcccttat actggagatc ctccatacag ccatggaaca ggaacaggat acaccatgga
@@ -717,24 +512,514 @@ ORIGIN
      2341 nnnnnnnnnn nagatcggaa gagcgtcgtg tagcgaaagc aggcaaacca tttgaatgga
      2401 tgtcaatccg actctacttt tcc
 //
-LOCUS       PB2mid                2424 bp ds-DNA     linear   SYN 02-NOV-2020
-DEFINITION  PB2mid
-ACCESSION   PB2mid
-VERSION     .
-KEYWORDS    .
-SOURCE      PB2mid
-  ORGANISM
+LOCUS       NPtermini               1640 bp ds-DNA     linear       15-APR-2022
+DEFINITION  .
+ACCESSION   NPtermini
+SOURCE      NPtermini
+  ORGANISM  NPtermini
 FEATURES             Location/Qualifiers
-     sequenced_ORF_1 	1..1169
-     variant_tag_2    1052
-     polyA            1183..1212
-     UMI             	1213..1224
-     cellbarcode      1225..1240
-     Read1            1241..1260
-     termini5    		  1261..1287
-     termini3         1170..1182
-     sequenced_ORF_2  1288..2424
-     variant_tag_1    1461
+     primer_site_1         1..19
+                           /label="primer_site_1"
+     parsed_ORF_1          20..1507
+                           /label="parsed_ORF_1"
+     variant_tag_1         97..97
+                           /label="variant_tag_1"
+     variant_tag_2         1372..1372
+                           /label="variant_tag_2"
+     parsed_termini3       1508..1508
+                           /label="parsed_termini3"
+     termini3              1508..1509
+                           /label="termini3"
+     termini3_flex         1509..1509
+                           /label="termini3_flex"
+     polyA                 1510..1538
+                           /label="polyA"
+     UMI                   1539..1550
+                           /label="UMI"
+     cellbarcode           1551..1566
+                           /label="cellbarcode"
+     Read1                 1567..1586
+                           /label="Read1"
+     termini5              1587..1631
+                           /label="termini5"
+     ORF_2                 1632..1640
+                           /label="ORF_2"
+     primer_site_2         1622..1640
+                           /label="primer_site_2"
+ORIGIN
+        1 catcgaagcc atggcgtccc aaggcaccaa acgatcatat gaacaaatgg agactggtgg
+       61 ggagcgccag gatgccacag aaatcagagc atctgtygga agaatgattg gtggaatcgg
+      121 gagattctac atccaaatgt gcactgaact caaactcagt gattatgatg gacgactaat
+      181 ccagaatagc ataacaatag agaggatggt gctttctgct tttgatgaga gaagaaataa
+      241 atacctagaa gagcatccca gtgctgggaa ggaccctaag aaaacaggag gacccatata
+      301 tagaagagta gacggaaagt ggatgagaga actcatcctt tatgacaaag aagaaataag
+      361 gagagtttgg cgccaagcaa acaatggcga agatgcaaca gcaggtctta ctcatatcat
+      421 gatttggcat tccaacctga atgatgccac atatcagaga acaagagcgc ttgttcgcac
+      481 cggaatggat cccagaatgt gctctctaat gcaaggttca acacttccca gaaggtctgg
+      541 tgccgcaggt gctgcggtga aaggagttgg aacaatagca atggagttaa tcagaatgat
+      601 caaacgtgga atcaatgacc gaaatttctg gaggggtgaa aatggacgaa ggacaagggt
+      661 tgcttatgaa agaatgtgca atatcctcaa aggaaaattt caaacagctg cccagagggc
+      721 aatgatggat caagtaagag aaagtcgaaa cccaggaaac gctgagattg aagacctcat
+      781 tttcctggca cggtcagcac tcattctgag gggatcagtt gcacataaat cctgcctgcc
+      841 tgcttgtgtg tatgggcttg cagtagcaag tgggcatgac tttgaaaggg aagggtactc
+      901 actggtcggg atagacccat tcaaattact ccaaaacagc caagtggtca gcctgatgag
+      961 accaaatgaa aacccagctc acaagagtca attggtgtgg atggcatgcc actctgctgc
+     1021 atttgaagat ttaagagtat caagtttcat aagaggaaag aaagtgattc caagaggaaa
+     1081 gctttccaca agaggggtcc agattgcttc aaatgagaat gtggaaacca tggactccaa
+     1141 taccctggaa ctgagaagca gatactgggc cataaggacc aggagtggag gaaataccaa
+     1201 tcaacaaaag gcatccgcag gccagatcag tgtgcagcct acattctcag tgcagcggaa
+     1261 tctccctttt gaaagagcaa ccgttatggc agcattcagc gggaacaatg aaggacggac
+     1321 atccgacatg cgaacagaag ttataagaat gatggaaagt gcaaagccag argatttgtc
+     1381 cttccagggg cggggagtct tcgagctctc ggacgaaaag gcaacgaacc cgatcgtgcc
+     1441 ttcctttgac atgagtaatg aagggtctta tttcttcgga gacaatgcag aggagtatga
+     1501 cagttgagga aaaaaaaaaa aaaaaaaaaa aaaaaaaann nnnnnnnnnn nnnnnnnnnn
+     1561 nnnnnnagat cggaagagcg tcgtgtagca aaagcagggt agataatcac tcaatgagtg
+     1621 acatcgaagc catggcgtcc
+//
+LOCUS       NSmid                    972 bp ds-DNA     linear       15-APR-2022
+DEFINITION  .
+ACCESSION   NSmid
+SOURCE      NSmid
+  ORGANISM  NSmid
+FEATURES             Location/Qualifiers
+     primer_site_1         1..27
+                           /label="primer_site_1"
+     parsed_ORF_1          28..202
+                           /label="parsed_ORF_1"
+     parsed_termini3       203..380
+                           /label="parsed_termini3"
+     termini3              203..384
+                           /label="termini3"
+     variant_tag_2         320..320
+                           /label="variant_tag_2"
+     termini3_flex         381..384
+                           /label="termini3_flex"
+     polyA                 385..413
+                           /label="polyA"
+     UMI                   414..425
+                           /label="UMI"
+     cellbarcode           426..441
+                           /label="cellbarcode"
+     Read1                 442..462
+                           /label="Read1"
+     termini5              463..487
+                           /label="termini5"
+     ORF_2                 488..972
+                           /label="ORF_2"
+     parsed_ORF_2          488..945
+                           /label="parsed_ORF_2"
+     variant_tag_1         541..541
+                           /label="variant_tag_1"
+     primer_site_2         946..972
+                           /label="primer_site_2"
+ORIGIN
+        1 gggagcaata gttggagaaa tttcaccatt accttctctt ccaggacata cttatgagga
+       61 tgtcaaaaat gcagttgggg tcctcatcgg aggacttgaa tggaatggta acacggttcg
+      121 agtctctgaa aatatacaga gattcgcttg gagaaactgt gatgagaatg ggagaccttc
+      181 actacctcca gagcagaaat gaaaagtggc gagagcaatt gggacagaaa tttgaggaaa
+      241 taaggtggtt aattgaagaa atgcggcaca gattgaaagc gacagagaat agtttcgaac
+      301 aaataacatt tatgcaagcm ttacaactac tgcttgaagt agaacaagag ataagagctt
+      361 tctcgtttca gcttatttaa tgataaaaaa aaaaaaaaaa aaaaaaaaaa aaannnnnnn
+      421 nnnnnnnnnn nnnnnnnnnn nagatcggaa gagcgtcgtg tagcaaaagc agggtgacaa
+      481 agacataatg gactccaaca ccatgtcaag ctttcaggta gactgtttcc tttggcatat
+      541 ycgcaagcga tttgcagaca atggattggg tgatgcccca ttccttgatc ggctccgccg
+      601 agatcaaaag tccttaaaag gaagaggcaa cacccttggc ctcgatatcg aaacagccac
+      661 tcttgttggg aaacaaatcg tggaatggat cttgaaagag gaatccagcg agacacttag
+      721 aatgacaatt gcatctgtac ctacttcgcg ctacctttct gacatgaccc tcgaggaaat
+      781 gtcacgagac tggttcatgc tcatgcctag gcaaaagata ataggccctc tttgcgtgcg
+      841 attggaccag gcgatcatgg aaaagaacat agtactgaaa gcgaacttca gtgtaatctt
+      901 taaccgatta gagaccttga tactactaag ggctttcact gaggagggag caatagttgg
+      961 agaaatttca cc
+//
+LOCUS       PB2termini              2430 bp ds-DNA     linear       15-APR-2022
+DEFINITION  .
+ACCESSION   PB2termini
+SOURCE      PB2termini
+  ORGANISM  PB2termini
+FEATURES             Location/Qualifiers
+     primer_site_1         1..32
+                           /label="primer_site_1"
+     parsed_ORF_1          33..2275
+                           /label="parsed_ORF_1"
+     variant_tag_1         169..169
+                           /label="variant_tag_1"
+     variant_tag_2         2158..2158
+                           /label="variant_tag_2"
+     parsed_termini3       2276..2284
+                           /label="parsed_termini3"
+     termini3              2276..2288
+                           /label="termini3"
+     termini3_flex         2285..2288
+                           /label="termini3_flex"
+     polyA                 2289..2318
+                           /label="polyA"
+     UMI                   2319..2330
+                           /label="UMI"
+     cellbarcode           2331..2346
+                           /label="cellbarcode"
+     Read1                 2347..2366
+                           /label="Read1"
+     termini5              2367..2393
+                           /label="termini5"
+     ORF_2                 2394..2430
+                           /label="ORF_2"
+     parsed_ORF_2          2394..2398
+                           /label="parsed_ORF_2"
+     primer_site_2         2399..2430
+                           /label="primer_site_2"
+ORIGIN
+        1 gagaataaaa gaactgagag atctaatgtc gcagtcccgc actcgcgaga tactcactaa
+       61 gaccactgtg gaccatatgg ccataatcaa aaagtacaca tcaggaaggc aagagaagaa
+      121 ccccgcactc agaatgaagt ggatgatggc aatgagatac ccaattacrg cagacaagag
+      181 aataatggac atgattccag agaggaatga acaaggacaa accctctgga gcaaaacaaa
+      241 cgatgctgga tcagaccgag tgatggtatc acctctggcc gtaacatggt ggaataggaa
+      301 tggcccaaca acaagtacag ttcattaccc taaggtatat aaaacttatt tcgaaaaggt
+      361 cgaaaggttg aaacatggta ccttcggccc tgtccacttc agaaatcaag ttaaaataag
+      421 gaggagagtt gatacaaacc ctggccatgc agatctcagt gccaaggagg cacaggatgt
+      481 gattatggaa gttgttttcc caaatgaagt gggggcaaga atactgacat cagagtcaca
+      541 gctggcaata acaaaagaga agaaagaaga gctccaggat tgtaaaattg ctcccttgat
+      601 ggtggcgtac atgctagaaa gagaattggt ccgtaaaaca aggtttctcc cagtagccgg
+      661 cggaacaggc agtgtttata ttgaagtgtt gcacttaacc caagggacgt gctgggagca
+      721 gatgtacact ccaggaggag aagtgagaaa tgatgatgtt gaccaaagtt tgattatcgc
+      781 tgctagaaac atagtaagaa gagcagcagt gtcagcagac ccattagcat ctctcttgga
+      841 aatgtgccac agcacacaga ttggaggagt aaggatggtg gacatcctta gacagaatcc
+      901 aactgaggaa caagccgtag acatatgcaa ggcagcaata gggttgagga ttagctcatc
+      961 tttcagtttt ggtgggttca ctttcaaaag gacaagcgga tcatcagtca agaaagaaga
+     1021 agaagtgcta acgggcaacc tccaaacact gaaaataaga gtacatgaag ggtatgaaga
+     1081 attcacaatg gttgggagaa gagcaacagc tattctcaga aaggcaacca ggagattgat
+     1141 ccagttgata gtaagcggga gagatgagca gtcaattgct gaggcaataa ttgtggccat
+     1201 ggtattctca caggaggatt gcatgatcaa ggcagttagg ggcgatctga actttgtcaa
+     1261 tagggcaaac cagcgactga accccatgca ccaactcttg aggcatttcc aaaaagatgc
+     1321 aaaagtgctt ttccagaact ggggaattga atccatcgac aatgtgatgg gaatgatcgg
+     1381 aatactgccc gacatgaccc caagcacgga gatgtcgctg agagggataa gagtcagcaa
+     1441 aatgggagta gatgaatact ccagcacgga gagagtggta gtgagtattg accgattttt
+     1501 aagggttaga gatcaaagag ggaacgtact attgtctccc gaagaagtca gtgaaacgca
+     1561 aggaactgag aagttgacaa taacttattc gtcatcaatg atgtgggaga tcaatggccc
+     1621 tgagtcagtg ctagtcaaca cttatcaatg gataatcagg aactgggaaa ttgtgaaaat
+     1681 tcaatggtca caagatccca caatgttata caacaaaatg gaatttgaac catttcagtc
+     1741 tcttgtccct aaggcaacca gaagccggta cagtggattc gtaaggacac tgttccagca
+     1801 aatgcgggat gtgcttggga catttgacac tgtccaaata ataaaacttc tcccctttgc
+     1861 tgctgcccca ccagaacaga gtaggatgca attttcctca ttgactgtga atgtgagagg
+     1921 atcagggttg aggatactgg taagaggcaa ttctccagta ttcaattaca acaaggcaac
+     1981 caaacgactt acagttcttg gaaaggatgc aggtgcattg actgaagatc cagatgaagg
+     2041 cacatctggg gtggagtctg ctgtcctgag aggatttctc attttgggca aagaagacaa
+     2101 gagatatggc ccagcattaa gcatcaatga actgagcaat cttgcaaaag gagagaargc
+     2161 taatgtgcta attgggcaag gggacgtagt gttggtaatg aaacgaaaac gggactctag
+     2221 catacttact gacagccaga cagcgaccaa aagaattcgg atggccatca attagtgtcg
+     2281 aatagtttaa aaaaaaaaaa aaaaaaaaaa aaaaaaaann nnnnnnnnnn nnnnnnnnnn
+     2341 nnnnnnagat cggaagagcg tcgtgtagcg aaagcaggtc aattatattc aatatggaga
+     2401 gaataaaaga actgagagat ctaatgtcgc
+//
+LOCUS       Mtermini                1105 bp ds-DNA     linear       15-APR-2022
+DEFINITION  .
+ACCESSION   Mtermini
+SOURCE      Mtermini
+  ORGANISM  Mtermini
+FEATURES             Location/Qualifiers
+     primer_site_1         1..22
+                           /label="primer_site_1"
+     parsed_ORF_1          23..750
+                           /label="parsed_ORF_1"
+     variant_tag_1         66..66
+                           /label="variant_tag_1"
+     parsed_termini3       751..967
+                           /label="parsed_termini3"
+     termini3              751..971
+                           /label="termini3"
+     variant_tag_2         916..916
+                           /label="variant_tag_2"
+     termini3_flex         968..971
+                           /label="termini3_flex"
+     polyA                 972..1000
+                           /label="polyA"
+     UMI                   1001..1012
+                           /label="UMI"
+     cellbarcode           1013..1028
+                           /label="cellbarcode"
+     Read1                 1029..1050
+                           /label="Read1"
+     termini5              1051..1074
+                           /label="termini5"
+     ORF_2                 1075..1105
+                           /label="ORF_2"
+     parsed_ORF_2          1075..1083
+                           /label="parsed_ORF_2"
+     primer_site_2         1084..1105
+                           /label="primer_site_2"
+ORIGIN
+        1 ctaaccgagg tcgaaacgta cgttctttct atcatcccgt caggccccct caaagccgag
+       61 atcgcrcaga gactggaaag tgtctttgca ggaaagaaca cagatcttga ggctctcatg
+      121 gaatggctaa agacaagacc aatcttgtca cctctgacta agggaatttt aggatttgtg
+      181 ttcacgctca ccgtgcccag tgagcgagga ctgcagcgta gacgctttgt ccaaaatgcc
+      241 ctaaatggga atggggaccc gaacaacatg gatagagcag ttaaactata caagaagctc
+      301 aaaagagaaa taacgttcca tggggccaag gaggtgtcac taagctattc aactggtgca
+      361 cttgccagtt gcatgggcct catatacaac aggatgggaa cagtgaccac agaagctgct
+      421 tttggtctag tgtgtgccac ttgtgaacag attgctgatt cacagcatcg gtctcacaga
+      481 cagatggcta ctaccaccaa tccactaatc aggcatgaaa acagaatggt gctggctagc
+      541 actacggcaa aggctatgga acagatggct ggatcgagtg aacaggcagc ggaggccatg
+      601 gaggttgcta atcagactag gcagatggta catgcaatga gaactattgg gactcatcct
+      661 agctccagtg ctggtctgaa agatgacctt cttgaaaatt tgcaggccta ccagaagcga
+      721 atgggagtgc agatgcagcg attcaagtga tcctctcgtc attgcagcaa atatcattgg
+      781 gatcttgcac ctgatattgt ggattactga tcgtcttttt ttcaaatgta tttatcgtcg
+      841 ctttaaatac ggtttgaaaa gagggccttc tacggaagga gtgcctgagt ccatgaggga
+      901 agaatatcaa caggarcagc agagtgctgt ggatgttgac gatggtcatt ttgtcaacat
+      961 agagctagag taaaaaaaaa aaaaaaaaaa aaaaaaaaaa nnnnnnnnnn nnnnnnnnnn
+     1021 nnnnnnnnag atcggaagag cgtcgtgtag gcaaaagcag gtagatattt aaagatgagt
+     1081 cttctaaccg aggtcgaaac gtacg
+//
+LOCUS       PB1mid                  2424 bp ds-DNA     linear       15-APR-2022
+DEFINITION  .
+ACCESSION   PB1mid
+SOURCE      PB1mid
+  ORGANISM  PB1mid
+FEATURES             Location/Qualifiers
+     primer_site_1         1..25
+                           /label="primer_site_1"
+     parsed_ORF_1          26..1167
+                           /label="parsed_ORF_1"
+     variant_tag_2         1074..1074
+                           /label="variant_tag_2"
+     parsed_termini3       1168..1185
+                           /label="parsed_termini3"
+     termini3              1168..1189
+                           /label="termini3"
+     termini3_flex         1186..1189
+                           /label="termini3_flex"
+     polyA                 1190..1218
+                           /label="polyA"
+     UMI                   1219..1230
+                           /label="UMI"
+     cellbarcode           1231..1246
+                           /label="cellbarcode"
+     Read1                 1247..1268
+                           /label="Read1"
+     termini5              1269..1292
+                           /label="termini5"
+     ORF_2                 1293..2424
+                           /label="ORF_2"
+     parsed_ORF_2          1293..2399
+                           /label="parsed_ORF_2"
+     variant_tag_1         1460..1460
+                           /label="variant_tag_1"
+     primer_site_2         2400..2424
+                           /label="primer_site_2"
+ORIGIN
+        1 gcagaaatgc tagcaagcat tgacctgaag tacttcaatg aatcaacaaa gaagaaaatt
+       61 gagaaaataa ggcctcttct aatagatggc acagcatcac tgagtcctgg gatgatgatg
+      121 ggcatgttca acatgctaag tacggtcttg ggagtctcga tactgaatct tggacaaaag
+      181 aaatacacca agacaatata ctggtgggat gggctccaat catccgacga ttttgctctc
+      241 atagtgaatg caccaaacca tgagggaata caagcaggag tggacagatt ctacaggacc
+      301 tgcaagttag tgggaatcaa catgagcaaa aagaagtcct atataaataa gacagggaca
+      361 tttgaattca caagcttttt ttatcgctat ggatttgtgg ctaattttag catggagcta
+      421 cccagctttg gagtgtctgg agtaaatgaa tcagctgaca tgagtattgg agtaacagtg
+      481 ataaagaaca acatgataaa caatgacctt ggacctgcaa cggcccagat ggctcttcaa
+      541 ttgttcatca aagactacag atacacatat aggtgccata ggggagacac acaaattcag
+      601 acgagaagat catttgagtt aaagaagctg tgggatcaaa cccaatcaaa agtagggcta
+      661 ttagtatcag atggaggacc aaacttatac aatatacgga atcttcacat tcctgaagtc
+      721 tgcttaaaat gggagctaat ggatgatgat tatcggggaa gactttgtaa tcccctgaat
+      781 ccctttgtca gtcataaaga gattgattct gtaaacaatg ctgtggtaat gccagcccat
+      841 ggtccagcca aaagcatgga atatgatgcc gttgcaacta cacattcctg gattcccaag
+      901 aggaatcgtt ctattctcaa cacaagccaa aggggaattc ttgaggatga acagatgtac
+      961 cagaagtgct gcaatctatt cgagaaattt ttccctagca gttcatatag gagaccggtt
+     1021 ggaatttcta gcatggtgga ggccatggtg tctagggccc ggattgatgc cagrgtcgac
+     1081 ttcgagtctg gacggatcaa gaaagaagag ttctctgaga tcatgaagat ctgttccacc
+     1141 attgaagaac tcagacggca aaaataatga atttagcttg tccttcatga aaaaaaaaaa
+     1201 aaaaaaaaaa aaaaaaaann nnnnnnnnnn nnnnnnnnnn nnnnnnagat cggaagagcg
+     1261 tcgtgtagag cgaaagcagg caaaccattt gaatggatgt caatccgact ctacttttcc
+     1321 taaaaattcc agcgcaaaat gccataagca ccacattccc ttatactgga gatcctccat
+     1381 acagccatgg aacaggaaca ggatacacca tggacacagt aaacagaaca caccaatact
+     1441 cagaaaaggg aaagtggacr acaaacacag agactggtgc accccagctc aacccgattg
+     1501 atggaccact acctgaggat aatgaaccaa gtgggtatgc acaaacagac tgtgttctag
+     1561 aggctatggc tttccttgaa gaatcccacc caggaatatt tgagaattca tgccttgaaa
+     1621 caatggaagt tgttcaacaa acaagggtag ataaactaac tcaaggtcgc cagacttatg
+     1681 attggacatt aaacagaaat caaccggcag caactgcatt ggccaacacc atagaagtct
+     1741 ttagatcgaa tggcctaaca gctaatgagt caggaaggct aatagatttc ttaaaggatg
+     1801 taatggaatc aatgaacaaa gaggaaatag agataacaac ccactttcaa agaaaaagga
+     1861 gagtaagaga caacatgacc aagaagatgg tcacgcaaag aacaataggg aagaaaaaac
+     1921 aaagactgaa taagagaggc tatctaataa gagcactgac attaaatacg atgaccaaag
+     1981 atgcagagag aggcaagtta aaaagaaggg ctatcgcaac acctgggatg cagattagag
+     2041 gtttcgtata ctttgttgaa actttagcta ggagcatttg cgaaaagctt gaacagtctg
+     2101 ggctcccagt agggggcaat gaaaagaagg ccaaactggc aaatgttgtg agaaagatga
+     2161 tgactaattc acaagacaca gagatttctt tcacaatcac tggggacaac actaagtgga
+     2221 atgaaaatca aaatcctcga atgttcctgg cgatgattac atatatcacc agaaatcaac
+     2281 ccgagtggtt cagaaacatc ctgagcatgg cacccataat gttctcaaac aaaatggcaa
+     2341 gactagggaa agggtacatg ttcgagagta aaagaatgaa gattcgaaca caaataccag
+     2401 cagaaatgct agcaagcatt gacc
+//
+LOCUS       NStermini                967 bp ds-DNA     linear       15-APR-2022
+DEFINITION  .
+ACCESSION   NStermini
+SOURCE      NStermini
+  ORGANISM  NStermini
+FEATURES             Location/Qualifiers
+     primer_site_1         1..22
+                           /label="primer_site_1"
+     parsed_ORF_1          23..658
+                           /label="parsed_ORF_1"
+     variant_tag_1         52..52
+                           /label="variant_tag_1"
+     parsed_termini3       659..836
+                           /label="parsed_termini3"
+     termini3              659..840
+                           /label="termini3"
+     variant_tag_2         776..776
+                           /label="variant_tag_2"
+     termini3_flex         837..840
+                           /label="termini3_flex"
+     polyA                 841..869
+                           /label="polyA"
+     UMI                   870..881
+                           /label="UMI"
+     cellbarcode           882..897
+                           /label="cellbarcode"
+     Read1                 898..918
+                           /label="Read1"
+     termini5              919..943
+                           /label="termini5"
+     ORF_2                 944..967
+                           /label="ORF_2"
+     parsed_ORF_2          944..945
+                           /label="parsed_ORF_2"
+     primer_site_2         946..967
+                           /label="primer_site_2"
+ORIGIN
+        1 ggactccaac accatgtcaa gctttcaggt agactgtttc ctttggcata tycgcaagcg
+       61 atttgcagac aatggattgg gtgatgcccc attccttgat cggctccgcc gagatcaaaa
+      121 gtccttaaaa ggaagaggca acacccttgg cctcgatatc gaaacagcca ctcttgttgg
+      181 gaaacaaatc gtggaatgga tcttgaaaga ggaatccagc gagacactta gaatgacaat
+      241 tgcatctgta cctacttcgc gctacctttc tgacatgacc ctcgaggaaa tgtcacgaga
+      301 ctggttcatg ctcatgccta ggcaaaagat aataggccct ctttgcgtgc gattggacca
+      361 ggcgatcatg gaaaagaaca tagtactgaa agcgaacttc agtgtaatct ttaaccgatt
+      421 agagaccttg atactactaa gggctttcac tgaggaggga gcaatagttg gagaaatttc
+      481 accattacct tctcttccag gacatactta tgaggatgtc aaaaatgcag ttggggtcct
+      541 catcggagga cttgaatgga atggtaacac ggttcgagtc tctgaaaata tacagagatt
+      601 cgcttggaga aactgtgatg agaatgggag accttcacta cctccagagc agaaatgaaa
+      661 agtggcgaga gcaattggga cagaaatttg aggaaataag gtggttaatt gaagaaatgc
+      721 ggcacagatt gaaagcgaca gagaatagtt tcgaacaaat aacatttatg caagcmttac
+      781 aactactgct tgaagtagaa caagagataa gagctttctc gtttcagctt atttaatgat
+      841 aaaaaaaaaa aaaaaaaaaa aaaaaaaaan nnnnnnnnnn nnnnnnnnnn nnnnnnnaga
+      901 tcggaagagc gtcgtgtagc aaaagcaggg tgacaaagac ataatggact ccaacaccat
+      961 gtcaagc
+//
+LOCUS       NAtermini               1827 bp ds-DNA     linear       15-APR-2022
+DEFINITION  .
+ACCESSION   NAtermini
+SOURCE      NAtermini
+  ORGANISM  NAtermini
+FEATURES             Location/Qualifiers
+     primer_site_1         1..36
+                           /label="primer_site_1"
+     parsed_ORF_1          37..1465
+                           /label="parsed_ORF_1"
+     variant_tag_1         178..178
+                           /label="variant_tag_1"
+     variant_tag_2         754..754
+                           /label="variant_tag_2"
+     variant_tag_3         763..763
+                           /label="variant_tag_3"
+     variant_tag_4         764..764
+                           /label="variant_tag_4"
+     variant_tag_5         765..765
+                           /label="variant_tag_5"
+     variant_tag_6         766..766
+                           /label="variant_tag_6"
+     variant_tag_7         1183..1183
+                           /label="variant_tag_7"
+     variant_tag_8         1336..1336
+                           /label="variant_tag_8"
+     parsed_termini3       1466..1646
+                           /label="parsed_termini3"
+     termini3              1466..1650
+                           /label="termini3"
+     viral_barcode         1487..1502
+                           /label="viral_barcode"
+     termini3_flex         1647..1650
+                           /label="termini3_flex"
+     polyA                 1651..1679
+                           /label="polyA"
+     UMI                   1680..1691
+                           /label="UMI"
+     cellbarcode           1692..1707
+                           /label="cellbarcode"
+     Read1                 1708..1729
+                           /label="Read1"
+     termini5              1730..1789
+                           /label="termini5"
+     ORF_2                 1790..1827
+                           /label="ORF_2"
+     parsed_ORF_2          1790..1791
+                           /label="parsed_ORF_2"
+     primer_site_2         1792..1827
+                           /label="primer_site_2"
+ORIGIN
+        1 ggtagtcgga ataattagcc taatattgca aataggaaat ataatctcag gatccatgaa
+       61 ccctaatcag aaaattatta cgataggatc ggtgtgcatg actataggta tggcaaatct
+      121 tattcttcag ataggtaata ttatttctat atggattagc cactcaattc aacttggraa
+      181 tcaaaatcag attgaaacat gcaatcaaag cgtcattact tatgaaaaca acacttgggt
+      241 aaatcagaca tatgttaaca tcagcaacac caactttgct gctggacagt cagtggtttc
+      301 cgtgaaatta gcgggcaatt cctctctctg ccctgttagt ggatgggcta tatacagtaa
+      361 agacaacagt gtaagaatcg gttccaaggg ggatgtgttt gtcataaggg aaccattcat
+      421 atcatgctcc cccttggaat gcagaacctt cttcttgact caaggggcct tgctaaatga
+      481 caaacattcc aatggaacca ttaaagacag gagcccatat cgaaccctaa tgagctgtcc
+      541 tattggtgaa gttccctctc catacaactc aagatttgag tcagtcgctt ggtcagcaag
+      601 tgcttgtcat gatggcatca attggctaac aattggaatt tctggcccag acaatggggc
+      661 agtggctgtg ttaaagtaca acggcataat aacagacact atcaagagtt ggagaaacaa
+      721 tatattgaga acacaagagt ctgaatgtgc atgygtaaat ggywsytgct ttactgtaat
+      781 gaccgatgga ccaagtaatg gacaggcctc atacaagatc ttcagaatag aaaagggaaa
+      841 gatagtcaaa tcagtcgaaa tgaatgcccc taattatcac tatgaggaat gctcctgtta
+      901 tcctgattct agtgaaatca catgtgtgtg cagggataac tggcatggct cgaatcgacc
+      961 gtgggtgtct ttcaaccaga atctggaata tcagatagga tacatatgca gtgggatttt
+     1021 cggagacaat ccacgcccta atgataagac aggcagttgt ggtccagtat cgtctaatgg
+     1081 agcaaatgga gtaaaagggt tttcattcaa atacggcaat ggtgtttgga tagggagaac
+     1141 taaaagcatt agttcaagaa acggttttga gatgatttgg gayccgaacg gatggactgg
+     1201 gacagacaat aacttctcaa taaagcaaga tatcgtagga ataaatgagt ggtcaggata
+     1261 tagcgggagt tttgttcagc atccagaact aacagggctg gattgtataa gaccttgctt
+     1321 ctgggttgaa ctaatmagag ggcgacccaa agagaacaca atctggacaa gtggcagtag
+     1381 tatttcgttc tgcggagtta atagcgatac agtcggatgg tcatggcctg atggagcaga
+     1441 actccctttc acgatagata aataatagtg caccataggc ggccgcnnnn nnnnnnnnnn
+     1501 nngtactctg cgttgatacc actgcttccg cggacaggca agcttctagt gggagcatca
+     1561 tttctttttg tggtgtgaat agtgatactg tagattggtc ttggccagac ggtgctgagt
+     1621 tgccgttcac cattgacaag tagtttgttc aaaaaaaaaa aaaaaaaaaa aaaaaaaaan
+     1681 nnnnnnnnnn nnnnnnnnnn nnnnnnnaga tcggaagagc gtcgtgtagc gaaagcagga
+     1741 gtttaaaccg aatccaaacc agaaaataat aaccattggg tcaatctgta tggtagtcgg
+     1801 aataattagc ctaatattgc aaatagg
+//
+LOCUS       PB2mid                  2424 bp ds-DNA     linear       15-APR-2022
+DEFINITION  .
+ACCESSION   PB2mid
+SOURCE      PB2mid
+  ORGANISM  PB2mid
+FEATURES             Location/Qualifiers
+     primer_site_1         1..26
+                           /label="primer_site_1"
+     parsed_ORF_1          27..1169
+                           /label="parsed_ORF_1"
+     variant_tag_2         1052..1052
+                           /label="variant_tag_2"
+     parsed_termini3       1170..1178
+                           /label="parsed_termini3"
+     termini3              1170..1182
+                           /label="termini3"
+     termini3_flex         1179..1182
+                           /label="termini3_flex"
+     polyA                 1183..1212
+                           /label="polyA"
+     UMI                   1213..1224
+                           /label="UMI"
+     cellbarcode           1225..1240
+                           /label="cellbarcode"
+     Read1                 1241..1260
+                           /label="Read1"
+     termini5              1261..1287
+                           /label="termini5"
+     ORF_2                 1288..2424
+                           /label="ORF_2"
+     parsed_ORF_2          1288..2398
+                           /label="parsed_ORF_2"
+     variant_tag_1         1461..1461
+                           /label="variant_tag_1"
+     primer_site_2         2399..2424
+                           /label="primer_site_2"
 ORIGIN
         1 cagctattct cagaaaggca accaggagat tgatccagtt gatagtaagc gggagagatg
        61 agcagtcaat tgctgaggca ataattgtgg ccatggtatt ctcacaggag gattgcatga
@@ -778,64 +1063,79 @@ ORIGIN
      2341 ctgaaaataa gagtacatga agggtatgaa gaattcacaa tggttgggag aagagcaaca
      2401 gctattctca gaaaggcaac cagg
 //
-LOCUS       PB2termini                2430 bp ds-DNA     linear   SYN
-DEFINITION  PB2termini
-ACCESSION   PB2termini
-VERSION     .
-KEYWORDS    .
-SOURCE      PB2termini
-  ORGANISM
+LOCUS       HAmid                   2123 bp ds-DNA     linear       15-APR-2022
+DEFINITION  .
+ACCESSION   HAmid
+SOURCE      HAmid
+  ORGANISM  HAmid
 FEATURES             Location/Qualifiers
-     sequenced_ORF_1    1..2275
-     variant_tag_1      169
-     variant_tag_2      2158
-     polyA              2289..2318
-     UMI                2319..2330
-     cellbarcode        2331..2346
-     Read1              2347..2366
-     termini5           2367..2393
-     termini3           2276..2288
-     sequenced_ORF_2    2394..2430
+     primer_site_1         1..32
+                           /label="primer_site_1"
+     parsed_ORF_1          33..870
+                           /label="parsed_ORF_1"
+     variant_tag_2         750..750
+                           /label="variant_tag_2"
+     parsed_termini3       871..1074
+                           /label="parsed_termini3"
+     termini3              871..1078
+                           /label="termini3"
+     viral_barcode         892..907
+                           /label="viral_barcode"
+     termini3_flex         1075..1078
+                           /label="termini3_flex"
+     polyA                 1079..1107
+                           /label="polyA"
+     UMI                   1108..1119
+                           /label="UMI"
+     cellbarcode           1120..1135
+                           /label="cellbarcode"
+     Read1                 1136..1155
+                           /label="Read1"
+     termini5              1156..1260
+                           /label="termini5"
+     ORF_2                 1261..2123
+                           /label="ORF_2"
+     parsed_ORF_2          1261..2091
+                           /label="parsed_ORF_2"
+     variant_tag_1         1404..1404
+                           /label="variant_tag_1"
+     primer_site_2         2092..2123
+                           /label="primer_site_2"
 ORIGIN
-        1 gagaataaaa gaactgagag atctaatgtc gcagtcccgc actcgcgaga tactcactaa
-       61 gaccactgtg gaccatatgg ccataatcaa aaagtacaca tcaggaaggc aagagaagaa
-      121 ccccgcactc agaatgaagt ggatgatggc aatgagatac ccaattacrg cagacaagag
-      181 aataatggac atgattccag agaggaatga acaaggacaa accctctgga gcaaaacaaa
-      241 cgatgctgga tcagaccgag tgatggtatc acctctggcc gtaacatggt ggaataggaa
-      301 tggcccaaca acaagtacag ttcattaccc taaggtatat aaaacttatt tcgaaaaggt
-      361 cgaaaggttg aaacatggta ccttcggccc tgtccacttc agaaatcaag ttaaaataag
-      421 gaggagagtt gatacaaacc ctggccatgc agatctcagt gccaaggagg cacaggatgt
-      481 gattatggaa gttgttttcc caaatgaagt gggggcaaga atactgacat cagagtcaca
-      541 gctggcaata acaaaagaga agaaagaaga gctccaggat tgtaaaattg ctcccttgat
-      601 ggtggcgtac atgctagaaa gagaattggt ccgtaaaaca aggtttctcc cagtagccgg
-      661 cggaacaggc agtgtttata ttgaagtgtt gcacttaacc caagggacgt gctgggagca
-      721 gatgtacact ccaggaggag aagtgagaaa tgatgatgtt gaccaaagtt tgattatcgc
-      781 tgctagaaac atagtaagaa gagcagcagt gtcagcagac ccattagcat ctctcttgga
-      841 aatgtgccac agcacacaga ttggaggagt aaggatggtg gacatcctta gacagaatcc
-      901 aactgaggaa caagccgtag acatatgcaa ggcagcaata gggttgagga ttagctcatc
-      961 tttcagtttt ggtgggttca ctttcaaaag gacaagcgga tcatcagtca agaaagaaga
-     1021 agaagtgcta acgggcaacc tccaaacact gaaaataaga gtacatgaag ggtatgaaga
-     1081 attcacaatg gttgggagaa gagcaacagc tattctcaga aaggcaacca ggagattgat
-     1141 ccagttgata gtaagcggga gagatgagca gtcaattgct gaggcaataa ttgtggccat
-     1201 ggtattctca caggaggatt gcatgatcaa ggcagttagg ggcgatctga actttgtcaa
-     1261 tagggcaaac cagcgactga accccatgca ccaactcttg aggcatttcc aaaaagatgc
-     1321 aaaagtgctt ttccagaact ggggaattga atccatcgac aatgtgatgg gaatgatcgg
-     1381 aatactgccc gacatgaccc caagcacgga gatgtcgctg agagggataa gagtcagcaa
-     1441 aatgggagta gatgaatact ccagcacgga gagagtggta gtgagtattg accgattttt
-     1501 aagggttaga gatcaaagag ggaacgtact attgtctccc gaagaagtca gtgaaacgca
-     1561 aggaactgag aagttgacaa taacttattc gtcatcaatg atgtgggaga tcaatggccc
-     1621 tgagtcagtg ctagtcaaca cttatcaatg gataatcagg aactgggaaa ttgtgaaaat
-     1681 tcaatggtca caagatccca caatgttata caacaaaatg gaatttgaac catttcagtc
-     1741 tcttgtccct aaggcaacca gaagccggta cagtggattc gtaaggacac tgttccagca
-     1801 aatgcgggat gtgcttggga catttgacac tgtccaaata ataaaacttc tcccctttgc
-     1861 tgctgcccca ccagaacaga gtaggatgca attttcctca ttgactgtga atgtgagagg
-     1921 atcagggttg aggatactgg taagaggcaa ttctccagta ttcaattaca acaaggcaac
-     1981 caaacgactt acagttcttg gaaaggatgc aggtgcattg actgaagatc cagatgaagg
-     2041 cacatctggg gtggagtctg ctgtcctgag aggatttctc attttgggca aagaagacaa
-     2101 gagatatggc ccagcattaa gcatcaatga actgagcaat cttgcaaaag gagagaargc
-     2161 taatgtgcta attgggcaag gggacgtagt gttggtaatg aaacgaaaac gggactctag
-     2221 catacttact gacagccaga cagcgaccaa aagaattcgg atggccatca attagtgtcg
-     2281 aatagtttaa aaaaaaaaaa aaaaaaaaaa aaaaaaaann nnnnnnnnnn nnnnnnnnnn
-     2341 nnnnnnagat cggaagagcg tcgtgtagcg aaagcaggtc aattatattc aatatggaga
-     2401 gaataaaaga actgagagat ctaatgtcgc
+        1 gctggatctg gtattatcat ttcagataca ccagtccacg attgcaatac aacttgtcaa
+       61 acacccaagg gtgctataaa caccagcctc ccatttcaga atatacatcc gatcacaatt
+      121 ggaaaatgtc caaaatatgt aaaaagcaca aaattgagac tggccacagg attgaggaat
+      181 atcccgtcta ttcaatctag aggcctattt ggggccattg ccggtttcat tgaagggggg
+      241 tggacaggga tggtagatgg atggtacggt tatcaccatc aaaatgagca ggggtcagga
+      301 tatgcagccg acctgaagag cacacagaat gccattgacg agattactaa caaagtaaat
+      361 tctgttattg aaaagatgaa tacacagttc acagcagtag gtaaagagtt caaccacctg
+      421 gaaaaaagaa tagagaattt aaataaaaaa gttgatgatg gtttcctgga catttggact
+      481 tacaatgccg aactgttggt tctattggaa aatgaaagaa ctttggacta ccacgattca
+      541 aatgtgaaga acttatatga aaaggtaaga agccagctaa aaaacaatgc caaggaaatt
+      601 ggaaacggct gctttgaatt ttaccacaaa tgcgataaca cgtgcatgga aagtgtcaaa
+      661 aatgggactt atgactaccc aaaatactca gaggaagcaa aattaaacag agaagaaata
+      721 gatggggtaa agctggaatc aacaaggaty taccagattt tggcgatata ctctacagtg
+      781 gctagctccc tagttttagt tgtttcttta ggagcgatta gcttttggat gtgttccaac
+      841 ggctccttgc aatgccggat ttgcatataa tgatgcacca taggcggccg cnnnnnnnnn
+      901 nnnnnnngta ctctgcgttg ataccactgc ttccgcggac aggcaagctt atctattcaa
+      961 ctgtcgccag ttcattggta ctggtagtct ccctgggggc aatcagtttc tggatgtgct
+     1021 ctaatgggtc tctacagtgt agaatatgta tttaacatta ggatttcaga agcatgagaa
+     1081 aaaaaaaaaa aaaaaaaaaa aaaaaaannn nnnnnnnnnn nnnnnnnnnn nnnnnagatc
+     1141 ggaagagcgt cgtgtagcaa aagcagggga aaacaaaagc aaccaaattg aaagcaatac
+     1201 tagtagttct gctatataca tttgcaaccg caattgcaga cacattttgt atagggatcc
+     1261 atgaaggcga ttttggttgt attattgtac acgttcgcga cggcgaacgc tgatactctt
+     1321 tgcattggtt atcatgcgaa caattcaaca gacactgtag acacagtact agaaaagaat
+     1381 gtaacagtaa cacactctgt taaycttcta gaagacaagc ataacgggaa actatgcaaa
+     1441 ctaagagggg tagccccatt gcatttgggt aaatgtaaca ttgctggctg gatcctggga
+     1501 aatccagagt gtgaatcact ctccacagca agctcatggt cctacattgt ggaaacacct
+     1561 agttcagaca atggaacgtg ttacccagga gatttcatcg attatgagga gctaagagag
+     1621 caattgagct cagtgtcatc atttgaaagg tttgagatat tccccaagac aagttcatgg
+     1681 cccaatcatg actcgaacaa aggtgtaacg gcagcatgtc ctcatgctgg agcaaaaagc
+     1741 ttctacaaaa atttaatatg gctagttaaa aaagaaaatt catacccaaa gctcagcaaa
+     1801 tcctacatta atgataaagg gaaagaagtc ctcgtgctat ggggcattca ccatccatct
+     1861 actagtgctg accaacaaag tctctatcag aatgcagata catatgtttt tgtggggtca
+     1921 tcaagataca gcaagaagtt caagccggaa atagcaataa gacccaaagt gagggatcaa
+     1981 gaagggagaa tgaactatta ctggacacta gtagagccgg gagacaaaat aacattcgaa
+     2041 gcaactggaa atctagtggt accgagatat gcattcgcaa tggaaagaaa tgctggatct
+     2101 ggtattatca tttcagatac acc
 //
