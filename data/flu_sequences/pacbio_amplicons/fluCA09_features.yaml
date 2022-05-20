@@ -1,19 +1,19 @@
 # default for genes with two variant tags and no parsed_ORF_2
 default_2tags_no_parsed_ORF_2: &default_2tags_no_parsed_ORF_2
-  query_clip5: 4
-  query_clip3: 4
+  query_clip5: 5
+  query_clip3: 5
   primer_site_1:
     filter:
       mutation_nt_count: 5
       mutation_op_count: 1
-      clip5: 5
+      clip5: 22
       clip3: 0
   primer_site_2:
     filter:
       mutation_nt_count: 5
       mutation_op_count: 1
       clip5: 0
-      clip3: 5
+      clip3: 22
   polyA:
     filter:
       mutation_nt_count: 250
