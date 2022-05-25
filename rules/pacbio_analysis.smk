@@ -4,7 +4,8 @@ rule pacbio_consensus_gene:
     """Call consensus mutations for each gene in PacBio data."""
     input:
         consensus_UMI_csv=join(config['pacbio_dir'],
-                               "{expt}_consensus_UMI.csv.gz")
+                               "{expt}_consensus_UMI.csv.gz"),
+        viral_genbank=config["viral_genbank"],
     output:
         consensus_gene_csv=join(config['pacbio_dir'],
                                "{expt}_consensus_gene.csv.gz")
