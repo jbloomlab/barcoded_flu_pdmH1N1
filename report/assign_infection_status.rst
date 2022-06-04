@@ -1,1 +1,0 @@
-Assign uninfected, infected, or ambiguous status to each cell.
