@@ -53,7 +53,7 @@ You probably want to submit the script itself via [sbatch](sbatch), using:
 
     sbatch run_Hutch_cluster.sbatch
 
-When the Snakeamke pipeline has run completely, the processed output data is exported to a CSV file at `results/viral_fastq10x/{expt}_integrate_data.csv`. This CSV file is used to perform the final analysis and generate figures in the `final_analysis.py.ipynb` notebook.
+When the Snakeamke pipeline has run completely, the processed output data is exported to a CSV file at `results/viral_fastq10x/{expt}_integrate_data.csv`. This CSV file is used to perform the final analysis and generate figures in the `final_analysis.py.ipynb` notebook. This notebook is run manually.
 
 ## Linting the code
 Before you commit a new branch, you should run the linting in [lint.bash](lint.bash) with the command:
