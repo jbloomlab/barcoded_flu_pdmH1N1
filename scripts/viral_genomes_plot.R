@@ -61,23 +61,23 @@ ExtractSegmentMutations <- function(x, segment, segment.df, cell) {
     if (grepl(pattern = "^del", x = mutation)) {
       del.loc <- as.numeric(strsplit(x = gsub(pattern = "del", x = mutation, replacement = ""), split = "to")[[1]])
       del.loc <- del.loc + segment.df[segment.df$segment == segment, "start"]
-      deletion.df[[length(deletion.df)+1]] <- data.frame(start = del.loc[1], end = del.loc[2], type = "deletion")
+      deletion.df[[length(deletion.df)+1]] <- data.frame(start = del.loc[1], end = del.loc[2], type = "Deletion")
     } else if (grepl(pattern = "^ins", x = mutation)) {
       ins.loc <- gsub(pattern = "ins", x = mutation, replacement = "")
       ins.length <- nchar(gsub(pattern = "([1-9]+)", x = ins.loc, replacement = ""))
       ins.loc <- as.numeric(gsub(pattern = "([A-Z,a-z]+)", x = ins.loc, replacement = "")) + segment.df[segment.df$segment == segment, "start"]
-      insertion.df[[length(insertion.df) + 1]] <- data.frame(start = ins.loc, end = ins.loc + ins.length, type = "insertion")
+      insertion.df[[length(insertion.df) + 1]] <- data.frame(start = ins.loc, end = ins.loc + ins.length, type = "Insertion")
     } else {
       all_mutations <- strsplit(x = mutation, split = "_")[[1]]
       locations <- as.numeric(sapply(X = all_mutations, FUN = gsub, pattern = "([A-Z,a-z]+)", replacement = ""))
       locations <- locations[!is.na(locations)]
       locations <- data.frame(start = locations + segment.df[segment.df$segment == segment, "start"],
-                              type = "nonsynonymous")
+                              type = "Non-synonymous")
       if (any(all_mutations == "synonymous")) {
-        locations[which(all_mutations == "synonymous") - 1, "type"] <- "synonymous"
+        locations[which(all_mutations == "synonymous") - 1, "type"] <- "Synonymous"
       }
       if (any(all_mutations == "noncoding")) {
-        locations[which(all_mutations == "noncoding") - 1, "type"] <- "noncoding"
+        locations[which(all_mutations == "noncoding") - 1, "type"] <- "Non-coding"
       }
       locations$end <- locations$start
       mutation.df[[length(x = mutation.df) + 1]] <- locations
@@ -168,9 +168,9 @@ PacBioPlot <- function(
   mutations.df$cell_ordered <- sapply(X = mutations.df$cell, FUN = function(x) cell.remap[as.character(x = x)])
   # dummy data.frame for plotting missing segments
   missing.segment.df <- data.frame(y = 1:ncells)
-  indel.df <- mutations.df[mutations.df$type %in% c("insertion", "deletion"), ]
+  indel.df <- mutations.df[mutations.df$type %in% c("Insertion", "Deletion"), ]
   indel.df$type <- droplevels(indel.df$type)
-  mutations.df <- mutations.df[!mutations.df$type %in% c("insertion", "deletion"), ]
+  mutations.df <- mutations.df[!mutations.df$type %in% c("Insertion", "Deletion"), ]
   mutations.df$type <- droplevels(x = mutations.df$type)
   box.labels <- unique(x = segment.df.cells[, c(box.col.names, "cell_ordered")])
   box.labels[, 1:length(x = box.col.names)] <- apply(box.labels[, 1:length(x = box.col.names), drop = FALSE], MARGIN = 2, FUN = round, digits = 1)
@@ -196,7 +196,7 @@ PacBioPlot <- function(
                       fill = segment.color,
                       size = 0.4) +
       geom_segment(data = indel.df.sub, aes_string(x = "start", xend = "end", y = "cell_ordered", yend = "cell_ordered", color = "type"), size = 2.5) +
-      scale_color_manual(values = c('#CC79A7', '#F0E442'), name = "Indel Class", drop = FALSE, guide = guide_legend(order = 2)) +
+      scale_color_manual(values = c('#CC79A7', '#F0E442'), name = "Indel class", drop = FALSE, guide = guide_legend(order = 2)) +
       new_scale_color() +
       geom_point(data = mutations.df.sub, aes_string(x = "start", y = "cell_ordered", fill = "type"), color = "black", size = 3.5, pch = 21) +
       scale_fill_manual(values = c("#999999", '#E69F00', "#009E73"), name = "Mutation class", drop = FALSE, guide = guide_legend(order = 1)) +
@@ -219,13 +219,13 @@ PacBioPlot <- function(
     if (length(x = box) > 1) {
       plot <- plot +
         scale_x_continuous("", breaks = c(x.pos, segment.df$start + segment.df$len/2), labels = c(rep("", times = length(x = box)), gsub(pattern = "flu", replacement = "", x = segment.df$segment)), limits = c(min(x.pos)-200, max(segment.df$end)), expand = c(0.01, 0.01)) +
-        scale_y_continuous("", breaks = 1:ncells.plot, labels = paste0('cell ', rev(x))) +
+        scale_y_continuous("", breaks = 1:ncells.plot, labels = paste0('Cell ', rev(x))) +
         coord_cartesian(clip = "off", ylim = c(0.3, ncells.plot + 0.5), expand = FALSE) +
         PacBioTheme()
     } else {
       plot <- plot +
         scale_x_continuous("", breaks = c(x.pos, segment.df$start + segment.df$len/2), labels = c(box.name, gsub(pattern = "flu", replacement = "", x = segment.df$segment)), limits = c(min(x.pos)-200, max(segment.df$end)), expand = c(0.01, 0.01)) +
-        scale_y_continuous("", breaks = 1:ncells.plot, labels = paste0('cell ', rev(x)), expand = c(0.01, 0.01), limits = c(0.5, ncells.plot + 0.5)) +
+        scale_y_continuous("", breaks = 1:ncells.plot, labels = paste0('Cell ', rev(x)), expand = c(0.01, 0.01), limits = c(0.5, ncells.plot + 0.5)) +
         PacBioTheme() + theme(plot.margin = margin(0, 20, 0, 0))
     }
   })
