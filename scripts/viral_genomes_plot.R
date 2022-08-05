@@ -199,7 +199,7 @@ PacBioPlot <- function(
       scale_color_manual(values = c('#CC79A7', '#F0E442'), name = "Indel Class", drop = FALSE, guide = guide_legend(order = 2)) +
       new_scale_color() +
       geom_point(data = mutations.df.sub, aes_string(x = "start", y = "cell_ordered", fill = "type"), color = "black", size = 3.5, pch = 21) +
-      scale_fill_manual(values = c("#999999", '#E69F00', "#009E73"), name = "Mutation Class", drop = FALSE, guide = guide_legend(order = 1)) +
+      scale_fill_manual(values = c("#999999", '#E69F00', "#009E73"), name = "Mutation class", drop = FALSE, guide = guide_legend(order = 1)) +
       new_scale_fill()
     x.pos <- NULL
     if (!is.null(x = box)) {
@@ -252,7 +252,7 @@ plot <- PacBioPlot(
   dat,
   segment.df,
   box = c("percent_viral_UMIs", "percent_supernatant"),
-  box.name = c("% mRNA from flu", "% supernatant"),
+  box.name = c("% mRNA from flu", "% Supernatant"),
   box.color.high = c("#009E73", "#E69F00"),
   order.segments.by = "percent_viral_UMIs",
   order.name = "% supernatant",
