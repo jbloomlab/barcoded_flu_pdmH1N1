@@ -19,6 +19,3 @@ dependencies:
   - r-gggenes=0.4.1
   - r-ggnewscale=0.4.7
   - r-svglite=2.1.0
-  - pip=21.2.4
-  - pip:
-    - dms_variants==1.4.0
