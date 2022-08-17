@@ -1,0 +1,21 @@
+name: barcoded_flu_pdmH1N1_final_analysis
+channels:
+  - conda-forge
+  - bioconda
+  - r
+dependencies:
+  - python=3.8
+  - notebook=6.4.12
+  - jupyterlab=3.4.4
+  - nb_conda_kernels=2.3.1
+  - matplotlib=3.5.2
+  - numpy=1.22.3
+  - pandas=1.4.3
+  - plotnine=0.9.0
+  - svgutils=0.3.1
+  - r-base=4.1.0
+  - r-ggplot2=3.3.6
+  - r-patchwork=1.1.1
+  - r-gggenes=0.4.1
+  - r-ggnewscale=0.4.7
+  - r-svglite=2.1.0

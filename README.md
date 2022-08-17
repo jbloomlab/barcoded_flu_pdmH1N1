@@ -9,7 +9,7 @@ This repository is organized as followed (based loosely on [this example snakema
 
  - [Snakefile] is the [snakemake] file that runs the analysis.
 
- - [environment.yml](environment.yml) and [environment_unpinned.yml](environment_unpinned.yml) give the version pinned and unpinned [conda] environment for the analysis.
+ - [environment.yml](environment.yml) and [environment_unpinned.yml](environment_unpinned.yml) give the version pinned and unpinned [conda] environment used to run the Snakemake pipeline.
 
  - [config.yaml](config.yaml) contains the configuration for the analysis.
 
@@ -37,7 +37,7 @@ This repository is organized as followed (based loosely on [this example snakema
 ## Running the analysis
 
 ### Installing software
-The [conda] environment for this repo is specified in [environment.yml](environment.yml); note also that an **unpinned** version of this environment is specified in [environment_unpinned.yml](environment_unpinned.yml).
+The [conda] environment for the pipeline in this repo is specified in [environment.yml](environment.yml); note also that an **unpinned** version of this environment is specified in [environment_unpinned.yml](environment_unpinned.yml).
 If you are on the Hutch cluster and set up to use the *BloomLab* [conda] installation, then this environment is already built and you can activate it simply with:
 
     conda activate barcoded_flu_pdmH1N1
@@ -46,14 +46,20 @@ Otherwise you need to first build the [conda] environment from [environment.yml]
 
 In addition to building and activating the [conda] environment, you also need to install [cellranger] and [bcl2fastq] into the current path; the current analysis uses [cellranger] version 4.0.0 and [bcl2fastq] version 2.20.
 
-### Run the analysis
+### Run the pipeline
 Once the *barcoded_flu_pdmH1N1* [conda] environment and other software have been activated, simply enter the commands to run [Snakefile] and then generate a [snakemake report], at `./results/report.html`.
 These commands with the configuration for the Fred Hutch cluster are in the shell script. [run_Hutch_cluster.bash](run_Hutch_cluster.bash).
 You probably want to submit the script itself via [sbatch](sbatch), using:
 
     sbatch run_Hutch_cluster.sbatch
 
-When the Snakeamke pipeline has run completely, the processed output data is exported to a CSV file at `results/viral_fastq10x/{expt}_integrate_data.csv`. This CSV file is used to perform the final analysis and generate figures in the `final_analysis.py.ipynb` notebook. This notebook is run manually.
+### Run the final analysis and generate plots
+
+When the Snakeamke pipeline has run completely, the processed output data is exported to a CSV file at `results/viral_fastq10x/{expt}_integrate_data.csv`. This CSV file is used to perform the final analysis and generate figures in the `final_analysis.py.ipynb` notebook. This notebook is run manually. This notebook must be run with the `barcoded_flu_pdmH1N1_final_anlaysis` [conda] environment activated.
+
+To activate this environment, first build it from [envs/barcoded_flu_pdmH1N1_final_analysis.yml](envs/barcoded_flu_pdmH1N1_final_analysis.yml) and hten activate it with:
+
+    conda activate barcoded_flu_pdmH1N1_final_analysis
 
 ## Linting the code
 Before you commit a new branch, you should run the linting in [lint.bash](lint.bash) with the command:
