@@ -6,7 +6,7 @@ layout: default
 ---
 ## An interactive plot
 ### Viral transcription and progeny production
-This page provides an interactive version of figure 5A from XXX. Each point on this plot represents a single-influenza infected cell. You can mouse over each point to see information about the outcomes of viral infection. At the bottom of the plot, there are drop down menus to select viral genotypes and missing viral genes.
+This page provides an interactive version of figure 5A from XXX. Each point on this plot represents a single-influenza infected cell. You can mouse over each point to see information about the outcomes of viral infection in that cell. At the bottom of the plot, there are drop down menus to select cells with specific viral genotypes and missing viral genes.
 
 {% include transcription_progeny_interactive.html max-width="100px" %}
 <br>
