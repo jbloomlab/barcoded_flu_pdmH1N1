@@ -37,7 +37,7 @@ This repository is organized as followed (based loosely on [this example snakema
  
  - [./results/figures/](results/figures) hosts the figures generated for the manuscript.
  
- - [./results/viral_fastq10x/] hosts two CSV files containing key processed data:  
+ - [./results/viral_fastq10x/](results/viral_fastq10x) hosts two CSV files containing key processed data:  
  -- [integrate_data.csv](results/viral_fastq10x/scProgenyProduction_trial3_integrate_data.csv) contains viral transcription and genotype information for all cells in the dataset.  
  -- [complete_measurement_cells_data.csv](results/viral_fastq10x/scProgenyProduction_trial3_complete_measurements_cells_data.csv) contains progeny production information ,viral transcription information, and genotype information for the set of cells with complete sequencing and progeny production measurements.
 
