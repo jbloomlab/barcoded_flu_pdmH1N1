@@ -2,7 +2,9 @@
 Single-cell sequencing of barcoded pdmH1N1 influenza virus; David Bacsik and Jesse Bloom.
 
 ## Summary of workflow and results
-For a summary, see the `report.html` file that is placed in the `./results/` subdirectory.
+The workflow for this project has two main steps. First, the Snakemake pipeline is run which takes raw sequencing data as input and generates a CSV containing information about viral transcription and progeny production in single influenza-infected cells. Then, the `final_analysis.py.ipynb` is run manually to visualize the results.
+
+For a summary of the Snakemake pipeline, see the `report.html` file that is placed in the `./results/` subdirectory.
 
 ## Organization of repository
 This repository is organized as followed (based loosely on [this example snakemake repository](https://github.com/koesterlab/single-cell-rna-seq)):
@@ -32,6 +34,12 @@ This repository is organized as followed (based loosely on [this example snakema
    * [./data/flu_sequences/pacbio_amplions](data/flu_sequences/pacbio_amplions) gives the famplicon sequences generated for pacbio sequencing. See the [README in that subdirectory](data/flu_sequences/pacbio_amplicons/README.md) for details.
 
  - [./results/](results) is a created directory with all results, most of which are not tracked in this repository.
+ 
+ - [./results/figures/](results/figures) hosts the figures generated for the manuscript.
+ 
+ - [./results/viral_fastq10x/] hosts two CSV files containing key processed data:  
+ -- [integrate_data.csv](results/viral_fastq10x/scProgenyProduction_trial3_integrate_data.csv) contains viral transcription and genotype information for all cells in the dataset.  
+ -- [complete_measurement_cells_data.csv](results/viral_fastq10x/scProgenyProduction_trial3_complete_measurements_cells_data.csv) contains progeny production information ,viral transcription information, and genotype information for the set of cells with complete sequencing and progeny production measurements.
 
 
 ## Running the analysis
@@ -57,12 +65,12 @@ You probably want to submit the script itself via [sbatch](sbatch), using:
 
 When the Snakeamke pipeline has run completely, the processed output data is exported to a CSV file at `results/viral_fastq10x/{expt}_integrate_data.csv`. This CSV file is used to perform the final analysis and generate figures in the `final_analysis.py.ipynb` notebook. This notebook is run manually. This notebook must be run with the `barcoded_flu_pdmH1N1_final_anlaysis` [conda] environment activated.
 
-To activate this environment, first build it from [envs/barcoded_flu_pdmH1N1_final_analysis.yml](envs/barcoded_flu_pdmH1N1_final_analysis.yml) and hten activate it with:
+To activate this environment, first build it from [envs/barcoded_flu_pdmH1N1_final_analysis.yml](envs/barcoded_flu_pdmH1N1_final_analysis.yml) and then activate it with:
 
     conda activate barcoded_flu_pdmH1N1_final_analysis
 
 ## Linting the code
-Before you commit a new branch, you should run the linting in [lint.bash](lint.bash) with the command:
+Ideally, before you a new branch is committed, you should run the linting in [lint.bash](lint.bash) with the command:
 
     bash ./lint.bash
 
