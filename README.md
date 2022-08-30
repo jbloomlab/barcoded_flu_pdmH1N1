@@ -35,11 +35,11 @@ This repository is organized as followed (based loosely on [this example snakema
 
  - [./results/](results) is a created directory with all results, most of which are not tracked in this repository.
  
- - [./results/figures/](results/figures) hosts the figures generated for the manuscript.
+ - [./results/figures/](results/figures) contains the figures generated for the manuscript.
  
- - [./results/viral_fastq10x/](results/viral_fastq10x) hosts two CSV files containing key processed data:  
- -- [integrate_data.csv](results/viral_fastq10x/scProgenyProduction_trial3_integrate_data.csv) contains viral transcription and genotype information for all cells in the dataset.  
- -- [complete_measurement_cells_data.csv](results/viral_fastq10x/scProgenyProduction_trial3_complete_measurements_cells_data.csv) contains progeny production information ,viral transcription information, and genotype information for the set of cells with complete sequencing and progeny production measurements.
+ - [./results/viral_fastq10x/](results/viral_fastq10x) contains two CSV files containing key processed data:  
+   * [integrate_data.csv](results/viral_fastq10x/scProgenyProduction_trial3_integrate_data.csv) contains viral transcription and genotype information for all cells in the dataset.  
+   * [complete_measurement_cells_data.csv](results/viral_fastq10x/scProgenyProduction_trial3_complete_measurements_cells_data.csv) contains progeny production information ,viral transcription information, and genotype information for the set of cells with complete sequencing and progeny production measurements.
 
 
 ## Running the analysis
@@ -54,7 +54,7 @@ Otherwise you need to first build the [conda] environment from [environment.yml]
 
 In addition to building and activating the [conda] environment, you also need to install [cellranger] and [bcl2fastq] into the current path; the current analysis uses [cellranger] version 4.0.0 and [bcl2fastq] version 2.20.
 
-### Run the pipeline
+### Run the Snakemake pipeline
 Once the *barcoded_flu_pdmH1N1* [conda] environment and other software have been activated, simply enter the commands to run [Snakefile] and then generate a [snakemake report], at `./results/report.html`.
 These commands with the configuration for the Fred Hutch cluster are in the shell script. [run_Hutch_cluster.bash](run_Hutch_cluster.bash).
 You probably want to submit the script itself via [sbatch](sbatch), using:
@@ -63,13 +63,16 @@ You probably want to submit the script itself via [sbatch](sbatch), using:
 
 ### Run the final analysis and generate plots
 
-When the Snakeamke pipeline has run completely, the processed output data is exported to a CSV file at `results/viral_fastq10x/{expt}_integrate_data.csv`. This CSV file is used to perform the final analysis and generate figures in the `final_analysis.py.ipynb` notebook. This notebook is run manually. This notebook must be run with the `barcoded_flu_pdmH1N1_final_anlaysis` [conda] environment activated.
+When the Snakeamke pipeline has run completely, the processed output data is exported to a CSV file at `results/viral_fastq10x/{expt}_integrate_data.csv`. A stable version of this file is available at https://github.com/jbloomlab/barcoded_flu_pdmH1N1/blob/main/results/viral_fastq10x/scProgenyProduction_trial3_integrate_data.csv and can be used to re-analyze the data without running the Snakemake pipeline.
+
+In this repo, the CSV file is used to perform the final analysis and generate figures in the `final_analysis.py.ipynb` notebook. This notebook is run manually. This notebook must be run with the *barcoded_flu_pdmH1N1_final_anlaysis* [conda] environment activated.
 
 To activate this environment, first build it from [envs/barcoded_flu_pdmH1N1_final_analysis.yml](envs/barcoded_flu_pdmH1N1_final_analysis.yml) and then activate it with:
 
     conda activate barcoded_flu_pdmH1N1_final_analysis
 
-## Linting the code
+## Development
+### Linting the code
 Ideally, before you a new branch is committed, you should run the linting in [lint.bash](lint.bash) with the command:
 
     bash ./lint.bash
@@ -92,3 +95,7 @@ For the Jupyter notebook linting, it may be easiest to lint while you are still 
 [conda]: https://docs.conda.io/projects/conda/en/latest/index.html
 [cellranger]: https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger
 [bcl2fastq]: https://support.illumina.com/sequencing/sequencing_software/bcl2fastq-conversion-software.html
+
+```python
+
+```
