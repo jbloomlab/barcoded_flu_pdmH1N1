@@ -1,34 +1,5 @@
 """Rules related to viral progeny barcodes."""
 
-rule transcription_progeny_correlation:
-    """Plot the correlation between viral transcription and progeny production."""
-    input:
-        cell_annotations=join(config['viral_tags_bcs_in_cells_dir'],
-                              "{expt}_cell_barcodes_with_viral_tags.csv.gz"),
-        viral_barcodes_valid_csv=join(config['viral_fastq10x_dir'],
-                                          ("{expt}_viral"
-                                           "_bc_by_cell_valid.csv.gz")),
-        filtered_progeny_viral_bc_csv=join(config['viral_progeny_dir'],
-                                          "{expt}_"
-                                          "filtered_progeny_viral_bc.csv.gz"),
-    output:
-        transcription_progeny_csv=join(config['viral_progeny_dir'],
-                                       "{expt}_transcription_progeny.csv.gz"),
-        plot=report(join(config['viral_progeny_dir'],
-                         "{expt}_transcription_progeny_correlation.pdf"),
-                         caption='../report/transcription_progeny_correlation.rst',
-                         category="{expt}")
-    params:
-        viral_genes=viral_genes,
-        barcoded_viral_genes=barcoded_viral_genes,
-        progeny_detection_limit=config['progeny_detection_limit']
-    log:
-        notebook=join(config['log_dir'],
-                      "transcription_progeny_correlation_{expt}.ipynb")
-    conda: '../environment.yml'
-    notebook:
-        '../notebooks/transcription_progeny_correlation.py.ipynb'
-
 rule filter_progeny:
     """Filter and average viral barcode replicates in progeny."""
     input:
