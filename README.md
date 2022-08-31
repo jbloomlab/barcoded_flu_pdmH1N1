@@ -1,6 +1,8 @@
 # Barcoded pdmH1N1 influenza virus single-cell sequencing
 Single-cell sequencing of barcoded pdmH1N1 influenza virus; David Bacsik and Jesse Bloom.
 
+Pre-print of results is titled *Influenza virus transcription and progeny production are poorly correlated in single cells* and is available at https://www.biorxiv.org/content/10.1101/2022.08.30.505828v1.
+
 ## Summary of workflow and results
 The workflow for this project has two main steps. First, the Snakemake pipeline is run which takes raw sequencing data as input and generates a CSV containing information about viral transcription and progeny production in single influenza-infected cells. Then, the `final_analysis.py.ipynb` is run manually to visualize the results.
 
