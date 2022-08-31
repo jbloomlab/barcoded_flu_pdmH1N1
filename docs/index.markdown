@@ -5,7 +5,7 @@
 layout: default
 ---
 ## Interactive plot of viral transcription and progeny production
-This page provides an interactive version of figure 5A from XXX. Each point on this plot represents a single-influenza infected cell. You can mouse over each point to see information about the outcomes of viral infection in that cell. At the bottom of the plot, there are drop down menus to select cells with specific viral genotypes and missing viral genes.
+This page provides an interactive version of figure 5A from [*Influenza virus transcription and progeny production are poorly correlated in single cells*](https://www.biorxiv.org/content/10.1101/2022.08.30.505828v1). Each point on this plot represents a single-influenza infected cell. You can mouse over each point to see information about the outcomes of viral infection in that cell. At the bottom of the plot, there are drop down menus to select cells with specific viral genotypes and missing viral genes.
 
 {% include transcription_progeny_interactive.html max-width="100px" %}
 <br>
@@ -28,3 +28,5 @@ This plot shows the total viral transcription and progeny produced by single inf
 
 ## Source data and code
 The input data and code used to generate this plot are in the [final_analysis.py.ipynb](https://github.com/jbloomlab/barcoded_flu_pdmH1N1/blob/main/final_analysis.py.ipynb) notebook.
+
+This webpage was created by David Bacsik and Jesse Bloom. Thanks to Will Hannon for assistance.
