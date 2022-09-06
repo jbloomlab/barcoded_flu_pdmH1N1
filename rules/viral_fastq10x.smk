@@ -121,7 +121,7 @@ rule viral_barcodes_by_cell_valid:
                                            "_cell_valid.csv.gz")),
         plot=report(join(config['viral_fastq10x_dir'],
                          "{expt}_viral_barcodes_by_cell_valid.pdf"),
-                    caption='../report/viral_bc_by_cell_valid.rst',
+                    caption='../report/viral_barcodes_by_cell_valid.rst',
                     category="{expt}")
     params:
         barcoded_viral_genes=barcoded_viral_genes,
