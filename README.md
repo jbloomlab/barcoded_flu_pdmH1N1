@@ -3,7 +3,10 @@ Single-cell sequencing of barcoded pdmH1N1 influenza virus; David Bacsik and Jes
 
 Pre-print of results is titled *Influenza virus transcription and progeny production are poorly correlated in single cells* and is available at https://www.biorxiv.org/content/10.1101/2022.08.30.505828v1.
 
-## Data availability
+#### Repository version
+A static version of the repository used to generate the figures in this pre-print is tagged at: https://github.com/jbloomlab/barcoded_flu_pdmH1N1/releases/tag/bioRxiv_v1.
+
+#### Data availability
 All data used in this study is available in GEO under accession number [GSE214938](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE214938).
 
 ## Summary of workflow and results
