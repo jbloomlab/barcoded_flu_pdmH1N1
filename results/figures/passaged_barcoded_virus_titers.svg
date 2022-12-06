@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='288.00pt' height='216.00pt' viewBox='0 0 288.00 216.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHwyODguMDB8MC4wMHwyMTYuMDA='>
+    <rect x='0.00' y='0.00' width='288.00' height='216.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHwyODguMDB8MC4wMHwyMTYuMDA=)'>
+<rect x='0.00' y='0.00' width='288.00' height='216.00' style='stroke-width: 1.07; stroke: #FFFFFF; fill: #FFFFFF;' />
+</g>
+<defs>
+  <clipPath id='cpNjcuNDd8MjA3LjcwfDUxLjg1fDE3NC43MA=='>
+    <rect x='67.47' y='51.85' width='140.22' height='122.85' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpNjcuNDd8MjA3LjcwfDUxLjg1fDE3NC43MA==)'>
+<rect x='67.47' y='51.85' width='140.22' height='122.85' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
+<circle cx='93.77' cy='81.33' r='3.56' style='stroke-width: 0.71; stroke: #56B4E9; fill: #56B4E9;' />
+<circle cx='93.77' cy='60.40' r='3.56' style='stroke-width: 0.71; stroke: #E69F00; fill: #E69F00;' />
+<circle cx='137.59' cy='81.33' r='3.56' style='stroke-width: 0.71; stroke: #56B4E9; fill: #56B4E9;' />
+<circle cx='137.59' cy='60.40' r='3.56' style='stroke-width: 0.71; stroke: #E69F00; fill: #E69F00;' />
+<circle cx='181.41' cy='69.04' r='3.56' style='stroke-width: 0.71; stroke: #56B4E9; fill: #56B4E9;' />
+<circle cx='181.41' cy='77.18' r='3.56' style='stroke-width: 0.71; stroke: #E69F00; fill: #E69F00;' />
+</g>
+<g clip-path='url(#cpMC4wMHwyODguMDB8MC4wMHwyMTYuMDA=)'>
+<polyline points='67.47,174.70 67.47,51.85 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<text x='62.54' y='153.07' text-anchor='end' style='font-size: 14.00px; font-family: "Arial";' textLength='39.31px' lengthAdjust='spacingAndGlyphs'>1e+01</text>
+<text x='62.54' y='110.93' text-anchor='end' style='font-size: 14.00px; font-family: "Arial";' textLength='39.31px' lengthAdjust='spacingAndGlyphs'>1e+03</text>
+<text x='62.54' y='68.80' text-anchor='end' style='font-size: 14.00px; font-family: "Arial";' textLength='39.31px' lengthAdjust='spacingAndGlyphs'>1e+05</text>
+<polyline points='64.73,148.05 67.47,148.05 ' style='stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;' />
+<polyline points='64.73,105.91 67.47,105.91 ' style='stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;' />
+<polyline points='64.73,63.77 67.47,63.77 ' style='stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;' />
+<polyline points='67.47,174.70 207.70,174.70 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<polyline points='93.77,177.44 93.77,174.70 ' style='stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;' />
+<polyline points='137.59,177.44 137.59,174.70 ' style='stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;' />
+<polyline points='181.41,177.44 181.41,174.70 ' style='stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;' />
+<text x='93.77' y='189.67' text-anchor='middle' style='font-size: 14.00px; font-family: "Arial";' textLength='7.78px' lengthAdjust='spacingAndGlyphs'>1</text>
+<text x='137.59' y='189.67' text-anchor='middle' style='font-size: 14.00px; font-family: "Arial";' textLength='7.78px' lengthAdjust='spacingAndGlyphs'>2</text>
+<text x='181.41' y='189.67' text-anchor='middle' style='font-size: 14.00px; font-family: "Arial";' textLength='7.78px' lengthAdjust='spacingAndGlyphs'>3</text>
+<text x='137.59' y='206.99' text-anchor='middle' style='font-size: 16.00px; font-family: "Arial";' textLength='60.49px' lengthAdjust='spacingAndGlyphs'>passage</text>
+<text transform='translate(16.96,113.27) rotate(-90)' text-anchor='middle' style='font-size: 16.00px; font-family: "Arial";' textLength='99.91px' lengthAdjust='spacingAndGlyphs'>TCID50 per µl</text>
+<rect x='218.66' y='80.46' width='63.86' height='65.63' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
+<text x='224.14' y='97.53' style='font-size: 14.00px; font-family: "Arial";' textLength='52.91px' lengthAdjust='spacingAndGlyphs'>replicate</text>
+<circle cx='232.78' cy='114.69' r='3.56' style='stroke-width: 0.71; stroke: #56B4E9; fill: #56B4E9;' />
+<circle cx='232.78' cy='131.97' r='3.56' style='stroke-width: 0.71; stroke: #E69F00; fill: #E69F00;' />
+<text x='248.39' y='119.00' style='font-size: 12.00px; font-family: "Arial";' textLength='8.01px' lengthAdjust='spacingAndGlyphs'>A</text>
+<text x='248.39' y='136.28' style='font-size: 12.00px; font-family: "Arial";' textLength='8.01px' lengthAdjust='spacingAndGlyphs'>B</text>
+<text x='67.47' y='14.94' style='font-size: 13.20px; font-family: "Arial";' textLength='120.25px' lengthAdjust='spacingAndGlyphs'>Titer after passaging</text>
+<text x='67.47' y='29.20' style='font-size: 13.20px; font-family: "Arial";' textLength='156.18px' lengthAdjust='spacingAndGlyphs'>barcoded HA and NA virus</text>
+<text x='67.47' y='43.45' style='font-size: 13.20px; font-family: "Arial";' textLength='0.00px' lengthAdjust='spacingAndGlyphs'></text>
+</g>
+</svg>
