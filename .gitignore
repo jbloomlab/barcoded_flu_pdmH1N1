@@ -14,8 +14,8 @@ results/*
 !results/viral_fastq10x
 results/viral_fastq10x/*
 !results/viral_fastq10x/all_samples.csv
-!results/viral_fastq10x/scProgenyProduction_trial3_integrate_data.csv
-!results/viral_fastq10x/scProgenyProduction_trial3_complete_measurements_cells_data.csv
+!results/viral_fastq10x/*_integrate_data.csv
+!results/viral_fastq10x/*_complete_measurements_cells_data.csv
 !results/figures
 
 !docs/_includes/
