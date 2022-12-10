@@ -104,7 +104,7 @@ class Experiments:
             
             if 'infection_threshold' in expt_d:
                 self._infection_threshold[expt] = expt_d['infection_threshold']
-                if not isinstance(self._infection_threshold[expt], int):
+                if not isinstance(self._infection_threshold[expt], float):
                     raise ValueError(f"`infection_threshold` not int for {expt}")
             else:
                 raise KeyError(f"`infection_threshold` missing for {expt}")
@@ -223,7 +223,7 @@ class Experiments:
         return self._expect_ncells[expt]
     
     def infection_threshold(self, expt):
-        """int: Fraction of UMIs from virus to be considered infected for experiment `expt`."""
+        """float: Fraction of UMIs from virus to be considered infected for experiment `expt`."""
         return self._infection_threshold[expt]
 
     def expt_viral_barcode_fastqs(self, expt):
