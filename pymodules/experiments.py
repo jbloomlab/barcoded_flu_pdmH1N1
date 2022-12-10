@@ -60,6 +60,7 @@ class Experiments:
         valid_keys = {'description',
                       'lab_notes',
                       'expect_ncells',
+                      'infection_threshold',
                       'transcriptomics',
                       'viral_barcodes',
                       'pacbio_viral_sequencing'}
