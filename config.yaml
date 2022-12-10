@@ -49,9 +49,6 @@ umi_len_10x: 12  # length of 10X UMI: **this is for the v3 kit**
 # Number of Median Absolute Deviations to use for filtering total UMIs per cell
 total_UMI_deviations: 2.5
 
-# Fraction of viral UMIs required to call cell as infected
-infection_threshold: 0.01
-
 # False discovery rate for assigning viral tags based on expected
 # viral tag counts in uninfected cells.
 viral_tag_fdr: 0.0001
@@ -86,6 +83,7 @@ experiments:
                  wildtype or dblySn viral tag variants.
     lab_notes: https://benchling.com/s/etr-20lOO7l1FdEJJIpxV6vD
     expect_ncells: 10000
+    infection_threshold: 0.025   # Fraction of viral UMIs required to call cell as infected
     transcriptomics:
       2020-09-25:
         index: SI-GA-B8
@@ -148,6 +146,7 @@ experiments:
                  viral tag variants.
     lab_notes: https://benchling.com/s/etr-N4laiIAy3AUePJdig7wR
     expect_ncells: 10000
+    infection_threshold: 0.01   # Fraction of viral UMIs required to call cell as infected
     transcriptomics:
       2021-03-12:
         index: SI-TT-A3
