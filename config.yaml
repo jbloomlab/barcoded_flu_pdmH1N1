@@ -83,7 +83,7 @@ experiments:
                  wildtype or dblySn viral tag variants.
     lab_notes: https://benchling.com/s/etr-20lOO7l1FdEJJIpxV6vD
     expect_ncells: 10000
-    infection_threshold: 0.02   # Fraction of viral UMIs required to call cell as infected
+    infection_threshold: 0.025   # Fraction of viral UMIs required to call cell as infected
     transcriptomics:
       2020-09-25:
         index: SI-GA-B8
