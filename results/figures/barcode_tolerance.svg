@@ -2,62 +2,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="20.0cm" viewBox="0 0 20.0cm 21.0cm" height="21.0cm">
   <g>
     <g>
-      <g class="svglite" transform="translate(0, 0) scale(1) "><defs>
-  <style type="text/css">
-    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
-      fill: none;
-      stroke: #000000;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke-miterlimit: 10.00;
-    }
-    .svglite text {
-      white-space: pre;
-    }
-  </style>
-</defs>
-<rect width="100%" height="100%" style="stroke: none; fill: #FFFFFF;"/>
-<defs>
-  <clipPath id="cpMC4wMHwzODEuNjB8MC4wMHwxODAuMDA=">
-    <rect x="0.00" y="0.00" width="381.60" height="180.00"/>
-  </clipPath>
-</defs>
-<g clip-path="url(#cpMC4wMHwzODEuNjB8MC4wMHwxODAuMDA=)">
-<rect x="-0.000000000000032" y="0.00" width="381.60" height="180.00" style="stroke-width: 1.07; stroke: #FFFFFF; fill: #FFFFFF;"/>
-</g>
-<defs>
-  <clipPath id="cpMTYxLjk5fDM3Ni4xMnwyMy4zNHwxMzguNzA=">
-    <rect x="161.99" y="23.34" width="214.13" height="115.36"/>
-  </clipPath>
-</defs>
-<g clip-path="url(#cpMTYxLjk5fDM3Ni4xMnwyMy4zNHwxMzguNzA=)">
-<rect x="161.99" y="23.34" width="214.13" height="115.36" style="stroke-width: 1.07; stroke: none; fill: #FFFFFF;"/>
-<circle cx="314.47" cy="39.82" r="3.56" style="stroke-width: 0.71; stroke: #5E5E5E; fill: #5E5E5E;"/>
-<circle cx="304.95" cy="67.28" r="3.56" style="stroke-width: 0.71; stroke: #5E5E5E; fill: #5E5E5E;"/>
-<circle cx="314.47" cy="94.75" r="3.56" style="stroke-width: 0.71; stroke: #5E5E5E; fill: #5E5E5E;"/>
-<circle cx="318.08" cy="122.22" r="3.56" style="stroke-width: 0.71; stroke: #5E5E5E; fill: #5E5E5E;"/>
-</g>
-<g clip-path="url(#cpMC4wMHwzODEuNjB8MC4wMHwxODAuMDA=)">
-<polyline points="161.99,138.70 161.99,23.34 " style="stroke-width: 1.07; stroke-linecap: butt;"/>
-<text x="157.06" y="127.24" text-anchor="end" style="font-size: 14.00px; font-family: &quot;Arial&quot;;" textLength="133.83px" lengthAdjust="spacingAndGlyphs">Barcoded HA and NA</text>
-<text x="157.06" y="99.77" text-anchor="end" style="font-size: 14.00px; font-family: &quot;Arial&quot;;" textLength="83.25px" lengthAdjust="spacingAndGlyphs">Barcoded NA</text>
-<text x="157.06" y="72.30" text-anchor="end" style="font-size: 14.00px; font-family: &quot;Arial&quot;;" textLength="83.25px" lengthAdjust="spacingAndGlyphs">Barcoded HA</text>
-<text x="157.06" y="44.84" text-anchor="end" style="font-size: 14.00px; font-family: &quot;Arial&quot;;" textLength="70.80px" lengthAdjust="spacingAndGlyphs">Unmodified</text>
-<polyline points="159.25,122.22 161.99,122.22 " style="stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;"/>
-<polyline points="159.25,94.75 161.99,94.75 " style="stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;"/>
-<polyline points="159.25,67.28 161.99,67.28 " style="stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;"/>
-<polyline points="159.25,39.82 161.99,39.82 " style="stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;"/>
-<polyline points="161.99,138.70 376.12,138.70 " style="stroke-width: 1.07; stroke-linecap: butt;"/>
-<polyline points="209.79,141.44 209.79,138.70 " style="stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;"/>
-<polyline points="285.92,141.44 285.92,138.70 " style="stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;"/>
-<polyline points="362.05,141.44 362.05,138.70 " style="stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;"/>
-<text x="209.79" y="153.67" text-anchor="middle" style="font-size: 14.00px; font-family: &quot;Arial&quot;;" textLength="39.31px" lengthAdjust="spacingAndGlyphs">1e+01</text>
-<text x="285.92" y="153.67" text-anchor="middle" style="font-size: 14.00px; font-family: &quot;Arial&quot;;" textLength="39.31px" lengthAdjust="spacingAndGlyphs">1e+03</text>
-<text x="362.05" y="153.67" text-anchor="middle" style="font-size: 14.00px; font-family: &quot;Arial&quot;;" textLength="39.31px" lengthAdjust="spacingAndGlyphs">1e+05</text>
-<text x="269.05" y="170.99" text-anchor="middle" style="font-size: 16.00px; font-family: &quot;Arial&quot;;" textLength="99.91px" lengthAdjust="spacingAndGlyphs">TCID50 per &#181;l</text>
-<text x="161.99" y="14.94" style="font-size: 13.20px; font-family: &quot;Arial&quot;;" textLength="157.62px" lengthAdjust="spacingAndGlyphs">Virus titer after transfection</text>
-</g>
-</g>
       <text x="5" y="15" font-size="18" font-family="Verdana" font-weight="normal" letter-spacing="0" text-anchor="start" fill="black">A</text>
     </g>
     <g transform="translate(450, 0) scale(1) ">
