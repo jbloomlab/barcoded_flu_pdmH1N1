@@ -5,12 +5,17 @@
 layout: default
 ---
 ## Interactive plot of viral transcription and progeny production
-This page provides an interactive version of figure 5A from [*Influenza virus transcription and progeny production are poorly correlated in single cells*](https://www.biorxiv.org/content/10.1101/2022.08.30.505828v1). Each point on this plot represents a single-influenza infected cell. You can mouse over each point to see information about the outcomes of viral infection in that cell. At the bottom of the plot, there are drop down menus to select cells with specific viral genotypes and missing viral genes.
+This page provides an interactive version of figures 5A and 5B from [*Influenza virus transcription and progeny production are poorly correlated in single cells*](https://www.biorxiv.org/content/10.1101/2022.08.30.505828v1). Each point on this plot represents a single-influenza infected cell. You can mouse over each point to see information about the outcomes of viral infection in that cell. At the bottom of the plot, there are drop down menus to select cells with specific viral genotypes and missing viral genes.
 
-{% include transcription_progeny_interactive.html max-width="100px" %}
+### Viral transcription and progeny production in cells infected at low MOI
+{% include lowMOI_transcription_progeny_interactive.html max-width="100px" %}
 <br>
 
-### Data available on this plot
+### Viral transcription and progeny production in cells infected at high MOI
+{% include highMOI_transcription_progeny_interactive.html max-width="100px" %}
+<br>
+
+### Data available in these plots
 This plot shows viral transcription on the x-axis and progeny production on the y-axis. Each point represents a single influenza-infected cell. Mousing over a point provides further information:  
 
 `cell_barcode`: Barcode that uniquely identifies each cell  
@@ -23,8 +28,8 @@ This plot shows viral transcription on the x-axis and progeny production on the 
 `viral_mutations`: List of mutations identified in the viral genes and classification of the mutation (e.g. synonymous, non-synonymous, non-coding)  
 `mutation_support`: Number of UMIs sequenced in the PacBio data supporting a consensus mutation out of all UMIs sequenced in the PacBio data for gene  
 
-### How this plot was created
-This plot shows the total viral transcription and progeny produced by single influenza-infected cells. Total viral transcription was calculated as the fraction of mRNA from virus in each cell. Physical progeny production (left) was calculated as the fraction of viral barcodes in the supernatant associated with each cell among barcodes assignable to any infected cell. Infectious progeny production (right) was calculated in the same way, using RNA extracted from cells infected with progeny viral supernatants.
+### How these plots were created
+These plots shows the total viral transcription and progeny produced by single influenza-infected cells. Total viral transcription was calculated as the fraction of mRNA from virus in each cell. Physical progeny production was calculated as the fraction of viral barcodes in the supernatant associated with each cell among barcodes assignable to any infected cell. Infectious progeny production (right, when available) was calculated in the same way, using RNA extracted from cells infected with progeny viral supernatants.
 
 ## Source data and code
 The input data and code used to generate this plot are in the [final_analysis.py.ipynb](https://github.com/jbloomlab/barcoded_flu_pdmH1N1/blob/main/final_analysis.py.ipynb) notebook.
