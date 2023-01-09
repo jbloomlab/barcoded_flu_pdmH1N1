@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2022-12-28T16:35:26.936802</dc:date>
+    <dc:date>2023-01-09T13:54:42.130134</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -43,12 +43,12 @@ z
       <path d="M 80.968182 90.36 
 " style="fill: none; stroke: #000000; stroke-width: 1.5"/>
       <defs>
-       <path id="m340ee809d2" d="M 0 0 
+       <path id="m2bae355557" d="M 0 0 
 L 0 2.75 
 " style="stroke: #333333"/>
       </defs>
       <g>
-       <use xlink:href="#m340ee809d2" x="80.968182" y="90.36" style="stroke: #333333"/>
+       <use xlink:href="#m2bae355557" x="80.968182" y="90.36" style="stroke: #333333"/>
       </g>
      </g>
      <g id="text_1">
@@ -109,7 +109,7 @@ z
       <path d="M 144.377273 90.36 
 " style="fill: none; stroke: #000000; stroke-width: 1.5"/>
       <g>
-       <use xlink:href="#m340ee809d2" x="144.377273" y="90.36" style="stroke: #333333"/>
+       <use xlink:href="#m2bae355557" x="144.377273" y="90.36" style="stroke: #333333"/>
       </g>
      </g>
      <g id="text_2">
@@ -443,12 +443,12 @@ z
       <path d="M 9.95 86.58 
 " style="fill: none; stroke: #000000; stroke-width: 1.5"/>
       <defs>
-       <path id="mfe977af6c8" d="M 0 0 
+       <path id="m2fdd2361a6" d="M 0 0 
 L -2.75 0 
 " style="stroke: #333333"/>
       </defs>
       <g>
-       <use xlink:href="#mfe977af6c8" x="9.95" y="86.58" style="stroke: #333333"/>
+       <use xlink:href="#m2fdd2361a6" x="9.95" y="86.58" style="stroke: #333333"/>
       </g>
      </g>
     </g>
@@ -457,7 +457,7 @@ L -2.75 0
       <path d="M 9.95 71.46 
 " style="fill: none; stroke: #000000; stroke-width: 1.5"/>
       <g>
-       <use xlink:href="#mfe977af6c8" x="9.95" y="71.46" style="stroke: #333333"/>
+       <use xlink:href="#m2fdd2361a6" x="9.95" y="71.46" style="stroke: #333333"/>
       </g>
      </g>
     </g>
@@ -466,7 +466,7 @@ L -2.75 0
       <path d="M 9.95 56.34 
 " style="fill: none; stroke: #000000; stroke-width: 1.5"/>
       <g>
-       <use xlink:href="#mfe977af6c8" x="9.95" y="56.34" style="stroke: #333333"/>
+       <use xlink:href="#m2fdd2361a6" x="9.95" y="56.34" style="stroke: #333333"/>
       </g>
      </g>
     </g>
@@ -475,7 +475,7 @@ L -2.75 0
       <path d="M 9.95 41.22 
 " style="fill: none; stroke: #000000; stroke-width: 1.5"/>
       <g>
-       <use xlink:href="#mfe977af6c8" x="9.95" y="41.22" style="stroke: #333333"/>
+       <use xlink:href="#m2fdd2361a6" x="9.95" y="41.22" style="stroke: #333333"/>
       </g>
      </g>
     </g>
@@ -484,7 +484,7 @@ L -2.75 0
       <path d="M 9.95 26.1 
 " style="fill: none; stroke: #000000; stroke-width: 1.5"/>
       <g>
-       <use xlink:href="#mfe977af6c8" x="9.95" y="26.1" style="stroke: #333333"/>
+       <use xlink:href="#m2fdd2361a6" x="9.95" y="26.1" style="stroke: #333333"/>
       </g>
      </g>
     </g>
@@ -493,7 +493,7 @@ L -2.75 0
       <path d="M 9.95 10.98 
 " style="fill: none; stroke: #000000; stroke-width: 1.5"/>
       <g>
-       <use xlink:href="#mfe977af6c8" x="9.95" y="10.98" style="stroke: #333333"/>
+       <use xlink:href="#m2fdd2361a6" x="9.95" y="10.98" style="stroke: #333333"/>
       </g>
      </g>
     </g>
@@ -509,70 +509,70 @@ L 17.559091 39.708
 L 30.240909 39.708 
 L 30.240909 86.58 
 z
-" clip-path="url(#p9f16f26c87)" style="fill: #595959"/>
+" clip-path="url(#pbf96f942fa)" style="fill: #595959"/>
     <path d="M 30.240909 86.58 
 L 30.240909 83.556 
 L 42.922727 83.556 
 L 42.922727 86.58 
 z
-" clip-path="url(#p9f16f26c87)" style="fill: #595959"/>
+" clip-path="url(#pbf96f942fa)" style="fill: #595959"/>
     <path d="M 42.922727 86.58 
 L 42.922727 85.068 
 L 55.604545 85.068 
 L 55.604545 86.58 
 z
-" clip-path="url(#p9f16f26c87)" style="fill: #595959"/>
+" clip-path="url(#pbf96f942fa)" style="fill: #595959"/>
     <path d="M 55.604545 86.58 
 L 55.604545 85.068 
 L 68.286364 85.068 
 L 68.286364 86.58 
 z
-" clip-path="url(#p9f16f26c87)" style="fill: #595959"/>
+" clip-path="url(#pbf96f942fa)" style="fill: #595959"/>
     <path d="M 68.286364 86.58 
 L 68.286364 82.044 
 L 80.968182 82.044 
 L 80.968182 86.58 
 z
-" clip-path="url(#p9f16f26c87)" style="fill: #595959"/>
+" clip-path="url(#pbf96f942fa)" style="fill: #595959"/>
     <path d="M 80.968182 86.58 
 L 80.968182 85.068 
 L 93.65 85.068 
 L 93.65 86.58 
 z
-" clip-path="url(#p9f16f26c87)" style="fill: #595959"/>
+" clip-path="url(#pbf96f942fa)" style="fill: #595959"/>
     <path d="M 93.65 86.58 
 L 93.65 86.58 
 L 106.331818 86.58 
 L 106.331818 86.58 
 z
-" clip-path="url(#p9f16f26c87)" style="fill: #595959"/>
+" clip-path="url(#pbf96f942fa)" style="fill: #595959"/>
     <path d="M 106.331818 86.58 
 L 106.331818 85.068 
 L 119.013636 85.068 
 L 119.013636 86.58 
 z
-" clip-path="url(#p9f16f26c87)" style="fill: #595959"/>
+" clip-path="url(#pbf96f942fa)" style="fill: #595959"/>
     <path d="M 119.013636 86.58 
 L 119.013636 86.58 
 L 131.695455 86.58 
 L 131.695455 86.58 
 z
-" clip-path="url(#p9f16f26c87)" style="fill: #595959"/>
+" clip-path="url(#pbf96f942fa)" style="fill: #595959"/>
     <path d="M 131.695455 86.58 
 L 131.695455 85.068 
 L 144.377273 85.068 
 L 144.377273 86.58 
 z
-" clip-path="url(#p9f16f26c87)" style="fill: #595959"/>
+" clip-path="url(#pbf96f942fa)" style="fill: #595959"/>
     <path d="M 144.377273 86.58 
 L 144.377273 86.58 
 L 157.059091 86.58 
 L 157.059091 86.58 
 z
-" clip-path="url(#p9f16f26c87)" style="fill: #595959"/>
+" clip-path="url(#pbf96f942fa)" style="fill: #595959"/>
    </g>
    <g id="text_4">
-    <g clip-path="url(#p9f16f26c87)">
+    <g clip-path="url(#pbf96f942fa)">
      <!-- Gini=0.87 -->
      <g transform="translate(101.522955 29.41125)scale(0.12 -0.12)">
       <defs>
@@ -781,7 +781,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p9f16f26c87">
+  <clipPath id="pbf96f942fa">
    <rect x="9.95" y="7.2" width="167.4" height="83.16"/>
   </clipPath>
  </defs>
