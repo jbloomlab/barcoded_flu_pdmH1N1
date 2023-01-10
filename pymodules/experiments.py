@@ -55,11 +55,13 @@ class Experiments:
 
         self.experiments = list(self.config_dict)
         self._expect_ncells = {}
+        self._infection_threshold = {}
 
         # now get data for each experiment
         valid_keys = {'description',
                       'lab_notes',
                       'expect_ncells',
+                      'infection_threshold',
                       'transcriptomics',
                       'viral_barcodes',
                       'pacbio_viral_sequencing'}
@@ -99,6 +101,13 @@ class Experiments:
                     raise ValueError(f"`expect_ncells` not int for {expt}")
             else:
                 raise KeyError(f"`expect_ncells` missing for {expt}")
+            
+            if 'infection_threshold' in expt_d:
+                self._infection_threshold[expt] = expt_d['infection_threshold']
+                if not isinstance(self._infection_threshold[expt], float):
+                    raise ValueError(f"`infection_threshold` not int for {expt}")
+            else:
+                raise KeyError(f"`infection_threshold` missing for {expt}")
 
             if 'viral_barcodes' in expt_d:
                 for source, source_d in expt_d['viral_barcodes'].items():
@@ -212,6 +221,10 @@ class Experiments:
     def expect_ncells(self, expt):
         """int: Expected number of cells for experiment `expt`."""
         return self._expect_ncells[expt]
+    
+    def infection_threshold(self, expt):
+        """float: Fraction of UMIs from virus to be considered infected for experiment `expt`."""
+        return self._infection_threshold[expt]
 
     def expt_viral_barcode_fastqs(self, expt):
         """pandas.DataFrame: FASTQs of viral barcodes

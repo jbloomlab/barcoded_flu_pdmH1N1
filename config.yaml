@@ -49,9 +49,6 @@ umi_len_10x: 12  # length of 10X UMI: **this is for the v3 kit**
 # Number of Median Absolute Deviations to use for filtering total UMIs per cell
 total_UMI_deviations: 2.5
 
-# Fraction of viral UMIs required to call cell as infected
-infection_threshold: 0.01
-
 # False discovery rate for assigning viral tags based on expected
 # viral tag counts in uninfected cells.
 viral_tag_fdr: 0.0001
@@ -79,6 +76,45 @@ ccs_min_rq: 0.999
 #----------------------------------------------------------------------------
 experiments:
 
+  scProgenyProduction_trial1:
+    description: Single-cell transcriptomics performed on low MOI-infected sample.
+                 Innoculum volumes based on `hashing_trial2` data. Loaded
+                 all collected cells from two 24-well wells, each infected with either
+                 wildtype or dblySn viral tag variants.
+    lab_notes: https://benchling.com/s/etr-20lOO7l1FdEJJIpxV6vD
+    expect_ncells: 10000
+    infection_threshold: 0.025   # Fraction of viral UMIs required to call cell as infected
+    transcriptomics:
+      2020-09-25:
+        index: SI-GA-B8
+        bcl_folder: /shared/ngs/illumina/bloom_lab/200925_D00300_1065_AHHL7NBCX3/raw/200925_D00300_1065_AHHL7NBCX3/
+        lane: 2
+        index_sequencing: single
+    viral_barcodes:
+      supernatant:
+        wt:
+          fluHA:
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-WT-Sup-fluHA-A_S1_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-WT-Sup-fluHA-B_S2_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-WT-Sup-fluNA-A_S17_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-WT-Sup-fluNA-B_S18_L001_R1_001.fastq.gz
+        syn:
+          fluHA:
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-dblSyn-Sup-fluHA-A_S3_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-dblSyn-Sup-fluHA-B_S4_L001_R1_001.fastq.gz
+          fluNA:
+            replicate_1:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-dblSyn-Sup-fluNA-A_S19_L001_R1_001.fastq.gz
+            replicate_2:
+              2020-10-13: /shared/ngs/illumina/bloom_lab/201013_M03100_0625_000000000-JB2KP/Data/Intensities/BaseCalls/Trial1-dblSyn-Sup-fluNA-B_S20_L001_R1_001.fastq.gz
+
   scProgenyProduction_trial3:
     description: Single-cell transcriptomics performed on even lower MOI-infected
                  sample. Innoculum volumes based on `scProgenyProduction_trial1` and
@@ -87,6 +123,7 @@ experiments:
                  viral tag variants.
     lab_notes: https://benchling.com/s/etr-N4laiIAy3AUePJdig7wR
     expect_ncells: 10000
+    infection_threshold: 0.01   # Fraction of viral UMIs required to call cell as infected
     transcriptomics:
       2021-03-12:
         index: SI-TT-A3
