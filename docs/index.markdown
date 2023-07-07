@@ -12,7 +12,7 @@ This page provides an interactive version of figures 5A and 5B from [*Influenza 
 ### Viral transcription and progeny production in cells infected at low MOI
 Low MOI placeholder
 
-{% include test.html %}
+{% include test2.html %}
 
 ### Viral transcription and progeny production in cells infected at high MOI
 High MOI placeholder
