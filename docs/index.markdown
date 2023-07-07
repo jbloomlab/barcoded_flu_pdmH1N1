@@ -7,15 +7,11 @@ layout: default
 ## Interactive plot of viral transcription and progeny production
 This page provides an interactive version of figures 5A and 5B from [*Influenza virus transcription and progeny production are poorly correlated in single cells*](https://www.biorxiv.org/content/10.1101/2022.08.30.505828v2). Each point on this plot represents a single-influenza infected cell. You can mouse over each point to see information about the outcomes of viral infection in that cell. At the bottom of the plot, there are drop down menus to select cells with specific viral genotypes and missing viral genes.
 
-Test
-
 ### Viral transcription and progeny production in cells infected at low MOI
-{% include lowMOI_transcription_progeny_interactive.html max-width="100px" %}
-<br>
+Low MOI Placeholder
 
 ### Viral transcription and progeny production in cells infected at high MOI
-{% include highMOI_transcription_progeny_interactive.html max-width="100px" %}
-<br>
+High MOI Placeholder
 
 ### Data available in these plots
 This plot shows viral transcription on the x-axis and progeny production on the y-axis. Each point represents a single influenza-infected cell. Mousing over a point provides further information:  
