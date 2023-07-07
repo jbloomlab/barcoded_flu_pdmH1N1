@@ -11,7 +11,7 @@ This page provides an interactive version of figures 5A and 5B from [*Influenza 
 {% include lowMOI_transcription_progeny_interactive.html %}
 
 ### Viral transcription and progeny production in cells infected at high MOI
-{% include highMOI_transcription_progeny_interactive.html %}
+High MOI Placeholder
 
 ### Data available in these plots
 This plot shows viral transcription on the x-axis and progeny production on the y-axis. Each point represents a single influenza-infected cell. Mousing over a point provides further information:  
@@ -28,6 +28,8 @@ This plot shows viral transcription on the x-axis and progeny production on the 
 
 ### How these plots were created
 These plots shows the total viral transcription and progeny produced by single influenza-infected cells. Total viral transcription was calculated as the fraction of mRNA from virus in each cell. Physical progeny production was calculated as the fraction of viral barcodes in the supernatant associated with each cell among barcodes assignable to any infected cell. Infectious progeny production (right, when available) was calculated in the same way, using RNA extracted from cells infected with progeny viral supernatants.
+
+{% include highMOI_transcription_progeny_interactive.html %}
 
 ## Source data and code
 The input data and code used to generate this plot are in the [final_analysis.py.ipynb](https://github.com/jbloomlab/barcoded_flu_pdmH1N1/blob/main/final_analysis.py.ipynb) notebook.
