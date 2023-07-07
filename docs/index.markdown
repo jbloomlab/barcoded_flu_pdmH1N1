@@ -11,7 +11,7 @@ This page provides an interactive version of figures 5A and 5B from [*Influenza 
 Low MOI placeholder
 
 ### Viral transcription and progeny production in cells infected at high MOI
-{% include highMOI_transcription_progeny_interactive.html 
+{% include highMOI_transcription_progeny_interactive.html %}
 
 ### Data available in these plots
 This plot shows viral transcription on the x-axis and progeny production on the y-axis. Each point represents a single influenza-infected cell. Mousing over a point provides further information:  
